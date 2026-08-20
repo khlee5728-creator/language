@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Week 2 — What Is Language? (Part 1) | Topics in English Linguistics</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css" />
+  <link rel="stylesheet" href="assets/linguistics-theme.css" />
+  <link rel="stylesheet" href="assets/slides-quiz.css" />
+  <link rel="stylesheet" href="assets/slides-ko.css" />
+  <style>
+    :root { --slide-accent: #0077b6; }
+    .arb-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:0.5em; font-size:0.68em; margin:0.5em 0; }
+    .arb-card { background:var(--color-bg-alt); border:1px solid var(--color-border); border-radius:8px;
+      padding:0.5em; text-align:center; }
+    .arb-card .lang { font-size:0.78em; color:var(--color-subtle); display:block; }
+    .arb-card .word { font-weight:700; font-size:1.05em; }
+    .recursion-box { font-size:0.66em; line-height:1.7; background:var(--color-bg-alt);
+      border-left:4px solid var(--slide-accent); border-radius:0 8px 8px 0; padding:0.6em 0.9em; }
+    .gram-star { color:#c1121f; font-weight:700; }
+    .gram-ok { color:#1b7f5e; font-weight:700; }
+    .judge-list { list-style:none; padding:0; font-size:0.72em; }
+    .judge-list li { padding:0.25em 0; border-bottom:1px solid var(--color-border); }
+    .judge-list li:last-child { border-bottom:none; }
+    .comp-grid { display:grid; grid-template-columns:1fr 1fr; gap:0.8em; }
+    .comp-grid .card h3 { border-bottom:none; }
+    .grammar-parts { display:grid; grid-template-columns:repeat(2,1fr); gap:0.5em; font-size:0.7em; }
+    .grammar-parts .gp { background:var(--color-bg-alt); border:1px solid var(--color-border);
+      border-radius:8px; padding:0.5em 0.7em; }
+    .grammar-parts .gp b { color:var(--slide-accent); }
+  </style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- ══ 1 · Title ══ -->
+<section class="title-slide" data-background-color="#16213e">
+  <div style="color:white; text-align:center; padding:1em;">
+    <div class="week-badge" style="background:rgba(255,255,255,0.2); color:white;">Week 2</div>
+    <h1 style="color:white; font-size:1.55em; margin:0.4em 0 0.2em;">What Is Language? <span style="font-weight:300;">(Part 1)</span></h1>
+    <p style="color:rgba(255,255,255,0.8); font-size:0.6em; margin-bottom:0.3em;">
+      Linguistic Knowledge and Grammar
+      <span class="ko-supp" style="display:block; color:rgba(255,255,255,0.65);">※ 언어란 무엇인가 — 언어 지식과 문법</span>
+    </p>
+    <p style="color:rgba(255,255,255,0.55); font-size:0.48em; margin-bottom:1.3em;">
+      Chapter 1 · pp. 1–15
+    </p>
+    <p style="color:rgba(255,255,255,0.5); font-size:0.42em; font-style:italic;">
+      An Introduction to Language, 11th Ed. — Fromkin, Rodman &amp; Hyams
+    </p>
+  </div>
+  <aside class="notes">
+    Ch.1 전반부입니다. "언어를 안다는 것은 무엇인가?"라는 큰 질문으로 한 학기 전체가 열립니다.
+    학생들이 모국어로 이미 하고 있는 일들을 '지식(knowledge)'의 관점에서 낯설게 바라보게 하는 것이 목표입니다.
+  </aside>
+</section>
+
+<!-- ══ 2 · Agenda ══ -->
+<section>
+  <h2>Agenda</h2>
+  <ul class="agenda-list">
+    <li>Linguistic Knowledge — what it means to "know" a language</li>
+    <li>Arbitrariness — the form–meaning relation</li>
+    <li>Creativity — producing an infinite set of sentences</li>
+    <li>Competence vs. Performance</li>
+    <li>What Is Grammar? — Descriptive · Prescriptive</li>
+    <li>Universal Grammar &amp; Sign Languages</li>
+  </ul>
+  <aside class="notes">
+    오늘의 키워드는 knowledge, arbitrariness, creativity, grammar, universal입니다.
+    각 개념이 서로 어떻게 연결되는지를 강조하며 진행하세요.
+  </aside>
+</section>
+
+<!-- ══ 3 · 도입 질문 ══ -->
+<section data-background-color="#f8f9fa">
+  <h2>What Does It Mean to "Know" a Language?</h2>
+  <div class="def-box">
+    <div class="term">Knowing a language = possessing a system of unconscious knowledge</div>
+  </div>
+  <ul style="font-size:0.74em; line-height:1.9; margin-top:0.6em;">
+    <li>A five-year-old speaks and understands as fluently as an adult.</li>
+    <li>Yet this ability rests on <strong>deep knowledge the speaker is unaware of</strong>.</li>
+    <li>English speakers build sentences with two <em>relative clauses</em> without knowing the term.</li>
+  </ul>
+  <p class="ko-supp" style="margin-top:0.6em; font-size:0.68em;">
+    ※ 걷는 아이가 균형·신경 제어 원리를 설명 못 하듯, 우리는 언어를 <strong>무의식적으로</strong> 안다.
+  </p>
+  <aside class="notes">
+    핵심: 언어 지식은 대부분 '무의식적(unconscious)'입니다. 학생들에게 "관계절이 뭔지 배운 적 있나요?"
+    라고 물어보고, 그럼에도 완벽히 쓰고 있다는 점을 체감시키세요.
+  </aside>
+</section>
+
+<!-- ══ 4 · Sound System ══ -->
+<section>
+  <h2>1) Knowledge of the Sound System</h2>
+  <p style="font-size:0.72em;">To know a language is to know its <span class="key">sounds and the rules for combining them</span>.</p>
+  <div class="two-col" style="font-size:0.72em;">
+    <div class="def-box">
+      <div class="term">Which sounds may occur where</div>
+      <p style="margin-top:0.3em;">No English word begins with <em>nk-</em> → speakers mispronounce Ghana's ex-president
+      <em>Nkrumah</em> as <em>Nekrumah</em>.</p>
+    </div>
+    <div class="def-box">
+      <div class="term">Substituting foreign sounds</div>
+      <p style="margin-top:0.3em;">French lacks <em>th</em> [θ], so French speakers render <em>this/that</em>
+      as <em>zis/zat</em> — unconscious knowledge on display.</p>
+    </div>
+  </div>
+  <p class="ko-supp" style="margin-top:0.5em; font-size:0.66em;">※ 한 살배기도 이미 "nk는 단어 첫머리에 못 온다"를 안다. (자세한 내용은 Ch.5–6)</p>
+  <aside class="notes">
+    소리의 목록(inventory)뿐 아니라 배열 제약(어떤 소리가 단어 처음/끝에 오는가)까지 아는 것이 핵심.
+    Nkrumah, this/that 예시로 '무의식적 음운 지식'을 보여주세요.
+  </aside>
+</section>
+
+<!-- ══ 5 · Words & Arbitrariness ══ -->
+<section>
+  <h2>2) Words &amp; Arbitrariness</h2>
+  <p style="font-size:0.72em;">You know <em>boy</em> is a word but <em>moy</em> is not — which sound sequences carry meaning.</p>
+  <div class="def-box">
+    <div class="term">Arbitrariness — the form (sound) and meaning relation is arbitrary</div>
+  </div>
+  <div class="arb-grid">
+    <div class="arb-card"><span class="lang">English</span><span class="word">house</span></div>
+    <div class="arb-card"><span class="lang">French</span><span class="word">maison</span></div>
+    <div class="arb-card"><span class="lang">Russian</span><span class="word">dom</span></div>
+    <div class="arb-card"><span class="lang">Spanish</span><span class="word">casa</span></div>
+  </div>
+  <p style="font-size:0.66em; margin-top:0.3em;">
+    The same sounds <em>taka</em> = "hawk" (Japanese), "fist" (Quechua), "small bird" (Zulu), "money" (Bengali).
+    <span class="ko-supp" style="display:block; margin-top:0.3em;">※ 의성어(cock-a-doodle-doo / 핀란드어 kukkokiekuu)조차 언어마다 다르다 — 자의성의 방증. 수화도 마찬가지.</span>
+  </p>
+  <aside class="notes">
+    자의성(arbitrariness)은 소쉬르 이래 언어의 핵심 성질. 의성어와 sound symbolism(gl- → 빛 관련: glare, gleam…)은
+    부분적 예외처럼 보이나, 언어마다 다르다는 점에서 오히려 자의성을 뒷받침합니다.
+  </aside>
+</section>
+
+<!-- ══ 5b · 도표: 언어 기호 (자의성) ══ -->
+<section>
+  <h2>Diagram · The Linguistic Sign</h2>
+  <p style="font-size:0.7em; color:var(--color-subtle);">The line joining form (sound) and meaning (concept) is <span class="gram-star" style="color:#c1121f;">arbitrary</span> — there is no necessary reason for it.</p>
+  <div style="text-align:center;">
+    <svg viewBox="0 0 660 250" style="width:88%; max-width:760px; margin:0.2em auto; font-family:var(--font-main);">
+      <!-- FORM box -->
+      <rect x="30" y="55" width="220" height="140" rx="16" fill="#e8f4fd" stroke="#0077b6" stroke-width="2.5"/>
+      <text x="140" y="88" text-anchor="middle" font-size="18" font-weight="700" fill="#0077b6">FORM</text>
+      <text x="140" y="130" text-anchor="middle" font-size="30" font-weight="700" fill="#14425f">/hænd/</text>
+      <text x="140" y="165" text-anchor="middle" font-size="17" fill="#5a6b78" letter-spacing="4">h a n d</text>
+      <!-- MEANING box -->
+      <rect x="410" y="55" width="220" height="140" rx="16" fill="#fdf3e8" stroke="#c77b2e" stroke-width="2.5"/>
+      <text x="520" y="88" text-anchor="middle" font-size="18" font-weight="700" fill="#a5641f">MEANING</text>
+      <text x="520" y="132" text-anchor="middle" font-size="34">✋</text>
+      <text x="520" y="168" text-anchor="middle" font-size="17" fill="#7a5320">the concept 'hand'</text>
+      <!-- arbitrary link -->
+      <defs>
+        <marker id="arrL" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto"><path d="M7,0 L0,3 L7,6 Z" fill="#c1121f"/></marker>
+        <marker id="arrR" markerWidth="10" markerHeight="10" refX="3" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#c1121f"/></marker>
+      </defs>
+      <line x1="255" y1="125" x2="405" y2="125" stroke="#c1121f" stroke-width="2.5" stroke-dasharray="8 6" marker-start="url(#arrL)" marker-end="url(#arrR)"/>
+      <text x="330" y="112" text-anchor="middle" font-size="15" font-weight="700" fill="#c1121f">arbitrary</text>
+      <text x="330" y="150" text-anchor="middle" font-size="13" fill="#c1121f" font-style="italic">자의적</text>
+    </svg>
+  </div>
+  <p style="font-size:0.64em; text-align:center; color:var(--color-subtle);">
+    That is why one concept takes different forms across languages — <em>hand · main (French) · nsa (Twi) · ruka (Russian)</em>.
+  </p>
+  <p style="font-size:0.6em; text-align:center; color:var(--color-subtle); margin-top:0.2em;">
+    Even onomatopoeia varies by language (English <em>cock-a-doodle-doo</em> vs. Finnish <em>kukkokiekuu</em>) — an apparent exception that in fact supports arbitrariness.
+  </p>
+  <aside class="notes">
+    형식과 의미의 결합이 자의적이라는 점을 도식으로 각인시키세요. 교재 p.3의 hand/main/nsa/ruka 예시를
+    그대로 사용했습니다. 의성어·sound symbolism(gl- → 빛: glare, gleam…)은 부분적 예외처럼 보이나
+    언어마다 다르다는 점에서 오히려 자의성을 뒷받침합니다.
+  </aside>
+</section>
+
+<!-- ══ 6 · Creativity ══ -->
+<section>
+  <h2>3) The Creativity of Linguistic Knowledge</h2>
+  <div class="summary-box">
+    <h4>Creativity</h4>
+    <p style="font-size:0.84em;">Knowing a language means being able to produce and understand <span class="key">novel sentences never heard before</span>.</p>
+  </div>
+  <div class="recursion-box" style="margin-top:0.6em;">
+    This is the house.<br>
+    This is the house <b>that Jack built</b>.<br>
+    This is the malt that lay in the house <b>that Jack built</b>.<br>
+    This is the dog that worried the cat that killed the rat …
+  </div>
+  <p style="font-size:0.68em; margin-top:0.5em;">
+    Any sentence can take <span class="key">infinitely</span> many added adjectives and clauses → the set of sentences is infinite.
+    Creativity is a <strong>universal property of all human languages</strong>.
+  </p>
+  <aside class="notes">
+    창조성 = 자극-반응(stimulus-response)으로 설명 불가하다는 촘스키의 논지. "ouch/ahi" 같은 반사적 소리는
+    언어가 아니라는 점과 대비하세요. 무한성은 다음 도입(문법 규칙은 유한, 문장은 무한)으로 이어집니다.
+  </aside>
+</section>
+
+<!-- ══ 7 · Sentences vs Nonsentences ══ -->
+<section>
+  <h2>4) Sentences vs. Nonsentences</h2>
+  <p style="font-size:0.72em;">We distinguish <span class="gram-ok">grammatical</span> sentences from <span class="gram-star">*ungrammatical</span> ones by intuition.</p>
+  <ul class="judge-list">
+    <li><span class="gram-ok">a.</span> John kissed the little old lady who owned the shaggy dog.</li>
+    <li><span class="gram-star">b. *</span> Who owned the shaggy dog John kissed the little old lady.</li>
+    <li><span class="gram-ok">c.</span> John is difficult to love.</li>
+    <li><span class="gram-star">f. *</span> It is anxious to go John.</li>
+    <li><span class="gram-star">h. *</span> Exams his flunked student a was who John.</li>
+  </ul>
+  <p style="font-size:0.68em; margin-top:0.4em;">
+    A sentence is not just any string of words — it is organized by <span class="key">sentence-formation rules</span>.
+    The set of these rules is the <span class="key">grammar</span>.
+  </p>
+  <aside class="notes">
+    별표(*)는 비문 표기 관례입니다. 규칙은 유한하지만 무한한 문장을 만들고 적형성을 판단하게 해줍니다.
+    이 규칙은 판사나 학교가 정한 게 아니라 어릴 때 무의식적으로 습득한 것임을 강조하세요.
+  </aside>
+</section>
+
+<!-- ══ 8 · Competence vs Performance ══ -->
+<section>
+  <h2>Competence vs. Performance</h2>
+  <div class="comp-grid">
+    <div class="card">
+      <h3>Linguistic Competence</h3>
+      <p style="font-size:0.72em;">The <strong>internal knowledge</strong> of words and grammar. In principle it can handle sentences of unbounded length.</p>
+    </div>
+    <div class="card">
+      <h3>Linguistic Performance</h3>
+      <p style="font-size:0.72em;">The <strong>actual production and comprehension</strong> of speech, limited by breath, memory, fatigue and other constraints.</p>
+    </div>
+  </div>
+  <p style="font-size:0.68em; margin-top:0.6em;">
+    Slips of the tongue, hesitations, and false starts are limits of <span class="key">performance</span>,
+    not defects of <span class="key">competence</span>.
+  </p>
+  <aside class="notes">
+    촘스키의 핵심 구분입니다. '능력(competence)'과 '수행(performance)'을 혼동하지 않도록 하세요.
+    verbose한 판사 판결문 예시: 이론상 문장 길이에 한계는 없지만 실제로는 제약이 있다.
+  </aside>
+</section>
+
+<!-- ══ 9 · What Is Grammar ══ -->
+<section>
+  <h2>What Is Grammar?</h2>
+  <p style="font-size:0.72em;">In linguistics, a <em>grammar</em> is the speaker's knowledge of the units and rules of the language (= competence).</p>
+  <div class="grammar-parts">
+    <div class="gp"><b>Phonology</b><br><span style="font-size:0.88em;">rules for combining sounds into words</span></div>
+    <div class="gp"><b>Morphology</b><br><span style="font-size:0.88em;">rules for forming words</span></div>
+    <div class="gp"><b>Syntax</b><br><span style="font-size:0.88em;">rules for combining words into phrases &amp; sentences</span></div>
+    <div class="gp"><b>Semantics</b><br><span style="font-size:0.88em;">rules for assigning meaning</span></div>
+  </div>
+  <p style="font-size:0.66em; margin-top:0.5em;">
+    Grammar + <span class="key">lexicon</span> = the speaker's linguistic competence. <br>
+    No language or dialect is linguistically superior — every grammar is equally complex and logical.
+    <span class="ko-supp" style="display:block;">※ 어떤 언어·방언도 언어학적으로 우열이 없다 — 모든 문법은 동등하게 복잡·논리적.</span>
+  </p>
+  <aside class="notes">
+    일상적 'grammar'(학교 문법)와 언어학적 'grammar'(내재적 지식)의 차이를 분명히. 문법은 음운·형태·통사·의미
+    네 부문 + 어휘부로 구성됩니다. "모든 언어·방언은 동등하다"는 이 과목의 중요한 전제입니다.
+  </aside>
+</section>
+
+<!-- ══ 10 · Descriptive Grammar ══ -->
+<section>
+  <h2>Descriptive Grammar</h2>
+  <div class="def-box">
+    <div class="term">It describes facts, not norms</div>
+    <p style="font-size:0.86em; margin-top:0.3em;">Not "how one <em>should</em> speak" but <strong>"how people actually speak."</strong></p>
+  </div>
+  <ul style="font-size:0.72em; line-height:1.85; margin-top:0.5em;">
+    <li>It models the speaker's mental grammar explicitly.</li>
+    <li>A sentence is <em>grammatical</em> = it conforms to the rules of that mental grammar.</li>
+    <li>No dialect is superior or inferior — all are equally rule-governed.</li>
+  </ul>
+  <p class="ko-supp" style="font-size:0.66em; margin-top:0.4em;">※ 언어학자가 하는 작업이 바로 기술문법 — 화자의 직관을 정확히 모델링하는 것이 목표.</p>
+  <aside class="notes">
+    언어학자가 하는 작업이 바로 기술문법입니다. 옳고 그름의 판단이 아니라, 화자의 직관을 정확히
+    모델링하는 것이 목표임을 강조하세요.
+  </aside>
+</section>
+
+<!-- ══ 11 · Prescriptive Grammar ══ -->
+<section>
+  <h2>Prescriptive Grammar</h2>
+  <div class="def-box">
+    <div class="term">It prescribes the "correct" rules one ought to follow</div>
+  </div>
+  <ul style="font-size:0.7em; line-height:1.8; margin-top:0.4em;">
+    <li>1762 — Bishop <strong>Robert Lowth</strong> prescribed rules based on personal taste and Latin grammar.</li>
+    <li>"No double negatives" (<em>I don't have none</em> → <em>I don't have any</em>).</li>
+    <li>"Never end a sentence with a preposition" — Churchill's mock: "nonsense up with which I will not put."</li>
+  </ul>
+  <div class="example-box" style="grid-template-columns:1fr 1fr; margin-top:0.4em;">
+    <div class="ex-item"><span class="word" style="font-size:0.9em;">French</span><span class="trans">Je ne veux parler avec <b>personne</b>. (double negative = grammatical)</span></div>
+    <div class="ex-item"><span class="word" style="font-size:0.9em;">Italian</span><span class="trans">Non voglio parlare con <b>nessuno</b>. (double negative = grammatical)</span></div>
+  </div>
+  <p class="ko-supp" style="font-size:0.64em; margin-top:0.3em;">※ 이중부정이 "열등"하다는 주장은 언어학적 근거가 없다 — 프랑스어·이탈리아어에선 정문.</p>
+  <aside class="notes">
+    규범문법은 사회적·정치적 이유로 특정 방언(prestige dialect)을 우대합니다. Lowth의 라틴어 기반 규칙이
+    영어에 억지로 이식된 사례를 강조. 단, '표준 방언'이 취업 등에서 사회적으로 유리할 수 있다는 현실적 지점도 언급.
+    (교재는 teaching grammar도 소개 — 제2언어 학습용 문법.)
+  </aside>
+</section>
+
+<!-- ══ 11b · Teaching Grammar ══ -->
+<section>
+  <h2>Teaching Grammar</h2>
+  <div class="def-box">
+    <div class="term">A grammar written to learn another language or dialect</div>
+  </div>
+  <ul style="font-size:0.72em; line-height:1.8; margin-top:0.4em;">
+    <li>It states the rules explicitly and gives words with a <span class="key">gloss</span> — the parallel word in the learner's own language (<em>maison</em> = "house").</li>
+    <li>New sounds are described via known ones ("round your lips while saying the vowel in <em>tea</em>" for French <em>u</em>).</li>
+    <li>It assumes the learner already knows the grammar of one language and compares the two.</li>
+  </ul>
+  <p class="ko-supp" style="font-size:0.64em; margin-top:0.3em;">※ 교재는 문법을 네 가지 의미로 구분한다 — 기술·규범·교육(teaching)·보편(UG) 문법. 교육문법은 외국어·방언 학습용.</p>
+  <aside class="notes">
+    교재(p.12–13)는 문법을 네 가지 뜻으로 나눕니다: 기술문법·규범문법·교육문법·보편문법. 교육문법은
+    제2언어나 다른 방언을 배우기 위한 것으로, 모국어 지식을 전제로 목표어와 대조합니다.
+  </aside>
+</section>
+
+<!-- ══ 12 · Universal Grammar ══ -->
+<section>
+  <h2>Universal Grammar (UG)</h2>
+  <div class="summary-box">
+    <h4>A blueprint all languages follow</h4>
+    <p style="font-size:0.84em;">Above individual language rules lies a set of <span class="key">universal principles shared by all languages</span> — the human <em>faculty of language</em>.</p>
+  </div>
+  <ul style="font-size:0.7em; line-height:1.8; margin-top:0.5em;">
+    <li>Chomsky: UG is part of a biologically innate language faculty.</li>
+    <li>Children acquire any language <strong>without explicit teaching</strong>, in a short time.</li>
+    <li>The same stages: babbling → words → simple sentences → complex sentences.</li>
+    <li>Universal properties are biological endowment — children need learn only <em>language-particular rules</em>.</li>
+  </ul>
+  <aside class="notes">
+    UG = 언어 습득의 '초기 상태'. 아동이 빈약한 입력에도 완전한 문법을 획득하는 것(자극의 빈곤)이 UG의 근거.
+    verbs/nouns 같은 보편 범주, 부정·의문·명령의 존재 등을 아동은 미리 '기대'합니다.
+  </aside>
+</section>
+
+<!-- ══ 13 · Sign Languages ══ -->
+<section>
+  <h2>Sign Languages — Evidence for Universality</h2>
+  <p style="font-size:0.72em;">Sign languages are among the strongest evidence that all languages follow the same universal principles.</p>
+  <div class="two-col" style="font-size:0.7em;">
+    <ul style="line-height:1.8;">
+      <li><strong>ASL</strong> (American Sign Language) — a <em>visual-gestural</em>, not auditory, system.</li>
+      <li>A <strong>full language</strong> with its own grammatical rules and sign lexicon.</li>
+      <li>"Slips of the hand" — the manual counterpart of slips of the tongue.</li>
+    </ul>
+    <ul style="line-height:1.8;">
+      <li>Deaf children acquire it in the <strong>same stages</strong> as hearing children — <em>babbling with the hands</em>.</li>
+      <li>Organized in the brain the <strong>same way</strong> as spoken language.</li>
+      <li>Independent of modality — language rests on human biology.</li>
+    </ul>
+  </div>
+  <p class="ko-supp" style="font-size:0.64em; margin-top:0.4em;">※ 언어는 소리를 내고 듣는 능력이 아니라, 더 추상적인 인지 능력에 기반한다.</p>
+  <aside class="notes">
+    수화가 '몸짓 흉내'가 아니라 완전한 언어임을 강조. 손 옹알이·뇌 조직화의 동일성은 언어가 modality를
+    초월한 생물학적 능력임을 보여줍니다. 이는 UG 논지를 강력히 뒷받침합니다.
+  </aside>
+</section>
+
+<!-- ══ 14 · Practice Quiz Q1 ══ -->
+<section data-background-color="#f8f9fa">
+  <span class="practice-header">Practice · Check Your Understanding</span>
+  <div class="mcq">
+    <div class="mcq-q"><span class="qnum">1</span>Which property of language does "<em>house–maison–dom–casa</em>" illustrate?</div>
+    <div class="mcq-opts">
+      <button class="mcq-opt" data-correct="true"><span class="opt-key">A</span>Arbitrariness</button>
+      <button class="mcq-opt"><span class="opt-key">B</span>Creativity</button>
+      <button class="mcq-opt"><span class="opt-key">C</span>Performance</button>
+    </div>
+    <div class="mcq-explain"><span class="lbl">Explanation</span> The same meaning is expressed by entirely different sounds across languages → the form–meaning relation is arbitrary.</div>
+  </div>
+  <aside class="notes">
+    학생들이 직접 선택하게 한 뒤 해설을 공개하세요. 오답도 왜 매력적인지 짚어주면 개념 구분이 선명해집니다.
+  </aside>
+</section>
+
+<!-- ══ 14a · Practice Quiz Q2 ══ -->
+<section data-background-color="#f8f9fa">
+  <span class="practice-header">Practice · Check Your Understanding</span>
+  <div class="mcq">
+    <div class="mcq-q"><span class="qnum">2</span>"<em>I don't have none</em> must be corrected to <em>I don't have any</em>" reflects which view of grammar?</div>
+    <div class="mcq-opts">
+      <button class="mcq-opt"><span class="opt-key">A</span>Descriptive grammar</button>
+      <button class="mcq-opt" data-correct="true"><span class="opt-key">B</span>Prescriptive grammar</button>
+      <button class="mcq-opt"><span class="opt-key">C</span>Universal grammar</button>
+    </div>
+    <div class="mcq-explain"><span class="lbl">Explanation</span> It prescribes a "correct" form rather than describing actual usage → prescriptive grammar.</div>
+  </div>
+  <aside class="notes">
+    규범문법과 기술문법의 구분을 확인하는 문항입니다. 오답 A(기술문법)와 대비해 설명하세요.
+  </aside>
+</section>
+
+<!-- ══ 14b · Exercises Q3 (교재 Ch.1 기반) ══ -->
+<section data-background-color="#f8f9fa">
+  <span class="practice-header">Exercises · Based on Textbook Ch.1</span>
+  <div class="mcq">
+    <div class="mcq-q"><span class="qnum">3</span>Which of the following is <span class="gram-star" style="color:#c1121f;">*ungrammatical</span> in English? <span style="font-weight:400; color:var(--color-subtle); font-size:0.85em;">(cf. textbook Ch.1, p.28, Ex.2)</span></div>
+    <div class="mcq-opts">
+      <button class="mcq-opt"><span class="opt-key">A</span>Napoleon forced Josephine to go.</button>
+      <button class="mcq-opt" data-correct="true"><span class="opt-key">B</span>Robin forced the sheriff go.</button>
+      <button class="mcq-opt"><span class="opt-key">C</span>The devil made Faust go.</button>
+    </div>
+    <div class="mcq-explain"><span class="lbl">Explanation</span> <em>force</em> requires a <em>to</em>-infinitive (<em>forced … to go</em>), while <em>make</em> takes a bare infinitive (<em>made … go</em>). So <em>forced the sheriff go</em> is ungrammatical — we judge this by intuition without ever being taught the rule.</div>
+  </div>
+  <aside class="notes">
+    교재 Ch.1 Ex.2를 개념 중심으로 재구성한 문항입니다(원문 복제 아님). 문법성 판단을 묻습니다.
+    force/make의 보어 구조 차이를 우리가 배운 적 없이 직관으로 안다는 점을 강조하세요.
+  </aside>
+</section>
+
+<!-- ══ 14c · Exercises Q4 (교재 Ch.1 기반) ══ -->
+<section data-background-color="#f8f9fa">
+  <span class="practice-header">Exercises · Based on Textbook Ch.1</span>
+  <div class="mcq">
+    <div class="mcq-q"><span class="qnum">4</span>"I learned a new <u>word</u> today" is natural, but "I learned a new <u>sentence</u> today" is odd. Why? <span style="font-weight:400; color:var(--color-subtle); font-size:0.85em;">(cf. textbook Ch.1, pp.5–6)</span></div>
+    <div class="mcq-opts">
+      <button class="mcq-opt"><span class="opt-key">A</span>Sentences are harder to memorize than words.</button>
+      <button class="mcq-opt" data-correct="true"><span class="opt-key">B</span>Words are finite and learned individually, but sentences are freshly created by creativity, so we don't say we "learn" them.</button>
+      <button class="mcq-opt"><span class="opt-key">C</span>Sentences are forbidden by prescriptive grammar.</button>
+    </div>
+    <div class="mcq-explain"><span class="lbl">Explanation</span> Words in the <span class="key">lexicon</span> are memorized and learned one by one, but sentences are generated <span class="key">infinitely</span> anew from <span class="key">finite rules</span>. Producing a new sentence is not remarkable — it is the everyday exercise of linguistic creativity.</div>
+  </div>
+  <p class="ko-supp" style="font-size:0.6em; margin-top:0.5em;">※ 더 풀어보기: 교재 Ch.1 끝의 Exercises(음소배열로 새 제품명 짓기, 문법성 판단 등)를 과제로 권장.</p>
+  <aside class="notes">
+    창조성/생산성을 묻는 문항입니다(교재 pp.5–6, 어휘부는 유한·암기, 문장은 유한 규칙에서 무한 생성).
+    하단의 추가 Exercises는 과제로 안내하세요.
+  </aside>
+</section>
+
+<!-- ══ 15 · Summary ══ -->
+<section>
+  <h2>Summary</h2>
+  <div class="summary-box">
+    <h4>Key Points</h4>
+    <ul style="font-size:0.8em; line-height:1.85;">
+      <li>Linguistic knowledge is largely <span class="key">unconscious</span> — sound, word, and sentence rules</li>
+      <li>The form–meaning relation is <span class="key">arbitrary</span></li>
+      <li>Language is <span class="key">creative</span> — finite rules, infinite sentences</li>
+      <li><span class="key">Competence</span> ≠ <span class="key">Performance</span></li>
+      <li>Grammar: descriptive vs. prescriptive</li>
+      <li><span class="key">UG</span> and sign languages prove the <span class="key">universality and biological basis</span> of language</li>
+    </ul>
+  </div>
+  <aside class="notes">
+    한 학기 전체를 관통하는 개념들이 오늘 모두 등장했습니다. 특히 competence/performance, descriptive/prescriptive,
+    UG는 이후 모든 챕터에서 반복되므로 확실히 정리하고 넘어가세요.
+  </aside>
+</section>
+
+<!-- ══ 16 · Next Week ══ -->
+<section>
+  <h2 style="margin-bottom:0.3em;">Next Week — Week 3</h2>
+  <div class="next-week-banner">
+    <div class="label">Next Class</div>
+    <p><strong>What Is Language? (Part 2)</strong> — Ch.1 · pp.16–32</p>
+  </div>
+  <h3 style="margin:0.55em 0 0.2em;">Preview</h3>
+  <ul style="font-size:0.66em; line-height:1.55; margin:0;">
+    <li>What Is Not (Human) Language — animal communication</li>
+    <li>The Birds and the Bees — the bee dance, birdsong</li>
+    <li>Can Animals · Computers Learn Language?</li>
+    <li>Language and Thought</li>
+  </ul>
+  <div class="next-week-banner" style="margin-top:0.5em;">
+    <div class="label">Preparation · Assignment</div>
+    <p>Read textbook Ch.1 pp.16–32 · work the end-of-chapter Exercises</p>
+  </div>
+  <aside class="notes">
+    다음 주는 "인간 언어가 아닌 것"을 통해 인간 언어의 고유성을 부각합니다. 오늘 배운 '창조성'이
+    동물 의사소통과의 핵심 대비점이 됨을 예고하세요.
+  </aside>
+</section>
+
+</div><!-- /slides -->
+</div><!-- /reveal -->
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script>
+  Reveal.initialize({
+    hash: true,
+    slideNumber: 'c/t',
+    progress: true,
+    center: false,
+    transition: 'slide',
+    transitionSpeed: 'fast',
+    plugins: []
+  });
+</script>
+<a class="home-btn" href="../index.html" title="강의 목록으로">← 목록</a>
+<script src="assets/slides-print.js"></script>
+<script src="assets/slides-quiz.js"></script>
+<script src="assets/slides-ko-toggle.js"></script>
+</body>
+</html>

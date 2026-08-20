@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Week 9 — The Meaning of Language (Part 1): Semantics | Topics in English Linguistics</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css" />
+  <link rel="stylesheet" href="assets/linguistics-theme.css" />
+  <link rel="stylesheet" href="assets/slides-quiz.css" />
+  <link rel="stylesheet" href="assets/slides-ko.css" />
+  <style>
+    :root { --slide-accent: #c77b2e; }
+    .rel-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:0.6em; font-size:0.72em; }
+    .rel-grid .rc { background:var(--color-bg-alt); border:1px solid var(--color-border);
+      border-radius:8px; padding:0.5em 0.7em; }
+    .rel-grid .rc b { color:var(--slide-accent); }
+    .theta-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:0.5em; font-size:0.66em; }
+    .theta-grid .tc { background:var(--color-bg-alt); border:1px solid var(--color-border);
+      border-radius:8px; padding:0.45em 0.6em; }
+    .theta-grid .tc b { color:var(--slide-accent); display:block; }
+    .anom { color:#c1121f; font-weight:700; }
+    .rel-list { list-style:none; padding:0; font-size:0.72em; }
+    .rel-list li { padding:0.28em 0; border-bottom:1px solid var(--color-border); }
+    .rel-list li:last-child { border-bottom:none; }
+    .rel-list li b { color:var(--slide-accent); }
+    .feat-mono { font-family:var(--font-mono); font-size:0.9em; }
+  </style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- ══ 1 · Title ══ -->
+<section class="title-slide" data-background-color="#16213e">
+  <div style="color:white; text-align:center; padding:1em;">
+    <div class="week-badge" style="background:rgba(255,255,255,0.2); color:white;">Week 9</div>
+    <h1 style="color:white; font-size:1.55em; margin:0.4em 0 0.2em;">The Meaning of Language <span style="font-weight:300;">(Part 1)</span></h1>
+    <p style="color:rgba(255,255,255,0.8); font-size:0.6em; margin-bottom:0.3em;">
+      Semantics — Truth, Composition &amp; Word Meaning
+      <span class="ko-supp" style="display:block; color:rgba(255,255,255,0.65);">※ 언어의 의미 — 의미론: 진리·합성성·단어 의미</span>
+    </p>
+    <p style="color:rgba(255,255,255,0.55); font-size:0.48em; margin-bottom:1.3em;">
+      Chapter 4 · pp. 133–158
+    </p>
+    <p style="color:rgba(255,255,255,0.5); font-size:0.42em; font-style:italic;">
+      An Introduction to Language, 11th Ed. — Fromkin, Rodman &amp; Hyams
+    </p>
+  </div>
+  <aside class="notes">
+    Ch.4 전반부, 의미론(semantics)입니다. "단어와 문장의 의미를 안다는 것은 무엇인가?"를 다룹니다.
+    화자가 의식하지 못한 채 알고 있는 의미 지식(동의·모순·중의성 판단 등)을 낯설게 보여주는 것이 목표입니다.
+  </aside>
+</section>
+
+<!-- ══ 2 · Agenda ══ -->
+<section>
+  <h2>Agenda</h2>
+  <ul class="agenda-list">
+    <li>What speakers know about meaning</li>
+    <li>Truth, entailment, paraphrase, contradiction, ambiguity</li>
+    <li>Compositional semantics — the Principle of Compositionality</li>
+    <li>When compositionality fails — idioms, anomaly, metaphor</li>
+    <li>Lexical semantics — sense vs. reference; lexical relations</li>
+    <li>Semantic features · Argument structure &amp; thematic roles</li>
+  </ul>
+  <aside class="notes">
+    오늘 키워드: truth, entailment, compositionality, idiom, sense/reference, lexical relations, theta roles입니다.
+    문장 의미(합성적)와 단어 의미(어휘부)를 두 축으로 진행하세요.
+  </aside>
+</section>
+
+<!-- ══ 3 · What speakers know ══ -->
+<section data-background-color="#f8f9fa">
+  <h2>What Do Speakers Know About Meaning?</h2>
+  <div class="def-box">
+    <div class="term">Semantics = the study of the linguistic meaning of words and sentences</div>
+  </div>
+  <ul style="font-size:0.74em; line-height:1.9; margin-top:0.6em;">
+    <li>Speakers know when two sentences <strong>mean the same</strong> (paraphrase).</li>
+    <li>They know when a sentence is <strong>true given</strong> another (entailment).</li>
+    <li>They detect <strong>contradiction</strong> and <strong>ambiguity</strong> instantly.</li>
+  </ul>
+  <p class="ko-supp" style="margin-top:0.6em; font-size:0.68em;">
+    ※ 우리는 배운 적 없이도 두 문장의 동의·함의·모순·중의성을 <strong>직관적으로</strong> 판단한다.
+  </p>
+  <aside class="notes">
+    의미 지식도 음운·통사 지식처럼 무의식적입니다. 학생들에게 두 문장을 주고 "같은 뜻인가?"를
+    즉답하게 하면 이 직관을 실감시킬 수 있습니다.
+  </aside>
+</section>
+
+<!-- ══ 4 · Truth & entailment ══ -->
+<section>
+  <h2>1) Truth-Based Relations</h2>
+  <p style="font-size:0.72em;">Much of sentence meaning is captured by <span class="key">truth conditions</span> — the situations in which a sentence is true.</p>
+  <ul class="rel-list">
+    <li><b>Entailment</b> — if A is true, B must be true. <em>Jack ate meat</em> ⊨ <em>Jack ate food</em>.</li>
+    <li><b>Paraphrase</b> — A and B have the same truth conditions. <em>The cat chased the dog</em> = <em>The dog was chased by the cat</em>.</li>
+    <li><b>Contradiction</b> — A cannot be true. <em>*My unmarried sister is married.</em></li>
+  </ul>
+  <p class="ko-supp" style="margin-top:0.5em; font-size:0.66em;">※ 함의는 한 방향(entailment), 동의(paraphrase)는 서로 함의하는 양방향 관계.</p>
+  <aside class="notes">
+    함의(entailment)는 단방향, 동의(paraphrase)는 상호 함의로 정의됨을 강조하세요.
+    모순은 어떤 상황에서도 참이 될 수 없는 문장입니다.
+  </aside>
+</section>
+
+<!-- ══ 4b · Analytic vs Contradictory ══ -->
+<section>
+  <h2>Always True, Always False</h2>
+  <div class="two-col" style="font-size:0.72em;">
+    <div class="def-box">
+      <div class="term">Analytic (tautology)</div>
+      <p style="margin-top:0.3em;">True in every situation by meaning alone. <em>Circles are round</em>; <em>A bachelor is unmarried</em>.</p>
+    </div>
+    <div class="def-box">
+      <div class="term">Contradiction</div>
+      <p style="margin-top:0.3em;">False in every situation. <em>Circles are square</em>; <em>*A bachelor is married</em>.</p>
+    </div>
+  </div>
+  <p style="font-size:0.64em; margin-top:0.5em;">
+    Truth-conditional <span class="key">Semantic Rules</span> (I &amp; II) combine word meanings step by step — e.g. deriving the meaning of <em>Jack swims</em> from <em>Jack</em> and <em>swims</em> — to compute when a sentence is true.
+  </p>
+  <p class="ko-supp" style="font-size:0.62em; margin-top:0.3em;">※ 분석적(항진)문은 항상 참, 모순문은 항상 거짓 — 교재의 진리조건 규칙(Semantic Rule I·II)이 단어 의미를 합성해 진리값을 계산한다.</p>
+  <aside class="notes">
+    항진문(tautology, analytic)과 모순문(contradiction)을 진리조건으로 대비하세요.
+    교재의 Semantic Rule I·II가 단어 의미를 합성해 문장의 진리값을 도출한다는 점을 개념 수준에서 소개합니다.
+  </aside>
+</section>
+
+<!-- ══ 5 · Ambiguity ══ -->
+<section>
+  <h2>Ambiguity — One Form, Two Meanings</h2>
+  <div class="two-col" style="font-size:0.72em;">
+    <div class="def-box">
+      <div class="term">Lexical ambiguity</div>
+      <p style="margin-top:0.3em;">A single word has two senses. <em>She went to the <u>bank</u></em> — riverside or financial institution?</p>
+    </div>
+    <div class="def-box">
+      <div class="term">Structural ambiguity</div>
+      <p style="margin-top:0.3em;"><em>The boy saw the man with the telescope</em> — who has the telescope? Two structures, two meanings.</p>
+    </div>
+  </div>
+  <p style="font-size:0.66em; margin-top:0.5em;">
+    Structural ambiguity shows that meaning depends on <span class="key">syntactic structure</span>, not just word choice.
+  </p>
+  <p class="ko-supp" style="font-size:0.64em; margin-top:0.3em;">※ 어휘적 중의성 = 단어의 다의, 구조적 중의성 = 통사 구조 차이에서 발생.</p>
+  <aside class="notes">
+    구조적 중의성은 다음 슬라이드의 합성성으로 자연스럽게 이어집니다. 같은 단어들이라도
+    구조가 다르면 의미가 달라진다는 점을 예고하세요.
+  </aside>
+</section>
+
+<!-- ══ 6 · Compositionality ══ -->
+<section>
+  <h2>2) Compositional Semantics</h2>
+  <div class="summary-box">
+    <h4>The Principle of Compositionality</h4>
+    <p style="font-size:0.84em;">The meaning of a sentence is built from the meanings of its <span class="key">words</span> and the way they are <span class="key">syntactically combined</span>.</p>
+  </div>
+  <ul style="font-size:0.7em; line-height:1.8; margin-top:0.5em;">
+    <li>Same words, different structure → different meaning.</li>
+    <li><em>The dog bit the man</em> ≠ <em>The man bit the dog</em>.</li>
+    <li>This is why we can understand sentences we have never heard.</li>
+  </ul>
+  <p class="ko-supp" style="font-size:0.64em; margin-top:0.3em;">※ 합성성 원리 = 부분(단어)의 의미 + 결합 방식(구조) → 전체(문장)의 의미.</p>
+  <aside class="notes">
+    합성성은 문장 의미의 무한 생산을 설명하는 핵심 원리입니다. 어순·구조가 의미에 기여한다는 점을
+    dog/man 예로 각인시키세요.
+  </aside>
+</section>
+
+<!-- ══ 7 · Diagram: thematic roles ══ -->
+<section>
+  <h2>Diagram · Building Meaning from Structure</h2>
+  <p style="font-size:0.7em; color:var(--color-subtle);">The verb assigns <span class="key">thematic (theta) roles</span> to its arguments — meaning flows from structure.</p>
+  <div style="text-align:center;">
+    <svg viewBox="0 0 680 250" style="width:90%; max-width:780px; margin:0.2em auto; font-family:var(--font-main);">
+      <!-- Agent -->
+      <rect x="20" y="70" width="170" height="90" rx="14" fill="#fdf3e8" stroke="#c77b2e" stroke-width="2.5"/>
+      <text x="105" y="98" text-anchor="middle" font-size="15" font-weight="700" fill="#a5641f">AGENT</text>
+      <text x="105" y="128" text-anchor="middle" font-size="22" font-weight="700" fill="#7a5320">Maria</text>
+      <text x="105" y="150" text-anchor="middle" font-size="12" fill="#9a7340">the doer</text>
+      <!-- Verb -->
+      <rect x="255" y="85" width="150" height="60" rx="14" fill="#16213e" stroke="#16213e"/>
+      <text x="330" y="112" text-anchor="middle" font-size="20" font-weight="700" fill="#ffffff">handed</text>
+      <text x="330" y="132" text-anchor="middle" font-size="11" fill="#c9d4e8">3-place verb</text>
+      <!-- Theme -->
+      <rect x="470" y="20" width="185" height="80" rx="14" fill="#e8f4fd" stroke="#0077b6" stroke-width="2.5"/>
+      <text x="562" y="46" text-anchor="middle" font-size="14" font-weight="700" fill="#0077b6">THEME</text>
+      <text x="562" y="74" text-anchor="middle" font-size="19" font-weight="700" fill="#14425f">the key</text>
+      <!-- Goal -->
+      <rect x="470" y="130" width="185" height="80" rx="14" fill="#f4fdf3" stroke="#1b7f5e" stroke-width="2.5"/>
+      <text x="562" y="156" text-anchor="middle" font-size="14" font-weight="700" fill="#1b7f5e">GOAL</text>
+      <text x="562" y="184" text-anchor="middle" font-size="19" font-weight="700" fill="#1a4d36">to Sam</text>
+      <!-- links -->
+      <line x1="192" y1="115" x2="253" y2="115" stroke="#888" stroke-width="2.5"/>
+      <line x1="407" y1="108" x2="468" y2="72" stroke="#888" stroke-width="2.5"/>
+      <line x1="407" y1="122" x2="468" y2="165" stroke="#888" stroke-width="2.5"/>
+    </svg>
+  </div>
+  <p style="font-size:0.62em; text-align:center; color:var(--color-subtle);">
+    <em>Maria handed the key to Sam.</em> — the verb <em>hand</em> requires an agent, a theme, and a goal.
+  </p>
+  <aside class="notes">
+    술어(verb)가 논항에 의미역(theta role)을 부여하는 구조입니다. 논항구조(argument structure)와
+    의미역이 문장 의미를 조직한다는 점을 도식으로 각인시키세요.
+  </aside>
+</section>
+
+<!-- ══ 8 · When compositionality fails ══ -->
+<section>
+  <h2>3) When Compositionality Fails</h2>
+  <div class="rel-grid">
+    <div class="rc"><b>Idioms</b><br>Meaning is not the sum of parts. <em>kick the bucket</em> = die, not "strike a pail."</div>
+    <div class="rc"><b>Anomaly</b><br>Grammatical but meaningless: <span class="anom">Colorless green ideas sleep furiously.</span></div>
+    <div class="rc"><b>Metaphor</b><br>Non-literal transfer: <em>Time is money</em>; <em>the classroom was a zoo</em>.</div>
+    <div class="rc"><b>Why it matters</b><br>These show meaning is not always fully predictable from structure alone.</div>
+  </div>
+  <p class="ko-supp" style="font-size:0.64em; margin-top:0.4em;">※ 관용구·의미 이상·은유는 합성성이 깨지는 대표 사례 — 부분의 합으로 전체 의미를 예측 못 함.</p>
+  <aside class="notes">
+    Chomsky의 "Colorless green ideas…"는 통사적 적형성과 의미적 적형성이 별개임을 보여주는 고전 예입니다.
+    관용구는 통째로 어휘부에 저장된다는 점도 언급하세요.
+  </aside>
+</section>
+
+<!-- ══ 9 · Sense vs Reference ══ -->
+<section>
+  <h2>4) Lexical Semantics — Sense vs. Reference</h2>
+  <div class="two-col" style="font-size:0.72em;">
+    <div class="card">
+      <h3>Reference</h3>
+      <p style="font-size:0.86em;">The real-world entity a word points to. <em>Superman</em> and <em>Clark Kent</em> pick out the same person.</p>
+    </div>
+    <div class="card">
+      <h3>Sense</h3>
+      <p style="font-size:0.86em;">The mental concept / mode of presentation. The two names have the <strong>same reference</strong> but a <strong>different sense</strong>.</p>
+    </div>
+  </div>
+  <p style="font-size:0.66em; margin-top:0.5em;">
+    Some expressions have sense but <span class="key">no reference</span> — <em>the present King of France</em>, <em>a unicorn</em>.
+  </p>
+  <p class="ko-supp" style="font-size:0.64em; margin-top:0.3em;">※ 지시(reference) = 가리키는 대상, 의미(sense) = 개념·제시 방식. 둘은 구별된다.</p>
+  <aside class="notes">
+    Frege의 Sinn(sense)/Bedeutung(reference) 구분입니다. 교재의 Superman·Clark Kent 예로 같은 지시체라도
+    의미(제시 방식)가 다를 수 있음을 보여주세요.
+  </aside>
+</section>
+
+<!-- ══ 10 · Lexical relations ══ -->
+<section>
+  <h2>Lexical Relations</h2>
+  <ul class="rel-list">
+    <li><b>Synonyms</b> — similar meaning: <em>couch / sofa</em>, <em>big / large</em>.</li>
+    <li><b>Antonyms</b> — opposite: complementary (<em>alive/dead</em>), gradable (<em>hot/cold</em>), relational (<em>buy/sell</em>).</li>
+    <li><b>Homonyms / homophones</b> — same form, unrelated senses: <em>bat</em> (animal / club); <em>to / too / two</em>.</li>
+    <li><b>Polysemy</b> — one word, related senses: <em>bright</em> (light / clever).</li>
+    <li><b>Hyponyms</b> — meaning inclusion: <em>red</em> is a hyponym of <em>color</em>; <em>lion</em> of <em>feline</em>.</li>
+  </ul>
+  <p class="ko-supp" style="font-size:0.6em; margin-top:0.3em;">※ 반의어 3종: 상보(중간 없음)·정도(중간 있음)·관계(방향 대립)로 구분.</p>
+  <aside class="notes">
+    반의어의 세 유형 구분이 시험 포인트입니다. 상보반의어는 부정하면 반대가 되지만(살아있지 않다=죽었다),
+    정도반의어는 그렇지 않다(뜨겁지 않다≠차갑다)는 점을 강조하세요.
+  </aside>
+</section>
+
+<!-- ══ 11 · Semantic features ══ -->
+<section>
+  <h2>Semantic Features</h2>
+  <p style="font-size:0.72em;">Word meanings can be decomposed into <span class="key">semantic features</span>, much like sounds decompose into phonetic features.</p>
+  <table>
+    <tr><th>Word</th><th>[±human]</th><th>[±adult]</th><th>[±male]</th></tr>
+    <tr><td>man</td><td>+</td><td>+</td><td>+</td></tr>
+    <tr><td>woman</td><td>+</td><td>+</td><td>−</td></tr>
+    <tr><td>boy</td><td>+</td><td>−</td><td>+</td></tr>
+    <tr><td>girl</td><td>+</td><td>−</td><td>−</td></tr>
+  </table>
+  <p style="font-size:0.66em; margin-top:0.4em;">
+    Features explain relations: <em>man</em> and <em>boy</em> share <span class="feat-mono">[+human, +male]</span>, differing only in <span class="feat-mono">[±adult]</span>.
+  </p>
+  <p class="ko-supp" style="font-size:0.62em; margin-top:0.3em;">※ 의미 자질 분석은 동의·반의·상하위 관계를 체계적으로 설명해 준다.</p>
+  <aside class="notes">
+    의미 자질(semantic features)은 음운 자질과 평행합니다. 자질 표기로 어휘 관계를 형식화할 수 있음을
+    표로 보여주세요.
+  </aside>
+</section>
+
+<!-- ══ 12 · Thematic roles ══ -->
+<section>
+  <h2>5) Argument Structure &amp; Thematic Roles</h2>
+  <p style="font-size:0.7em;">Each verb has an <span class="key">argument structure</span> — how many participants it needs and what <span class="key">theta roles</span> they play.</p>
+  <div class="theta-grid">
+    <div class="tc"><b>Agent</b>the doer — <em>Sam</em> opened…</div>
+    <div class="tc"><b>Theme</b>undergoer / receiver — …the <em>door</em></div>
+    <div class="tc"><b>Goal</b>endpoint — …to <em>Mary</em></div>
+    <div class="tc"><b>Source</b>origin — from <em>the shelf</em></div>
+    <div class="tc"><b>Instrument</b>means — with a <em>key</em></div>
+    <div class="tc"><b>Experiencer</b>who perceives — <em>Lee</em> heard…</div>
+  </div>
+  <p class="ko-supp" style="font-size:0.62em; margin-top:0.4em;">※ 같은 명사구라도 문장에서 맡는 의미역이 다를 수 있다 — 의미역은 통사 위치가 아니라 해석의 역할.</p>
+  <aside class="notes">
+    의미역(theta role)은 논항이 사건에서 맡는 역할입니다. 주어=행위자가 항상 성립하는 것은 아님을
+    강조하세요(예: The door opened에서 door는 theme).
+  </aside>
+</section>
+
+<!-- ══ 13 · Practice Quiz Q1 ══ -->
+<section data-background-color="#f8f9fa">
+  <span class="practice-header">Practice · Check Your Understanding</span>
+  <div class="mcq">
+    <div class="mcq-q"><span class="qnum">1</span>"<em>Jack boiled the water</em>" entails "<em>The water boiled</em>." This relation is called:</div>
+    <div class="mcq-opts">
+      <button class="mcq-opt" data-correct="true"><span class="opt-key">A</span>Entailment</button>
+      <button class="mcq-opt"><span class="opt-key">B</span>Contradiction</button>
+      <button class="mcq-opt"><span class="opt-key">C</span>Anomaly</button>
+    </div>
+    <div class="mcq-explain"><span class="lbl">Explanation</span> If the first sentence is true, the second must also be true — that one-way truth relation is entailment.</div>
+  </div>
+  <aside class="notes">
+    함의의 단방향성을 확인하는 문항입니다. 학생이 선택 후 해설을 공개하세요.
+  </aside>
+</section>
+
+<!-- ══ 14 · Practice Quiz Q2 ══ -->
+<section data-background-color="#f8f9fa">
+  <span class="practice-header">Practice · Check Your Understanding</span>
+  <div class="mcq">
+    <div class="mcq-q"><span class="qnum">2</span>"<em>Colorless green ideas sleep furiously</em>" is grammatical yet meaningless. This illustrates:</div>
+    <div class="mcq-opts">
+      <button class="mcq-opt"><span class="opt-key">A</span>Structural ambiguity</button>
+      <button class="mcq-opt" data-correct="true"><span class="opt-key">B</span>Semantic anomaly</button>
+      <button class="mcq-opt"><span class="opt-key">C</span>Paraphrase</button>
+    </div>
+    <div class="mcq-explain"><span class="lbl">Explanation</span> The sentence obeys syntactic rules but combines incompatible semantic features (<em>colorless</em> vs. <em>green</em>; <em>ideas</em> cannot <em>sleep</em>) → semantic anomaly.</div>
+  </div>
+  <aside class="notes">
+    통사적 적형성 ≠ 의미적 적형성. Chomsky의 고전 예로 이 구분을 확인시키세요.
+  </aside>
+</section>
+
+<!-- ══ 15 · Practice Quiz Q3 ══ -->
+<section data-background-color="#f8f9fa">
+  <span class="practice-header">Practice · Check Your Understanding</span>
+  <div class="mcq">
+    <div class="mcq-q"><span class="qnum">3</span>Which pair are <em>relational</em> antonyms?</div>
+    <div class="mcq-opts">
+      <button class="mcq-opt"><span class="opt-key">A</span>hot / cold</button>
+      <button class="mcq-opt"><span class="opt-key">B</span>alive / dead</button>
+      <button class="mcq-opt" data-correct="true"><span class="opt-key">C</span>employer / employee</button>
+    </div>
+    <div class="mcq-explain"><span class="lbl">Explanation</span> Relational antonyms describe the same relation from opposite viewpoints — one cannot exist without the other. <em>hot/cold</em> is gradable; <em>alive/dead</em> is complementary.</div>
+  </div>
+  <aside class="notes">
+    반의어 3종 구분 문항. 관계반의어는 상호 의존적 쌍(buy/sell, parent/child 등)임을 강조하세요.
+  </aside>
+</section>
+
+<!-- ══ 16 · Exercises Q4 ══ -->
+<section data-background-color="#f8f9fa">
+  <span class="practice-header">Exercises · Based on Textbook Ch.4</span>
+  <div class="mcq">
+    <div class="mcq-q"><span class="qnum">4</span>In "<em>The chef sliced the bread with a knife</em>," what theta role does <em>a knife</em> bear? <span style="font-weight:400; color:var(--color-subtle); font-size:0.85em;">(cf. textbook Ch.4, pp.156–158)</span></div>
+    <div class="mcq-opts">
+      <button class="mcq-opt"><span class="opt-key">A</span>Agent</button>
+      <button class="mcq-opt" data-correct="true"><span class="opt-key">B</span>Instrument</button>
+      <button class="mcq-opt"><span class="opt-key">C</span>Goal</button>
+    </div>
+    <div class="mcq-explain"><span class="lbl">Explanation</span> <em>a knife</em> is the means by which the action is carried out → the instrument role. The agent is <em>the chef</em>; the theme is <em>the bread</em>.</div>
+  </div>
+  <aside class="notes">
+    교재 Ch.4 의미역 연습을 개념 중심으로 재구성한 문항입니다(원문 복제 아님).
+    행위자·대상·도구를 한 문장에서 함께 짚어 주세요.
+  </aside>
+</section>
+
+<!-- ══ 17 · Exercises Q5 ══ -->
+<section data-background-color="#f8f9fa">
+  <span class="practice-header">Exercises · Based on Textbook Ch.4</span>
+  <div class="mcq">
+    <div class="mcq-q"><span class="qnum">5</span>Why can "<em>The boy saw the man with the telescope</em>" mean two different things? <span style="font-weight:400; color:var(--color-subtle); font-size:0.85em;">(cf. textbook Ch.4, pp.136–137)</span></div>
+    <div class="mcq-opts">
+      <button class="mcq-opt"><span class="opt-key">A</span>The word <em>telescope</em> is a homonym.</button>
+      <button class="mcq-opt" data-correct="true"><span class="opt-key">B</span>The phrase attaches to two different structures, and meaning is compositional.</button>
+      <button class="mcq-opt"><span class="opt-key">C</span>The sentence is an idiom.</button>
+    </div>
+    <div class="mcq-explain"><span class="lbl">Explanation</span> This is <span class="key">structural (syntactic) ambiguity</span>: <em>with the telescope</em> can modify <em>saw</em> (the boy used it) or <em>the man</em> (the man had it). Because meaning is compositional, different structures yield different meanings — same words.</div>
+  </div>
+  <p class="ko-supp" style="font-size:0.6em; margin-top:0.5em;">※ 더 풀어보기: 교재 Ch.4 Exercises (함의/동의 판별, 반의어 유형, 의미역 배정) — 과제로 권장.</p>
+  <aside class="notes">
+    교재 Ch.4 중의성 연습을 재구성했습니다. 어휘적 중의성(A)과 구조적 중의성(B)을 대비해 설명하세요.
+  </aside>
+</section>
+
+<!-- ══ 18 · Summary ══ -->
+<section>
+  <h2>Summary</h2>
+  <div class="summary-box">
+    <h4>Key Points</h4>
+    <ul style="font-size:0.8em; line-height:1.85;">
+      <li>Speakers know meaning relations: <span class="key">entailment, paraphrase, contradiction, ambiguity</span></li>
+      <li>Meaning is <span class="key">compositional</span> — words + structure</li>
+      <li>Compositionality fails with <span class="key">idioms, anomaly, metaphor</span></li>
+      <li>Word meaning: <span class="key">sense</span> ≠ <span class="key">reference</span>; rich <span class="key">lexical relations</span></li>
+      <li>Meaning decomposes into <span class="key">semantic features</span></li>
+      <li>Verbs assign <span class="key">thematic roles</span> to their arguments</li>
+    </ul>
+  </div>
+  <aside class="notes">
+    문장 의미(합성적)와 단어 의미(어휘부)라는 두 축을 정리하세요. 의미역과 논항구조는 통사론과
+    의미론을 잇는 다리이므로 특히 강조합니다.
+  </aside>
+</section>
+
+<!-- ══ 19 · Next Week ══ -->
+<section>
+  <h2 style="margin-bottom:0.3em;">Next Week — Week 10</h2>
+  <div class="next-week-banner">
+    <div class="label">Next Class</div>
+    <p><strong>The Meaning of Language (Part 2): Pragmatics</strong> — Ch.4 · pp.159–182</p>
+  </div>
+  <h3 style="margin:0.55em 0 0.2em;">Preview</h3>
+  <ul style="font-size:0.66em; line-height:1.55; margin:0;">
+    <li>Meaning in context — linguistic vs. situational context</li>
+    <li>Deixis, reference &amp; anaphora, presupposition</li>
+    <li>Grice's Cooperative Principle and the four Maxims</li>
+    <li>Speech acts — performatives &amp; illocutionary force</li>
+  </ul>
+  <div class="next-week-banner" style="margin-top:0.5em;">
+    <div class="label">Preparation · Assignment</div>
+    <p>Read textbook Ch.4 pp.159–182 · work the end-of-chapter Exercises</p>
+  </div>
+  <aside class="notes">
+    다음 주는 의미론에서 화용론으로 넘어갑니다. 오늘의 '문장 의미'가 맥락 속에서 어떻게 확장되는지가
+    예고 포인트입니다.
+  </aside>
+</section>
+
+</div><!-- /slides -->
+</div><!-- /reveal -->
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script>
+  Reveal.initialize({
+    hash: true,
+    slideNumber: 'c/t',
+    progress: true,
+    center: false,
+    transition: 'slide',
+    transitionSpeed: 'fast',
+    plugins: []
+  });
+</script>
+<a class="home-btn" href="../index.html" title="강의 목록으로">← 목록</a>
+<script src="assets/slides-print.js"></script>
+<script src="assets/slides-quiz.js"></script>
+<script src="assets/slides-ko-toggle.js"></script>
+</body>
+</html>

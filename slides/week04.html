@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Week 4 — Morphology (Part 1) | Topics in English Linguistics</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css" />
+  <link rel="stylesheet" href="assets/linguistics-theme.css" />
+  <link rel="stylesheet" href="assets/slides-quiz.css" />
+  <link rel="stylesheet" href="assets/slides-ko.css" />
+  <style>
+    :root { --slide-accent: #1b7f5e; }
+    .morph-grid { display:grid; grid-template-columns:1fr 1fr; gap:0.8em; }
+    .morph-grid .card h3 { border-bottom:none; }
+    .affix-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:0.5em; font-size:0.7em; }
+    .affix-grid .af { background:var(--color-bg-alt); border:1px solid var(--color-border);
+      border-radius:8px; padding:0.45em 0.7em; }
+    .affix-grid .af b { color:var(--slide-accent); }
+    .infl-list { list-style:none; padding:0; font-size:0.68em; }
+    .infl-list li { display:flex; justify-content:space-between; padding:0.24em 0.5em;
+      border-bottom:1px solid var(--color-border); }
+    .infl-list li:last-child { border-bottom:none; }
+    .infl-list .aff { font-weight:700; color:var(--slide-accent); }
+    .infl-list .eg { color:var(--color-subtle); font-size:0.9em; }
+    .chip { display:inline-block; background:var(--color-bg-alt); border:1px solid var(--color-border);
+      border-radius:6px; padding:0.1em 0.5em; font-size:0.9em; margin:0.1em; }
+    .ref-note { font-weight:400; color:var(--color-subtle); font-size:0.85em; }
+  </style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- ══ 1 · Title ══ -->
+<section class="title-slide" data-background-color="#16213e">
+  <div style="color:white; text-align:center; padding:1em;">
+    <div class="week-badge" style="background:rgba(255,255,255,0.2); color:white;">Week 4</div>
+    <h1 style="color:white; font-size:1.55em; margin:0.4em 0 0.2em;">Morphology <span style="font-weight:300;">(Part 1)</span></h1>
+    <p style="color:rgba(255,255,255,0.8); font-size:0.6em; margin-bottom:0.3em;">
+      Morphemes, Word Structure &amp; the Building Blocks of Words
+      <span class="ko-supp" style="display:block; color:rgba(255,255,255,0.65);">※ 형태론 1부 — 형태소, 단어의 구조, 단어를 이루는 최소 단위</span>
+    </p>
+    <p style="color:rgba(255,255,255,0.55); font-size:0.48em; margin-bottom:1.3em;">
+      Chapter 2 · pp. 33–48
+    </p>
+    <p style="color:rgba(255,255,255,0.5); font-size:0.42em; font-style:italic;">
+      An Introduction to Language, 11th Ed. — Fromkin, Rodman &amp; Hyams
+    </p>
+  </div>
+  <aside class="notes">
+    Ch.2 전반부, 형태론의 기초입니다. 단어가 더 작은 의미 단위(형태소)로 이루어진다는 발견에서 출발합니다.
+    지난주의 '이산성(discreteness)'이 단어 안에서도 성립함을 보여주세요.
+  </aside>
+</section>
+
+<!-- ══ 2 · Agenda ══ -->
+<section>
+  <h2>Agenda</h2>
+  <ul class="agenda-list">
+    <li>Content vs. function words</li>
+    <li>Morphemes — the minimal units of meaning</li>
+    <li>Bound vs. free morphemes</li>
+    <li>Roots and affixes — prefix, suffix, infix, circumfix</li>
+    <li>Derivational vs. inflectional morphology</li>
+    <li>The regular inflection of English</li>
+  </ul>
+  <aside class="notes">
+    오늘의 키워드는 morpheme, bound/free, root/affix, derivational/inflectional입니다. 이 구분들이
+    앞으로 단어 형성을 분석하는 도구가 됩니다.
+  </aside>
+</section>
+
+<!-- ══ 3 · Content vs Function Words ══ -->
+<section data-background-color="#f8f9fa">
+  <h2>Content vs. Function Words</h2>
+  <div class="morph-grid">
+    <div class="card">
+      <h3>Content Words</h3>
+      <p style="font-size:0.72em;">Nouns, verbs, adjectives, adverbs. They carry the main <strong>meaning</strong> and form an <span class="key">open class</span> — new ones are added freely.</p>
+    </div>
+    <div class="card">
+      <h3>Function Words</h3>
+      <p style="font-size:0.72em;">Articles, prepositions, pronouns, conjunctions. They signal <strong>grammatical relations</strong> and form a <span class="key">closed class</span>.</p>
+    </div>
+  </div>
+  <p style="font-size:0.68em; margin-top:0.5em;">We coin new content words (<em>selfie, blog</em>) easily, but rarely a new preposition.</p>
+  <p style="font-size:0.6em; margin-top:0.35em; color:var(--color-subtle);">Evidence for the split: readers skip function words in the "count the F's" test, and some aphasic patients read <em>inn / witch</em> but not <em>in / which</em>. <span class="ref-note">(cf. textbook Ch.2, pp.35–36)</span></p>
+  <p class="ko-supp" style="font-size:0.64em; margin-top:0.3em;">※ 내용어는 열린 부류(신어 추가 자유), 기능어는 닫힌 부류. 심리·신경언어학적 증거도 두 부류를 구분한다.</p>
+  <aside class="notes">
+    내용어(open class)와 기능어(closed class)의 구분. 신어가 대부분 명사·동사·형용사인 이유를 열린 부류
+    개념으로 설명하세요. 기능어는 문법 관계를 표시합니다.
+  </aside>
+</section>
+
+<!-- ══ 4 · Morphemes ══ -->
+<section>
+  <h2>Morphemes — Minimal Units of Meaning</h2>
+  <div class="def-box">
+    <div class="term">Morpheme = the smallest unit of linguistic meaning or function</div>
+  </div>
+  <p style="font-size:0.72em; margin-top:0.5em;"><em>talkers</em> = <span class="chip">talk</span> + <span class="chip">-er</span> + <span class="chip">-s</span> → three morphemes: "verb" + "one who does" + "plural."</p>
+  <ul style="font-size:0.7em; line-height:1.8; margin-top:0.3em;">
+    <li>A morpheme cannot be broken into smaller meaningful parts.</li>
+    <li>Words are <span class="key">discrete</span> — built from a fixed set of these units.</li>
+    <li>One sound sequence can be one morpheme (<em>cat</em>) or several (<em>cats</em>).</li>
+  </ul>
+  <p class="ko-supp" style="font-size:0.64em; margin-top:0.3em;">※ 형태소는 의미·기능의 최소 단위 — 더 쪼개면 의미를 잃는다.</p>
+  <aside class="notes">
+    형태소(morpheme)의 정의를 명확히. talkers를 talk+er+s로 분해하는 예로 "최소 의미 단위"를 체감시키세요.
+    단어의 이산성이 여기서도 드러납니다.
+  </aside>
+</section>
+
+<!-- ══ 5 · Bound vs Free ══ -->
+<section>
+  <h2>Bound vs. Free Morphemes</h2>
+  <div class="morph-grid">
+    <div class="card">
+      <h3>Free Morphemes</h3>
+      <p style="font-size:0.72em;">Can stand alone as words: <em>house</em>, <em>run</em>, <em>the</em>, <em>and</em>.</p>
+    </div>
+    <div class="card">
+      <h3>Bound Morphemes</h3>
+      <p style="font-size:0.72em;">Must attach to something else: <em>-er</em>, <em>un-</em>, <em>-s</em>, <em>-ceive</em> (as in <em>receive</em>).</p>
+    </div>
+  </div>
+  <p style="font-size:0.68em; margin-top:0.5em;">All <span class="key">affixes</span> are bound. Some roots are bound too — <em>-ceive</em> (receive) and <em>-mit</em> (remit) never stand alone. <span class="ref-note">(cf. textbook Ch.2, p.43)</span></p>
+  <p class="ko-supp" style="font-size:0.64em; margin-top:0.3em;">※ 접사는 모두 의존형태소. 어근 중에도 의존형이 있다(-ceive, -mit).</p>
+  <aside class="notes">
+    자립(free)/의존(bound) 형태소 구분. 접사는 모두 의존형이지만, 어근 중에도 의존형(-ceive, -mit)이 있다는
+    점이 헷갈리기 쉬우므로 강조하세요.
+  </aside>
+</section>
+
+<!-- ══ 6 · Roots and Affixes ══ -->
+<section>
+  <h2>Roots and Affixes</h2>
+  <p style="font-size:0.72em;">A <span class="key">root</span> is the core carrying the main meaning; <span class="key">affixes</span> attach to it.</p>
+  <div class="affix-grid">
+    <div class="af"><b>Prefix</b> — before the root: <em>un-</em>happy, <em>re-</em>do</div>
+    <div class="af"><b>Suffix</b> — after the root: kind<em>-ness</em>, teach<em>-er</em></div>
+    <div class="af"><b>Infix</b> — inside the root (rare in English): <em>abso-blooming-lutely</em></div>
+    <div class="af"><b>Circumfix</b> — around the root: German <em>ge-</em>lieb<em>-t</em> ("loved")</div>
+  </div>
+  <p style="font-size:0.62em; margin-top:0.4em;">A <span class="key">base</span> is any root or stem an affix attaches to; stems build up in layers: <em>system → systematic → unsystematic</em>. <span class="ref-note">(cf. textbook Ch.2, p.42)</span></p>
+  <p class="ko-supp" style="font-size:0.62em; margin-top:0.35em;">※ 영어는 접두사·접미사가 주류. 접요사·접환사는 다른 언어에서 흔하다. 어기(base)=접사가 붙는 어근·어간, 층층이 쌓인다.</p>
+  <aside class="notes">
+    접사의 네 위치: 접두사·접미사·접요사·접환사. 영어는 접두·접미가 대부분이고, 접요사는 표현적 삽입
+    (abso-blooming-lutely) 정도, 접환사는 독일어 과거분사 등 다른 언어에서 전형적입니다.
+  </aside>
+</section>
+
+<!-- ══ 7 · Derivational vs Inflectional ══ -->
+<section>
+  <h2>Derivational vs. Inflectional</h2>
+  <div class="morph-grid">
+    <div class="card">
+      <h3>Derivational</h3>
+      <p style="font-size:0.7em;">Creates a <strong>new word</strong>, often changing category: <em>teach</em> (V) → <em>teacher</em> (N); <em>happy</em> (A) → <em>happiness</em> (N).</p>
+    </div>
+    <div class="card">
+      <h3>Inflectional</h3>
+      <p style="font-size:0.7em;">Adds a <strong>grammatical</strong> ending without changing category: <em>cat</em> → <em>cats</em>; <em>walk</em> → <em>walked</em>.</p>
+    </div>
+  </div>
+  <p style="font-size:0.66em; margin-top:0.5em;">English has only <span class="key">8 inflectional affixes</span>; derivation is far more varied and can change word class.</p>
+  <p class="ko-supp" style="font-size:0.62em; margin-top:0.3em;">※ 파생은 새 단어(품사 변화 가능), 굴절은 문법 기능(품사 불변).</p>
+  <aside class="notes">
+    파생(derivational)과 굴절(inflectional)의 대비가 이 챕터의 핵심. 파생은 품사를 바꿀 수 있고 새 단어를
+    만들며, 굴절은 문법 정보를 더할 뿐 품사를 바꾸지 않습니다. 영어 굴절 접사는 딱 8개뿐입니다.
+  </aside>
+</section>
+
+<!-- ══ 8 · The 8 English Inflections ══ -->
+<section>
+  <h2>The Eight Inflectional Affixes of English</h2>
+  <ul class="infl-list">
+    <li><span class="aff">-s</span> plural <span class="eg">cat → cat<b>s</b></span></li>
+    <li><span class="aff">-'s</span> possessive <span class="eg">Ann → Ann<b>'s</b></span></li>
+    <li><span class="aff">-s</span> 3rd sg. present <span class="eg">walk → walk<b>s</b></span></li>
+    <li><span class="aff">-ed</span> past tense <span class="eg">walk → walk<b>ed</b></span></li>
+    <li><span class="aff">-ing</span> progressive <span class="eg">walk → walk<b>ing</b></span></li>
+    <li><span class="aff">-en</span> past participle <span class="eg">eat → eat<b>en</b></span></li>
+    <li><span class="aff">-er</span> comparative <span class="eg">tall → tall<b>er</b></span></li>
+    <li><span class="aff">-est</span> superlative <span class="eg">tall → tall<b>est</b></span></li>
+  </ul>
+  <p class="ko-supp" style="font-size:0.6em; margin-top:0.3em;">※ 영어의 굴절 접사는 이 8개가 전부 — 모두 접미사다.</p>
+  <aside class="notes">
+    영어의 8개 굴절 접사를 한눈에 정리한 표입니다. 모두 접미사라는 점, 그리고 이 목록이 닫혀 있다는 점
+    (새 굴절 접사는 생기지 않는다)을 강조하세요.
+  </aside>
+</section>
+
+<!-- ══ 9 · Diagram: Morpheme Tree ══ -->
+<section>
+  <h2>Diagram · Breaking a Word into Morphemes</h2>
+  <p style="font-size:0.7em; color:var(--color-subtle);">Each layer of <em>un·system·atic·al·ly</em> is one morpheme added in order.</p>
+  <div style="text-align:center;">
+    <svg viewBox="0 0 700 260" style="width:92%; max-width:800px; margin:0.2em auto; font-family:var(--font-main);">
+      <!-- morpheme chips row -->
+      <g font-size="16" font-weight="700">
+        <rect x="30"  y="30" width="90"  height="42" rx="9" fill="#e8f5e9" stroke="#1b7f5e" stroke-width="2"/>
+        <text x="75"  y="57" text-anchor="middle" fill="#14543f">un-</text>
+        <rect x="130" y="30" width="130" height="42" rx="9" fill="#eef7ec" stroke="#2d6a4f" stroke-width="2"/>
+        <text x="195" y="57" text-anchor="middle" fill="#14543f">system</text>
+        <rect x="270" y="30" width="110" height="42" rx="9" fill="#e8f5e9" stroke="#1b7f5e" stroke-width="2"/>
+        <text x="325" y="57" text-anchor="middle" fill="#14543f">-atic</text>
+        <rect x="390" y="30" width="90"  height="42" rx="9" fill="#e8f5e9" stroke="#1b7f5e" stroke-width="2"/>
+        <text x="435" y="57" text-anchor="middle" fill="#14543f">-al</text>
+        <rect x="490" y="30" width="90"  height="42" rx="9" fill="#e8f5e9" stroke="#1b7f5e" stroke-width="2"/>
+        <text x="535" y="57" text-anchor="middle" fill="#14543f">-ly</text>
+      </g>
+      <!-- labels -->
+      <g font-size="12" fill="#5a6b78">
+        <text x="75"  y="92" text-anchor="middle">prefix · Adj→Adj</text>
+        <text x="195" y="92" text-anchor="middle">root (N)</text>
+        <text x="325" y="92" text-anchor="middle">N→Adj</text>
+        <text x="435" y="92" text-anchor="middle">Adj→Adj</text>
+        <text x="535" y="92" text-anchor="middle">Adj→Adv</text>
+      </g>
+      <!-- staged brackets -->
+      <g font-size="14" fill="#14543f">
+        <line x1="130" y1="130" x2="380" y2="130" stroke="#2d6a4f" stroke-width="2"/>
+        <text x="255" y="150" text-anchor="middle">systematic (Adj)</text>
+        <line x1="30"  y1="175" x2="380" y2="175" stroke="#1b7f5e" stroke-width="2"/>
+        <text x="205" y="195" text-anchor="middle">unsystematic (Adj)</text>
+        <line x1="30"  y1="220" x2="580" y2="220" stroke="#1b7f5e" stroke-width="2.5"/>
+        <text x="305" y="240" text-anchor="middle" font-weight="700">unsystematically (Adv)</text>
+      </g>
+    </svg>
+  </div>
+  <p style="font-size:0.58em; text-align:center; color:var(--color-subtle);">
+    5 morphemes, added in a fixed order — but only some affixes change the category (<em>-atic</em>: N→Adj, <em>-ly</em>: Adj→Adv); <em>un-</em> and <em>-al</em> keep it. <span class="ref-note">(cf. textbook Ch.2, pp.42, 49–50)</span>
+  </p>
+  <aside class="notes">
+    un-system-atic-al-ly를 5개 형태소로 분해하고 층층이 쌓이는 과정을 도식으로 보여줍니다. 단, 접사가
+    모두 품사를 바꾸는 것은 아님을 강조하세요 — -atic(N→Adj)과 -ly(Adj→Adv)만 품사를 바꾸고, un-과 -al은
+    품사를 유지합니다. 다음 주 '위계적 구조(트리)'의 예고편이기도 합니다.
+  </aside>
+</section>
+
+<!-- ══ 10 · Practice Q1 ══ -->
+<section data-background-color="#f8f9fa">
+  <span class="practice-header">Practice · Check Your Understanding</span>
+  <div class="mcq">
+    <div class="mcq-q"><span class="qnum">1</span>How many morphemes are in the word <em>unhappiness</em>?</div>
+    <div class="mcq-opts">
+      <button class="mcq-opt"><span class="opt-key">A</span>Two (unhappy + ness)</button>
+      <button class="mcq-opt" data-correct="true"><span class="opt-key">B</span>Three (un + happy + ness)</button>
+      <button class="mcq-opt"><span class="opt-key">C</span>Four (un + hap + py + ness)</button>
+    </div>
+    <div class="mcq-explain"><span class="lbl">Explanation</span> <em>un-</em> (prefix) + <em>happy</em> (free root) + <em>-ness</em> (suffix) = three morphemes. <em>hap</em> and <em>py</em> are not separate meaningful units.</div>
+  </div>
+  <aside class="notes">
+    형태소 분석 연습. happy는 더 쪼갤 수 없는 하나의 어근임을 강조(hap/py는 형태소가 아님).
+  </aside>
+</section>
+
+<!-- ══ 11 · Practice Q2 ══ -->
+<section data-background-color="#f8f9fa">
+  <span class="practice-header">Practice · Check Your Understanding</span>
+  <div class="mcq">
+    <div class="mcq-q"><span class="qnum">2</span>Which affix is <em>derivational</em> rather than inflectional?</div>
+    <div class="mcq-opts">
+      <button class="mcq-opt"><span class="opt-key">A</span>-ed in <em>walked</em></button>
+      <button class="mcq-opt"><span class="opt-key">B</span>-s in <em>books</em></button>
+      <button class="mcq-opt" data-correct="true"><span class="opt-key">C</span>-ment in <em>government</em></button>
+    </div>
+    <div class="mcq-explain"><span class="lbl">Explanation</span> <em>-ment</em> creates a new word and changes category (verb <em>govern</em> → noun <em>government</em>) — that is derivation. <em>-ed</em> and <em>-s</em> are two of the eight English inflections.</div>
+  </div>
+  <aside class="notes">
+    파생/굴절 구분 문항. -ment는 동사를 명사로 바꾸는 파생 접사. 오답 A·B는 굴절 접사(8개 목록)임을
+    상기시키세요.
+  </aside>
+</section>
+
+<!-- ══ 12 · Exercises Q3 ══ -->
+<section data-background-color="#f8f9fa">
+  <span class="practice-header">Exercises · Based on Textbook Ch.2</span>
+  <div class="mcq">
+    <div class="mcq-q"><span class="qnum">3</span>Which of these is a <em>bound</em> morpheme that is also a <em>root</em>? <span class="ref-note">(cf. textbook Ch.2, p.43)</span></div>
+    <div class="mcq-opts">
+      <button class="mcq-opt"><span class="opt-key">A</span>book</button>
+      <button class="mcq-opt" data-correct="true"><span class="opt-key">B</span>-ceive (as in <em>receive, perceive</em>)</button>
+      <button class="mcq-opt"><span class="opt-key">C</span>-ing</button>
+    </div>
+    <div class="mcq-explain"><span class="lbl">Explanation</span> <em>-ceive</em> carries the core meaning of words like <em>receive/perceive</em> (a root) yet cannot stand alone (bound). <em>book</em> is a free root; <em>-ing</em> is a bound <em>affix</em>, not a root.</div>
+  </div>
+  <aside class="notes">
+    교재 Ch.2를 개념 중심으로 재구성한 문항(원문 복제 아님). '의존 어근'이라는 헷갈리는 범주를 확인합니다.
+    -ceive는 어근이지만 자립하지 못한다는 점이 핵심.
+  </aside>
+</section>
+
+<!-- ══ 13 · Exercises Q4 ══ -->
+<section data-background-color="#f8f9fa">
+  <span class="practice-header">Exercises · Based on Textbook Ch.2</span>
+  <div class="mcq">
+    <div class="mcq-q"><span class="qnum">4</span>Why can English add unlimited new content words but not new inflectional endings? <span class="ref-note">(cf. textbook Ch.2, p.35)</span></div>
+    <div class="mcq-opts">
+      <button class="mcq-opt"><span class="opt-key">A</span>Content words are shorter and easier to invent.</button>
+      <button class="mcq-opt" data-correct="true"><span class="opt-key">B</span>Content words form an open class, but the inflectional system is a small closed set (8 affixes).</button>
+      <button class="mcq-opt"><span class="opt-key">C</span>Prescriptive grammar forbids new content words.</button>
+    </div>
+    <div class="mcq-explain"><span class="lbl">Explanation</span> Nouns, verbs, and adjectives are an <span class="key">open class</span> that grows freely (<em>blog, selfie</em>). Inflectional morphology is a fixed, <span class="key">closed</span> set — English has exactly eight inflectional affixes and does not add more.</div>
+  </div>
+  <p class="ko-supp" style="font-size:0.6em; margin-top:0.5em;">※ 더 풀어보기: 교재 Ch.2 Exercises — 형태소 분해, 파생/굴절 판별 문항을 과제로 권장.</p>
+  <aside class="notes">
+    열린 부류(내용어) vs 닫힌 부류(굴절 체계)를 다시 확인하는 문항. 파생/굴절 생산성 차이의 근본 이유를
+    묻습니다.
+  </aside>
+</section>
+
+<!-- ══ 14 · Summary ══ -->
+<section>
+  <h2>Summary</h2>
+  <div class="summary-box">
+    <h4>Key Points</h4>
+    <ul style="font-size:0.8em; line-height:1.85;">
+      <li>Words split into <span class="key">morphemes</span> — the minimal units of meaning</li>
+      <li>Morphemes are <span class="key">free</span> (stand alone) or <span class="key">bound</span> (must attach)</li>
+      <li>Affixes: <span class="key">prefix · suffix · infix · circumfix</span></li>
+      <li><span class="key">Derivation</span> makes new words (can change category); <span class="key">inflection</span> adds grammar</li>
+      <li>English has exactly <span class="key">8 inflectional affixes</span>, all suffixes</li>
+    </ul>
+  </div>
+  <aside class="notes">
+    형태론 1부의 핵심 정리. 형태소·자립/의존·접사 유형·파생/굴절 구분·8개 굴절 접사. 다음 주는 이 단위들이
+    어떻게 위계적으로 결합하는지(트리 구조)를 다룹니다.
+  </aside>
+</section>
+
+<!-- ══ 15 · Next Week ══ -->
+<section>
+  <h2 style="margin-bottom:0.3em;">Next Week — Week 5</h2>
+  <div class="next-week-banner">
+    <div class="label">Next Class</div>
+    <p><strong>Morphology (Part 2)</strong> — Ch.2 · pp.49–74</p>
+  </div>
+  <h3 style="margin:0.55em 0 0.2em;">Preview</h3>
+  <ul style="font-size:0.66em; line-height:1.55; margin:0;">
+    <li>The hierarchical structure of words — morphological trees</li>
+    <li>Rule productivity, ordering, exceptions and lexical gaps</li>
+    <li>Compounds, back-formation, acronyms, blends, clipping</li>
+    <li>Sign-language morphology &amp; morphological analysis</li>
+  </ul>
+  <div class="next-week-banner" style="margin-top:0.5em;">
+    <div class="label">Preparation · Assignment</div>
+    <p>Read textbook Ch.2 pp.49–74 · work the end-of-chapter Exercises</p>
+  </div>
+  <aside class="notes">
+    다음 주는 단어의 위계 구조와 다양한 단어 형성 과정(합성·역형성·두문자어 등)을 다룹니다. 오늘 배운
+    형태소가 어떻게 트리로 조직되어 중의성까지 낳는지 예고하세요.
+  </aside>
+</section>
+
+</div><!-- /slides -->
+</div><!-- /reveal -->
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script>
+  Reveal.initialize({
+    hash: true,
+    slideNumber: 'c/t',
+    progress: true,
+    center: false,
+    transition: 'slide',
+    transitionSpeed: 'fast',
+    plugins: []
+  });
+</script>
+<a class="home-btn" href="../index.html" title="강의 목록으로">← 목록</a>
+<script src="assets/slides-print.js"></script>
+<script src="assets/slides-quiz.js"></script>
+<script src="assets/slides-ko-toggle.js"></script>
+</body>
+</html>

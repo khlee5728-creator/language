@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Week 3 — What Is Language? (Part 2) | Topics in English Linguistics</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css" />
+  <link rel="stylesheet" href="assets/linguistics-theme.css" />
+  <link rel="stylesheet" href="assets/slides-quiz.css" />
+  <link rel="stylesheet" href="assets/slides-ko.css" />
+  <style>
+    :root { --slide-accent: #0077b6; }
+    .contrast-grid { display:grid; grid-template-columns:1fr 1fr; gap:0.8em; }
+    .contrast-grid .card h3 { border-bottom:none; }
+    .prop-list { list-style:none; padding:0; font-size:0.72em; }
+    .prop-list li { padding:0.3em 0; border-bottom:1px solid var(--color-border); }
+    .prop-list li:last-child { border-bottom:none; }
+    .prop-list li b { color:var(--slide-accent); }
+    .anim-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:0.5em; font-size:0.66em; }
+    .anim-card { background:var(--color-bg-alt); border:1px solid var(--color-border);
+      border-radius:8px; padding:0.5em 0.6em; }
+    .anim-card b { color:var(--slide-accent); display:block; margin-bottom:0.15em; }
+    .chimp-list { list-style:none; padding:0; font-size:0.68em; line-height:1.5; }
+    .chimp-list li { padding:0.28em 0; border-bottom:1px solid var(--color-border); }
+    .chimp-list li:last-child { border-bottom:none; }
+    .chimp-list .who { font-weight:700; color:var(--slide-accent); }
+    .yes { color:#1b7f5e; font-weight:700; }
+    .no { color:#c1121f; font-weight:700; }
+    .ref-note { font-weight:400; color:var(--color-subtle); font-size:0.85em; }
+  </style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- ══ 1 · Title ══ -->
+<section class="title-slide" data-background-color="#16213e">
+  <div style="color:white; text-align:center; padding:1em;">
+    <div class="week-badge" style="background:rgba(255,255,255,0.2); color:white;">Week 3</div>
+    <h1 style="color:white; font-size:1.55em; margin:0.4em 0 0.2em;">What Is Language? <span style="font-weight:300;">(Part 2)</span></h1>
+    <p style="color:rgba(255,255,255,0.8); font-size:0.6em; margin-bottom:0.3em;">
+      Animal Communication, Computers &amp; Language and Thought
+      <span class="ko-supp" style="display:block; color:rgba(255,255,255,0.65);">※ 언어란 무엇인가 — 동물의 의사소통, 컴퓨터, 그리고 언어와 사고</span>
+    </p>
+    <p style="color:rgba(255,255,255,0.55); font-size:0.48em; margin-bottom:1.3em;">
+      Chapter 1 · pp. 16–32
+    </p>
+    <p style="color:rgba(255,255,255,0.5); font-size:0.42em; font-style:italic;">
+      An Introduction to Language, 11th Ed. — Fromkin, Rodman &amp; Hyams
+    </p>
+  </div>
+  <aside class="notes">
+    Ch.1 후반부입니다. 지난주 배운 인간 언어의 성질(창조성·자의성·이산성)을 잣대 삼아,
+    "무엇이 인간 언어가 아닌가"를 대비적으로 살펴봅니다. 동물 의사소통·컴퓨터·사피어-워프 가설이 핵심.
+  </aside>
+</section>
+
+<!-- ══ 2 · Agenda ══ -->
+<section>
+  <h2>Agenda</h2>
+  <ul class="agenda-list">
+    <li>What Is Not (Human) Language — the design of human language</li>
+    <li>The Birds and the Bees — spiders &amp; crabs, birdsong, the bee dance</li>
+    <li>Can Animals Learn Language? — talking birds, dogs &amp; the ape studies</li>
+    <li>Can Computers Learn Language? — the Turing test</li>
+    <li>Language and Thought — the Sapir–Whorf hypothesis</li>
+  </ul>
+  <aside class="notes">
+    오늘의 키워드는 arbitrariness, creativity, discreteness, displacement(지난주 개념)와 이를 동물·컴퓨터에
+    적용해 비교하는 것입니다. 마지막의 언어와 사고 관계(사피어-워프)는 별도 주제로 다룹니다.
+  </aside>
+</section>
+
+<!-- ══ 3 · Recap of Human-Language Properties ══ -->
+<section data-background-color="#f8f9fa">
+  <h2>Recall: Properties of Human Language</h2>
+  <p style="font-size:0.72em;">Last week we saw the design features that make human language unique. These are our <span class="key">yardstick</span> today.</p>
+  <ul class="prop-list">
+    <li><b>Arbitrariness</b> — no natural link between form (sound) and meaning</li>
+    <li><b>Creativity</b> — finite rules generate an infinite set of novel sentences</li>
+    <li><b>Discreteness</b> — messages are built from a small set of discrete units</li>
+    <li><b>Displacement</b> — we can talk about things absent in time and space</li>
+  </ul>
+  <p class="ko-supp" style="margin-top:0.5em; font-size:0.66em;">※ 이 네 성질을 기준으로 동물 신호 체계가 "언어"인지 판정한다.</p>
+  <aside class="notes">
+    동물 의사소통 논의에 들어가기 전, 인간 언어의 판별 기준을 명확히 세웁니다. 특히 creativity와
+    discreteness가 동물 신호와의 결정적 대비점이 됩니다.
+  </aside>
+</section>
+
+<!-- ══ 4 · What Is Not (Human) Language ══ -->
+<section>
+  <h2>What Is Not (Human) Language</h2>
+  <div class="def-box">
+    <div class="term">Communication ≠ Language</div>
+    <p style="margin-top:0.3em;">Many species communicate, but communication systems are not the same as human language.</p>
+  </div>
+  <ul style="font-size:0.72em; line-height:1.85; margin-top:0.5em;">
+    <li>Reflexive cries — a scream of pain, a laugh — carry information but are <em>not</em> language.</li>
+    <li><strong>Spiders</strong> court with an elaborate but <em>invariant</em> series of gestures — never changed or added to.</li>
+    <li><strong>Fiddler crabs</strong> — 40 species, each with one fixed claw-wave that conveys only a single meaning.</li>
+  </ul>
+  <p style="font-size:0.68em; margin-top:0.3em;">Such signals are a <strong>fixed, finite set</strong> tied to stimuli — they lack the <span class="key">creativity</span> and <span class="key">discreteness</span> of human language.</p>
+  <p class="ko-supp" style="margin-top:0.3em; font-size:0.64em;">※ 의사소통은 널리 퍼져 있지만, 인간 언어의 설계 특성은 훨씬 특수하다.</p>
+  <aside class="notes">
+    "의사소통"과 "언어"를 구분하는 것이 이 절의 핵심. 교재(p.16)의 대표 예시인 거미의 구애 몸짓(불변)과
+    농게 40종의 고정된 집게 흔들기를 사용했습니다. 동물 신호는 특정 자극에 묶인 유한한 목록임을 강조하세요.
+  </aside>
+</section>
+
+<!-- ══ 4b · Discreteness ══ -->
+<section data-background-color="#f8f9fa">
+  <h2>Discreteness — Why It Matters</h2>
+  <p style="font-size:0.72em;">Human language is not a fixed set of whole signs; it is built from <span class="key">discrete units</span> that can be rearranged.</p>
+  <div class="two-col" style="font-size:0.74em; margin-top:0.4em;">
+    <div class="def-box">
+      <div class="term">Rearranging sounds</div>
+      <p style="margin-top:0.3em;"><em>top</em> → <em>pot</em> → <em>opt</em> — the same units, new meanings.</p>
+    </div>
+    <div class="def-box">
+      <div class="term">Rearranging words</div>
+      <p style="margin-top:0.3em;"><em>the cat on the mat</em> ≠ <em>the mat on the cat</em>.</p>
+    </div>
+  </div>
+  <p style="font-size:0.68em; margin-top:0.5em;">The <span class="key">creativity</span> of human language depends on this discreteness — animal signals cannot be broken into parts and recombined.</p>
+  <aside class="notes">
+    교재(p.17)의 핵심 예시입니다. top/pot/opt, the cat on the mat vs the mat on the cat로 이산성을 보여주세요.
+    창조성은 이산성에 의존한다 — 동물 신호는 부분으로 쪼개 재조합할 수 없다는 점이 결정적 대비입니다.
+  </aside>
+</section>
+
+<!-- ══ 5 · The Birds and the Bees ══ -->
+<section>
+  <h2>The Birds and the Bees</h2>
+  <div class="anim-grid">
+    <div class="anim-card"><b>Honeybee dance</b>The <em>tail-wagging dance</em> has three patterns — <em>round</em> (&lt;20 ft), <em>sickle</em> (20–60 ft), <em>tail-wagging</em> (&gt;60 ft) — encoding distance and richness of food. But the topic is always food.</div>
+    <div class="anim-card"><b>Birdsong</b>Learned in stages within a <em>critical period</em>, even with regional "dialects" — yet no internal structure to segment and recombine.</div>
+    <div class="anim-card"><b>No displacement</b>Forced to <em>walk</em> to food, a bee miscodes the distance — it cannot signal the special circumstances of its trip.</div>
+  </div>
+  <p style="font-size:0.68em; margin-top:0.5em;">
+    Each system is <span class="key">closed</span> — impressive but finite, stimulus-bound, and non-creative.
+  </p>
+  <p class="ko-supp" style="font-size:0.64em; margin-top:0.3em;">※ 꿀벌은 먹이의 방향·거리는 전할 수 있으나, 어제 본 먹이나 "위쪽" 같은 새 메시지는 못 만든다.</p>
+  <aside class="notes">
+    교재(p.18)의 꿀벌 꼬리춤(tail-wagging dance)은 세 형태(round·sickle·tail-wagging)로 거리를 부호화하지만
+    주제는 늘 '먹이'뿐입니다. 걸어서 먹이로 간 벌은 거리를 잘못 전달한다(변위 결여). 새소리는 결정적 시기에
+    학습되고 방언까지 있으나 부분으로 쪼개 재조합할 수 없다는 점을 강조하세요.
+  </aside>
+</section>
+
+<!-- ══ 6 · Talking Birds & Clever Dogs ══ -->
+<section>
+  <h2>Can Animals Learn Language? — Birds &amp; Dogs</h2>
+  <div class="summary-box">
+    <h4>Talking birds: imitation ≠ language</h4>
+    <p style="font-size:0.82em;">A parrot who says "Polly wants a cracker" and learns <em>whiskey</em> will not produce "Polly wants whiskey." Knowing <em>cat/cats</em> and <em>parrot</em>, it still cannot form <em>parrots</em>. It cannot <span class="key">generalize</span> or recombine units.</p>
+  </div>
+  <ul style="font-size:0.68em; line-height:1.7; margin-top:0.4em;">
+    <li><strong>Rico</strong> (Border Collie, 2004) — a 200-word vocabulary; fetched named toys &gt;90% correct, and matched a <em>new</em> name to a new toy ~70% of the time.</li>
+    <li><strong>Chaser</strong> — understood the names of <strong>1022</strong> toys.</li>
+    <li>Yet dogs likely just <em>associate</em> a sound with an object — not the symbolic, referential meaning a child learns.</li>
+  </ul>
+  <p class="ko-supp" style="font-size:0.62em; margin-top:0.3em;">※ 앵무새의 모방은 언어가 아니다(일반화 불가). 리코·체이서는 단어를 '연합'할 뿐, 아동의 상징적 의미와는 다르다.</p>
+  <aside class="notes">
+    교재(pp.19–20)의 핵심 예시입니다. 앵무새는 학습한 단위를 재조합·일반화하지 못합니다(Polly wants… ,
+    복수형 parrots 불가). 보더콜리 리코(200단어)와 체이서(1022개 장난감 이름)는 놀랍지만, 단어를 상황과
+    연합할 뿐 아동처럼 상징적·지시적 의미를 획득한 것은 아니라는 것이 결론입니다.
+  </aside>
+</section>
+
+<!-- ══ 7 · The Chimpanzee Studies ══ -->
+<section>
+  <h2>The Chimpanzee (&amp; Ape) Studies</h2>
+  <ul class="chimp-list">
+    <li>Early home-raised chimps — could not vocalize words, but understood a number of individual words.</li>
+    <li><span class="who">Washoe</span> (chimp) &amp; <span class="who">Koko</span> (gorilla) — taught ASL; achieved only small successes such as stringing <em>two signs together</em>.</li>
+    <li><span class="who">Sarah</span>, <span class="who">Lana</span>, <span class="who">Kanzi</span> (bonobo) — used plastic chips or keyboard <em>lexigrams</em> as "words."</li>
+    <li><span class="who">Nim Chimpsky</span> — his multi-sign strings were largely imitative and could be <em>inadvertently cued</em> by experimenters, with little syntax.</li>
+  </ul>
+  <p style="font-size:0.66em; margin-top:0.4em;">Under scientific scrutiny, the <span class="key">creativity</span> of human language <span class="no">is not evidenced</span> by the apes' use of these systems.</p>
+  <aside class="notes">
+    교재(pp.20–21)의 최소화(minimizing) 서술을 따랐습니다. 유인원들은 '두 기호를 잇는' 정도의 작은 성공에
+    그쳤고, 어떤 개체도 특별히 부각되지 않습니다. Sarah·Lana·Kanzi의 기호 조작은 실험자에 의해 무의식적으로
+    유도되었을 수 있으며, 결론은 인간 언어의 창조성이 '입증되지 않았다'는 것입니다.
+  </aside>
+</section>
+
+<!-- ══ 8 · Can Computers Learn Language? ══ -->
+<section>
+  <h2>Can Computers Learn Language?</h2>
+  <div class="two-col" style="font-size:0.7em;">
+    <div class="def-box">
+      <div class="term">Computers do more than parrots</div>
+      <p style="margin-top:0.3em;">Computer speech <em>has</em> discreteness and displacement, and can generalize plurals and past tenses — where a parrot cannot.</p>
+    </div>
+    <div class="def-box">
+      <div class="term">The Turing test</div>
+      <p style="margin-top:0.3em;">Alan Turing's test of competence: could an interrogator tell computer from human by language alone? <strong>No computer has come close to passing it.</strong></p>
+    </div>
+  </div>
+  <ul style="font-size:0.68em; line-height:1.7; margin-top:0.5em;">
+    <li>Fluent output is <span class="key">performance</span>, not proof of linguistic competence.</li>
+    <li>The question is not "can it talk?" but "does it <em>know</em> a language?"</li>
+  </ul>
+  <p class="ko-supp" style="font-size:0.62em; margin-top:0.3em;">※ 컴퓨터는 이산성·변위를 갖추고 복수형·과거형도 일반화하지만, 어떤 컴퓨터도 튜링 테스트를 통과하지 못했다.</p>
+  <aside class="notes">
+    교재(p.22)의 균형 잡힌 논지입니다. 컴퓨터 언어는 앵무새와 달리 이산성·변위를 가지며 복수·과거형을
+    일반화합니다. 그러나 진정한 언어 능력(competence)은 없고, 어떤 컴퓨터도 튜링(Alan Turing)의 테스트를
+    통과하지 못했습니다. "말할 수 있는가"가 아니라 "언어를 아는가"가 핵심임을 강조하세요.
+  </aside>
+</section>
+
+<!-- ══ 9 · Language and Thought — Sapir–Whorf ══ -->
+<section>
+  <h2>Language and Thought</h2>
+  <div class="def-box">
+    <div class="term">The Sapir–Whorf Hypothesis</div>
+    <p style="margin-top:0.3em;">The idea that the language you speak shapes how you think and perceive the world.</p>
+  </div>
+  <div class="contrast-grid" style="margin-top:0.5em;">
+    <div class="card">
+      <h3>Linguistic Determinism</h3>
+      <p style="font-size:0.72em;">Strong form: language <strong>determines</strong> thought — you cannot think what your language cannot express.</p>
+    </div>
+    <div class="card">
+      <h3>Linguistic Relativism</h3>
+      <p style="font-size:0.72em;">Weak form: languages differ in the categories they encode, so speakers <strong>habitually think</strong> in somewhat different ways — without strict limits.</p>
+    </div>
+  </div>
+  <p class="ko-supp" style="font-size:0.62em; margin-top:0.3em;">※ 강한 형태(결정론)와 약한 형태(상대성)를 구분하는 것이 관건.</p>
+  <aside class="notes">
+    사피어-워프 가설을 강한 형태(결정론)와 약한 형태(상대주의, relativism)로 나눠 소개하세요. 흔히 인용되는
+    "이누이트(Inuit)의 눈 단어" 일화는 과장된 사례임을 다음 슬라이드에서 다룹니다.
+  </aside>
+</section>
+
+<!-- ══ 10 · Critiques of Sapir–Whorf ══ -->
+<section>
+  <h2>Critiques of the Hypothesis</h2>
+  <ul style="font-size:0.7em; line-height:1.7;">
+    <li>The "<strong>Inuit</strong> words for snow" claim is <span class="no">exaggerated</span> — Inuit has about a dozen, no more than English.</li>
+    <li><strong>Grand Valley Dani</strong> has only two color words, yet its speakers still recognize red — color perception is set by the eye, not language.</li>
+    <li><strong>Hopi</strong> has no tense endings but a rich system of time words and calendars; <strong>Munduruku</strong> children grasp geometry without geometric words.</li>
+    <li>We can grasp concepts our language has no single word for (we just use a phrase).</li>
+  </ul>
+  <div class="summary-box" style="margin-top:0.4em;">
+    <p style="font-size:0.8em;">Consensus: the <strong>strong</strong> form (determinism) is <span class="no">false</span>; the <strong>weak</strong> form has modest support (e.g., naming a color aids discrimination).</p>
+  </div>
+  <aside class="notes">
+    교재(pp.24–25)의 구체 사례로 교체했습니다. 강한 결정론은 거짓입니다 — Grand Valley Dani의 빨강 인식,
+    Hopi의 시간 개념(달력·시간 어휘), Munduruku의 기하 이해가 반례입니다. 다만 색을 구별하는 단어가 있으면
+    변별이 쉬워지는 등 약한 형태는 일부 지지받습니다.
+  </aside>
+</section>
+
+<!-- ══ 11 · Diagram: Human vs Animal ══ -->
+<section>
+  <h2>Diagram · Open vs. Closed Systems</h2>
+  <p style="font-size:0.7em; color:var(--color-subtle);">Human language is an <span class="yes">open</span> system; animal signalling is a <span class="no">closed</span> one.</p>
+  <div style="text-align:center;">
+    <svg viewBox="0 0 680 250" style="width:90%; max-width:780px; margin:0.2em auto; font-family:var(--font-main);">
+      <!-- Human side -->
+      <rect x="25" y="40" width="290" height="170" rx="16" fill="#eef7ec" stroke="#1b7f5e" stroke-width="2.5"/>
+      <text x="170" y="70" text-anchor="middle" font-size="17" font-weight="700" fill="#1b7f5e">HUMAN LANGUAGE</text>
+      <text x="170" y="100" text-anchor="middle" font-size="13" fill="#2d6a4f">finite rules</text>
+      <text x="170" y="128" text-anchor="middle" font-size="26" font-weight="700" fill="#14543f">∞</text>
+      <text x="170" y="152" text-anchor="middle" font-size="13" fill="#2d6a4f">infinite novel sentences</text>
+      <text x="170" y="184" text-anchor="middle" font-size="12" fill="#5a6b78">open · creative · discrete</text>
+      <!-- Animal side -->
+      <rect x="365" y="40" width="290" height="170" rx="16" fill="#fdecea" stroke="#c1121f" stroke-width="2.5"/>
+      <text x="510" y="70" text-anchor="middle" font-size="17" font-weight="700" fill="#c1121f">ANIMAL SIGNALS</text>
+      <text x="510" y="100" text-anchor="middle" font-size="13" fill="#8a1017">fixed signal set</text>
+      <text x="510" y="128" text-anchor="middle" font-size="22" font-weight="700" fill="#8a1017">▢ ▢ ▢</text>
+      <text x="510" y="152" text-anchor="middle" font-size="13" fill="#8a1017">no new combinations</text>
+      <text x="510" y="184" text-anchor="middle" font-size="12" fill="#5a6b78">closed · stimulus-bound</text>
+    </svg>
+  </div>
+  <p style="font-size:0.62em; text-align:center; color:var(--color-subtle);">
+    The decisive difference is <em>creativity</em>: only human language builds unlimited new messages from a finite code.
+  </p>
+  <aside class="notes">
+    개방계(open) vs 폐쇄계(closed)의 대비를 도식으로 각인시키세요. 유한한 규칙에서 무한한 문장이 나오는
+    인간 언어와, 고정된 신호 목록에 갇힌 동물 신호. 결정적 차이는 '창조성'입니다.
+  </aside>
+</section>
+
+<!-- ══ 12 · Practice Q1 ══ -->
+<section data-background-color="#f8f9fa">
+  <span class="practice-header">Practice · Check Your Understanding</span>
+  <div class="mcq">
+    <div class="mcq-q"><span class="qnum">1</span>The honeybee tail-wagging dance can signal food distance and richness but nothing new beyond that. Which human-language property does it therefore <em>lack</em>?</div>
+    <div class="mcq-opts">
+      <button class="mcq-opt" data-correct="true"><span class="opt-key">A</span>Creativity</button>
+      <button class="mcq-opt"><span class="opt-key">B</span>Arbitrariness</button>
+      <button class="mcq-opt"><span class="opt-key">C</span>Reflexiveness</button>
+    </div>
+    <div class="mcq-explain"><span class="lbl">Explanation</span> The dance is a closed system tied to a present food source; it cannot generate novel messages. That absence of open, unlimited production is a lack of <em>creativity</em>.</div>
+  </div>
+  <aside class="notes">
+    꿀벌 춤이 정보는 전하지만 새 메시지를 못 만든다는 점 → 창조성의 결여. 오답 B(자의성)는 형식-의미 관계이지
+    개방성이 아님을 짚어주세요.
+  </aside>
+</section>
+
+<!-- ══ 13 · Practice Q2 ══ -->
+<section data-background-color="#f8f9fa">
+  <span class="practice-header">Practice · Check Your Understanding</span>
+  <div class="mcq">
+    <div class="mcq-q"><span class="qnum">2</span>A parrot that says "Polly wants a cracker" and also learns <em>whiskey</em> still never says "Polly wants whiskey." What does this show?</div>
+    <div class="mcq-opts">
+      <button class="mcq-opt"><span class="opt-key">A</span>The parrot has mastered English syntax.</button>
+      <button class="mcq-opt" data-correct="true"><span class="opt-key">B</span>It imitates whole phrases but cannot break them into units and recombine or generalize.</button>
+      <button class="mcq-opt"><span class="opt-key">C</span>The parrot understands the meaning of each word.</button>
+    </div>
+    <div class="mcq-explain"><span class="lbl">Explanation</span> Talking birds do not decompose their imitations into discrete units. A parrot cannot generalize from learned instances (nor form the plural <em>parrots</em> from <em>parrot</em>), so imitation is not language.</div>
+  </div>
+  <aside class="notes">
+    교재(p.19)의 앵무새 예시로 교체했습니다. 앵무새는 통째로 모방할 뿐 단위로 쪼개 재조합·일반화하지 못합니다.
+    모방은 언어가 아니라는 핵심 논지를 확인하는 문항입니다.
+  </aside>
+</section>
+
+<!-- ══ 14 · Exercises Q3 ══ -->
+<section data-background-color="#f8f9fa">
+  <span class="practice-header">Exercises · Based on Textbook Ch.1</span>
+  <div class="mcq">
+    <div class="mcq-q"><span class="qnum">3</span>Careful re-analysis of <em>Nim Chimpsky</em>'s signing suggested that his multi-sign strings were largely what? <span class="ref-note">(cf. textbook Ch.1, pp.20–21)</span></div>
+    <div class="mcq-opts">
+      <button class="mcq-opt"><span class="opt-key">A</span>Grammatically ordered sentences like a child's.</button>
+      <button class="mcq-opt" data-correct="true"><span class="opt-key">B</span>Imitation and prompting, with little genuine syntax.</button>
+      <button class="mcq-opt"><span class="opt-key">C</span>Entirely arbitrary form–meaning pairings he invented.</button>
+    </div>
+    <div class="mcq-explain"><span class="lbl">Explanation</span> Detailed study of Nim's data showed his combinations were mostly imitations of the trainer or prompted responses, lacking the rule-governed syntax that appears spontaneously in children.</div>
+  </div>
+  <aside class="notes">
+    교재 Ch.1의 침팬지 연구를 개념 중심으로 재구성한 문항(원문 복제 아님). Nim 연구의 핵심 결론은
+    모방·유도가 대부분이고 진짜 통사가 없었다는 것.
+  </aside>
+</section>
+
+<!-- ══ 15 · Exercises Q4 ══ -->
+<section data-background-color="#f8f9fa">
+  <span class="practice-header">Exercises · Based on Textbook Ch.1</span>
+  <div class="mcq">
+    <div class="mcq-q"><span class="qnum">4</span>Which statement best reflects the modern consensus on the Sapir–Whorf hypothesis? <span class="ref-note">(cf. textbook Ch.1, pp.23–25)</span></div>
+    <div class="mcq-opts">
+      <button class="mcq-opt"><span class="opt-key">A</span>Strong linguistic determinism is well supported.</button>
+      <button class="mcq-opt"><span class="opt-key">B</span>Language has no relation to thought at all.</button>
+      <button class="mcq-opt" data-correct="true"><span class="opt-key">C</span>The weak version has modest support; the strong version is rejected.</button>
+    </div>
+    <div class="mcq-explain"><span class="lbl">Explanation</span> Evidence such as universal color perception and easy translation of "missing" concepts undermines strong determinism. Language may influence habitual attention (weak relativism), but it does not strictly determine thought.</div>
+  </div>
+  <p class="ko-supp" style="font-size:0.6em; margin-top:0.5em;">※ 더 풀어보기: 교재 Ch.1 Exercises — 동물 의사소통 체계 비교, 언어와 사고 관련 문항을 과제로 권장.</p>
+  <aside class="notes">
+    사피어-워프 가설의 현대적 합의(약한 형태만 부분 지지)를 확인하는 문항. 강한 결정론이 거부된 근거들을
+    다시 짚어주세요.
+  </aside>
+</section>
+
+<!-- ══ 16 · Summary ══ -->
+<section>
+  <h2>Summary</h2>
+  <div class="summary-box">
+    <h4>Key Points</h4>
+    <ul style="font-size:0.8em; line-height:1.85;">
+      <li>Communication is widespread, but human <span class="key">language</span> is special (creativity, discreteness, displacement)</li>
+      <li>Animal signals (spiders &amp; crabs, birdsong, bee dance) are <span class="key">closed</span> and stimulus-bound</li>
+      <li>Ape studies (Washoe, Nim, Kanzi) show learning but the creativity of language <span class="key">is not evidenced</span></li>
+      <li>Computers have discreteness &amp; displacement, yet no computer has passed the <span class="key">Turing test</span></li>
+      <li><span class="key">Sapir–Whorf</span>: strong determinism is false; weak relativism has modest support</li>
+    </ul>
+  </div>
+  <aside class="notes">
+    오늘의 결론: 인간 언어의 창조성·개방성은 동물 신호·컴퓨터와 질적으로 다릅니다. 언어와 사고의 관계는
+    약한 상대성 정도로 정리됩니다. 다음 주부터 형태론으로 들어갑니다.
+  </aside>
+</section>
+
+<!-- ══ 17 · Next Week ══ -->
+<section>
+  <h2 style="margin-bottom:0.3em;">Next Week — Week 4</h2>
+  <div class="next-week-banner">
+    <div class="label">Next Class</div>
+    <p><strong>Morphology (Part 1)</strong> — Ch.2 · pp.33–48</p>
+  </div>
+  <h3 style="margin:0.55em 0 0.2em;">Preview</h3>
+  <ul style="font-size:0.66em; line-height:1.55; margin:0;">
+    <li>Content vs. function words</li>
+    <li>Morphemes — the minimal units of meaning</li>
+    <li>Bound vs. free morphemes; roots and affixes</li>
+    <li>Derivational vs. inflectional morphology</li>
+  </ul>
+  <div class="next-week-banner" style="margin-top:0.5em;">
+    <div class="label">Preparation · Assignment</div>
+    <p>Read textbook Ch.2 pp.33–48 · work the end-of-chapter Exercises</p>
+  </div>
+  <aside class="notes">
+    다음 주는 단어 내부 구조를 다루는 형태론(morphology) 1부입니다. 오늘 배운 '이산성(discreteness)'이
+    형태소라는 더 작은 단위로 이어짐을 예고하세요.
+  </aside>
+</section>
+
+</div><!-- /slides -->
+</div><!-- /reveal -->
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script>
+  Reveal.initialize({
+    hash: true,
+    slideNumber: 'c/t',
+    progress: true,
+    center: false,
+    transition: 'slide',
+    transitionSpeed: 'fast',
+    plugins: []
+  });
+</script>
+<a class="home-btn" href="../index.html" title="강의 목록으로">← 목록</a>
+<script src="assets/slides-print.js"></script>
+<script src="assets/slides-quiz.js"></script>
+<script src="assets/slides-ko-toggle.js"></script>
+</body>
+</html>

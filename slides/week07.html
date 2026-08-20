@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Week 7 — Syntax (Part 2) | Topics in English Linguistics</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css" />
+  <link rel="stylesheet" href="assets/linguistics-theme.css" />
+  <link rel="stylesheet" href="assets/slides-quiz.css" />
+  <link rel="stylesheet" href="assets/slides-ko.css" />
+  <style>
+    :root { --slide-accent: #6a0572; }
+    .gram-star { color:#c1121f; font-weight:700; }
+    .gram-ok { color:#1b7f5e; font-weight:700; }
+    .subcat-grid { display:grid; grid-template-columns:1fr; gap:0.45em; font-size:0.7em; margin:0.5em 0; }
+    .subcat-card { background:var(--color-bg-alt); border:1px solid var(--color-border); border-radius:8px;
+      padding:0.45em 0.8em; }
+    .subcat-card b { color:var(--slide-accent); }
+    .subcat-card .frame { font-family:var(--font-mono); color:var(--color-subtle); font-size:0.9em; }
+    .rules-box { font-family:var(--font-mono); font-size:0.72em; line-height:1.9; background:#1e1e2e;
+      color:#cdd6f4; border-radius:8px; padding:0.7em 1.1em; border-left:4px solid var(--slide-accent); }
+    .rules-box .nt { color:#f5c2e7; font-weight:700; }
+    .rules-box .arr { color:#89dceb; font-weight:700; }
+    .rules-box .mv { color:#fab387; font-weight:700; }
+    .param-grid { display:grid; grid-template-columns:1fr 1fr; gap:0.7em; font-size:0.7em; }
+    .param-grid .card h3 { border-bottom:none; margin-bottom:0.15em; }
+    .tree-cap { font-size:0.62em; text-align:center; color:var(--color-subtle); margin-top:0.1em; }
+    svg text { font-family:var(--font-main); }
+    .node { font-size:16px; font-weight:700; fill:#6a0572; }
+    .leaf { font-size:15px; fill:#14425f; font-style:italic; }
+    .exam-box { background:#fff8e1; border-left:4px solid var(--slide-accent); border-radius:0 8px 8px 0;
+      padding:0.6em 0.9em; font-size:0.74em; }
+    .exam-box b { color:var(--slide-accent); }
+  </style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- ══ 1 · Title ══ -->
+<section class="title-slide" data-background-color="#16213e">
+  <div style="color:white; text-align:center; padding:1em;">
+    <div class="week-badge" style="background:rgba(255,255,255,0.2); color:white;">Week 7</div>
+    <h1 style="color:white; font-size:1.55em; margin:0.4em 0 0.2em;">Syntax <span style="font-weight:300;">(Part 2)</span></h1>
+    <p style="color:rgba(255,255,255,0.8); font-size:0.6em; margin-bottom:0.3em;">
+      Heads, Complements, Agreement &amp; Question Formation
+      <span class="ko-supp" style="display:block; color:rgba(255,255,255,0.65);">※ 통사론 (2) — 핵어·보충어·일치·의문문 형성과 UG</span>
+    </p>
+    <p style="color:rgba(255,255,255,0.55); font-size:0.48em; margin-bottom:1.3em;">
+      Chapter 3 · pp. 107–132
+    </p>
+    <p style="color:rgba(255,255,255,0.5); font-size:0.42em; font-style:italic;">
+      An Introduction to Language, 11th Ed. — Fromkin, Rodman &amp; Hyams
+    </p>
+  </div>
+  <aside class="notes">
+    Ch.3 통사론의 후반부입니다. 지난 시간의 나무 구조 위에서, 구가 핵어를 중심으로 어떻게 세워지는지,
+    그리고 의문문 형성 규칙이 왜 '구조'에 의존하는지를 봅니다. 마지막에 UG의 원리·매개변수로 마무리합니다.
+  </aside>
+</section>
+
+<!-- ══ 2 · Agenda ══ -->
+<section>
+  <h2>Agenda</h2>
+  <ul class="agenda-list">
+    <li>Building Phrases — heads &amp; complements</li>
+    <li>Subcategorization of verbs</li>
+    <li>Grammatical dependencies — agreement &amp; question formation</li>
+    <li>Subject–Verb Agreement</li>
+    <li>Question Formation &amp; Structure-Dependence</li>
+    <li>Universal Grammar — Principles &amp; Parameters</li>
+  </ul>
+  <aside class="notes">
+    오늘의 키워드는 head, complement, subcategorization, agreement, structure-dependence,
+    principles &amp; parameters입니다. 특히 구조 의존성은 이 챕터의 하이라이트입니다.
+  </aside>
+</section>
+
+<!-- ══ 3 · Building Phrases: Heads & Complements ══ -->
+<section data-background-color="#f8f9fa">
+  <h2>Building Phrases · Heads &amp; Complements</h2>
+  <div class="def-box">
+    <div class="term">Head = the word that gives a phrase its category</div>
+  </div>
+  <ul style="font-size:0.72em; line-height:1.8; margin-top:0.5em;">
+    <li>The head of an <span class="key">NP</span> is a <strong>noun</strong>; of a <span class="key">VP</span>, a <strong>verb</strong>; of a <span class="key">PP</span>, a <strong>preposition</strong>.</li>
+    <li>A <span class="key">complement</span> is the constituent selected by the head to complete its meaning.</li>
+    <li><em>put the book on the shelf</em> — the verb <em>put</em> needs both an NP and a PP complement.</li>
+  </ul>
+  <p class="ko-supp" style="font-size:0.66em; margin-top:0.4em;">※ 핵어(head)가 구의 성격을 결정하고, 보충어(complement)는 핵어가 요구하는 필수 요소다.</p>
+  <aside class="notes">
+    핵어(head)와 보충어(complement)는 오늘의 초석입니다. 구가 핵어를 중심으로 조직되며, 핵어가
+    어떤 보충어를 요구하는지가 다음 슬라이드의 하위범주화로 이어짐을 강조하세요.
+  </aside>
+</section>
+
+<!-- ══ 4 · Subcategorization ══ -->
+<section>
+  <h2>Subcategorization of Verbs</h2>
+  <p style="font-size:0.72em;">Verbs <span class="key">select</span> different complements — this is <em>subcategorization</em>.</p>
+  <div class="subcat-grid">
+    <div class="subcat-card"><b>Intransitive</b> — no object. <span class="frame">[ __ ]</span><br><em>The baby slept.</em> <span class="gram-star">*The baby slept the toy.</span></div>
+    <div class="subcat-card"><b>Transitive</b> — one NP object. <span class="frame">[ __ NP ]</span><br><em>The child found a puppy.</em></div>
+    <div class="subcat-card"><b>Ditransitive</b> — two objects. <span class="frame">[ __ NP NP ]</span><br><em>She gave the dog a bone.</em></div>
+  </div>
+  <p class="ko-supp" style="font-size:0.64em; margin-top:0.3em;">※ 동사마다 요구하는 보충어가 다르다 — 이 정보가 어휘부에 저장된 하위범주화 틀이다.</p>
+  <aside class="notes">
+    하위범주화(subcategorization) = 동사가 요구하는 보충어 틀. 자동사/타동사/이중타동사를 구별하고,
+    이 정보가 어휘부(lexicon)에 저장되어 있음을 강조하세요. 잘못된 틀은 비문을 낳습니다.
+  </aside>
+</section>
+
+<!-- ══ 5 · Grammatical Dependencies ══ -->
+<section>
+  <h2>Grammatical Dependencies</h2>
+  <p style="font-size:0.72em;">Words in a sentence are linked by <span class="key">dependencies</span> that the syntax enforces.</p>
+  <div class="two-col" style="font-size:0.72em;">
+    <div class="def-box">
+      <div class="term">Subject–Verb Agreement</div>
+      <p style="margin-top:0.3em;">A verb's form covaries with its subject. <em>She walk<strong>s</strong></em> vs. <em>They walk</em>.</p>
+    </div>
+    <div class="def-box">
+      <div class="term">Question Formation</div>
+      <p style="margin-top:0.3em;">A question is tied to its declarative by <span class="key">movement</span>. <em>The boy is singing</em> → <em><strong>Is</strong> the boy singing?</em></p>
+    </div>
+  </div>
+  <p class="ko-supp" style="font-size:0.64em; margin-top:0.4em;">※ 교재가 드는 두 의존관계는 주어-동사 일치와 의문문 형성이다 — 둘 다 통사 구조에 의존한다.</p>
+  <aside class="notes">
+    교재 "Grammatical Dependencies" 절은 정확히 두 가지를 듭니다: 주어-동사 일치(subject-verb agreement)와
+    의문문 형성(question formation). 격(case)은 이 장의 주제가 아니므로 제외했습니다. 두 의존관계 모두
+    선형 순서가 아닌 구조에 의존한다는 점을 예고하며 다음 슬라이드의 일치로 이어가세요.
+  </aside>
+</section>
+
+<!-- ══ 6 · Subject–Verb Agreement ══ -->
+<section>
+  <h2>Subject–Verb Agreement</h2>
+  <p style="font-size:0.72em;">The verb agrees with the <span class="key">subject</span> in person and number.</p>
+  <ul style="font-size:0.72em; line-height:1.8;">
+    <li><span class="gram-ok">✓</span> The dog <strong>barks</strong>. &nbsp; / &nbsp; The dogs <strong>bark</strong>.</li>
+    <li><span class="gram-star">*</span> The dog bark. &nbsp; / &nbsp; <span class="gram-star">*</span> The dogs barks.</li>
+  </ul>
+  <p style="font-size:0.68em; margin-top:0.4em;">
+    Crucially, the verb agrees with the <strong>head of the subject NP</strong>, not the nearest noun:
+    <br><em>The <u>key</u> to the cabinets <strong>is</strong> lost.</em> <span class="gram-star">(*are)</span>
+  </p>
+  <p class="ko-supp" style="font-size:0.62em; margin-top:0.3em;">※ 동사는 가장 가까운 명사가 아니라 주어 NP의 핵어와 일치한다 — 구조가 지배한다.</p>
+  <aside class="notes">
+    주어-동사 일치의 핵심: 동사는 선형적으로 가까운 명사(cabinets)가 아니라 주어 NP의 핵어(key)와
+    일치합니다. 이것이 다음 슬라이드 '구조 의존성'의 예고편입니다.
+  </aside>
+</section>
+
+<!-- ══ 7 · Movement / Transformations (intro) ══ -->
+<section>
+  <h2>Transformations · Movement</h2>
+  <p style="font-size:0.72em;">Some sentences are related by <span class="key">movement</span> — a constituent is displaced from its base position.</p>
+  <div class="rules-box">
+    You <span class="nt">have</span> read <span class="nt">what</span>? <span class="mv">→</span> <span class="nt">What</span> have you read ___ ?<br>
+    <span style="color:#6c757d;">wh-phrase moves to the front; ___ marks the gap it left</span>
+  </div>
+  <p style="font-size:0.66em; margin-top:0.4em;">
+    The moved element and its <span class="key">gap</span> are linked — evidence that syntax operates on <strong>structures</strong>, not flat strings.
+  </p>
+  <p class="ko-supp" style="font-size:0.62em; margin-top:0.3em;">※ 이동(movement): 구성성분이 원래 자리(gap)를 떠나 앞으로 옮겨간다. 의문문 형성의 토대.</p>
+  <aside class="notes">
+    변형/이동(transformation/movement)을 도입 수준에서 소개합니다. wh-요소가 앞으로 이동하고 원래
+    자리에 빈자리(gap)를 남긴다는 그림을 각인시키세요. 다음 슬라이드의 의문문 형성으로 직결됩니다.
+  </aside>
+</section>
+
+<!-- ══ 8 · Question Formation ══ -->
+<section>
+  <h2>Question Formation Rules</h2>
+  <div class="two-col" style="font-size:0.7em;">
+    <div class="def-box">
+      <div class="term">Yes/No questions</div>
+      <p style="margin-top:0.3em;">Front the auxiliary.<br><em>The boy is singing.</em><br>→ <em><strong>Is</strong> the boy ___ singing?</em></p>
+    </div>
+    <div class="def-box">
+      <div class="term">Wh-questions</div>
+      <p style="margin-top:0.3em;">Move the wh-phrase to the front.<br><em>She read <u>what</u>?</em><br>→ <em><strong>What</strong> did she read ___?</em></p>
+    </div>
+  </div>
+  <p style="font-size:0.68em; margin-top:0.4em;">
+    Both operations move a constituent to the <span class="key">front</span> of the sentence.
+  </p>
+  <aside class="notes">
+    의문문 형성 규칙 두 가지: (1) yes/no 의문문은 조동사 전치, (2) wh-의문문은 wh-구 전치.
+    다음 슬라이드에서 '어떤 조동사를 옮기는가?'라는 질문으로 구조 의존성을 끌어냅니다.
+  </aside>
+</section>
+
+<!-- ══ 8b · Deriving Questions ══ -->
+<section>
+  <h2>Deriving Questions · d-structure → s-structure</h2>
+  <p style="font-size:0.7em;">A question starts as a base <span class="key">d-structure</span> and becomes its <span class="key">s-structure</span> by movement rules.</p>
+  <div class="rules-box">
+    <b style="color:#f5c2e7;">Aux inversion (T→C):</b> the auxiliary in T moves to the front.<br>
+    The boy <span class="nt">will</span> sing <span class="mv">→</span> <span class="nt">Will</span> the boy ___ sing?<br><br>
+    <b style="color:#f5c2e7;">do-insertion:</b> with no auxiliary, insert <em>do</em> to carry tense.<br>
+    She <span class="nt">sings</span> <span class="mv">→</span> <span class="nt">Does</span> she sing? &nbsp;<span class="gram-star" style="color:#f38ba8;">*Sings she?</span><br><br>
+    <b style="color:#f5c2e7;">wh-movement:</b> the wh-phrase moves to the front.<br>
+    She read <span class="nt">what</span> <span class="mv">→</span> <span class="nt">What</span> did she read ___?
+  </div>
+  <p class="ko-supp" style="font-size:0.6em; margin-top:0.3em;">※ 의문문은 기저(d-structure)에서 출발해 이동 규칙으로 표층(s-structure)이 된다. 조동사 전치(T→C), 조동사가 없으면 do-삽입, 그리고 wh-이동이 작동한다.</p>
+  <aside class="notes">
+    의문문 도출의 2단계 과정입니다. 기저구조(d-structure)에서 조동사 전치(Aux inversion, T→C),
+    조동사가 없을 때의 do-삽입(do-insertion), wh-구 이동(wh-movement)을 통해 표층구조(s-structure)가
+    도출됩니다. 이 이동 규칙들이 다음 슬라이드의 구조 의존성 논증의 토대가 됩니다.
+  </aside>
+</section>
+
+<!-- ══ 9 · Structure-Dependence Tree ══ -->
+<section>
+  <h2>Structure-Dependence</h2>
+  <p style="font-size:0.64em; color:var(--color-subtle);">"The boy who can run fastest will win." Which auxiliary moves to form a yes/no question?</p>
+  <div style="text-align:center;">
+    <svg viewBox="0 0 640 240" style="width:80%; max-width:640px; margin:0.1em auto;">
+      <!-- TP -->
+      <line x1="320" y1="34" x2="180" y2="78" stroke="#888" stroke-width="1.4"/>
+      <line x1="320" y1="34" x2="470" y2="78" stroke="#888" stroke-width="1.4"/>
+      <!-- subject NP -->
+      <line x1="180" y1="96" x2="180" y2="122" stroke="#888" stroke-width="1.4"/>
+      <!-- T-bar -->
+      <line x1="470" y1="96" x2="410" y2="132" stroke="#888" stroke-width="1.4"/>
+      <line x1="470" y1="96" x2="530" y2="132" stroke="#888" stroke-width="1.4"/>
+      <line x1="410" y1="150" x2="410" y2="176" stroke="#888" stroke-width="1.4"/>
+      <line x1="530" y1="150" x2="530" y2="176" stroke="#888" stroke-width="1.4"/>
+      <!-- nodes -->
+      <text class="node" x="320" y="30"  text-anchor="middle">S (TP)</text>
+      <text class="node" x="180" y="92"  text-anchor="middle">NP (subject)</text>
+      <text class="node" x="470" y="92"  text-anchor="middle">T′</text>
+      <text class="node" x="410" y="146" text-anchor="middle">T</text>
+      <text class="node" x="530" y="146" text-anchor="middle">VP</text>
+      <!-- leaves -->
+      <text class="leaf" x="180" y="138" text-anchor="middle">the boy who <tspan fill="#c1121f">can</tspan> run fastest</text>
+      <text class="leaf" x="410" y="192" text-anchor="middle" fill="#1b7f5e">will</text>
+      <text class="leaf" x="530" y="192" text-anchor="middle">win</text>
+    </svg>
+  </div>
+  <p class="tree-cap">Move the <span class="gram-ok">main-clause</span> T <em>will</em> — not the embedded (<span class="gram-star">red</span>) <em>can</em> inside the subject: <em>Will the boy who can run fastest win?</em></p>
+  <p class="ko-supp" style="font-size:0.6em; margin-top:0.1em;">※ 규칙은 '첫 번째 조동사 can'이 아니라 '주절의 T(will)'를 옮긴다 — 선형 순서가 아닌 구조를 참조한다.</p>
+  <aside class="notes">
+    구조 의존성(structure-dependence)의 핵심 예입니다(교재의 modal 예문). "*Can the boy who run fastest
+    will win?"은 비문 — 규칙은 '문장에서 첫 번째 조동사 can'(선형)이 아니라 '주절의 T = will'(구조)를
+    옮깁니다. 이것이 UG가 통사 규칙에 부과하는 보편 원리(구조 의존성)의 증거입니다. 아동은 이를
+    배우지 않고도 압니다.
+  </aside>
+</section>
+
+<!-- ══ 10 · UG: Principles & Parameters ══ -->
+<section>
+  <h2>UG · Principles &amp; Parameters</h2>
+  <div class="summary-box">
+    <h4>The architecture of Universal Grammar</h4>
+    <p style="font-size:0.84em;"><span class="key">Principles</span> hold in every language; <span class="key">parameters</span> are the limited choices that differ between languages.</p>
+  </div>
+  <div class="param-grid" style="margin-top:0.5em;">
+    <div class="card">
+      <h3>Head-initial</h3>
+      <p>Head precedes complement.<br><em>English:</em> [<sub>VP</sub> found <strong>a dog</strong>], [<sub>PP</sub> to <strong>Tokyo</strong>]</p>
+    </div>
+    <div class="card">
+      <h3>Head-final</h3>
+      <p>Head follows complement.<br><em>Japanese:</em> [<sub>VP</sub> <strong>inu-o</strong> mitsuketa], [<sub>PP</sub> <strong>Tokyo</strong>-e]</p>
+    </div>
+  </div>
+  <p style="font-size:0.6em; color:var(--color-subtle); margin-top:0.2em;"><em>inu-o mitsuketa</em> = "dog-OBJ found" (Japanese puts the verb after its object).</p>
+  <p class="ko-supp" style="font-size:0.62em; margin-top:0.3em;">※ 구조 의존성 = 원리(모든 언어 공통). 핵어 위치(전/후)는 매개변수 = 언어마다 다른 선택. 교재는 head-final의 예로 일본어(inu-o mitsuketa "개를 찾았다")를 든다.</p>
+  <aside class="notes">
+    원리와 매개변수(Principles &amp; Parameters) 이론입니다. 구조 의존성은 보편 원리, 핵어 방향성
+    (head-initial 영어 vs head-final 일본어)은 매개변수의 대표 사례입니다. 아동은 원리를 타고나고,
+    입력으로부터 매개변수 값만 설정하면 됩니다 — 언어 습득의 효율성을 설명합니다.
+  </aside>
+</section>
+
+<!-- ══ 11 · Practice Q6 ══ -->
+<section data-background-color="#f8f9fa">
+  <span class="practice-header">Practice · Check Your Understanding</span>
+  <div class="mcq">
+    <div class="mcq-q"><span class="qnum">6</span>The verb <em>give</em> in "She gave the dog a bone" is —</div>
+    <div class="mcq-opts">
+      <button class="mcq-opt"><span class="opt-key">A</span>intransitive</button>
+      <button class="mcq-opt"><span class="opt-key">B</span>transitive</button>
+      <button class="mcq-opt" data-correct="true"><span class="opt-key">C</span>ditransitive</button>
+    </div>
+    <div class="mcq-explain"><span class="lbl">Explanation</span> <em>give</em> selects two objects (<em>the dog</em> and <em>a bone</em>), so its subcategorization frame is [ __ NP NP ] — it is ditransitive.</div>
+  </div>
+  <aside class="notes">
+    하위범주화 틀을 확인하는 문항입니다. 목적어 두 개를 취하는 이중타동사임을 보충어 개수로 판별하게 하세요.
+  </aside>
+</section>
+
+<!-- ══ 12 · Practice Q7 ══ -->
+<section data-background-color="#f8f9fa">
+  <span class="practice-header">Practice · Check Your Understanding</span>
+  <div class="mcq">
+    <div class="mcq-q"><span class="qnum">7</span>In "The list of the students <strong>is</strong> long," the verb is singular because it agrees with —</div>
+    <div class="mcq-opts">
+      <button class="mcq-opt" data-correct="true"><span class="opt-key">A</span>the head noun <em>list</em> of the subject NP</button>
+      <button class="mcq-opt"><span class="opt-key">B</span>the nearest noun <em>students</em></button>
+      <button class="mcq-opt"><span class="opt-key">C</span>the preposition <em>of</em></button>
+    </div>
+    <div class="mcq-explain"><span class="lbl">Explanation</span> Agreement is <span class="key">structure-dependent</span>: the verb agrees with the head of the subject NP (<em>list</em>, singular), not with the linearly closest noun (<em>students</em>).</div>
+  </div>
+  <aside class="notes">
+    주어-동사 일치가 선형이 아닌 구조에 의존함을 확인하는 문항입니다. 오답 B(가장 가까운 명사)의
+    함정을 짚어주세요.
+  </aside>
+</section>
+
+<!-- ══ 13 · Practice Q8 ══ -->
+<section data-background-color="#f8f9fa">
+  <span class="practice-header">Practice · Check Your Understanding</span>
+  <div class="mcq">
+    <div class="mcq-q"><span class="qnum">8</span>Why is "<span class="gram-star">*</span>Can the boy who run fastest will win?" ungrammatical?</div>
+    <div class="mcq-opts">
+      <button class="mcq-opt" data-correct="true"><span class="opt-key">A</span>The rule must front the main-clause auxiliary <em>will</em>, not the embedded <em>can</em> inside the subject</button>
+      <button class="mcq-opt"><span class="opt-key">B</span>English forbids relative clauses in questions</button>
+      <button class="mcq-opt"><span class="opt-key">C</span>The sentence has too many words</button>
+    </div>
+    <div class="mcq-explain"><span class="lbl">Explanation</span> Question formation is <span class="key">structure-dependent</span>. It moves the auxiliary of the main clause (<em>will</em>), not whichever modal comes first in linear order (<em>can</em>). This is a universal principle children apply without being taught.</div>
+  </div>
+  <aside class="notes">
+    구조 의존성의 핵심 문항입니다. 규칙이 '선형적 첫 번째'가 아니라 '주절의 조동사'를 참조함을 강조하고,
+    이것이 UG 원리임을 연결하세요.
+  </aside>
+</section>
+
+<!-- ══ 14 · Exercises Q9 ══ -->
+<section data-background-color="#f8f9fa">
+  <span class="practice-header">Exercises · Based on Textbook Ch.3</span>
+  <div class="mcq">
+    <div class="mcq-q"><span class="qnum">9</span>Which sentence is <span class="gram-star" style="color:#c1121f;">*ungrammatical</span> because it violates a subcategorization frame? <span style="font-weight:400; color:var(--color-subtle); font-size:0.85em;">(cf. textbook Ch.3, p.97)</span></div>
+    <div class="mcq-opts">
+      <button class="mcq-opt"><span class="opt-key">A</span>The children laughed.</button>
+      <button class="mcq-opt" data-correct="true"><span class="opt-key">B</span>The children laughed the ball.</button>
+      <button class="mcq-opt"><span class="opt-key">C</span>The children kicked the ball.</button>
+    </div>
+    <div class="mcq-explain"><span class="lbl">Explanation</span> <em>laugh</em> is intransitive — its frame is [ __ ], so it cannot take a direct object. <em>*laughed the ball</em> violates that frame, while <em>kick</em> is transitive and licenses <em>the ball</em>.</div>
+  </div>
+  <aside class="notes">
+    교재 Ch.3의 하위범주화 문제를 개념 중심으로 재구성했습니다(원문 복제 아님). 자동사에 목적어를
+    붙이면 비문이 됨을 틀([ __ ])로 설명하세요.
+  </aside>
+</section>
+
+<!-- ══ 15 · Exercises Q10 ══ -->
+<section data-background-color="#f8f9fa">
+  <span class="practice-header">Exercises · Based on Textbook Ch.3</span>
+  <div class="mcq">
+    <div class="mcq-q"><span class="qnum">10</span>English puts the verb before its object (<em>found a dog</em>) but Japanese puts it after (<em>inu-o mitsuketa</em>). This difference is best described as a — <span style="font-weight:400; color:var(--color-subtle); font-size:0.85em;">(cf. textbook Ch.3, pp.100–101, 118)</span></div>
+    <div class="mcq-opts">
+      <button class="mcq-opt" data-correct="true"><span class="opt-key">A</span>head-direction parameter (head-initial vs. head-final)</button>
+      <button class="mcq-opt"><span class="opt-key">B</span>universal principle shared by all languages</button>
+      <button class="mcq-opt"><span class="opt-key">C</span>prescriptive rule of Standard English</button>
+    </div>
+    <div class="mcq-explain"><span class="lbl">Explanation</span> Whether the head precedes or follows its complement is a <span class="key">parameter</span> set differently across languages: English is head-initial, Japanese head-final. The overarching requirement that phrases <em>have</em> heads is the universal principle.</div>
+  </div>
+  <p class="ko-supp" style="font-size:0.6em; margin-top:0.5em;">※ 더 풀어보기: 교재 Ch.3 pp.107–132 Exercises — 하위범주화 틀 작성·의문문 도출·일치 판단을 과제로 권장.</p>
+  <aside class="notes">
+    원리(모든 언어 공통)와 매개변수(언어별 선택)의 구분을 확인하는 문항입니다. 핵어 방향성이 매개변수의
+    대표 사례임을 강조하고, 하단 추가 Exercises는 과제로 안내하세요.
+  </aside>
+</section>
+
+<!-- ══ 16 · Summary ══ -->
+<section>
+  <h2>Summary</h2>
+  <div class="summary-box">
+    <h4>Key Points</h4>
+    <ul style="font-size:0.8em; line-height:1.8;">
+      <li>Phrases are built around a <span class="key">head</span>; complements complete it</li>
+      <li><span class="key">Subcategorization</span>: intransitive · transitive · ditransitive</li>
+      <li>Dependencies: <span class="key">agreement</span> &amp; <span class="key">question formation</span></li>
+      <li>Subject–verb agreement targets the <span class="key">head of the subject NP</span></li>
+      <li>Question formation is <span class="key">structure-dependent</span> — rules refer to structure, not linear order</li>
+      <li>UG: universal <span class="key">principles</span> + language-specific <span class="key">parameters</span></li>
+    </ul>
+  </div>
+  <aside class="notes">
+    오늘의 대주제는 '통사 규칙은 구조에 의존한다'입니다. 하위범주화, 일치, 의문문 형성이 모두 이
+    하나의 통찰을 뒷받침합니다. 원리·매개변수 이론이 언어 습득의 효율성을 설명함을 정리하고 넘어가세요.
+  </aside>
+</section>
+
+<!-- ══ 17 · Next Week — Midterm ══ -->
+<section>
+  <h2 style="margin-bottom:0.3em;">Next Week — Week 8 · Midterm Exam</h2>
+  <div class="next-week-banner">
+    <div class="label">Midterm Exam</div>
+    <p><strong>Covers Chapters 1–3</strong> (Weeks 1–7)</p>
+  </div>
+  <h3 style="margin:0.5em 0 0.2em;">Review Scope</h3>
+  <div class="exam-box">
+    <b>Ch.1</b> — What is language: knowledge, arbitrariness, creativity, competence/performance, grammar (descriptive vs. prescriptive), UG<br>
+    <b>Ch.2</b> — Morphology: words, morphemes, word-formation<br>
+    <b>Ch.3</b> — Syntax: constituents, categories, phrase structure trees &amp; rules, recursion, heads/complements, agreement, question formation, structure-dependence
+  </div>
+  <div class="next-week-banner" style="margin-top:0.4em;">
+    <div class="label">Preparation</div>
+    <p>Review all lecture slides &amp; end-of-chapter exercises for Ch.1–3 · practice drawing phrase structure trees</p>
+  </div>
+  <aside class="notes">
+    다음 주는 중간고사입니다. 시험 범위는 Ch.1–3(1–7주차) 전체입니다. 특히 통사론의 나무 그리기,
+    구성성분 판별, 구조 의존성 개념은 반드시 출제됩니다. 슬라이드와 연습문제를 중심으로 복습을
+    당부하세요.
+  </aside>
+</section>
+
+</div><!-- /slides -->
+</div><!-- /reveal -->
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script>
+  Reveal.initialize({
+    hash: true,
+    slideNumber: 'c/t',
+    progress: true,
+    center: false,
+    transition: 'slide',
+    transitionSpeed: 'fast',
+    plugins: []
+  });
+</script>
+<a class="home-btn" href="../index.html" title="강의 목록으로">← 목록</a>
+<script src="assets/slides-print.js"></script>
+<script src="assets/slides-quiz.js"></script>
+<script src="assets/slides-ko-toggle.js"></script>
+</body>
+</html>

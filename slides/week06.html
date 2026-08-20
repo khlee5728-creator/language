@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Week 6 — Syntax (Part 1) | Topics in English Linguistics</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css" />
+  <link rel="stylesheet" href="assets/linguistics-theme.css" />
+  <link rel="stylesheet" href="assets/slides-quiz.css" />
+  <link rel="stylesheet" href="assets/slides-ko.css" />
+  <style>
+    :root { --slide-accent: #6a0572; }
+    .gram-star { color:#c1121f; font-weight:700; }
+    .gram-ok { color:#1b7f5e; font-weight:700; }
+    .cat-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:0.5em; font-size:0.68em; margin:0.5em 0; }
+    .cat-card { background:var(--color-bg-alt); border:1px solid var(--color-border); border-radius:8px;
+      padding:0.5em 0.6em; }
+    .cat-card b { color:var(--slide-accent); display:block; font-size:1.05em; }
+    .cat-card span { color:var(--color-subtle); font-size:0.9em; }
+    .rules-box { font-family:var(--font-mono); font-size:0.72em; line-height:1.9; background:#1e1e2e;
+      color:#cdd6f4; border-radius:8px; padding:0.7em 1.1em; border-left:4px solid var(--slide-accent); }
+    .rules-box .nt { color:#f5c2e7; font-weight:700; }
+    .rules-box .arr { color:#89dceb; font-weight:700; }
+    .rules-box .opt { color:#a6e3a1; }
+    .test-list { list-style:none; padding:0; font-size:0.72em; }
+    .test-list li { padding:0.3em 0; border-bottom:1px solid var(--color-border); }
+    .test-list li:last-child { border-bottom:none; }
+    .tree-cap { font-size:0.62em; text-align:center; color:var(--color-subtle); margin-top:0.1em; }
+    svg text { font-family:var(--font-main); }
+    .node { font-size:16px; font-weight:700; fill:#6a0572; }
+    .leaf { font-size:15px; fill:#14425f; font-style:italic; }
+  </style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- ══ 1 · Title ══ -->
+<section class="title-slide" data-background-color="#16213e">
+  <div style="color:white; text-align:center; padding:1em;">
+    <div class="week-badge" style="background:rgba(255,255,255,0.2); color:white;">Week 6</div>
+    <h1 style="color:white; font-size:1.55em; margin:0.4em 0 0.2em;">Syntax <span style="font-weight:300;">(Part 1)</span></h1>
+    <p style="color:rgba(255,255,255,0.8); font-size:0.6em; margin-bottom:0.3em;">
+      Sentence Structure, Constituents &amp; Phrase Structure Rules
+      <span class="ko-supp" style="display:block; color:rgba(255,255,255,0.65);">※ 통사론 (1) — 문장 구조·구성성분·구구조 규칙</span>
+    </p>
+    <p style="color:rgba(255,255,255,0.55); font-size:0.48em; margin-bottom:1.3em;">
+      Chapter 3 · pp. 75–106
+    </p>
+    <p style="color:rgba(255,255,255,0.5); font-size:0.42em; font-style:italic;">
+      An Introduction to Language, 11th Ed. — Fromkin, Rodman &amp; Hyams
+    </p>
+  </div>
+  <aside class="notes">
+    Ch.3 통사론의 전반부입니다. 지난 시간까지 다룬 '단어'를 넘어, 단어들이 어떻게 결합해 문장이 되는가를 봅니다.
+    핵심 메시지: 문장은 단어의 단순 나열이 아니라 위계적(hierarchical) 구조를 가진다는 점입니다.
+  </aside>
+</section>
+
+<!-- ══ 2 · Agenda ══ -->
+<section>
+  <h2>Agenda</h2>
+  <ul class="agenda-list">
+    <li>What the Syntax Rules Do — grammaticality vs. meaning</li>
+    <li>Sentence Structure &amp; Constituents</li>
+    <li>Constituency Tests</li>
+    <li>Syntactic Categories — lexical &amp; phrasal</li>
+    <li>Phrase Structure Trees &amp; Structural Ambiguity</li>
+    <li>Phrase Structure Rules &amp; Recursion</li>
+  </ul>
+  <aside class="notes">
+    오늘의 키워드는 constituent, syntactic category, phrase structure tree/rule, recursion입니다.
+    각 개념이 '문장의 위계 구조'라는 큰 그림 안에서 연결됨을 강조하세요.
+  </aside>
+</section>
+
+<!-- ══ 3 · What the Syntax Rules Do ══ -->
+<section data-background-color="#f8f9fa">
+  <h2>What Do the Syntax Rules Do?</h2>
+  <div class="def-box">
+    <div class="term">Syntax = the rules for combining words into phrases and sentences</div>
+  </div>
+  <ul style="font-size:0.74em; line-height:1.85; margin-top:0.5em;">
+    <li>They determine the <strong>correct word order</strong> of a language.</li>
+    <li>They describe the <strong>relations</strong> between words (subject, object …).</li>
+    <li>They let speakers judge <span class="gram-ok">grammatical</span> vs. <span class="gram-star">*ungrammatical</span> strings.</li>
+  </ul>
+  <p class="ko-supp" style="margin-top:0.5em; font-size:0.68em;">
+    ※ 통사 규칙은 유한하지만, 이를 통해 무한한 수의 문장을 만들고 판단할 수 있다.
+  </p>
+  <aside class="notes">
+    통사 규칙이 하는 일 세 가지: 어순 결정, 문법 관계 표시, 적형성 판단. 이 규칙이 화자의 무의식적
+    지식(competence)의 일부임을 다시 상기시키세요.
+  </aside>
+</section>
+
+<!-- ══ 4 · Grammaticality independent of meaning ══ -->
+<section>
+  <h2>Grammaticality ≠ Meaningfulness</h2>
+  <p style="font-size:0.72em;">A sentence can be perfectly <span class="key">grammatical</span> yet make no sense.</p>
+  <ul class="test-list">
+    <li><span class="gram-ok">a.</span> Colorless green ideas sleep furiously. <span style="color:var(--color-subtle);">— grammatical, meaningless</span></li>
+    <li><span class="gram-star">b. *</span> Furiously sleep ideas green colorless. <span style="color:var(--color-subtle);">— ungrammatical</span></li>
+  </ul>
+  <p style="font-size:0.7em; margin-top:0.5em;">
+    Both are meaningless, yet only (a) obeys the <span class="key">syntactic rules</span> of English.
+    Our judgment of well-formedness is <strong>independent of meaning</strong>.
+  </p>
+  <p class="ko-supp" style="font-size:0.66em; margin-top:0.4em;">※ 촘스키의 유명한 예문 — 의미가 없어도 문법적일 수 있고, 그 반대도 성립한다.</p>
+  <aside class="notes">
+    "Colorless green ideas sleep furiously"는 촘스키(1957)의 예문입니다. 문법성(syntactic well-formedness)과
+    의미성(meaningfulness)이 별개의 층위임을 보여주는 결정적 사례로 강조하세요.
+  </aside>
+</section>
+
+<!-- ══ 5 · Constituents ══ -->
+<section>
+  <h2>Sentence Structure &amp; Constituents</h2>
+  <div class="def-box">
+    <div class="term">Constituent = a group of words that functions as a single unit</div>
+  </div>
+  <p style="font-size:0.72em; margin-top:0.5em;">
+    Words are not just strung in a line — they cluster into <span class="key">hierarchical</span> groups.
+  </p>
+  <p style="font-size:0.72em;">
+    In <em>"The child found a puppy,"</em> the words <em>the child</em> form one unit (a noun phrase),
+    and <em>found a puppy</em> form another (a verb phrase).
+  </p>
+  <p class="ko-supp" style="font-size:0.66em; margin-top:0.4em;">※ 구성성분(constituent)은 문장을 이루는 '벽돌'이다. 이 위계 구조가 통사론의 핵심.</p>
+  <aside class="notes">
+    구성성분(constituent) 개념이 오늘의 초석입니다. 문장이 단순 선형 나열이 아니라 위계적으로 묶인 단위들의
+    구조라는 점을 반드시 이해시키세요. 다음 슬라이드의 구성성분 판별법으로 이어집니다.
+  </aside>
+</section>
+
+<!-- ══ 6 · Constituency Tests ══ -->
+<section>
+  <h2>Constituency Tests</h2>
+  <p style="font-size:0.72em;">How do we know a group of words is a constituent? Apply these <span class="key">diagnostics</span>.</p>
+  <ul class="test-list">
+    <li><strong>Substitution (pronoun):</strong> <em>The child</em> → <em>She</em> found a puppy. ✓ a unit</li>
+    <li><strong>Stand-alone (answer):</strong> "What did she find?" — <em>A puppy.</em> ✓ a unit</li>
+    <li><strong>Movement / clefting:</strong> <em>It was a puppy that the child found.</em> ✓ a unit</li>
+  </ul>
+  <p style="font-size:0.68em; margin-top:0.4em;">
+    If a string can be replaced by a pronoun, stand alone as an answer, or be moved together,
+    it is a <span class="key">constituent</span>.
+  </p>
+  <p class="ko-supp" style="font-size:0.64em; margin-top:0.3em;">※ 대치·단독 응답·이동(분열문) — 세 가지 판별법으로 구성성분을 확인한다.</p>
+  <aside class="notes">
+    구성성분 판별법 세 가지: (1) 대명사 대치, (2) 질문에 대한 단독 응답, (3) 이동/분열문(clefting).
+    학생들에게 직접 적용해보게 하면 개념이 선명해집니다.
+  </aside>
+</section>
+
+<!-- ══ 7 · Syntactic Categories — Lexical ══ -->
+<section>
+  <h2>Syntactic Categories · Lexical</h2>
+  <p style="font-size:0.72em;">The <span class="key">lexical categories</span> (parts of speech) are exactly five.</p>
+  <div class="cat-grid">
+    <div class="cat-card"><b>N</b><span>Noun — puppy, child</span></div>
+    <div class="cat-card"><b>V</b><span>Verb — found, sleep</span></div>
+    <div class="cat-card"><b>A</b><span>Adjective — green, old</span></div>
+    <div class="cat-card"><b>P</b><span>Preposition — with, in</span></div>
+    <div class="cat-card"><b>Adv</b><span>Adverb — furiously</span></div>
+  </div>
+  <p style="font-size:0.66em; margin-top:0.3em;">
+    <span class="key">Functional</span> categories are separate — <strong>Det</strong> (<em>the, a</em>) and <strong>T</strong> (tense / modals: <em>will, can</em>) carry grammatical, not descriptive, content.
+  </p>
+  <p style="font-size:0.66em; margin-top:0.2em;">
+    Category is defined by <strong>distribution</strong> — where a word may occur — not by meaning alone.
+  </p>
+  <p class="ko-supp" style="font-size:0.62em; margin-top:0.3em;">※ 어휘 범주는 N·V·A·P·Adv 다섯뿐. Det과 T는 기능 범주(functional category)로 따로 분류된다.</p>
+  <aside class="notes">
+    어휘 범주(lexical category)는 분포(distribution)로 정의됩니다. "명사는 사물 이름"이라는 의미 기반 정의의
+    한계를 지적하세요. 중요: 관사·한정사 Det과 시제 T는 어휘 범주가 아니라 기능 범주(functional category)입니다.
+    교재도 어휘 범주를 N·V·A·P·Adv 다섯으로 한정합니다.
+  </aside>
+</section>
+
+<!-- ══ 8 · Syntactic Categories — Phrasal ══ -->
+<section>
+  <h2>Syntactic Categories · Phrasal</h2>
+  <p style="font-size:0.72em;">Constituents built around a head word form <span class="key">phrasal categories</span>.</p>
+  <div class="cat-grid">
+    <div class="cat-card"><b>NP</b><span>Noun Phrase — the happy child</span></div>
+    <div class="cat-card"><b>VP</b><span>Verb Phrase — found a puppy</span></div>
+    <div class="cat-card"><b>PP</b><span>Prep. Phrase — with the telescope</span></div>
+    <div class="cat-card"><b>AP</b><span>Adj. Phrase — very old</span></div>
+  </div>
+  <p style="font-size:0.68em; margin-top:0.4em;">
+    Above them all stands the sentence <span class="key">S</span>, made of an NP (subject) and a VP (predicate).
+  </p>
+  <p class="ko-supp" style="font-size:0.64em; margin-top:0.3em;">※ 각 구(phrase)는 핵어(head)를 중심으로 구성된다 — NP의 핵은 N, VP의 핵은 V.</p>
+  <aside class="notes">
+    구 범주(phrasal category)는 핵어(head)의 범주에서 이름을 딴다. S = NP + VP라는 기본 골격을 각인시키세요.
+    다음 시간(Week 7)의 head-complement 논의로 이어집니다.
+  </aside>
+</section>
+
+<!-- ══ 9 · Phrase Structure Tree (basic) ══ -->
+<section>
+  <h2>Phrase Structure Tree</h2>
+  <p style="font-size:0.68em; color:var(--color-subtle);">A tree shows the <span class="key">hierarchical</span> grouping of constituents.</p>
+  <div style="text-align:center;">
+    <svg viewBox="0 0 620 320" style="width:80%; max-width:640px; margin:0.1em auto;">
+      <!-- lines -->
+      <line x1="310" y1="35" x2="150" y2="85" stroke="#888" stroke-width="1.5"/>
+      <line x1="310" y1="35" x2="450" y2="85" stroke="#888" stroke-width="1.5"/>
+      <!-- NP subj -->
+      <line x1="150" y1="105" x2="90"  y2="155" stroke="#888" stroke-width="1.5"/>
+      <line x1="150" y1="105" x2="210" y2="155" stroke="#888" stroke-width="1.5"/>
+      <!-- VP -->
+      <line x1="450" y1="105" x2="390" y2="155" stroke="#888" stroke-width="1.5"/>
+      <line x1="450" y1="105" x2="520" y2="155" stroke="#888" stroke-width="1.5"/>
+      <!-- NP obj -->
+      <line x1="520" y1="175" x2="470" y2="235" stroke="#888" stroke-width="1.5"/>
+      <line x1="520" y1="175" x2="570" y2="235" stroke="#888" stroke-width="1.5"/>
+      <!-- leaves lines -->
+      <line x1="90"  y1="175" x2="90"  y2="235" stroke="#888" stroke-width="1.5"/>
+      <line x1="210" y1="175" x2="210" y2="235" stroke="#888" stroke-width="1.5"/>
+      <line x1="390" y1="175" x2="390" y2="285" stroke="#888" stroke-width="1.5"/>
+      <line x1="470" y1="255" x2="470" y2="285" stroke="#888" stroke-width="1.5"/>
+      <line x1="570" y1="255" x2="570" y2="285" stroke="#888" stroke-width="1.5"/>
+      <!-- nodes -->
+      <text class="node" x="310" y="30" text-anchor="middle">S</text>
+      <text class="node" x="150" y="100" text-anchor="middle">NP</text>
+      <text class="node" x="450" y="100" text-anchor="middle">VP</text>
+      <text class="node" x="90"  y="170" text-anchor="middle">Det</text>
+      <text class="node" x="210" y="170" text-anchor="middle">N</text>
+      <text class="node" x="390" y="170" text-anchor="middle">V</text>
+      <text class="node" x="520" y="170" text-anchor="middle">NP</text>
+      <text class="node" x="470" y="250" text-anchor="middle">Det</text>
+      <text class="node" x="570" y="250" text-anchor="middle">N</text>
+      <!-- leaves -->
+      <text class="leaf" x="90"  y="252" text-anchor="middle">The</text>
+      <text class="leaf" x="210" y="252" text-anchor="middle">child</text>
+      <text class="leaf" x="390" y="302" text-anchor="middle">found</text>
+      <text class="leaf" x="470" y="302" text-anchor="middle">a</text>
+      <text class="leaf" x="570" y="302" text-anchor="middle">puppy</text>
+    </svg>
+  </div>
+  <p class="tree-cap">"The child found a puppy" — S → NP VP, NP → Det N, VP → V NP</p>
+  <aside class="notes">
+    가장 기본적인 구구조 나무입니다. S가 주어 NP와 술어 VP로 나뉘고, 각 NP가 Det+N으로 분석됨을 손으로
+    짚어가며 설명하세요. 나무의 각 마디(node)가 구성성분에 대응함을 강조.
+  </aside>
+</section>
+
+<!-- ══ 10 · Structural Ambiguity Tree ══ -->
+<section>
+  <h2>Structural Ambiguity</h2>
+  <p style="font-size:0.66em; color:var(--color-subtle);">"Sue saw the man with the telescope" — two structures, two meanings.</p>
+  <div class="two-col" style="font-size:0.6em;">
+    <div>
+      <svg viewBox="0 0 380 230" style="width:100%;">
+        <!-- lines -->
+        <line x1="190" y1="34" x2="70"  y2="70" stroke="#888" stroke-width="1.3"/>
+        <line x1="190" y1="34" x2="260" y2="70" stroke="#888" stroke-width="1.3"/>
+        <line x1="70"  y1="88" x2="70"  y2="114" stroke="#888" stroke-width="1.3"/>
+        <line x1="260" y1="88" x2="175" y2="120" stroke="#888" stroke-width="1.3"/>
+        <line x1="260" y1="88" x2="260" y2="120" stroke="#888" stroke-width="1.3"/>
+        <line x1="260" y1="88" x2="340" y2="120" stroke="#888" stroke-width="1.3"/>
+        <line x1="175" y1="138" x2="175" y2="164" stroke="#888" stroke-width="1.3"/>
+        <line x1="260" y1="138" x2="260" y2="164" stroke="#888" stroke-width="1.3"/>
+        <line x1="340" y1="138" x2="335" y2="158" stroke="#888" stroke-width="1.3"/>
+        <!-- nodes -->
+        <text class="node" x="190" y="30"  text-anchor="middle">S</text>
+        <text class="node" x="70"  y="84"  text-anchor="middle">NP</text>
+        <text class="node" x="260" y="84"  text-anchor="middle">VP</text>
+        <text class="node" x="175" y="134" text-anchor="middle">V</text>
+        <text class="node" x="260" y="134" text-anchor="middle">NP</text>
+        <text class="node" x="340" y="134" text-anchor="middle">PP</text>
+        <!-- leaves -->
+        <text class="leaf" x="70"  y="130" text-anchor="middle">Sue</text>
+        <text class="leaf" x="175" y="180" text-anchor="middle">saw</text>
+        <text class="leaf" x="260" y="180" text-anchor="middle">the man</text>
+        <text class="leaf" x="335" y="176" text-anchor="middle"><tspan x="335" dy="0">with the</tspan><tspan x="335" dy="16">telescope</tspan></text>
+      </svg>
+      <p class="tree-cap"><strong>PP under VP</strong> — Sue <em>used</em> the telescope to see</p>
+    </div>
+    <div>
+      <svg viewBox="0 0 380 230" style="width:100%;">
+        <!-- lines -->
+        <line x1="150" y1="34" x2="55"  y2="70" stroke="#888" stroke-width="1.3"/>
+        <line x1="150" y1="34" x2="250" y2="70" stroke="#888" stroke-width="1.3"/>
+        <line x1="55"  y1="88" x2="55"  y2="114" stroke="#888" stroke-width="1.3"/>
+        <line x1="250" y1="88" x2="165" y2="120" stroke="#888" stroke-width="1.3"/>
+        <line x1="250" y1="88" x2="300" y2="120" stroke="#888" stroke-width="1.3"/>
+        <line x1="165" y1="138" x2="165" y2="164" stroke="#888" stroke-width="1.3"/>
+        <line x1="300" y1="138" x2="255" y2="162" stroke="#888" stroke-width="1.3"/>
+        <line x1="300" y1="138" x2="345" y2="162" stroke="#888" stroke-width="1.3"/>
+        <line x1="255" y1="180" x2="255" y2="196" stroke="#888" stroke-width="1.3"/>
+        <line x1="345" y1="180" x2="340" y2="190" stroke="#888" stroke-width="1.3"/>
+        <!-- nodes -->
+        <text class="node" x="150" y="30"  text-anchor="middle">S</text>
+        <text class="node" x="55"  y="84"  text-anchor="middle">NP</text>
+        <text class="node" x="250" y="84"  text-anchor="middle">VP</text>
+        <text class="node" x="165" y="134" text-anchor="middle">V</text>
+        <text class="node" x="300" y="134" text-anchor="middle">NP</text>
+        <text class="node" x="255" y="176" text-anchor="middle">NP</text>
+        <text class="node" x="345" y="176" text-anchor="middle">PP</text>
+        <!-- leaves -->
+        <text class="leaf" x="55"  y="130" text-anchor="middle">Sue</text>
+        <text class="leaf" x="165" y="158" text-anchor="middle">saw</text>
+        <text class="leaf" x="255" y="212" text-anchor="middle">the man</text>
+        <text class="leaf" x="340" y="208" text-anchor="middle"><tspan x="340" dy="0">with the</tspan><tspan x="340" dy="16">telescope</tspan></text>
+      </svg>
+      <p class="tree-cap"><strong>PP under NP</strong> — the man <em>who has</em> the telescope</p>
+    </div>
+  </div>
+  <p class="ko-supp" style="font-size:0.62em; margin-top:0.2em;">※ 같은 단어열이 다른 구조 → 다른 의미. 왼쪽은 PP가 VP에 붙고(도구), 오른쪽은 목적어 NP 안에 붙는다(수식). 구조적 중의성은 위계 구조가 실재함을 증명한다.</p>
+  <aside class="notes">
+    구조적 중의성(structural ambiguity)의 고전적 예입니다. PP가 VP에 붙으면 '망원경으로 보았다',
+    NP에 붙으면 '망원경을 가진 남자'. 같은 선형 배열이 다른 나무 → 다른 의미임을 강조하세요.
+    이는 위계 구조가 심리적 실재임을 보여주는 강력한 근거입니다.
+  </aside>
+</section>
+
+<!-- ══ 11 · Phrase Structure Rules ══ -->
+<section>
+  <h2>Phrase Structure Rules</h2>
+  <p style="font-size:0.72em;">A finite set of rewrite rules generates the trees of a language.</p>
+  <div class="rules-box">
+    <span class="nt">S</span>  <span class="arr">→</span>  NP VP<br>
+    <span class="nt">NP</span> <span class="arr">→</span>  <span class="opt">(Det)</span> <span class="opt">(A)</span> N <span class="opt">(PP)</span><br>
+    <span class="nt">VP</span> <span class="arr">→</span>  V <span class="opt">(NP)</span> <span class="opt">(PP)</span><br>
+    <span class="nt">PP</span> <span class="arr">→</span>  P NP
+  </div>
+  <p style="font-size:0.66em; margin-top:0.4em;">
+    Parentheses mark <span class="key">optional</span> elements. These rules capture which strings are well-formed.
+  </p>
+  <p class="ko-supp" style="font-size:0.62em; margin-top:0.3em;">※ 괄호는 선택적 요소. 유한한 규칙 집합이 그 언어의 모든 나무를 생성한다.</p>
+  <aside class="notes">
+    구구조 규칙(phrase structure rules)은 나무를 생성하는 재작성 규칙입니다. 괄호=선택적 요소.
+    유한한 규칙이 무한한 문장을 낳는다는 점을 다음 슬라이드(재귀)로 연결하세요.
+  </aside>
+</section>
+
+<!-- ══ 12 · Recursion / Infinity ══ -->
+<section>
+  <h2>Recursion &amp; the Infinity of Language</h2>
+  <div class="summary-box">
+    <h4>Recursive Rules</h4>
+    <p style="font-size:0.84em;">A rule is <span class="key">recursive</span> when a category can contain itself — directly or through other rules.</p>
+  </div>
+  <div class="rules-box" style="margin-top:0.5em;">
+    <span class="nt">NP</span> <span class="arr">→</span> Det N <span class="opt">(PP)</span><br>
+    <span class="nt">PP</span> <span class="arr">→</span> P <span class="nt">NP</span>  <span style="color:#6c757d;">← NP appears again!</span>
+  </div>
+  <p style="font-size:0.66em; margin-top:0.4em;">
+    <em>the cat on the mat in the house by the river …</em> — the loop never has to stop.
+    Finite rules therefore generate an <span class="key">infinite</span> set of sentences.
+  </p>
+  <aside class="notes">
+    재귀(recursion)가 언어 무한성의 열쇠입니다. NP 안에 PP, PP 안에 다시 NP가 들어가는 순환 구조를
+    짚어주세요. Week 2에서 배운 '창조성/무한성'이 여기서 구조적으로 설명됩니다.
+  </aside>
+</section>
+
+<!-- ══ 12b · A Closer Look: X-bar & TP ══ -->
+<section data-background-color="#f8f9fa">
+  <h2>A Closer Look · X-bar &amp; TP</h2>
+  <p style="font-size:0.7em;">The textbook generalizes: <strong>every</strong> phrase shares one schema built around a head <span class="key">X</span>.</p>
+  <div class="rules-box">
+    <span class="nt">XP</span> <span class="arr">→</span> <span class="opt">(Specifier)</span> X <span class="opt">(Complement)</span>
+  </div>
+  <ul style="font-size:0.68em; line-height:1.7; margin-top:0.4em;">
+    <li>The head <strong>X</strong> may take a <span class="key">complement</span> (selected) and a <span class="key">specifier</span> — the same shape for NP, VP, PP, AP.</li>
+    <li>The sentence <strong>S</strong> is reanalyzed as a <span class="key">TP</span> (Tense Phrase), headed by <strong>T</strong> (tense / modal).</li>
+    <li>In a TP the <strong>subject NP</strong> is the specifier and the <strong>VP</strong> is the complement.</li>
+  </ul>
+  <div class="rules-box" style="margin-top:0.3em;">
+    <span class="nt">TP</span> <span class="arr">→</span> NP <span class="nt">T</span> VP <span style="color:#6c757d;">← subject · tense · predicate</span>
+  </div>
+  <p class="ko-supp" style="font-size:0.6em; margin-top:0.3em;">※ 교재는 모든 구가 핵어 X를 중심으로 [지정어–핵–보충어] 골격을 공유한다고 본다(X-bar). 문장 S는 시제 T가 이끄는 TP로 재분석되며, 주어 NP는 지정어, VP는 보충어다. 이는 보편문법(UG)의 일부로 가정된다.</p>
+  <aside class="notes">
+    교재 후반부의 핵심 일반화입니다. 모든 구가 동일한 X-bar 골격 [Spec–X–Complement]를 공유하고,
+    문장 S는 시제(T)가 핵어인 TP로 재분석됩니다. 주어=지정어, VP=보충어. 이 틀이 Week 7의 의문문
+    형성(조동사 이동)과 연결됨을 예고하세요. 세부(N′/V′)는 다음 단계 심화로 남겨둡니다.
+  </aside>
+</section>
+
+<!-- ══ 13 · Practice Q1 ══ -->
+<section data-background-color="#f8f9fa">
+  <span class="practice-header">Practice · Check Your Understanding</span>
+  <div class="mcq">
+    <div class="mcq-q"><span class="qnum">1</span>What does "<em>Colorless green ideas sleep furiously</em>" demonstrate?</div>
+    <div class="mcq-opts">
+      <button class="mcq-opt" data-correct="true"><span class="opt-key">A</span>A sentence can be grammatical yet meaningless</button>
+      <button class="mcq-opt"><span class="opt-key">B</span>Word order does not matter in English</button>
+      <button class="mcq-opt"><span class="opt-key">C</span>Meaning determines grammaticality</button>
+    </div>
+    <div class="mcq-explain"><span class="lbl">Explanation</span> The sentence obeys English syntactic rules (word order, categories) even though it expresses no coherent meaning — grammaticality is independent of meaningfulness.</div>
+  </div>
+  <aside class="notes">
+    문법성과 의미성의 분리를 확인하는 문항입니다. 오답 C(의미가 문법성을 결정)와 대비해 설명하세요.
+  </aside>
+</section>
+
+<!-- ══ 14 · Practice Q2 ══ -->
+<section data-background-color="#f8f9fa">
+  <span class="practice-header">Practice · Check Your Understanding</span>
+  <div class="mcq">
+    <div class="mcq-q"><span class="qnum">2</span>In "The student read the book," which test shows <em>the book</em> is a constituent?</div>
+    <div class="mcq-opts">
+      <button class="mcq-opt" data-correct="true"><span class="opt-key">A</span>It can be replaced by the pronoun <em>it</em></button>
+      <button class="mcq-opt"><span class="opt-key">B</span>It contains exactly two words</button>
+      <button class="mcq-opt"><span class="opt-key">C</span>It is the last string in the sentence</button>
+    </div>
+    <div class="mcq-explain"><span class="lbl">Explanation</span> Substitution by a pronoun (<em>the book</em> → <em>it</em>) is a constituency test. Word count and position are not diagnostics of constituent status.</div>
+  </div>
+  <aside class="notes">
+    구성성분 판별법(대명사 대치)을 확인하는 문항입니다. 단어 수나 위치는 판별 기준이 아님을 강조하세요.
+  </aside>
+</section>
+
+<!-- ══ 15 · Practice Q3 ══ -->
+<section data-background-color="#f8f9fa">
+  <span class="practice-header">Practice · Check Your Understanding</span>
+  <div class="mcq">
+    <div class="mcq-q"><span class="qnum">3</span>Which phrase structure rule expands the verb phrase?</div>
+    <div class="mcq-opts">
+      <button class="mcq-opt"><span class="opt-key">A</span>NP → (Det) (A) N (PP)</button>
+      <button class="mcq-opt" data-correct="true"><span class="opt-key">B</span>VP → V (NP) (PP)</button>
+      <button class="mcq-opt"><span class="opt-key">C</span>PP → P NP</button>
+    </div>
+    <div class="mcq-explain"><span class="lbl">Explanation</span> A VP is headed by a verb, optionally followed by an object NP and/or a PP — captured by VP → V (NP) (PP). The other rules expand NP and PP.</div>
+  </div>
+  <aside class="notes">
+    구구조 규칙의 좌변(범주)과 우변(확장)을 정확히 연결하는 문항입니다. VP의 핵이 V임을 강조하세요.
+  </aside>
+</section>
+
+<!-- ══ 16 · Exercises Q4 ══ -->
+<section data-background-color="#f8f9fa">
+  <span class="practice-header">Exercises · Based on Textbook Ch.3</span>
+  <div class="mcq">
+    <div class="mcq-q"><span class="qnum">4</span>"I saw the girl with the binoculars" is ambiguous. The ambiguity comes from — <span style="font-weight:400; color:var(--color-subtle); font-size:0.85em;">(cf. textbook Ch.3, pp.83–84)</span></div>
+    <div class="mcq-opts">
+      <button class="mcq-opt" data-correct="true"><span class="opt-key">A</span>where the PP <em>with the binoculars</em> attaches in the tree</button>
+      <button class="mcq-opt"><span class="opt-key">B</span>a word with two dictionary meanings</button>
+      <button class="mcq-opt"><span class="opt-key">C</span>an error in prescriptive grammar</button>
+    </div>
+    <div class="mcq-explain"><span class="lbl">Explanation</span> This is <span class="key">structural</span> ambiguity: the PP can attach to the VP (I used the binoculars to see) or to the NP (the girl who had the binoculars). Different trees, same words — no single word is ambiguous here.</div>
+  </div>
+  <aside class="notes">
+    교재 Ch.3의 중의성 문제를 개념 중심으로 재구성했습니다(원문 복제 아님). 구조적 중의성과 어휘적
+    중의성(오답 B)의 차이를 대비해 설명하세요.
+  </aside>
+</section>
+
+<!-- ══ 17 · Exercises Q5 ══ -->
+<section data-background-color="#f8f9fa">
+  <span class="practice-header">Exercises · Based on Textbook Ch.3</span>
+  <div class="mcq">
+    <div class="mcq-q"><span class="qnum">5</span>Why can a finite grammar produce infinitely many sentences? <span style="font-weight:400; color:var(--color-subtle); font-size:0.85em;">(cf. textbook Ch.3, pp.94–95)</span></div>
+    <div class="mcq-opts">
+      <button class="mcq-opt"><span class="opt-key">A</span>Because English has a very large vocabulary</button>
+      <button class="mcq-opt" data-correct="true"><span class="opt-key">B</span>Because some rules are recursive — a category can contain itself</button>
+      <button class="mcq-opt"><span class="opt-key">C</span>Because speakers memorize every sentence in advance</button>
+    </div>
+    <div class="mcq-explain"><span class="lbl">Explanation</span> <span class="key">Recursion</span> (e.g. NP → Det N PP and PP → P NP) lets a structure embed inside itself without limit, so a finite rule set generates an infinite set of sentences. Vocabulary size alone would still be finite.</div>
+  </div>
+  <p class="ko-supp" style="font-size:0.6em; margin-top:0.5em;">※ 더 풀어보기: 교재 Ch.3 pp.75–106 Exercises — 구성성분 판별·나무 그리기·중의성 분석을 과제로 권장.</p>
+  <aside class="notes">
+    재귀와 언어 무한성을 묻는 문항입니다. 어휘 수(오답 A)가 아니라 규칙의 재귀성이 무한성의 원천임을
+    강조하세요. 하단 추가 Exercises는 과제로 안내.
+  </aside>
+</section>
+
+<!-- ══ 18 · Summary ══ -->
+<section>
+  <h2>Summary</h2>
+  <div class="summary-box">
+    <h4>Key Points</h4>
+    <ul style="font-size:0.8em; line-height:1.8;">
+      <li>Syntax rules fix <span class="key">word order</span> &amp; grammaticality — independent of meaning</li>
+      <li>Sentences have <span class="key">hierarchical</span> structure built of <span class="key">constituents</span></li>
+      <li>Constituency tests: substitution · stand-alone · movement</li>
+      <li>Categories: lexical (N, V, A, P, Adv) &amp; phrasal (NP, VP, PP, AP), plus S</li>
+      <li><span class="key">Phrase structure trees</span> reveal <span class="key">structural ambiguity</span></li>
+      <li><span class="key">Recursive</span> rules → the infinity of language</li>
+    </ul>
+  </div>
+  <aside class="notes">
+    오늘의 핵심은 '위계 구조'입니다. 구성성분, 범주, 나무, 규칙, 재귀가 모두 이 하나의 아이디어를
+    떠받칩니다. Week 7에서 핵어-보충어와 의문문 형성으로 심화됩니다.
+  </aside>
+</section>
+
+<!-- ══ 19 · Next Week ══ -->
+<section>
+  <h2 style="margin-bottom:0.3em;">Next Week — Week 7</h2>
+  <div class="next-week-banner">
+    <div class="label">Next Class</div>
+    <p><strong>Syntax (Part 2)</strong> — Ch.3 · pp.107–132</p>
+  </div>
+  <h3 style="margin:0.55em 0 0.2em;">Preview</h3>
+  <ul style="font-size:0.66em; line-height:1.55; margin:0;">
+    <li>Heads and complements — building phrases</li>
+    <li>Subcategorization of verbs — intransitive · transitive · ditransitive</li>
+    <li>Grammatical dependencies — agreement &amp; question formation</li>
+    <li>Question formation &amp; structure-dependence; UG principles &amp; parameters</li>
+  </ul>
+  <div class="next-week-banner" style="margin-top:0.5em;">
+    <div class="label">Preparation · Assignment</div>
+    <p>Read textbook Ch.3 pp.107–132 · draw trees for two sentences of your choice</p>
+  </div>
+  <aside class="notes">
+    다음 주는 구를 '핵어 중심으로' 세우는 법과 의문문 형성 규칙을 다룹니다. 오늘 배운 나무 구조가
+    구조 의존성(structure-dependence) 논의의 토대가 됨을 예고하세요.
+  </aside>
+</section>
+
+</div><!-- /slides -->
+</div><!-- /reveal -->
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script>
+  Reveal.initialize({
+    hash: true,
+    slideNumber: 'c/t',
+    progress: true,
+    center: false,
+    transition: 'slide',
+    transitionSpeed: 'fast',
+    plugins: []
+  });
+</script>
+<a class="home-btn" href="../index.html" title="강의 목록으로">← 목록</a>
+<script src="assets/slides-print.js"></script>
+<script src="assets/slides-quiz.js"></script>
+<script src="assets/slides-ko-toggle.js"></script>
+</body>
+</html>

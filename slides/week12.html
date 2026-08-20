@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Week 12 — Phonetics (Part 2): Vowels &amp; Prosody | Topics in English Linguistics</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css" />
+  <link rel="stylesheet" href="assets/linguistics-theme.css" />
+  <link rel="stylesheet" href="assets/slides-quiz.css" />
+  <link rel="stylesheet" href="assets/slides-ko.css" />
+  <style>
+    :root { --slide-accent: #2d6a4f; }
+    .vwl-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:0.5em; font-size:0.66em; margin:0.4em 0; }
+    .vwl-card { background:var(--color-bg-alt); border:1px solid var(--color-border); border-radius:8px;
+      padding:0.45em 0.5em; text-align:center; }
+    .vwl-card .sym { font-weight:700; font-size:1.25em; color:var(--slide-accent); display:block; }
+    .vwl-card .ex { color:var(--color-subtle); font-size:0.9em; }
+    .dim-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:0.5em; font-size:0.7em; }
+    .dim-grid .dc { background:var(--color-bg-alt); border:1px solid var(--color-border);
+      border-radius:8px; padding:0.5em 0.7em; }
+    .dim-grid .dc b { color:var(--slide-accent); }
+    .prosody-list { list-style:none; padding:0; font-size:0.72em; }
+    .prosody-list li { padding:0.3em 0; border-bottom:1px solid var(--color-border); }
+    .prosody-list li:last-child { border-bottom:none; }
+    .prosody-list li b { color:var(--slide-accent); }
+    .gram-star { color:#c1121f; font-weight:700; }
+  </style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- ══ 1 · Title ══ -->
+<section class="title-slide" data-background-color="#16213e">
+  <div style="color:white; text-align:center; padding:1em;">
+    <div class="week-badge" style="background:rgba(255,255,255,0.2); color:white;">Week 12</div>
+    <h1 style="color:white; font-size:1.55em; margin:0.4em 0 0.2em;">Phonetics <span style="font-weight:300;">(Part 2)</span></h1>
+    <p style="color:rgba(255,255,255,0.8); font-size:0.6em; margin-bottom:0.3em;">
+      Vowels, Prosody &amp; the Phonetics of Signed Languages
+      <span class="ko-supp" style="display:block; color:rgba(255,255,255,0.65);">※ 모음, 운율, 그리고 수화의 음성학</span>
+    </p>
+    <p style="color:rgba(255,255,255,0.55); font-size:0.48em; margin-bottom:1.3em;">
+      Chapter 5 · pp. 199–215
+    </p>
+    <p style="color:rgba(255,255,255,0.5); font-size:0.42em; font-style:italic;">
+      An Introduction to Language, 11th Ed. — Fromkin, Rodman &amp; Hyams
+    </p>
+  </div>
+  <aside class="notes">
+    지난 시간(자음)에 이어 이번 주는 모음과 운율(prosody)을 다룹니다. 모음은 성도(vocal tract)의
+    개방된 흐름 속에서 혀의 높이·전후·원순성·긴장도로 기술된다는 점을 강조하세요. IPA 모음 사각도가 오늘의 핵심 도표입니다.
+  </aside>
+</section>
+
+<!-- ══ 2 · Agenda ══ -->
+<section>
+  <h2>Agenda</h2>
+  <ul class="agenda-list">
+    <li>Vowels — Height, Backness, Roundedness, Tenseness</li>
+    <li>The IPA Vowel Quadrilateral</li>
+    <li>English vowels with example words</li>
+    <li>Diphthongs &amp; Nasalization of vowels</li>
+    <li>Major classes &amp; phonetic features</li>
+    <li>Prosodic features — length, stress, pitch; Tone vs. Intonation</li>
+    <li>The phonetics of signed languages</li>
+  </ul>
+  <aside class="notes">
+    오늘의 키워드: height, backness, rounding, tense/lax, diphthong, nasalization, feature, prosody,
+    tone, intonation. 자음과 달리 모음은 조음 장애 없이 공명강의 모양으로 구별된다는 점을 먼저 짚으세요.
+  </aside>
+</section>
+
+<!-- ══ 3 · 도입: 모음이란 ══ -->
+<section data-background-color="#f8f9fa">
+  <h2>What Is a Vowel?</h2>
+  <div class="def-box">
+    <div class="term">Vowels are produced with an open, unobstructed vocal tract</div>
+  </div>
+  <ul style="font-size:0.74em; line-height:1.85; margin-top:0.5em;">
+    <li>Unlike consonants, there is <strong>no closure or narrow constriction</strong>.</li>
+    <li>The air flows freely; the tongue and lips reshape the <em>resonating cavity</em>.</li>
+    <li>Vowels are the <strong>most sonorous</strong> sounds and form syllable nuclei.</li>
+  </ul>
+  <p class="ko-supp" style="margin-top:0.6em; font-size:0.68em;">
+    ※ 자음이 '막힘'으로 정의된다면, 모음은 성도의 '모양(공명강)'으로 정의된다. 그래서 청진기 없이 혀 위치를 느끼기 어렵다.
+  </p>
+  <aside class="notes">
+    모음은 조음점(place)·조음방법(manner)이 아니라 혀의 위치와 입술 모양으로 기술합니다.
+    학생에게 [i]와 [ɑ]를 번갈아 발음하며 혀와 턱의 움직임을 느껴보게 하세요.
+  </aside>
+</section>
+
+<!-- ══ 4 · 네 가지 기술 차원 ══ -->
+<section>
+  <h2>Describing Vowels — Four Dimensions</h2>
+  <div class="dim-grid">
+    <div class="dc"><b>Height</b><br><span style="font-size:0.9em;">tongue high / mid / low — <em>beat</em> [i] vs. <em>bat</em> [æ]</span></div>
+    <div class="dc"><b>Backness</b><br><span style="font-size:0.9em;">front / central / back — <em>beat</em> [i] vs. <em>boot</em> [u]</span></div>
+    <div class="dc"><b>Roundedness</b><br><span style="font-size:0.9em;">lips rounded or spread — <em>boot</em> [u] is rounded</span></div>
+    <div class="dc"><b>Tenseness</b><br><span style="font-size:0.9em;">tense / lax — <em>beat</em> [i] vs. <em>bit</em> [ɪ]</span></div>
+  </div>
+  <p style="font-size:0.68em; margin-top:0.5em;">
+    Every vowel is a unique combination of these settings — this is what lets us <span class="key">plot</span> vowels on a chart.
+  </p>
+  <p class="ko-supp" style="font-size:0.66em; margin-top:0.3em;">※ 영어에서 앞모음은 대체로 비원순, 뒷모음은 대체로 원순 — 하지만 언어마다 다르다(프랑스어 [y] 등).</p>
+  <aside class="notes">
+    네 차원을 반드시 구분: 높이(height)·전후(backness)·원순성(rounding)·긴장도(tenseness).
+    tense/lax는 근육 긴장 + 길이 + 조음 위치의 극단성을 아우르는 개념임을 설명하세요.
+  </aside>
+</section>
+
+<!-- ══ 5 · 도표: IPA 모음 사각도 (SVG) ══ -->
+<section>
+  <h2>Diagram · The IPA Vowel Quadrilateral</h2>
+  <p style="font-size:0.66em; color:var(--color-subtle); margin-bottom:0.2em;">
+    The trapezoid is a schematic side view of the mouth — <em>front</em> at left, <em>high</em> at top.
+  </p>
+  <div style="text-align:center;">
+    <svg viewBox="0 0 640 340" style="width:82%; max-width:700px; margin:0.1em auto; font-family:var(--font-main);">
+      <!-- trapezoid -->
+      <polygon points="120,40 560,40 470,300 210,300" fill="#eaf5ef" stroke="#2d6a4f" stroke-width="2.5"/>
+      <!-- mid & low guide lines -->
+      <line x1="150" y1="127" x2="530" y2="127" stroke="#bcd8ca" stroke-width="1.2" stroke-dasharray="4 4"/>
+      <line x1="180" y1="213" x2="500" y2="213" stroke="#bcd8ca" stroke-width="1.2" stroke-dasharray="4 4"/>
+      <!-- axis labels -->
+      <text x="40" y="48" font-size="14" fill="#2d6a4f" font-weight="700">high</text>
+      <text x="40" y="303" font-size="14" fill="#2d6a4f" font-weight="700">low</text>
+      <text x="120" y="24" font-size="14" fill="#2d6a4f" font-weight="700" text-anchor="middle">front</text>
+      <text x="560" y="24" font-size="14" fill="#2d6a4f" font-weight="700" text-anchor="middle">back</text>
+      <!-- high vowels -->
+      <circle cx="120" cy="40" r="5" fill="#2d6a4f"/><text x="104" y="45" font-size="19" font-weight="700" fill="#14425f" text-anchor="end">i</text>
+      <circle cx="185" cy="62" r="5" fill="#2d6a4f"/><text x="185" y="80" font-size="17" fill="#5a6b78" text-anchor="middle">ɪ</text>
+      <circle cx="560" cy="40" r="5" fill="#2d6a4f"/><text x="578" y="45" font-size="19" font-weight="700" fill="#14425f">u</text>
+      <circle cx="500" cy="62" r="5" fill="#2d6a4f"/><text x="500" y="80" font-size="17" fill="#5a6b78" text-anchor="middle">ʊ</text>
+      <!-- central -->
+      <circle cx="340" cy="170" r="5" fill="#2d6a4f"/><text x="340" y="160" font-size="17" fill="#5a6b78" text-anchor="middle">ə</text>
+      <!-- mid vowels -->
+      <circle cx="205" cy="140" r="5" fill="#2d6a4f"/><text x="190" y="145" font-size="18" font-weight="700" fill="#14425f" text-anchor="end">e</text>
+      <circle cx="225" cy="205" r="5" fill="#2d6a4f"/><text x="210" y="210" font-size="18" fill="#5a6b78" text-anchor="end">ɛ</text>
+      <circle cx="475" cy="140" r="5" fill="#2d6a4f"/><text x="492" y="145" font-size="18" font-weight="700" fill="#14425f">o</text>
+      <circle cx="470" cy="205" r="5" fill="#2d6a4f"/><text x="487" y="210" font-size="18" fill="#5a6b78">ɔ</text>
+      <!-- low vowels -->
+      <circle cx="250" cy="288" r="5" fill="#2d6a4f"/><text x="235" y="293" font-size="18" fill="#5a6b78" text-anchor="end">æ</text>
+      <circle cx="450" cy="288" r="5" fill="#2d6a4f"/><text x="467" y="293" font-size="18" font-weight="700" fill="#14425f">ɑ</text>
+    </svg>
+  </div>
+  <p style="font-size:0.6em; text-align:center; color:var(--color-subtle);">
+    Tense vowels sit nearer the edges; lax vowels (<em>ɪ ʊ ɛ</em>) are drawn inward and lower.
+  </p>
+  <aside class="notes">
+    이 사각도는 실제 혀 위치를 이상화한 지도입니다. 왼쪽=앞, 위=높음. [i](고·전·긴장)에서 [ɑ](저·후)까지
+    양 극단을 발음시켜 대각선을 체감시키세요. 슈와[ə]가 정중앙에 오는 이유(무강세 중성모음)도 언급.
+  </aside>
+</section>
+
+<!-- ══ 6 · 영어 모음 예시 ══ -->
+<section>
+  <h2>English Vowels — Example Words</h2>
+  <div class="vwl-grid">
+    <div class="vwl-card"><span class="sym">i</span><span class="ex">b<u>ea</u>t</span></div>
+    <div class="vwl-card"><span class="sym">ɪ</span><span class="ex">b<u>i</u>t</span></div>
+    <div class="vwl-card"><span class="sym">e</span><span class="ex">b<u>ai</u>t</span></div>
+    <div class="vwl-card"><span class="sym">ɛ</span><span class="ex">b<u>e</u>t</span></div>
+    <div class="vwl-card"><span class="sym">æ</span><span class="ex">b<u>a</u>t</span></div>
+    <div class="vwl-card"><span class="sym">u</span><span class="ex">b<u>oo</u>t</span></div>
+    <div class="vwl-card"><span class="sym">ʊ</span><span class="ex">f<u>oo</u>t</span></div>
+    <div class="vwl-card"><span class="sym">o</span><span class="ex">b<u>oa</u>t</span></div>
+    <div class="vwl-card"><span class="sym">ɔ</span><span class="ex">b<u>ou</u>ght</span></div>
+    <div class="vwl-card"><span class="sym">ɑ</span><span class="ex">p<u>o</u>t</span></div>
+    <div class="vwl-card"><span class="sym">ʌ</span><span class="ex">b<u>u</u>t</span></div>
+    <div class="vwl-card"><span class="sym">ə</span><span class="ex">s<u>o</u>fa</span></div>
+  </div>
+  <p class="ko-supp" style="font-size:0.64em; margin-top:0.3em;">※ 철자와 소리는 일치하지 않는다 — 같은 &lt;oo&gt;가 boot [u]와 foot [ʊ]로 다르게 소리난다.</p>
+  <aside class="notes">
+    최소대립쌍처럼 배열된 예시입니다. 철자가 아니라 소리를 기준으로 판단해야 함을 강조하세요.
+    슈와[ə]는 항상 무강세 음절에만 나타난다는 점도 중요합니다.
+  </aside>
+</section>
+
+<!-- ══ 7 · Diphthongs ══ -->
+<section>
+  <h2>Diphthongs — Moving Vowels</h2>
+  <div class="def-box">
+    <div class="term">A diphthong is a single vowel whose quality glides from one position to another</div>
+  </div>
+  <div class="example-box" style="grid-template-columns:repeat(3,1fr); margin-top:0.5em;">
+    <div class="ex-item"><span class="word">aɪ</span><span class="trans"><em>b<u>i</u>te</em> — low → high front</span></div>
+    <div class="ex-item"><span class="word">aʊ</span><span class="trans"><em>b<u>ou</u>t</em> — low → high back</span></div>
+    <div class="ex-item"><span class="word">ɔɪ</span><span class="trans"><em>b<u>oy</u></em> — low back → high front</span></div>
+  </div>
+  <p style="font-size:0.68em; margin-top:0.5em;">
+    A <span class="key">monophthong</span> holds one steady quality; a diphthong <span class="key">moves</span> within one syllable.
+  </p>
+  <p class="ko-supp" style="font-size:0.64em; margin-top:0.3em;">※ 이중모음은 두 모음이 아니라 하나의 모음이 미끄러지는 것 — 한 음절 안에서 일어난다.</p>
+  <aside class="notes">
+    이중모음(diphthong)은 조음이 도중에 이동하는 단일 모음입니다. 하나의 음절 핵을 이룬다는 점에서
+    두 개의 모음과 다릅니다. [aɪ], [aʊ], [ɔɪ]를 천천히 발음하며 혀의 이동을 느껴보게 하세요.
+  </aside>
+</section>
+
+<!-- ══ 8 · Nasalization ══ -->
+<section>
+  <h2>Nasalization of Vowels</h2>
+  <p style="font-size:0.72em;">In English, vowels become <span class="key">nasalized</span> when they occur <strong>before a nasal consonant</strong>.</p>
+  <div class="two-col" style="font-size:0.72em;">
+    <div class="def-box">
+      <div class="term">Oral vowel</div>
+      <p style="margin-top:0.3em;"><em>bad</em> → [bæd] — velum raised, air only through the mouth.</p>
+    </div>
+    <div class="def-box">
+      <div class="term">Nasalized vowel</div>
+      <p style="margin-top:0.3em;"><em>ban</em> → [bæ̃n] — velum lowered in anticipation of [n].</p>
+    </div>
+  </div>
+  <p style="font-size:0.68em; margin-top:0.5em;">
+    This is <span class="key">allophonic</span> in English (predictable, non-contrastive) — no word pair differs by nasalization alone. In French it is <span class="key">contrastive</span>.
+  </p>
+  <p class="ko-supp" style="font-size:0.64em; margin-top:0.3em;">※ 영어의 모음 비음화는 규칙으로 예측 가능한 이음(allophone) — 다음 주 음운론의 예고편이다.</p>
+  <aside class="notes">
+    비음화는 예측 가능한 이음 현상으로, 다음 주(음운론)의 동화 규칙 도입부와 연결됩니다.
+    프랑스어에서는 비음화가 변별적(bas [ba] vs. banc [bɑ̃])이라는 대조를 통해 언어 상대성을 강조하세요.
+  </aside>
+</section>
+
+<!-- ══ 9 · 자질과 자연 부류 ══ -->
+<section>
+  <h2>Major Classes &amp; Phonetic Features</h2>
+  <p style="font-size:0.7em;">Sounds are described by <span class="key">binary features</span> [+ / −] that group them into natural classes.</p>
+  <table>
+    <tr><th>Feature</th><th>[+] means</th><th>Examples of [+]</th></tr>
+    <tr><td>consonantal</td><td>major obstruction</td><td>p, t, s, m, l</td></tr>
+    <tr><td>sonorant</td><td>free airflow, resonant</td><td>vowels, m, n, l, r</td></tr>
+    <tr><td>syllabic</td><td>forms a syllable nucleus</td><td>vowels, syllabic [l̩ n̩]</td></tr>
+    <tr><td>nasal</td><td>velum lowered</td><td>m, n, ŋ</td></tr>
+    <tr><td>voiced</td><td>vocal folds vibrate</td><td>b, d, g, all vowels</td></tr>
+  </table>
+  <p class="ko-supp" style="font-size:0.62em; margin-top:0.3em;">※ 자질은 개별 소리가 아니라 소리의 '집합(자연 부류)'을 지칭하게 해준다 — 규칙 기술의 토대.</p>
+  <aside class="notes">
+    자질(feature)은 소리를 더 작은 조음·음향 속성으로 분해합니다. [+sonorant], [+syllabic] 같은 자질이
+    자연 부류를 정의하고, 다음 주 음운 규칙이 이 자질을 이용한다는 점을 예고하세요.
+  </aside>
+</section>
+
+<!-- ══ 10 · 운율 (초분절) ══ -->
+<section>
+  <h2>Prosodic (Suprasegmental) Features</h2>
+  <p style="font-size:0.7em;">Beyond individual segments, speech carries <span class="key">length, stress, and pitch</span>.</p>
+  <ul class="prosody-list">
+    <li><b>Length</b> — a segment held longer; contrastive in Finnish (<em>tuli</em> vs. <em>tuuli</em>), but <strong>not</strong> in English — stretching a vowel (<em>"puleeeeeze"</em>) still leaves the word <em>please</em>.</li>
+    <li><b>Stress</b> — a syllable made more prominent: <em>pérmit</em> (N) vs. <em>permít</em> (V).</li>
+    <li><b>Pitch</b> — the rate of vocal-fold vibration (fundamental frequency).</li>
+  </ul>
+  <p style="font-size:0.66em; margin-top:0.4em;">
+    These features span more than one segment — hence <span class="key">suprasegmental</span>.
+  </p>
+  <p class="ko-supp" style="font-size:0.62em; margin-top:0.3em;">※ 초분절 자질은 분절음 하나가 아니라 음절·단어·문장 전체에 걸쳐 작동한다.</p>
+  <aside class="notes">
+    초분절(suprasegmental) 자질: 길이·강세·성조. 영어에서 강세는 명사/동사를 구별(pérmit/permít)합니다.
+    분절음 위에 얹히는 층위라는 점을 강조하세요.
+  </aside>
+</section>
+
+<!-- ══ 11 · Tone vs Intonation ══ -->
+<section>
+  <h2>Tone Languages vs. Intonation Languages</h2>
+  <div class="two-col" style="font-size:0.72em;">
+    <div class="card">
+      <h3>Tone Languages</h3>
+      <p style="font-size:0.9em;">Pitch on a <strong>word/syllable</strong> distinguishes <strong>meaning</strong>. Mandarin <em>mā</em> (mother) · <em>mǎ</em> (horse) · <em>mà</em> (scold).</p>
+    </div>
+    <div class="card">
+      <h3>Intonation Languages</h3>
+      <p style="font-size:0.9em;">Pitch varies over a <strong>whole sentence</strong> for pragmatic meaning, not word identity — English rising pitch = a question.</p>
+    </div>
+  </div>
+  <p style="font-size:0.66em; margin-top:0.5em;">
+    Both use pitch, but at different <span class="key">levels</span>: the word (tone) vs. the utterance (intonation).
+  </p>
+  <p class="ko-supp" style="font-size:0.62em; margin-top:0.3em;">※ 성조 언어(중국어)는 음높이가 단어 뜻을 바꾸고, 억양 언어(영어)는 문장 전체의 태도를 나타낸다.</p>
+  <aside class="notes">
+    성조 언어와 억양 언어의 핵심 차이: 음높이가 '어휘 대립'을 만드느냐(성조), '화용적 의미'를 실어
+    나르느냐(억양). 중국어 mā/mǎ/mà 대비를 활용하세요.
+  </aside>
+</section>
+
+<!-- ══ 11b · Register vs Contour Tone (NEW) ══ -->
+<section>
+  <h2>Register vs. Contour Tones</h2>
+  <p style="font-size:0.7em;">Within tone languages — over half the world's languages — tones come in two types.</p>
+  <div class="two-col" style="font-size:0.72em;">
+    <div class="card">
+      <h3>Register (level) tone</h3>
+      <p style="font-size:0.9em;">Pitch stays <strong>level</strong> across the syllable — e.g. a high, mid, or low tone.</p>
+    </div>
+    <div class="card">
+      <h3>Contour (moving) tone</h3>
+      <p style="font-size:0.9em;">Pitch <strong>changes</strong> across the syllable — rising or falling.</p>
+    </div>
+  </div>
+  <p style="font-size:0.66em; margin-top:0.5em;">
+    Thai uses the syllable [naː] with <span class="key">five tones</span> — low, mid, high (register) plus falling and rising (contour) — for five different words.
+  </p>
+  <p class="ko-supp" style="font-size:0.62em; margin-top:0.3em;">※ 성조는 음높이가 평평하면 평판(register) 성조, 오르내리면 굴곡(contour) 성조. 태국어 [naː]는 다섯 성조(저·중·고·하강·상승)로 서로 다른 다섯 단어를 만든다.</p>
+  <aside class="notes">
+    성조 언어 안에서도 음높이가 평평한 평판 성조(register)와 오르내리는 굴곡 성조(contour)가 구분됩니다.
+    태국어 [naː]의 다섯 성조 대비로 상대적 음높이가 어휘를 가른다는 점을 강조하세요.
+  </aside>
+</section>
+
+<!-- ══ 12 · 수화의 음성학 ══ -->
+<section>
+  <h2>The Phonetics of Signed Languages</h2>
+  <p style="font-size:0.72em;">Signs are built from a small set of <span class="key">"phonetic" parameters</span> — the manual counterpart of speech sounds.</p>
+  <div class="dim-grid" style="grid-template-columns:repeat(3,1fr);">
+    <div class="dc"><b>Handshape</b><br><span style="font-size:0.9em;">the configuration of the fingers</span></div>
+    <div class="dc"><b>Location</b><br><span style="font-size:0.9em;">where the sign is made relative to the body</span></div>
+    <div class="dc"><b>Movement</b><br><span style="font-size:0.9em;">the path/motion of the hands</span></div>
+  </div>
+  <p style="font-size:0.66em; margin-top:0.5em;">
+    Changing one parameter can change meaning — the signed analogue of a <span class="key">minimal pair</span>. Language structure is <strong>independent of modality</strong>.
+  </p>
+  <p class="ko-supp" style="font-size:0.62em; margin-top:0.3em;">※ 수화도 손모양·위치·움직임이라는 '음성학적' 매개변수로 분석된다 — 언어는 양식(modality)을 초월한다.</p>
+  <aside class="notes">
+    수화의 음성학은 소리가 아니라 손모양·위치·움직임을 기본 단위로 삼습니다. 하나만 바꿔도 뜻이
+    달라지는 최소대립쌍이 존재한다는 점이 수화가 완전한 언어라는 증거입니다.
+  </aside>
+</section>
+
+<!-- ══ 13 · Practice Q1 ══ -->
+<section data-background-color="#f8f9fa">
+  <span class="practice-header">Practice · Check Your Understanding</span>
+  <div class="mcq">
+    <div class="mcq-q"><span class="qnum">1</span>Which vowel is <em>high, front,</em> and <em>tense</em>?</div>
+    <div class="mcq-opts">
+      <button class="mcq-opt" data-correct="true"><span class="opt-key">A</span>[i] as in <em>beat</em></button>
+      <button class="mcq-opt"><span class="opt-key">B</span>[u] as in <em>boot</em></button>
+      <button class="mcq-opt"><span class="opt-key">C</span>[æ] as in <em>bat</em></button>
+    </div>
+    <div class="mcq-explain"><span class="lbl">Explanation</span> [i] sits at the top-left corner of the quadrilateral: the tongue is high and front, and it is tense. [u] is high but back and rounded; [æ] is low and front.</div>
+  </div>
+  <aside class="notes">
+    사각도의 좌상단 꼭짓점이 [i]입니다. 높이·전후·긴장도 세 차원을 동시에 확인하는 문항입니다.
+  </aside>
+</section>
+
+<!-- ══ 14 · Practice Q2 ══ -->
+<section data-background-color="#f8f9fa">
+  <span class="practice-header">Practice · Check Your Understanding</span>
+  <div class="mcq">
+    <div class="mcq-q"><span class="qnum">2</span>In English, why is the vowel in <em>ban</em> [bæ̃n] nasalized but the one in <em>bad</em> [bæd] is not?</div>
+    <div class="mcq-opts">
+      <button class="mcq-opt"><span class="opt-key">A</span>Nasalization distinguishes the two words' meanings.</button>
+      <button class="mcq-opt" data-correct="true"><span class="opt-key">B</span>The vowel is nasalized predictably before a nasal consonant — an allophonic rule.</button>
+      <button class="mcq-opt"><span class="opt-key">C</span>English vowels are always nasalized.</button>
+    </div>
+    <div class="mcq-explain"><span class="lbl">Explanation</span> Nasalization is predictable from the following nasal [n], so it is allophonic and non-contrastive in English. It never distinguishes meaning by itself.</div>
+  </div>
+  <aside class="notes">
+    비음화가 예측 가능한 이음이라는 점을 확인합니다. A는 프랑스어에는 맞지만 영어에는 틀린 매력적 오답입니다.
+  </aside>
+</section>
+
+<!-- ══ 15 · Exercises Q3 ══ -->
+<section data-background-color="#f8f9fa">
+  <span class="practice-header">Exercises · Based on Textbook Ch.5</span>
+  <div class="mcq">
+    <div class="mcq-q"><span class="qnum">3</span>Which word contains a <em>diphthong</em>? <span style="font-weight:400; color:var(--color-subtle); font-size:0.85em;">(cf. textbook Ch.5, pp.201–202)</span></div>
+    <div class="mcq-opts">
+      <button class="mcq-opt"><span class="opt-key">A</span><em>bet</em></button>
+      <button class="mcq-opt" data-correct="true"><span class="opt-key">B</span><em>boy</em></button>
+      <button class="mcq-opt"><span class="opt-key">C</span><em>bought</em></button>
+    </div>
+    <div class="mcq-explain"><span class="lbl">Explanation</span> <em>boy</em> = [bɔɪ], whose vowel glides from low-back [ɔ] to high-front [ɪ] — a diphthong. <em>bet</em> [ɛ] and <em>bought</em> [ɔ] are steady monophthongs.</div>
+  </div>
+  <aside class="notes">
+    이중모음 식별 문항(원문 복제 아님). 철자가 아니라 조음의 이동 여부로 판단하도록 지도하세요.
+  </aside>
+</section>
+
+<!-- ══ 16 · Exercises Q4 ══ -->
+<section data-background-color="#f8f9fa">
+  <span class="practice-header">Exercises · Based on Textbook Ch.5</span>
+  <div class="mcq">
+    <div class="mcq-q"><span class="qnum">4</span>Mandarin <em>mā</em> "mother" vs. <em>mà</em> "scold" differ only in pitch. This shows Mandarin is a: <span style="font-weight:400; color:var(--color-subtle); font-size:0.85em;">(cf. textbook Ch.5, pp.205–206)</span></div>
+    <div class="mcq-opts">
+      <button class="mcq-opt" data-correct="true"><span class="opt-key">A</span>Tone language</button>
+      <button class="mcq-opt"><span class="opt-key">B</span>Intonation language</button>
+      <button class="mcq-opt"><span class="opt-key">C</span>Stress-timed language</button>
+    </div>
+    <div class="mcq-explain"><span class="lbl">Explanation</span> Pitch on the syllable distinguishes word meaning, which is the defining property of a tone language. In an intonation language like English, pitch signals sentence-level meaning, not word identity.</div>
+  </div>
+  <p class="ko-supp" style="font-size:0.6em; margin-top:0.5em;">※ 더 풀어보기: 교재 Ch.5 Exercises — 모음 자질 기술, 이음/변별 자질 판별을 과제로 권장.</p>
+  <aside class="notes">
+    성조/억양 구분 문항(재구성). 음높이가 '어휘 대립'을 만들면 성조 언어라는 정의를 확인시키세요.
+  </aside>
+</section>
+
+<!-- ══ 17 · Summary ══ -->
+<section>
+  <h2>Summary</h2>
+  <div class="summary-box">
+    <h4>Key Points</h4>
+    <ul style="font-size:0.8em; line-height:1.8;">
+      <li>Vowels = <span class="key">height · backness · roundedness · tenseness</span>, plotted on the IPA quadrilateral</li>
+      <li><span class="key">Diphthongs</span> glide within one syllable ([aɪ, aʊ, ɔɪ])</li>
+      <li>Vowel <span class="key">nasalization</span> before nasals is allophonic in English</li>
+      <li>Binary <span class="key">features</span> define natural classes (sonorant, syllabic …)</li>
+      <li>Prosody = <span class="key">length, stress, pitch</span>; tone vs. intonation</li>
+      <li>Signed languages have their own <span class="key">phonetic parameters</span> — language is modality-independent</li>
+    </ul>
+  </div>
+  <aside class="notes">
+    모음 기술의 네 차원과 운율, 그리고 수화의 음성학까지 정리했습니다. 오늘의 비음화·이음 개념은
+    다음 주 음운론(음소/이음)으로 바로 이어집니다.
+  </aside>
+</section>
+
+<!-- ══ 18 · Next Week ══ -->
+<section>
+  <h2 style="margin-bottom:0.3em;">Next Week — Week 13</h2>
+  <div class="next-week-banner">
+    <div class="label">Next Class</div>
+    <p><strong>Phonology (Part 1): Phonemes &amp; Features</strong> — Ch.6 · pp.216–232</p>
+  </div>
+  <h3 style="margin:0.55em 0 0.2em;">Preview</h3>
+  <ul style="font-size:0.66em; line-height:1.55; margin:0;">
+    <li>Phonetics vs. Phonology</li>
+    <li>Allomorphs — the plural and past-tense endings</li>
+    <li>Phonemes, minimal pairs, and allophones</li>
+    <li>Complementary distribution &amp; distinctive features</li>
+  </ul>
+  <div class="next-week-banner" style="margin-top:0.5em;">
+    <div class="label">Preparation · Assignment</div>
+    <p>Read textbook Ch.6 pp.216–232 · review today's nasalization example</p>
+  </div>
+  <aside class="notes">
+    다음 주는 오늘 배운 이음(비음화)을 이론적으로 다루는 음운론입니다. 소리의 '물리적 기술'에서
+    '심리적 조직'으로 관점이 옮겨감을 예고하세요.
+  </aside>
+</section>
+
+</div><!-- /slides -->
+</div><!-- /reveal -->
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script>
+  Reveal.initialize({
+    hash: true,
+    slideNumber: 'c/t',
+    progress: true,
+    center: false,
+    transition: 'slide',
+    transitionSpeed: 'fast',
+    plugins: []
+  });
+</script>
+<a class="home-btn" href="../index.html" title="강의 목록으로">← 목록</a>
+<script src="assets/slides-print.js"></script>
+<script src="assets/slides-quiz.js"></script>
+<script src="assets/slides-ko-toggle.js"></script>
+</body>
+</html>

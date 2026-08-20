@@ -6,3 +6,21 @@ An Introduction to language, Eleventh Edition.pdf
 
 # Obsidian 워크스페이스 설정
 .obsidian/
+
+# ─── 시험 자료 — 학생 노출 금지, 원격 저장소에 반영 안 함 ───
+# 시험 자료는 아래 폴더/파일명 규칙에 맞춰 두면 자동으로 제외됩니다.
+exams/
+중간고사/
+기말고사/
+midterm exam/
+final exam/
+answers/
+정답/
+*중간고사*
+*기말고사*
+*_exam*
+*_시험*
+
+
+# Claude Code 로컬 개인 설정
+.claude/settings.local.json
