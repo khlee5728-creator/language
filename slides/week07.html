@@ -3,234 +3,212 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Week 7 — Syntax (Part 2) | Topics in English Linguistics</title>
+  <title>Week 7 — Syntax: Grammatical Dependencies (Part 2) | Topics in English Linguistics</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,400;1,700&family=Lora:ital@0;1&family=Space+Grotesk:wght@400;600;700&family=Noto+Serif+KR:wght@300;500&family=Noto+Sans+KR:wght@300;400;700&family=Jua&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css" />
   <link rel="stylesheet" href="assets/linguistics-theme.css" />
   <link rel="stylesheet" href="assets/slides-quiz.css" />
   <link rel="stylesheet" href="assets/slides-ko.css" />
+  <link rel="stylesheet" href="assets/slides-media.css?v=3" />
+  <link rel="stylesheet" href="assets/editorial-theme.css?v=7" />
   <style>
-    :root { --slide-accent: #6a0572; }
-    .gram-star { color:#c1121f; font-weight:700; }
-    .gram-ok { color:#1b7f5e; font-weight:700; }
-    .subcat-grid { display:grid; grid-template-columns:1fr; gap:0.45em; font-size:0.7em; margin:0.5em 0; }
-    .subcat-card { background:var(--color-bg-alt); border:1px solid var(--color-border); border-radius:8px;
-      padding:0.45em 0.8em; }
-    .subcat-card b { color:var(--slide-accent); }
-    .subcat-card .frame { font-family:var(--font-mono); color:var(--color-subtle); font-size:0.9em; }
-    .rules-box { font-family:var(--font-mono); font-size:0.72em; line-height:1.9; background:#1e1e2e;
-      color:#cdd6f4; border-radius:8px; padding:0.7em 1.1em; border-left:4px solid var(--slide-accent); }
-    .rules-box .nt { color:#f5c2e7; font-weight:700; }
-    .rules-box .arr { color:#89dceb; font-weight:700; }
-    .rules-box .mv { color:#fab387; font-weight:700; }
-    .param-grid { display:grid; grid-template-columns:1fr 1fr; gap:0.7em; font-size:0.7em; }
-    .param-grid .card h3 { border-bottom:none; margin-bottom:0.15em; }
-    .tree-cap { font-size:0.62em; text-align:center; color:var(--color-subtle); margin-top:0.1em; }
-    svg text { font-family:var(--font-main); }
-    .node { font-size:16px; font-weight:700; fill:#6a0572; }
-    .leaf { font-size:15px; fill:#14425f; font-style:italic; }
-    .exam-box { background:#fff8e1; border-left:4px solid var(--slide-accent); border-radius:0 8px 8px 0;
-      padding:0.6em 0.9em; font-size:0.74em; }
-    .exam-box b { color:var(--slide-accent); }
+    :root { --slide-accent: #4a2e5c; }
+
+    /* 표지 */
+    .cover .booktag { font: 600 12px 'Space Grotesk'; letter-spacing: 0.3em; color: var(--ed-muted); }
+    .cover h1 { font: 600 74px/1.15 'Playfair Display'; margin: 26px 0 8px; }
+    .cover .part { font: italic 400 30px 'Playfair Display'; color: var(--ed-accent); margin-bottom: 30px; }
+    .cover .lead { max-width: 560px; }
+    .cover .foot { margin-top: 46px; border-top: 1px solid var(--ed-line); padding-top: 16px;
+      font: italic 400 15px 'Lora'; color: var(--ed-muted); }
+
+    /* 규칙·도출 목록 — 에디토리얼 */
+    .psrules { border-left: 1px solid var(--ed-line); padding-left: 28px; }
+    .psrules div { font: 600 16px/2.05 'Space Grotesk'; letter-spacing: 0.05em; color: var(--ed-body); }
+    .psrules .no { display: inline-block; min-width: 26px; font: 600 11px 'Space Grotesk'; color: var(--ed-muted); }
+    .psrules .nt { color: var(--ed-accent); }
+    .psrules .arr { color: var(--ed-muted); padding: 0 10px; font-weight: 400; }
+    .psrules .cm { font: italic 400 14px 'Lora'; letter-spacing: 0; color: var(--ed-muted); margin-left: 12px; }
+    .psrules .lbl { display:block; font: 600 11px 'Space Grotesk'; letter-spacing: 0.24em; color: var(--ed-accent);
+      text-transform: uppercase; margin: 10px 0 2px; }
+    .psrules .lbl:first-child { margin-top: 0; }
+
+    /* 문법성 표기 */
+    .gram-star { color: var(--ed-accent); font-style: normal; font-weight: 700; }
+    .gram-ok { color: var(--ed-muted); font-weight: 600; }
+
+    /* 나무 그림 */
+    .tree-cap { font: italic 400 14.5px 'Lora'; text-align: center; color: var(--ed-muted); margin-top: 6px; }
+    svg .node { font: 600 15px 'Space Grotesk'; fill: var(--ed-accent); }
+    svg .leaf { font: italic 400 15px 'Lora'; fill: #1c1a17; }
+    svg .sub  { font: 600 10px 'Space Grotesk'; letter-spacing: 0.18em; fill: #8d8574; }
+
+    .mcq .key { color: var(--ed-accent); }
   </style>
 </head>
-<body>
+<body data-rail="WEEK 7 · SYNTAX" data-course="Topics in English Linguistics">
 <div class="reveal">
 <div class="slides">
 
-<!-- ══ 1 · Title ══ -->
-<section class="title-slide" data-background-color="#16213e">
-  <div style="color:white; text-align:center; padding:1em;">
-    <div class="week-badge" style="background:rgba(255,255,255,0.2); color:white;">Week 7</div>
-    <h1 style="color:white; font-size:1.55em; margin:0.4em 0 0.2em;">Syntax <span style="font-weight:300;">(Part 2)</span></h1>
-    <p style="color:rgba(255,255,255,0.8); font-size:0.6em; margin-bottom:0.3em;">
-      Heads, Complements, Agreement &amp; Question Formation
-      <span class="ko-supp" style="display:block; color:rgba(255,255,255,0.65);">※ 통사론 (2) — 핵어·보충어·일치·의문문 형성과 UG</span>
-    </p>
-    <p style="color:rgba(255,255,255,0.55); font-size:0.48em; margin-bottom:1.3em;">
-      Chapter 3 · pp. 107–132
-    </p>
-    <p style="color:rgba(255,255,255,0.5); font-size:0.42em; font-style:italic;">
-      An Introduction to Language, 11th Ed. — Fromkin, Rodman &amp; Hyams
-    </p>
-  </div>
+<!-- ══ 1 · Cover ══ -->
+<section class="cover" data-no-rail>
+  <div class="booktag">AN INTRODUCTION TO LANGUAGE · 11TH ED. — FROMKIN · RODMAN · HYAMS</div>
+  <h1>Syntax</h1>
+  <div class="part">Infinite Use of Finite Means — Part 2 · Dependencies &amp; Movement</div>
+  <p class="lead">Agreement, questions, and movement — why every rule reads the <em>tree</em>, never the string.
+    <span class="ko-supp" style="display:block;">일치·의문문·이동 — 모든 통사 규칙은 구조를 참조한다.</span></p>
+  <div class="foot">Week 7 · Chapter 3, pp. 107–132 · Topics in English Linguistics</div>
   <aside class="notes">
-    Ch.3 통사론의 후반부입니다. 지난 시간의 나무 구조 위에서, 구가 핵어를 중심으로 어떻게 세워지는지,
-    그리고 의문문 형성 규칙이 왜 '구조'에 의존하는지를 봅니다. 마지막에 UG의 원리·매개변수로 마무리합니다.
+    Ch.3 통사론의 후반부입니다. 지난 시간의 나무 구조(TP·X-bar) 위에서 일치와 의문문 형성이라는
+    의존관계가 작동하는 것을 봅니다. 하이라이트는 구조 의존성 — 그리고 UG의 원리·매개변수로
+    마무리합니다.
   </aside>
 </section>
 
-<!-- ══ 2 · Agenda ══ -->
-<section>
-  <h2>Agenda</h2>
-  <ul class="agenda-list">
-    <li>Building Phrases — heads &amp; complements</li>
-    <li>Subcategorization of verbs</li>
-    <li>Grammatical dependencies — agreement &amp; question formation</li>
-    <li>Subject–Verb Agreement</li>
-    <li>Question Formation &amp; Structure-Dependence</li>
-    <li>Universal Grammar — Principles &amp; Parameters</li>
-  </ul>
+<!-- ══ 2 · Contents ══ -->
+<section data-kicker="WEEK 7 · CONTENTS · CH.3 PP.107–132">
+  <h2>Today</h2>
+  <ol class="recap tight" style="max-width:700px;">
+    <li><b>Grammatical Dependencies</b><span class="pg">P.107</span></li>
+    <li><b>Subject-Verb Agreement</b><span class="pg">P.107</span></li>
+    <li><b>Question Formation Rules</b> — <i style="font-size:0.82em;">yes-no questions</i><span class="pg">P.109</span></li>
+    <li><b>Wh Questions</b><span class="pg">P.114</span></li>
+    <li><b>UG Principles and Parameters</b><span class="pg">P.118</span></li>
+    <li><b>Sign Language Syntax</b><span class="pg">P.121</span></li>
+    <li><b>Summary</b> — <i style="font-size:0.82em;">&amp; exercises for the midterm</i><span class="pg">P.122</span></li>
+  </ol>
   <aside class="notes">
-    오늘의 키워드는 head, complement, subcategorization, agreement, structure-dependence,
-    principles &amp; parameters입니다. 특히 구조 의존성은 이 챕터의 하이라이트입니다.
+    오늘의 키워드는 dependency, agreement, transformation, Aux inversion, wh movement,
+    structure-dependence, principles &amp; parameters입니다. 특히 구조 의존성은 이 챕터의
+    하이라이트입니다.
   </aside>
 </section>
 
-<!-- ══ 3 · Building Phrases: Heads & Complements ══ -->
-<section data-background-color="#f8f9fa">
-  <h2>Building Phrases · Heads &amp; Complements</h2>
-  <div class="def-box">
-    <div class="term">Head = the word that gives a phrase its category</div>
-  </div>
-  <ul style="font-size:0.72em; line-height:1.8; margin-top:0.5em;">
-    <li>The head of an <span class="key">NP</span> is a <strong>noun</strong>; of a <span class="key">VP</span>, a <strong>verb</strong>; of a <span class="key">PP</span>, a <strong>preposition</strong>.</li>
-    <li>A <span class="key">complement</span> is the constituent selected by the head to complete its meaning.</li>
-    <li><em>put the book on the shelf</em> — the verb <em>put</em> needs both an NP and a PP complement.</li>
-  </ul>
-  <p class="ko-supp" style="font-size:0.66em; margin-top:0.4em;">※ 핵어(head)가 구의 성격을 결정하고, 보충어(complement)는 핵어가 요구하는 필수 요소다.</p>
-  <aside class="notes">
-    핵어(head)와 보충어(complement)는 오늘의 초석입니다. 구가 핵어를 중심으로 조직되며, 핵어가
-    어떤 보충어를 요구하는지가 다음 슬라이드의 하위범주화로 이어짐을 강조하세요.
-  </aside>
-</section>
-
-<!-- ══ 4 · Subcategorization ══ -->
-<section>
-  <h2>Subcategorization of Verbs</h2>
-  <p style="font-size:0.72em;">Verbs <span class="key">select</span> different complements — this is <em>subcategorization</em>.</p>
-  <div class="subcat-grid">
-    <div class="subcat-card"><b>Intransitive</b> — no object. <span class="frame">[ __ ]</span><br><em>The baby slept.</em> <span class="gram-star">*The baby slept the toy.</span></div>
-    <div class="subcat-card"><b>Transitive</b> — one NP object. <span class="frame">[ __ NP ]</span><br><em>The child found a puppy.</em></div>
-    <div class="subcat-card"><b>Ditransitive</b> — two objects. <span class="frame">[ __ NP NP ]</span><br><em>She gave the dog a bone.</em></div>
-  </div>
-  <p class="ko-supp" style="font-size:0.64em; margin-top:0.3em;">※ 동사마다 요구하는 보충어가 다르다 — 이 정보가 어휘부에 저장된 하위범주화 틀이다.</p>
-  <aside class="notes">
-    하위범주화(subcategorization) = 동사가 요구하는 보충어 틀. 자동사/타동사/이중타동사를 구별하고,
-    이 정보가 어휘부(lexicon)에 저장되어 있음을 강조하세요. 잘못된 틀은 비문을 낳습니다.
-  </aside>
-</section>
-
-<!-- ══ 5 · Grammatical Dependencies ══ -->
-<section>
+<!-- ══ 3 · Grammatical Dependencies ══ -->
+<section data-kicker="CH.3 P.107 · SYNTAX">
   <h2>Grammatical Dependencies</h2>
-  <p style="font-size:0.72em;">Words in a sentence are linked by <span class="key">dependencies</span> that the syntax enforces.</p>
-  <div class="two-col" style="font-size:0.72em;">
-    <div class="def-box">
-      <div class="term">Subject–Verb Agreement</div>
-      <p style="margin-top:0.3em;">A verb's form covaries with its subject. <em>She walk<strong>s</strong></em> vs. <em>They walk</em>.</p>
-    </div>
-    <div class="def-box">
-      <div class="term">Question Formation</div>
-      <p style="margin-top:0.3em;">A question is tied to its declarative by <span class="key">movement</span>. <em>The boy is singing</em> → <em><strong>Is</strong> the boy singing?</em></p>
+  <div class="cols">
+    <div class="def">Syntax must also capture <i>relationships</i> — between sentences, and between elements far apart <i>within</i> a sentence.
+      <span class="ko-supp" style="display:block; margin-top:8px;">'거리를 둔 의존관계'는 문장이 위계 구조라는 또 하나의 증거다.</span></div>
+    <div>
+      <div class="quote-stack">
+        <p>Homer will sleep.</p>
+        <p><b>Will</b> Homer sleep?</p>
+        <p>Related sentences — the grammar must say <i>how</i>.</p>
+      </div>
+      <hr class="hair">
+      <p class="lead" style="font-size:17px;">Two case studies today: <b>subject–verb agreement</b> and <b>question formation</b>.</p>
     </div>
   </div>
-  <p class="ko-supp" style="font-size:0.64em; margin-top:0.4em;">※ 교재가 드는 두 의존관계는 주어-동사 일치와 의문문 형성이다 — 둘 다 통사 구조에 의존한다.</p>
   <aside class="notes">
-    교재 "Grammatical Dependencies" 절은 정확히 두 가지를 듭니다: 주어-동사 일치(subject-verb agreement)와
-    의문문 형성(question formation). 격(case)은 이 장의 주제가 아니므로 제외했습니다. 두 의존관계 모두
-    선형 순서가 아닌 구조에 의존한다는 점을 예고하며 다음 슬라이드의 일치로 이어가세요.
+    교재 "Grammatical Dependencies" 절은 정확히 두 가지를 듭니다: 주어-동사 일치와 의문문 형성.
+    둘 다 선형 순서가 아닌 구조에 의존한다는 점을 예고하며 다음 슬라이드로 이어가세요.
   </aside>
 </section>
 
-<!-- ══ 6 · Subject–Verb Agreement ══ -->
-<section>
-  <h2>Subject–Verb Agreement</h2>
-  <p style="font-size:0.72em;">The verb agrees with the <span class="key">subject</span> in person and number.</p>
-  <ul style="font-size:0.72em; line-height:1.8;">
-    <li><span class="gram-ok">✓</span> The dog <strong>barks</strong>. &nbsp; / &nbsp; The dogs <strong>bark</strong>.</li>
-    <li><span class="gram-star">*</span> The dog bark. &nbsp; / &nbsp; <span class="gram-star">*</span> The dogs barks.</li>
-  </ul>
-  <p style="font-size:0.68em; margin-top:0.4em;">
-    Crucially, the verb agrees with the <strong>head of the subject NP</strong>, not the nearest noun:
-    <br><em>The <u>key</u> to the cabinets <strong>is</strong> lost.</em> <span class="gram-star">(*are)</span>
-  </p>
-  <p class="ko-supp" style="font-size:0.62em; margin-top:0.3em;">※ 동사는 가장 가까운 명사가 아니라 주어 NP의 핵어와 일치한다 — 구조가 지배한다.</p>
-  <aside class="notes">
-    주어-동사 일치의 핵심: 동사는 선형적으로 가까운 명사(cabinets)가 아니라 주어 NP의 핵어(key)와
-    일치합니다. 이것이 다음 슬라이드 '구조 의존성'의 예고편입니다.
-  </aside>
-</section>
-
-<!-- ══ 7 · Movement / Transformations (intro) ══ -->
-<section>
-  <h2>Transformations · Movement</h2>
-  <p style="font-size:0.72em;">Some sentences are related by <span class="key">movement</span> — a constituent is displaced from its base position.</p>
-  <div class="rules-box">
-    You <span class="nt">have</span> read <span class="nt">what</span>? <span class="mv">→</span> <span class="nt">What</span> have you read ___ ?<br>
-    <span style="color:#6c757d;">wh-phrase moves to the front; ___ marks the gap it left</span>
+<!-- ══ 4 · Subject-Verb Agreement ══ -->
+<section data-kicker="CH.3 P.107 · GRAMMATICAL DEPENDENCIES">
+  <h2>Subject-Verb Agreement</h2>
+  <div class="cols">
+    <div class="def">A linear rule — "agree with the word to your left" — works for 1–2 and <i>collapses</i> at 3–4.
+      <span class="ko-supp" style="display:block; margin-top:8px;">동사는 가장 가까운 명사가 아니라 주어 NP의 핵어와 일치한다 — 구조가 지배한다.</span></div>
+    <div>
+      <ul class="exlist">
+        <li><span class="no">1</span>This guy seem<b>s</b> kind of cute.</li>
+        <li><span class="no">2</span>These guys seem kind of cute.</li>
+        <li><span class="no">3</span>The <b>guy</b> we met at the party next door seem<b>s</b> kind of cute.</li>
+        <li><span class="no">4</span>The <b>guys</b> we met at the party next door seem kind of cute.</li>
+      </ul>
+      <p class="lead" style="font-size:17px; margin-top:14px;"><b>Structure-dependent rule</b> — the verb agrees with the <em>subject</em>: the NP immediately dominated by S (TP), however long it grows.</p>
+    </div>
   </div>
-  <p style="font-size:0.66em; margin-top:0.4em;">
-    The moved element and its <span class="key">gap</span> are linked — evidence that syntax operates on <strong>structures</strong>, not flat strings.
-  </p>
-  <p class="ko-supp" style="font-size:0.62em; margin-top:0.3em;">※ 이동(movement): 구성성분이 원래 자리(gap)를 떠나 앞으로 옮겨간다. 의문문 형성의 토대.</p>
   <aside class="notes">
-    변형/이동(transformation/movement)을 도입 수준에서 소개합니다. wh-요소가 앞으로 이동하고 원래
-    자리에 빈자리(gap)를 남긴다는 그림을 각인시키세요. 다음 슬라이드의 의문문 형성으로 직결됩니다.
+    선형 일치 규칙은 3–4에서 무너집니다. 개입 어절 수에 상한이 없다는 점(파티가 새벽 3시까지…예문)을
+    소개하면 극적입니다. 규칙은 '주어 NP의 핵어'와 일치 — 구조 의존성의 첫 사례입니다.
   </aside>
 </section>
 
-<!-- ══ 8 · Question Formation ══ -->
-<section>
+<!-- ══ 5 · Agreement across languages ══ -->
+<section data-kicker="CH.3 P.108 · SUBJECT-VERB AGREEMENT">
+  <h2 style="font-size:38px;">Agreement Is Structural — Everywhere</h2>
+  <div class="cols">
+    <div class="def">In every language with agreement, the verb tracks the <i>subject</i> — never simply the nearest NP.
+      <span class="ko-supp" style="display:block; margin-top:8px;">이탈리아어·독일어·스와힐리어·영어 모두 동일 — 구조 의존성은 UG의 원리다.</span></div>
+    <div>
+      <div class="gloss-set">
+        <div class="langlab">ITALIAN</div>
+        <div class="sent" style="font-size:24px;">La <b>madre</b> con tanti figli <b>lavora</b> molto.</div>
+        <div class="gls">the&nbsp;mother&nbsp;&nbsp;with&nbsp;many&nbsp;children&nbsp;&nbsp;works&nbsp;&nbsp;a lot</div>
+        <div class="tr">"The mother with many children works a lot" — <i>lavora</i> agrees with <i>madre</i>, not <i>figli</i>.</div>
+      </div>
+      <hr class="hair">
+      <p class="lead" style="font-size:16.5px;">Same pattern in German (<em>Die Mutter … arbeitet viel</em>) and Swahili (<em>Mama … anajitahidi</em>). If sentences were flat strings, no agreement rule could even be stated.</p>
+    </div>
+  </div>
+  <aside class="notes">
+    교재 p.108의 범언어 예: 이탈리아어/독일어/스와힐리어/영어 모두 일치는 주어(굵게)와 이루어지고,
+    선형적으로 더 가까운 NP(밑줄)와는 무관합니다. 구조 의존성이 UG 원리라는 첫 선언이 여기서
+    나옵니다.
+  </aside>
+</section>
+
+<!-- ══ 6 · Question Formation Rules (yes-no) ══ -->
+<section data-kicker="CH.3 P.109 · GRAMMATICAL DEPENDENCIES">
   <h2>Question Formation Rules</h2>
-  <div class="two-col" style="font-size:0.7em;">
-    <div class="def-box">
-      <div class="term">Yes/No questions</div>
-      <p style="margin-top:0.3em;">Front the auxiliary.<br><em>The boy is singing.</em><br>→ <em><strong>Is</strong> the boy ___ singing?</em></p>
-    </div>
-    <div class="def-box">
-      <div class="term">Wh-questions</div>
-      <p style="margin-top:0.3em;">Move the wh-phrase to the front.<br><em>She read <u>what</u>?</em><br>→ <em><strong>What</strong> did she read ___?</em></p>
-    </div>
-  </div>
-  <p style="font-size:0.68em; margin-top:0.4em;">
-    Both operations move a constituent to the <span class="key">front</span> of the sentence.
-  </p>
+  <p class="lead" style="font-size:17px; margin-bottom:10px;">Yes-no questions — each declarative pairs with a question about the <em>same</em> situation.</p>
+  <ul class="exlist" style="max-width:700px;">
+    <li><span class="no">1</span>The boy will sleep. &nbsp;→&nbsp; <b>Will</b> the boy sleep?</li>
+    <li><span class="no">2</span>The dog is barking. &nbsp;→&nbsp; <b>Is</b> the dog barking?</li>
+    <li><span class="no">3</span>The man has eaten a fish. &nbsp;→&nbsp; <b>Has</b> the man eaten a fish?</li>
+  </ul>
+  <p class="lead" style="max-width:700px; font-size:18px; margin-top:18px;">Generated in two steps: PS rules build a basic <b>d-structure</b>; the transformational rule <b>Aux inversion</b> moves T before the subject, yielding the <b>s-structure</b> we actually pronounce.
+    <span class="ko-supp" style="display:block; margin-top:8px;">기저구조(d-structure) + 변형규칙(Aux inversion) = 표층구조(s-structure). 변형이 없으면 d = s.</span></p>
   <aside class="notes">
-    의문문 형성 규칙 두 가지: (1) yes/no 의문문은 조동사 전치, (2) wh-의문문은 wh-구 전치.
-    다음 슬라이드에서 '어떤 조동사를 옮기는가?'라는 질문으로 구조 의존성을 끌어냅니다.
+    평서문-의문문 쌍은 공통의 기저구조에서 나옵니다. 2단계 생성(구구조 규칙 → 변형)이
+    '두 문장이 관련된다'는 직관의 형식화임을 강조하세요. 수동문·PP 전치(move as a unit 판별의
+    이동들)도 같은 부류의 변형입니다(p.111).
   </aside>
 </section>
 
-<!-- ══ 8b · Deriving Questions ══ -->
-<section>
-  <h2>Deriving Questions · d-structure → s-structure</h2>
-  <p style="font-size:0.7em;">A question starts as a base <span class="key">d-structure</span> and becomes its <span class="key">s-structure</span> by movement rules.</p>
-  <div class="rules-box">
-    <b style="color:#f5c2e7;">Aux inversion (T→C):</b> the auxiliary in T moves to the front.<br>
-    The boy <span class="nt">will</span> sing <span class="mv">→</span> <span class="nt">Will</span> the boy ___ sing?<br><br>
-    <b style="color:#f5c2e7;">do-insertion:</b> with no auxiliary, insert <em>do</em> to carry tense.<br>
-    She <span class="nt">sings</span> <span class="mv">→</span> <span class="nt">Does</span> she sing? &nbsp;<span class="gram-star" style="color:#f38ba8;">*Sings she?</span><br><br>
-    <b style="color:#f5c2e7;">wh-movement:</b> the wh-phrase moves to the front.<br>
-    She read <span class="nt">what</span> <span class="mv">→</span> <span class="nt">What</span> did she read ___?
+<!-- ══ 7 · Deriving Questions ══ -->
+<section data-kicker="CH.3 P.110 · QUESTION FORMATION RULES">
+  <h2 style="font-size:36px;">Deriving Questions: d-structure → s-structure</h2>
+  <div class="psrules" style="max-width:760px;">
+    <span class="lbl">Aux inversion (T → C)</span>
+    <div>The boy <span class="nt">will</span> sing <span class="arr">→</span> <span class="nt">Will</span> the boy ___ sing?</div>
+    <span class="lbl">do-insertion — no auxiliary? insert <i style="text-transform:none; letter-spacing:0;">do</i> to carry tense</span>
+    <div>She <span class="nt">sings</span> <span class="arr">→</span> <span class="nt">Does</span> she sing? <span class="cm"><span class="gram-star">*Sings she?</span></span></div>
+    <span class="lbl">wh-movement — the wh-phrase moves to the front</span>
+    <div>She read <span class="nt">what</span> <span class="arr">→</span> <span class="nt">What</span> did she read ___?</div>
   </div>
-  <p class="ko-supp" style="font-size:0.6em; margin-top:0.3em;">※ 의문문은 기저(d-structure)에서 출발해 이동 규칙으로 표층(s-structure)이 된다. 조동사 전치(T→C), 조동사가 없으면 do-삽입, 그리고 wh-이동이 작동한다.</p>
+  <p class="lead" style="max-width:760px; font-size:17px; margin-top:16px;">The moved element and its <em>gap</em> ( ___ ) stay linked — evidence that syntax operates on <b>structures</b>, not flat strings.
+    <span class="ko-supp" style="display:block; margin-top:6px;">의문문은 기저(d-structure)에서 출발해 이동 규칙으로 표층(s-structure)이 된다. 조동사 전치(T→C), 조동사가 없으면 do-삽입, 그리고 wh-이동.</span></p>
   <aside class="notes">
-    의문문 도출의 2단계 과정입니다. 기저구조(d-structure)에서 조동사 전치(Aux inversion, T→C),
-    조동사가 없을 때의 do-삽입(do-insertion), wh-구 이동(wh-movement)을 통해 표층구조(s-structure)가
-    도출됩니다. 이 이동 규칙들이 다음 슬라이드의 구조 의존성 논증의 토대가 됩니다.
+    의문문 도출의 2단계 과정입니다. 기저구조에서 조동사 전치(Aux inversion, T→C), 조동사가 없을 때의
+    do-삽입(do-insertion), wh-구 이동(wh-movement)을 통해 표층구조가 도출됩니다. do가 [-pst]와
+    결합해 does로 나오는 것은 spell-out 규칙. 이 이동 규칙들이 구조 의존성 논증의 토대입니다.
   </aside>
 </section>
 
-<!-- ══ 9 · Structure-Dependence Tree ══ -->
-<section>
-  <h2>Structure-Dependence</h2>
-  <p style="font-size:0.64em; color:var(--color-subtle);">"The boy who can run fastest will win." Which auxiliary moves to form a yes/no question?</p>
+<!-- ══ 8 · Structure-Dependence (tree) ══ -->
+<section data-kicker="CH.3 P.111 · QUESTION FORMATION RULES">
+  <h2 style="margin-bottom:8px;">Structure-Dependence</h2>
+  <p class="lead" style="font-size:16.5px; margin-bottom:2px;">"The boy who can run fastest will win." Which auxiliary moves to form a yes/no question?</p>
   <div style="text-align:center;">
-    <svg viewBox="0 0 640 240" style="width:80%; max-width:640px; margin:0.1em auto;">
+    <svg viewBox="0 0 640 240" style="width:76%; max-width:620px; margin:0 auto;">
       <!-- TP -->
-      <line x1="320" y1="34" x2="180" y2="78" stroke="#888" stroke-width="1.4"/>
-      <line x1="320" y1="34" x2="470" y2="78" stroke="#888" stroke-width="1.4"/>
+      <line x1="320" y1="34" x2="180" y2="78" stroke="#1c1a17" stroke-width="1.4"/>
+      <line x1="320" y1="34" x2="470" y2="78" stroke="#1c1a17" stroke-width="1.4"/>
       <!-- subject NP -->
-      <line x1="180" y1="96" x2="180" y2="122" stroke="#888" stroke-width="1.4"/>
+      <line x1="180" y1="96" x2="180" y2="122" stroke="#1c1a17" stroke-width="1.4"/>
       <!-- T-bar -->
-      <line x1="470" y1="96" x2="410" y2="132" stroke="#888" stroke-width="1.4"/>
-      <line x1="470" y1="96" x2="530" y2="132" stroke="#888" stroke-width="1.4"/>
-      <line x1="410" y1="150" x2="410" y2="176" stroke="#888" stroke-width="1.4"/>
-      <line x1="530" y1="150" x2="530" y2="176" stroke="#888" stroke-width="1.4"/>
+      <line x1="470" y1="96" x2="410" y2="132" stroke="#1c1a17" stroke-width="1.4"/>
+      <line x1="470" y1="96" x2="530" y2="132" stroke="#1c1a17" stroke-width="1.4"/>
+      <line x1="410" y1="150" x2="410" y2="176" stroke="#1c1a17" stroke-width="1.4"/>
+      <line x1="530" y1="150" x2="530" y2="176" stroke="#1c1a17" stroke-width="1.4"/>
       <!-- nodes -->
       <text class="node" x="320" y="30"  text-anchor="middle">S (TP)</text>
       <text class="node" x="180" y="92"  text-anchor="middle">NP (subject)</text>
@@ -238,50 +216,173 @@
       <text class="node" x="410" y="146" text-anchor="middle">T</text>
       <text class="node" x="530" y="146" text-anchor="middle">VP</text>
       <!-- leaves -->
-      <text class="leaf" x="180" y="138" text-anchor="middle">the boy who <tspan fill="#c1121f">can</tspan> run fastest</text>
-      <text class="leaf" x="410" y="192" text-anchor="middle" fill="#1b7f5e">will</text>
+      <text class="leaf" x="180" y="138" text-anchor="middle">the boy who <tspan fill="#8d8574">can</tspan> run fastest</text>
+      <text class="leaf" x="410" y="192" text-anchor="middle" fill="#4a2e5c" font-weight="700">will</text>
       <text class="leaf" x="530" y="192" text-anchor="middle">win</text>
     </svg>
   </div>
-  <p class="tree-cap">Move the <span class="gram-ok">main-clause</span> T <em>will</em> — not the embedded (<span class="gram-star">red</span>) <em>can</em> inside the subject: <em>Will the boy who can run fastest win?</em></p>
-  <p class="ko-supp" style="font-size:0.6em; margin-top:0.1em;">※ 규칙은 '첫 번째 조동사 can'이 아니라 '주절의 T(will)'를 옮긴다 — 선형 순서가 아닌 구조를 참조한다.</p>
+  <p class="tree-cap">Move the main-clause T <em>will</em> (accent) — not the embedded <em>can</em> (gray) inside the subject: <em>Will the boy who can run fastest win?</em></p>
+  <p class="ko-supp" style="font-size:14px; margin-top:4px;">규칙은 '첫 번째 조동사 can'이 아니라 '주절의 T(will)'를 옮긴다 — 선형 순서가 아닌 구조를 참조한다.</p>
   <aside class="notes">
-    구조 의존성(structure-dependence)의 핵심 예입니다(교재의 modal 예문). "*Can the boy who run fastest
-    will win?"은 비문 — 규칙은 '문장에서 첫 번째 조동사 can'(선형)이 아니라 '주절의 T = will'(구조)를
-    옮깁니다. 이것이 UG가 통사 규칙에 부과하는 보편 원리(구조 의존성)의 증거입니다. 아동은 이를
-    배우지 않고도 압니다.
+    구조 의존성의 핵심 예(교재 p.111). "*Can the boy who run fastest will win?"은 비문 — 규칙은
+    '문장에서 첫 번째 조동사'(선형)가 아니라 '뿌리 TP가 지배하는 T'(구조)를 옮깁니다. 이것이 UG가
+    통사 규칙에 부과하는 보편 원리의 증거이며, 아동은 이를 배우지 않고도 압니다.
   </aside>
 </section>
 
-<!-- ══ 10 · UG: Principles & Parameters ══ -->
-<section>
-  <h2>UG · Principles &amp; Parameters</h2>
-  <div class="summary-box">
-    <h4>The architecture of Universal Grammar</h4>
-    <p style="font-size:0.84em;"><span class="key">Principles</span> hold in every language; <span class="key">parameters</span> are the limited choices that differ between languages.</p>
-  </div>
-  <div class="param-grid" style="margin-top:0.5em;">
-    <div class="card">
-      <h3>Head-initial</h3>
-      <p>Head precedes complement.<br><em>English:</em> [<sub>VP</sub> found <strong>a dog</strong>], [<sub>PP</sub> to <strong>Tokyo</strong>]</p>
-    </div>
-    <div class="card">
-      <h3>Head-final</h3>
-      <p>Head follows complement.<br><em>Japanese:</em> [<sub>VP</sub> <strong>inu-o</strong> mitsuketa], [<sub>PP</sub> <strong>Tokyo</strong>-e]</p>
+<!-- ══ 9 · Where the auxiliary lands ══ -->
+<section data-kicker="CH.3 P.112 · QUESTION FORMATION RULES">
+  <h2 style="font-size:38px;">Where Does the Auxiliary Land?</h2>
+  <div class="cols">
+    <div class="def">Strictly, the root of every sentence is a <i>CP</i> — and the moved T lands under its head <i>C</i>.
+      <span class="ko-supp" style="display:block; margin-top:8px;">CP → (Spec) C′ · C′ → C TP. C는 +Q(의문)/−Q(평서) 자질을 담는다.</span></div>
+    <div>
+      <div class="quote-stack">
+        <p><b>have / be</b> start under V — they inflect like verbs and co-occur with modals: <i>Nellie may be snoring.</i></p>
+        <p>With no modal, they <b>raise</b> V → T, then T → C: <i>Nellie is snoring</i> → <b>Is</b> Nellie ___ snoring?</p>
+        <p>CPs also serve as complements: belief <i>that iron floats</i> (N) · wonders <i>if iron floats</i> (V) · happy <i>that iron floats</i> (A).</p>
+      </div>
     </div>
   </div>
-  <p style="font-size:0.6em; color:var(--color-subtle); margin-top:0.2em;"><em>inu-o mitsuketa</em> = "dog-OBJ found" (Japanese puts the verb after its object).</p>
-  <p class="ko-supp" style="font-size:0.62em; margin-top:0.3em;">※ 구조 의존성 = 원리(모든 언어 공통). 핵어 위치(전/후)는 매개변수 = 언어마다 다른 선택. 교재는 head-final의 예로 일본어(inu-o mitsuketa "개를 찾았다")를 든다.</p>
   <aside class="notes">
-    원리와 매개변수(Principles &amp; Parameters) 이론입니다. 구조 의존성은 보편 원리, 핵어 방향성
-    (head-initial 영어 vs head-final 일본어)은 매개변수의 대표 사례입니다. 아동은 원리를 타고나고,
-    입력으로부터 매개변수 값만 설정하면 됩니다 — 언어 습득의 효율성을 설명합니다.
+    p.112–114: 모든 문장의 뿌리는 CP이고(C가 +Q/−Q 보유), Aux inversion의 착지점이 바로 C입니다.
+    have/be는 V 아래에서 출발해 T로, 다시 C로 인상(raising) — 조동사와 공기(共起)하고 시제 굴절을
+    한다는 것이 V 기원의 증거입니다. CP가 N·V·A·P의 보충어로도 쓰임을 확인하세요.
   </aside>
 </section>
 
-<!-- ══ 11 · Practice Q6 ══ -->
-<section data-background-color="#f8f9fa">
-  <span class="practice-header">Practice · Check Your Understanding</span>
+<!-- ══ 10 · Wh Questions ══ -->
+<section data-kicker="CH.3 P.114 · QUESTION FORMATION RULES">
+  <h2>Wh Questions</h2>
+  <div class="cols">
+    <div class="def">The wh phrase starts in the <i>gap</i> position at d-structure, then moves to the <b>Specifier of CP</b>; Aux inversion moves T to C.
+      <span class="ko-supp" style="display:block; margin-top:8px;">gap의 증거: 타동사 chase 뒤에 목적어가 없다 — wh구가 그 자리에서 출발했기 때문.</span></div>
+    <div>
+      <ul class="exlist">
+        <li><span class="no">a</span>What will Max chase ___? <span style="font-style:normal; font: 300 14px 'Noto Serif KR'; color:var(--ed-muted);">← Max will chase what</span></li>
+        <li><span class="no">b</span>Where should Pete put his dog bone ___?</li>
+        <li><span class="no">c</span>Which toys does Pete like ___? <span style="font-style:normal; font: 300 14px 'Noto Serif KR'; color:var(--ed-muted);">← do-insertion carries −pst</span></li>
+      </ul>
+      <p class="lead" style="font-size:16.5px; margin-top:14px;">And the dependency can stretch without limit: <em>Who did Helen say the senator wanted to hire ___?</em></p>
+    </div>
+  </div>
+  <aside class="notes">
+    wh-의문문: 하위범주화 요건은 이동 '전'(d-structure)에 충족됩니다(chase의 목적어 = what).
+    wh구는 Spec CP로, T는 C로. 조동사가 없으면 do-삽입(does). 장거리 의존(long-distance
+    dependency)은 나무 발판 없이는 기술 불가능 — 구조 의존성의 결정적 증거입니다.
+  </aside>
+</section>
+
+<!-- ══ 11 · UG Principles and Parameters ══ -->
+<section data-kicker="CH.3 P.118 · GRAMMATICAL DEPENDENCIES">
+  <h2 style="font-size:38px;">UG Principles and Parameters</h2>
+  <div class="cols">
+    <div class="def">UG is the shared <i>floor plan</i>; each language decorates it at fixed choice points — the <b>parameters</b>.
+      <span class="ko-supp" style="display:block; margin-top:8px;">원리 = 모든 언어 공통(X-bar, 구조 의존성). 매개변수 = 제한된 선택지(핵어 방향 등).</span></div>
+    <div>
+      <div class="cols-even" style="gap:36px;">
+        <div>
+          <div class="small-label" style="margin-bottom:10px;">HEAD-INITIAL — ENGLISH</div>
+          <hr class="hair" style="margin:0 0 12px;">
+          <p style="font: italic 400 19px/1.8 'Lora'; color: var(--ed-ink); margin:0;">[<sub>VP</sub> found <b>a dog</b>]<br>[<sub>PP</sub> to <b>Tokyo</b>]</p>
+        </div>
+        <div>
+          <div class="small-label" style="margin-bottom:10px;">HEAD-FINAL — JAPANESE</div>
+          <hr class="hair" style="margin:0 0 12px;">
+          <p style="font: italic 400 19px/1.8 'Lora'; color: var(--ed-ink); margin:0;">[<sub>VP</sub> <b>inu-o</b> mitsuketa]<br>[<sub>PP</sub> <b>Tokyo</b>-e]</p>
+        </div>
+      </div>
+      <hr class="hair">
+      <p class="lead" style="font-size:16.5px;"><em>inu-o mitsuketa</em> = "dog-OBJ found" — Japanese puts the verb after its object. The requirement that phrases <b>have</b> heads is the principle; the order is the parameter.</p>
+    </div>
+  </div>
+  <aside class="notes">
+    원리와 매개변수: 구조 의존성·X-bar는 보편 원리, 핵어 방향성(head-initial 영어 vs head-final
+    일본어)은 매개변수의 대표 사례. 교재의 신축 주택 단지 비유(같은 평면도, 다른 마감재)가
+    직관적입니다. 아동은 원리를 타고나고 매개변수 값만 설정하면 됩니다.
+  </aside>
+</section>
+
+<!-- ══ 12 · Movement parameters ══ -->
+<section data-kicker="CH.3 P.119 · UG PRINCIPLES AND PARAMETERS">
+  <h2 style="font-size:38px;">Movement Varies, Within Limits</h2>
+  <div class="cols-even" style="gap:44px;">
+    <div>
+      <div class="gloss-set">
+        <div class="langlab">JAPANESE — WH STAYS IN PLACE</div>
+        <div class="sent" style="font-size:23px;">Taro-ga <b>nani-o</b> mitsuketa-<b>no</b>?</div>
+        <div class="gls">Taro&nbsp;&nbsp;what&nbsp;&nbsp;found-Q</div>
+        <div class="tr">"What did Taro find?" — no movement; a question suffix instead.</div>
+      </div>
+      <div class="gloss-set" style="margin-top:20px;">
+        <div class="langlab">SWAHILI — ALSO IN SITU</div>
+        <div class="sent" style="font-size:23px;">Ulipatia <b>nani</b> kitabu?</div>
+        <div class="gls">you-gave&nbsp;&nbsp;who&nbsp;&nbsp;a-book</div>
+        <div class="tr">"Who did you give a book to?"</div>
+      </div>
+    </div>
+    <div>
+      <div class="gloss-set">
+        <div class="langlab">ITALIAN — THE PREPOSITION MOVES ALONG</div>
+        <div class="sent" style="font-size:23px;"><b>A chi</b> hai dato il libro?</div>
+        <div class="gls">to&nbsp;whom&nbsp;&nbsp;(did)&nbsp;you&nbsp;give&nbsp;the&nbsp;book</div>
+        <div class="tr">English can strand it: <i>Who(m) did you give the book to?</i></div>
+      </div>
+      <hr class="hair">
+      <p class="lead" style="font-size:16.5px;">Dutch moves the <b>verb itself</b> when there is no modal: <em>Leest Meindert veel boeken?</em> "Does Meindert read many books?" — English inserts <em>do</em> instead.</p>
+    </div>
+  </div>
+  <aside class="notes">
+    이동의 매개변수: (1) wh-이동 유무 — 일본어(-no 접미사)·스와힐리어는 제자리(in situ);
+    (2) 전치사 동반이동(이탈리아어) vs 좌초(영어); (3) 동사 자체가 이동(네덜란드어) vs do-삽입(영어).
+    단, 이동하는 언어들에서 착지점(문두 Spec CP)은 UG가 정합니다.
+  </aside>
+</section>
+
+<!-- ══ 13 · Universal constraints ══ -->
+<section data-kicker="CH.3 P.120 · UG PRINCIPLES AND PARAMETERS">
+  <h2 style="font-size:38px;">Universal Constraints on Movement</h2>
+  <ul class="exlist" style="max-width:740px;">
+    <li><span class="no">1a</span>Who did Spock ask ___ whether Scotty had fixed the warp drive?</li>
+    <li><span class="no star">1b *</span>Who did Spock ask Kirk whether ___ had fixed the warp drive?</li>
+    <li><span class="no">2a</span>Whose mother did George admire ___?</li>
+    <li><span class="no star">2b *</span>Whose did George admire ___ mother?</li>
+  </ul>
+  <p class="lead" style="max-width:740px; font-size:18px; margin-top:16px;">A wh phrase cannot escape a <em>whether</em>-clause (1b) or leave part of a possessive NP behind (2b). The constraints are <b>structural</b>, universal, and unlearned — children only set the parameter values, and they do it fast.
+    <span class="ko-supp" style="display:block; margin-top:8px;">이동 제약은 문장 길이가 아니라 구조에 걸린다 — UG의 일부라서 배울 필요가 없다.</span></p>
+  <aside class="notes">
+    wh-이동은 장거리로 가능하지만 아무 데서나 되지는 않습니다: whether절 내부에서의 추출(1b),
+    소유 NP 일부만의 추출(2b)은 비문. 짧은 문장에서도 막히므로 길이 문제가 아니라 구조 문제.
+    이 제약이 보편적·비학습적이라는 점이 UG 논증의 핵심입니다.
+  </aside>
+</section>
+
+<!-- ══ 14 · Sign Language Syntax ══ -->
+<section data-kicker="CH.3 P.121 · GRAMMATICAL DEPENDENCIES">
+  <h2>Sign Language Syntax</h2>
+  <div class="cols">
+    <div class="def">Sign languages have PS rules, hierarchical structure, and movement — the same design, in a <i>visual</i> mode.
+      <span class="ko-supp" style="display:block; margin-top:8px;">ASL은 SVO, 이탈리아 수화(LIS)는 SOV — 매개변수 변이까지 동일하다.</span></div>
+    <div>
+      <ul class="exlist">
+        <li><span class="no">a</span>CAT CHASE DOG — "The cat chased the dog."</li>
+        <li><span class="no">b</span>DOG CHASE CAT — "The dog chased the cat."</li>
+        <li><span class="no star">c *</span>CHASE CAT DOG</li>
+        <li><span class="no">d</span>BOOK, JOHN READ YESTERDAY — topicalization</li>
+      </ul>
+      <p class="lead" style="font-size:16.5px; margin-top:12px;">Topicalization comes with raised eyebrows and a head tilt — <b>non-manual markers</b> are part of the grammar.</p>
+    </div>
+  </div>
+  <p class="lead" style="font-size:17px; margin-top:12px;">Same principles, same parameters — the brain is built to acquire <em>language</em>, not speech.</p>
+  <aside class="notes">
+    ASL도 어순 규칙(SVO)·문법 관계·이동(주제화)·이동 제약을 모두 갖춥니다. 눈썹 올리기·머리 기울이기
+    같은 비수지 표지가 '문법의 일부'라는 점이 음성언어와의 차이. 결론: 수화도 UG의 원리·매개변수를
+    따른다 — Week 2의 '수화는 완전한 언어' 논의가 통사론 차원에서 완결됩니다.
+  </aside>
+</section>
+
+<!-- ══ 15 · Practice Q6 ══ -->
+<section data-kicker="CH.3 · PRACTICE 06">
   <div class="mcq">
     <div class="mcq-q"><span class="qnum">6</span>The verb <em>give</em> in "She gave the dog a bone" is —</div>
     <div class="mcq-opts">
@@ -292,13 +393,13 @@
     <div class="mcq-explain"><span class="lbl">Explanation</span> <em>give</em> selects two objects (<em>the dog</em> and <em>a bone</em>), so its subcategorization frame is [ __ NP NP ] — it is ditransitive.</div>
   </div>
   <aside class="notes">
-    하위범주화 틀을 확인하는 문항입니다. 목적어 두 개를 취하는 이중타동사임을 보충어 개수로 판별하게 하세요.
+    지난주 '선택(C-selection)' 복습 문항입니다(중간고사 대비). 목적어 두 개를 취하는 이중타동사임을
+    보충어 개수로 판별하게 하세요.
   </aside>
 </section>
 
-<!-- ══ 12 · Practice Q7 ══ -->
-<section data-background-color="#f8f9fa">
-  <span class="practice-header">Practice · Check Your Understanding</span>
+<!-- ══ 16 · Practice Q7 ══ -->
+<section data-kicker="CH.3 · PRACTICE 07">
   <div class="mcq">
     <div class="mcq-q"><span class="qnum">7</span>In "The list of the students <strong>is</strong> long," the verb is singular because it agrees with —</div>
     <div class="mcq-opts">
@@ -314,9 +415,8 @@
   </aside>
 </section>
 
-<!-- ══ 13 · Practice Q8 ══ -->
-<section data-background-color="#f8f9fa">
-  <span class="practice-header">Practice · Check Your Understanding</span>
+<!-- ══ 17 · Practice Q8 ══ -->
+<section data-kicker="CH.3 · PRACTICE 08">
   <div class="mcq">
     <div class="mcq-q"><span class="qnum">8</span>Why is "<span class="gram-star">*</span>Can the boy who run fastest will win?" ungrammatical?</div>
     <div class="mcq-opts">
@@ -332,11 +432,10 @@
   </aside>
 </section>
 
-<!-- ══ 14 · Exercises Q9 ══ -->
-<section data-background-color="#f8f9fa">
-  <span class="practice-header">Exercises · Based on Textbook Ch.3</span>
+<!-- ══ 18 · Exercise Q9 ══ -->
+<section data-kicker="CH.3 · EXERCISE 09">
   <div class="mcq">
-    <div class="mcq-q"><span class="qnum">9</span>Which sentence is <span class="gram-star" style="color:#c1121f;">*ungrammatical</span> because it violates a subcategorization frame? <span style="font-weight:400; color:var(--color-subtle); font-size:0.85em;">(cf. textbook Ch.3, p.97)</span></div>
+    <div class="mcq-q"><span class="qnum">9</span>Which sentence is <span class="gram-star">*ungrammatical</span> because it violates a subcategorization frame? <span style="font-weight:400; color:var(--ed-muted); font-size:0.85em;">(cf. textbook Ch.3, p.97)</span></div>
     <div class="mcq-opts">
       <button class="mcq-opt"><span class="opt-key">A</span>The children laughed.</button>
       <button class="mcq-opt" data-correct="true"><span class="opt-key">B</span>The children laughed the ball.</button>
@@ -345,16 +444,15 @@
     <div class="mcq-explain"><span class="lbl">Explanation</span> <em>laugh</em> is intransitive — its frame is [ __ ], so it cannot take a direct object. <em>*laughed the ball</em> violates that frame, while <em>kick</em> is transitive and licenses <em>the ball</em>.</div>
   </div>
   <aside class="notes">
-    교재 Ch.3의 하위범주화 문제를 개념 중심으로 재구성했습니다(원문 복제 아님). 자동사에 목적어를
-    붙이면 비문이 됨을 틀([ __ ])로 설명하세요.
+    교재 Ch.3의 하위범주화 문제를 개념 중심으로 재구성했습니다(원문 복제 아님). 지난주 선택(selection)
+    내용의 복습입니다 — 자동사에 목적어를 붙이면 비문이 됨을 틀([ __ ])로 설명하세요.
   </aside>
 </section>
 
-<!-- ══ 15 · Exercises Q10 ══ -->
-<section data-background-color="#f8f9fa">
-  <span class="practice-header">Exercises · Based on Textbook Ch.3</span>
+<!-- ══ 19 · Exercise Q10 ══ -->
+<section data-kicker="CH.3 · EXERCISE 10">
   <div class="mcq">
-    <div class="mcq-q"><span class="qnum">10</span>English puts the verb before its object (<em>found a dog</em>) but Japanese puts it after (<em>inu-o mitsuketa</em>). This difference is best described as a — <span style="font-weight:400; color:var(--color-subtle); font-size:0.85em;">(cf. textbook Ch.3, pp.100–101, 118)</span></div>
+    <div class="mcq-q"><span class="qnum">10</span>English puts the verb before its object (<em>found a dog</em>) but Japanese puts it after (<em>inu-o mitsuketa</em>). This difference is best described as a — <span style="font-weight:400; color:var(--ed-muted); font-size:0.85em;">(cf. textbook Ch.3, pp.100–101, 118)</span></div>
     <div class="mcq-opts">
       <button class="mcq-opt" data-correct="true"><span class="opt-key">A</span>head-direction parameter (head-initial vs. head-final)</button>
       <button class="mcq-opt"><span class="opt-key">B</span>universal principle shared by all languages</button>
@@ -362,53 +460,47 @@
     </div>
     <div class="mcq-explain"><span class="lbl">Explanation</span> Whether the head precedes or follows its complement is a <span class="key">parameter</span> set differently across languages: English is head-initial, Japanese head-final. The overarching requirement that phrases <em>have</em> heads is the universal principle.</div>
   </div>
-  <p class="ko-supp" style="font-size:0.6em; margin-top:0.5em;">※ 더 풀어보기: 교재 Ch.3 pp.107–132 Exercises — 하위범주화 틀 작성·의문문 도출·일치 판단을 과제로 권장.</p>
+  <p class="ko-supp" style="font-size:14px; margin-top:16px;">더 풀어보기 — 교재 Ch.3 pp.107–132 Exercises(의문문 도출·일치 판단·언어 비교)를 과제로 권장.</p>
   <aside class="notes">
     원리(모든 언어 공통)와 매개변수(언어별 선택)의 구분을 확인하는 문항입니다. 핵어 방향성이 매개변수의
     대표 사례임을 강조하고, 하단 추가 Exercises는 과제로 안내하세요.
   </aside>
 </section>
 
-<!-- ══ 16 · Summary ══ -->
-<section>
-  <h2>Summary</h2>
-  <div class="summary-box">
-    <h4>Key Points</h4>
-    <ul style="font-size:0.8em; line-height:1.8;">
-      <li>Phrases are built around a <span class="key">head</span>; complements complete it</li>
-      <li><span class="key">Subcategorization</span>: intransitive · transitive · ditransitive</li>
-      <li>Dependencies: <span class="key">agreement</span> &amp; <span class="key">question formation</span></li>
-      <li>Subject–verb agreement targets the <span class="key">head of the subject NP</span></li>
-      <li>Question formation is <span class="key">structure-dependent</span> — rules refer to structure, not linear order</li>
-      <li>UG: universal <span class="key">principles</span> + language-specific <span class="key">parameters</span></li>
-    </ul>
-  </div>
+<!-- ══ 20 · Summary ══ -->
+<section data-kicker="CH.3 · SUMMARY">
+  <h2>Six Things to Keep</h2>
+  <ol class="recap" style="max-width:700px;">
+    <li>Dependencies hold <i>at a distance</i> — and follow <b>structure</b>, never linear order</li>
+    <li>Agreement targets the <b>head of the subject NP</b> — the NP under S (TP)</li>
+    <li>Questions: d-structure + transformations — <b>Aux inversion · wh movement · do-insertion</b> → s-structure</li>
+    <li>Every sentence roots in a <b>CP</b>: moved T lands in C, wh phrases in Spec CP</li>
+    <li><b>UG</b>: universal principles; <b>parameters</b> (head order, movement options) — set fast by children</li>
+    <li><b>Sign languages</b> obey the same principles and parameters — language is of the brain, not of sound</li>
+  </ol>
   <aside class="notes">
-    오늘의 대주제는 '통사 규칙은 구조에 의존한다'입니다. 하위범주화, 일치, 의문문 형성이 모두 이
-    하나의 통찰을 뒷받침합니다. 원리·매개변수 이론이 언어 습득의 효율성을 설명함을 정리하고 넘어가세요.
+    오늘의 대주제는 '통사 규칙은 구조에 의존한다'입니다. 일치·의문문 형성·이동 제약이 모두 이 하나의
+    통찰을 뒷받침하고, 원리·매개변수가 언어 습득의 효율성을 설명합니다. 교재 p.123의 통합 규칙표
+    (13개 규칙)도 복습 자료로 안내하세요.
   </aside>
 </section>
 
-<!-- ══ 17 · Next Week — Midterm ══ -->
-<section>
-  <h2 style="margin-bottom:0.3em;">Next Week — Week 8 · Midterm Exam</h2>
-  <div class="next-week-banner">
-    <div class="label">Midterm Exam</div>
-    <p><strong>Covers Chapters 1–3</strong> (Weeks 1–7)</p>
-  </div>
-  <h3 style="margin:0.5em 0 0.2em;">Review Scope</h3>
-  <div class="exam-box">
-    <b>Ch.1</b> — What is language: knowledge, arbitrariness, creativity, competence/performance, grammar (descriptive vs. prescriptive), UG<br>
-    <b>Ch.2</b> — Morphology: words, morphemes, word-formation<br>
-    <b>Ch.3</b> — Syntax: constituents, categories, phrase structure trees &amp; rules, recursion, heads/complements, agreement, question formation, structure-dependence
-  </div>
-  <div class="next-week-banner" style="margin-top:0.4em;">
-    <div class="label">Preparation</div>
-    <p>Review all lecture slides &amp; end-of-chapter exercises for Ch.1–3 · practice drawing phrase structure trees</p>
-  </div>
+<!-- ══ 21 · Next week — Midterm ══ -->
+<section data-kicker="NEXT WEEK · MIDTERM — CH.1–3">
+  <h2>Midterm Exam</h2>
+  <p class="lead" style="max-width:640px;">Week 8 · in class · covers <em>Chapters 1–3</em> (Weeks 1–7).
+    <span class="ko-supp" style="display:block;">중간고사 — 범위는 Ch.1–3 전체. 강의에서 다룬 내용 중심으로 출제.</span></p>
+  <ul class="exlist" style="max-width:680px; margin-top:22px;">
+    <li><span class="no">CH.1</span><span style="font-style:normal; font: 300 16.5px 'Noto Serif KR'; color:var(--ed-body);">knowledge · arbitrariness · creativity · competence/performance · grammar types · UG</span></li>
+    <li><span class="no">CH.2</span><span style="font-style:normal; font: 300 16.5px 'Noto Serif KR'; color:var(--ed-body);">morphology — words · morphemes · word formation</span></li>
+    <li><span class="no">CH.3</span><span style="font-style:normal; font: 300 16.5px 'Noto Serif KR'; color:var(--ed-body);">constituents · categories · trees &amp; rules · recursion · X-bar &amp; TP · dependencies · movement · parameters</span></li>
+  </ul>
+  <hr class="hair" style="max-width:680px; margin-top:26px;">
+  <p style="font: 300 17px 'Noto Serif KR'; color: var(--ed-body);">
+    <span class="small-label" style="margin-right:14px;">PREPARE</span>Review all lecture slides &amp; end-of-chapter exercises for Ch.1–3 · practice drawing phrase structure trees</p>
   <aside class="notes">
-    다음 주는 중간고사입니다. 시험 범위는 Ch.1–3(1–7주차) 전체입니다. 특히 통사론의 나무 그리기,
-    구성성분 판별, 구조 의존성 개념은 반드시 출제됩니다. 슬라이드와 연습문제를 중심으로 복습을
+    다음 주는 중간고사입니다. 시험 범위는 Ch.1–3(1–7주차) 전체. 특히 통사론의 나무 그리기,
+    구성성분 판별, 구조 의존성 개념은 반드시 출제됩니다. 슬라이드와 연습문제 중심의 복습을
     당부하세요.
   </aside>
 </section>
@@ -420,17 +512,19 @@
 <script>
   Reveal.initialize({
     hash: true,
-    slideNumber: 'c/t',
+    slideNumber: false,
     progress: true,
     center: false,
-    transition: 'slide',
-    transitionSpeed: 'fast',
+    transition: 'fade',
+    transitionSpeed: 'default',
     plugins: []
   });
 </script>
-<a class="home-btn" href="../index.html" title="강의 목록으로">← 목록</a>
+<a class="home-btn" href="../index.html" title="강의 목록으로">Index</a>
 <script src="assets/slides-print.js"></script>
 <script src="assets/slides-quiz.js"></script>
 <script src="assets/slides-ko-toggle.js"></script>
+<script src="assets/slides-media.js?v=8"></script>
+<script src="assets/slides-editorial.js?v=2"></script>
 </body>
 </html>

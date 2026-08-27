@@ -1,0 +1,179 @@
+/* ============================================================
+   editorial-theme.css — Direction 1 · Serif Editorial (v1)
+   Playfair Display(디스플레이) + Lora(영문 본문/예문) +
+   Space Grotesk(라벨) + Noto Serif KR(국문).
+   기존 테마들 뒤에 로드하여 오버라이드한다. W2 파일럿부터 적용.
+   ============================================================ */
+
+:root {
+  --ed-paper: #faf8f3;
+  --ed-ink: #1c1a17;
+  --ed-body: #3a362e;
+  --ed-muted: #8d8574;
+  --ed-line: #cfc8b8;
+  --ed-accent: var(--slide-accent, #7a2e2e);
+}
+
+/* ── 지면 ── */
+html, body, .reveal, .reveal-viewport { background: var(--ed-paper) !important; }
+.reveal { font-family: 'Lora', 'Noto Serif KR', serif; color: var(--ed-ink); }
+.reveal .slides { text-align: left; }
+.reveal .slides > section {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 44px 96px 0 150px;
+  color: var(--ed-ink);
+}
+
+/* ── 공통 장식(slides-editorial.js가 주입) ── */
+.ed-rail { position: absolute; left: 56px; top: 16px; height: 610px; width: 1px; background: var(--ed-line); }
+.ed-railtxt {
+  position: absolute; left: 38px; top: 16px;
+  writing-mode: vertical-rl;
+  font: 400 11px 'Space Grotesk'; letter-spacing: 0.28em; color: var(--ed-muted);
+}
+.ed-pagenum {
+  position: absolute; right: 96px; top: 648px;
+  font: italic 400 12px 'Lora'; color: var(--ed-muted);
+}
+.ed-kicker {
+  font: 600 13px 'Space Grotesk'; letter-spacing: 0.3em;
+  text-transform: uppercase; color: var(--ed-accent);
+  margin-bottom: 0.9em;
+}
+
+/* ── 타이포 ── */
+.reveal h1, .reveal h2, .reveal h3 { font-family: 'Playfair Display', 'Noto Serif KR', serif; color: var(--ed-ink); text-transform: none; }
+.reveal h2 { font-size: 46px; font-weight: 600; letter-spacing: -0.01em; margin: 0 0 26px; }
+.reveal .hero-word {
+  font: italic 700 120px/1.1 'Playfair Display';
+  letter-spacing: -0.02em; margin: 30px 0 24px;
+}
+.reveal .lead { font: 300 22px/1.65 'Noto Serif KR'; color: var(--ed-body); }
+.reveal .lead em, .reveal .lead i { font: italic 400 1em 'Lora'; color: var(--ed-ink); }
+.reveal p, .reveal li { color: var(--ed-body); }
+.reveal b, .reveal strong { font-weight: 600; color: var(--ed-ink); }
+.reveal .accent { color: var(--ed-accent); }
+.reveal .small-label { font: 600 11px 'Space Grotesk'; letter-spacing: 0.24em; text-transform: uppercase; color: var(--ed-muted); }
+
+/* 헤어라인 유틸 */
+.hair { border: 0; border-top: 1px solid var(--ed-line); margin: 20px 0; }
+.hair-b { border-bottom: 1px solid var(--ed-line); }
+
+/* ── 레이아웃 아키타입 ── */
+.cols { display: grid; grid-template-columns: 290px minmax(0, 1fr); gap: 56px; align-items: start; }
+.cols .def { border-top: 1px solid var(--ed-line); padding-top: 16px; font: 300 18px/1.75 'Noto Serif KR'; color: var(--ed-body); }
+.cols .def i { font: italic 400 18px 'Lora'; }
+.cols-even { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 56px; align-items: start; }
+
+/* 단어 진열(hero 하단) */
+.word-row { display: flex; gap: 54px; border-top: 1px solid var(--ed-line); padding-top: 20px; margin-top: 34px; }
+.word-row .w b { display: block; font: italic 400 28px 'Lora'; color: var(--ed-ink); }
+.word-row .w span { display: block; margin-top: 5px; font: 600 10px 'Space Grotesk'; letter-spacing: 0.22em; color: var(--ed-muted); }
+
+/* 예문 리스트(문법성 판단) */
+.exlist { list-style: none; padding: 0; margin: 0; }
+.exlist li {
+  display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap;
+  padding: 7.5px 0; border-bottom: 1px solid var(--ed-line);
+  font: italic 400 17.5px 'Lora'; color: var(--ed-ink);
+}
+.exlist li:last-child { border-bottom: 0; }
+.exlist .no { font: 600 11px 'Space Grotesk'; letter-spacing: 0.1em; color: var(--ed-muted); min-width: 22px; }
+.exlist .star { color: var(--ed-accent); font-style: normal; font-weight: 700; }
+
+/* 대역(gloss) 세트 */
+.gloss-set .langlab { font: 600 11px 'Space Grotesk'; letter-spacing: 0.26em; color: var(--ed-muted); margin-bottom: 12px; }
+.gloss-set .sent { font: italic 400 28px/1.35 'Lora'; color: var(--ed-ink); }
+.gloss-set .sent b { font-weight: 700; color: var(--ed-accent); }
+.gloss-set .gls { margin-top: 8px; font: 400 14px 'Space Grotesk'; letter-spacing: 0.05em; color: var(--ed-muted); }
+.gloss-set .tr { margin-top: 12px; font: 300 18px 'Noto Serif KR'; color: var(--ed-body); }
+
+/* 인용/재귀 스택 */
+.quote-stack { border-left: 1px solid var(--ed-line); padding-left: 28px; }
+.quote-stack p { font: italic 400 20px/1.9 'Lora'; margin: 0; color: var(--ed-ink); }
+.quote-stack p b { color: var(--ed-accent); font-weight: 700; }
+
+/* ── 한국어 부연: 세리프 정제 ── */
+.ko-supp { font-family: 'Noto Serif KR', serif !important; font-weight: 300 !important; color: var(--ed-muted) !important; }
+
+/* ── 버튼류: 이모지 없는 레터스페이스 라벨 ── */
+.say-btn, .media-btn, .home-btn, .pdf-btn, .ko-toggle-btn {
+  font: 600 10.5px 'Space Grotesk' !important; letter-spacing: 0.18em !important;
+  background: transparent !important; color: var(--ed-muted) !important;
+  border: 1px solid var(--ed-line) !important; border-radius: 0 !important;
+  padding: 5px 12px !important; box-shadow: none !important; opacity: 1 !important;
+  text-transform: uppercase;
+}
+.say-btn:hover, .media-btn:hover, .home-btn:hover, .pdf-btn:hover, .ko-toggle-btn:hover {
+  background: var(--ed-ink) !important; color: var(--ed-paper) !important;
+  border-color: var(--ed-ink) !important; transform: none !important;
+}
+.say-btn.speaking { background: var(--ed-accent) !important; color: var(--ed-paper) !important; border-color: var(--ed-accent) !important; }
+.say-btn.mini { padding: 2px 7px !important; font-size: 10px !important; }
+.ko-toggle-btn.off { background: transparent !important; color: var(--ed-line) !important; }
+
+/* ── MCQ: 에디토리얼 오버라이드 ── */
+.practice-header {
+  display: block; background: none; color: var(--ed-accent);
+  font: 600 13px 'Space Grotesk'; letter-spacing: 0.3em; text-transform: uppercase;
+  padding: 0; margin-bottom: 26px;
+}
+.mcq { font-size: 0.8em; }
+.mcq-q { font: 400 24px/1.5 'Lora'; color: var(--ed-ink); margin-bottom: 22px; }
+.mcq-q .qnum {
+  background: none; color: var(--ed-accent); width: auto; height: auto;
+  font: 600 13px 'Space Grotesk'; letter-spacing: 0.1em; margin-right: 12px;
+}
+.mcq-q .qnum::after { content: ' —'; }
+.mcq-opts { gap: 0; }
+.mcq-opt {
+  background: transparent; border: 0; border-bottom: 1px solid var(--ed-line);
+  border-radius: 0; padding: 13px 4px;
+  font: 300 18px 'Noto Serif KR'; color: var(--ed-body);
+}
+.mcq-opt:hover:not(:disabled) { border-color: var(--ed-ink); color: var(--ed-ink); transform: none; background: transparent; }
+.mcq-opt .opt-key { color: var(--ed-muted); font: 600 12px 'Space Grotesk'; letter-spacing: 0.1em; }
+.mcq-opt.correct { background: transparent; border-bottom: 2px solid var(--ed-accent); color: var(--ed-ink); font-weight: 500; }
+.mcq-opt.correct .opt-key, .mcq-opt.correct::after { color: var(--ed-accent); }
+.mcq-opt.wrong { background: transparent; color: var(--ed-muted); text-decoration: line-through; }
+.mcq-opt.wrong::after { color: var(--ed-muted); }
+.mcq-explain {
+  background: transparent; border-left: 2px solid var(--ed-accent); border-radius: 0;
+  font: 300 16px/1.7 'Noto Serif KR'; color: var(--ed-body); padding: 10px 0 10px 20px; margin-top: 18px;
+}
+.mcq-explain .lbl { color: var(--ed-accent); font: 600 11px 'Space Grotesk'; letter-spacing: 0.24em; text-transform: uppercase; margin-right: 10px; }
+
+/* ── 영상·임베드 프레임 ── */
+.video-embed, .video-stage video { border-radius: 0 !important; box-shadow: none !important; border: 1px solid var(--ed-line); }
+.video-credit, .video-print-note { font: italic 400 13px 'Lora' !important; color: var(--ed-muted) !important; }
+
+/* ── 요약 ── */
+.recap, .reveal ol.recap, .reveal ul.recap { list-style: none; padding: 0; margin: 0; counter-reset: rc; }
+.recap li {
+  counter-increment: rc; padding: 12px 0 12px 56px; position: relative;
+  border-bottom: 1px solid var(--ed-line);
+  font: 300 19px/1.55 'Noto Serif KR'; color: var(--ed-body);
+}
+.recap li::before {
+  content: counter(rc, decimal-leading-zero);
+  position: absolute; left: 0; top: 14px;
+  font: 600 13px 'Space Grotesk'; letter-spacing: 0.1em; color: var(--ed-accent);
+}
+.recap li:last-child { border-bottom: 0; }
+.recap b { font-weight: 500; color: var(--ed-ink); }
+.recap i { font: italic 400 1em 'Lora'; }
+/* 목차용 교재 쪽수(우측 정렬) */
+.recap .pg { float: right; font: 600 12px 'Space Grotesk'; letter-spacing: 0.08em; color: var(--ed-muted); margin-top: 5px; }
+/* 항목이 많은 목차용 축약 행간 */
+.recap.tight li { padding-top: 8px; padding-bottom: 8px; }
+.recap.tight li::before { top: 10px; }
+
+/* ── 진행바·컨트롤 절제 ── */
+.reveal .progress { height: 2px; color: var(--ed-accent); }
+.reveal .controls { color: var(--ed-muted); }
+.reveal .slide-number { background: transparent; font: 400 12px 'Space Grotesk'; color: var(--ed-muted); }
+
+@media print {
+  .ed-rail, .ed-railtxt { display: none; }
+}

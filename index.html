@@ -3,483 +3,252 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>영어학 특강 — 강의 허브</title>
+  <title>영어학 특강 — Topics in English Linguistics</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,400;1,700&family=Lora:ital@0;1&family=Space+Grotesk:wght@400;600;700&family=Noto+Serif+KR:wght@300;500&family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet" />
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
-      --lang:      #0077b6;  /* Ch.1 What Is Language? */
-      --morph:     #1b7f5e;  /* Ch.2 Morphology */
-      --syntax:    #6a0572;  /* Ch.3 Syntax */
-      --meaning:   #c77b2e;  /* Ch.4 Meaning */
-      --phonetics: #2d6a4f;  /* Ch.5 Phonetics */
-      --phonology: #c1121f;  /* Ch.6 Phonology */
-      --ot:        #4361ee;
-      --exam:      #dc2626;
-      --ink:       #1e293b;
-      --muted:     #64748b;
-      --faint:     #94a3b8;
-      --line:      #e2e8f0;
-      --bg:        #f1f3f8;
-      --card:      #ffffff;
-      --shadow:    0 4px 6px -1px rgba(0,0,0,.08), 0 2px 4px -2px rgba(0,0,0,.08);
-      --shadow-lg: 0 12px 22px -6px rgba(0,0,0,.16);
-      --font-en:   'Inter', 'Segoe UI', sans-serif;
-      --font-ko:   'Noto Sans KR', sans-serif;
+      --paper: #faf8f3;
+      --ink: #1c1a17;
+      --body: #3a362e;
+      --muted: #8d8574;
+      --line: #cfc8b8;
+      --w1: #2b3a67;   /* orientation */
+      --ch1: #7a2e2e;  /* what is language */
+      --ch2: #2e5941;  /* morphology */
+      --ch3: #4a2e5c;  /* syntax */
+      --ch4: #8a5a20;  /* meaning */
+      --ch5: #24513f;  /* phonetics */
+      --ch6: #6e1f28;  /* phonology */
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'Lora', 'Noto Serif KR', serif;
+      line-height: 1.6;
+    }
+    .page { max-width: 880px; margin: 0 auto; padding: 72px 28px 60px; }
+
+    /* ── 마스트헤드 ── */
+    .booktag {
+      font: 600 11px 'Space Grotesk'; letter-spacing: 0.28em;
+      text-transform: uppercase; color: var(--muted);
+    }
+    h1 {
+      font: 600 54px/1.15 'Playfair Display', 'Noto Serif KR', serif;
+      margin: 18px 0 6px; letter-spacing: -0.01em;
+    }
+    .subtitle-ko { font: 300 22px 'Noto Serif KR'; color: var(--body); }
+    .meta {
+      margin-top: 26px; padding-top: 16px; border-top: 1px solid var(--line);
+      font: italic 400 14px 'Lora'; color: var(--muted);
+      display: flex; gap: 1.6em; flex-wrap: wrap;
     }
 
-    body { font-family: var(--font-en); background: var(--bg); color: var(--ink); line-height: 1.6; }
+    /* ── 섹션 라벨 ── */
+    .phase-label {
+      margin: 56px 0 4px;
+      font: 600 12px 'Space Grotesk'; letter-spacing: 0.26em;
+      text-transform: uppercase; color: var(--muted);
+      display: flex; justify-content: space-between; align-items: baseline;
+      border-bottom: 1px solid var(--ink); padding-bottom: 10px;
+    }
+    .phase-label .r { color: var(--muted); letter-spacing: 0.14em; font-weight: 400; }
 
-    /* ── Header ── */
-    header {
-      background: linear-gradient(135deg, #16213e 0%, #3a0ca3 58%, #6a0572 100%);
-      color: white; text-align: center; padding: 3rem 1.5rem 2.4rem;
+    /* ── 주차 목록 (책 차례 스타일) ── */
+    .weeks { list-style: none; }
+    .weeks li { border-bottom: 1px solid var(--line); }
+    .weeks li:last-child { border-bottom: 0; }
+    .wrow {
+      display: flex; align-items: baseline; gap: 22px;
+      padding: 15px 6px; text-decoration: none; color: inherit;
+      transition: background 0.15s;
     }
-    header .badge {
-      display: inline-block; background: rgba(255,255,255,.15);
-      border: 1px solid rgba(255,255,255,.3); padding: .28rem .95rem;
-      border-radius: 999px; font-size: .72rem; letter-spacing: .08em;
-      text-transform: uppercase; margin-bottom: .9rem;
+    a.wrow:hover { background: rgba(28, 26, 23, 0.035); }
+    a.wrow:hover .wtitle { color: var(--acc); }
+    .wnum {
+      min-width: 44px;
+      font: 600 12px 'Space Grotesk'; letter-spacing: 0.1em;
+      color: var(--acc, var(--muted));
     }
-    header h1 { font-size: clamp(1.9rem, 4vw, 2.6rem); font-weight: 700; letter-spacing: -.01em; }
-    header .h1-en { font-family: var(--font-ko); display:block; font-weight: 300; font-size: .48em; opacity: .92; margin-top: .35rem; }
-    header .subtitle { font-family: var(--font-ko); font-size: .92rem; opacity: .8; margin-top: .8rem; }
-    header .course-info { margin-top: 1.2rem; display: flex; justify-content: center; gap: .8rem; flex-wrap: wrap; }
-    header .info-badge {
-      font-family: var(--font-ko); background: rgba(255,255,255,.14);
-      padding: .35rem 1rem; border-radius: 20px; font-size: .78rem;
-      backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,.12);
+    .wmain { flex: 1; min-width: 0; }
+    .wtitle { font: 400 19px 'Lora'; color: var(--ink); transition: color 0.15s; }
+    .wtitle i { font-style: italic; }
+    .wko { font: 300 13.5px 'Noto Serif KR'; color: var(--muted); margin-top: 1px; }
+    .wref {
+      font: 600 11px 'Space Grotesk'; letter-spacing: 0.08em;
+      color: var(--muted); white-space: nowrap;
     }
+    .warrow { font: 400 15px 'Lora'; color: var(--muted); }
+    a.wrow:hover .warrow { color: var(--acc); }
 
-    /* ── Layout ── */
-    main { max-width: 1160px; margin: 0 auto; padding: 2rem 1.3rem 3rem; }
+    /* 시험 주차 */
+    .exam .wtitle { font-style: italic; color: var(--body); }
+    .exam .wnum { color: var(--muted); }
+    .exam .wref { color: var(--ch6); }
 
-    /* ── Progress Timeline ── */
-    .timeline-box {
-      background: var(--card); border-radius: 16px; padding: 1.5rem 1.6rem 1.2rem;
-      box-shadow: var(--shadow); margin-bottom: 2rem;
+    /* ── 문서·자료 링크 행 ── */
+    .doc-list { list-style: none; }
+    .doc-list li { border-bottom: 1px solid var(--line); }
+    .doc-list li:last-child { border-bottom: 0; }
+    .drow {
+      display: flex; align-items: baseline; gap: 22px;
+      padding: 13px 6px; text-decoration: none; color: inherit;
+      transition: background 0.15s;
     }
-    .timeline-box h3 {
-      font-family: var(--font-ko); font-size: .82rem; font-weight: 700; color: var(--muted);
-      letter-spacing: .04em; margin-bottom: 1rem; text-transform: uppercase;
-    }
-    .timeline-bar { display: flex; gap: 4px; height: 10px; }
-    .timeline-bar .seg {
-      flex: 1; border-radius: 3px; opacity: .55; cursor: pointer;
-      transition: transform .2s, opacity .2s;
-    }
-    .timeline-bar .seg:hover { opacity: 1; transform: scaleY(1.9); }
-    .timeline-labels {
-      display: flex; justify-content: space-between; margin-top: .7rem;
-      font-size: .72rem; color: var(--faint);
-    }
+    .drow:hover { background: rgba(28, 26, 23, 0.035); }
+    .dlabel { flex: 1; font: 400 17px 'Lora'; color: var(--ink); }
+    .ddesc { font: 300 13px 'Noto Serif KR'; color: var(--muted); margin-top: 1px; }
+    .dref { font: 600 11px 'Space Grotesk'; letter-spacing: 0.08em; color: var(--muted); white-space: nowrap; }
 
-    /* ── Phase section ── */
-    .phase { margin-top: 2.2rem; }
-    .phase-header { display: flex; align-items: baseline; gap: .7rem; margin-bottom: 1rem; flex-wrap: wrap; }
-    .phase-badge {
-      font-family: var(--font-en); font-size: .72rem; font-weight: 700; letter-spacing: .04em;
-      padding: .28rem .85rem; border-radius: 20px; color: #fff;
+    footer {
+      margin-top: 70px; padding-top: 18px; border-top: 1px solid var(--line);
+      font: italic 400 13px 'Lora'; color: var(--muted);
+      display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;
     }
-    .phase-title { font-size: 1.25rem; font-weight: 700; }
-    .phase-title-ko { font-family: var(--font-ko); font-size: .85rem; color: var(--muted); }
-
-    /* ── Week grid ── */
-    .week-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 1rem; }
-
-    .week-card {
-      background: var(--card); border-radius: 14px; padding: 1.15rem 1.25rem;
-      border-top: 4px solid var(--accent); box-shadow: var(--shadow);
-      transition: transform .2s, box-shadow .2s; display: flex; flex-direction: column;
-      scroll-margin-top: 1rem;
-    }
-    .week-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
-    .week-card.flash { animation: flash 1.1s ease; }
-    @keyframes flash { 0%,100% { box-shadow: var(--shadow); } 30% { box-shadow: 0 0 0 3px var(--accent), var(--shadow-lg); } }
-
-    .week-card .week-num {
-      font-size: .66rem; font-weight: 700; letter-spacing: .1em;
-      text-transform: uppercase; color: var(--accent);
-    }
-    .week-card .week-title { font-size: 1.02rem; font-weight: 700; line-height: 1.3; margin-top: .15rem; }
-    .week-card .week-title .half { font-weight: 500; color: var(--muted); font-size: .82em; }
-    .week-card .week-title-ko { font-family: var(--font-ko); font-size: .76rem; color: var(--muted); margin-top: .1rem; }
-    .week-card .unit-badge {
-      align-self: flex-start; margin-top: .55rem; font-size: .68rem; font-weight: 600;
-      color: var(--accent); background: color-mix(in srgb, var(--accent) 10%, white);
-      padding: .22rem .6rem; border-radius: 6px;
-    }
-    .week-card .week-topics { font-size: .73rem; color: #475569; line-height: 1.55; margin-top: .7rem; }
-    .week-card .week-topics li { list-style: none; padding-left: .9em; position: relative; }
-    .week-card .week-topics li::before { content: '·'; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
-
-    .week-card .status {
-      margin-top: .8rem; align-self: flex-start; font-family: var(--font-ko);
-      font-size: .68rem; font-weight: 600; color: var(--faint);
-      background: #f1f5f9; padding: .28rem .75rem; border-radius: 6px;
-    }
-
-    /* Exam card */
-    .week-card.exam { --accent: var(--exam); background: #fff7f7; }
-    .week-card.exam .week-title { color: var(--exam); }
-
-    /* ── Documents ── */
-    .doc-card {
-      display: flex; align-items: center; gap: 1rem; background: var(--card);
-      border-radius: 14px; padding: 1.1rem 1.3rem; box-shadow: var(--shadow);
-      border-left: 4px solid var(--lang); text-decoration: none; color: inherit;
-      transition: transform .2s, box-shadow .2s;
-    }
-    .doc-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
-    .doc-card__icon { font-size: 1.8rem; flex-shrink: 0; }
-    .doc-card__title { font-family: var(--font-ko); font-size: .92rem; font-weight: 700; }
-    .doc-card__desc { font-family: var(--font-ko); font-size: .75rem; color: var(--muted); margin-top: .15rem; }
-    .doc-card__arrow { margin-left: auto; color: var(--faint); font-size: 1.2rem; }
-
-    /* ── Resources ── */
-    .resource-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: .9rem; }
-    .resource-card {
-      background: var(--card); border-radius: 10px; padding: .95rem 1.05rem;
-      box-shadow: var(--shadow); font-size: .78rem; text-decoration: none; color: inherit;
-      display: block; border: 1.5px solid transparent; transition: transform .15s, box-shadow .2s, border-color .2s;
-    }
-    .resource-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); border-color: var(--lang); }
-    .resource-card .rc-label { font-weight: 700; margin-bottom: .2rem; }
-    .resource-card:hover .rc-label { color: var(--lang); }
-    .resource-card .rc-desc { font-family: var(--font-ko); color: var(--muted); line-height: 1.5; }
-
-    .section-title {
-      font-family: var(--font-ko); font-size: .72rem; font-weight: 700; letter-spacing: .08em;
-      text-transform: uppercase; color: var(--muted); margin: 2.5rem 0 1rem;
-      padding-bottom: .5rem; border-bottom: 1px solid var(--line);
-    }
-
-    footer { text-align: center; padding: 2rem 1rem; font-size: .72rem; color: var(--faint); font-family: var(--font-ko); }
 
     @media (max-width: 640px) {
-      .week-grid { grid-template-columns: 1fr; }
-      header .course-info { flex-direction: column; align-items: center; }
+      .page { padding: 44px 18px 40px; }
+      h1 { font-size: 38px; }
+      .wref { display: none; }
+      .meta { gap: 1em; }
     }
   </style>
 </head>
 <body>
+<div class="page">
 
-<header>
-  <div class="badge">2026학년도 2학기</div>
-  <h1>영어학 특강<span class="h1-en">Topics in English Linguistics</span></h1>
-  <p class="subtitle">교재: <em>An Introduction to Language, 11th Edition</em> — Fromkin, Rodman &amp; Hyams</p>
-  <div class="course-info">
-    <span class="info-badge">📘 An Introduction to Language (11e)</span>
-    <span class="info-badge">📅 15주 과정</span>
-    <span class="info-badge">📖 Chapters 1 – 6</span>
-  </div>
-</header>
-
-<main>
-
-  <!-- ── Progress Timeline ── -->
-  <div class="timeline-box">
-    <h3>강의 진행 개요 · Course Progress</h3>
-    <div class="timeline-bar" id="tl">
-      <div class="seg" data-week="1"  title="Week 1: Orientation"                 style="background:var(--ot)"></div>
-      <div class="seg" data-week="2"  title="Week 2: What Is Language? (전반부)"   style="background:var(--lang)"></div>
-      <div class="seg" data-week="3"  title="Week 3: What Is Language? (후반부)"   style="background:var(--lang)"></div>
-      <div class="seg" data-week="4"  title="Week 4: Morphology (전반부)"          style="background:var(--morph)"></div>
-      <div class="seg" data-week="5"  title="Week 5: Morphology (후반부)"          style="background:var(--morph)"></div>
-      <div class="seg" data-week="6"  title="Week 6: Syntax (전반부)"              style="background:var(--syntax)"></div>
-      <div class="seg" data-week="7"  title="Week 7: Syntax (후반부)"              style="background:var(--syntax)"></div>
-      <div class="seg" data-week="8"  title="Week 8: 중간고사"                     style="background:var(--exam)"></div>
-      <div class="seg" data-week="9"  title="Week 9: The Meaning of Language (전반부)"  style="background:var(--meaning)"></div>
-      <div class="seg" data-week="10" title="Week 10: The Meaning of Language (후반부)" style="background:var(--meaning)"></div>
-      <div class="seg" data-week="11" title="Week 11: Phonetics (전반부)"          style="background:var(--phonetics)"></div>
-      <div class="seg" data-week="12" title="Week 12: Phonetics (후반부)"          style="background:var(--phonetics)"></div>
-      <div class="seg" data-week="13" title="Week 13: Phonology (전반부)"          style="background:var(--phonology)"></div>
-      <div class="seg" data-week="14" title="Week 14: Phonology (후반부)"          style="background:var(--phonology)"></div>
-      <div class="seg" data-week="15" title="Week 15: 기말고사"                    style="background:var(--exam)"></div>
+  <!-- ── 마스트헤드 ── -->
+  <header>
+    <div class="booktag">An Introduction to Language · 11th ed. — Fromkin · Rodman · Hyams</div>
+    <h1>Topics in English<br>Linguistics</h1>
+    <div class="subtitle-ko">영어학 특강</div>
+    <div class="meta">
+      <span>2026학년도 2학기</span>
+      <span>15 weeks</span>
+      <span>Chapters 1–6</span>
+      <span>경기대학교</span>
     </div>
-    <div class="timeline-labels"><span>Week 1</span><span>Midterm (W8)</span><span>Week 15</span></div>
-  </div>
+  </header>
 
-  <!-- ══════════ Phase 1 ══════════ -->
-  <section class="phase">
-    <div class="phase-header">
-      <span class="phase-badge" style="background:var(--lang)">Phase 1</span>
-      <span class="phase-title">Language &amp; Structure</span>
-      <span class="phase-title-ko">언어와 구조 — Ch. 1 – 3</span>
-    </div>
-    <div class="week-grid">
+  <!-- ── Phase 1 ── -->
+  <div class="phase-label"><span>Phase 1 — Language &amp; Structure</span><span class="r">CH.1–3 · 언어와 구조</span></div>
+  <ul class="weeks">
+    <li><a class="wrow" href="slides/week01.html" style="--acc: var(--w1);">
+      <span class="wnum">W1</span>
+      <span class="wmain"><span class="wtitle">Course Orientation</span>
+        <div class="wko">오리엔테이션 — 강의 개관 · 평가 · AI 콘텐츠 발표 과제</div></span>
+      <span class="wref">INTRODUCTION</span><span class="warrow">→</span></a></li>
+    <li><a class="wrow" href="slides/week02.html" style="--acc: var(--ch1);">
+      <span class="wnum">W2</span>
+      <span class="wmain"><span class="wtitle">What Is Language? <i>— Part 1, Knowledge &amp; Grammar</i></span>
+        <div class="wko">언어 지식과 문법 — 자의성 · 창조성 · 기술/규범 문법 · 보편문법</div></span>
+      <span class="wref">CH.1 · PP.1–15</span><span class="warrow">→</span></a></li>
+    <li><a class="wrow" href="slides/week03.html" style="--acc: var(--ch1);">
+      <span class="wnum">W3</span>
+      <span class="wmain"><span class="wtitle">What Is Language? <i>— Part 2, Animal Communication &amp; Thought</i></span>
+        <div class="wko">동물의 의사소통 · 언어와 사고</div></span>
+      <span class="wref">CH.1 · PP.16–32</span><span class="warrow">→</span></a></li>
+    <li><a class="wrow" href="slides/week04.html" style="--acc: var(--ch2);">
+      <span class="wnum">W4</span>
+      <span class="wmain"><span class="wtitle">Morphology <i>— Part 1, Morphemes &amp; Word Formation</i></span>
+        <div class="wko">형태소와 단어 형성 — 자립/의존 · 파생/굴절</div></span>
+      <span class="wref">CH.2 · PP.33–48</span><span class="warrow">→</span></a></li>
+    <li><a class="wrow" href="slides/week05.html" style="--acc: var(--ch2);">
+      <span class="wnum">W5</span>
+      <span class="wmain"><span class="wtitle">Morphology <i>— Part 2, Hierarchy &amp; Analysis</i></span>
+        <div class="wko">단어의 위계구조 · 합성어 · 형태소 분석</div></span>
+      <span class="wref">CH.2 · PP.49–74</span><span class="warrow">→</span></a></li>
+    <li><a class="wrow" href="slides/week06.html" style="--acc: var(--ch3);">
+      <span class="wnum">W6</span>
+      <span class="wmain"><span class="wtitle">Syntax <i>— Part 1, Phrase Structure &amp; Trees</i></span>
+        <div class="wko">구구조 규칙과 수형도 · 재귀성</div></span>
+      <span class="wref">CH.3 · PP.75–106</span><span class="warrow">→</span></a></li>
+    <li><a class="wrow" href="slides/week07.html" style="--acc: var(--ch3);">
+      <span class="wnum">W7</span>
+      <span class="wmain"><span class="wtitle">Syntax <i>— Part 2, Dependencies &amp; Questions</i></span>
+        <div class="wko">문법적 의존관계 · 의문문 형성 · 원리와 매개변수</div></span>
+      <span class="wref">CH.3 · PP.107–132</span><span class="warrow">→</span></a></li>
+    <li><span class="wrow exam">
+      <span class="wnum">W8</span>
+      <span class="wmain"><span class="wtitle">Midterm Examination</span>
+        <div class="wko">중간고사 — 범위: Week 1–7 전체</div></span>
+      <span class="wref">CH.1–3</span></span></li>
+  </ul>
 
-      <a class="week-card" id="w1" href="slides/week01.html" style="--accent: var(--ot); text-decoration:none; color:inherit;">
-        <div class="week-num">Week 1</div>
-        <div class="week-title">Course Orientation</div>
-        <div class="week-title-ko">오리엔테이션 — 강의 개관</div>
-        <span class="unit-badge">Introduction</span>
-        <ul class="week-topics">
-          <li>강의 목표 · 평가 · 교재 소개</li>
-          <li>An Introduction to Language 안내</li>
-          <li>언어학의 하위 분야 개관</li>
-          <li>과제 · 프로젝트 안내</li>
-        </ul>
-        <span class="status" style="color:#1b7f5e; background:#e8f5e9;">✓ 슬라이드 완료 →</span>
-      </a>
+  <!-- ── Phase 2 ── -->
+  <div class="phase-label"><span>Phase 2 — Meaning &amp; Sound</span><span class="r">CH.4–6 · 의미와 소리</span></div>
+  <ul class="weeks">
+    <li><a class="wrow" href="slides/week09.html" style="--acc: var(--ch4);">
+      <span class="wnum">W9</span>
+      <span class="wmain"><span class="wtitle">The Meaning of Language <i>— Part 1, Semantics</i></span>
+        <div class="wko">의미론 — 진리 · 함의 · 어휘 의미 · 의미역</div></span>
+      <span class="wref">CH.4 · PP.133–158</span><span class="warrow">→</span></a></li>
+    <li><a class="wrow" href="slides/week10.html" style="--acc: var(--ch4);">
+      <span class="wnum">W10</span>
+      <span class="wmain"><span class="wtitle">The Meaning of Language <i>— Part 2, Pragmatics</i></span>
+        <div class="wko">화용론 — 직시 · 함축 · 전제 · 화행</div></span>
+      <span class="wref">CH.4 · PP.159–182</span><span class="warrow">→</span></a></li>
+    <li><a class="wrow" href="slides/week11.html" style="--acc: var(--ch5);">
+      <span class="wnum">W11</span>
+      <span class="wmain"><span class="wtitle">Phonetics <i>— Part 1, Consonants</i></span>
+        <div class="wko">음성학 — IPA · 조음 위치와 방법 · 자음</div></span>
+      <span class="wref">CH.5 · PP.183–198</span><span class="warrow">→</span></a></li>
+    <li><a class="wrow" href="slides/week12.html" style="--acc: var(--ch5);">
+      <span class="wnum">W12</span>
+      <span class="wmain"><span class="wtitle">Phonetics <i>— Part 2, Vowels &amp; Prosody</i></span>
+        <div class="wko">음성학 — 모음 · 운율 · 수화의 음성학</div></span>
+      <span class="wref">CH.5 · PP.199–215</span><span class="warrow">→</span></a></li>
+    <li><a class="wrow" href="slides/week13.html" style="--acc: var(--ch6);">
+      <span class="wnum">W13</span>
+      <span class="wmain"><span class="wtitle">Phonology <i>— Part 1, Phonemes &amp; Features</i></span>
+        <div class="wko">음운론 — 이형태 · 음소와 이음 · 변별자질</div></span>
+      <span class="wref">CH.6 · PP.216–232</span><span class="warrow">→</span></a></li>
+    <li><a class="wrow" href="slides/week14.html" style="--acc: var(--ch6);">
+      <span class="wnum">W14</span>
+      <span class="wmain"><span class="wtitle">Phonology <i>— Part 2, Rules &amp; Analysis</i></span>
+        <div class="wko">음운론 — 음운규칙 · 음절과 강세 · 음운 분석</div></span>
+      <span class="wref">CH.6 · PP.233–268</span><span class="warrow">→</span></a></li>
+    <li><span class="wrow exam">
+      <span class="wnum">W15</span>
+      <span class="wmain"><span class="wtitle">Final Examination</span>
+        <div class="wko">기말고사 — 범위: Week 9–14 전체</div></span>
+      <span class="wref">CH.4–6</span></span></li>
+  </ul>
 
-      <a class="week-card" id="w2" href="slides/week02.html" style="--accent: var(--lang); text-decoration:none; color:inherit;">
-        <div class="week-num">Week 2</div>
-        <div class="week-title">What Is Language? <span class="half">(전반부)</span></div>
-        <div class="week-title-ko">언어란 무엇인가 — 언어 지식과 문법</div>
-        <span class="unit-badge">Ch. 1 · pp. 1–15</span>
-        <ul class="week-topics">
-          <li>Linguistic Knowledge</li>
-          <li>What Is Grammar? (Descriptive·Prescriptive)</li>
-          <li>Universal Grammar</li>
-          <li>Sign Languages</li>
-        </ul>
-        <span class="status" style="color:#1b7f5e; background:#e8f5e9;">✓ 슬라이드 완료 →</span>
-      </a>
+  <!-- ── 강의 문서 ── -->
+  <div class="phase-label"><span>Course Documents</span><span class="r">강의 문서</span></div>
+  <ul class="doc-list">
+    <li><a class="drow" href="영어학특강_강의계획서.html">
+      <span style="flex:1;"><span class="dlabel">Syllabus</span>
+        <div class="ddesc">강의계획서 — 학습목표 · 평가방법 · 주차별 강좌내용 · AI 콘텐츠 발표 과제</div></span>
+      <span class="dref">HTML</span></a></li>
+  </ul>
 
-      <a class="week-card" id="w3" href="slides/week03.html" style="--accent: var(--lang); text-decoration:none; color:inherit;">
-        <div class="week-num">Week 3</div>
-        <div class="week-title">What Is Language? <span class="half">(후반부)</span></div>
-        <div class="week-title-ko">인간 언어의 특성과 사고</div>
-        <span class="unit-badge">Ch. 1 · pp. 16–32</span>
-        <ul class="week-topics">
-          <li>What Is Not (Human) Language</li>
-          <li>The Birds and the Bees</li>
-          <li>Can Animals·Computers Learn Language?</li>
-          <li>Language and Thought</li>
-        </ul>
-        <span class="status" style="color:#1b7f5e; background:#e8f5e9;">✓ 슬라이드 완료 →</span>
-      </a>
+  <!-- ── 참고 자료 ── -->
+  <div class="phase-label"><span>Resources</span><span class="r">참고 자료</span></div>
+  <ul class="doc-list">
+    <li><a class="drow" href="https://www.internationalphoneticassociation.org/content/ipa-chart" target="_blank" rel="noopener">
+      <span style="flex:1;"><span class="dlabel">IPA Chart — International Phonetic Association</span>
+        <div class="ddesc">공식 IPA 차트 — Ch.5–6 음성·음운 학습용 (CC BY-SA 4.0)</div></span>
+      <span class="dref">EXTERNAL ↗</span></a></li>
+    <li><a class="drow" href="https://americanipachart.com/" target="_blank" rel="noopener">
+      <span style="flex:1;"><span class="dlabel">Interactive American English IPA</span>
+        <div class="ddesc">자음·모음·이중모음 클릭 시 발음 청취</div></span>
+      <span class="dref">EXTERNAL ↗</span></a></li>
+    <li><a class="drow" href="https://www.linguisticsociety.org/" target="_blank" rel="noopener">
+      <span style="flex:1;"><span class="dlabel">Linguistic Society of America</span>
+        <div class="ddesc">언어학 개론 자료 · 분야별 안내</div></span>
+      <span class="dref">EXTERNAL ↗</span></a></li>
+  </ul>
 
-      <a class="week-card" id="w4" href="slides/week04.html" style="--accent: var(--morph); text-decoration:none; color:inherit;">
-        <div class="week-num">Week 4</div>
-        <div class="week-title">Morphology <span class="half">(전반부)</span></div>
-        <div class="week-title-ko">형태론 — 형태소와 단어 형성</div>
-        <span class="unit-badge">Ch. 2 · pp. 33–48</span>
-        <ul class="week-topics">
-          <li>Content &amp; Function Words</li>
-          <li>Morphemes</li>
-          <li>Bound and Free Morphemes</li>
-          <li>Derivational·Inflectional Morphology</li>
-        </ul>
-        <span class="status" style="color:#1b7f5e; background:#e8f5e9;">✓ 슬라이드 완료 →</span>
-      </a>
+  <footer>
+    <span>Topics in English Linguistics · 2026학년도 2학기</span>
+    <span>An Introduction to Language — Fromkin · Rodman · Hyams</span>
+  </footer>
 
-      <a class="week-card" id="w5" href="slides/week05.html" style="--accent: var(--morph); text-decoration:none; color:inherit;">
-        <div class="week-num">Week 5</div>
-        <div class="week-title">Morphology <span class="half">(후반부)</span></div>
-        <div class="week-title-ko">형태론 — 위계구조와 형태소 분석</div>
-        <span class="unit-badge">Ch. 2 · pp. 49–74</span>
-        <ul class="week-topics">
-          <li>The Hierarchical Structure of Words</li>
-          <li>Rule Productivity</li>
-          <li>Compounds &amp; Other Processes</li>
-          <li>Morphological Analysis</li>
-        </ul>
-        <span class="status" style="color:#1b7f5e; background:#e8f5e9;">✓ 슬라이드 완료 →</span>
-      </a>
-
-      <a class="week-card" id="w6" href="slides/week06.html" style="--accent: var(--syntax); text-decoration:none; color:inherit;">
-        <div class="week-num">Week 6</div>
-        <div class="week-title">Syntax <span class="half">(전반부)</span></div>
-        <div class="week-title-ko">통사론 — 구구조와 수형도</div>
-        <span class="unit-badge">Ch. 3 · pp. 75–106</span>
-        <ul class="week-topics">
-          <li>What the Syntax Rules Do</li>
-          <li>Constituency Tests · Syntactic Categories</li>
-          <li>Phrase Structure Trees &amp; Rules</li>
-          <li>Recursive Rules</li>
-        </ul>
-        <span class="status" style="color:#1b7f5e; background:#e8f5e9;">✓ 슬라이드 완료 →</span>
-      </a>
-
-      <a class="week-card" id="w7" href="slides/week07.html" style="--accent: var(--syntax); text-decoration:none; color:inherit;">
-        <div class="week-num">Week 7</div>
-        <div class="week-title">Syntax <span class="half">(후반부)</span></div>
-        <div class="week-title-ko">통사론 — 의존관계와 의문문</div>
-        <span class="unit-badge">Ch. 3 · pp. 107–132</span>
-        <ul class="week-topics">
-          <li>Grammatical Dependencies</li>
-          <li>Subject-Verb Agreement</li>
-          <li>Question Formation Rules</li>
-          <li>UG Principles and Parameters</li>
-        </ul>
-        <span class="status" style="color:#1b7f5e; background:#e8f5e9;">✓ 슬라이드 완료 →</span>
-      </a>
-
-      <div class="week-card exam" id="w8">
-        <div class="week-num">Week 8</div>
-        <div class="week-title">🎓 Midterm Exam</div>
-        <div class="week-title-ko">중간고사</div>
-        <span class="unit-badge">Ch. 1 – 3 (Week 1–7)</span>
-        <ul class="week-topics">
-          <li>별도 슬라이드 없음</li>
-          <li>범위: Week 1 – 7 전체</li>
-        </ul>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ══════════ Phase 2 ══════════ -->
-  <section class="phase">
-    <div class="phase-header">
-      <span class="phase-badge" style="background:var(--phonology)">Phase 2</span>
-      <span class="phase-title">Meaning &amp; Sound</span>
-      <span class="phase-title-ko">의미와 소리 — Ch. 4 – 6</span>
-    </div>
-    <div class="week-grid">
-
-      <a class="week-card" id="w9" href="slides/week09.html" style="--accent: var(--meaning); text-decoration:none; color:inherit;">
-        <div class="week-num">Week 9</div>
-        <div class="week-title">The Meaning of Language <span class="half">(전반부)</span></div>
-        <div class="week-title-ko">의미론 — 의미와 어휘</div>
-        <span class="unit-badge">Ch. 4 · pp. 133–158</span>
-        <ul class="week-topics">
-          <li>Truth &amp; Entailment</li>
-          <li>Compositional Semantics</li>
-          <li>Lexical Semantics</li>
-          <li>Semantic Features &amp; Thematic Roles</li>
-        </ul>
-        <span class="status" style="color:#1b7f5e; background:#e8f5e9;">✓ 슬라이드 완료 →</span>
-      </a>
-
-      <a class="week-card" id="w10" href="slides/week10.html" style="--accent: var(--meaning); text-decoration:none; color:inherit;">
-        <div class="week-num">Week 10</div>
-        <div class="week-title">The Meaning of Language <span class="half">(후반부)</span></div>
-        <div class="week-title-ko">화용론 — 맥락과 화행</div>
-        <span class="unit-badge">Ch. 4 · pp. 159–182</span>
-        <ul class="week-topics">
-          <li>Pragmatics</li>
-          <li>Deixis (Deictic Words)</li>
-          <li>Implicature &amp; Maxims of Discourse</li>
-          <li>Presupposition &amp; Speech Acts</li>
-        </ul>
-        <span class="status" style="color:#1b7f5e; background:#e8f5e9;">✓ 슬라이드 완료 →</span>
-      </a>
-
-      <a class="week-card" id="w11" href="slides/week11.html" style="--accent: var(--phonetics); text-decoration:none; color:inherit;">
-        <div class="week-num">Week 11</div>
-        <div class="week-title">Phonetics <span class="half">(전반부)</span></div>
-        <div class="week-title-ko">음성학 — 자음과 조음</div>
-        <span class="unit-badge">Ch. 5 · pp. 183–198</span>
-        <ul class="week-topics">
-          <li>Sound Segments</li>
-          <li>The Phonetic Alphabet (IPA)</li>
-          <li>Articulatory Phonetics</li>
-          <li>Consonants (Place·Manner·Voicing)</li>
-        </ul>
-        <span class="status" style="color:#1b7f5e; background:#e8f5e9;">✓ 슬라이드 완료 →</span>
-      </a>
-
-      <a class="week-card" id="w12" href="slides/week12.html" style="--accent: var(--phonetics); text-decoration:none; color:inherit;">
-        <div class="week-num">Week 12</div>
-        <div class="week-title">Phonetics <span class="half">(후반부)</span></div>
-        <div class="week-title-ko">음성학 — 모음과 운율</div>
-        <span class="unit-badge">Ch. 5 · pp. 199–215</span>
-        <ul class="week-topics">
-          <li>Vowels · Diphthongs</li>
-          <li>Nasalization of Vowels</li>
-          <li>Prosodic Features (Tone·Intonation)</li>
-          <li>Phonetics of Signed Languages</li>
-        </ul>
-        <span class="status" style="color:#1b7f5e; background:#e8f5e9;">✓ 슬라이드 완료 →</span>
-      </a>
-
-      <a class="week-card" id="w13" href="slides/week13.html" style="--accent: var(--phonology); text-decoration:none; color:inherit;">
-        <div class="week-num">Week 13</div>
-        <div class="week-title">Phonology <span class="half">(전반부)</span></div>
-        <div class="week-title-ko">음운론 — 음소와 변별자질</div>
-        <span class="unit-badge">Ch. 6 · pp. 216–232</span>
-        <ul class="week-topics">
-          <li>Pronunciation of Morphemes (Allomorphs)</li>
-          <li>Phonemes</li>
-          <li>Complementary Distribution</li>
-          <li>Distinctive Features &amp; Natural Classes</li>
-        </ul>
-        <span class="status" style="color:#1b7f5e; background:#e8f5e9;">✓ 슬라이드 완료 →</span>
-      </a>
-
-      <a class="week-card" id="w14" href="slides/week14.html" style="--accent: var(--phonology); text-decoration:none; color:inherit;">
-        <div class="week-num">Week 14</div>
-        <div class="week-title">Phonology <span class="half">(후반부)</span></div>
-        <div class="week-title-ko">음운론 — 음운규칙과 분석</div>
-        <span class="unit-badge">Ch. 6 · pp. 233–268</span>
-        <ul class="week-topics">
-          <li>Rules of Phonology (Assimilation·Dissimilation)</li>
-          <li>Prosodic Phonology (Syllable·Stress)</li>
-          <li>Sequential Constraints</li>
-          <li>Phonological Analysis</li>
-        </ul>
-        <span class="status" style="color:#1b7f5e; background:#e8f5e9;">✓ 슬라이드 완료 →</span>
-      </a>
-
-      <div class="week-card exam" id="w15">
-        <div class="week-num">Week 15</div>
-        <div class="week-title">🎓 Final Exam</div>
-        <div class="week-title-ko">기말고사</div>
-        <span class="unit-badge">Ch. 4 – 6 (Week 9–14)</span>
-        <ul class="week-topics">
-          <li>별도 슬라이드 없음</li>
-          <li>범위: Week 9 – 14 전체</li>
-        </ul>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ── Course Documents ── -->
-  <p class="section-title">강의 문서 · Course Documents</p>
-  <div style="display:flex;flex-direction:column;gap:.9rem;">
-    <a class="doc-card" href="영어학특강_강의계획서.html">
-      <span class="doc-card__icon">📄</span>
-      <div>
-        <div class="doc-card__title">강의계획서 (Syllabus)</div>
-        <div class="doc-card__desc">교과목 해설 · 학습목표 · 평가방법 · 주차별 강좌내용 · 교재 안내</div>
-      </div>
-      <span class="doc-card__arrow">→</span>
-    </a>
-  </div>
-
-  <!-- ── Resources ── -->
-  <p class="section-title">참고 자료 · Resources</p>
-  <div class="resource-grid">
-    <a class="resource-card" href="https://www.internationalphoneticassociation.org/content/ipa-chart" target="_blank" rel="noopener">
-      <div class="rc-label">IPA Chart (공식) ↗</div>
-      <div class="rc-desc">International Phonetic Association 공식 차트 — Ch. 5–6 음성·음운 학습용 (CC BY-SA 4.0)</div>
-    </a>
-    <a class="resource-card" href="https://americanipachart.com/" target="_blank" rel="noopener">
-      <div class="rc-label">대화형 미국 영어 IPA ↗</div>
-      <div class="rc-desc">자음·모음·이중모음 클릭 시 발음 청취 — americanipachart.com</div>
-    </a>
-    <a class="resource-card" href="https://www.linguisticsociety.org/" target="_blank" rel="noopener">
-      <div class="rc-label">Linguistic Society of America ↗</div>
-      <div class="rc-desc">언어학 개론 자료 · 분야별 안내 — linguisticsociety.org</div>
-    </a>
-  </div>
-
-</main>
-
-<footer>
-  Topics in English Linguistics · 2026학년도 2학기 · An Introduction to Language (Fromkin, Rodman &amp; Hyams)
-</footer>
-
-<script>
-  // 타임라인 세그먼트 클릭 → 해당 주차 카드로 스크롤 + 강조
-  document.querySelectorAll('#tl .seg').forEach(function (seg) {
-    seg.addEventListener('click', function () {
-      var card = document.getElementById('w' + seg.dataset.week);
-      if (!card) return;
-      card.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      card.classList.remove('flash');
-      void card.offsetWidth;              // reflow → 애니메이션 재실행
-      card.classList.add('flash');
-    });
-  });
-</script>
-
+</div>
 </body>
 </html>

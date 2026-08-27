@@ -6,51 +6,45 @@
   <title>Week 1 — Course Orientation | Topics in English Linguistics</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,400;1,700&family=Lora:ital@0;1&family=Space+Grotesk:wght@400;600;700&family=Noto+Serif+KR:wght@300;500&family=Noto+Sans+KR:wght@300;400;700&family=Jua&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css" />
   <link rel="stylesheet" href="assets/linguistics-theme.css" />
+  <link rel="stylesheet" href="assets/slides-quiz.css" />
   <link rel="stylesheet" href="assets/slides-ko.css" />
+  <link rel="stylesheet" href="assets/slides-media.css?v=3" />
+  <link rel="stylesheet" href="assets/editorial-theme.css?v=7" />
   <style>
-    :root { --slide-accent: #3a0ca3; }
-    .phase-chip { display:inline-block; padding:0.15em 0.7em; border-radius:999px;
-      font-size:0.62em; font-weight:700; color:#fff; letter-spacing:0.03em; }
-    .roadmap-grid { display:grid; grid-template-columns:1fr 1fr; gap:0.7em; font-size:0.7em; }
-    .roadmap-col { background:var(--color-bg-alt); border:1px solid var(--color-border);
-      border-radius:10px; padding:0.7em 0.9em; }
-    .roadmap-col h4 { margin:0 0 0.4em; }
-    .roadmap-col ul { margin:0; padding-left:1.1em; line-height:1.75; }
-    .field-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:0.6em; margin-top:0.5em; }
-    .field-card { border-radius:10px; padding:0.6em 0.7em; color:#fff; font-size:0.72em; }
-    .field-card .fc-en { font-weight:700; display:block; font-size:1.05em; }
-    .field-card .fc-ko { opacity:0.92; font-size:0.85em; }
-    .layer-flow { display:flex; align-items:stretch; gap:0.4em; font-size:0.66em; margin:0.6em 0; }
-    .layer-flow .layer { flex:1; background:var(--color-bg-alt); border:1px solid var(--color-border);
-      border-radius:8px; padding:0.55em 0.4em; text-align:center; }
-    .layer-flow .layer .ln { font-weight:700; display:block; color:var(--slide-accent); }
-    .layer-flow .arrow { align-self:center; color:var(--color-subtle); font-weight:700; }
+    :root { --slide-accent: #2b3a67; }
+
+    /* 표지 */
+    .cover .booktag { font: 600 12px 'Space Grotesk'; letter-spacing: 0.3em; color: var(--ed-muted); }
+    .cover h1 { font: 600 74px/1.15 'Playfair Display'; margin: 26px 0 8px; }
+    .cover .part { font: italic 400 30px 'Playfair Display'; color: var(--ed-accent); margin-bottom: 30px; }
+    .cover .lead { max-width: 560px; }
+    .cover .foot { margin-top: 46px; border-top: 1px solid var(--ed-line); padding-top: 16px;
+      font: italic 400 15px 'Lora'; color: var(--ed-muted); }
+
+    /* 사실 목록(강좌 정보) — exlist 변형: 라벨 폭 확장, 정체(비이탤릭) 본문 */
+    .fact li { font: 300 18px 'Noto Serif KR'; font-style: normal; }
+    .fact .no { min-width: 118px; letter-spacing: 0.2em; }
+
+    /* 로드맵 — exlist 변형: 주차 라벨 폭 */
+    .plan .no { min-width: 58px; letter-spacing: 0.08em; }
   </style>
 </head>
-<body>
+<body data-rail="WEEK 1 · ORIENTATION" data-course="Topics in English Linguistics">
 <div class="reveal">
 <div class="slides">
 
-<!-- ══ 1 · Title ══ -->
-<section class="title-slide" data-background-color="#16213e">
-  <div style="color:white; text-align:center; padding:1em;">
-    <div class="week-badge" style="background:rgba(255,255,255,0.2); color:white;">Week 1</div>
-    <h1 style="color:white; font-size:1.7em; margin:0.4em 0 0.2em;">Course Orientation</h1>
-    <p style="color:rgba(255,255,255,0.8); font-size:0.62em; margin-bottom:0.3em;">
-      Topics in English Linguistics
-      <span class="ko-supp ko-sub" style="color:rgba(255,255,255,0.7);"> · 영어학 특강</span>
-    </p>
-    <p style="color:rgba(255,255,255,0.55); font-size:0.5em; margin-bottom:1.4em;">
-      Fall 2026 · Kyonggi University, Dept. of English Language &amp; Literature
-    </p>
-    <p style="color:rgba(255,255,255,0.5); font-size:0.42em; font-style:italic;">
-      Fromkin, Rodman &amp; Hyams — <em>An Introduction to Language</em>, 11th Edition
-    </p>
-  </div>
+<!-- ══ 1 · Cover ══ -->
+<section class="cover" data-no-rail>
+  <div class="booktag">TOPICS IN ENGLISH LINGUISTICS · FALL 2026 — KYONGGI UNIVERSITY</div>
+  <h1>Course<br>Orientation</h1>
+  <div class="part">Week 1 — Reading the Map</div>
+  <p class="lead">Where fifteen weeks will take us — and <em>how to travel well</em>.
+    <span class="ko-supp" style="display:block;">첫 시간 — 한 학기의 지도를 함께 읽는다.</span></p>
+  <div class="foot">Week 1 · Dept. of English Language &amp; Literature · Fromkin · Rodman · Hyams, <i>An Introduction to Language</i> (11th ed.)</div>
   <aside class="notes">
     첫 수업 오리엔테이션입니다. 밝은 분위기로 학생들을 맞이하고, 이 과목이 "언어학 개론"보다
     한 단계 깊이 들어가는 특강임을 강조하세요. 학생들이 이미 개론 수준의 배경을 갖고 있다는 전제로
@@ -58,52 +52,36 @@
   </aside>
 </section>
 
-<!-- ══ 2 · Agenda ══ -->
-<section>
-  <h2>Today's Agenda</h2>
-  <ul class="agenda-list">
-    <li>Course overview — what &amp; why we study</li>
-    <li>The subfields of English linguistics</li>
-    <li>Textbook — <em>An Introduction to Language</em> (11e)</li>
-    <li>Objectives · evaluation · assignments</li>
-    <li>The 15-week roadmap &amp; how the course runs</li>
-  </ul>
-  <p class="ko-supp" style="margin-top:0.7em; font-size:0.66em;">
-    ※ 오늘은 내용 학습이 아니라 "이 강의를 어떻게 따라올지"를 함께 설계하는 시간입니다.
-  </p>
+<!-- ══ 2 · Contents ══ -->
+<section data-kicker="WEEK 1 · CONTENTS">
+  <h2>Today</h2>
+  <ol class="recap" style="max-width:660px;">
+    <li><b>The Course</b> — <i style="font-size:0.85em;">what we study, and why</i></li>
+    <li><b>The Textbook</b> — <i style="font-size:0.85em;">six chapters, six subfields</i></li>
+    <li><b>Objectives</b> — <i style="font-size:0.85em;">what you will be able to do</i></li>
+    <li><b>Evaluation &amp; Assignments</b></li>
+    <li><b>The 15-Week Roadmap</b></li>
+    <li><b>How to Study</b> — <i style="font-size:0.85em;">the weekly rhythm</i></li>
+  </ol>
   <aside class="notes">
-    오늘 수업의 큰 흐름을 먼저 제시합니다. 오늘은 내용 학습이 아니라 강의 운영·평가·로드맵을
-    안내하는 시간임을 알려주세요.
+    오늘은 내용 학습이 아니라 강의 운영·평가·로드맵을 안내하는 시간입니다.
+    "이 강의를 어떻게 따라올지"를 함께 설계하는 시간임을 알려주세요.
   </aside>
 </section>
 
-<!-- ══ 3 · Course Information ══ -->
-<section>
+<!-- ══ 3 · Course information ══ -->
+<section data-kicker="WEEK 1 · COURSE">
   <h2>Course Information</h2>
-  <div class="two-col">
-    <div>
-      <table>
-        <tbody>
-          <tr><th>Course</th><td>Topics in English Linguistics</td></tr>
-          <tr><th>Credits</th><td>3 (Major Elective)</td></tr>
-          <tr><th>Term</th><td>Fall 2026</td></tr>
-          <tr><th>Format</th><td>Lecture · In-person</td></tr>
-          <tr><th>Language</th><td>Korean (materials in English)</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <div>
-      <div class="def-box">
-        <div class="term">What is this course?</div>
-        <p style="font-size:0.82em; margin-top:0.3em;">
-          A <strong>deeper, systematic study</strong> of the core subfields of English
-          linguistics — <strong>beyond</strong> an introductory survey.
-        </p>
-      </div>
-      <p class="ko-supp" style="margin-top:0.6em; font-size:0.68em;">
-        ※ 언어학 개론 수준을 넘어, 영어의 소리·단어·문장·의미 층위를 직접 분석·설명하는 능력을 기릅니다.
-      </p>
-    </div>
+  <div class="cols">
+    <div class="def">A <i>deeper, systematic</i> pass through the core subfields of English linguistics — one step beyond the introductory survey.
+      <span class="ko-supp" style="display:block; margin-top:8px;">개론을 넘어, 영어의 소리·단어·문장·의미를 직접 분석하는 심화 과목.</span></div>
+    <ul class="exlist fact">
+      <li><span class="no">COURSE</span>Topics in English Linguistics<span class="ko-supp" style="font-size:0.85em;">&nbsp;· 영어학 특강</span></li>
+      <li><span class="no">CREDITS</span>3 — Major Elective</li>
+      <li><span class="no">TERM</span>Fall 2026</li>
+      <li><span class="no">FORMAT</span>Lecture · In-person</li>
+      <li><span class="no">LANGUAGE</span>Korean, with materials in English</li>
+    </ul>
   </div>
   <aside class="notes">
     담당교수 연락처(khlee5728@kyonggi.ac.kr)와 오피스아워는 구두로 보완하세요. "개론을 넘어선 심화"라는
@@ -111,160 +89,82 @@
   </aside>
 </section>
 
-<!-- ══ 4 · Layers of Language ══ -->
-<section>
-  <h2>How We Analyze Language</h2>
-  <p style="font-size:0.72em; color:var(--color-subtle);">
-    Language is analyzed in layers, from <strong>smaller</strong> to <strong>larger</strong> units.
-  </p>
-  <div class="layer-flow">
-    <div class="layer"><span class="ln">Sound</span>Phonetics<br>Phonology</div>
-    <div class="arrow">→</div>
-    <div class="layer"><span class="ln">Word</span>Morphology</div>
-    <div class="arrow">→</div>
-    <div class="layer"><span class="ln">Sentence</span>Syntax</div>
-    <div class="arrow">→</div>
-    <div class="layer"><span class="ln">Meaning</span>Semantics<br>Pragmatics</div>
+<!-- ══ 4 · Layers of language ══ -->
+<section data-kicker="WEEK 1 · COURSE">
+  <h2>How Linguists Slice Language</h2>
+  <p class="lead" style="max-width:640px;">One question drives the whole semester: how do speakers build and understand sentences they have <em>never heard before</em>? We look for the rule system — layer by layer.
+    <span class="ko-supp" style="display:block; margin-top:10px;">작은 단위에서 큰 단위로 — 이 층위가 곧 학기 전체의 목차다.</span></p>
+  <div class="word-row" style="max-width:660px;">
+    <div class="w"><b>sound</b><span>PHONETICS · PHONOLOGY</span></div>
+    <div class="w"><b>word</b><span>MORPHOLOGY</span></div>
+    <div class="w"><b>sentence</b><span>SYNTAX</span></div>
+    <div class="w"><b>meaning</b><span>SEMANTICS · PRAGMATICS</span></div>
   </div>
-  <div class="summary-box" style="margin-top:0.7em;">
-    <h4>The central question of this course</h4>
-    <p style="font-size:0.82em;">
-      How do speakers produce and understand <span class="key">sentences they have never heard before</span>?
-      We uncover the underlying <span class="key">system of rules (grammar)</span>, layer by layer.
-    </p>
-  </div>
-  <p class="ko-supp" style="font-size:0.64em; margin-top:0.4em;">
-    ※ 소리→단어→문장→의미의 층위는 학기 전체의 목차이기도 합니다.
-  </p>
   <aside class="notes">
     이 층위 그림은 학기 전체의 목차입니다. 이번 학기는 소리를 마지막(Ch.5–6)에 다루지만, 분석 대상은
-    네 층위 전부임을 짚어주세요.
+    네 층위 전부임을 짚어주세요. 중심 질문(들어본 적 없는 문장을 어떻게 만들고 이해하는가)은
+    2주차 Ch.1의 '창조성'으로 바로 이어집니다.
   </aside>
 </section>
 
-<!-- ══ 5 · Subfields ══ -->
-<section>
-  <h2>Subfields of English Linguistics</h2>
-  <div class="field-grid">
-    <div class="field-card" style="background:#0077b6;">
-      <span class="fc-en">What Is Language?</span>
-      <span class="fc-ko"><span class="ko-supp">언어의 본질 · </span>Ch.1</span>
-    </div>
-    <div class="field-card" style="background:#1b7f5e;">
-      <span class="fc-en">Morphology</span>
-      <span class="fc-ko"><span class="ko-supp">형태론 · </span>Ch.2</span>
-    </div>
-    <div class="field-card" style="background:#6a0572;">
-      <span class="fc-en">Syntax</span>
-      <span class="fc-ko"><span class="ko-supp">통사론 · </span>Ch.3</span>
-    </div>
-    <div class="field-card" style="background:#c77b2e;">
-      <span class="fc-en">Semantics</span>
-      <span class="fc-ko"><span class="ko-supp">의미론 · </span>Ch.4</span>
-    </div>
-    <div class="field-card" style="background:#2d6a4f;">
-      <span class="fc-en">Phonetics</span>
-      <span class="fc-ko"><span class="ko-supp">음성학 · </span>Ch.5</span>
-    </div>
-    <div class="field-card" style="background:#c1121f;">
-      <span class="fc-en">Phonology</span>
-      <span class="fc-ko"><span class="ko-supp">음운론 · </span>Ch.6</span>
-    </div>
-  </div>
-  <p class="ko-supp" style="margin-top:0.7em; font-size:0.68em;">
-    ※ 이번 학기에는 교재 Ch.1–6, 즉 위 여섯 분야를 순서대로 다룹니다.
-  </p>
-  <aside class="notes">
-    여섯 색상은 강의 허브(index.html)의 챕터 색상과 동일합니다. 각 카드를 짚으며 한 문장씩 맛보기
-    질문을 던지면 좋습니다. 예: 통사론 — "왜 'the boy the'는 안 되고 'the boy'는 될까?"
-  </aside>
-</section>
-
-<!-- ══ 6 · Textbook ══ -->
-<section>
-  <h2>Textbook</h2>
-  <div class="def-box">
-    <div class="term">
-      Fromkin, V., Rodman, R., &amp; Hyams, N. (2019).
-      <em>An Introduction to Language</em> (11th ed.). Cengage Learning.
-    </div>
-  </div>
-  <div style="margin-top:0.9em; font-size:0.74em;">
-    <div class="two-col">
-      <ul style="line-height:1.9;">
-        <li><strong>Ch.1</strong> — What Is Language?</li>
-        <li><strong>Ch.2</strong> — Morphology</li>
-        <li><strong>Ch.3</strong> — Syntax</li>
+<!-- ══ 5 · Textbook ══ -->
+<section data-kicker="WEEK 1 · TEXTBOOK">
+  <h2>The Textbook</h2>
+  <div class="cols">
+    <div class="def">Fromkin, Rodman &amp; Hyams. <i>An Introduction to Language</i>, 11th ed. Cengage, 2019.
+      <span class="ko-supp" style="display:block; margin-top:8px;">10판으로도 무리 없이 따라올 수 있다. 진도는 Ch.1–6.</span></div>
+    <div>
+      <ul class="exlist">
+        <li><span class="no">01</span>What Is Language?</li>
+        <li><span class="no">02</span>Morphology</li>
+        <li><span class="no">03</span>Syntax</li>
+        <li><span class="no">04</span>The Meaning of Language</li>
+        <li><span class="no">05</span>Phonetics</li>
+        <li><span class="no">06</span>Phonology</li>
       </ul>
-      <ul style="line-height:1.9;">
-        <li><strong>Ch.4</strong> — The Meaning of Language</li>
-        <li><strong>Ch.5</strong> — Phonetics</li>
-        <li><strong>Ch.6</strong> — Phonology</li>
-      </ul>
+      <p style="font: italic 400 15px 'Lora'; color: var(--ed-muted); margin-top:14px;">Six chapters, six subfields — each taken over two weeks.</p>
     </div>
-    <p style="margin-top:0.6em; color:#6c757d; font-style:italic;">
-      Coverage: Ch.1 – Ch.6.
-      <span class="ko-supp">※ 10판도 참고 가능합니다.</span>
-    </p>
   </div>
   <aside class="notes">
-    교재는 11판 기준이되 10판으로도 무리 없이 따라올 수 있습니다. 장별 Exercises와 Study Questions를
+    교재의 여섯 장이 곧 여섯 하위 분야입니다. 각 장을 짚으며 한 문장씩 맛보기 질문을 던지면 좋습니다.
+    예: 통사론 — "왜 'the boy the'는 안 되고 'the boy'는 될까?" 장별 Exercises와 Study Questions를
     매주 과제로 활용할 예정임을 언급하세요.
   </aside>
 </section>
 
-<!-- ══ 7 · Objectives ══ -->
-<section>
+<!-- ══ 6 · Objectives ══ -->
+<section data-kicker="WEEK 1 · OBJECTIVES">
   <h2>Learning Objectives</h2>
-  <ul style="font-size:0.72em; line-height:1.85;">
-    <li>Understand the <strong>nature and universal properties</strong> of language.</li>
-    <li>Analyze the <strong>morphological structure</strong> of English words.</li>
-    <li>Analyze <strong>syntactic structure</strong> with tree diagrams and interpret meaning.</li>
-    <li>Transcribe and analyze the <strong>sound system</strong> using phonetic symbols.</li>
+  <ul class="exlist" style="max-width:640px; font-style:normal;">
+    <li><span class="no">01</span>Explain the nature and universal properties of human language.</li>
+    <li><span class="no">02</span>Analyze the internal structure of English words.</li>
+    <li><span class="no">03</span>Draw tree diagrams and read sentence structure and meaning.</li>
+    <li><span class="no">04</span>Transcribe and analyze English sounds with phonetic symbols.</li>
   </ul>
-  <h3 style="margin-top:0.8em;">Target Competencies</h3>
-  <div class="summary-grid">
-    <div class="summary-item"><span class="summary-icon">🔍</span><h3>Language Analysis</h3><p>50%</p></div>
-    <div class="summary-item"><span class="summary-icon">🎓</span><h3>English Teaching</h3><p>30%</p></div>
-    <div class="summary-item"><span class="summary-icon">💬</span><h3>English Communication</h3><p>20%</p></div>
+  <div class="word-row" style="max-width:640px;">
+    <div class="w"><b>50%</b><span>LANGUAGE ANALYSIS</span></div>
+    <div class="w"><b>30%</b><span>ENGLISH TEACHING</span></div>
+    <div class="w"><b>20%</b><span>COMMUNICATION</span></div>
   </div>
-  <p class="ko-supp" style="font-size:0.64em; margin-top:0.5em;">
-    ※ 이 과목의 중심축은 언어분석 능력(50%) — 암기가 아니라 자료를 직접 분석하는 훈련이 핵심입니다.
-  </p>
+  <p class="lead" style="font-size:17px; margin-top:18px;"><span class="ko-supp">중심축은 언어분석 능력 — 암기가 아니라 자료를 직접 분석하는 훈련이 핵심.</span></p>
   <aside class="notes">
     중심축은 "언어분석 능력"(50%)입니다. 단순 암기가 아니라 자료를 직접 분석하는 훈련이 핵심임을
     강조하세요. 예비교사·대학원 진학을 고려하는 학생에게 영어교육 능력(30%) 연결점도 언급.
   </aside>
 </section>
 
-<!-- ══ 8 · Evaluation ══ -->
-<section>
+<!-- ══ 7 · Evaluation ══ -->
+<section data-kicker="WEEK 1 · EVALUATION">
   <h2>Evaluation</h2>
-  <div class="two-col">
-    <div>
-      <table>
-        <thead><tr><th>Component</th><th>Weight</th></tr></thead>
-        <tbody>
-          <tr><td>Midterm Exam (Ch.1–3)</td><td>40%</td></tr>
-          <tr><td>Final Exam (Ch.4–6)</td><td>40%</td></tr>
-          <tr><td>Attendance</td><td>10%</td></tr>
-          <tr><td>Assignments &amp; others</td><td>10%</td></tr>
-        </tbody>
-      </table>
-      <p class="ko-supp" style="font-size:0.66em; margin-top:0.4em;">※ 성적평가구분: 상대평가</p>
-    </div>
-    <div>
-      <div class="assignment-box">
-        <h3>Assignments</h3>
-        <p style="font-size:0.86em;">
-          Chapter <strong>Exercises &amp; Study Questions</strong>, plus
-          topic-based <strong>summary &amp; analysis</strong> tasks.
-        </p>
-      </div>
-      <p class="ko-supp" style="font-size:0.66em; margin-top:0.5em;">
-        ※ 연습문제는 시험 대비의 핵심 — 매주 성실히 풀어오길 권장합니다.
-      </p>
-    </div>
+  <div class="cols">
+    <div class="def">Two exams carry most of the weight — and the weekly exercises are <i>exactly</i> how you prepare for them.
+      <span class="ko-supp" style="display:block; margin-top:8px;">성적평가구분: 상대평가. 시험 문제는 매주 연습문제와 직결된다.</span></div>
+    <ol class="recap">
+      <li><b>Midterm Exam</b> — Ch.1–3<span class="pg">40%</span></li>
+      <li><b>Final Exam</b> — Ch.4–6<span class="pg">40%</span></li>
+      <li><b>Attendance</b><span class="pg">10%</span></li>
+      <li><b>Assignments &amp; Presentation</b><span class="pg">10%</span></li>
+    </ol>
   </div>
   <aside class="notes">
     중간·기말이 각 40%로 시험 비중이 큽니다(합 80%). 시험 문제가 매주 연습문제와 직결되므로, 과제를
@@ -272,35 +172,64 @@
   </aside>
 </section>
 
+<!-- ══ 8 · Assignments & AI presentation ══ -->
+<section data-kicker="WEEK 1 · EVALUATION">
+  <h2 style="font-size:40px;">Assignments &amp; the AI Presentation</h2>
+  <div class="cols-even">
+    <div>
+      <div class="small-label" style="margin-bottom:12px;">EVERY WEEK</div>
+      <hr class="hair" style="margin:0 0 14px;">
+      <div class="quote-stack">
+        <p>Chapter <b>Exercises</b> and Study Questions.</p>
+        <p>Plus short summary-and-analysis tasks by topic.</p>
+      </div>
+    </div>
+    <div>
+      <div class="small-label" style="margin-bottom:12px;">ONCE A SEMESTER</div>
+      <hr class="hair" style="margin:0 0 14px;">
+      <div class="quote-stack">
+        <p>An individual <b>AI digital-content presentation</b>, built on that week's linguistics.</p>
+        <p>One assigned week per student, W2–W14.</p>
+      </div>
+    </div>
+  </div>
+  <hr class="hair" style="margin-top:30px;">
+  <p class="lead" style="font-size:17px;"><span class="ko-supp">언어학 지식 기반 AI 콘텐츠를 배정 주차에 개발·발표한다 — 세부 배정은 수강 인원 확정 후 이번 주에 공지.</span></p>
+  <aside class="notes">
+    강의계획서의 개인 발표 과제: 2~14주차(오리엔테이션·시험 주 제외) 매 차시, 해당 주차 주제와 연계한
+    "언어학 지식 기반 AI 디지털 콘텐츠"를 각자 1회 개발·발표합니다. 배정은 수강 인원에 따라 이번 주에
+    공지하세요. 연습문제가 시험 대비의 핵심이라는 점도 다시 강조.
+  </aside>
+</section>
+
 <!-- ══ 9 · Roadmap ══ -->
-<section>
-  <h2>15-Week Roadmap</h2>
-  <div class="roadmap-grid">
-    <div class="roadmap-col">
-      <h4><span class="phase-chip" style="background:#3a0ca3;">Phase 1</span> Language &amp; Structure · Ch.1–3</h4>
-      <ul>
-        <li>W1 · Orientation</li>
-        <li>W2–3 · What Is Language? (Ch.1)</li>
-        <li>W4–5 · Morphology (Ch.2)</li>
-        <li>W6–7 · Syntax (Ch.3)</li>
-        <li><strong>W8 · Midterm Exam</strong></li>
+<section data-kicker="WEEK 1 · ROADMAP">
+  <h2>Fifteen Weeks</h2>
+  <div class="cols-even">
+    <div>
+      <div class="small-label" style="margin-bottom:12px;">PHASE 1 — STRUCTURE · CH.1–3</div>
+      <hr class="hair" style="margin:0 0 6px;">
+      <ul class="exlist plan" style="font-style:normal; font-size:0.94em;">
+        <li><span class="no">W1</span>Orientation</li>
+        <li><span class="no">W2–3</span>What Is Language?</li>
+        <li><span class="no">W4–5</span>Morphology</li>
+        <li><span class="no">W6–7</span>Syntax</li>
+        <li><span class="no">W8</span><b>Midterm Exam</b></li>
       </ul>
     </div>
-    <div class="roadmap-col">
-      <h4><span class="phase-chip" style="background:#c1121f;">Phase 2</span> Meaning &amp; Sound · Ch.4–6</h4>
-      <ul>
-        <li>W9–10 · Meaning (Ch.4)</li>
-        <li>W11–12 · Phonetics (Ch.5)</li>
-        <li>W13–14 · Phonology (Ch.6)</li>
-        <li><strong>W15 · Final Exam</strong></li>
+    <div>
+      <div class="small-label" style="margin-bottom:12px;">PHASE 2 — MEANING &amp; SOUND · CH.4–6</div>
+      <hr class="hair" style="margin:0 0 6px;">
+      <ul class="exlist plan" style="font-style:normal; font-size:0.94em;">
+        <li><span class="no">W9–10</span>The Meaning of Language</li>
+        <li><span class="no">W11–12</span>Phonetics</li>
+        <li><span class="no">W13–14</span>Phonology</li>
+        <li><span class="no">W15</span><b>Final Exam</b></li>
       </ul>
     </div>
   </div>
-  <div class="next-week-banner" style="margin-top:0.7em;">
-    <div class="label">Course Hub</div>
-    <p style="font-size:0.9em;">All weekly slides are available from the course hub (index) page.
-      <span class="ko-supp">모든 주차 슬라이드는 강의 허브에서 열람할 수 있습니다.</span></p>
-  </div>
+  <p class="lead" style="font-size:17px; margin-top:24px;">Every weekly deck lives on the course hub.
+    <span class="ko-supp">모든 주차 슬라이드는 강의 허브(index)에서 열람할 수 있다.</span></p>
   <aside class="notes">
     각 챕터를 전·후반부로 나누어 두 주에 걸쳐 다룹니다. 시험 범위(중간 Ch.1–3, 기말 Ch.4–6)를 명확히
     안내하세요. 진도가 빠듯하므로 예습·복습 리듬을 강조합니다.
@@ -308,33 +237,31 @@
 </section>
 
 <!-- ══ 10 · How the course runs ══ -->
-<section>
-  <h2>How the Course Runs</h2>
-  <div class="two-col">
-    <div class="card">
-      <h3>Each Week</h3>
-      <ul style="font-size:0.7em; line-height:1.8;">
-        <li>Concept lecture → example analysis</li>
-        <li>Work through exercises together</li>
-        <li>Summary &amp; preview of next week</li>
-      </ul>
+<section data-kicker="WEEK 1 · COURSE">
+  <h2>The Weekly Rhythm</h2>
+  <div class="cols-even">
+    <div>
+      <div class="small-label" style="margin-bottom:12px;">EACH CLASS</div>
+      <hr class="hair" style="margin:0 0 14px;">
+      <div class="quote-stack">
+        <p>Concept lecture → <b>example analysis</b>.</p>
+        <p>Exercises worked through together.</p>
+        <p>Summary, then a preview of next week.</p>
+      </div>
     </div>
-    <div class="card">
-      <h3>Come Prepared</h3>
-      <ul style="font-size:0.7em; line-height:1.8;">
-        <li><strong>Read</strong> the chapter in advance</li>
-        <li>Attempt the exercises beforehand</li>
-        <li>Bring your questions</li>
-      </ul>
+    <div>
+      <div class="small-label" style="margin-bottom:12px;">COME PREPARED</div>
+      <hr class="hair" style="margin:0 0 14px;">
+      <div class="quote-stack">
+        <p><b>Read</b> the chapter in advance.</p>
+        <p>Attempt the exercises beforehand.</p>
+        <p>Bring your questions.</p>
+      </div>
     </div>
   </div>
-  <div class="next-week-banner" style="margin-top:0.7em;">
-    <div class="label">Tip</div>
-    <p style="font-size:0.9em;">
-      Ch.5–6 use the <strong>IPA</strong> — try the interactive IPA chart linked on the hub.
-      <span class="ko-supp">음성·음운 단원에서는 IPA를 사용합니다.</span>
-    </p>
-  </div>
+  <hr class="hair" style="margin-top:30px;">
+  <p class="lead" style="font-size:17px;">Ch.5–6 use the <b>IPA</b> — the interactive chart on the hub is a head start.
+    <span class="ko-supp" style="display:block;">음성·음운 단원(11–14주)에서는 IPA를 사용한다 — 허브의 대화형 IPA 차트로 미리 익혀두면 좋다.</span></p>
   <aside class="notes">
     수업은 강의-분석-연습의 반복 구조입니다. 예습이 특히 중요함을 강조하세요. IPA는 11–14주에 본격
     등장하지만, 관심 있는 학생은 허브의 대화형 IPA 차트로 미리 익혀두면 좋습니다.
@@ -342,42 +269,29 @@
 </section>
 
 <!-- ══ 11 · Summary ══ -->
-<section>
-  <h2>Summary</h2>
-  <div class="summary-box">
-    <h4>Key Points</h4>
-    <ul style="font-size:0.82em; line-height:1.9;">
-      <li>A deeper study of the <span class="key">six core subfields</span> of English linguistics</li>
-      <li>Language is analyzed in layers: <span class="key">sound · word · sentence · meaning</span></li>
-      <li>Textbook: <span class="key">Fromkin (11e)</span>, covering Ch.1–6</li>
-      <li>Grading: Midterm 40 · Final 40 · Attendance 10 · Assignments 10 (curved)</li>
-      <li>Weekly <span class="key">reading + exercises</span> are the key to exam prep</li>
-    </ul>
-  </div>
+<section data-kicker="WEEK 1 · SUMMARY">
+  <h2>Five Things to Keep</h2>
+  <ol class="recap" style="max-width:660px;">
+    <li>Six subfields, <b>one step beyond</b> the introductory survey</li>
+    <li>Language in layers: <b>sound · word · sentence · meaning</b></li>
+    <li>Textbook: <i>Fromkin 11e</i>, Ch.1–6</li>
+    <li>Grading: <b>40 · 40 · 10 · 10</b> — exams lean on the weekly exercises</li>
+    <li>Weekly reading + exercises, and <b>one AI presentation</b> each</li>
+  </ol>
   <aside class="notes">
     학생들에게 "가장 기대되는 분야"를 한 명씩 물어보며 마무리하면 참여도가 올라갑니다. 다음 주부터
     본격적으로 교재 학습이 시작됨을 예고하세요.
   </aside>
 </section>
 
-<!-- ══ 12 · Next Week ══ -->
-<section>
-  <h2>Next Week — Week 2</h2>
-  <div class="next-week-banner">
-    <div class="label">Next Class</div>
-    <p><strong>What Is Language? (Part 1)</strong> — Ch.1 · pp.1–15</p>
-  </div>
-  <h3 style="margin-top:0.9em;">Preview</h3>
-  <ul style="font-size:0.72em; line-height:1.9;">
-    <li>Linguistic Knowledge — what we unconsciously know</li>
-    <li>What Is Grammar? — Descriptive vs. Prescriptive</li>
-    <li>Universal Grammar &amp; Sign Languages</li>
-  </ul>
-  <div class="next-week-banner" style="margin-top:0.8em;">
-    <div class="label">Prepare</div>
-    <p>Read Ch.1 pp.1–15 · skim the end-of-chapter Exercises
-      <span class="ko-supp">교재 Ch.1 전반부를 읽어오세요.</span></p>
-  </div>
+<!-- ══ 12 · Next week ══ -->
+<section data-kicker="NEXT WEEK · CH.1 PP.1–15">
+  <h2>What Is Language?</h2>
+  <p class="lead" style="max-width:600px;">You were never taught the rules of Korean — <em>so how do you follow them perfectly?</em>
+    <span class="ko-supp" style="display:block;">언어 지식·문법의 종류·보편문법 — Ch.1 전반부.</span></p>
+  <hr class="hair" style="max-width:600px; margin-top:34px;">
+  <p style="font: 300 17px 'Noto Serif KR'; color: var(--ed-body);">
+    <span class="small-label" style="margin-right:14px;">PREPARE</span>Read Ch.1 pp.1–15 · skim the end-of-chapter exercises</p>
   <aside class="notes">
     다음 주 전까지 Ch.1 전반부를 읽어오도록 안내합니다. "우리는 문법을 배운 적 없는데 어떻게 문장을
     만들까?"라는 질문을 던져두면 다음 수업 도입이 자연스럽습니다.
@@ -391,16 +305,19 @@
 <script>
   Reveal.initialize({
     hash: true,
-    slideNumber: 'c/t',
+    slideNumber: false,
     progress: true,
     center: false,
-    transition: 'slide',
-    transitionSpeed: 'fast',
+    transition: 'fade',
+    transitionSpeed: 'default',
     plugins: []
   });
 </script>
-<a class="home-btn" href="../index.html" title="강의 목록으로">← 목록</a>
+<a class="home-btn" href="../index.html" title="강의 목록으로">Index</a>
 <script src="assets/slides-print.js"></script>
+<script src="assets/slides-quiz.js"></script>
 <script src="assets/slides-ko-toggle.js"></script>
+<script src="assets/slides-media.js?v=8"></script>
+<script src="assets/slides-editorial.js?v=2"></script>
 </body>
 </html>

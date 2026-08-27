@@ -96,7 +96,15 @@
 ### 4.3 PDF 내보내기 — `slides-print.js`
 - PDF 저장 버튼을 주입, `?print-pdf` 오버레이 처리.
 
-### 4.4 디자인 시스템 — `linguistics-theme.css`
+### 4.4 멀티미디어 모듈 — `slides-media.css` + `slides-media.js`
+- **발음 재생**: `<button class="say-btn" data-say="단어" data-lang="en-US">🔊</button>` — Web Speech API(브라우저 내장, 외부 의존 없음). `data-lang`으로 언어별 음성 선택(fr-FR, ru-RU 등), `.mini`는 소형 버튼. 미지원 브라우저에선 자동 비활성.
+- **개념 애니메이션**: 컨테이너에 `.media-anim`(기본 일시정지) — `.play` 클래스가 붙으면 내부 CSS 애니메이션 재생. `data-auto="1"`이면 해당 슬라이드 진입 시 자동 재생(reveal `slidechanged` 연동). 컨트롤 버튼: `.anim-toggle`(재생/일시정지), `.anim-replay`(처음부터). 정지 상태 기본 화면은 `:not(.play)` 규칙으로 별도 지정할 것.
+- **오리지널 카툰 콩트**: 교재 카툰은 제3자 저작물 → 복제·애니메이션화 금지. 대신 **같은 개념을 가르치는 자체 캐릭터·자체 대사의 창작 SVG 장면**을 제작(주차당 1개 권장). W2 "One Dog, Four Names"(자의성)가 표준 예.
+- **외부 영상 임베드**: `youtube-nocookie.com/embed/ID` iframe을 `.video-embed`(16:9 반응형)로. **공식 채널 영상만**, oEmbed로 채널·제목 검증 후 사용. `.video-credit`에 출처 표기, `.video-print-note`에 인쇄용 URL(인쇄 시 iframe 숨김·URL 노출).
+- **AI 생성 애니메이션 파이프라인**: 실제 애니메이션 퀄리티가 필요한 카툰 콩트는 AI 영상 도구(Veo/Sora/Kling 등)로 제작 — 상세 절차·프롬프트는 `docs/AI영상_제작가이드.md`. 마크업: `.video-scene` > `.video-stage`(`<video>` + `.cue[data-start][data-end]` 말풍선 오버레이) + `.video-fallback`(SVG 카툰). mp4(`slides/assets/media/w{주차}_{용도}.mp4`)가 로드되면 자동으로 영상+타임코드 동기화 말풍선을 사용하고, 없으면 SVG 폴백. **영상에는 텍스트를 넣지 않는다**(AI 텍스트 렌더링 불안정) — 말풍선은 항상 HTML 오버레이. 슬라이드 진입 시 무음 자동재생, 이탈 시 정지.
+- 인쇄(`@media print`) 시 버튼·영상은 자동 숨김. 슬라이드 진입/이탈 시 진행 중 음성은 자동 정지.
+
+### 4.5 디자인 시스템 — `linguistics-theme.css`
 - 제공 클래스: `title-slide`, `week-badge`, `agenda-list`, `def-box`(`.term`),
   `two-col`, `example-box`, `summary-box`(`.key`), `next-week-banner`(`.label`),
   `practice-header`, `card`, `summary-grid/-item`, `assignment-box`, `home-btn`, `pdf-btn`.
@@ -140,5 +148,8 @@
 ## 변경 이력 (Changelog)
 | 날짜 | 버전 | 변경 내용 |
 |------|------|-----------|
+| 2026-08-28 | 1.4 | 디자인 시스템 v2: `editorial-theme.css`+`slides-editorial.js`(세리프 에디토리얼 — Playfair/Lora/Space Grotesk/Noto Serif KR, 박스·이모지 제거, 레일·킥커·쪽번호 자동 주입, 아키타입: 표지/히어로/cols/exlist/gloss-set/quote-stack/recap). W2 파일럿 적용. 주의: 섹션 box-sizing:border-box, 그리드 minmax(0,1fr) |
+| 2026-08-21 | 1.3 | §4.4 AI 생성 애니메이션 파이프라인 추가(.video-scene/.cue 동기화, SVG 폴백) + `docs/AI영상_제작가이드.md` 신설 |
+| 2026-08-21 | 1.2 | §4.4 멀티미디어 모듈 신설(slides-media): 발음 재생·개념 애니메이션·오리지널 카툰 콩트·공식 영상 임베드. W2 파일럿 적용 |
 | 2026-08-20 | 1.1 | §5 쪽번호 정책 신설: 인쇄 교재 쪽번호 기준 통일, 러닝헤더 파싱 매핑 검증, Ex.N 검증 시에만 표기 |
 | 2026-07-03 | 1.0 | 최초 작성. 스택·파일구조·자산규약·체크리스트 정립 |

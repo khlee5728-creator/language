@@ -3,7 +3,7 @@
  * Applied English Phonology — PDF 저장 버튼 & 안내 오버레이
  *
  * 기능:
- *   1. 슬라이드 우상단에 "💾 PDF" 버튼 주입
+ *   1. 슬라이드 우상단에 "PDF" 버튼 주입
  *   2. 클릭 시 ?print-pdf 파라미터로 새 탭 열기
  *   3. ?print-pdf URL 감지 시 Reveal 렌더링 완료 후 안내 오버레이 표시
  *      - 우상단 ✕ 닫기 버튼: 즉시 탭 닫기
@@ -17,7 +17,7 @@
   var btn = document.createElement('button');
   btn.className = 'pdf-btn';
   btn.title = 'PDF로 저장';
-  btn.innerHTML = '&#128190;&#8239;PDF';   // 💾 PDF
+  btn.innerHTML = 'PDF';
 
   btn.addEventListener('click', function () {
     var base = location.href.split('?')[0].split('#')[0];

@@ -6,407 +6,481 @@
   <title>Week 10 — The Meaning of Language (Part 2): Pragmatics | Topics in English Linguistics</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,400;1,700&family=Lora:ital@0;1&family=Space+Grotesk:wght@400;600;700&family=Noto+Serif+KR:wght@300;500&family=Noto+Sans+KR:wght@300;400;700&family=Jua&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css" />
   <link rel="stylesheet" href="assets/linguistics-theme.css" />
   <link rel="stylesheet" href="assets/slides-quiz.css" />
   <link rel="stylesheet" href="assets/slides-ko.css" />
+  <link rel="stylesheet" href="assets/slides-media.css?v=3" />
+  <link rel="stylesheet" href="assets/editorial-theme.css?v=7" />
   <style>
-    :root { --slide-accent: #c77b2e; }
-    .deixis-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:0.5em; font-size:0.7em; }
-    .deixis-grid .dc { background:var(--color-bg-alt); border:1px solid var(--color-border);
-      border-radius:8px; padding:0.5em 0.7em; text-align:center; }
-    .deixis-grid .dc b { color:var(--slide-accent); display:block; margin-bottom:0.15em; }
-    .maxim-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:0.5em; font-size:0.7em; }
-    .maxim-grid .mc { background:var(--color-bg-alt); border:1px solid var(--color-border);
-      border-left:4px solid var(--slide-accent); border-radius:0 8px 8px 0; padding:0.45em 0.7em; }
-    .maxim-grid .mc b { color:var(--slide-accent); }
-    .sa-list { list-style:none; padding:0; font-size:0.72em; }
-    .sa-list li { padding:0.28em 0; border-bottom:1px solid var(--color-border); }
-    .sa-list li:last-child { border-bottom:none; }
-    .sa-list li b { color:var(--slide-accent); }
+    :root { --slide-accent: #8a5a20; }
+
+    /* 표지 */
+    .cover .booktag { font: 600 12px 'Space Grotesk'; letter-spacing: 0.3em; color: var(--ed-muted); }
+    .cover h1 { font: 600 74px/1.15 'Playfair Display'; margin: 26px 0 8px; }
+    .cover .part { font: italic 400 30px 'Playfair Display'; color: var(--ed-accent); margin-bottom: 30px; }
+    .cover .lead { max-width: 560px; }
+    .cover .foot { margin-top: 46px; border-top: 1px solid var(--ed-line); padding-top: 16px;
+      font: italic 400 15px 'Lora'; color: var(--ed-muted); }
+
+    /* 대화(담화) 스택 */
+    .dlg { border-left: 1px solid var(--ed-line); padding-left: 28px; }
+    .dlg p { font: italic 400 19px/1.75 'Lora'; margin: 0 0 10px; color: var(--ed-ink); }
+    .dlg p:last-child { margin-bottom: 0; }
+    .dlg .sp { font: 600 11px 'Space Grotesk'; letter-spacing: 0.2em; color: var(--ed-muted);
+      font-style: normal; margin-right: 10px; }
+    .dlg .imp { font: 300 16px 'Noto Serif KR'; font-style: normal; color: var(--ed-body); }
+    .dlg .imp b { color: var(--ed-accent); }
+
+    /* 격률 그리드 — 헤어라인만, 색 상자 없음 */
+    .maxim-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px 48px; }
+    .maxim-grid .mc { border-top: 1px solid var(--ed-line); padding-top: 12px;
+      font: 300 16.5px/1.65 'Noto Serif KR'; color: var(--ed-body); }
+    .maxim-grid .mc b { display: block; font: 600 12px 'Space Grotesk'; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--ed-accent); margin-bottom: 6px; }
+    .maxim-grid .mc i { font: italic 400 16.5px 'Lora'; }
+
+    /* 보충(교재 밖) 슬라이드 */
+    .enrich { border-top: 1px solid var(--ed-line); border-bottom: 1px solid var(--ed-line);
+      padding: 22px 0; }
   </style>
 </head>
-<body>
+<body data-rail="WEEK 10 · THE MEANING OF LANGUAGE" data-course="Topics in English Linguistics">
 <div class="reveal">
 <div class="slides">
 
-<!-- ══ 1 · Title ══ -->
-<section class="title-slide" data-background-color="#16213e">
-  <div style="color:white; text-align:center; padding:1em;">
-    <div class="week-badge" style="background:rgba(255,255,255,0.2); color:white;">Week 10</div>
-    <h1 style="color:white; font-size:1.55em; margin:0.4em 0 0.2em;">The Meaning of Language <span style="font-weight:300;">(Part 2)</span></h1>
-    <p style="color:rgba(255,255,255,0.8); font-size:0.6em; margin-bottom:0.3em;">
-      Pragmatics — Meaning in Context
-      <span class="ko-supp" style="display:block; color:rgba(255,255,255,0.65);">※ 언어의 의미 — 화용론: 맥락 속의 의미</span>
-    </p>
-    <p style="color:rgba(255,255,255,0.55); font-size:0.48em; margin-bottom:1.3em;">
-      Chapter 4 · pp. 159–182
-    </p>
-    <p style="color:rgba(255,255,255,0.5); font-size:0.42em; font-style:italic;">
-      An Introduction to Language, 11th Ed. — Fromkin, Rodman &amp; Hyams
-    </p>
-  </div>
+<!-- ══ 1 · Cover ══ -->
+<section class="cover" data-no-rail>
+  <div class="booktag">AN INTRODUCTION TO LANGUAGE · 11TH ED. — FROMKIN · RODMAN · HYAMS</div>
+  <h1>The Meaning<br>of Language</h1>
+  <div class="part">Part 2 — Pragmatics: Meaning in Context</div>
+  <p class="lead">What is said is a sketch; the hearer paints the rest — <em>how does context fill in meaning?</em>
+    <span class="ko-supp" style="display:block;">화용론 — 문자적 의미 너머, 맥락 속에서 전달되는 의미.</span></p>
+  <div class="foot">Week 10 · Chapter 4, pp. 159–182 · Topics in English Linguistics</div>
   <aside class="notes">
     Ch.4 후반부, 화용론(pragmatics)입니다. 의미론이 문장 자체의 의미라면, 화용론은 맥락 속에서
     발화가 실제로 전달하는 의미를 다룹니다. "말한 것"과 "의미한 것"의 간극이 핵심입니다.
   </aside>
 </section>
 
-<!-- ══ 2 · Agenda ══ -->
-<section>
-  <h2>Agenda</h2>
-  <ul class="agenda-list">
-    <li>Pragmatics — meaning in context</li>
-    <li>Linguistic context vs. situational context</li>
-    <li>Deixis — person, place, time</li>
-    <li>Reference &amp; anaphora · Presupposition</li>
-    <li>Implicature — Grice's Cooperative Principle &amp; Maxims</li>
-    <li>Speech acts — performatives &amp; illocutionary force</li>
-  </ul>
+<!-- ══ 2 · Contents ══ -->
+<section data-kicker="WEEK 10 · CONTENTS · CH.4 PP.159–182">
+  <h2>Today</h2>
+  <ol class="recap tight" style="max-width:700px;">
+    <li><b>Pragmatics</b> — <i style="font-size:0.82em;">extra-truth-conditional meaning</i><span class="pg">P.159</span></li>
+    <li><b>Pronouns and Other Deictic Words</b><span class="pg">P.160</span></li>
+    <li><b>Pronouns and Situational Context</b><span class="pg">P.161</span></li>
+    <li><b>Pronouns and Linguistic Context</b><span class="pg">P.162</span></li>
+    <li><b>Implicature</b><span class="pg">P.163</span></li>
+    <li><b>Maxims of Discourse</b> — <i style="font-size:0.82em;">Grice's cooperative principle</i><span class="pg">P.165</span></li>
+    <li><b>Presupposition</b><span class="pg">P.167</span></li>
+    <li><b>Speech Acts</b> — <i style="font-size:0.82em;">performatives · illocutionary force</i><span class="pg">P.168</span></li>
+  </ol>
   <aside class="notes">
-    오늘 키워드: context, deixis, anaphora, presupposition, implicature, maxims, speech act입니다.
+    오늘 키워드: context, deixis, reference resolution, implicature, maxims, presupposition, speech act.
     화용론은 "문자적 의미를 넘어선 의미"를 어떻게 계산하는가를 묻습니다.
   </aside>
 </section>
 
-<!-- ══ 3 · What is pragmatics ══ -->
-<section data-background-color="#f8f9fa">
-  <h2>What Is Pragmatics?</h2>
-  <div class="def-box">
-    <div class="term">Pragmatics = the study of how context contributes to meaning</div>
-  </div>
-  <ul style="font-size:0.74em; line-height:1.9; margin-top:0.6em;">
-    <li>The same sentence can mean different things in different situations.</li>
-    <li>"<em>It's cold in here</em>" may be a statement — or a request to close the window.</li>
-    <li>Interpretation depends on <strong>who, where, when, and why</strong>.</li>
-  </ul>
-  <p class="ko-supp" style="margin-top:0.6em; font-size:0.68em;">
-    ※ 의미론은 문장의 <strong>문자적</strong> 의미, 화용론은 <strong>맥락 속</strong> 발화 의미를 다룬다.
-  </p>
-  <aside class="notes">
-    화용론과 의미론의 경계를 분명히 하세요. "It's cold in here"처럼 형식은 진술문이지만 기능은
-    요청일 수 있다는 점이 화용론의 출발점입니다.
-  </aside>
-</section>
-
-<!-- ══ 4 · Two kinds of context ══ -->
-<section>
-  <h2>1) Two Kinds of Context</h2>
-  <div class="two-col" style="font-size:0.72em;">
-    <div class="card">
-      <h3>Linguistic Context</h3>
-      <p style="font-size:0.86em;">The surrounding discourse — earlier sentences. It lets us interpret <em>he</em>, <em>it</em>, <em>the other one</em>.</p>
-    </div>
-    <div class="card">
-      <h3>Situational Context</h3>
-      <p style="font-size:0.86em;">Knowledge of the world and the speech situation — who is speaking, where, when, and what they intend.</p>
+<!-- ══ 3 · Pragmatics ══ -->
+<section data-kicker="CH.4 P.159 · THE MEANING OF LANGUAGE">
+  <h2>Pragmatics</h2>
+  <div class="cols">
+    <div class="def"><b>Pragmatics</b> — the study of <i>extra-truth-conditional</i> meaning: how speakers use literal meaning in conversation and discourse.
+      <span class="ko-supp" style="display:block; margin-top:8px;">의미론 = 문자적 의미, 화용론 = 맥락 속 발화 의미.</span></div>
+    <div class="quote-stack">
+      <p>An utterance is as sketchy as a Rembrandt drawing — <b>hearers fill in the gaps</b> <span style="font-style:normal; font-size:0.75em; color:var(--ed-muted);">(Levinson 2000)</span>.</p>
+      <p><i>It's cold in here</i> — a statement, or a request to close the window?</p>
+      <p>Interpretation depends on <b>who, where, when, and why</b>.</p>
     </div>
   </div>
-  <p style="font-size:0.66em; margin-top:0.5em;">
-    Both are needed to recover a speaker's <span class="key">intended meaning</span>.
-  </p>
-  <p class="ko-supp" style="font-size:0.64em; margin-top:0.3em;">※ 언어적 맥락 = 앞뒤 담화, 상황적 맥락 = 세계 지식·발화 상황.</p>
   <aside class="notes">
-    언어적 맥락(discourse)과 상황적 맥락(situation)을 구분하세요. 다음 슬라이드의 직시(deixis)는
-    상황 맥락 없이는 해석 불가능한 대표 사례입니다.
+    화용론과 의미론의 경계를 분명히 하세요. 교재는 렘브란트 스케치의 비유로 시작합니다 — 발화는
+    장면의 '스냅사진'이 아니라 스케치이고, 청자가 여백을 채웁니다. "It's cold in here"처럼 형식은
+    진술문이지만 기능은 요청일 수 있다는 점이 화용론의 출발점입니다.
   </aside>
 </section>
 
-<!-- ══ 5 · Deixis ══ -->
-<section>
-  <h2>2) Deixis — Pointing with Language</h2>
-  <p style="font-size:0.72em;"><span class="key">Deictic</span> expressions can only be interpreted relative to the speech situation.</p>
-  <div class="deixis-grid">
-    <div class="dc"><b>Person</b><em>I · you · we · they</em></div>
-    <div class="dc"><b>Place</b><em>here · there · this · that</em></div>
-    <div class="dc"><b>Time</b><em>now · then · today · tomorrow</em></div>
+<!-- ══ 4 · Deictic words ══ -->
+<section data-kicker="CH.4 P.160 · PRAGMATICS">
+  <h2 style="font-size:38px;">Pronouns and Other Deictic Words</h2>
+  <div class="cols">
+    <div class="def"><i>Deictic</i> words take part of their meaning from context and the <i>orientation of the speaker</i> — pronouns, demonstratives, adverbs, prepositions.
+      <span class="ko-supp" style="display:block; margin-top:8px;">직시 표현의 지시 대상 찾기 = 지시 해소(reference resolution). 맥락은 언어적·상황적 두 종류.</span></div>
+    <div>
+      <div class="word-row" style="margin-top:0; padding-top:0; border-top:0;">
+        <div class="w"><b>I · you · she</b><span>PERSON</span></div>
+        <div class="w"><b>here · this · that</b><span>PLACE</span></div>
+        <div class="w"><b>now · today · tomorrow</b><span>TIME</span></div>
+      </div>
+      <hr class="hair">
+      <p class="lead" style="font-size:17.5px;">"<em>I really like it in Venice. Today there was a boat parade here.</em>" — natural; the fully explicit version (<em>Taylor Swift… on September 16, 2016, in Venice, Italy…</em>) sounds bizarre. <b>We speak in shortcuts.</b></p>
+    </div>
   </div>
-  <p style="font-size:0.66em; margin-top:0.5em;">
-    "<em>I'll meet you here tomorrow</em>" is meaningless without knowing <strong>who</strong> speaks, <strong>where</strong>, and <strong>when</strong>.
-  </p>
-  <p class="ko-supp" style="font-size:0.62em; margin-top:0.3em;">※ 직시 표현은 화자의 '지금-여기(here-and-now)', 즉 발화 상황·화자의 관점에 상대적으로 해석된다.</p>
   <aside class="notes">
-    직시(deixis)의 3유형(인칭·장소·시간)을 정리하세요. 녹음된 쪽지 "Meet me here in an hour"가
-    왜 해석 불가한지 예로 들면 직시의 상황 의존성이 분명해집니다.
+    직시어: 대명사(she, it, I), 지시사(this, that), 부사(here, there, now, today), 전치사(behind, before).
+    교재의 Taylor Swift 베네치아 예 — 완전 명시 버전(1)과 직시 버전(2)을 대비하면 직시가 얼마나
+    기본값인지 드러납니다. I는 화자만 지시 가능할 만큼 제약적이지만, 그래도 맥락이 필요합니다.
   </aside>
 </section>
 
-<!-- ══ 6 · Diagram: deixis pointing ══ -->
-<section>
-  <h2>Diagram · Anchored to the Speaker</h2>
-  <p style="font-size:0.7em; color:var(--color-subtle);">All deictic expressions are anchored to the speaker's <span class="key">here-and-now</span>.</p>
+<!-- ══ 5 · Figure: anchored to the speaker ══ -->
+<section data-kicker="CH.4 P.160 · PRONOUNS AND OTHER DEICTIC WORDS · FIGURE">
   <div style="text-align:center;">
-    <svg viewBox="0 0 680 250" style="width:90%; max-width:780px; margin:0.2em auto; font-family:var(--font-main);">
+    <svg viewBox="0 0 680 250" style="width:84%; max-width:700px; margin-top:4px;">
       <!-- center -->
-      <circle cx="340" cy="125" r="58" fill="#fdf3e8" stroke="#c77b2e" stroke-width="3"/>
-      <text x="340" y="118" text-anchor="middle" font-size="16" font-weight="700" fill="#a5641f">SPEAKER</text>
-      <text x="340" y="140" text-anchor="middle" font-size="13" fill="#7a5320">I · here · now</text>
-      <!-- person axis -->
-      <line x1="398" y1="125" x2="590" y2="125" stroke="#0077b6" stroke-width="2.5" stroke-dasharray="6 5"/>
-      <text x="640" y="122" text-anchor="middle" font-size="13" font-weight="700" fill="#0077b6">you</text>
-      <text x="640" y="140" text-anchor="middle" font-size="11" fill="#0077b6">person</text>
+      <circle cx="340" cy="125" r="60" fill="none" stroke="#1c1a17" stroke-width="1.4"/>
+      <text x="340" y="116" text-anchor="middle" font-family="Space Grotesk" font-size="12" letter-spacing="4" fill="#8d8574">SPEAKER</text>
+      <text x="340" y="144" text-anchor="middle" font-family="Lora" font-style="italic" font-size="19" fill="#1c1a17">I · here · now</text>
+      <!-- person axis right -->
+      <line x1="402" y1="125" x2="576" y2="125" stroke="#8a5a20" stroke-width="1.6" stroke-dasharray="7 6"/>
+      <text x="618" y="122" text-anchor="middle" font-family="Lora" font-style="italic" font-size="20" fill="#1c1a17">you</text>
+      <text x="618" y="142" text-anchor="middle" font-family="Space Grotesk" font-size="10" letter-spacing="3" fill="#8d8574">PERSON</text>
+      <!-- person axis left -->
+      <line x1="278" y1="125" x2="104" y2="125" stroke="#8a5a20" stroke-width="1.6" stroke-dasharray="7 6"/>
+      <text x="66" y="122" text-anchor="middle" font-family="Lora" font-style="italic" font-size="20" fill="#1c1a17">she</text>
+      <text x="66" y="142" text-anchor="middle" font-family="Space Grotesk" font-size="10" letter-spacing="3" fill="#8d8574">PERSON</text>
       <!-- place axis -->
-      <line x1="298" y1="167" x2="150" y2="215" stroke="#1b7f5e" stroke-width="2.5" stroke-dasharray="6 5"/>
-      <text x="110" y="222" text-anchor="middle" font-size="13" font-weight="700" fill="#1b7f5e">there</text>
-      <text x="110" y="238" text-anchor="middle" font-size="11" fill="#1b7f5e">place</text>
+      <line x1="298" y1="168" x2="168" y2="222" stroke="#8a5a20" stroke-width="1.6" stroke-dasharray="7 6"/>
+      <text x="122" y="230" text-anchor="middle" font-family="Lora" font-style="italic" font-size="20" fill="#1c1a17">there</text>
+      <text x="122" y="248" text-anchor="middle" font-family="Space Grotesk" font-size="10" letter-spacing="3" fill="#8d8574">PLACE</text>
       <!-- time axis -->
-      <line x1="340" y1="67" x2="340" y2="18" stroke="#c1121f" stroke-width="2.5" stroke-dasharray="6 5"/>
-      <text x="340" y="14" text-anchor="middle" font-size="13" font-weight="700" fill="#c1121f">then</text>
-      <!-- left person -->
-      <line x1="282" y1="125" x2="90" y2="125" stroke="#0077b6" stroke-width="2.5" stroke-dasharray="6 5"/>
-      <text x="55" y="122" text-anchor="middle" font-size="13" font-weight="700" fill="#0077b6">I</text>
+      <line x1="340" y1="63" x2="340" y2="26" stroke="#8a5a20" stroke-width="1.6" stroke-dasharray="7 6"/>
+      <text x="340" y="16" text-anchor="middle" font-family="Lora" font-style="italic" font-size="20" fill="#1c1a17">then</text>
+      <!-- place axis right-down -->
+      <line x1="382" y1="168" x2="512" y2="222" stroke="#8a5a20" stroke-width="1.6" stroke-dasharray="7 6"/>
+      <text x="558" y="230" text-anchor="middle" font-family="Lora" font-style="italic" font-size="20" fill="#1c1a17">that way</text>
+      <text x="558" y="248" text-anchor="middle" font-family="Space Grotesk" font-size="10" letter-spacing="3" fill="#8d8574">DIRECTION</text>
     </svg>
+    <p class="lead" style="font-size:17px; margin-top:12px;">Every deictic word is anchored to the speaker's <em>here-and-now</em> — move the speaker, and the references move too.
+      <span class="ko-supp" style="display:block;">화자의 '지금-여기'가 축 — 화자가 이동하면 here/there/now/then의 지시가 함께 움직인다.</span></p>
   </div>
-  <p style="font-size:0.62em; text-align:center; color:var(--color-subtle);">
-    Move the speaker, and the reference of <em>here / there / now / then</em> shifts with them.
-  </p>
   <aside class="notes">
-    화자의 '지금-여기'를 축으로 인칭·장소·시간이 방사되는 그림입니다. 화자가 이동하면
+    화자의 here-and-now를 축으로 인칭·장소·시간·방향이 방사되는 그림입니다. 화자가 이동하면
     지시 대상이 바뀐다는 상대성을 각인시키세요.
   </aside>
 </section>
 
-<!-- ══ 7 · Reference & anaphora ══ -->
-<section>
-  <h2>3) Reference &amp; Reference Resolution</h2>
-  <ul class="sa-list">
-    <li><b>Reference</b> — using an expression to pick out an entity in the world.</li>
-    <li><b>Antecedent</b> — the earlier expression that establishes the referent.</li>
-    <li><b>Co-reference</b> — a later pronoun <em>co-refers</em> with its antecedent; recovering it is <span class="key">reference resolution</span>. <span style="color:var(--color-subtle);">(traditional term: <em>anaphora</em>)</span></li>
+<!-- ══ 6 · Situational context ══ -->
+<section data-kicker="CH.4 P.161 · PRONOUNS AND OTHER DEICTIC WORDS">
+  <h2 style="font-size:38px;">Pronouns and Situational Context</h2>
+  <ul class="exlist" style="max-width:760px; font-size:0.95em;">
+    <li><span class="no">01</span>He went that way! — needs a <b style="font-style:normal;">gesture</b>: pointing or nodding.</li>
+    <li><span class="no">02</span>BIG SALE NEXT WEEK — an undated notice: has the sale already happened?</li>
+    <li><span class="no">03</span>before/behind · left/right — you must know the participants' <b style="font-style:normal;">orientation in space</b>.</li>
+    <li><span class="no star">04 *</span>May I kuru to your house? — Japanese kuru "come" only moves <b style="font-style:normal;">toward the speaker</b>; the verb must be iku "go."</li>
+    <li><span class="no">05</span>A thief came into the house vs. went into — was the speaker inside, or not?</li>
   </ul>
-  <div class="def-box" style="margin-top:0.4em;">
-    <div class="term" style="font-size:0.95em;">"<em>Sue</em> likes pizza. <em>She</em> thinks <em>it</em> is the perfect food."</div>
-    <p style="font-size:0.82em; margin-top:0.2em;"><em>She</em> co-refers with the antecedent <em>Sue</em>; <em>it</em> with <em>pizza</em>.</p>
-  </div>
-  <p class="ko-supp" style="font-size:0.62em; margin-top:0.3em;">※ 대명사는 선행사(antecedent)와 공지시(co-refer)하며, 이 지시 대상 찾기를 지시 해소(reference resolution)라 한다.</p>
+  <p class="lead" style="font-size:17px; margin-top:16px;">
+    <span class="ko-supp">상황적 맥락 = 몸짓·시공간 지식·화자의 위치. come/go에도 직시적 의미가 있다.</span></p>
   <aside class="notes">
-    선행사-대용어 관계는 언어적 맥락으로 지시를 계산하는 사례입니다. 대명사가 앞 명사구에
-    의존한다는 점을 화살표로 짚어 주세요.
+    상황 맥락은 몸짓(pointing), 시간 기준점(next week), 공간 정향(left/right), 화자 위치(come/go)로
+    나타납니다. "Dennis the Menace" 카툰처럼 직시어 오해는 희극을 낳습니다. 일본어 kuru/iku는
+    직시가 어휘 의미에 내장된 사례.
   </aside>
 </section>
 
-<!-- ══ 8 · Presupposition ══ -->
-<section>
-  <h2>4) Presupposition</h2>
-  <div class="def-box">
-    <div class="term">Presupposition = information the speaker assumes as background</div>
+<!-- ══ 7 · Linguistic context ══ -->
+<section data-kicker="CH.4 P.162 · PRONOUNS AND OTHER DEICTIC WORDS">
+  <h2 style="font-size:38px;">Pronouns and Linguistic Context</h2>
+  <div class="cols">
+    <div class="def"><i>Reflexive pronouns</i> (-self/-selves) need a sentence-internal <b>antecedent</b> — matching in person, gender, number, and in the right position.
+      <span class="ko-supp" style="display:block; margin-top:8px;">비재귀 대명사는 문장 밖·담화 속 선행사와도 공지시한다.</span></div>
+    <div>
+      <ul class="exlist" style="font-size:0.9em;">
+        <li><span class="no star">a *</span>I saw Mary. Herself left. — no antecedent in the sentence</li>
+        <li><span class="no star">b *</span>John wrote herself a letter. — features must match</li>
+        <li><span class="no star">c *</span>Himself washed John. — antecedent cannot follow</li>
+        <li><span class="no star">d *</span>Jane said the boy bit herself. — no NP may intervene</li>
+      </ul>
+      <hr class="hair">
+      <div class="gloss-set">
+        <div class="langlab">ACROSS SENTENCES — REFERENCE RESOLUTION</div>
+        <div class="sent" style="font-size:22px;">Sue likes pizza. <b>She</b> thinks <b>it</b> is the perfect food.</div>
+        <div class="tr"><em>she</em>는 선행사 <em>Sue</em>와, <em>it</em>은 <em>pizza</em>와 공지시(co-refer)한다.</div>
+      </div>
+    </div>
   </div>
-  <ul style="font-size:0.7em; line-height:1.8; margin-top:0.5em;">
-    <li>"<em>Have you stopped smoking?</em>" presupposes you smoked before.</li>
-    <li>"<em>The present King of France is bald</em>" presupposes there is a present king of France.</li>
-    <li>Presuppositions <strong>survive negation</strong>: "<em>The present King of France is not bald</em>" still assumes such a king exists.</li>
-    <li>Since France has no king, the utterance is simply <strong>inappropriate</strong> — presupposition failure.</li>
-  </ul>
-  <p class="ko-supp" style="font-size:0.62em; margin-top:0.3em;">※ 전제는 문장을 부정해도 유지된다 — 이것이 전제와 함의를 구별하는 진단법.</p>
   <aside class="notes">
-    전제(presupposition)의 핵심 성질은 부정 하에서도 유지된다는 점(부정 시험, negation test)입니다.
-    이를 함의와 대비해 설명하세요.
+    재귀대명사는 문장 내부의 선행사를, 그것도 올바른 위치의 선행사를 요구합니다(a–d).
+    비재귀 대명사는 다른 문장·다른 화자의 발화 속 선행사와도 공지시 가능(Sue… She… it).
+    강세를 주면(her 강조) 상황 맥락으로 지시가 넘어가는 것도 흥미로운 포인트.
   </aside>
 </section>
 
-<!-- ══ 9 · Implicature & Cooperative Principle ══ -->
-<section>
-  <h2>5) Implicature — Grice's Cooperative Principle</h2>
-  <div class="summary-box">
-    <h4>The Cooperative Principle</h4>
-    <p style="font-size:0.84em;">Speakers generally try to communicate sincerely and cooperatively. The four <span class="key">maxims</span> below are collectively known as Grice's <em>cooperative principle</em>.</p>
+<!-- ══ 8 · Implicature ══ -->
+<section data-kicker="CH.4 P.163 · PRAGMATICS">
+  <h2>Implicature</h2>
+  <div class="cols">
+    <div class="def">An <i>implicature</i> is an inference based not only on the utterance, but on what the speaker is trying to convey — <i>a sketch, not a photograph</i>.
+      <span class="ko-supp" style="display:block; margin-top:8px;">단언(assert)하지 않고 함축(implicate)한다 — 그리고 함축은 취소될 수 있다.</span></div>
+    <div>
+      <div class="dlg">
+        <p><span class="sp">DAD</span>Very nice girl. What do you think, Hon?</p>
+        <p><span class="sp">MOM</span>The turkey sure was moist.</p>
+        <p class="imp">→ Mom <b>implicates</b> that she doesn't particularly like Toni — without saying so.</p>
+      </div>
+      <div class="dlg" style="margin-top:20px;">
+        <p><span class="sp">SUE</span>Does Mary have a boyfriend?</p>
+        <p><span class="sp">BILL</span>She's been driving to Santa Barbara every weekend.</p>
+      </div>
+      <hr class="hair">
+      <p class="lead" style="font-size:16.5px;">Implicatures are <b>cancellable</b>: "…Toni basted it every ten minutes" cancels the implicature. Entailments cannot be cancelled.</p>
+    </div>
   </div>
-  <p style="font-size:0.7em; margin-top:0.5em;">
-    A: "<em>Is Jane a good worker?</em>" — B: "<em>She's usually on time.</em>"<br>
-    B <span class="key">implicates</span> that Jane is <em>not</em> especially good, without saying so.
-  </p>
-  <p class="ko-supp" style="font-size:0.62em; margin-top:0.3em;">※ 함축(implicature)은 문자적으로 말하지 않은 것을 협력 원리를 바탕으로 추론한 의미.</p>
   <aside class="notes">
-    Grice의 협력 원리를 소개하세요. 대화 함축(conversational implicature)은 문자적 의미가 아니라
-    "왜 그렇게 말했는가"를 추론해 얻는 의미임을 예로 보여주세요.
+    함축은 발화 + 화자의 의도에 대한 추론입니다. 교재의 칠면조 대화가 핵심 예 — 문자적 요약과
+    실제 전달 의미의 간극을 보여주세요. 추가 정보로 취소 가능하다는 점이 함의(entailment)와의
+    결정적 차이입니다(Jon killed Jim의 함의는 무슨 말을 해도 취소 불가).
   </aside>
 </section>
 
-<!-- ══ 10 · The four maxims ══ -->
-<section>
-  <h2>The Four Maxims</h2>
+<!-- ══ 9 · Maxims of Discourse ══ -->
+<section data-kicker="CH.4 P.165 · IMPLICATURE">
+  <h2>Maxims of Discourse</h2>
+  <p class="lead" style="font-size:17px; margin-bottom:18px;">Grice: implicatures are calculable because speakers follow — and assume others follow — implicit <em>maxims</em>, known en masse as the <b>cooperative principle</b>.</p>
   <div class="maxim-grid">
-    <div class="mc"><b>Quantity</b><br>Be as informative as required — no more, no less.</div>
-    <div class="mc"><b>Quality</b><br>Say only what you believe true and can support.</div>
-    <div class="mc"><b>Relation</b><br>Be relevant to the current exchange.</div>
-    <div class="mc"><b>Manner</b><br>Be clear, brief, orderly; avoid obscurity.</div>
+    <div class="mc"><b>Quality — Truth</b>Do not say what you believe to be false, or what you lack adequate evidence for.</div>
+    <div class="mc"><b>Quantity — Information</b>Be as informative as required — <i>no more, no less</i>.</div>
+    <div class="mc"><b>Relation — Relevance</b>Be relevant to the matter under discussion.</div>
+    <div class="mc"><b>Manner — Clarity</b>Avoid obscurity, ambiguity, wordiness; be orderly.</div>
   </div>
-  <p style="font-size:0.64em; margin-top:0.5em;">
-    To <span class="key">violate</span> a maxim is to be quietly uncooperative; to <span class="key">flout</span> it is to break it openly, so the hearer infers a <span class="key">conversational implicature</span>.
-  </p>
-  <p class="ko-supp" style="font-size:0.62em; margin-top:0.3em;">※ 격률을 몰래 어기면 위반(violate), 대놓고 어겨 함축을 유도하면 위배(flout) — 함축은 flout에서 발생한다.</p>
+  <p class="ko-supp" style="font-size:14px; margin-top:16px;">규범 규칙이 아니라 언어 공동체의 협력 전략 — 이를 전제로 함축이 계산된다.</p>
   <aside class="notes">
-    네 격률(양·질·관계·태도)을 암기하되, 핵심은 격률을 '고의로 어길 때(flouting)' 함축이 발생한다는 점입니다.
-    반어·과장 등이 이에 해당합니다.
+    Grice의 네 격률(질·양·관계·태도). 이는 규범이 아니라 화자들이 서로에게 가정하는 전략이며,
+    바로 이 가정 위에서 함축이 계산됩니다. 길 안내가 성립하는 것도 질 격률의 가정 덕분.
   </aside>
 </section>
 
-<!-- ══ 11 · Speech acts ══ -->
-<section>
-  <h2>6) Speech Acts — Performatives</h2>
-  <p style="font-size:0.72em;">To say something is often to <span class="key">do</span> something — we perform acts by speaking.</p>
-  <ul class="sa-list">
-    <li><b>Performative verbs</b> — the utterance performs the act: "<em>I promise…</em>", "<em>I bet…</em>", "<em>I now pronounce you…</em>".</li>
-    <li><b>The "I hereby ___" test</b> — a verb is performative if "<em>I hereby</em>" sounds right: <em>I hereby apologize</em> ✓ vs. <em>*I hereby know you</em> ✗.</li>
-    <li><b>Illocutionary force</b> — the speaker's intended act (a promise, a bet, an order), which can be conveyed even with no performative verb.</li>
-  </ul>
-  <p style="font-size:0.64em; margin-top:0.4em;">
-    "<em>I've got five bucks that says you're wrong</em>" carries the illocutionary force of a <em>bet</em> in the right context.
-  </p>
-  <p class="ko-supp" style="font-size:0.6em; margin-top:0.3em;">※ 수행문은 'I hereby ___' 삽입이 자연스러운 문장 — 발화가 곧 행위. 화자의 의도된 행위력을 발화수반력(illocutionary force)이라 한다.</p>
+<!-- ══ 10 · Violate vs Flout ══ -->
+<section data-kicker="CH.4 P.166 · MAXIMS OF DISCOURSE">
+  <div class="cols-even">
+    <div>
+      <div class="small-label" style="margin-bottom:12px;">VIOLATE — QUIETLY UNCOOPERATIVE</div>
+      <hr class="hair" style="margin:0 0 14px;">
+      <div class="dlg">
+        <p><span class="sp">POLONIUS</span>What do you read, my lord?</p>
+        <p><span class="sp">HAMLET</span>Words, words, words.</p>
+      </div>
+      <p class="lead" style="font-size:16.5px; margin-top:12px;">Feigning madness, Hamlet gives too little — then far too much — information: <b>Quantity</b> broken in both directions.</p>
+    </div>
+    <div>
+      <div class="small-label" style="margin-bottom:12px;">FLOUT — OPENLY, TO IMPLICATE</div>
+      <hr class="hair" style="margin:0 0 14px;">
+      <p class="lead" style="font-size:16.5px;">To <b>flout</b> a maxim is to break it so the hearer notices — and computes an implicature. "<em>The turkey sure was moist</em>" flouts <b>Relation</b>.</p>
+      <p class="lead" style="font-size:16.5px; margin-top:12px;"><em>Can you pass the salt?</em> — a literal answer states the obvious (<b>Quantity</b>), so the hearer seeks the reason: <em>a request</em>.</p>
+    </div>
+  </div>
+  <hr class="hair" style="margin-top:26px;">
+  <p class="lead" style="font-size:16.5px;"><em>It's cold in here</em> to someone by an open window — <b>Relation</b> explains the "close it" reading.
+    <span class="ko-supp" style="display:block;">몰래 어기면 위반(violate), 들으라고 어기면 위배(flout) — 함축은 flout에서 발생한다.</span></p>
   <aside class="notes">
-    교재가 강조하는 핵심은 수행동사(performative verb)와 'I hereby' 검사, 그리고 발화수반력(illocutionary force)입니다.
-    수행동사가 없어도(예: 내기) 문맥상 행위력이 전달될 수 있음을 강조하세요.
+    햄릿 대화(2막 2장)는 격률 위반이 담화를 어떻게 비틀거리게 하는지 보여줍니다. 같은 발화도
+    맥락에 따라 '함축을 위한 flout'이 될 수 있음(비밀로 하고 싶다는 함축). Can you pass the salt?와
+    It's cold in here는 교재가 양·관계 격률로 설명하는 대표 예입니다.
   </aside>
 </section>
 
-<!-- ══ 11b · Enrichment (beyond the chapter) ══ -->
-<section>
-  <span class="practice-header">Enrichment · Beyond the Textbook</span>
-  <h2 style="margin-top:0.2em;">Direct vs. Indirect Acts</h2>
-  <ul class="sa-list">
-    <li><b>Direct speech act</b> — form matches function: "<em>Close the door</em>" (imperative = command).</li>
-    <li><b>Indirect speech act</b> — form ≠ function: "<em>Can you close the door?</em>" (question form = request).</li>
-    <li><b>Felicity conditions</b> — background conditions an act needs to succeed (e.g. only an authorized official can pronounce a marriage).</li>
-  </ul>
-  <p style="font-size:0.62em; margin-top:0.3em; color:var(--color-subtle);">
-    These Austin/Searle terms extend the chapter; the textbook itself treats "<em>Can you pass the salt?</em>" under implicature and politeness.
-  </p>
-  <p class="ko-supp" style="font-size:0.6em; margin-top:0.3em;">※ 직접/간접 화행과 적정 조건은 교재 밖 보충 개념(Austin·Searle). 교재는 "Can you pass the salt?"를 함축·공손성으로 다룬다.</p>
+<!-- ══ 11 · Presupposition ══ -->
+<section data-kicker="CH.4 P.167 · PRAGMATICS">
+  <h2>Presupposition</h2>
+  <div class="cols">
+    <div class="def"><i>Presuppositions</i> — situations that must exist for an utterance to be <b>appropriate</b>.
+      <span class="ko-supp" style="display:block; margin-top:8px;">전제가 거짓이면 문장은 거짓이 아니라 '부적절'해진다.</span></div>
+    <div class="quote-stack">
+      <p><b>The present King of France is bald</b> — grammatical, meaningful, yet <i>inappropriate</i>: France has no king.</p>
+      <p><i>Have you stopped hugging your border collie?</i> — presupposes that you hugged it.</p>
+      <p>Presuppositions <b>hold up under negation</b>: <i>I am not sorry that the team lost</i> still presupposes the team lost.</p>
+      <p>Unlike implicatures, they <b>cannot be cancelled</b>: "—oh, the team didn't lose after all" is incongruous.</p>
+    </div>
+  </div>
+  <aside class="notes">
+    전제의 진단법 = 부정 시험(negation test): 부정해도 유지되면 전제. 함축과 달리 취소하면 모순이
+    생기고, 함의와 달리 부정문에서도 살아남습니다(Jon did not kill Jim은 Jim의 죽음을 함의하지 않음).
+    앨리스의 티파티("take more tea")가 전제 무시의 희극적 사례.
+  </aside>
+</section>
+
+<!-- ══ 12 · Speech Acts ══ -->
+<section data-kicker="CH.4 P.168 · PRAGMATICS">
+  <h2>Speech Acts</h2>
+  <div class="cols">
+    <div class="def">You can use language <i>to do things</i> — promise, bet, warn, christen, nominate. Verbs like <b>bet, promise, warn</b> are <i>performative verbs</i>.
+      <span class="ko-supp" style="display:block; margin-top:8px;">1인칭·현재시제·긍정 평서문 — 발화가 곧 행위가 된다.</span></div>
+    <div class="quote-stack">
+      <p>I <b>bet</b> you five dollars the Yankees win.</p>
+      <p>I <b>challenge</b> you to a match.</p>
+      <p>I <b>nominate</b> Batman for mayor of Gotham City.</p>
+      <p>I <b>pronounce</b> you husband and wife.</p>
+      <p style="font-style:normal; font-size:0.8em; color:var(--ed-muted);">— saying it is doing it: every language has hundreds of these.</p>
+    </div>
+  </div>
+  <aside class="notes">
+    "I warn you that there is a sheepdog in the closet"는 말하는 동시에 경고하는 행위입니다.
+    수행문의 전형: 1인칭 주어·현재시제·긍정 평서문. 다음 슬라이드에서 판별 검사와
+    발화수반력으로 이어집니다.
+  </aside>
+</section>
+
+<!-- ══ 13 · Hereby test & illocutionary force ══ -->
+<section data-kicker="CH.4 P.169 · SPEECH ACTS">
+  <div class="cols-even">
+    <div>
+      <div class="small-label" style="margin-bottom:12px;">THE "I HEREBY ___" TEST</div>
+      <hr class="hair" style="margin:0 0 14px;">
+      <p class="lead" style="font-size:18px;">Only performative sentences sound right after <em>I hereby…</em></p>
+      <ul class="exlist" style="margin-top:14px; font-size:0.9em;">
+        <li><span class="no">✓</span>I hereby apologize to you.</li>
+        <li><span class="no star">✗</span>?I hereby know you.</li>
+      </ul>
+    </div>
+    <div>
+      <div class="small-label" style="margin-bottom:12px;">ILLOCUTIONARY FORCE</div>
+      <hr class="hair" style="margin:0 0 14px;">
+      <p class="lead" style="font-size:18px;">The utterance's underlying purpose — a reminder, warning, promise, threat — even with <em>no performative verb</em>.</p>
+      <p style="font: italic 400 18px/1.6 'Lora'; margin-top:12px;">I've got five bucks that says you're wrong. — the force of a <b class="accent" style="font-style:normal;">bet</b>.</p>
+    </div>
+  </div>
+  <hr class="hair" style="margin-top:28px;">
+  <p class="lead" style="font-size:17px;"><em>Band practice, my house, 6 to 8</em> — a reminder in one context, a warning in another. Force depends on context → speech act theory belongs to <b>pragmatics</b>.
+    <span class="ko-supp" style="display:block;">'I hereby' 삽입이 자연스러우면 수행문. 화자의 의도된 행위력 = 발화수반력(illocutionary force).</span></p>
+  <aside class="notes">
+    hereby 검사는 비공식적이지만 유용한 판별법입니다. 수행동사가 없어도(5달러 내기 예) 맥락상
+    행위력이 전달될 수 있음 — 발화수반력이 맥락 의존적이므로 화행 이론은 화용론의 일부입니다.
+  </aside>
+</section>
+
+<!-- ══ 14 · Enrichment ══ -->
+<section data-kicker="ENRICHMENT · BEYOND THE TEXTBOOK">
+  <h2 style="font-size:36px;">Direct vs. Indirect Acts</h2>
+  <div class="enrich">
+    <ul class="exlist" style="font-size:0.92em;">
+      <li><span class="no">01</span><b style="font-style:normal; margin-right:6px;">Direct speech act&nbsp;</b>form matches function: "Close the door" — imperative = command.</li>
+      <li><span class="no">02</span><b style="font-style:normal; margin-right:6px;">Indirect speech act&nbsp;</b>form ≠ function: "Can you close the door?" — question form = request.</li>
+      <li><span class="no">03</span><b style="font-style:normal; margin-right:6px;">Felicity conditions&nbsp;</b>background conditions an act needs to succeed — only an authorized official can pronounce a marriage.</li>
+    </ul>
+  </div>
+  <p style="font: italic 400 15px/1.7 'Lora'; color: var(--ed-muted); margin-top:16px;">These Austin/Searle terms extend the chapter; the textbook itself treats "Can you pass the salt?" under implicature and politeness.</p>
+  <p class="ko-supp" style="font-size:14px; margin-top:8px;">직접/간접 화행과 적정 조건은 교재 밖 보충 개념(Austin·Searle) — 시험 범위와 구분해 안내.</p>
   <aside class="notes">
     직접/간접 화행과 적정 조건은 표준 화행론 용어지만 이 교재(Ch.4)에는 명시되지 않은 보충 내용입니다.
     시험 범위와 구분해 안내하세요.
   </aside>
 </section>
 
-<!-- ══ 12 · Practice Quiz Q1 ══ -->
-<section data-background-color="#f8f9fa">
-  <span class="practice-header">Practice · Check Your Understanding</span>
+<!-- ══ 15 · Practice Q1 ══ -->
+<section data-kicker="CH.4 · PRACTICE 01">
   <div class="mcq">
-    <div class="mcq-q"><span class="qnum">1</span>Which word in "<em>Meet me here tomorrow</em>" is <strong>not</strong> deictic?</div>
+    <div class="mcq-q"><span class="qnum">Q1</span>Which word in "<em>Meet me here tomorrow</em>" is <b>not</b> deictic?</div>
     <div class="mcq-opts">
       <button class="mcq-opt" data-correct="true"><span class="opt-key">A</span>Meet</button>
       <button class="mcq-opt"><span class="opt-key">B</span>here</button>
       <button class="mcq-opt"><span class="opt-key">C</span>tomorrow</button>
     </div>
-    <div class="mcq-explain"><span class="lbl">Explanation</span> <em>me</em> (person), <em>here</em> (place), and <em>tomorrow</em> (time) all depend on the speech situation. <em>Meet</em> has a fixed meaning independent of context, so it is not deictic.</div>
+    <div class="mcq-explain"><span class="lbl">Explanation</span><em>me</em> (person), <em>here</em> (place), and <em>tomorrow</em> (time) all depend on the speech situation. <em>Meet</em> has a fixed meaning independent of context, so it is not deictic.</div>
   </div>
   <aside class="notes">
     직시 표현 식별 문항입니다. 인칭·장소·시간 직시를 하나씩 짚으며 오답을 배제하게 하세요.
   </aside>
 </section>
 
-<!-- ══ 13 · Practice Quiz Q2 ══ -->
-<section data-background-color="#f8f9fa">
-  <span class="practice-header">Practice · Check Your Understanding</span>
+<!-- ══ 16 · Practice Q2 ══ -->
+<section data-kicker="CH.4 · PRACTICE 02">
   <div class="mcq">
-    <div class="mcq-q"><span class="qnum">2</span>A: "<em>Are you coming to the party?</em>" B: "<em>I have to work early tomorrow.</em>" B most likely implicates:</div>
+    <div class="mcq-q"><span class="qnum">Q2</span>A: "<em>Are you coming to the party?</em>" B: "<em>I have to work early tomorrow.</em>" B most likely implicates:</div>
     <div class="mcq-opts">
       <button class="mcq-opt" data-correct="true"><span class="opt-key">A</span>No, B is not coming.</button>
       <button class="mcq-opt"><span class="opt-key">B</span>B does not understand the question.</button>
       <button class="mcq-opt"><span class="opt-key">C</span>B is asking about the time.</button>
     </div>
-    <div class="mcq-explain"><span class="lbl">Explanation</span> Assuming B is being relevant (maxim of Relation), the hearer infers a reason for declining → the conversational implicature "No." The literal words never say "no."</div>
+    <div class="mcq-explain"><span class="lbl">Explanation</span>Assuming B is being relevant (maxim of Relation), the hearer infers a reason for declining → the conversational implicature "No." The literal words never say "no."</div>
   </div>
   <aside class="notes">
     관계 격률을 전제로 함축을 추론하는 전형적 예입니다. 문자적 의미와 함축된 의미의 차이를 강조하세요.
   </aside>
 </section>
 
-<!-- ══ 14 · Practice Quiz Q3 ══ -->
-<section data-background-color="#f8f9fa">
-  <span class="practice-header">Practice · Check Your Understanding</span>
+<!-- ══ 17 · Practice Q3 ══ -->
+<section data-kicker="CH.4 · PRACTICE 03">
   <div class="mcq">
-    <div class="mcq-q"><span class="qnum">3</span>"<em>Could you pass the salt?</em>" at dinner is an example of:</div>
+    <div class="mcq-q"><span class="qnum">Q3</span>"<em>Could you pass the salt?</em>" at dinner is an example of:</div>
     <div class="mcq-opts">
       <button class="mcq-opt"><span class="opt-key">A</span>A direct speech act (a genuine question)</button>
       <button class="mcq-opt" data-correct="true"><span class="opt-key">B</span>An indirect speech act (a request)</button>
       <button class="mcq-opt"><span class="opt-key">C</span>A presupposition</button>
     </div>
-    <div class="mcq-explain"><span class="lbl">Explanation</span> The form is a question about ability, but the function is a request for action → an indirect speech act. Nobody expects only "yes" as an answer.</div>
+    <div class="mcq-explain"><span class="lbl">Explanation</span>The form is a question about ability, but the function is a request for action → an indirect speech act. Nobody expects only "yes" as an answer.</div>
   </div>
   <aside class="notes">
-    직접/간접 화행 구분 문항입니다. 형식(의문문)과 기능(요청)의 불일치가 간접 화행의 정의임을 강조하세요.
+    직접/간접 화행 구분 문항입니다(보충 슬라이드의 용어). 형식(의문문)과 기능(요청)의 불일치가
+    간접 화행의 정의임을 강조하세요. 교재 본문은 이 현상을 양 격률 위반으로 설명합니다.
   </aside>
 </section>
 
-<!-- ══ 15 · Exercises Q4 ══ -->
-<section data-background-color="#f8f9fa">
-  <span class="practice-header">Exercises · Based on Textbook Ch.4</span>
+<!-- ══ 18 · Exercise Q4 ══ -->
+<section data-kicker="CH.4 · EXERCISE 04">
   <div class="mcq">
-    <div class="mcq-q"><span class="qnum">4</span>Which maxim is most clearly flouted by an obviously exaggerated statement like "<em>I've told you a million times</em>"? <span style="font-weight:400; color:var(--color-subtle); font-size:0.85em;">(cf. textbook Ch.4, pp.165–167)</span></div>
+    <div class="mcq-q"><span class="qnum">Q4</span>Which maxim is most clearly flouted by an obviously exaggerated statement like "<em>I've told you a million times</em>"?
+      <span style="font: italic 400 15px 'Lora'; color: var(--ed-muted);">(cf. textbook Ch.4, pp.165–167)</span></div>
     <div class="mcq-opts">
       <button class="mcq-opt" data-correct="true"><span class="opt-key">A</span>Quality</button>
       <button class="mcq-opt"><span class="opt-key">B</span>Manner</button>
       <button class="mcq-opt"><span class="opt-key">C</span>Relation</button>
     </div>
-    <div class="mcq-explain"><span class="lbl">Explanation</span> The speaker asserts something literally false (they have not said it a million times), flouting the maxim of Quality, which prompts the hearer to infer the intended meaning "very often / I'm frustrated."</div>
+    <div class="mcq-explain"><span class="lbl">Explanation</span>The speaker asserts something literally false (they have not said it a million times), flouting the maxim of Quality, which prompts the hearer to infer the intended meaning "very often / I'm frustrated."</div>
   </div>
   <aside class="notes">
     교재 Ch.4 함축 연습을 개념 중심으로 재구성한 문항입니다(원문 복제 아님).
-    과장·반어가 질(Quality) 격률 위반으로 함축을 낳는다는 점을 설명하세요.
+    과장·반어가 질(Quality) 격률 위배로 함축을 낳는다는 점을 설명하세요.
   </aside>
 </section>
 
-<!-- ══ 16 · Exercises Q5 ══ -->
-<section data-background-color="#f8f9fa">
-  <span class="practice-header">Exercises · Based on Textbook Ch.4</span>
+<!-- ══ 19 · Exercise Q5 ══ -->
+<section data-kicker="CH.4 · EXERCISE 05">
   <div class="mcq">
-    <div class="mcq-q"><span class="qnum">5</span>What does "<em>Sam regrets selling his car</em>" presuppose, even when negated? <span style="font-weight:400; color:var(--color-subtle); font-size:0.85em;">(cf. textbook Ch.4, pp.167–168)</span></div>
+    <div class="mcq-q"><span class="qnum">Q5</span>What does "<em>Sam regrets selling his car</em>" presuppose, even when negated?
+      <span style="font: italic 400 15px 'Lora'; color: var(--ed-muted);">(cf. textbook Ch.4, pp.167–168)</span></div>
     <div class="mcq-opts">
       <button class="mcq-opt" data-correct="true"><span class="opt-key">A</span>Sam sold his car.</button>
       <button class="mcq-opt"><span class="opt-key">B</span>Sam still owns his car.</button>
       <button class="mcq-opt"><span class="opt-key">C</span>Sam wants a new car.</button>
     </div>
-    <div class="mcq-explain"><span class="lbl">Explanation</span> The factive verb <em>regret</em> presupposes the truth of its complement. Even "<em>Sam does <u>not</u> regret selling his car</em>" still presupposes that Sam <span class="key">sold</span> the car — the presupposition survives negation.</div>
+    <div class="mcq-explain"><span class="lbl">Explanation</span>The factive verb <em>regret</em> presupposes the truth of its complement. Even "<em>Sam does <u>not</u> regret selling his car</em>" still presupposes that Sam <b>sold</b> the car — the presupposition survives negation.</div>
   </div>
-  <p class="ko-supp" style="font-size:0.6em; margin-top:0.5em;">※ 더 풀어보기: 교재 Ch.4 Exercises (직시 식별, 격률 위반 분석, 직접/간접 화행) — 과제로 권장.</p>
+  <p class="ko-supp" style="font-size:14px; margin-top:16px;">더 풀어보기 — 교재 Ch.4 Exercises(직시 식별, 격률 위반 분석, 함축·전제 판별)를 과제로 권장.</p>
   <aside class="notes">
     교재 Ch.4 전제 연습을 재구성했습니다. 사실 동사(factive verb) regret의 전제가 부정 하에서도
     유지됨을 부정 시험으로 확인시키세요.
   </aside>
 </section>
 
-<!-- ══ 17 · Summary ══ -->
-<section>
-  <h2>Summary</h2>
-  <div class="summary-box">
-    <h4>Key Points</h4>
-    <ul style="font-size:0.8em; line-height:1.85;">
-      <li>Pragmatics = <span class="key">meaning in context</span> (linguistic + situational)</li>
-      <li><span class="key">Deixis</span> — person, place, time — anchored to the speaker</li>
-      <li><span class="key">Reference resolution</span>: a pronoun co-refers with its antecedent; <span class="key">presupposition</span> survives negation</li>
-      <li><span class="key">Implicature</span> arises from the Cooperative Principle &amp; four Maxims</li>
-      <li>Violating vs <span class="key">flouting</span> a maxim; flouting triggers conversational implicature</li>
-      <li><span class="key">Speech acts</span>: performative verbs, the "I hereby" test, <span class="key">illocutionary force</span></li>
-    </ul>
-  </div>
+<!-- ══ 20 · Summary ══ -->
+<section data-kicker="CH.4 · SUMMARY">
+  <h2>Six Things to Keep</h2>
+  <ol class="recap" style="max-width:680px;">
+    <li>Pragmatics = <b>extra-truth-conditional</b> meaning in context</li>
+    <li><b>Deictic words</b> — anchored to the speaker's here-and-now</li>
+    <li><b>Reference resolution</b> — linguistic &amp; situational context; reflexives are picky</li>
+    <li><b>Implicature</b> — inferred via the cooperative principle; cancellable</li>
+    <li>Violate vs. <b>flout</b> a maxim — flouting triggers implicature; <b>presupposition</b> survives negation</li>
+    <li><b>Speech acts</b> — performatives, the "I hereby" test, <i>illocutionary force</i></li>
+  </ol>
   <aside class="notes">
-    화용론은 "말한 것 너머의 의미"를 추론하는 체계입니다. 직시·전제·함축·화행이 서로 어떻게
+    화용론은 "말한 것 너머의 의미"를 추론하는 체계입니다. 직시·함축·전제·화행이 어떻게
     맥락 의존적인지 다시 한 번 연결해 정리하세요.
   </aside>
 </section>
 
-<!-- ══ 18 · Next Week ══ -->
-<section>
-  <h2 style="margin-bottom:0.3em;">Next Week — Week 11</h2>
-  <div class="next-week-banner">
-    <div class="label">Next Class</div>
-    <p><strong>Phonetics (Part 1): Consonants</strong> — Ch.5 · pp.183–198</p>
-  </div>
-  <h3 style="margin:0.55em 0 0.2em;">Preview</h3>
-  <ul style="font-size:0.66em; line-height:1.55; margin:0;">
-    <li>Sound segments · why spelling ≠ sound</li>
-    <li>The Phonetic Alphabet (IPA) basics</li>
-    <li>The vocal tract &amp; places of articulation</li>
-    <li>Describing consonants by voicing, place &amp; manner</li>
-  </ul>
-  <div class="next-week-banner" style="margin-top:0.5em;">
-    <div class="label">Preparation · Assignment</div>
-    <p>Read textbook Ch.5 pp.183–198 · work the end-of-chapter Exercises</p>
-  </div>
+<!-- ══ 21 · Next week ══ -->
+<section data-kicker="NEXT WEEK · CH.5 PP.183–198">
+  <h2>From Meaning <em>to Sound</em></h2>
+  <p class="lead" style="max-width:620px;">Phonetics (Part 1): Consonants — why spelling ≠ sound, and how the vocal tract shapes speech.
+    <span class="ko-supp" style="display:block;">IPA 기초 · 조음 기관 · 자음의 유무성·조음위치·조음방법 — Ch.5 pp.183–198.</span></p>
+  <hr class="hair" style="max-width:620px; margin-top:34px;">
+  <p style="font: 300 17px 'Noto Serif KR'; color: var(--ed-body);">
+    <span class="small-label" style="margin-right:14px;">PREPARE</span>Read Ch.5 pp.183–198 · end-of-chapter exercises</p>
   <aside class="notes">
     다음 주부터 음성학(phonetics)으로 넘어갑니다. 의미에서 소리로 층위가 바뀌므로, IPA와 조음
     기관을 미리 예습하도록 안내하세요.
@@ -420,17 +494,19 @@
 <script>
   Reveal.initialize({
     hash: true,
-    slideNumber: 'c/t',
+    slideNumber: false,
     progress: true,
     center: false,
-    transition: 'slide',
-    transitionSpeed: 'fast',
+    transition: 'fade',
+    transitionSpeed: 'default',
     plugins: []
   });
 </script>
-<a class="home-btn" href="../index.html" title="강의 목록으로">← 목록</a>
+<a class="home-btn" href="../index.html" title="강의 목록으로">Index</a>
 <script src="assets/slides-print.js"></script>
 <script src="assets/slides-quiz.js"></script>
 <script src="assets/slides-ko-toggle.js"></script>
+<script src="assets/slides-media.js?v=8"></script>
+<script src="assets/slides-editorial.js?v=2"></script>
 </body>
 </html>
