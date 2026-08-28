@@ -45,55 +45,59 @@
 ## W3 — What Is Language? Part 2 · 동물의 의사소통 (P1 웹툰)
 
 - **파일**: `w03_toon_beedance.mp4` (12초) · **삽입 위치**: The Birds and the Bees 슬라이드 뒤
-- **개념**: 동물 신호는 고정·유한, 인간 언어는 창조적·무한
-- **콩트**: 벌의 춤은 '꿀 위치'만 말한다. 강아지에게 오늘 하루를 물어보지만…
+- **개념**: 동물 신호는 고정·유한(벌춤은 꿀 위치·품질만, 교재 p.18), 인간 언어는 창조적·무한
+- **콩트**: 벌의 춤은 '꿀 위치'만 말한다. 강아지가 원툴 크리에이터를 평가한다
 
 | 샷 | 길이 | 화면 | 대사(음성) | 말풍선 |
 |---|---|---|---|---|
-| 1 | 2s | 와이드: 넷이 꽃밭 옆 벌 한 마리를 관찰, 강아지도 곁에 | — | — |
-| 2 | 2.5s | 벌 클로즈업: 8자 춤을 춤 | — | shout(벌 위): *waggle waggle* |
-| 3 | 2.5s | 민트 클로즈업, 감탄하며 | "It says: nectar, 100 meters, that way!" | — (음성만) |
+| 1 | 1.5s | 와이드: 넷이 꽃밭 옆 벌 한 마리를 관찰, 강아지도 곁에 | — | — |
+| 2 | 2s | 벌 클로즈업: 8자 춤을 춤 | — | shout(벌 위): *waggle waggle* |
+| 3 | 3.5s | 민트 클로즈업, 감탄하며 | "Nectar! 100 meters, that way!" | — (음성만) |
 | 4 | 2s | 파랑 클로즈업, 강아지 쪽으로 몸 숙임 | "So… what did YOU do today?" | — |
-| 5 | 3s | 강아지 클로즈업: 눈만 끔뻑, 꼬리 살랑 | — | think: *Bees report nectar. I keep my mysteries.* |
+| 5 | 3s | 강아지 클로즈업: 눈만 끔뻑, 꼬리 살랑 | — | think: *One topic: nectar. My guy needs new content.* |
 
-- **영상 프롬프트**: `Multi-shot 2D animation, five shots with clean cuts. Shot 1 (2s): wide shot, the four young adults and the fluffy brown puppy watch a single cartoon bee hovering by flowers in the park. Shot 2 (2.5s): close-up of the cute cartoon bee performing a figure-eight waggle dance in the air. Shot 3 (2.5s): close-up of the woman in the mint-green jacket, amazed, she says "It says: nectar, one hundred meters, that way!" in English. Shot 4 (2s): close-up of the man in the blue hoodie leaning down to the puppy, he asks "So… what did YOU do today?" in English. Shot 5 (3s): close-up of the fluffy brown puppy blinking slowly and wagging its tail, saying nothing.` + 공통 꼬리말
+  - 펀치라인 의도: 강아지가 벌을 '콘텐츠 원툴 크리에이터'처럼 평가 — "폐쇄적·고정 신호 체계"라는 교재 논지를 정확히 짚으면서 콘텐츠 문화 개그로 전달 (기존 *I keep my mysteries*는 '말 안 하는 선택'처럼 읽혀 논지와 어긋나 교체)
+- **영상 프롬프트**: `Multi-shot 2D animation, five shots with clean cuts. Shot 1 (1.5s): wide shot, the four young adults and the fluffy brown puppy watch a single cartoon bee hovering by flowers in the park. Shot 2 (2s): close-up of the cute cartoon bee performing a figure-eight waggle dance in the air. Shot 3 (3.5s): close-up of the woman in the mint-green jacket, amazed, she says "Nectar! One hundred meters, that way!" in English. Shot 4 (2s): close-up of the man in the blue hoodie leaning down to the puppy, he asks "So… what did YOU do today?" in English. Shot 5 (3s): close-up of the fluffy brown puppy blinking slowly and wagging its tail, saying nothing.` + 공통 꼬리말
 - **시안 프롬프트**(P1 머리말 +): `Wide shot in a sunny park: the four young adults crouch around flowers watching one cute cartoon bee in mid-air, the fluffy brown puppy sits beside them looking up at the bee.`
 
-## W4 — Morphology Part 1 · 형태소 조립 (P1 웹툰)
+## W4 — Morphology Part 1 · 접두사 파생 "unfollow" (P1 웹툰)
 
-- **파일**: `w04_toon_morphemes.mp4` (12초) · **삽입 위치**: Derivational·Inflectional 슬라이드 뒤
-- **개념**: 단어는 형태소 블록의 조립 — un + lock + able
-- **콩트**: 셋이 형태소를 하나씩 외치면 블록이 조립된다. 강아지는 응용 실패(?)
+- **파일**: `w04_toon_unfollow.mp4` (12초) · **삽입 위치**: Derivational·Inflectional 슬라이드 뒤
+- **개념**: 접두사 un-·re-는 동사에 붙어 의미를 뒤집거나 반복한다 — 파생의 생산성 (un-+동사 p.45, re- 생산 규칙 p.62)
+- **콩트**: 인스타 언팔·재팔 서사를 형태소 3개로 압축 — 접두사가 붙을 때마다 관계가 뒤집힌다
+- ⚠️ 주의: **unlockable은 쓰지 않는다** — 교재에서 unlockable은 위계구조의 '구조적 중의성' 예시(p.51–52)로 **W5 진도 범위**. W4에서 소진 금지
 
 | 샷 | 길이 | 화면 | 대사 | 말풍선 |
 |---|---|---|---|---|
-| 1 | 1.5s | 와이드: 셋이 큰 장난감 블록 3개를 들고 서 있음, 강아지 관람 | — | — |
-| 2 | 1.5s | 보라 클로즈업, 첫 블록을 들어올림 | "un-!" | shout: un- |
-| 3 | 1.5s | 민트 클로즈업, 둘째 블록 | "lock!" | shout: lock |
-| 4 | 1.5s | 주황 클로즈업, 셋째 블록 | "-able!" | shout: -able |
-| 5 | 3s | 와이드: 셋이 블록을 합체시키며 환호 | "Unlockable!" (합창) | shout(중앙): unlockable! |
-| 6 | 3s | 강아지 클로즈업, 간식 캔 앞에서 시무룩 | — | think: *"Un-treat-able"? No. Every treat is treatable.* |
+| 1 | 1.5s | 와이드: 보라가 앞장서 걷고 민트가 뒤따라 걸음, 나머지 관람, 강아지도 관람 | — | — |
+| 2 | 1.5s | 보라 클로즈업, 자신만만하게 앞서 걸으며 | "Follow!" | shout: follow |
+| 3 | 2s | 민트 클로즈업, 획 돌아서며 단호하게 | "UN-follow!" | shout: **un**-follow! |
+| 4 | 2.5s | 보라 충격 리액션 → 민트가 머쓱하게 슬금슬금 돌아오며 | "…Re-follow." | shout: **re**-follow… |
+| 5 | 1.5s | 와이드: 넷이 웃음 터짐 | — | — |
+| 6 | 3s | 강아지 클로즈업, 파랑 다리에 딱 붙어 앉아 올려다봄 | — | think: *Humans un-follow. Dogs just follow.* |
 
-- **영상 프롬프트**: `Multi-shot 2D animation, six shots with clean cuts. Shot 1 (1.5s): wide shot in the park, three young adults each hold one big colorful toy block, the fluffy brown puppy watches. Shot 2 (1.5s): close-up of the man in the purple t-shirt raising his block, he shouts "un!" Shot 3 (1.5s): close-up of the woman in the mint jacket raising her block, she shouts "lock!" Shot 4 (1.5s): close-up of the woman in the orange sweatshirt raising her block, she shouts "able!" Shot 5 (3s): wide shot, the three snap the blocks together in the air and cheer together "Unlockable!" happily. Shot 6 (3s): close-up of the fluffy brown puppy sitting sulkily in front of a closed treat tin, ears drooping.` + 공통 꼬리말
-- **시안**(P1 +): `Wide shot in a sunny park: three young adults each holding one big colorful blank toy block (no letters on blocks), the man in the blue hoodie stands aside smiling, the fluffy brown puppy watches curiously.`
+  - 펀치라인 의도: un-은 동사에 붙어 행위를 되돌린다는 규칙 + 개의 무조건 충성 개그. SNS 언팔/재팔 드라마라 20대 공감 극대화
+- **영상 프롬프트**: `Multi-shot 2D animation, six shots with clean cuts. Shot 1 (1.5s): wide shot in the park, the man in the purple t-shirt walks ahead proudly and the woman in the mint jacket walks right behind him, the other two and the fluffy brown puppy watch. Shot 2 (1.5s): close-up of the man in the purple t-shirt striding confidently, he says "Follow!" Shot 3 (2s): close-up of the woman in the mint jacket spinning away dramatically, she says firmly "UN-follow!" Shot 4 (2.5s): the man in the purple t-shirt gasps in shock, then the woman in the mint jacket sheepishly shuffles back beside him, muttering "…Re-follow." Shot 5 (1.5s): wide shot, all four burst out laughing. Shot 6 (3s): close-up of the fluffy brown puppy sitting pressed against the blue-hoodie man's leg, gazing up loyally.` + 공통 꼬리말
+- **시안**(P1 +): `Wide shot in a sunny park: the man in the purple t-shirt striding ahead proudly, the woman in the mint jacket right behind him mid-turn as if about to walk away, the other two watching amused, the fluffy brown puppy sitting pressed against the blue-hoodie man's leg.`
 
 ## W5 — Morphology Part 2 · 복수형 블로킹 (P1 웹툰)
 
 - **파일**: `w05_toon_plurals.mp4` (12초) · **삽입 위치**: 굴절·blocking(policeman→policemen) 슬라이드 뒤
-- **개념**: 불규칙형이 규칙형을 막는다(blocking) — 그러나 헤드가 없으면 규칙형
-- **콩트**: 복수형 스피드 퀴즈. 마지막 문제에서 모두가 갸웃
+- **개념**: 불규칙형이 규칙형을 막는다(blocking) — 그러나 헤드가 없으면 규칙형 (walkman→walkmans는 교재 p.57의 실제 예시)
+- **콩트**: 복수형 스피드 퀴즈. '워크맨이 뭔지 모른다'는 세대 자조 개그가 중간에 터진다
 
 | 샷 | 길이 | 화면 | 대사 | 말풍선 |
 |---|---|---|---|---|
-| 1 | 1.5s | 와이드: 퀴즈쇼처럼 마주 선 넷, 강아지가 심판석(?) | — | — |
-| 2 | 2s | 파랑 클로즈업, 자신만만 | "One man, two men!" | shout: men! |
-| 3 | 2s | 보라 클로즈업, 더 자신만만 | "One policeman, two policemen!" | shout: policemen! |
-| 4 | 2.5s | 민트 클로즈업, 헷갈리기 시작 | "One walkman… two walk…men??" | shout: walk…men?? |
-| 5 | 2s | 주황 클로즈업, 단호하게 정답 | "Walkmans!" | shout: walkmans! |
-| 6 | 2s | 강아지 클로즈업, 심판처럼 앞발 들어 승인 | — | think: *Correct. No man inside a Walkman.* |
+| 1 | 2s | 파랑 클로즈업(바로 퀴즈 시작), 자신만만 | "One man, two men!" | shout: men! |
+| 2 | 2.5s | 보라 클로즈업, 더 자신만만 | "Policeman, policemen!" | shout: policemen! |
+| 3 | 2.5s | 민트 클로즈업, 진심으로 갸웃하며 | "What IS a walkman?" | shout: what IS a walkman?? |
+| 4 | 2s | 주황 클로즈업, 단호하게 정답 | "Walkmans! Duh." | shout: walkmans! |
+| 5 | 3s | 강아지 클로즈업, 심판처럼 앞발 들어 승인 | — | think: *Ancient iPod. No man inside. Walkmans.* |
 
-- **영상 프롬프트**: `Multi-shot 2D animation, six shots with clean cuts. Shot 1 (1.5s): wide shot, the four young adults stand in two facing pairs like a quiz battle in the park, the fluffy brown puppy sits between them like a referee. Shot 2 (2s): close-up of the man in the blue hoodie confidently saying "One man, two men!" Shot 3 (2s): close-up of the man in the purple t-shirt proudly saying "One policeman, two policemen!" Shot 4 (2.5s): close-up of the woman in the mint jacket getting confused, saying hesitantly "One walkman… two walk…men??" Shot 5 (2s): close-up of the woman in the orange sweatshirt firmly saying "Walkmans!" Shot 6 (2s): close-up of the fluffy brown puppy raising one front paw like a referee approving.` + 공통 꼬리말
-- **시안**(P1 +): `Wide shot in a sunny park: the four young adults stand in two facing pairs like a friendly quiz battle, the fluffy brown puppy sits between them looking like a tiny referee.`
+  - 메타 개그 의도: 2026년 대학생은 워크맨을 모른다 → 그 자체를 웃음 포인트로("What IS a walkman?"). 주황의 "Duh."는 설명 안 해주는 데드팬, 정작 설명은 강아지 펀치가 수행 — "기기 안에 man(사람)이 없다 → 규칙 복수형"이라는 headless 논지를 강아지가 정리
+  - 타이밍: 오프닝 와이드 컷을 삭제하고 클로즈업으로 바로 시작(W13과 동일 패턴) — 12초 안에서 대사 길이 공식과 펀치라인 ≥3s를 모두 충족시키기 위함
+- **영상 프롬프트**: `Multi-shot 2D animation, five shots with clean cuts. Shot 1 (2s): close-up of the man in the blue hoodie in the park, confidently saying "One man, two men!" like a quiz battle. Shot 2 (2.5s): close-up of the man in the purple t-shirt proudly saying "Policeman, policemen!" Shot 3 (2.5s): close-up of the woman in the mint jacket genuinely puzzled, asking "What IS a walkman?" Shot 4 (2s): close-up of the woman in the orange sweatshirt firmly saying "Walkmans! Duh." with a deadpan face. Shot 5 (3s): close-up of the fluffy brown puppy raising one front paw like a referee approving.` + 공통 꼬리말
+- **시안**(P1 +): `Medium close-up in a sunny park: the man in the blue hoodie front and center mid-quiz with a confident grin, the other three visible behind him in two facing pairs like a friendly quiz battle, the fluffy brown puppy sitting between them looking like a tiny referee.`
 
 ## W6 — Syntax Part 1 · 구조적 중의성 (P1 웹툰)
 
@@ -103,12 +107,12 @@
 
 | 샷 | 길이 | 화면 | 대사 | 말풍선 |
 |---|---|---|---|---|
-| 1 | 2.5s | 파랑 클로즈업, 쌍안경을 들고 | "I saw a dog with binoculars!" | — |
+| 1 | 3s | 파랑 클로즈업, 쌍안경을 들고 | "I saw a dog with binoculars!" | — |
 | 2 | 2.5s | 민트 클로즈업, 갸웃 | "You had the binoculars… right?" | shout: …right? |
-| 3 | 3s | 와이드: 모두가 강아지를 돌아봄 | — | — |
+| 3 | 2.5s | 와이드: 모두가 강아지를 돌아봄 | — | — |
 | 4 | 4s | 강아지 클로즈업: **쌍안경을 목에 건 채** 시치미 | — | think: *Or… the dog had them. Syntax decides.* |
 
-- **영상 프롬프트**: `Multi-shot 2D animation, four shots with clean cuts. Shot 1 (2.5s): close-up of the man in the blue hoodie holding small binoculars, he says "I saw a dog with binoculars!" Shot 2 (2.5s): close-up of the woman in the mint jacket tilting her head skeptically, she asks "You had the binoculars… right?" Shot 3 (3s): wide shot, all four young adults slowly turn to look at the puppy. Shot 4 (4s): close-up of the fluffy brown puppy sitting innocently with a tiny pair of binoculars hanging around its neck, looking away whistling-innocent.` + 공통 꼬리말
+- **영상 프롬프트**: `Multi-shot 2D animation, four shots with clean cuts. Shot 1 (3s): close-up of the man in the blue hoodie holding small binoculars, he says "I saw a dog with binoculars!" Shot 2 (2.5s): close-up of the woman in the mint jacket tilting her head skeptically, she asks "You had the binoculars… right?" Shot 3 (2.5s): wide shot, all four young adults slowly turn to look at the puppy. Shot 4 (4s): close-up of the fluffy brown puppy sitting innocently with a tiny pair of binoculars hanging around its neck, looking away whistling-innocent.` + 공통 꼬리말
 - **시안**(P1 +): `Wide shot in a sunny park: the man in the blue hoodie holds small binoculars mid-story, the other three listen, the fluffy brown puppy sits nearby with a tiny pair of binoculars hanging around its neck.`
 
 ## W7 — Syntax Part 2 · 의문문 만들기 (P1 웹툰)
@@ -137,13 +141,14 @@
 
 | 샷 | 길이 | 화면 | 대사 | 말풍선 |
 |---|---|---|---|---|
-| 1 | 2s | 와이드(3D): 피크닉 매트, 접시 위 간식 하나, 모두 주시 | — | — |
-| 2 | 3s | 파랑 클로즈업, 간식을 가리키며 | "The puppy eats the treat. Puppy = Agent!" | shout: Agent! |
+| 1 | 1s | 와이드(3D): 피크닉 매트, 접시 위 간식 하나, 모두 주시 | — | — |
+| 2 | 3.5s | 파랑 클로즈업, 간식을 가리키며 | "Puppy eats treat. Puppy = Agent!" | shout: Agent! |
 | 3 | 3s | 민트 클로즈업, 접시를 가리키며 | "And the treat is the Theme." | shout: Theme! |
 | 4 | 1.5s | 인서트: 접시가 어느새 비어 있음 | — | — |
-| 5 | 2.5s | 강아지 클로즈업, 입가를 핥으며 | — | think: *Agent of eating. Always.* |
+| 5 | 3s | 강아지 클로즈업, 입가를 핥으며 | — | think: *Agent: me. Theme: gone. Source: the plate.* |
 
-- **영상 프롬프트**: `Multi-shot polished 3D animation, five shots with clean cuts. Shot 1 (2s): wide shot on a picnic mat in a pastel park, one dog treat on a small plate, the four young adults and the fluffy brown puppy all stare at it. Shot 2 (3s): close-up of the man in the blue hoodie pointing at the puppy then the treat, saying "The puppy eats the treat. Puppy is the Agent!" Shot 3 (3s): close-up of the woman in the mint jacket pointing at the plate, saying "And the treat is the Theme." Shot 4 (1.5s): insert shot of the plate, now suddenly empty. Shot 5 (2.5s): close-up of the fluffy brown puppy licking its lips contentedly.` + 공통 꼬리말
+  - 펀치라인 의도: 의미역 3개를 8단어로 플렉스 — Source(이동의 출발점)는 교재의 실제 의미역이라 심화 포인트까지 겸함. '강아지가 사실 최고의 언어학자' 러닝개그 강화
+- **영상 프롬프트**: `Multi-shot polished 3D animation, five shots with clean cuts. Shot 1 (1s): wide shot on a picnic mat in a pastel park, one dog treat on a small plate, the four young adults and the fluffy brown puppy all stare at it. Shot 2 (3.5s): close-up of the man in the blue hoodie pointing at the puppy then the treat, saying "Puppy eats treat. Puppy is the Agent!" Shot 3 (3s): close-up of the woman in the mint jacket pointing at the plate, saying "And the treat is the Theme." Shot 4 (1.5s): insert shot of the plate, now suddenly empty. Shot 5 (3s): close-up of the fluffy brown puppy licking its lips contentedly.` + 공통 꼬리말
 - **시안**(P2 +): `Wide shot on a picnic mat in a pastel 3D park: one dog treat on a small plate at center, the four young adults sitting around it, the fluffy brown puppy staring intently at the treat.`
 
 ## W10 — Pragmatics · 간접화행 (P2 3D)
@@ -154,35 +159,36 @@
 
 | 샷 | 길이 | 화면 | 대사 | 말풍선 |
 |---|---|---|---|---|
-| 1 | 2s | 와이드(3D): 야외 카페 테이블, 넷이 식사 중, 강아지는 테이블 아래 | — | — |
+| 1 | 1.5s | 와이드(3D): 야외 카페 테이블, 넷이 식사 중, 강아지는 테이블 아래 | — | — |
 | 2 | 2.5s | 주황 클로즈업, 옆을 보며 공손히 | "Can you pass the salt?" | — |
 | 3 | 3s | 보라 클로즈업, 소금통에 손 올린 채 해맑게 | "Yes, I can!" (그리고 가만히) | shout: Yes, I can! |
-| 4 | 2s | 민트 클로즈업, 한숨 쉬며 소금을 대신 건넴 | — | shout: *sigh* |
-| 5 | 2.5s | 강아지 클로즈업(테이블 아래), 체념한 표정 | — | think: *Humans never mean what they say.* |
+| 4 | 2s | 민트 클로즈업, 한숨 쉬며 소금을 대신 건넴 | — (한숨은 음성만, 말풍선 없음) | — |
+| 5 | 3s | 강아지 클로즈업(테이블 아래), 체념한 표정 | — | think: *Humans never mean what they say.* |
 
-- **영상 프롬프트**: `Multi-shot polished 3D animation, five shots with clean cuts. Shot 1 (2s): wide shot at an outdoor cafe table in a pastel park, the four young adults having lunch, the fluffy brown puppy sits under the table. Shot 2 (2.5s): close-up of the woman in the orange sweatshirt politely asking "Can you pass the salt?" Shot 3 (3s): close-up of the man in the purple t-shirt with his hand resting on the salt shaker, replying brightly "Yes, I can!" and then not moving at all. Shot 4 (2s): close-up of the woman in the mint jacket sighing and reaching over to pass the salt herself. Shot 5 (2.5s): close-up of the fluffy brown puppy under the table with a resigned deadpan expression.` + 공통 꼬리말
+- **영상 프롬프트**: `Multi-shot polished 3D animation, five shots with clean cuts. Shot 1 (1.5s): wide shot at an outdoor cafe table in a pastel park, the four young adults having lunch, the fluffy brown puppy sits under the table. Shot 2 (2.5s): close-up of the woman in the orange sweatshirt politely asking "Can you pass the salt?" Shot 3 (3s): close-up of the man in the purple t-shirt with his hand resting on the salt shaker, replying brightly "Yes, I can!" and then not moving at all. Shot 4 (2s): close-up of the woman in the mint jacket sighing and reaching over to pass the salt herself. Shot 5 (3s): close-up of the fluffy brown puppy under the table with a resigned deadpan expression.` + 공통 꼬리말
 - **시안**(P2 +): `Wide shot at an outdoor cafe table in a pastel 3D park: the four young adults at lunch, a salt shaker at the center of the table, the fluffy brown puppy visible under the table.`
 
-## W11 — Phonetics Part 1 · 조음 (P2 3D)
+## W11 — Phonetics Part 1 · 조음 비트박스 배틀 (P2 3D)
 
 - **파일**: `w11_toon_articulation.mp4` (11초) · **삽입 위치**: 조음 위치·방법 슬라이드 뒤
-- **개념**: 말소리는 입술·혀의 위치와 방법으로 만들어진다
-- **콩트**: 조음 따라하기 수업 — 강아지의 조음기관은 하나뿐
+- **개념**: 말소리는 입술·혀의 위치와 방법으로 만들어진다 — **p·t·k는 비트박스의 기본 3음**(킥·하이햇·스네어)이라 조음 위치 학습과 정확히 겹침
+- **콩트**: 발음 수업이 아니라 **길거리 비트박스 배틀**. 각자 자기 조음 위치로 사운드를 쌓고, 강아지의 비트박스는 샘플이 하나뿐
+- 리프레임 의도: '수업 재연' 프레임(고리타분)을 버리고 같은 학습 포인트(양순/치경/연구개)를 힙합 배틀로 전달
 
 | 샷 | 길이 | 화면 | 대사 | 말풍선 |
 |---|---|---|---|---|
-| 1 | 2s | 와이드(3D): 넷이 발음 연습하듯 마주 봄, 강아지도 대열에 | — | — |
-| 2 | 2s | 파랑 클로즈업, 입술 강조하며 | "P! P! Lips together!" | shout: p! |
-| 3 | 2s | 민트 클로즈업, 혀끝 강조하며 | "T! T! Tongue tip!" | shout: t! |
-| 4 | 2s | 보라 클로즈업, 목 뒤쪽 가리키며 | "K! K! Back of the tongue!" | shout: k! |
-| 5 | 3s | 강아지 클로즈업, 심혈을 기울여 입을 열더니 | "Woof." | think: *My place of articulation: snout.* |
+| 1 | 2s | 와이드(3D): 파랑이 비트박스를 시작하자 셋이 환호하며 둘러쌈, 강아지 고개 까딱까딱 | — | — |
+| 2 | 2s | 파랑 클로즈업, 입술 팡팡 터뜨리며 비트 | "P! P!" (비트박스 킥) | shout: p! (lips!) |
+| 3 | 2s | 민트 클로즈업, 혀끝으로 티키타카 얹으며 | "T! T!" (하이햇) | shout: t! (tongue tip!) |
+| 4 | 2s | 보라 클로즈업, 목 뒤에서 킥 얹으며 | "K! K!" (스네어) | shout: k! (back!) |
+| 5 | 3s | 강아지 클로즈업, 심혈을 기울여 리듬 타다가 | "Woof." | think: *My beatbox: one sample.* |
 
-- **영상 프롬프트**: `Multi-shot polished 3D animation, five shots with clean cuts. Shot 1 (2s): wide shot in a pastel park, the four young adults face each other like a pronunciation class, the fluffy brown puppy sits in line with them. Shot 2 (2s): close-up of the man in the blue hoodie exaggerating his lips, saying "P! P! Lips together!" Shot 3 (2s): close-up of the woman in the mint jacket pointing at her tongue tip, saying "T! T! Tongue tip!" Shot 4 (2s): close-up of the man in the purple t-shirt pointing toward the back of his mouth, saying "K! K! Back of the tongue!" Shot 5 (3s): close-up of the fluffy brown puppy concentrating very hard, opening its mouth… and letting out a single proud "Woof."` + 공통 꼬리말
-- **시안**(P2 +): `Wide shot in a pastel 3D park: the four young adults standing in a row like a pronunciation class exaggerating mouth shapes, the fluffy brown puppy sitting at the end of the row with its mouth open mid-woof.`
+- **영상 프롬프트**: `Multi-shot polished 3D animation, five shots with clean cuts. Shot 1 (2s): wide shot in a pastel park, the man in the blue hoodie starts beatboxing energetically and the other three gather around cheering like a street performance, the fluffy brown puppy bobs its head to the beat. Shot 2 (2s): close-up of the man in the blue hoodie beatboxing hard with exaggerated lip pops, rhythmically going "P! P!" Shot 3 (2s): close-up of the woman in the mint jacket layering crisp "T! T!" sounds with her tongue tip, grooving. Shot 4 (2s): close-up of the man in the purple t-shirt dropping deep "K! K!" sounds from the back of his mouth, nodding to the rhythm. Shot 5 (3s): close-up of the fluffy brown puppy bobbing to the beat, concentrating very hard, then letting out a single proud "Woof."` + 공통 꼬리말
+- **시안**(P2 +): `Wide shot in a pastel 3D park: the man in the blue hoodie beatboxing with hands cupped near his mouth, the other three gathered around grooving and cheering like a street beatbox battle, the fluffy brown puppy bobbing its head to the beat.`
 
 ## W12 — Phonetics Part 2 · 운율 (P2 3D)
 
-- **파일**: `w12_toon_prosody.mp4` (11초) · **삽입 위치**: 억양(Intonation) 슬라이드 뒤
+- **파일**: `w12_toon_prosody.mp4` (10초 — 샷 합계 10s) · **삽입 위치**: 억양(Intonation) 슬라이드 뒤
 - **개념**: 같은 문장도 억양에 따라 평서/의문이 된다
 - **콩트**: 억양 실험 — 강아지는 하울링으로 화답
 
@@ -191,7 +197,9 @@
 | 1 | 2.5s | 주황 클로즈업, 끝을 내리며 | "Dinner time.↘" | shout: Dinner time.↘ |
 | 2 | 2.5s | 같은 주황 클로즈업, 끝을 올리며 | "Dinner time?↗" | shout: Dinner time?↗ |
 | 3 | 2s | 와이드: 강아지가 벌떡 일어남 | — | — |
-| 4 | 3s | 강아지 클로즈업, 하늘 향해 멜로디컬 하울링 | "Awoooo~" | think: *I only speak intonation.* |
+| 4 | 3s | 강아지 클로즈업, 하늘 향해 멜로디컬 하울링 | "Awoooo~" | think: *Rising, falling — I'm fluent in vibes.* |
+
+  - 펀치라인 의도: '운율 = 분위기(vibe)'라는 개념 자체가 개그 소재 — 단어 없이 억양만으로 의미가 전달된다는 학습 포인트와 유행어가 정확히 일치
 
 - **영상 프롬프트**: `Multi-shot polished 3D animation, four shots with clean cuts. Shot 1 (2.5s): close-up of the woman in the orange sweatshirt saying "Dinner time." with falling intonation and a calm face. Shot 2 (2.5s): the same close-up framing, she says "Dinner time?" with rising intonation and raised eyebrows. Shot 3 (2s): wide shot in the pastel park, the fluffy brown puppy springs up excitedly. Shot 4 (3s): close-up of the fluffy brown puppy howling melodically toward the sky, "Awoooo".` + 공통 꼬리말
 - **시안**(P2 +): `Wide shot in a pastel 3D park at golden hour: the woman in the orange sweatshirt speaking with expressive intonation, the other three watching, the fluffy brown puppy mid-jump with excitement.`
@@ -221,14 +229,15 @@
 
 | 샷 | 길이 | 화면 | 대사 | 말풍선 |
 |---|---|---|---|---|
-| 1 | 1.5s | 와이드(3D): 넷이 강아지 간식 상자를 두고 회의 | — | — |
+| 1 | 1s | 와이드(3D): 넷이 강아지 간식 상자를 두고 회의 | — | — |
 | 2 | 2.5s | 보라 클로즈업, 상자를 들고 자신 있게 | "Let's name it… Blick!" | shout: Blick! |
-| 3 | 2s | 와이드: 셋이 고개 끄덕끄덕 | "Ooh." (웅성) | — |
-| 4 | 2.5s | 주황 클로즈업, 더 자신 있게 | "Then… Bnick!" | shout: Bnick…?! |
+| 3 | 1.5s | 와이드: 셋이 고개 끄덕끄덕 | "Ooh." (웅성) | — |
+| 4 | 2.5s | 주황 클로즈업, 자신 있게 시작했다가 버벅임 | "Then… B-bn… Bnick…?!" | shout: Bnick…?! |
 | 5 | 1.5s | 와이드: 모두 흠칫, 강아지는 귀를 접음 | — | — |
-| 6 | 2.5s | 강아지 클로즈업, 앞발로 귀를 막은 채 | — | think: *Even my ears reject \\*bnick.* |
+| 6 | 3s | 강아지 클로즈업, 앞발로 귀를 막은 채 | — | think: *Even my ears reject \\*bnick.* |
 
-- **영상 프롬프트**: `Multi-shot polished 3D animation, six shots with clean cuts. Shot 1 (1.5s): wide shot in a pastel park, the four young adults hold a meeting around a plain treat box, the fluffy brown puppy sits at the table edge. Shot 2 (2.5s): close-up of the man in the purple t-shirt lifting the box confidently, saying "Let's name it… Blick!" Shot 3 (2s): wide shot, the other three nod approvingly with a soft "Ooh." Shot 4 (2.5s): close-up of the woman in the orange sweatshirt saying even more confidently "Then… Bnick!" Shot 5 (1.5s): wide shot, everyone flinches, the puppy folds its ears back. Shot 6 (2.5s): close-up of the fluffy brown puppy covering its ears with both front paws.` + 공통 꼬리말
+- **영상 프롬프트**: `Multi-shot polished 3D animation, six shots with clean cuts. Shot 1 (1s): wide shot in a pastel park, the four young adults hold a meeting around a plain treat box, the fluffy brown puppy sits at the table edge. Shot 2 (2.5s): close-up of the man in the purple t-shirt lifting the box confidently, saying "Let's name it… Blick!" Shot 3 (1.5s): wide shot, the other three nod approvingly with a soft "Ooh." Shot 4 (2.5s): close-up of the woman in the orange sweatshirt confidently announcing the next name, but she tries to say the impossible word "Bnick" and stumbles awkwardly over it, her confidence crumbling mid-word. Shot 5 (1.5s): wide shot, everyone flinches, the puppy folds its ears back. Shot 6 (3s): close-up of the fluffy brown puppy covering its ears with both front paws.` + 공통 꼬리말
+- **제작 노트**: 음성 모델이 *bnick*을 "buh-nick"으로 낼 가능성이 높음 — 이를 실패가 아니라 **개그 포인트**로 설계(영어 화자는 bn-을 발음하지 못한다는 음소배열 제약의 산 증거). 생성 결과에서 버벅임이 안 나오면 리테이크 대신 그대로 사용 가능 여부를 판단할 것 (발음이 매끄럽게 나와버리면 개그가 죽으므로 그 경우만 리테이크)
 - **시안**(P2 +): `Wide shot in a pastel 3D park: the four young adults in a naming meeting around a plain blank treat box (no letters), the fluffy brown puppy at the table edge with one ear folded.`
 
 ---
@@ -237,3 +246,5 @@
 | 날짜 | 버전 | 내용 |
 |---|---|---|
 | 2026-08-26 | 1.0 | W2 재생성 스펙 + W3~W14 11편 스토리보드·시안/영상 프롬프트·말풍선 스크립트·예산 |
+| 2026-08-28 | 1.2 | 자막 표준 도입(사용자 피드백: 음성≠말풍선 불일치가 오류처럼 보임): 대사는 하단 자막(`.cue.sub`)에 원문 그대로+키워드 `<b>` 강조+`gl` 주석, 말풍선은 무성 채널(강아지 think·벌 SFX)만 유지. 발화 구간은 오디오 RMS 실측(measure_speech.py)으로 싱크. 각 주차 표의 '말풍선' 칼럼은 이 규칙으로 재해석할 것 |
+| 2026-08-27 | 1.1 | 교재 대조 검토 반영: ① W4 전면 교체(unlockable→unfollow — unlockable은 교재 p.51–52 구조적 중의성 예시로 W5 범위, W4 소진 금지) ② 컷 배분 공식 위반 수정(W3·W5·W6·W9) + 펀치라인 ≥3s 일괄 준수(W5 재구성·W9·W10·W14 리밸런스) ③ 유머 업그레이드 — W3 펀치("one topic" 크리에이터 개그, 정합성 겸), W5 워크맨 메타 개그("What IS a walkman?"), W9 의미역 3종 플렉스 펀치, W11 비트박스 배틀 리프레임, W12 vibes 펀치, W10 sigh 풍선 삭제 ④ W14 *bnick* 버벅임을 개그 포인트로 설계(제작 노트) |
