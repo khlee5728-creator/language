@@ -166,6 +166,12 @@
         }
       });
     });
+    /* 1회 재생 후 자동 종료(v9, loop 제거): 종료 시 배속 복원 —
+       ▶ Play를 다시 누르면 브라우저 표준 동작으로 처음부터 재생된다. */
+    video.addEventListener('ended', function () {
+      video.playbackRate = 1;
+      cues.forEach(function (c) { c._slowing = false; });
+    });
   });
 
   function videosIn(el) { return el ? el.querySelectorAll('.video-scene video') : []; }
