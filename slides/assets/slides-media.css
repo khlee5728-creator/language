@@ -143,6 +143,10 @@
 .video-scene .vid-sound-btn { display: none; }
 .video-scene.has-video .vid-sound-btn { display: inline-flex; }
 
+/* AI 생성 표시(v5): 영상이 활성일 때만, 컨트롤 아래 작은 크레딧 */
+.video-scene .vid-ai-credit { display: none; margin-top: 4px; letter-spacing: 0.06em; }
+.video-scene.has-video .vid-ai-credit { display: block; }
+
 /* ── 인쇄 시: 버튼·영상 숨김, 정적 콘텐츠만 ── */
 @media print {
   .media-btn, .say-btn, .media-controls { display: none !important; }

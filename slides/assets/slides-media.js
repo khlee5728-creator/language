@@ -146,6 +146,11 @@
       wrap.appendChild(stopBtn);
       wrap.appendChild(sbtn);
       stage.insertAdjacentElement('afterend', wrap);
+      /* AI 생성 표시(v10): 카툰 영상마다 자동 주입 — 영상이 활성일 때만 표시 */
+      var credit = document.createElement('p');
+      credit.className = 'video-credit vid-ai-credit';
+      credit.textContent = 'AI-generated animation & voices';
+      wrap.insertAdjacentElement('afterend', credit);
     }
     var cues = scene.querySelectorAll('.cue');
     video.addEventListener('timeupdate', function () {
