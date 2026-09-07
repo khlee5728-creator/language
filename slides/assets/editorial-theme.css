@@ -2,6 +2,8 @@
    editorial-theme.css — Direction 1 · Serif Editorial (v1)
    Playfair Display(디스플레이) + Lora(영문 본문/예문) +
    Space Grotesk(라벨) + Noto Serif KR(국문).
+   국문 혼용 본문(.lead/.def/.tr/.mcq-opt/.mcq-explain/.recap)은 'Lora','Noto Serif KR' 순으로
+   지정해 글자 단위 폴백 — 영문은 항상 Lora, 한글은 Noto Serif KR(굵기 400 통일). v8
    기존 테마들 뒤에 로드하여 오버라이드한다. W2 파일럿부터 적용.
    ============================================================ */
 
@@ -49,7 +51,7 @@ html, body, .reveal, .reveal-viewport { background: var(--ed-paper) !important; 
   font: italic 700 120px/1.1 'Playfair Display';
   letter-spacing: -0.02em; margin: 30px 0 24px;
 }
-.reveal .lead { font: 300 22px/1.65 'Noto Serif KR'; color: var(--ed-body); }
+.reveal .lead { font: 400 22px/1.65 'Lora', 'Noto Serif KR'; color: var(--ed-body); }
 .reveal .lead em, .reveal .lead i { font: italic 400 1em 'Lora'; color: var(--ed-ink); }
 .reveal p, .reveal li { color: var(--ed-body); }
 .reveal b, .reveal strong { font-weight: 600; color: var(--ed-ink); }
@@ -62,7 +64,7 @@ html, body, .reveal, .reveal-viewport { background: var(--ed-paper) !important; 
 
 /* ── 레이아웃 아키타입 ── */
 .cols { display: grid; grid-template-columns: 290px minmax(0, 1fr); gap: 56px; align-items: start; }
-.cols .def { border-top: 1px solid var(--ed-line); padding-top: 16px; font: 300 18px/1.75 'Noto Serif KR'; color: var(--ed-body); }
+.cols .def { border-top: 1px solid var(--ed-line); padding-top: 16px; font: 400 18px/1.75 'Lora', 'Noto Serif KR'; color: var(--ed-body); }
 .cols .def i { font: italic 400 18px 'Lora'; }
 .cols-even { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 56px; align-items: start; }
 
@@ -87,7 +89,7 @@ html, body, .reveal, .reveal-viewport { background: var(--ed-paper) !important; 
 .gloss-set .sent { font: italic 400 28px/1.35 'Lora'; color: var(--ed-ink); }
 .gloss-set .sent b { font-weight: 700; color: var(--ed-accent); }
 .gloss-set .gls { margin-top: 8px; font: 400 14px 'Space Grotesk'; letter-spacing: 0.05em; color: var(--ed-muted); }
-.gloss-set .tr { margin-top: 12px; font: 300 18px 'Noto Serif KR'; color: var(--ed-body); }
+.gloss-set .tr { margin-top: 12px; font: 400 18px 'Lora', 'Noto Serif KR'; color: var(--ed-body); }
 
 /* 인용/재귀 스택 */
 .quote-stack { border-left: 1px solid var(--ed-line); padding-left: 28px; }
@@ -130,7 +132,7 @@ html, body, .reveal, .reveal-viewport { background: var(--ed-paper) !important; 
 .mcq-opt {
   background: transparent; border: 0; border-bottom: 1px solid var(--ed-line);
   border-radius: 0; padding: 13px 4px;
-  font: 300 18px 'Noto Serif KR'; color: var(--ed-body);
+  font: 400 18px 'Lora', 'Noto Serif KR'; color: var(--ed-body);
 }
 .mcq-opt:hover:not(:disabled) { border-color: var(--ed-ink); color: var(--ed-ink); transform: none; background: transparent; }
 .mcq-opt .opt-key { color: var(--ed-muted); font: 600 12px 'Space Grotesk'; letter-spacing: 0.1em; }
@@ -140,7 +142,7 @@ html, body, .reveal, .reveal-viewport { background: var(--ed-paper) !important; 
 .mcq-opt.wrong::after { color: var(--ed-muted); }
 .mcq-explain {
   background: transparent; border-left: 2px solid var(--ed-accent); border-radius: 0;
-  font: 300 16px/1.7 'Noto Serif KR'; color: var(--ed-body); padding: 10px 0 10px 20px; margin-top: 18px;
+  font: 400 16px/1.7 'Lora', 'Noto Serif KR'; color: var(--ed-body); padding: 10px 0 10px 20px; margin-top: 18px;
 }
 .mcq-explain .lbl { color: var(--ed-accent); font: 600 11px 'Space Grotesk'; letter-spacing: 0.24em; text-transform: uppercase; margin-right: 10px; }
 
@@ -153,7 +155,7 @@ html, body, .reveal, .reveal-viewport { background: var(--ed-paper) !important; 
 .recap li {
   counter-increment: rc; padding: 12px 0 12px 56px; position: relative;
   border-bottom: 1px solid var(--ed-line);
-  font: 300 19px/1.55 'Noto Serif KR'; color: var(--ed-body);
+  font: 400 19px/1.55 'Lora', 'Noto Serif KR'; color: var(--ed-body);
 }
 .recap li::before {
   content: counter(rc, decimal-leading-zero);
