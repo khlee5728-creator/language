@@ -34,3 +34,6 @@ sf_w*.png
 
 # Claude Code 로컬 개인 설정
 .claude/settings.local.json
+
+# SNS 릴스 산출물(공개 저장소 제외)
+reels/out/

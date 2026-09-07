@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex" />
+  <title>Practice Dashboard — 영어학 특강</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Lora:ital@0;1&family=Space+Grotesk:wght@400;600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root { --paper:#faf8f3; --ink:#1c1a17; --body:#3a362e; --muted:#6b6455; --line:#cfc8b8; --acc:#2b3a67; --ok:#24513f; --bad:#7a2e2e; }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { background:var(--paper); color:var(--ink); font-family:'Lora','Noto Sans KR',serif; line-height:1.55; }
+    .page { max-width:1040px; margin:0 auto; padding:44px 28px 80px; }
+    .booktag { font:600 11px 'Space Grotesk'; letter-spacing:.28em; text-transform:uppercase; color:var(--muted); }
+    h1 { font:600 38px/1.15 'Playfair Display',serif; margin:12px 0 4px; }
+    .sub { font:400 15px 'Noto Sans KR'; color:var(--muted); }
+    .bar { display:flex; gap:1.4em; flex-wrap:wrap; align-items:center; margin-top:18px; padding-top:12px; border-top:1px solid var(--line); font:400 13.5px 'Noto Sans KR'; color:var(--muted); }
+    .bar select, .bar button, .login input, .login button { font:500 13px 'Space Grotesk'; letter-spacing:.06em; padding:6px 10px; border:1px solid var(--line); background:transparent; color:var(--ink); cursor:pointer; }
+    .bar select { padding-right:22px; }
+    .bar button:hover, .login button:hover { border-color:var(--ink); }
+    .bar .sp { flex:1; }
+    .bar .who { font-style:italic; }
+    nav.tabs { display:flex; gap:26px; margin-top:34px; border-bottom:1px solid var(--ink); }
+    nav.tabs a { font:600 12px 'Space Grotesk'; letter-spacing:.22em; text-transform:uppercase; color:var(--muted); text-decoration:none; padding:10px 0; border-bottom:2px solid transparent; margin-bottom:-1px; cursor:pointer; }
+    nav.tabs a.on { color:var(--ink); border-bottom-color:var(--ink); }
+    section.view { display:none; margin-top:26px; }
+    section.view.on { display:block; }
+    .kpis { display:flex; gap:0; border-bottom:1px solid var(--line); margin-bottom:26px; }
+    .kpi { flex:1; padding:8px 0 16px; border-right:1px solid var(--line); padding-right:18px; margin-right:18px; }
+    .kpi:last-child { border-right:0; }
+    .kpi .k { font:600 11px 'Space Grotesk'; letter-spacing:.2em; text-transform:uppercase; color:var(--muted); }
+    .kpi .v { font:600 34px/1.1 'Playfair Display'; margin-top:6px; }
+    .kpi .v small { font:400 14px 'Lora'; color:var(--muted); margin-left:4px; }
+    table { width:100%; border-collapse:collapse; font-size:14.5px; }
+    th { text-align:left; font:600 11px 'Space Grotesk'; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); padding:8px 8px 10px; border-bottom:1px solid var(--ink); white-space:nowrap; }
+    td { padding:10px 8px; border-bottom:1px solid var(--line); vertical-align:top; }
+    td.n, th.n { text-align:right; font-variant-numeric:tabular-nums; }
+    td.mono { font:500 13px 'Space Grotesk'; letter-spacing:.06em; }
+    tr:hover td { background:rgba(28,26,23,.03); }
+    .wk { font:700 12px 'Space Grotesk'; letter-spacing:.1em; color:var(--acc); }
+    .meter { position:relative; height:6px; background:rgba(28,26,23,.08); min-width:90px; margin-top:7px; }
+    .meter i { position:absolute; left:0; top:0; bottom:0; background:var(--ink); }
+    .meter.ok i { background:var(--ok); }
+    .meter.bad i { background:var(--bad); }
+    .q { display:block; font:400 15px/1.45 'Lora'; }
+    .q .id { font:600 11px 'Space Grotesk'; letter-spacing:.14em; color:var(--muted); margin-right:8px; }
+    .dist { display:grid; grid-template-columns:18px 1fr 48px; gap:4px 10px; align-items:center; font:500 12.5px 'Space Grotesk'; min-width:230px; }
+    .dist .k { color:var(--muted); }
+    .dist .k.c { color:var(--ok); font-weight:700; }
+    .dist .m { height:8px; background:rgba(28,26,23,.08); position:relative; }
+    .dist .m i { position:absolute; left:0; top:0; bottom:0; background:var(--muted); }
+    .dist .m.c i { background:var(--ok); }
+    .dist .n { text-align:right; color:var(--muted); font-variant-numeric:tabular-nums; }
+    .matrix td, .matrix th { text-align:center; padding:8px 4px; }
+    .matrix td:first-child, .matrix th:first-child { text-align:left; }
+    .matrix .full { color:var(--ok); font-weight:600; }
+    .matrix .part { color:var(--ink); }
+    .matrix .none { color:var(--line); }
+    .matrix .miss, .miss { color:var(--bad); font-weight:700; }
+    .matrix tr.off td:first-child { color:var(--muted); }
+    .matrix tr.sep td { border-bottom:1px solid var(--ink); padding:0; height:0; }
+    .roster-bar { display:flex; align-items:baseline; gap:16px; margin-bottom:12px; }
+    .roster-sum { font:400 14.5px 'Noto Sans KR'; color:var(--body); flex:1; }
+    .roster-sum b { font-weight:700; }
+    .roster-bar button, .roster-editor button { font:500 13px 'Space Grotesk'; letter-spacing:.06em; padding:6px 10px; border:1px solid var(--line); background:transparent; color:var(--ink); cursor:pointer; }
+    .roster-bar button:hover, .roster-editor button:hover { border-color:var(--ink); }
+    .roster-editor { padding:14px 0 18px; border-top:1px solid var(--line); border-bottom:1px solid var(--line); margin-bottom:16px; }
+    .roster-editor textarea { width:100%; font:500 14px/1.5 'Space Grotesk'; letter-spacing:.06em; padding:8px 10px; border:1px solid var(--line); background:transparent; color:var(--ink); resize:vertical; }
+    .roster-editor textarea:focus { outline:0; border-color:var(--ink); }
+    .live-head { display:flex; align-items:baseline; gap:14px; margin-bottom:14px; }
+    .dot { display:inline-block; width:8px; height:8px; border-radius:50%; background:var(--line); vertical-align:middle; margin-right:6px; }
+    .dot.on { background:var(--ok); animation:blink 1.6s infinite; }
+    @keyframes blink { 50% { opacity:.3; } }
+    .feed { list-style:none; margin-top:20px; border-top:1px solid var(--line); max-height:280px; overflow:auto; }
+    .feed li { display:flex; gap:16px; padding:7px 4px; border-bottom:1px solid var(--line); font:400 13.5px 'Noto Sans KR'; }
+    .feed .t { color:var(--muted); font:500 12px 'Space Grotesk'; min-width:64px; }
+    .feed .c { font-weight:700; color:var(--ok); } .feed .x { font-weight:700; color:var(--bad); }
+    .empty { padding:36px 0; color:var(--muted); font-style:italic; text-align:center; }
+    .login { max-width:460px; margin:60px auto; padding:30px 34px; border-top:3px solid var(--acc); }
+    .login .k { font:600 11px 'Space Grotesk'; letter-spacing:.24em; color:var(--acc); }
+    .login p { font:400 14.5px/1.6 'Noto Sans KR'; color:var(--body); margin:10px 0 18px; }
+    .login form { display:flex; flex-direction:column; gap:12px; }
+    .login form button { align-self:flex-start; margin-top:4px; }
+    .login input { font:500 15px 'Space Grotesk'; border:0; border-bottom:1.5px solid var(--line); background:transparent; padding:8px 4px; }
+    .login input:focus { outline:0; border-bottom-color:var(--ink); }
+    .login button { background:var(--ink); color:var(--paper); border-color:var(--ink); }
+    .note { margin-top:14px; font:400 13px/1.6 'Noto Sans KR'; color:var(--muted); }
+    .demo-tag { font:600 11px 'Space Grotesk'; letter-spacing:.2em; color:var(--bad); }
+    footer { margin-top:60px; padding-top:16px; border-top:1px solid var(--line); font:italic 400 13px 'Lora'; color:var(--muted); display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; }
+    @media (max-width:640px) { .page{padding:28px 16px 60px;} h1{font-size:30px;} .kpis{flex-wrap:wrap;} .kpi{flex:1 1 45%; border-right:0;} nav.tabs{gap:16px; overflow-x:auto;} }
+  </style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <div class="booktag">Topics in English Linguistics · Instructor only</div>
+    <h1>Practice Dashboard</h1>
+    <div class="sub">주차별 연습문제 응답 현황 — 응시 · 완료율 · 문항별 정답률 · 수업 중 라이브</div>
+  </header>
+
+  <div id="login" class="login" hidden>
+    <div class="k">SIGN IN</div>
+    <p>강사 계정(이메일 · 비밀번호)으로 로그인합니다.</p>
+    <form id="loginForm">
+      <input type="email" id="email" placeholder="email" autocomplete="username" required>
+      <input type="password" id="password" placeholder="password" autocomplete="current-password" required>
+      <button type="submit">Sign in</button>
+    </form>
+    <div class="note" id="loginNote"></div>
+  </div>
+
+  <div id="app" hidden>
+    <div class="bar">
+      <span>Semester <select id="semester"></select></span>
+      <span>Week <select id="week"></select></span>
+      <button id="refresh">Refresh</button>
+      <button id="csv">Export CSV</button>
+      <span class="sp"></span>
+      <span class="who" id="who"></span>
+      <button id="logout">Sign out</button>
+    </div>
+
+    <nav class="tabs">
+      <a data-v="overview" class="on">Overview</a>
+      <a data-v="questions">Questions</a>
+      <a data-v="students">Students</a>
+      <a data-v="live">Live</a>
+    </nav>
+
+    <section class="view on" id="v-overview">
+      <div class="kpis">
+        <div class="kpi"><div class="k">Students</div><div class="v" id="k-students">–</div></div>
+        <div class="kpi"><div class="k">Responses</div><div class="v" id="k-resp">–</div></div>
+        <div class="kpi"><div class="k">Completion</div><div class="v" id="k-comp">–</div></div>
+        <div class="kpi"><div class="k">Accuracy</div><div class="v" id="k-acc">–</div></div>
+      </div>
+      <table><thead><tr><th>Week</th><th>Chapter</th><th class="n">Students</th><th class="n">Responses</th><th>Completion</th><th>Accuracy</th><th class="n">Hardest</th></tr></thead>
+      <tbody id="t-weeks"></tbody></table>
+    </section>
+
+    <section class="view" id="v-questions">
+      <table><thead><tr><th>Question</th><th class="n">N</th><th>Accuracy</th><th>Choices</th></tr></thead>
+      <tbody id="t-questions"></tbody></table>
+    </section>
+
+    <section class="view" id="v-students">
+      <div class="roster-bar">
+        <div class="roster-sum" id="rosterSum"></div>
+        <button id="rosterEdit" type="button">Edit roster</button>
+      </div>
+      <div class="roster-editor" id="rosterEditor" hidden>
+        <div class="note" style="margin:0 0 8px">수강생 학번을 한 줄에 하나씩(또는 쉼표·공백 구분) 붙여넣고 저장. 명단에 있는 학생은 응답이 없어도 표에 나타나 미응시가 드러납니다.</div>
+        <textarea id="rosterText" rows="6" placeholder="2026123&#10;2026124&#10;…"></textarea>
+        <div style="display:flex; gap:10px; margin-top:8px"><button id="rosterSave" type="button">Save roster</button><button id="rosterCancel" type="button">Cancel</button><span class="note" id="rosterNote" style="margin:0; align-self:center"></span></div>
+      </div>
+      <div class="note" style="margin:0 0 12px">셀 = 정답 수 / 응답 수. <span class="miss">✗</span> = 명단에 있으나 미응시. 명단 밖 학번은 중간, 익명(anon-)은 하단에 묶음.</div>
+      <div style="overflow-x:auto"><table class="matrix"><thead id="m-head"></thead><tbody id="m-body"></tbody></table></div>
+    </section>
+
+    <section class="view" id="v-live">
+      <div class="live-head"><span><span class="dot" id="liveDot"></span><span id="liveState">connecting…</span></span><span class="note" style="margin:0">선택한 주차의 응답이 도착하는 즉시 반영됩니다. 수업 중 화면에 띄워 두세요.</span></div>
+      <table><thead><tr><th>Question</th><th class="n">N</th><th>Accuracy</th><th>Choices</th></tr></thead>
+      <tbody id="t-live"></tbody></table>
+      <ul class="feed" id="feed"></ul>
+    </section>
+  </div>
+
+  <footer><span>Topics in English Linguistics · Practice Dashboard</span><span id="demoTag"></span></footer>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script src="slides/assets/quiz-config.js"></script>
+<script src="slides/assets/quiz-bank.js"></script>
+<script>
+(function () {
+  var CFG = window.QUIZ_CONFIG || {}, BANK = window.QUIZ_BANK || {};
+  var DEMO = /[?&]demo=1/.test(location.search);
+  var CH = {2:'CH.1',3:'CH.1',4:'CH.2',5:'CH.2',6:'CH.3',7:'CH.3',9:'CH.4',10:'CH.4',11:'CH.5',12:'CH.5',13:'CH.6',14:'CH.6'};
+  var WEEKS = [2,3,4,5,6,7,9,10,11,12,13,14];
+  var qByWeek = {}; Object.keys(BANK).forEach(function (q) { (qByWeek[BANK[q].week] = qByWeek[BANK[q].week] || []).push(q); });
+  WEEKS.forEach(function (w) { (qByWeek[w] || []).sort(function (a, b) { return parseInt(a.split('-q')[1]) - parseInt(b.split('-q')[1]); }); });
+
+  var $ = function (s) { return document.querySelector(s); };
+  var sb = null, rows = [], channel = null, semester = CFG.SEMESTER || '', week = WEEKS[0];
+
+  /* ── 데모 데이터 ── */
+  function demoRows() {
+    var out = [], sids = []; for (var i = 0; i < 28; i++) sids.push('2026' + String(1000 + i * 37).slice(-3) + String(100 + i).slice(-2));
+    sids.push('anon-k3x9q2', 'anon-p0z1mm');
+    WEEKS.forEach(function (w, wi) {
+      var active = sids.filter(function (_, i) { return (i * 7 + wi * 3) % 10 < 8 - wi * 0.3; });
+      active.forEach(function (sid, si) {
+        var qs = qByWeek[w] || [], done = (si + wi) % 5 === 0 ? qs.length - 1 : qs.length;
+        qs.slice(0, done).forEach(function (q, qi) {
+          var b = BANK[q], keys = Object.keys(b.opts), hard = (qi * 31 + wi * 17) % 100 < 30;
+          var right = ((si * 13 + qi * 7 + wi) % 100) < (hard ? 45 : 82);
+          var choice = right ? b.correct : keys.filter(function (k) { return k !== b.correct; })[(si + qi) % (keys.length - 1)];
+          out.push({ semester: semester, student_id: sid, week: w, qid: q, choice: choice, is_correct: choice === b.correct,
+                     created_at: new Date(Date.now() - (14 - w) * 7 * 864e5 - si * 6e5 - qi * 4e4).toISOString() });
+        });
+      });
+    });
+    return out;
+  }
+
+  /* ── 데이터 로드 ── */
+  function loadAll() {
+    if (DEMO) { rows = demoRows(); render(); return Promise.resolve(); }
+    var all = [], from = 0, size = 1000;
+    function page() {
+      return sb.from('quiz_responses').select('*').eq('semester', semester).order('created_at', { ascending: true }).range(from, from + size - 1)
+        .then(function (r) {
+          if (r.error) throw r.error;
+          all = all.concat(r.data || []);
+          if ((r.data || []).length === size) { from += size; return page(); }
+        });
+    }
+    return page().then(function () { rows = all; render(); }).catch(function (e) { alert('로드 실패: ' + e.message); });
+  }
+  function loadSemesters() {
+    var sel = $('#semester'), list = [semester];
+    var fill = function () { sel.innerHTML = list.map(function (s) { return '<option' + (s === semester ? ' selected' : '') + '>' + s + '</option>'; }).join(''); };
+    if (DEMO) { fill(); return Promise.resolve(); }
+    return sb.from('quiz_responses').select('semester').then(function (r) {
+      (r.data || []).forEach(function (x) { if (list.indexOf(x.semester) < 0) list.push(x.semester); });
+      fill();
+    });
+  }
+
+  /* ── 집계 ── */
+  function pct(a, b) { return b ? Math.round(1000 * a / b) / 10 : 0; }
+  function meter(p, cls) { return '<div class="meter ' + (cls || '') + '"><i style="width:' + p + '%"></i></div>'; }
+  function isAnon(s) { return /^anon-/.test(s); }
+
+  function render() {
+    renderOverview(); renderQuestions($('#t-questions'), rows.filter(function (r) { return r.week === week; }));
+    renderStudents(); renderLiveTable();
+  }
+  function renderOverview() {
+    var students = {}, comp = 0, compN = 0, correct = 0;
+    rows.forEach(function (r) { students[r.student_id] = 1; if (r.is_correct) correct++; });
+    var html = WEEKS.map(function (w) {
+      var wr = rows.filter(function (r) { return r.week === w; }), qs = qByWeek[w] || [];
+      var by = {}; wr.forEach(function (r) { (by[r.student_id] = by[r.student_id] || []).push(r); });
+      var sids = Object.keys(by), full = sids.filter(function (s) { return by[s].length >= qs.length; }).length;
+      comp += full; compN += sids.length;
+      var acc = pct(wr.filter(function (r) { return r.is_correct; }).length, wr.length);
+      var hardest = '–', hmin = 101;
+      qs.forEach(function (q) { var qr = wr.filter(function (r) { return r.qid === q; }); if (qr.length) { var a = pct(qr.filter(function (r) { return r.is_correct; }).length, qr.length); if (a < hmin) { hmin = a; hardest = q.split('-')[1].toUpperCase() + ' ' + a + '%'; } } });
+      return '<tr><td class="wk">W' + w + '</td><td class="mono">' + CH[w] + ' · ' + qs.length + 'Q</td><td class="n">' + sids.length + '</td><td class="n">' + wr.length + '</td>' +
+        '<td>' + (sids.length ? pct(full, sids.length) + '%' + meter(pct(full, sids.length)) : '<span class="none">–</span>') + '</td>' +
+        '<td>' + (wr.length ? acc + '%' + meter(acc, acc >= 70 ? 'ok' : acc < 50 ? 'bad' : '') : '<span class="none">–</span>') + '</td><td class="n mono">' + hardest + '</td></tr>';
+    }).join('');
+    $('#t-weeks').innerHTML = html;
+    $('#k-students').textContent = Object.keys(students).length;
+    $('#k-resp').textContent = rows.length;
+    $('#k-comp').innerHTML = compN ? pct(comp, compN) + '<small>%</small>' : '–';
+    $('#k-acc').innerHTML = rows.length ? pct(correct, rows.length) + '<small>%</small>' : '–';
+  }
+  function renderQuestions(tbody, wr) {
+    var qs = qByWeek[week] || [];
+    if (!qs.length) { tbody.innerHTML = '<tr><td colspan="4" class="empty">no questions</td></tr>'; return; }
+    tbody.innerHTML = qs.map(function (q) {
+      var b = BANK[q], qr = wr.filter(function (r) { return r.qid === q; }), n = qr.length;
+      var acc = pct(qr.filter(function (r) { return r.is_correct; }).length, n);
+      var dist = Object.keys(b.opts).map(function (k) {
+        var c = qr.filter(function (r) { return r.choice === k; }).length, ok = k === b.correct;
+        return '<span class="k' + (ok ? ' c' : '') + '">' + k + '</span><div class="m' + (ok ? ' c' : '') + '"><i style="width:' + pct(c, n) + '%"></i></div><span class="n">' + c + '</span>';
+      }).join('');
+      return '<tr><td><span class="q"><span class="id">' + q.split('-')[1].toUpperCase() + '</span>' + esc(b.q) + '</span></td><td class="n">' + n + '</td>' +
+        '<td>' + (n ? acc + '%' + meter(acc, acc >= 70 ? 'ok' : acc < 50 ? 'bad' : '') : '–') + '</td><td><div class="dist">' + dist + '</div></td></tr>';
+    }).join('');
+  }
+  /* ── 수강생 명단 ── */
+  var roster = [];
+  function loadRoster() {
+    if (DEMO) { roster = rows.filter(function (r) { return !isAnon(r.student_id); }).map(function (r) { return r.student_id; })
+      .filter(function (s, i, a) { return a.indexOf(s) === i; }).slice(0, 24).concat(['202699001', '202699002', '202699003']); return Promise.resolve(); }
+    return sb.from('roster').select('student_id').eq('semester', semester).order('student_id')
+      .then(function (r) { roster = (r.data || []).map(function (x) { return x.student_id; }); });
+  }
+  function saveRoster(ids) {
+    if (DEMO) { roster = ids; return Promise.resolve(); }
+    return sb.from('roster').delete().eq('semester', semester).then(function () {
+      if (!ids.length) return;
+      return sb.from('roster').insert(ids.map(function (s) { return { semester: semester, student_id: s }; })).then(function (r) { if (r.error) throw r.error; });
+    }).then(function () { roster = ids; });
+  }
+  $('#rosterEdit').addEventListener('click', function () { $('#rosterText').value = roster.join('\n'); $('#rosterEditor').hidden = false; $('#rosterNote').textContent = ''; });
+  $('#rosterCancel').addEventListener('click', function () { $('#rosterEditor').hidden = true; });
+  $('#rosterSave').addEventListener('click', function () {
+    var ids = $('#rosterText').value.split(/[\s,;]+/).map(function (s) { return s.trim(); }).filter(function (s) { return /^[A-Za-z0-9-]{4,24}$/.test(s); })
+      .filter(function (s, i, a) { return a.indexOf(s) === i; }).sort();
+    $('#rosterNote').textContent = '저장 중…';
+    saveRoster(ids).then(function () { $('#rosterEditor').hidden = true; renderStudents(); }).catch(function (e) { $('#rosterNote').textContent = '오류: ' + e.message; });
+  });
+
+  function renderStudents() {
+    var by = {}; rows.forEach(function (r) { var s = by[r.student_id] = by[r.student_id] || {}; var w = s[r.week] = s[r.week] || { n: 0, c: 0 }; w.n++; if (r.is_correct) w.c++; });
+    var inRoster = {}; roster.forEach(function (s) { inRoster[s] = 1; });
+    var others = Object.keys(by).filter(function (s) { return !inRoster[s]; }).sort(function (a, b) { return (isAnon(a) - isAnon(b)) || a.localeCompare(b); });
+    var groups = [roster.slice(), others.filter(function (s) { return !isAnon(s); }), others.filter(isAnon)];
+    $('#m-head').innerHTML = '<tr><th>Student</th>' + WEEKS.map(function (w) { return '<th>W' + w + '</th>'; }).join('') + '<th class="n">Total</th></tr>';
+    // 요약: 명단 대비 이번 주(선택 주차) 응시
+    var wk = rows.filter(function (r) { return r.week === week; }), didW = {}; wk.forEach(function (r) { didW[r.student_id] = 1; });
+    var missing = roster.filter(function (s) { return !didW[s]; });
+    $('#rosterSum').innerHTML = roster.length
+      ? '명단 <b>' + roster.length + '명</b> 중 W' + week + ' 응시 <b>' + (roster.length - missing.length) + '명</b>' +
+        (missing.length ? ' · 미응시 <b class="miss">' + missing.length + '명</b>: <span class="mono">' + missing.slice(0, 40).map(esc).join(', ') + (missing.length > 40 ? ' …' : '') + '</span>' : ' · 전원 응시')
+      : '수강생 명단이 없습니다. Edit roster로 학번을 붙여넣으면 미응시 학생이 표시됩니다.';
+    var total = groups.reduce(function (n, g) { return n + g.length; }, 0);
+    if (!total) { $('#m-body').innerHTML = '<tr><td colspan="14" class="empty">no responses yet</td></tr>'; return; }
+    var html = '';
+    groups.forEach(function (g, gi) {
+      if (!g.length) return;
+      if (html) html += '<tr class="sep"><td colspan="14"></td></tr>';
+      html += g.map(function (s) {
+        var tc = 0, tn = 0, rec = by[s] || {};
+        var cells = WEEKS.map(function (w) {
+          var x = rec[w], q = (qByWeek[w] || []).length;
+          if (!x) return gi === 0 ? '<td class="miss">✗</td>' : '<td class="none">·</td>';
+          tc += x.c; tn += x.n;
+          return '<td class="' + (x.n >= q ? 'full' : 'part') + '">' + x.c + '/' + x.n + '</td>';
+        }).join('');
+        return '<tr class="' + (gi === 0 ? 'on' : 'off') + '"><td class="mono">' + esc(s) + (gi === 1 ? ' <span class="note" style="margin:0">명단 외</span>' : '') + '</td>' + cells + '<td class="n mono">' + (tn ? tc + '/' + tn : '–') + '</td></tr>';
+      }).join('');
+    });
+    $('#m-body').innerHTML = html;
+  }
+  function renderLiveTable() { renderQuestions($('#t-live'), rows.filter(function (r) { return r.week === week; })); }
+  function feed(r) {
+    var li = document.createElement('li'), t = new Date(r.created_at);
+    li.innerHTML = '<span class="t">' + String(t.getHours()).padStart(2, '0') + ':' + String(t.getMinutes()).padStart(2, '0') + ':' + String(t.getSeconds()).padStart(2, '0') + '</span>' +
+      '<span class="mono">' + esc(r.student_id) + '</span><span>' + r.qid.split('-')[1].toUpperCase() + ' → ' + r.choice + '</span><span class="' + (r.is_correct ? 'c' : 'x') + '">' + (r.is_correct ? '✓' : '✗') + '</span>';
+    var f = $('#feed'); f.insertBefore(li, f.firstChild); while (f.children.length > 60) f.removeChild(f.lastChild);
+  }
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+
+  /* ── 라이브 구독 ── */
+  function subscribe() {
+    if (channel) { sb.removeChannel(channel); channel = null; }
+    if (DEMO) { $('#liveDot').classList.add('on'); $('#liveState').textContent = 'demo — simulated'; simulate(); return; }
+    channel = sb.channel('quiz-live')
+      .on('postgres_changes', { event: 'INSERT', schema: 'public', table: 'quiz_responses' }, function (p) {
+        var r = p.new; if (r.semester !== semester) return;
+        rows.push(r); if (r.week === week) { feed(r); renderLiveTable(); }
+        renderOverview(); renderStudents(); if (r.week === week) renderQuestions($('#t-questions'), rows.filter(function (x) { return x.week === week; }));
+      })
+      .subscribe(function (st) { $('#liveDot').classList.toggle('on', st === 'SUBSCRIBED'); $('#liveState').textContent = st.toLowerCase(); });
+  }
+  var simT = null;
+  function simulate() {
+    clearInterval(simT); var i = 0;
+    simT = setInterval(function () {
+      if (!$('#v-live').classList.contains('on')) return;
+      var qs = qByWeek[week] || []; if (!qs.length) return;
+      var q = qs[i++ % qs.length], b = BANK[q], keys = Object.keys(b.opts), ch = Math.random() < 0.7 ? b.correct : keys[Math.floor(Math.random() * keys.length)];
+      var r = { semester: semester, student_id: '2026' + String(Math.floor(Math.random() * 90000) + 10000), week: week, qid: q, choice: ch, is_correct: ch === b.correct, created_at: new Date().toISOString() };
+      rows.push(r); feed(r); renderLiveTable();
+    }, 1800);
+  }
+
+  /* ── CSV ── */
+  function csv() {
+    var head = ['semester', 'student_id', 'week', 'qid', 'choice', 'is_correct', 'created_at'];
+    var body = rows.map(function (r) { return head.map(function (k) { return '"' + String(r[k]).replace(/"/g, '""') + '"'; }).join(','); });
+    var blob = new Blob(['﻿' + head.join(',') + '\n' + body.join('\n')], { type: 'text/csv;charset=utf-8' });
+    var a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'quiz_responses_' + semester + '.csv'; a.click();
+  }
+
+  /* ── UI 배선 ── */
+  $('#week').innerHTML = WEEKS.map(function (w) { return '<option value="' + w + '">W' + w + ' · ' + CH[w] + '</option>'; }).join('');
+  $('#week').addEventListener('change', function () { week = parseInt(this.value, 10); $('#feed').innerHTML = ''; render(); });
+  $('#semester').addEventListener('change', function () { semester = this.value; loadAll().then(loadRoster).then(renderStudents); });
+  $('#refresh').addEventListener('click', loadAll);
+  $('#csv').addEventListener('click', csv);
+  document.querySelectorAll('nav.tabs a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      document.querySelectorAll('nav.tabs a').forEach(function (x) { x.classList.remove('on'); }); a.classList.add('on');
+      document.querySelectorAll('section.view').forEach(function (s) { s.classList.toggle('on', s.id === 'v-' + a.dataset.v); });
+    });
+  });
+
+  function showApp(email) {
+    $('#login').hidden = true; $('#app').hidden = false; $('#who').textContent = email;
+    loadSemesters().then(loadAll).then(loadRoster).then(renderStudents).then(subscribe);
+  }
+
+  if (DEMO) {
+    $('#demoTag').innerHTML = '<span class="demo-tag">DEMO DATA — not connected</span>';
+    $('#logout').hidden = true;
+    showApp('demo@example.edu');
+  } else if (!CFG.SUPABASE_URL || !CFG.SUPABASE_ANON_KEY) {
+    $('#login').hidden = false;
+    $('#loginNote').textContent = 'slides/assets/quiz-config.js 에 SUPABASE_URL과 ANON_KEY가 아직 없습니다. 미리보기: dashboard.html?demo=1';
+    $('#loginForm').querySelector('button').disabled = true;
+  } else {
+    sb = window.supabase.createClient(CFG.SUPABASE_URL, CFG.SUPABASE_ANON_KEY);
+    sb.auth.getSession().then(function (r) {
+      var s = r.data.session;
+      if (s) showApp(s.user.email); else $('#login').hidden = false;
+    });
+    sb.auth.onAuthStateChange(function (ev, s) { if (ev === 'SIGNED_IN' && s) showApp(s.user.email); });
+    $('#loginForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      $('#loginNote').textContent = '로그인 중…';
+      sb.auth.signInWithPassword({ email: $('#email').value.trim(), password: $('#password').value })
+        .then(function (r) { if (r.error) $('#loginNote').textContent = '로그인 실패: ' + r.error.message; });
+    });
+    $('#logout').addEventListener('click', function () { sb.auth.signOut().then(function () { location.reload(); }); });
+  }
+})();
+</script>
+</body>
+</html>
