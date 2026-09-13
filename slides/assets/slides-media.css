@@ -98,21 +98,21 @@
 .video-stage .cue.shout { isolation: isolate; }
 
 /* 생각 구름: 둥근 구름 + 꼬리 점 2개 */
-.video-stage .cue.think {
-  background: #ffffff;
-  border: 2.5px solid #2b3440;
-  border-radius: 1.6em;
-  padding: 0.45em 0.95em;
-  font-size: 0.6em;
-  color: #334155;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+.video-stage .cue.think {              /* v6: 자막과 같은 반투명 다크 — 화면 가림 최소화 */
+  background: rgba(16, 15, 12, 0.62);
+  border: 0;
+  border-radius: 1.2em;
+  padding: 0.4em 0.9em;
+  font-size: 0.58em;
+  color: #ffffff;
+  box-shadow: none;
 }
 .video-stage .cue.think::before,
 .video-stage .cue.think::after {
   content: '';
   position: absolute;
-  background: #fff;
-  border: 2px solid #2b3440;
+  background: rgba(16, 15, 12, 0.62);
+  border: 0;
   border-radius: 50%;
 }
 .video-stage .cue.think::before { width: 10px; height: 10px; left: 30%; bottom: -14px; }
@@ -138,6 +138,15 @@
 .video-stage .cue.sub.on { transform: scale(1) rotate(0deg) translateY(0); }
 .video-stage .cue.sub b { color: #ffd479; font-weight: 700; }
 .video-stage .cue.sub .gl { display: block; font-size: 12.5px; font-weight: 400; color: #d9d3c7; letter-spacing: 0.05em; margin-top: 1px; }
+
+/* ── 한글 병기(v6): 영어 원문 아래 의역 한 줄. 우상단 '가 한국어' 토글(.hide-ko)과 연동 ──
+   자막: <span class="ko">개!</span> / 말풍선: <span class="ko">…</span> (둘 다 큐 텍스트 뒤에 배치) */
+.video-stage .cue .ko { display: block; font-family: 'Noto Sans KR', sans-serif; font-weight: 400; }
+.video-stage .cue .ko::before { content: none; }   /* linguistics-theme.css의 '※ ' 접두 해제 */
+.video-stage .cue.sub .ko { font-size: 14px; color: #e8e3d8; margin-top: 2px; letter-spacing: 0; }
+.video-stage .cue.sub .ko + .gl { margin-top: 3px; }
+.video-stage .cue.think .ko { font-size: 0.72em; color: #e8e3d8; margin-top: 2px; }
+.reveal.hide-ko .video-stage .cue .ko { display: none; }
 
 /* 소리 토글 버튼: 영상이 활성일 때만 표시 */
 .video-scene .vid-sound-btn { display: none; }

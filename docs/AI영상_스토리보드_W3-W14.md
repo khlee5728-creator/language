@@ -44,10 +44,22 @@
 
 ## W3 — What Is Language? Part 2 · 동물의 의사소통 (P1 웹툰)
 
-- **파일**: `w03_toon_translator.mp4` (12초) · **삽입 위치**: The Birds and the Bees 슬라이드 뒤
-- **개념**: 동물 신호의 레퍼토리는 고정·유한(교재 pp.17–18: 신호 목록은 닫혀 있고 주제는 늘 같다), 인간 언어는 창조적·무한
-- **콩트(v2)**: 반려동물 번역기 앱 — 뭘 물어도 번역은 "Food. Play. Food." 그리고 강아지는 그 번역에 만족한다
-- 이력: v1 벌춤 콩트는 사용자 피드백("요즘 세대 공감 어려움")으로 교체. 시안 2회 실패(민트 캐릭터 복제) → "reference의 그룹 그대로 + 변경점 하나만" 방식으로 해결
+- **파일(v4 하이브리드)**: `w03_toon_sitstay.mp4` (14.1초: 테이크 3 와이드 0–8.5s + 테이크 1 노을 와이드 2s + 테이크 3 무음 클로즈업 3.5s). 테이크 4(서 있는 강아지 시안 job da0e102c)는 크레딧 충전 후 재시도 · **삽입 위치**: 기존 카툰 슬라이드 자리(Discreteness·Birds and Bees 뒤)
+- **개념(v4)**: 이산성(p.17 — 분리된 단위를 순서 바꿔 재조합하면 다른 메시지)과 전위성(p.18 — 지금·여기와 무관한 것을 말하는 능력). 강아지는 "treat" 한 단위에만 반응하고, '내일'은 처리하지 못한다
+- **콩트(v4 "Sit. Stay. Treat.")**: 같은 세 명령을 순서만 바꾸면 사람에겐 새 메시지, 강아지에겐 "treat"뿐 → "Treat… tomorrow."에 강아지는 노을이 질 때까지 앉아 기다린다
+- 이력: v1 벌춤 → v2/v3 번역기 앱(2026-08-29) → **v4 훈련 명령 콩트(2026-09-12, 사용자 선택 4안)**: 앞 버전은 "요즘 세대 공감"은 됐지만 교재 개념(이산성·전위성) 전달이 약해 교체. 펀치라인 후보 비교 후 사용자 확정 *Tomorrow? Never met her. Is she bringing the treat?* — 강아지가 "tomorrow"를 개념이 아닌 '처음 듣는 소리(사람 이름?)'로 되묻는 구조라 전위성 부재와 모순되지 않음(강아지 풍선에 시간 개념 사용 금지 원칙)
+
+| 샷(v4) | 길이 | 화면 | 대사(음성) | 자막/풍선 |
+|---|---|---|---|---|
+| 1 | 2.5s | 와이드(시안 프레이밍): 파랑이 간식 들고, 강아지가 앉음→기다림→간식 받음(빠르게) | 파랑: "Sit. Stay. Treat." | sub + ko "앉아. 기다려. 간식." |
+| 2 | 2.5s | 같은 앵글: 파랑이 순서 바꿔 말함, 강아지는 첫 단어에 바로 뛰어오름 | 파랑: "Treat. Stay. Sit." 민트: "Same words, new order!" | sub ×2 + gl `DISCRETENESS · P.17` |
+| 3 | 3s | 파랑 미디엄: 간식 다시 주머니에, 강아지는 완벽하게 앉아 응시 | 파랑: "Treat… tomorrow." | sub + gl `DISPLACEMENT · P.18` |
+| 4 | 1.5s | 같은 프레이밍, 하늘만 노을로(점프컷), 강아지 그대로 앉아 있음 | 민트(속삭임): "He's still waiting." | sub |
+| 5 | 2.5s+ | 강아지 단독 클로즈업(노을빛), 고개 살짝 갸웃 | — | think: *Tomorrow? Never met her. Is she bringing the treat?* + ko |
+
+  - 시안(job `fa994e7f-292c-4613-a229-30f277433673`, P1 기준 프레임 참조): 파랑 후드 남(간식 든 오른손, 입 벌림) + 민트 자켓 여(뒤에서 지켜봄) + 앉은 푸들. 사람 2 + 개 1만, 낮, 노을·다람쥐·타인 없음(등장 반전 요소 시작프레임 금지 원칙)
+  - 연출 원칙 적용: 샷2 강아지 반응은 "jumps up at the FIRST word only"; 샷3~4는 "does NOT get up, does NOT look away — sits perfectly still"(부정형 열거); 샷4 노을은 "same locked-off framing, only the sky and light change"; 샷5 펀치 컷 3s 확보; 웃음 리액션 금지(민트는 소곤거림)
+- **영상 프롬프트(v4)**: `Multi-shot 2D Korean webtoon animation, five shots with clean cuts, same characters and park as the start frame. Shot 1 (2.5s): the man in the blue hoodie says "Sit. Stay. Treat." — the fluffy brown poodle sits, waits, then takes the treat from his hand, all quick and cheerful. Shot 2 (2.5s): same framing, the man says "Treat. Stay. Sit." — the poodle jumps up excitedly at the FIRST word only; the woman in the mint jacket says brightly "Same words, new order!" Shot 3 (3s): medium shot of the man putting the treat back in his pocket and saying slowly "Treat… tomorrow." — the poodle sits perfectly still and stares at his pocket, does NOT get up, does NOT look away. Shot 4 (1.5s): jump cut, EXACTLY the same locked-off framing but the sky is now a warm orange sunset and the light is golden; the poodle is still sitting in the same spot, motionless; the woman whispers "He's still waiting." Shot 5 (2.5s): close-up of the poodle's face in golden sunset light, it tilts its head slightly, calm and puzzled, no sound. Nobody laughs.` + 공통 꼬리말
 
 | 샷 | 길이 | 화면 | 대사(음성) | 자막/풍선 |
 |---|---|---|---|---|
@@ -256,6 +268,10 @@
 | 날짜 | 버전 | 내용 |
 |---|---|---|
 | 2026-08-26 | 1.0 | W2 재생성 스펙 + W3~W14 11편 스토리보드·시안/영상 프롬프트·말풍선 스크립트·예산 |
+| 2026-09-13 | 1.21 | **W3 v4 하이브리드 편집본 채택(잠정)**: 테이크 3 검수에서 사용자 지적 3건 — ① 시작 프레임의 강아지가 이미 앉아 있어 "Sit"에 반응 없음·"Stay"에서 일어섬(원인: 동작 시작 자세는 시작 프레임이 결정 — 서 있는 시안이 필요) ② 하단 자막이 강아지를 가림 → 이 클립은 와이드 샷 자막을 `style="top:5%; bottom:auto"`로 상단(하늘) 배치 ③ "He's still waiting." 화자 미등장. 테이크 4용 **서 있는 강아지 시안**(job `da0e102c-cf7e-4a1c-9746-10f4d9f0d15c`) 생성 후 영상 제출이 **크레딧 부족(잔액 22.5 < 12s pro 30)**으로 거부 — 실측 단가: 12s pro 30 / 10s pro 25 / 12s std 24 / 8s pro 20. 대안으로 ffmpeg 하이브리드: 테이크 3 와이드(0–8.54s) + 테이크 1 노을 와이드(9.29–11.33s, 민트 대사·화자 등장) + 테이크 3 클로즈업(음성 제거, 3.5s) = 14.1s. ②③ 해결, ①은 미해결(테이크 4는 크레딧 충전 후 해당 시안으로 재시도). 무음 클로즈업에는 **합성 강아지 whine 효과음**(numpy 활강음 650→1250→900Hz+비브라토, 1.1s, 10.9s 삽입, 크레딧 0)을 믹스 — Higgsfield 오디오는 음성 전용이라 SFX 불가. 테이크 4에서는 프롬프트에 "the poodle whimpers softly"로 원음 생성 예정 |
+| 2026-09-13 | 1.20 | **W3 v4 테이크 3 채택**(사용자 요청 A안 리테이크 2회): 테이크 2는 "Treat" 발화 누락·얼굴 잘림 재발·클로즈업 생략으로 폐기. 테이크 3은 **전 샷 와이드 고정**("full bodies always inside the frame, no close-ups of hands or pockets, camera never tilts down") 문형으로 얼굴 잘림 해결, 마지막 익스트림 클로즈업 3.5s(노을) 확보. 대신 노을 와이드 점프컷은 생성되지 않아 시간 경과는 클로즈업의 노을빛 + "He's still waiting." 보이스오버로 전달. 남자가 "Treat"을 세 번 말함 → 자막은 원문대로 "Treat. Treat." / "Treat… tomorrow." 분리. 원칙: **Kling은 미디엄 샷+주머니 동작을 주면 카메라를 손으로 내린다(2회 재현) — 얼굴이 필요한 대사 컷은 와이드로 지정**. 잔여 크레딧 41.5 |
+| 2026-09-13 | 1.19 | **W3 v4 편집본 채택(전위성 전용)**: 사용자 지적 — 강아지가 "Sit·Stay·Treat"에 순서대로 반응하면 이산성을 갖춘 듯 보이고, 순서를 바꾼 반응도 어느 쪽이든 '연합'일 뿐 이산성 유무를 화면이 가르지 못함 → 훈련 명령은 이산성 소재로 부적절. 테이크 1에서 2번 비트(2.6–6.4s)를 ffmpeg로 잘라 8.2초 편집본으로 채택(크레딧 0). 이산성은 슬라이드 4(top·pot·opt)에 유지. 자막 주석 HERE AND NOW / NOT HERE, NOT NOW · DISPLACEMENT. 마지막 강아지 컷 0.7s → data-slow 0.16으로 풍선 4.6s 노출. 원칙: **동물의 '명령 반응'은 연합이지 이산성 증거가 아니다 — 이산성 콩트는 인간 발화의 재조합으로만 설계** |
+| 2026-09-12 | 1.18 | **W3 v4 "Sit. Stay. Treat."로 교체 진행**(사용자 피드백: 번역기 콩트는 이산성·전위성 전달이 약함 → 단순 안 6종 추가 제안 후 4안 선택). 펀치라인은 강아지 풍선에 시간 개념을 쓰지 않는 원칙으로 재검토(*Tomorrow is a scam* 폐기) → *Tomorrow? Never met her. Is she bringing the treat?* 확정. 시안 1회 성공(job fa994e7f). 자막에 **한글 병기(v6)** 표준 도입: `.ko` 줄 + 반투명 think 풍선 |
 | 2026-08-31 | 1.17 | W12 v2 채택(사용자 선택 1안 "Really" 3단): 시안 1회 리테이크(파랑 복제 — 청자 3인을 개별 나열한 문형이 원인, "duplicate 제거" 이미지 편집으로 해결). **피치 컨투어 실측 QC 신설**(autocorr f0): R1 저음 +56Hz/0.7s(무덤덤), R2 고음 +110Hz(놀람 ✓), R3 1.2s 드롤(의심 ✓) — R1이 완전 평탄조는 아니어서 자막 주석을 계측 사실 기반(LOW & BRIEF)으로 표기, 'FLAT' 등 미검증 컨투어 주장 금지. 펀치라인 *Same word. Three faces.* |
 | 2026-08-31 | 1.16 | W13 v7 최종 채택(사용자: 솜뭉치가 '벗겨지며' 양이 나오는 게 아니라 뭉치 자체가 양이어야): 샷4에 "the mound does NOT open/peel/split/shed; nothing comes out; one continuous body — the wool is the sheep's own fleece" 명시 → 웅크린 양 몸통이 같은 프레이밍에서 고개만 들어 전환. 연출 원칙: 변신/공개 연출은 금지 동작(벗겨짐·분리·등장) 부정형 열거 + '한 몸 연속' 명시 |
 | 2026-08-31 | 1.15 | W13 v6 채택(사용자: 공개는 동일 프레이밍 연속으로): 샷4를 "completely STATIC, locked-off, 첫 1초는 기존 모습 그대로 정지 → 같은 프레이밍에서 고개 들기"로 명시 — 7.5~8.5s 무얼굴 솜뭉치 정지, 9~10.5s 동일 앵글에서 양 전환. 연출 원칙: 정체 공개 컷은 '고정 카메라 + 공개 전 상태 유지 시간'을 프롬프트에 명시 |
