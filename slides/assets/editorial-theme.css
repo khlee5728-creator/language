@@ -82,6 +82,8 @@ html, body, .reveal, .reveal-viewport { background: var(--ed-paper) !important; 
 }
 .exlist li:last-child { border-bottom: 0; }
 .exlist .no { font: 600 11px 'Space Grotesk'; letter-spacing: 0.1em; color: var(--ed-muted); min-width: 22px; }
+/* 번호 + 본문 span 하나로 된 행: 긴 본문이 번호 아래로 통째로 떨어지지 않고 자기 열 안에서 줄바꿈 (v9) */
+.exlist li > .no + span:last-child { flex: 1 1 0; min-width: 0; }
 .exlist .star { color: var(--ed-accent); font-style: normal; font-weight: 700; }
 
 /* 대역(gloss) 세트 */
@@ -92,9 +94,17 @@ html, body, .reveal, .reveal-viewport { background: var(--ed-paper) !important; 
 .gloss-set .tr { margin-top: 12px; font: 400 18px 'Lora', 'Noto Serif KR'; color: var(--ed-body); }
 
 /* 인용/재귀 스택 */
+/* 요점 목록(v11): 정체 + 줄 사이 헤어라인. 이탤릭은 줄 안의 예문·인용(<i>)과 예문 전용 블록(.ex)에만 */
 .quote-stack { border-left: 1px solid var(--ed-line); padding-left: 28px; }
-.quote-stack p { font: italic 400 20px/1.9 'Lora'; margin: 0; color: var(--ed-ink); }
+.quote-stack p {
+  font: 400 19px/1.6 'Lora'; margin: 0; color: var(--ed-ink);
+  padding: 8px 0; border-bottom: 1px solid var(--ed-line);
+}
+.quote-stack p:first-child { padding-top: 0; }
+.quote-stack p:last-child { border-bottom: 0; padding-bottom: 0; }
 .quote-stack p b { color: var(--ed-accent); font-weight: 700; }
+.quote-stack p i, .quote-stack p em { font-style: italic; }
+.quote-stack.ex p { font-style: italic; }   /* 예문 목록 블록(This is the house that Jack built…) */
 
 /* ── 한국어 부연: 세리프 정제 ── */
 .ko-supp { font-family: 'Noto Serif KR', serif !important; font-weight: 300 !important; color: var(--ed-muted) !important; }

@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="assets/slides-quiz.css?v=3" />
   <link rel="stylesheet" href="assets/slides-ko.css" />
   <link rel="stylesheet" href="assets/slides-media.css?v=6" />
-  <link rel="stylesheet" href="assets/editorial-theme.css?v=8" />
+  <link rel="stylesheet" href="assets/editorial-theme.css?v=11" />
   <style>
     :root { --slide-accent: #4a2e5c; }
 
@@ -103,7 +103,7 @@
       because a finite set of rules can apply <i>again and again</i>.
       <span class="ko-supp" style="display:block; margin-top:8px;">화자가 새로운 문장을 무한히 만들고 이해할 수 있는 것은, 유한한 규칙 집합을 몇 번이든 되풀이해 적용할 수 있기 때문이다.</span></div>
     <div>
-      <div class="quote-stack">
+      <div class="quote-stack ex">
         <p>Snorlax is asleep.</p>
         <p>Pikachu noticed that <i>Snorlax is asleep</i>.</p>
         <p>Nobody cares that <i>Pikachu noticed that Snorlax is asleep</i>.</p>
@@ -167,8 +167,8 @@
     <div class="def">Two hypotheses: a sentence is a <i>flat string</i> of words, or a <i>hierarchy</i> of natural units nested inside one another.
       <span class="ko-supp" style="display:block; margin-top:8px;">문장은 단어의 평평한 나열이라는 가설과, 자연스러운 단위들이 서로 안에 포개진 위계 구조(hierarchy)라는 가설이 맞선다.</span></div>
     <div class="quote-stack">
-      <p>The child found a puppy.</p>
-      <p>[The child] [found [a puppy]]: the natural subunits are <b>constituents</b>.</p>
+      <p><i>The child found a puppy.</i></p>
+      <p><i>[The child] [found [a puppy]]</i>: the natural subunits are <b>constituents</b>.</p>
       <p><i>found a</i> is contiguous, but no single node contains just these two words: <b>not</b> a constituent.</p>
     </div>
   </div>
@@ -224,7 +224,7 @@
       <span class="ko-supp" style="display:block; margin-top:8px;">문장의 중의성(ambiguity)은 한 단어의 두 의미에서 오는 어휘적 중의성과, 두 개의 다른 나무에서 오는 구조적 중의성으로 나뉜다.</span></div>
     <div>
       <div class="quote-stack">
-        <p>Sue saw the man <b>with the telescope</b>.</p>
+        <p><i>Sue saw the man <b>with the telescope</b>.</i></p>
         <p>Meaning 1: the <i>seeing</i> is done with the telescope.</p>
         <p>Meaning 2: the <i>man</i> is holding the telescope.</p>
       </div>
@@ -335,7 +335,7 @@
     <div class="def">A family of expressions that can <i>substitute for one another</i> without loss of grammaticality.
       <span class="ko-supp" style="display:block; margin-top:8px;">통사 범주(syntactic category)는 문법성을 잃지 않고 서로 대치될 수 있는 표현들의 집합, 곧 같은 자리를 채울 수 있는 표현들이다.</span></div>
     <div>
-      <div class="quote-stack">
+      <div class="quote-stack ex">
         <p><b>The child</b> found a puppy.</p>
         <p><i>A police officer / Your neighbor / This yellow cat</i> found a puppy.</p>
         <p>All are <b>NPs</b>; so are <i>John</i>, <i>he</i>, <i>it</i>: single words that fill NP slots.</p>
@@ -486,7 +486,7 @@
   <div class="cols">
     <div class="def">Start at the root <i>S</i>, expand top-down, and stop only when no bottom category matches the left side of any rule.
       <span class="ko-supp" style="display:block; margin-top:8px;">뿌리 S에서 출발해 위에서 아래로 확장하고, 맨 아래 범주가 어떤 규칙의 왼쪽과도 맞지 않을 때 멈춘다.</span></div>
-    <div class="quote-stack">
+    <div class="quote-stack ex">
       <p>The boys left. <b>VP → V</b></p>
       <p>The wind blew the kite. <b>VP → V NP</b></p>
       <p>The senator hopes that the bill passes. <b>VP → V CP</b></p>
@@ -507,7 +507,7 @@
     <div class="def">Rules 6, 8, 1 form a <i>recursive set</i>: S contains VP, VP contains CP, CP contains S — <b>round and round</b>.
       <span class="ko-supp" style="display:block; margin-top:8px;">규칙 6·8·1은 재귀적 집합(recursive set)을 이룬다: S가 VP를, VP가 CP를, CP가 다시 S를 담아 끝없이 돌 수 있다.</span></div>
     <div>
-      <div class="quote-stack">
+      <div class="quote-stack ex">
         <p>Homer caught a pokemon.</p>
         <p>Marge noticed that <i>Homer caught a pokemon</i>.</p>
         <p>Bart wonders whether <i>Marge noticed that …</i></p>
