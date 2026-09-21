@@ -105,6 +105,8 @@ html, body, .reveal, .reveal-viewport { background: var(--ed-paper) !important; 
 .quote-stack p b { color: var(--ed-accent); font-weight: 700; }
 .quote-stack p i, .quote-stack p em { font-style: italic; }
 .quote-stack.ex p { font-style: italic; }   /* 예문 목록 블록(This is the house that Jack built…) */
+/* 항목이 많은 요점 목록(7줄+)용 축약형(v13) */
+.quote-stack.compact p { font-size: 17px; line-height: 1.5; padding: 6px 0; }
 
 /* ── 한국어 부연: 세리프 정제 ── */
 .ko-supp { font-family: 'Noto Serif KR', serif !important; font-weight: 300 !important; color: var(--ed-muted) !important; }
@@ -176,10 +178,13 @@ html, body, .reveal, .reveal-viewport { background: var(--ed-paper) !important; 
 .recap b { font-weight: 500; color: var(--ed-ink); }
 .recap i { font: italic 400 1em 'Lora'; }
 /* 목차용 교재 쪽수(우측 정렬) */
-.recap .pg { float: right; font: 600 12px 'Space Grotesk'; letter-spacing: 0.08em; color: var(--ed-muted); margin-top: 5px; }
+/* 쪽수(v12): float 대신 절대 배치 + 행 우측 여백 확보 — 긴 제목은 쪽수 열을 침범하지 않고 줄바꿈 */
+.recap .pg { position: absolute; right: 0; top: 17px; float: none; margin-top: 0; font: 600 12px 'Space Grotesk'; letter-spacing: 0.08em; color: var(--ed-muted); }
+.recap li:has(.pg) { padding-right: 64px; }
 /* 항목이 많은 목차용 축약 행간 */
 .recap.tight li { padding-top: 8px; padding-bottom: 8px; }
 .recap.tight li::before { top: 10px; }
+.recap.tight .pg { top: 13px; }
 
 /* ── 진행바·컨트롤 절제 ── */
 .reveal .progress { height: 2px; color: var(--ed-accent); }

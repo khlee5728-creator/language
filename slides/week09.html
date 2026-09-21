@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="assets/slides-quiz.css?v=3" />
   <link rel="stylesheet" href="assets/slides-ko.css" />
   <link rel="stylesheet" href="assets/slides-media.css?v=6" />
-  <link rel="stylesheet" href="assets/editorial-theme.css?v=11" />
+  <link rel="stylesheet" href="assets/editorial-theme.css?v=13" />
   <style>
     :root { --slide-accent: #8a5a20; }
 
@@ -115,9 +115,9 @@
     <div class="def">If you know the meaning of a (declarative) sentence, you know its <i>truth conditions</i>.
       <span class="ko-supp" style="display:block; margin-top:8px;">평서문의 의미를 안다는 것은 그 문장의 진리조건(truth conditions)을 아는 것이며, 의미 규칙이 단어 의미와 통사 구조로 문장 의미를 합성한다.</span></div>
     <div class="quote-stack">
-      <p>Semantic rules build sentence meaning from <b>word meanings</b> + <b>syntactic structure</b>.</p>
-      <p>Hence <i>compositional</i>, or <i>truth-conditional</i>, semantics.</p>
-      <p>Apply the conditions to a situation → the <b>truth value</b>: true or false there.</p>
+      <p>Semantic rules build sentence meaning from <b>word meanings</b> and <b>syntactic structure</b>.</p>
+      <p>This is why it is called <i>compositional</i>, or <i>truth-conditional</i>, semantics.</p>
+      <p>Applying the conditions to a situation yields the <b>truth value</b>: true or false in that situation.</p>
     </div>
   </div>
   <aside class="notes">
@@ -159,12 +159,12 @@
 <!-- ══ 6 · Entailment ══ -->
 <section data-kicker="CH.4 P.135 · WHAT SPEAKERS KNOW ABOUT SENTENCE MEANING">
   <h2 style="font-size:40px;">Entailment and Related Notions</h2>
-  <ul class="exlist" style="max-width:760px; font-size:0.95em;">
-    <li><span class="no">01</span><b style="font-style:normal; margin-right:6px;">Entailment&nbsp;</b>Jack swims beautifully ⊨ Jack swims, one direction only.</li>
-    <li><span class="no">02</span><b style="font-style:normal; margin-right:6px;">Negation&nbsp;</b>reverses it: Jack doesn't swim ⊨ Jack doesn't swim beautifully.</li>
-    <li><span class="no">03</span><b style="font-style:normal; margin-right:6px;">Paraphrase&nbsp;</b>= mutual entailment: Jack put off the meeting / Jack postponed the meeting.</li>
-    <li><span class="no">04</span><b style="font-style:normal; margin-right:6px;">Contradictory&nbsp;</b>= one entails the negation of the other: Jack is alive / Jack is dead.</li>
-  </ul>
+  <div class="quote-stack" style="max-width:760px; font-size:0.95em;">
+    <p><b>Entailment</b> runs in one direction only: <i>Jack swims beautifully</i> ⊨ <i>Jack swims</i>.</p>
+    <p><b>Negation</b> reverses it: <i>Jack doesn't swim</i> ⊨ <i>Jack doesn't swim beautifully</i>.</p>
+    <p><b>Paraphrase</b> is mutual entailment: <i>Jack put off the meeting</i> / <i>Jack postponed the meeting</i>.</p>
+    <p>Sentences are <b>contradictory</b> when one entails the negation of the other: <i>Jack is alive</i> / <i>Jack is dead</i>.</p>
+  </div>
   <p class="lead" style="font-size:17px; margin-top:18px;">Truth conditions capture entailment, synonymy, and contradiction in one currency.
     <span class="ko-supp" style="display:block;">함의(entailment)는 한 방향이고, 동의(paraphrase)는 상호 함의이며, 모순(contradictory)은 한쪽이 다른 쪽의 부정을 함의하는 관계다.</span></p>
   <aside class="notes">
@@ -180,12 +180,12 @@
     <div>
       <div class="small-label" style="margin-bottom:12px;">STRUCTURAL AMBIGUITY</div>
       <hr class="hair" style="margin:0 0 14px;">
-      <p class="lead" style="font-size:18px;"><em>The boy saw the man with a telescope</em> — two phrase structures: the PP modifies <b>man</b>, or the <b>seeing</b>.</p>
+      <p class="lead" style="font-size:18px;"><em>The boy saw the man with a telescope</em> has two phrase structures: the PP modifies <b>man</b>, or the <b>seeing</b>.</p>
     </div>
     <div>
       <div class="small-label" style="margin-bottom:12px;">LEXICAL AMBIGUITY</div>
       <hr class="hair" style="margin:0 0 14px;">
-      <p class="lead" style="font-size:18px;"><em>This will make you smart</em>: "clever," or "feel a burning sensation." One word, two senses.</p>
+      <p class="lead" style="font-size:18px;"><em>This will make you smart</em> has one word with two senses: "clever," or "feel a burning sensation."</p>
     </div>
   </div>
   <hr class="hair" style="margin-top:30px;">
@@ -268,9 +268,9 @@
     <div class="def">Words combine in ways their <i>semantic features</i> forbid: grammatical, yet meaningless.
       <span class="ko-supp" style="display:block; margin-top:8px;">의미 자질이 충돌하는 단어 결합은 문법적이어도 무의미한 이상(anomaly)이 되며, Jabberwocky처럼 무의미어라도 문장 틀은 살아 있다.</span></div>
     <div class="quote-stack">
-      <p><b class="accent" style="font-style:normal;">Colorless green ideas sleep furiously.</b> "without color" clashes with "green in color."</p>
-      <p><i>'Twas brillig, and the slithy toves…</i> Jabberwocky: nonsense words, so nothing to compose; yet the frame still works.</p>
-      <p><i>a grief ago</i> (Dylan Thomas): <b>ago</b> wants a temporal word (<i>a week ago</i>, <i>*a table ago</i>).</p>
+      <p>In <b class="accent" style="font-style:normal;">Colorless green ideas sleep furiously</b>, "without color" clashes with "green in color."</p>
+      <p>Jabberwocky (<i>'Twas brillig, and the slithy toves…</i>) has nonsense words, so nothing composes, yet the frame still works.</p>
+      <p>Dylan Thomas's <i>a grief ago</i> is anomalous because <b>ago</b> wants a temporal word (<i>a week ago</i>, <i>*a table ago</i>).</p>
     </div>
   </div>
   <aside class="notes">
@@ -287,9 +287,9 @@
     <div class="def">An apparent anomaly understood through a <i>meaningful concept</i>: when the literal reading fails, listeners stretch the meaning.
       <span class="ko-supp" style="display:block; margin-top:8px;">은유(metaphor)는 문자적 해석이 실패할 때 상상력으로 이해되는 겉보기 이상이며, 문화에 깊이 뿌리내려 굳어지면 문자적 의미가 된다.</span></div>
     <div class="quote-stack">
-      <p><i>Walls have ears.</i> The literal meaning is so unlikely that imagination takes over.</p>
-      <p><b>Time is money</b>: we <i>save, waste, manage,</i> and <i>borrow</i> time, an abstract concept treated as an object of value.</p>
-      <p><i>There's a bug in my program</i>: metaphor is deeply <b>cultural</b>; many "dead" metaphors become literal (<i>the fall of the dollar</i>).</p>
+      <p>In <i>Walls have ears</i>, the literal meaning is so unlikely that imagination takes over.</p>
+      <p><b>Time is money</b>: we <i>save, waste, manage,</i> and <i>borrow</i> time, treating an abstract concept as an object of value.</p>
+      <p>Metaphor is deeply <b>cultural</b> (<i>a bug in my program</i>), and many "dead" metaphors become literal (<i>the fall of the dollar</i>).</p>
     </div>
   </div>
   <aside class="notes">
@@ -329,8 +329,8 @@
     <div class="def">Phrases with <i>fixed, non-compositional</i> meanings, stored in the lexicon like single morphemes.
       <span class="ko-supp" style="display:block; margin-top:8px;">관용구(idiom)는 의미가 고정되어 부분의 합으로 계산되지 않는 구로, 단일 형태소처럼 어휘부에 저장되며 번역이 잘 안 되고 형태도 대체로 동결된다.</span></div>
     <div class="quote-stack">
-      <p><b>kick the bucket</b> = "die": Spanish <i>patear el cubo</i> is only literal; their idiom is <i>estirar la pata</i>. Idioms rarely translate.</p>
-      <p><i>She put her foot in her mouth</i> — frozen: <i>Her foot was put in her mouth</i> loses the idiom (except humorously).</p>
+      <p>Idioms rarely translate: <b>kick the bucket</b> "die" is <i>estirar la pata</i> in Spanish; <i>patear el cubo</i> is only literal.</p>
+      <p><i>She put her foot in her mouth</i> is frozen: the passive <i>Her foot was put in her mouth</i> loses the idiom (except humorously).</p>
       <p>Some do move: <i>The FBI kept tabs on radicals → Tabs were kept on radicals.</i></p>
     </div>
   </div>
@@ -348,7 +348,7 @@
     <div class="def">Sentence meaning is built by rule; word meaning is <i>conventional</i>: agreed on by speakers and learned outright.
       <span class="ko-supp" style="display:block; margin-top:8px;">문장 의미는 규칙으로 합성되지만 단어 의미는 화자들이 합의한 약정(convention)이어서 통째로 배워야 하며, 험프티 덤프티처럼 마음대로 바꿀 수는 없다.</span></div>
     <div class="quote-stack">
-      <p>Humpty Dumpty: "When I use a word, <i>it means just what I choose it to mean</i>."</p>
+      <p>Humpty Dumpty claims, "When I use a word, <i>it means just what I choose it to mean</i>."</p>
       <p>But we are <b>not free</b> to change meanings at will, or communication collapses.</p>
       <p>Thousands of agreed sound–meaning pairs are stored in the <b>mental lexicon</b>.</p>
     </div>
@@ -367,8 +367,8 @@
       <span class="ko-supp" style="display:block; margin-top:8px;">사전은 의미가 아니라 이미 아는 말로 된 환언(paraphrase)을 줄 뿐이며, 단어 의미의 후보로 지시(reference)와 의의(sense)가 제안된다.</span></div>
     <div class="quote-stack">
       <p>What, then, <i>is</i> a word's meaning?</p>
-      <p>One proposal: <b>reference</b>, the association with the object referred to.</p>
-      <p>And a further dimension: <b>sense</b> — Frege, "On Sense and Reference" (1892).</p>
+      <p>One proposal is <b>reference</b>: the association with the object referred to.</p>
+      <p>A further dimension is <b>sense</b>, from Frege's "On Sense and Reference" (1892).</p>
     </div>
   </div>
   <aside class="notes">
@@ -386,7 +386,7 @@
     <div class="quote-stack">
       <p><b>Superman</b> and <b>Clark Kent</b> refer to one and the same person…</p>
       <p>…yet swapping them in <i>Lois Lane is in love with Superman</i> turns a truth into a falsehood.</p>
-      <p><i>No baby swims</i>: the NP <b>no baby</b> refers to no individual, yet is not meaningless.</p>
+      <p>In <i>No baby swims</i>, the NP <b>no baby</b> refers to no individual, yet it is not meaningless.</p>
       <p>So there must be meaning <b class="accent" style="font-style:normal;">beyond reference</b>.</p>
     </div>
   </div>
@@ -404,9 +404,9 @@
     <div class="def">Sense is the <i>extra</i> element: the information that completes the association and suggests the referent's properties.
       <span class="ko-supp" style="display:block; margin-top:8px;">의의(sense)는 지시를 완성하고 지시체의 속성을 알려 주는 정보로, unicorn처럼 지시체 없는 단어도 의의는 가지며, 심상(mental image) 이론은 very나 dog 앞에서 실패한다.</span></div>
     <div class="quote-stack">
-      <p><i>unicorns, hobbits, Harry Potter</i>: sense but <b>no reference</b> in the real world.</p>
-      <p>Proper names: reference but <b>little sense</b> (<i>Clem Kadiddlehopper</i>).</p>
-      <p>Meaning as mental image? Inadequate: what image goes with <i>very, if, every</i>, or a <i>dog</i> general enough for Terriers and Great Danes?</p>
+      <p><i>Unicorns, hobbits, Harry Potter</i> have sense but <b>no reference</b> in the real world.</p>
+      <p>Proper names have reference but <b>little sense</b> (<i>Clem Kadiddlehopper</i>).</p>
+      <p>A mental image is not enough either: what image goes with <i>very, if, every</i>, or a <i>dog</i> general enough for Terriers and Great Danes?</p>
     </div>
   </div>
   <aside class="notes">
@@ -418,15 +418,15 @@
 <!-- ══ 18 · Lexical Relations ══ -->
 <section data-kicker="CH.4 P.149 · LEXICAL SEMANTICS (WORD MEANINGS)">
   <h2>Lexical Relations</h2>
-  <ul class="exlist" style="font-size:0.92em;">
-    <li><span class="no">01</span><b style="font-style:normal; margin-right:6px;">Synonyms&nbsp;</b>sofa/couch; English–Latin pairs: manly/virile, go down/descend; no two are perfect.</li>
-    <li><span class="no">02</span><b style="font-style:normal; margin-right:6px;">Complementary antonyms&nbsp;</b>alive/dead, present/absent: alive = not dead.</li>
-    <li><span class="no">03</span><b style="font-style:normal; margin-right:6px;">Gradable antonyms&nbsp;</b>big/small, hot/cold, relative: a small elephant beats a large mouse.</li>
-    <li><span class="no">04</span><b style="font-style:normal; margin-right:6px;">Relational opposites&nbsp;</b>give/receive, buy/sell, employer/employee: one relation, two viewpoints.</li>
-    <li><span class="no">05</span><b style="font-style:normal; margin-right:6px;">Homonyms&nbsp;</b>bear/bare, to/too/two: same sound, unrelated senses.</li>
-    <li><span class="no">06</span><b style="font-style:normal; margin-right:6px;">Polysemy&nbsp;</b>diamond (jewel / ballfield), bright (light / clever): related senses.</li>
-    <li><span class="no">07</span><b style="font-style:normal; margin-right:6px;">Hyponyms&nbsp;</b>red is a hyponym of color; lion of feline: meaning inclusion.</li>
-  </ul>
+  <div class="quote-stack compact" style="font-size:0.92em;">
+    <p><b>Synonyms</b> like <i>sofa/couch</i> or the English–Latin pairs <i>manly/virile</i>, <i>go down/descend</i> are never perfect.</p>
+    <p><b>Complementary antonyms</b> exclude each other: <i>alive/dead</i>, <i>present/absent</i>; <i>alive</i> means "not dead."</p>
+    <p><b>Gradable antonyms</b> are relative: <i>big/small</i>, <i>hot/cold</i>; a small elephant beats a large mouse.</p>
+    <p><b>Relational opposites</b> show one relation from two viewpoints: <i>give/receive</i>, <i>buy/sell</i>, <i>employer/employee</i>.</p>
+    <p><b>Homonyms</b> share a sound but not a sense: <i>bear/bare</i>, <i>to/too/two</i>.</p>
+    <p><b>Polysemy</b> is one word with related senses: <i>diamond</i> (jewel / ballfield), <i>bright</i> (light / clever).</p>
+    <p><b>Hyponyms</b> show meaning inclusion: <i>red</i> is a hyponym of <i>color</i>, <i>lion</i> of <i>feline</i>.</p>
+  </div>
   <p class="ko-supp" style="font-size:14px; margin-top:12px;">어휘 관계에는 동의어(synonyms), 상보·정도·관계 반의어(antonyms), 동음이의어(homonyms), 다의어(polysemy), 하위어(hyponyms)가 있다.</p>
   <aside class="notes">
     반의어의 세 유형 구분이 시험 포인트입니다. 상보반의어는 부정하면 반대가 되지만(살아있지 않다=죽었다),
@@ -439,7 +439,7 @@
 <section data-kicker="CH.4 P.151 · LEXICAL SEMANTICS (WORD MEANINGS)">
   <h2>Semantic Features</h2>
   <div class="cols">
-    <div class="def">Meanings decompose into <i>features</i>; antonyms must share a principal feature in which they differ: wet/dry share "liquid".
+    <div class="def">Meanings decompose into <i>features</i>; antonyms must share a principal feature in which they differ: <i>wet/dry</i> share "liquid".
       <span class="ko-supp" style="display:block; margin-top:8px;">단어 의미는 의미 자질(semantic features)의 다발로 분해되며, man과 boy처럼 자질을 공유하고 하나만 다른 관계가 체계적으로 설명된다.</span></div>
     <div>
       <table class="feat-table">
@@ -482,7 +482,7 @@
 <section data-kicker="CH.4 P.153 · SEMANTIC FEATURES AND GRAMMAR">
   <h2 style="font-size:40px;">Semantic Features of Nouns</h2>
   <div class="cols">
-    <div class="def">Features interact with <i>morphology and syntax</i>: "female" surfaces as <b>-ess</b> (tigress, actress, princess).
+    <div class="def">Features interact with <i>morphology and syntax</i>: "female" surfaces as <b>&#8209;ess</b> (<i>tigress, actress, princess</i>).
       <span class="ko-supp" style="display:block; margin-top:8px;">명사의 의미 자질은 형태·통사에 반영되어 '여성'은 -ess로 나타나고, 가산(count)/질량(mass) 자질이 한정사 선택을 지배하며 그 배정은 언어마다 다르다.</span></div>
     <div>
       <div class="small-label" style="margin-bottom:10px;">COUNT VS. MASS · WHICH DETERMINERS?</div>
@@ -506,7 +506,7 @@
 <section data-kicker="CH.4 P.154 · SEMANTIC FEATURES AND GRAMMAR">
   <h2 style="font-size:40px;">Semantic Features of Verbs</h2>
   <div class="cols">
-    <div class="def">"cause": darken, kill, uglify · "go": swim, throw, give · "become": break, <i>cause to become broken</i>.
+    <div class="def">Verb meanings also decompose: "cause" in <i>darken, kill, uglify</i>; "go" in <i>swim, throw, give</i>; "become" in <i>break</i>, "cause to become broken."
       <span class="ko-supp" style="display:block; margin-top:8px;">동사 자질도 통사에 반영된다: 상태 동사(stative)는 수동·진행·명령이 어색하고, ever 같은 부정극어(negative polarity item)는 doubt처럼 부정 자질을 지닌 동사와만 어울린다.</span></div>
     <div>
       <div class="cols-even" style="gap:44px;">
@@ -522,7 +522,7 @@
         </div>
       </div>
       <hr class="hair">
-      <p class="lead" style="font-size:16.5px;"><b>Negative polarity</b>: <em>John doubts that he'll ever fly again</em> ✓ vs. <em>*John thinks that he'll ever fly again</em>; <b>doubt</b> = "think that not."</p>
+      <p class="lead" style="font-size:16.5px;"><b>Negative polarity</b>: <em>John doubts that he'll ever fly again</em> ✓ vs. <em>*John thinks that he'll ever fly again</em>; <b>doubt</b> means "think that not."</p>
     </div>
   </div>
   <aside class="notes">

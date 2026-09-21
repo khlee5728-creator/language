@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="assets/slides-quiz.css?v=3" />
   <link rel="stylesheet" href="assets/slides-ko.css" />
   <link rel="stylesheet" href="assets/slides-media.css?v=6" />
-  <link rel="stylesheet" href="assets/editorial-theme.css?v=11" />
+  <link rel="stylesheet" href="assets/editorial-theme.css?v=13" />
   <style>
     :root { --slide-accent: #4a2e5c; }
 
@@ -169,10 +169,10 @@
     <div class="quote-stack">
       <p><i>The child found a puppy.</i></p>
       <p><i>[The child] [found [a puppy]]</i>: the natural subunits are <b>constituents</b>.</p>
-      <p><i>found a</i> is contiguous, but no single node contains just these two words: <b>not</b> a constituent.</p>
+      <p><i>found a</i> is contiguous, but no single node contains just these two words, so it is <b>not</b> a constituent.</p>
     </div>
   </div>
-  <p class="lead" style="font-size:17px; margin-top:22px;">A constituent = a node on the tree, with <em>all</em> the words beneath it.</p>
+  <p class="lead" style="font-size:17px; margin-top:22px;">A constituent is a node on the tree together with <em>all</em> the words beneath it.</p>
   <aside class="notes">
     구성성분(constituent) 개념이 오늘의 초석입니다. 평면 구조 가설은 어순은 포착하지만
     '자연스러운 단위'와 중의성을 설명하지 못합니다. found a처럼 인접해도 성분이 아닐 수 있음을 강조.
@@ -208,7 +208,7 @@
     <li><span class="no star">4b *</span>Up the bill Jack ran.</li>
     <li><span class="no star">4c *</span>Up the bill ran Jack.</li>
   </ul>
-  <p class="lead" style="max-width:660px; font-size:18px; margin-top:16px;"><em>up the hill</em> moves as a unit: a PP constituent. <em>up the bill</em> cannot; it only looks like one.
+  <p class="lead" style="max-width:660px; font-size:18px; margin-top:16px;"><em>up the hill</em> moves as a unit, so it is a PP constituent. <em>up the bill</em> cannot; it only looks like one.
     <span class="ko-supp" style="display:block; margin-top:6px;">up the hill은 한 단위(PP 구성성분)로 이동하지만 up the bill은 그러지 못하므로, 겉모습이 같아도 구조가 다르다.</span></p>
   <aside class="notes">
     ran up the hill(PP)과 ran up the bill(동사+불변화사)의 대비(교재 p.82). 표면이 같아도
@@ -332,7 +332,7 @@
 <section data-kicker="CH.3 P.84 · SENTENCE STRUCTURE">
   <h2>Syntactic Categories</h2>
   <div class="cols">
-    <div class="def">A family of expressions that can <i>substitute for one another</i> without loss of grammaticality.
+    <div class="def">A syntactic category is a family of expressions that can <i>substitute for one another</i> without loss of grammaticality.
       <span class="ko-supp" style="display:block; margin-top:8px;">통사 범주(syntactic category)는 문법성을 잃지 않고 서로 대치될 수 있는 표현들의 집합, 곧 같은 자리를 채울 수 있는 표현들이다.</span></div>
     <div>
       <div class="quote-stack ex">
@@ -375,7 +375,7 @@
         <li><span class="no">T</span>tense &amp; modals: will, can, must</li>
         <li><span class="no">C</span>complementizers: that, if, whether</li>
       </ul>
-      <p class="lead" style="font-size:16.5px; margin-top:14px;">Functional categories carry <em>grammatical</em>, not descriptive, content: glue rather than picture.</p>
+      <p class="lead" style="font-size:16.5px; margin-top:14px;">Functional categories carry <em>grammatical</em>, not descriptive, content: they are glue rather than picture.</p>
     </div>
   </div>
   <p class="ko-supp" style="font-size:14px; margin-top:16px;">어휘 범주(lexical category) N·V·A·P·Adv는 각각 구 범주를 이루고, Det·T·C 같은 기능 범주(functional category)는 서술이 아닌 문법 내용을 담는다.</p>
@@ -439,13 +439,13 @@
 <!-- ══ 14 · Reading a tree ══ -->
 <section data-kicker="CH.3 P.89 · PHRASE STRUCTURE TREES">
   <h2 style="font-size:40px;">Reading a Tree</h2>
-  <ul class="exlist" style="max-width:720px;">
-    <li><span class="no">01</span><b style="font-style:normal;">dominates</b>: every higher node dominates all the nodes beneath it; S dominates everything.</li>
-    <li><span class="no">02</span><b style="font-style:normal;">immediately dominates</b>: one level down (VP immediately dominates V and NP).</li>
-    <li><span class="no">03</span><b style="font-style:normal;">sisters</b>: categories immediately dominated by the same node (V and NP).</li>
-  </ul>
+  <div class="quote-stack" style="max-width:720px;">
+    <p>A node <b>dominates</b> every node beneath it; S dominates everything.</p>
+    <p>A node <b>immediately dominates</b> the nodes one level down: VP immediately dominates V and NP.</p>
+    <p><b>Sisters</b> are categories immediately dominated by the same node, such as V and NP.</p>
+  </div>
   <hr class="hair" style="max-width:720px;">
-  <p class="lead" style="max-width:720px; font-size:18px;">Grammatical relations become precise: <b>subject</b> = the NP immediately dominated by S; <b>direct object</b> = the NP immediately dominated by VP.
+  <p class="lead" style="max-width:720px; font-size:18px;">Grammatical relations become precise: the <b>subject</b> is the NP immediately dominated by S; the <b>direct object</b> is the NP immediately dominated by VP.
     <span class="ko-supp" style="display:block; margin-top:8px;">지배(dominate)·직접 지배·자매(sister) 관계로 주어는 S가 직접 지배하는 NP, 목적어는 VP가 직접 지배하는 NP로 정확히 정의된다.</span></p>
   <aside class="notes">
     나무 어휘(dominate, immediately dominate, sister)를 정확히 익혀야 이후 일치·이동 논의가
@@ -457,7 +457,7 @@
 <section data-kicker="CH.3 P.90 · SENTENCE STRUCTURE">
   <h2>Phrase Structure Rules</h2>
   <div class="cols">
-    <div class="def">Templates a tree must match: left of the arrow, the dominating category; right, what it immediately dominates, <i>in that order</i>.
+    <div class="def">Phrase structure rules are templates a tree must match: the dominating category stands left of the arrow, and what it immediately dominates stands right, <i>in that order</i>.
       <span class="ko-supp" style="display:block; margin-top:8px;">구구조 규칙(phrase structure rule)은 나무가 맞춰야 할 틀로, 화살표 왼쪽이 지배 범주, 오른쪽이 직접 지배되는 범주와 그 어순이다.</span></div>
     <div>
       <div class="psrules">
@@ -470,7 +470,7 @@
         <div><span class="no">7</span><span class="nt">PP</span><span class="arr">→</span>P&nbsp;NP</div>
         <div><span class="no">8</span><span class="nt">CP</span><span class="arr">→</span>C&nbsp;S<span class="cm">C = that, if, whether</span></div>
       </div>
-      <p class="lead" style="font-size:16px; margin-top:14px;">Compactly: <b>VP → V (NP) (PP)</b>; parentheses mark optional elements.</p>
+      <p class="lead" style="font-size:16px; margin-top:14px;">Written compactly, <b>VP → V (NP) (PP)</b>: parentheses mark optional elements.</p>
     </div>
   </div>
   <aside class="notes">
