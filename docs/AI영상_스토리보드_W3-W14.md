@@ -186,23 +186,24 @@
 - **영상 프롬프트**: `Multi-shot polished 3D animation, five shots with clean cuts. Shot 1 (1.5s): wide shot at an outdoor cafe table in a pastel park, the four young adults having lunch, the fluffy brown puppy sits under the table. Shot 2 (2.5s): close-up of the woman in the orange sweatshirt politely asking "Can you pass the salt?" Shot 3 (3s): close-up of the man in the purple t-shirt with his hand resting on the salt shaker, replying brightly "Yes, I can!" and then not moving at all. Shot 4 (2s): close-up of the woman in the mint jacket sighing and reaching over to pass the salt herself. Shot 5 (3s): close-up of the fluffy brown puppy under the table with a resigned deadpan expression.` + 공통 꼬리말
 - **시안**(P2 +): `Wide shot at an outdoor cafe table in a pastel 3D park: the four young adults at lunch, a salt shaker at the center of the table, the fluffy brown puppy visible under the table.`
 
-## W11 — Phonetics Part 1 · 조음 비트박스 배틀 (P2 3D)
+## W11 — Phonetics Part 1 · 코 막고 말하기 (P2 3D) — **v2 (2026-09-27)**
 
-- **파일**: `w11_toon_articulation.mp4` (11초) · **삽입 위치**: 조음 위치·방법 슬라이드 뒤
-- **개념**: 말소리는 입술·혀의 위치와 방법으로 만들어진다 — **p·t·k는 비트박스의 기본 3음**(킥·하이햇·스네어)이라 조음 위치 학습과 정확히 겹침
-- **콩트**: 발음 수업이 아니라 **길거리 비트박스 배틀**. 각자 자기 조음 위치로 사운드를 쌓고, 강아지의 비트박스는 샘플이 하나뿐
-- 리프레임 의도: '수업 재연' 프레임(고리타분)을 버리고 같은 학습 포인트(양순/치경/연구개)를 힙합 배틀로 전달
+- **파일**: `w11_toon_nasal.mp4` (11.04초, 테이크 2 job `743634a9-5fc3-4a2d-99a8-0f58b6ac34c1`) · **삽입 위치**: Nasal and Oral Sounds(p.193) 슬라이드 뒤 (v1 비트박스는 Place 슬라이드 뒤였음)
+- **개념**: 비음 m·n·ŋ은 연구개가 내려가 공기가 코로 나간다 — 코를 막으면 같은 자리의 구강 파열음 b·d로 들린다(p.193)
+- **콩트**: 주황이 코를 잡고 자기소개하면 "By dabe is…", "banana"는 "Badada". 파랑: "The nose is a speaker." 강아지는 코의 다른 용도(냄새·간식)로 마무리
+- 이력: v1 비트박스 배틀(p·t·k 조음 위치) → 사용자가 다른 스토리 요청 → 5안 제안 중 2안(코 막기) 선택. 시안 1회(job `c4718a1a-9cb4-41cd-9202-e2a7de7b3d73`, P2 기준 프레임 참조). **테이크 1 폐기**: 1컷에서 "My name is…"를 또렷이 말한 뒤 "By dabe is…"가 다음 컷으로 밀려 모든 대사가 한 컷씩 지연(강아지 컷에도 음성). **테이크 2 채택**: 컷당 대사 하나, "she does NOT say 'my name is'" 명시, 되묻기 삭제, 5컷 무음 명시.
 
-| 샷 | 길이 | 화면 | 대사 | 말풍선 |
+| 샷 | 실측 | 화면 | 대사 | 말풍선 |
 |---|---|---|---|---|
-| 1 | 2s | 와이드(3D): 파랑이 비트박스를 시작하자 셋이 환호하며 둘러쌈, 강아지 고개 까딱까딱 | — | — |
-| 2 | 2s | 파랑 클로즈업, 입술 팡팡 터뜨리며 비트 | "P! P!" (비트박스 킥) | shout: p! (lips!) |
-| 3 | 2s | 민트 클로즈업, 혀끝으로 티키타카 얹으며 | "T! T!" (하이햇) | shout: t! (tongue tip!) |
-| 4 | 2s | 보라 클로즈업, 목 뒤에서 킥 얹으며 | "K! K!" (스네어) | shout: k! (back!) |
-| 5 | 3s | 강아지 클로즈업, 심혈을 기울여 리듬 타다가 | "Woof." | think: *My beatbox: one sample.* |
+| 1 | 0–2.54s | 미디엄 와이드(시안 구도), 주황이 코를 잡고 | "By dabe is…" (0.25–2.5s, 전사 "Bye, Davies!") | — |
+| 2 | 2.54–4.58s | 보라 클로즈업, 웃으며 가리킴 | "Say banana with your nose closed!" (2.8–4.4s) | — |
+| 3 | 4.58–6.58s | 주황 클로즈업, 코 잡은 채 눈 커짐 | "Ba-da-da!" (5.05–6.3s) | — |
+| 4 | 6.58–8.62s | 파랑 클로즈업, 코 옆을 톡톡 | "The nose is a speaker." (7.05–7.9s) | — |
+| 5 | 8.62–11.04s | 강아지 클로즈업, 코 씰룩 → 코로 푸시인 | — (무음) | think: *My nose isn't for talking. It's for the treat in your pocket.* (8.85–끝, slow 0.45, 종료 후 유지) |
 
-- **영상 프롬프트**: `Multi-shot polished 3D animation, five shots with clean cuts. Shot 1 (2s): wide shot in a pastel park, the man in the blue hoodie starts beatboxing energetically and the other three gather around cheering like a street performance, the fluffy brown puppy bobs its head to the beat. Shot 2 (2s): close-up of the man in the blue hoodie beatboxing hard with exaggerated lip pops, rhythmically going "P! P!" Shot 3 (2s): close-up of the woman in the mint jacket layering crisp "T! T!" sounds with her tongue tip, grooving. Shot 4 (2s): close-up of the man in the purple t-shirt dropping deep "K! K!" sounds from the back of his mouth, nodding to the rhythm. Shot 5 (3s): close-up of the fluffy brown puppy bobbing to the beat, concentrating very hard, then letting out a single proud "Woof."` + 공통 꼬리말
-- **시안**(P2 +): `Wide shot in a pastel 3D park: the man in the blue hoodie beatboxing with hands cupped near his mouth, the other three gathered around grooving and cheering like a street beatbox battle, the fluffy brown puppy bobbing its head to the beat.`
+- **시안 프롬프트**: P2 공통 머리말 + `EXACTLY the same four characters … Medium-wide shot, the four standing in a loose circle facing each other: the woman in the orange sweatshirt is in the center pinching her own nose shut with two fingers, eyes wide and cheeks puffed, mid-word; the man in the purple t-shirt beside her is laughing hard, leaning back; the man in the blue hoodie and the woman in the mint jacket lean in grinning, the mint jacket woman also reaching up to pinch her own nose to try it. The fluffy brown toy poodle sits at their feet in the foreground looking up at them, its nose wrinkled.` (참조: P2 기준 프레임 `8e15f312-64f9-4952-8148-ba5140ea1499`)
+- **영상 프롬프트(테이크 2)**: `Multi-shot polished 3D animation, five shots with clean cuts … Exactly ONE spoken line per shot, spoken only by the character shown in that shot, and NO speech at all in shot 5. Shot 1 (0-2.5s): … the woman in the orange sweatshirt, pinching her nose shut, says only "By dabe is..." in a blocked nasal voice (she does NOT say 'my name is'); the other three laugh. Shot 2 (2.5-4.5s): close-up of the man in the purple t-shirt … "Say banana with your nose closed!" Shot 3 (4.5-6.5s): close-up of the woman in the orange sweatshirt still pinching her nose … says only "Badada." Shot 4 (6.5-8.5s): close-up of the man in the blue hoodie tapping the side of his nose … "The nose is a speaker." Shot 5 (8.5-11s): close-up of the fluffy brown toy poodle … wrinkling and twitching its nose, then sniffing toward the camera; silent, nobody speaks.` + 공통 꼬리말 (Kling 3.0 pro·sound, 11s, 28cr)
+- **자막 처리**: 들리는 대로 "By dabe is…"/"Badada."를 자막에 쓰고 `.gl`에 원래 단어와 m→b, n→d 주석. 원칙: **막힌 코 발음 같은 '의도된 오발음'은 대본에 그 소리만 적고 원래 문장은 절대 대사로 넣지 않는다(테이크 1 사고)**.
 
 ## W12 — Phonetics Part 2 · 운율 (P2 3D)
 
@@ -270,6 +271,7 @@
 | 날짜 | 버전 | 내용 |
 |---|---|---|
 | 2026-08-26 | 1.0 | W2 재생성 스펙 + W3~W14 11편 스토리보드·시안/영상 프롬프트·말풍선 스크립트·예산 |
+| 2026-09-27 | 1.25 | **W11 v2 교체(비트박스 → 코 막고 말하기)**: 사용자가 다른 스토리 요청 → 유성성·비음·눈송이·철자·입 안 지도 5안 제안, 2안 선택. 시안 1회, 테이크 1 폐기(대사 한 컷 지연 — 1컷에 "My name is…"와 "By dabe is…" 두 발화를 넣은 탓), 테이크 2 채택(컷당 한 대사·5컷 무음 명시). 삽입 위치를 Nasal and Oral Sounds 뒤로 이동, 릴스 CFG 11 갱신(payoff 포함). 사용 60cr(시안 2 + 테이크 28×2), 잔여 894. 원칙: **의도된 오발음은 그 소리만 대사로**, **컷당 대사 하나 + 무음 컷 명시** |
 | 2026-09-27 | 1.24 | **W6 v2.1 — 첫 컷만 재생성**(사용자 지적: 첫 장면 강아지가 너무 큼). 채택 시안을 참조해 강아지만 신발 높이로 줄인 시안(2cr) → 첫 컷 4s 단독 생성(10cr, 남자 대사는 첫 컷에만 있어 목소리 불일치 없음) → 테이크 1의 2.96s 이후와 concat(ffmpeg, 24fps·1928×1076 통일) → 마스크 재적용. 전체 재생성(30cr) 대비 12cr. 원칙: **한 컷만 문제면 그 컷만 재생성해 이어 붙인다(대사가 컷 안에 닫혀 있을 때)**. 잔여 크레딧 952 |
 | 2026-09-27 | 1.23 | **W6 v2 교체**(사용자 제안: 강아지를 멀리 두고 쌍안경으로 보는 구도). 시안 3회(1안 시선 불일치·3주차 시안 참조 → 2안 2주차 기준 프레임 참조로 의상 일치 → 3안 "목에 건 강아지"로 문법 정합: [a dog [with binoculars]]의 NP 부착은 소유이므로 들여다보는 장면은 마지막 1초 개그로만). 영상 테이크 1 채택(30cr, 전사 일치). 쌍안경 렌즈 마스크는 ffmpeg 후반 오버레이. 잔여 크레딧 964. 원칙: **기준 프레임은 반드시 P1 job 720de8f0-51c2-4d62-b63c-37cbdc5845ed(전체 ID를 CLAUDE.md에 기록)** — 다른 주차 시안을 참조하면 의상이 달라진다(1안 사고) |
 | 2026-09-27 | 1.22 | **W5 펀치라인 노출 개선**(사용자 지적: 강아지 마지막 말풍선 전달 약함). 실측: 마지막 컷 9.96s 시작이나 사람 음성이 10.9s까지 이어져 think는 10.95s부터만 가능(음성 겹침 금지); 기존 10.95–11.95s·0.36배속 = 실노출 2.8s이고 영상 끝(12.04s) 직전에 꺼져 "읽다 말았다"는 인상. 수정: data-end를 영상 길이보다 뒤(12.1)로 두어 **종료 후 정지 프레임에도 풍선 유지**(W3과 같은 방식), 0.28배속(노출 2.8→3.9s+지속), 말장난 `<b>man</b>`·Walk`<b>man</b>` 강조(slides-media.css v7: `.cue.think b`). 재생성 없음(크레딧 0). 원칙: **think 종료 시각은 영상 길이 이상으로 두어 마지막 프레임에 남긴다** |
