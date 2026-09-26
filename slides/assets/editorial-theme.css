@@ -194,3 +194,15 @@ html, body, .reveal, .reveal-viewport { background: var(--ed-paper) !important; 
 @media print {
   .ed-rail, .ed-railtxt { display: none; }
 }
+
+/* ── v14: 표 재정의 — linguistics-theme의 색 헤더·격자 표(.reveal table th)를 에디토리얼 헤어라인 표로 되돌린다.
+   선택자 특이도를 기본 테마와 같게(.reveal table th) 두고 이 파일이 뒤에 로드되므로 우선한다.
+   덱별 표(.ed-table/.feat-table/.mini-table)는 .reveal table.xxx 형태로 쓰면 이 규칙 위에 덧씌워진다. */
+.reveal table { font-size: inherit; margin: 0; border-collapse: collapse; }
+.reveal table th { background: none; color: var(--ed-muted); font: 600 11px 'Space Grotesk'; letter-spacing: 0.2em;
+  text-transform: uppercase; text-align: left; padding: 6px 18px 8px 0; border: 0; border-bottom: 1px solid var(--ed-ink);
+  white-space: nowrap; }
+.reveal table td { border: 0; border-bottom: 1px solid var(--ed-line); text-align: left; vertical-align: baseline;
+  padding: 9px 18px 9px 0; font: 400 17px 'Lora'; color: var(--ed-body); background: none; }
+.reveal table tr:nth-child(even) td, .reveal table tr:hover td { background: transparent; }
+.reveal table tr:last-child td { border-bottom: 0; }

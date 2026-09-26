@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="assets/slides-quiz.css?v=3" />
   <link rel="stylesheet" href="assets/slides-ko.css" />
   <link rel="stylesheet" href="assets/slides-media.css?v=7" />
-  <link rel="stylesheet" href="assets/editorial-theme.css?v=13" />
+  <link rel="stylesheet" href="assets/editorial-theme.css?v=14" />
   <style>
     :root { --slide-accent: #8a5a20; }
 
@@ -26,13 +26,14 @@
       font: italic 400 15px 'Lora'; color: var(--ed-muted); }
 
     /* 의미 자질 표 */
-    .feat-table { border-collapse: collapse; margin-top: 4px; width: 100%; max-width: 100%; table-layout: fixed; }
-    .feat-table th { font: 600 11px 'Space Grotesk'; letter-spacing: 0.08em; color: var(--ed-muted);
-      border-bottom: 1px solid var(--ed-ink); padding: 6px 10px 6px 0; text-align: left; }
-    .feat-table td { border-bottom: 1px solid var(--ed-line); padding: 6px 10px 6px 0;
-      font: 400 16px 'Space Grotesk'; color: var(--ed-body); }
-    .feat-table td:first-child { font: italic 400 18px 'Lora'; color: var(--ed-ink); }
-    .feat-table tr:last-child td { border-bottom: 0; }
+    /* 선택자에 .reveal table을 붙여 기본 테마(.reveal table th)보다 우선. 헤더는 줄바꿈 금지(겹침 방지), 열 너비는 내용에 맞춤 */
+    .reveal table.feat-table { border-collapse: collapse; margin-top: 4px; width: 100%; max-width: 100%; table-layout: auto; }
+    .reveal table.feat-table th { font: 600 11px 'Space Grotesk'; letter-spacing: 0.08em; color: var(--ed-muted); background: none;
+      border: 0; border-bottom: 1px solid var(--ed-ink); padding: 6px 10px 6px 0; text-align: left; white-space: nowrap; }
+    .reveal table.feat-table td { border: 0; border-bottom: 1px solid var(--ed-line); padding: 6px 10px 6px 0; text-align: left;
+      font: 400 16px 'Space Grotesk'; color: var(--ed-body); background: none; }
+    .reveal table.feat-table td:first-child { font: italic 400 18px 'Lora'; color: var(--ed-ink); }
+    .reveal table.feat-table tr:last-child td { border-bottom: 0; }
 
     /* 의미역 그리드 — 헤어라인만, 색 상자 없음 */
     .role-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px 40px; }

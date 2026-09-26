@@ -35,6 +35,8 @@
 - **서체 역할**: Playfair Display=제목 · Lora=영문 본문/예문(예문·인용은 이탤릭) · Space Grotesk=킥커/라벨/번호 · Noto Serif KR=국문.
   국문 혼용 블록(.lead/.def/.tr/.mcq-opt/.mcq-explain/.recap)은 `'Lora','Noto Serif KR'` 순으로 지정해 영문은 항상 Lora로 찍히게 한다(굵기 400 통일). 영문에 Noto Serif KR을 직접 지정하지 않는다.
 - **요점 목록(.quote-stack) 규칙(v11)**: 재구성한 요점은 **정체** + 줄 사이 헤어라인(불릿 기호 없음). 줄 안에서 언급되는 예문·단어(use–mention)는 `<i>`, 강조어는 `<b>`. 예문 자체를 나열하는 블록(This is the house that Jack built…, 최소대립쌍 등)만 `quote-stack ex`로 표시해 이탤릭 유지. 요점 문장을 이탤릭으로 쓰지 않는다(이탤릭=예문·인용 전용).
+- **표 규칙(v14)**: 기본 테마(linguistics-theme)의 `.reveal table th`는 색 헤더·격자·0.7em이라 에디토리얼과 충돌 → editorial-theme.css가 같은 특이도로 헤어라인 표로 재정의한다.
+  덱별 표 스타일은 반드시 `.reveal table.xxx th/td` 형태로 써야 기본 테마를 이긴다(`.xxx th`만 쓰면 기본 테마가 이겨 색 헤더·큰 글자·헤더 겹침이 생김 — W9 s20 사고). 헤더는 `white-space: nowrap`.
 - **국문 부연(.ko-supp) 규칙**: 본문은 영어가 기본이고 국문은 토글로 숨길 수 있으므로, 국문 줄은 **바로 위 영문의 요지 한 문장(의역)**으로 한정한다.
   영문에 없는 보충·심화 내용을 국문에만 두지 않는다(필요하면 영문 본문 또는 발표자 노트로). 국문 대응 용어는 괄호 병기 "파생(derivation)".
   예외로 허용: 목차·다음 주 범위·쪽수·카툰 출처 같은 메타 안내.
