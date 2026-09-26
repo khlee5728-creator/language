@@ -137,6 +137,7 @@
 }
 .video-stage .cue.sub.on { transform: scale(1) rotate(0deg) translateY(0); }
 .video-stage .cue.sub b { color: #ffd479; font-weight: 700; }
+.video-stage .cue.think b { color: #ffd479; font-weight: 700; }   /* v7: 펀치라인 말장난 강조(W5 man/Walkman) */
 .video-stage .cue.sub .gl { display: block; font-size: 12.5px; font-weight: 400; color: #d9d3c7; letter-spacing: 0.05em; margin-top: 1px; }
 
 /* ── 한글 병기(v6): 영어 원문 아래 의역 한 줄. 우상단 '가 한국어' 토글(.hide-ko)과 연동 ──
