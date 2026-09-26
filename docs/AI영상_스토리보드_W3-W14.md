@@ -115,21 +115,23 @@
 - **영상 프롬프트**: `Multi-shot 2D animation, five shots with clean cuts. Shot 1 (2s): close-up of the man in the blue hoodie in the park, confidently saying "One man, two men!" like a quiz battle. Shot 2 (2.5s): close-up of the man in the purple t-shirt proudly saying "Policeman, policemen!" Shot 3 (2.5s): close-up of the woman in the mint jacket genuinely puzzled, asking "What IS a walkman?" Shot 4 (2s): close-up of the woman in the orange sweatshirt firmly saying "Walkmans! Duh." with a deadpan face. Shot 5 (3s): close-up of the fluffy brown puppy raising one front paw like a referee approving.` + 공통 꼬리말
 - **시안**(P1 +): `Medium close-up in a sunny park: the man in the blue hoodie front and center mid-quiz with a confident grin, the other three visible behind him in two facing pairs like a friendly quiz battle, the fluffy brown puppy sitting between them looking like a tiny referee.`
 
-## W6 — Syntax Part 1 · 구조적 중의성 (P1 웹툰)
+## W6 — Syntax Part 1 · 구조적 중의성 (P1 웹툰) — **v2 (2026-09-27)**
 
-- **파일**: `w06_toon_ambiguity.mp4` (12초) · **삽입 위치**: PP 부착 중의성(수형도) 슬라이드 뒤
+- **파일**: `w06_toon_ambiguity.mp4` (12.54초 = **v2.1**: 첫 컷 재생성분 job `745558d0-9501-4793-909f-c45d532f9b4b` 0–3.45s + 테이크 1 job `2e35246c-a2d5-4ec4-8801-a5efe28345e3`의 2.96s~ 이어 붙임 + 후반 쌍안경 마스크) · **삽입 위치**: PP 부착 중의성(수형도) 슬라이드 뒤
 - **개념**: 같은 문장, 두 구조 — "I saw a dog with binoculars"
-- **콩트**: 한 문장을 두 그림으로 상상 — 두 번째 해석이 화면에 실제로 등장
+- **콩트(v2, 사용자 제안)**: 강아지가 가까이 있던 v1을 **멀리 있는 강아지를 쌍안경으로 보는** 구도로 교체. 쌍안경 시점(8자 렌즈)으로 줌인하면 강아지 **목에 쌍안경이 걸려 있고**(NP 부착: [a dog [with binoculars]] — "had"), 마지막에 강아지가 그 쌍안경을 들어 이쪽을 마주 본다(개그 마무리). 문법 정확성을 위해 "목에 건 상태"를 먼저 보여 준 뒤 "들여다보기"를 마지막 1초에만 둔다.
+- 이력: v1(강아지 근거리, 목에 쌍안경) → v2 시안 3회(1안: 3주차 시안 참조·시선 불일치 / 2안: 2주차 기준 프레임 참조·강아지가 쌍안경을 들여다봄 / **3안 채택**: 목에 건 강아지, job `69d2b352-c1e7-4b41-b598-bfb190d51c45`) → 영상 테이크 1 채택(전사 일치, 컷 2.96·5.54·7.96s, 발화 0.72–2.72 / 5.78–7.52s).
 
-| 샷 | 길이 | 화면 | 대사 | 말풍선 |
+| 샷 | 실측 | 화면 | 대사 | 말풍선 |
 |---|---|---|---|---|
-| 1 | 3s | 파랑 클로즈업, 쌍안경을 들고 | "I saw a dog with binoculars!" | — |
-| 2 | 2.5s | 민트 클로즈업, 갸웃 | "You had the binoculars… right?" | shout: …right? |
-| 3 | 2.5s | 와이드: 모두가 강아지를 돌아봄 | — | — |
-| 4 | 4s | 강아지 클로즈업: **쌍안경을 목에 건 채** 시치미 | — | think: *Or… the dog had them. Syntax decides.* |
+| 1 | 0–3.43s | 와이드: 네 명이 오른쪽 먼 언덕을 향해 섬, 파랑이 쌍안경. **강아지는 언덕 위 아주 작게**(v2.1 시안 job `ced59c81-527e-4c13-b6fc-90789606d5b2`) | "I saw a dog with binoculars!" (0.96–3.16s) | — |
+| 2 | 3.43–5.98s | 파랑의 시점: 손이 쌍안경을 드는 삽입(3.0–3.5) → **렌즈 마스크** 안에서 언덕의 강아지로 줌인, 목에 쌍안경 | — | — |
+| 3 | 5.98–8.40s | 민트 클로즈업, 갸웃 | "You had the binoculars… right?" (6.27–8.0s) | — |
+| 4 | 8.40–12.54s | **렌즈 마스크** 최대 줌: 강아지 시치미 → 약 10s부터 쌍안경을 들어 이쪽을 마주 봄 | — | think: *Or… the dog **had** them. Syntax decides.* (8.9–끝, 종료 후 유지) |
 
-- **영상 프롬프트**: `Multi-shot 2D animation, four shots with clean cuts. Shot 1 (3s): close-up of the man in the blue hoodie holding small binoculars, he says "I saw a dog with binoculars!" Shot 2 (2.5s): close-up of the woman in the mint jacket tilting her head skeptically, she asks "You had the binoculars… right?" Shot 3 (2.5s): wide shot, all four young adults slowly turn to look at the puppy. Shot 4 (4s): close-up of the fluffy brown puppy sitting innocently with a tiny pair of binoculars hanging around its neck, looking away whistling-innocent.` + 공통 꼬리말
-- **시안**(P1 +): `Wide shot in a sunny park: the man in the blue hoodie holds small binoculars mid-story, the other three listen, the fluffy brown puppy sits nearby with a tiny pair of binoculars hanging around its neck.`
+- **시안 프롬프트(3안)**: P1 공통 머리말 + `EXACTLY the same four characters and the same fluffy brown toy poodle as the reference image … Wide shot: the four stand together in the left half of the frame, their bodies turned three-quarters AWAY from the camera toward the right, all four faces clearly turned to the right in profile, looking far away at a distant grassy hill on the right side of the frame. Nobody looks at the camera. The man in the blue hoodie holds a small pair of black binoculars up to his eyes, aimed at the hill. The other three squint and shade their eyes with a hand … Far away on top of that distant hill on the right, the fluffy brown toy poodle sits small in the distance, facing the group innocently, with a tiny pair of black binoculars hanging from a strap around its neck, resting on its chest; the poodle is NOT holding the binoculars, its paws are on the grass.` (참조: P1 기준 프레임 `720de8f0-51c2-4d62-b63c-37cbdc5845ed`)
+- **영상 프롬프트**: `Multi-shot 2D Korean webtoon animation, four shots with clean cuts, same characters and park as the start frame. Shot 1 (3s): the wide shot from the start frame … "I saw a dog with binoculars!" Shot 2 (2.5s): his point of view, the camera slowly zooms in across the grass toward the small fluffy brown poodle sitting on the distant hill, and as it gets closer we can see a tiny pair of binoculars hanging from a strap around the poodle's neck. Shot 3 (2.5s): close-up of the woman in the mint jacket tilting her head skeptically, she asks "You had the binoculars... right?" Shot 4 (4s): back to the zoomed-in view of the poodle … the poodle sits perfectly still looking innocent for a moment, then slowly lifts the binoculars with its front paws up to its eyes and looks straight back at the camera through them. No one else speaks in shot 2 or shot 4.` + 공통 꼬리말 (Kling 3.0 pro·sound, 12s, 30cr)
+- **후반**: 쌍안경 8자 마스크는 AI에 맡기지 않고 ffmpeg 오버레이(`reels/out/binocular_mask.png`, 두 원 r=0.47H·중심 간격 0.31W·가우시안 14px)를 3.5–5.54s와 7.96s–끝에 적용(v2.1 기준 3.98–5.96s·8.41s–끝, 컷 실측에 1프레임 단위로 맞춤). 이유: 모델이 그리면 컷마다 모양이 달라지고 캐릭터가 깨짐. 마스크 크기는 원본 해상도(1928×1076)에 정확히 맞출 것(1920×1080이면 오른쪽 8px가 새어 보임).
 
 ## W7 — Syntax Part 2 · 의문문 만들기 (P1 웹툰)
 
@@ -268,6 +270,8 @@
 | 날짜 | 버전 | 내용 |
 |---|---|---|
 | 2026-08-26 | 1.0 | W2 재생성 스펙 + W3~W14 11편 스토리보드·시안/영상 프롬프트·말풍선 스크립트·예산 |
+| 2026-09-27 | 1.24 | **W6 v2.1 — 첫 컷만 재생성**(사용자 지적: 첫 장면 강아지가 너무 큼). 채택 시안을 참조해 강아지만 신발 높이로 줄인 시안(2cr) → 첫 컷 4s 단독 생성(10cr, 남자 대사는 첫 컷에만 있어 목소리 불일치 없음) → 테이크 1의 2.96s 이후와 concat(ffmpeg, 24fps·1928×1076 통일) → 마스크 재적용. 전체 재생성(30cr) 대비 12cr. 원칙: **한 컷만 문제면 그 컷만 재생성해 이어 붙인다(대사가 컷 안에 닫혀 있을 때)**. 잔여 크레딧 952 |
+| 2026-09-27 | 1.23 | **W6 v2 교체**(사용자 제안: 강아지를 멀리 두고 쌍안경으로 보는 구도). 시안 3회(1안 시선 불일치·3주차 시안 참조 → 2안 2주차 기준 프레임 참조로 의상 일치 → 3안 "목에 건 강아지"로 문법 정합: [a dog [with binoculars]]의 NP 부착은 소유이므로 들여다보는 장면은 마지막 1초 개그로만). 영상 테이크 1 채택(30cr, 전사 일치). 쌍안경 렌즈 마스크는 ffmpeg 후반 오버레이. 잔여 크레딧 964. 원칙: **기준 프레임은 반드시 P1 job 720de8f0-51c2-4d62-b63c-37cbdc5845ed(전체 ID를 CLAUDE.md에 기록)** — 다른 주차 시안을 참조하면 의상이 달라진다(1안 사고) |
 | 2026-09-27 | 1.22 | **W5 펀치라인 노출 개선**(사용자 지적: 강아지 마지막 말풍선 전달 약함). 실측: 마지막 컷 9.96s 시작이나 사람 음성이 10.9s까지 이어져 think는 10.95s부터만 가능(음성 겹침 금지); 기존 10.95–11.95s·0.36배속 = 실노출 2.8s이고 영상 끝(12.04s) 직전에 꺼져 "읽다 말았다"는 인상. 수정: data-end를 영상 길이보다 뒤(12.1)로 두어 **종료 후 정지 프레임에도 풍선 유지**(W3과 같은 방식), 0.28배속(노출 2.8→3.9s+지속), 말장난 `<b>man</b>`·Walk`<b>man</b>` 강조(slides-media.css v7: `.cue.think b`). 재생성 없음(크레딧 0). 원칙: **think 종료 시각은 영상 길이 이상으로 두어 마지막 프레임에 남긴다** |
 | 2026-09-13 | 1.21 | **W3 v4 하이브리드 편집본 채택(잠정)**: 테이크 3 검수에서 사용자 지적 3건 — ① 시작 프레임의 강아지가 이미 앉아 있어 "Sit"에 반응 없음·"Stay"에서 일어섬(원인: 동작 시작 자세는 시작 프레임이 결정 — 서 있는 시안이 필요) ② 하단 자막이 강아지를 가림 → 이 클립은 와이드 샷 자막을 `style="top:5%; bottom:auto"`로 상단(하늘) 배치 ③ "He's still waiting." 화자 미등장. 테이크 4용 **서 있는 강아지 시안**(job `da0e102c-cf7e-4a1c-9746-10f4d9f0d15c`) 생성 후 영상 제출이 **크레딧 부족(잔액 22.5 < 12s pro 30)**으로 거부 — 실측 단가: 12s pro 30 / 10s pro 25 / 12s std 24 / 8s pro 20. 대안으로 ffmpeg 하이브리드: 테이크 3 와이드(0–8.54s) + 테이크 1 노을 와이드(9.29–11.33s, 민트 대사·화자 등장) + 테이크 3 클로즈업(음성 제거, 3.5s) = 14.1s. ②③ 해결, ①은 미해결(테이크 4는 크레딧 충전 후 해당 시안으로 재시도). 무음 클로즈업에는 **합성 강아지 whine 효과음**(numpy 활강음 650→1250→900Hz+비브라토, 1.1s, 10.9s 삽입, 크레딧 0)을 믹스 — Higgsfield 오디오는 음성 전용이라 SFX 불가. 테이크 4에서는 프롬프트에 "the poodle whimpers softly"로 원음 생성 예정 |
 | 2026-09-13 | 1.20 | **W3 v4 테이크 3 채택**(사용자 요청 A안 리테이크 2회): 테이크 2는 "Treat" 발화 누락·얼굴 잘림 재발·클로즈업 생략으로 폐기. 테이크 3은 **전 샷 와이드 고정**("full bodies always inside the frame, no close-ups of hands or pockets, camera never tilts down") 문형으로 얼굴 잘림 해결, 마지막 익스트림 클로즈업 3.5s(노을) 확보. 대신 노을 와이드 점프컷은 생성되지 않아 시간 경과는 클로즈업의 노을빛 + "He's still waiting." 보이스오버로 전달. 남자가 "Treat"을 세 번 말함 → 자막은 원문대로 "Treat. Treat." / "Treat… tomorrow." 분리. 원칙: **Kling은 미디엄 샷+주머니 동작을 주면 카메라를 손으로 내린다(2회 재현) — 얼굴이 필요한 대사 컷은 와이드로 지정**. 잔여 크레딧 41.5 |
