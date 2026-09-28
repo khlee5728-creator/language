@@ -52,6 +52,8 @@
     .eg-line { display: flex; flex-wrap: wrap; gap: 0 22px; margin-top: 4px; }
     .eg-line > span { white-space: nowrap; }
     .cite-note { font: italic 400 14px 'Lora'; color: var(--ed-muted); }
+    .rel-line { display: block; margin-top: 4px; }
+    .ex-note { display: block; font: italic 400 14px 'Lora'; color: var(--ed-muted); margin-top: 2px; }
   </style>
 </head>
 <body data-rail="WEEK 7 · SYNTAX" data-course="Topics in English Linguistics">
@@ -150,7 +152,9 @@
         <div class="tr">"The mother with many children works a lot": <i>lavora</i> agrees with <i>madre</i>, not <i>figli</i>.</div>
       </div>
       <hr class="hair">
-      <p class="lead" style="font-size:16.5px;">Same pattern in German (<em>Die Mutter … arbeitet viel</em>) and Swahili (<em>Mama … anajitahidi</em>). If sentences were flat strings, no agreement rule could even be stated.</p>
+      <p class="lead" style="font-size:16.5px;">Same pattern elsewhere:
+        <span class="eg-line"><span>German <em>Die Mutter … arbeitet viel</em></span><span>Swahili <em>Mama … anajitahidi</em></span></span></p>
+      <p class="lead" style="font-size:16.5px; margin-top:8px;">If sentences were flat strings, no agreement rule could even be stated.</p>
     </div>
   </div>
   <aside class="notes">
@@ -169,7 +173,9 @@
     <li><span class="no">2</span>The dog is barking. &nbsp;→&nbsp; <b>Is</b> the dog barking?</li>
     <li><span class="no">3</span>The man has eaten a fish. &nbsp;→&nbsp; <b>Has</b> the man eaten a fish?</li>
   </ul>
-  <p class="lead" style="max-width:700px; font-size:18px; margin-top:18px;">Generated in two steps: PS rules build a basic <b>d-structure</b>; the transformational rule <b>Aux inversion</b> moves T before the subject, yielding the <b>s-structure</b> we actually pronounce.
+  <p class="lead" style="max-width:700px; font-size:18px; margin-top:18px;">Generated in two steps:
+    <span class="rel-line"><b>Step 1</b>: PS rules build a basic <b>d-structure</b>.</span>
+    <span class="rel-line"><b>Step 2</b>: the transformational rule <b>Aux inversion</b> moves T before the subject, yielding the <b>s-structure</b> we pronounce.</span>
     <span class="ko-supp" style="display:block; margin-top:8px;">구구조 규칙이 기저구조(d-structure)를 만들고, 변형 규칙인 조동사 전치(Aux inversion)가 T를 주어 앞으로 옮겨 실제로 발음되는 표층구조(s-structure)를 낳는다.</span></p>
   <aside class="notes">
     평서문-의문문 쌍은 공통의 기저구조에서 나옵니다. 2단계 생성(구구조 규칙 → 변형)이
@@ -222,17 +228,17 @@
 <section data-kicker="CH.3 P.111 · GRAMMATICAL DEPENDENCIES">
   <h2 style="font-size:38px;">Question Formation Rules</h2>
   <div class="cols">
-    <div class="def">Not just agreement: <i>every</i> grammatical rule reads the tree. PP-preposing does not grab whatever starts with a preposition; it fronts a PP only from one structural position.
+    <div class="def">Not just agreement: <i>every</i> grammatical rule reads the tree. PP-preposing does not grab whatever starts with a preposition. It fronts a PP from one structural position only.
       <span class="ko-supp" style="display:block; margin-top:8px;">일치뿐 아니라 모든 문법 규칙은 구조를 참조하므로, PP 전치(PP-preposing)도 전치사로 시작하는 아무 연쇄가 아니라 특정 구조 위치의 PP만 앞으로 옮긴다.</span></div>
     <div>
-      <ul class="exlist">
-        <li><span class="no">1</span>The puppy played in the garden. → In the garden the puppy played.</li>
-        <li><span class="no">2</span><span>Sue saw the man with a telescope.</span> <span style="font: italic 400 14px 'Lora'; color:var(--ed-muted);">two trees, two readings (p.106)</span></li>
-        <li><span class="no">3</span><span>With a telescope, Sue saw the man.</span> <span style="font: italic 400 14px 'Lora'; color:var(--ed-muted);">one reading only</span></li>
-      </ul>
+      <div class="quote-stack ex compact">
+        <p>The puppy played in the garden. → In the garden the puppy played.</p>
+        <p>Sue saw the man with a telescope.<span class="ex-note">two trees, two readings (p.106)</span></p>
+        <p>With a telescope, Sue saw the man.<span class="ex-note">one reading only</span></p>
+      </div>
       <div class="quote-stack compact" style="margin-top:14px;">
-        <p><b>PP in the VP</b>, modifying <i>saw the man</i>: Sue used the telescope. Preposing applies.</p>
-        <p><b>PP inside the NP</b> <i>the man with a telescope</i>: the man holds it. Preposing cannot apply, so this reading is lost.</p>
+        <p><b>PP in the VP</b> (modifies <i>saw the man</i>): Sue used the telescope, so preposing applies.</p>
+        <p><b>PP inside the NP</b> (<i>the man with a telescope</i>): the man holds it, so preposing cannot apply and this reading is lost.</p>
       </div>
       <p class="cite-note" style="margin-top:10px;">(cf. textbook Ch.3, p.111)</p>
     </div>
@@ -292,9 +298,12 @@
       <span class="ko-supp" style="display:block; margin-top:8px;">엄밀히 말해 모든 문장의 뿌리는 CP이며, 옮겨 간 T는 그 핵인 C 아래에 착지한다.</span></div>
     <div>
       <div class="quote-stack">
-        <p><b>have / be</b> start under V; they inflect like verbs and co-occur with modals: <i>Nellie may be snoring.</i></p>
-        <p>With no modal, they <b>raise</b> V → T, then T → C: <i>Nellie is snoring</i> → <i><b>Is</b> Nellie ___ snoring?</i></p>
-        <p>CPs also serve as complements of a noun, a verb, or an adjective: belief <i>that iron floats</i>, wonders <i>if iron floats</i>, happy <i>that iron floats</i>.</p>
+        <p><b>have / be</b> start under V: they inflect like verbs and co-occur with modals.
+          <span class="eg-line"><span><i>Nellie may be snoring.</i></span></span></p>
+        <p>With no modal, they <b>raise</b> V → T, then T → C.
+          <span class="eg-line"><span><i>Nellie is snoring</i> → <i><b>Is</b> Nellie ___ snoring?</i></span></span></p>
+        <p>CPs also serve as complements of a noun, a verb, or an adjective.
+          <span class="eg-line"><span>belief <i>that iron floats</i></span><span>wonders <i>if iron floats</i></span><span>happy <i>that iron floats</i></span></span></p>
       </div>
     </div>
   </div>
@@ -331,23 +340,25 @@
 <section data-kicker="CH.3 P.118 · GRAMMATICAL DEPENDENCIES">
   <h2 style="font-size:38px;">UG Principles and Parameters</h2>
   <div class="cols">
-    <div class="def">UG is the shared <i>floor plan</i>; each language decorates it at fixed choice points: the <b>parameters</b>.
+    <div class="def">UG is the shared <i>floor plan</i>. Each language decorates it at fixed choice points: the <b>parameters</b>.
       <span class="ko-supp" style="display:block; margin-top:8px;">보편문법(UG)은 모든 언어가 공유하는 평면도인 원리(principle)이고, 매개변수(parameter)는 언어마다 정해진 선택 지점에서 고르는 값이다.</span></div>
     <div>
-      <div class="cols-even" style="gap:36px;">
+      <div class="cols-even" style="gap:20px;">
         <div>
-          <div class="small-label" style="margin-bottom:10px;">HEAD-INITIAL · ENGLISH</div>
+          <div class="small-label" style="margin-bottom:10px; white-space:nowrap; letter-spacing:0.12em;">HEAD-INITIAL · ENGLISH</div>
           <hr class="hair" style="margin:0 0 12px;">
-          <p style="font: italic 400 19px/1.8 'Lora'; color: var(--ed-ink); margin:0;">[<sub>VP</sub> found <b>a dog</b>]<br>[<sub>PP</sub> to <b>Tokyo</b>]</p>
+          <p style="font: italic 400 17.5px/1.8 'Lora'; color: var(--ed-ink); margin:0; white-space:nowrap;">[<sub>VP</sub> found <b>a dog</b>]<br>[<sub>PP</sub> to <b>Tokyo</b>]</p>
         </div>
         <div>
-          <div class="small-label" style="margin-bottom:10px;">HEAD-FINAL · JAPANESE</div>
+          <div class="small-label" style="margin-bottom:10px; white-space:nowrap; letter-spacing:0.12em;">HEAD-FINAL · JAPANESE</div>
           <hr class="hair" style="margin:0 0 12px;">
-          <p style="font: italic 400 19px/1.8 'Lora'; color: var(--ed-ink); margin:0;">[<sub>VP</sub> <b>inu-o</b> mitsuketa]<br>[<sub>PP</sub> <b>Tokyo</b>-e]</p>
+          <p style="font: italic 400 17.5px/1.8 'Lora'; color: var(--ed-ink); margin:0; white-space:nowrap;">[<sub>VP</sub> <b>inu-o</b> mitsuketa]<br>[<sub>PP</sub> <b>Tokyo</b>-e]</p>
         </div>
       </div>
       <hr class="hair">
-      <p class="lead" style="font-size:16.5px;">Japanese puts the verb after its object: <em>inu-o mitsuketa</em> is literally "dog-OBJ found." The requirement that phrases <b>have</b> heads is the principle; the order is the parameter.</p>
+      <p class="lead" style="font-size:16.5px;">Japanese puts the verb after its object: <em>inu-o mitsuketa</em> is literally "dog-OBJ found."
+        <span class="rel-line" style="margin-top:8px;"><b>Principle</b>: every phrase has a head.</span>
+        <span class="rel-line"><b>Parameter</b>: which side the head is on.</span></p>
     </div>
   </div>
   <aside class="notes">
@@ -366,7 +377,7 @@
         <div class="langlab">JAPANESE · WH STAYS IN PLACE</div>
         <div class="sent" style="font-size:23px;">Taro-ga <b>nani-o</b> mitsuketa-<b>no</b>?</div>
         <div class="gls">Taro&nbsp;&nbsp;what&nbsp;&nbsp;found-Q</div>
-        <div class="tr">"What did Taro find?": no movement; a question suffix instead.</div>
+        <div class="tr">"What did Taro find?": no movement, just a question suffix.</div>
       </div>
       <div class="gloss-set" style="margin-top:20px;">
         <div class="langlab">SWAHILI · ALSO IN SITU</div>
@@ -383,7 +394,9 @@
         <div class="tr">English can strand it: <i>Who(m) did you give the book to?</i></div>
       </div>
       <hr class="hair">
-      <p class="lead" style="font-size:16.5px;">Dutch moves the <b>verb itself</b> when there is no modal: <em>Leest Meindert veel boeken?</em> "Does Meindert read many books?"; English inserts <em>do</em> instead.</p>
+      <p class="lead" style="font-size:16.5px;">Dutch moves the <b>verb itself</b> when there is no modal.
+        <span class="eg-line"><span><em>Leest Meindert veel boeken?</em></span><span>"Does Meindert read many books?"</span></span>
+        <span class="rel-line" style="margin-top:6px;">English inserts <em>do</em> instead.</span></p>
     </div>
   </div>
   <aside class="notes">
@@ -402,7 +415,10 @@
     <li><span class="no">2a</span>Whose mother did George admire ___?</li>
     <li><span class="no star">2b *</span>Whose did George admire ___ mother?</li>
   </ul>
-  <p class="lead" style="max-width:740px; font-size:18px; margin-top:16px;">A wh phrase cannot escape a <em>whether</em>-clause (1b) or leave part of a possessive NP behind (2b). The constraints are <b>structural</b>, universal, and unlearned: children only set the parameter values, and they do it fast.
+  <p class="lead" style="max-width:740px; font-size:18px; margin-top:16px;">Two constraints on movement:
+    <span class="rel-line"><b>1b</b>: a wh phrase cannot escape a <em>whether</em>-clause.</span>
+    <span class="rel-line"><b>2b</b>: it cannot leave part of a possessive NP behind.</span></p>
+  <p class="lead" style="max-width:740px; font-size:18px; margin-top:12px;">The constraints are <b>structural</b>, universal, and unlearned. Children only set the parameter values, and they do it fast.
     <span class="ko-supp" style="display:block; margin-top:8px;">wh구는 whether절을 빠져나오거나 소유 NP의 일부만 남기고 이동할 수 없으며, 이 제약은 구조적·보편적이고 배우지 않아도 안다.</span></p>
   <aside class="notes">
     wh-이동은 장거리로 가능하지만 아무 데서나 되지는 않습니다: whether절 내부에서의 추출(1b),
@@ -439,12 +455,13 @@
 <section data-kicker="CH.3 P.121 · GRAMMATICAL DEPENDENCIES">
   <h2 style="font-size:38px;">Sign Language Syntax</h2>
   <div class="quote-stack compact" style="max-width:700px;">
-    <p><b>Wh movement is optional</b>: the wh sign may stay in its d-structure position, as in Japanese and Swahili. ASL versions of both are grammatical:
+    <p><b>Wh movement is optional</b>: the wh sign may stay in place, as in Japanese and Swahili. Both orders are grammatical:
       <span class="eg-line"><span><i>Who did Bill see yesterday?</i></span><span><i>Bill saw who yesterday?</i></span></span></p>
-    <p><b>Movement is still constrained</b>, as in spoken languages: one member of a coordinate phrase cannot be questioned.
+    <p><b>Movement is still constrained</b>: one member of a coordinate phrase cannot be questioned.
       <span class="eg-line"><span class="accent"><i>*WHO JOHN KISS MARY AND YESTERDAY?</i></span></span></p>
-    <p><b>Wh questions require a non-manual marker</b>: furrowed brows and a tilted head, the signed counterpart of question intonation.</p>
-    <p><b>Negation</b>: <i>NOT</i> can close the sentence, unlike English <i>not</i>; a headshake is obligatory and can even stand in for the sign, much as <i>not</i> shortens to <i>n't</i>.</p>
+    <p><b>Wh questions need a non-manual marker</b>: furrowed brows and a tilted head, like question intonation.</p>
+    <p><b>Negation</b>: <i>NOT</i> can close the sentence, unlike English <i>not</i>.
+      <span class="rel-line">A <b>headshake</b> is obligatory and can replace the sign, much as <i>not</i> shortens to <i>n't</i>.</span></p>
     <p><b>Adjectives</b> can follow the head noun, as in Spanish.</p>
   </div>
   <p class="lead" style="font-size:16px; margin-top:12px;"><span class="ko-supp">ASL의 wh-이동은 선택적이지만 이동 제약은 그대로 지켜지고, wh-의문문에는 찌푸린 눈썹과 기울인 머리가 의무적이며, 부정은 문미 NOT과 고개 젓기로 표시하고, 형용사는 명사 뒤에 올 수 있다.</span></p>
