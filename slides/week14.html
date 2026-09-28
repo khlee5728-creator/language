@@ -75,6 +75,11 @@
     .steps .rule-in { font: 400 17px 'Lora'; color: var(--ed-ink); white-space: nowrap; }
     .morph-result { margin-top: 10px; padding-top: 8px; border-top: 1px solid var(--ed-ink); font: italic 400 17px/1.5 'Lora'; color: var(--ed-ink); }
     .morph-result .no { font: 600 11px 'Space Grotesk'; letter-spacing: 0.14em; color: var(--ed-muted); font-style: normal; margin-right: 8px; }
+    /* 요점 + 예시 줄 */
+    .eg-line { display: flex; flex-wrap: wrap; gap: 0 22px; margin-top: 4px; }
+    .eg-line > span { white-space: nowrap; }
+    .rel-line { display: block; margin-top: 4px; }
+    .cite-inline { display: block; font: italic 400 14px 'Lora'; color: var(--ed-muted); margin-top: 6px; }
   </style>
 </head>
 <body data-rail="WEEK 14 · PHONOLOGY" data-course="Topics in English Linguistics">
@@ -292,9 +297,9 @@
       <span class="ko-supp" style="display:block; margin-top:8px;">같은 음성이 여러 음소를 실현할 수 있으므로, 음성형만 보고는 음소형을 알아낼 수 없다.</span></div>
     <div>
       <ul class="exlist">
-        <li><span class="no">/i/</span>compete [i] · competition [ə]<button class="say-btn mini" data-say="compete, competition" data-lang="en-US">♪</button></li>
-        <li><span class="no">/e/</span>maintain [e] · maintenance [ə]<button class="say-btn mini" data-say="maintain, maintenance" data-lang="en-US">♪</button></li>
-        <li><span class="no">/o/</span>phone [o] · phonetic [ə]<button class="say-btn mini" data-say="phone, phonetic" data-lang="en-US">♪</button></li>
+        <li><span class="no">/i/</span><span>compete [i] · competition [ə]<button class="say-btn mini" data-say="compete, competition" data-lang="en-US">♪</button></span></li>
+        <li><span class="no">/e/</span><span>maintain [e] · maintenance [ə]<button class="say-btn mini" data-say="maintain, maintenance" data-lang="en-US">♪</button></span></li>
+        <li><span class="no">/o/</span><span>phone [o] · phonetic [ə]<button class="say-btn mini" data-say="phone, phonetic" data-lang="en-US">♪</button></span></li>
       </ul>
       <hr class="hair">
       <p class="lead" style="font-size:16px;">German devoices final obstruents: <em>Bund</em> /bʊnd/ and <em>bunt</em> /bʊnt/ are both [bʊnt]; [t] serves /d/ <b>and</b> /t/.</p>
@@ -332,10 +337,10 @@
   <p class="lead" style="max-width:620px;">Beyond the segment: phonology also governs <em>syllables</em>, <em>stress</em>, and <em>pitch</em>; properties of whole strings, not single sounds.
     <span class="ko-supp" style="display:block;">음운론은 분절음 너머의 음절·강세·음높이도 지배하며, 이는 낱소리가 아니라 연쇄 전체의 속성이다: 운율 음운론(prosodic phonology).</span></p>
   <ul class="exlist" style="max-width:620px; margin-top:24px;">
-    <li><span class="no">01</span><b>Syllable Structure</b>: how phonemes group into σ</li>
-    <li><span class="no">02</span><b>Word Stress</b>: which syllable stands out</li>
-    <li><span class="no">03</span><b>Sentence and Phrase Stress</b>: prominence above the word</li>
-    <li><span class="no">04</span><b>Intonation</b>: the pitch contour of the utterance</li>
+    <li><span class="no">01</span><span><b>Syllable Structure</b>: how phonemes group into σ</span></li>
+    <li><span class="no">02</span><span><b>Word Stress</b>: which syllable stands out</span></li>
+    <li><span class="no">03</span><span><b>Sentence and Phrase Stress</b>: prominence above the word</span></li>
+    <li><span class="no">04</span><span><b>Intonation</b>: the pitch contour of the utterance</span></li>
   </ul>
   <aside class="notes">
     운율 음운론의 지도를 먼저 제시합니다. 이하 네 슬라이드가 각각 음절·단어 강세·구 강세·억양을
@@ -407,9 +412,9 @@
       <span class="ko-supp" style="display:block; margin-top:8px;">영어의 모든 내용어에서는 하나 이상의 <b>음절</b>에 강세(stress)가 놓이며, 강세는 뜻을 가르는 대립적 자질이 될 수 있다.</span></div>
     <div>
       <ul class="exlist">
-        <li><span class="no">N</span>PERvert · SUBject<button class="say-btn mini" data-say="My neighbor is a pervert. Let's change the subject." data-lang="en-US">♪</button></li>
-        <li><span class="no">V</span>perVERT · subJECT<button class="say-btn mini" data-say="Don't pervert the idea. He'll subject us to criticism." data-lang="en-US">♪</button></li>
-        <li><span class="no">–</span>PHOtograph · phoTOGraphy: stress shifts as affixes attach<button class="say-btn mini" data-say="photograph, photography" data-lang="en-US">♪</button></li>
+        <li><span class="no">N</span><span>PERvert · SUBject<button class="say-btn mini" data-say="My neighbor is a pervert. Let's change the subject." data-lang="en-US">♪</button></span></li>
+        <li><span class="no">V</span><span>perVERT · subJECT<button class="say-btn mini" data-say="Don't pervert the idea. He'll subject us to criticism." data-lang="en-US">♪</button></span></li>
+        <li><span class="no">–</span><span>PHOtograph · phoTOGraphy: stress shifts as affixes attach<button class="say-btn mini" data-say="photograph, photography" data-lang="en-US">♪</button></span></li>
       </ul>
       <p class="lead" style="font-size:16px; margin-top:14px;">Unstressed vowels reduce to schwa, which is why the shift changes the whole vowel pattern.</p>
     </div>
@@ -522,12 +527,14 @@
       <tr><td class="rowh">/sk/</td><td><span class="cl">/skl/</span><i>sclerosis</i></td><td><span class="cl">/skr/</span><i>screen</i></td><td><span class="cl">/skw/</span><i>squat</i></td><td><span class="cl">/skj/</span><i>skew</i></td></tr>
     </tbody>
   </table>
-  <p class="lead" style="font-size:16.5px; max-width:680px; margin-top:12px;">The pattern: /s/ first, then a voiceless stop /p t k/, then a liquid or glide /l r w j/; even so, <i>*stl</i>, <i>*spw</i>, <i>*stw</i>, <i>*stj</i> are excluded.
+  <p class="lead" style="font-size:16.5px; max-width:680px; margin-top:12px;">The pattern: /s/ first, then a voiceless stop /p t k/, then a liquid or glide /l r w j/.
+    <span class="rel-line">Even so, some are excluded: <i>*stl</i>, <i>*spw</i>, <i>*stw</i>, <i>*stj</i>.</span>
     <span class="ko-supp" style="display:block; font-size:15px;">첫째는 /s/, 둘째는 무성 파열음, 셋째는 유음이나 활음이며, 그래도 일부 조합은 허용되지 않는다.</span></p>
   <hr class="hair" style="margin:14px 0 10px;">
-  <p class="lead" style="font-size:16.5px; max-width:680px;">Also: after a word-initial /tʃ/ or /dʒ/ (<i>chill</i>, <i>Jill</i>) the next sound must be a vowel. <i>chut</i> /tʃʌt/ and <i>jeel</i> /dʒil/ are possible words; */tʃlɔt/ and */dʒpurz/ are not.
-    <span style="font: italic 400 14px 'Lora'; color: var(--ed-muted);">(cf. textbook Ch.6, p.247)</span>
-    <span class="ko-supp" style="display:block; font-size:15px;">어두의 /tʃ/, /dʒ/ 뒤에는 반드시 모음이 와야 한다.</span></p>
+  <p class="lead" style="font-size:16.5px; max-width:680px;">Also: after a word-initial /tʃ/ or /dʒ/ (<i>chill</i>, <i>Jill</i>), the next sound must be a vowel.
+    <span class="eg-line"><span>possible: <i>chut</i> /tʃʌt/, <i>jeel</i> /dʒil/</span><span>impossible: */tʃlɔt/, */dʒpurz/</span></span>
+    <span class="ko-supp" style="display:block; font-size:15px;">어두의 /tʃ/, /dʒ/ 뒤에는 반드시 모음이 와야 한다.</span>
+    <span class="cite-inline">(cf. textbook Ch.6, p.247)</span></p>
   <aside class="notes">
     교재 p.247의 어두 3자음군 표를 행(s+파열음)과 열(셋째 자음)로 재배열했습니다. 교재는 표만 제시하므로,
     학생들에게 표를 보고 공통 패턴(첫째 /s/, 둘째 무성 파열음, 셋째 유음·활음)을 직접 찾게 한 뒤 공개하세요.
@@ -630,9 +637,11 @@
   <h2 style="font-size:38px;">Phonological Analysis</h2>
   <p class="lead" style="font-size:18px; max-width:660px;"><em>writer</em> [ɹaɪɾɚ] and <em>rider</em> both surface with [ɾ], but <em>write</em> [ɹaɪt] and <em>ride</em> [ɹaɪd] keep the stops. <button class="say-btn mini" data-say="writer, rider, write, ride" data-lang="en-US">listen</button></p>
   <div class="rule-line" style="font-size:26px;">/t/, /d/ <b>→</b> [ɾ] <b>/</b> V́ __ V</div>
-  <p class="lead" style="font-size:17px; max-width:660px;">The flap occurs <em>only</em> between a stressed and an unstressed vowel, where [t] and [d] never do: complementary distribution, so [ɾ] is an allophone of <b>both</b> /t/ and /d/. Phonemically <em>writer</em> is /raɪtər/, from [ɹaɪt].
-    <span style="font: italic 400 14px 'Lora'; color: var(--ed-muted);">(cf. textbook Ch.6, pp.251–252)</span>
-    <span class="ko-supp" style="display:block; margin-top:8px;">[ɾ]는 강세 모음과 비강세 모음 사이에만 오고 [t] [d]는 거기 못 오므로 상보적 분포이며, [ɾ]는 /t/와 /d/ 양쪽의 이음이다.</span></p>
+  <p class="lead" style="font-size:17px; max-width:660px;">The flap occurs <em>only</em> between a stressed and an unstressed vowel, where [t] and [d] never do.
+    <span class="rel-line">Complementary distribution: [ɾ] is an allophone of <b>both</b> /t/ and /d/.</span>
+    <span class="rel-line">So phonemically <em>writer</em> is /raɪtər/, as in [ɹaɪt].</span>
+    <span class="ko-supp" style="display:block; margin-top:8px;">[ɾ]는 강세 모음과 비강세 모음 사이에만 오고 [t] [d]는 거기 못 오므로 상보적 분포이며, [ɾ]는 /t/와 /d/ 양쪽의 이음이다.</span>
+    <span class="cite-inline">(cf. textbook Ch.6, pp.251–252)</span></p>
   <aside class="notes">
     영어 탄설음 분석: [ɾ]는 강세 모음과 비강세 모음 사이에만, [t]·[d]는 거기 못 옴 —
     상보적 분포이므로 [ɾ]는 /t/와 /d/ 양쪽의 이음(many to one). 기저형은 관련형(write, ride)으로

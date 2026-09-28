@@ -45,6 +45,11 @@
     /* 보충(교재 밖) 슬라이드 */
     .enrich { border-top: 1px solid var(--ed-line); border-bottom: 1px solid var(--ed-line);
       padding: 22px 0; }
+    /* 요점 + 예시 줄 */
+    .eg-line { display: flex; flex-wrap: wrap; gap: 0 22px; margin-top: 4px; }
+    .eg-line > span { white-space: nowrap; }
+    .rel-line { display: block; margin-top: 4px; }
+    .cite-inline { display: block; font: italic 400 14px 'Lora'; color: var(--ed-muted); margin-top: 6px; }
   </style>
 </head>
 <body data-rail="WEEK 10 · THE MEANING OF LANGUAGE" data-course="Topics in English Linguistics">
@@ -108,7 +113,7 @@
   <h2 style="font-size:38px;">Pronouns and Other Deictic Words</h2>
   <div class="cols">
     <div class="def"><i>Deictic</i> words take part of their meaning from context and the <i>orientation of the speaker</i>: pronouns, demonstratives, adverbs, prepositions.
-      <span class="ko-supp" style="display:block; margin-top:8px;">직시(deixis) 표현인 대명사·지시사·부사·전치사는 의미의 일부를 맥락과 화자의 정향에서 얻으며, 우리는 늘 이런 지름길로 말한다.</span></div>
+      <span class="ko-supp" style="display:block; margin-top:8px;">직시(deixis) 표현인 대명사·지시사·부사·전치사는 의미의 일부를 맥락과 화자의 정향에서 얻는다.</span></div>
     <div>
       <div class="word-row" style="margin-top:0; padding-top:0; border-top:0;">
         <div class="w"><b>I · you · she</b><span>PERSON</span></div>
@@ -116,7 +121,9 @@
         <div class="w"><b>now · today · tomorrow</b><span>TIME</span></div>
       </div>
       <hr class="hair">
-      <p class="lead" style="font-size:17.5px;">"<em>I really like it in Venice. Today there was a boat parade here.</em>": natural; the fully explicit version (<em>Taylor Swift… on September 16, 2016, in Venice, Italy…</em>) sounds bizarre. <b>We speak in shortcuts.</b></p>
+      <p class="lead" style="font-size:17px;"><span class="rel-line" style="margin-top:0;">Natural: "<em>I really like it in Venice. Today there was a boat parade here.</em>"</span>
+        <span class="rel-line">Bizarre: "<em>Taylor Swift… on September 16, 2016, in Venice, Italy…</em>"</span>
+        <span class="rel-line" style="margin-top:8px;"><b>We speak in shortcuts.</b></span></p>
     </div>
   </div>
   <aside class="notes">
@@ -190,10 +197,10 @@
       <span class="ko-supp" style="display:block; margin-top:8px;">재귀대명사는 문장 안에서 인칭·성·수가 맞는 올바른 위치의 선행사(antecedent)를 요구하지만, 비재귀 대명사는 다른 문장의 선행사와도 공지시(co-refer)한다.</span></div>
     <div>
       <ul class="exlist" style="font-size:0.9em;">
-        <li><span class="no star">a *</span>I saw Mary. Herself left. No antecedent in the sentence</li>
-        <li><span class="no star">b *</span>John wrote herself a letter. Features must match</li>
-        <li><span class="no star">c *</span>Himself washed John. Antecedent cannot follow</li>
-        <li><span class="no star">d *</span>Jane said the boy bit herself. No NP may intervene</li>
+        <li><span class="no star">a *</span><span>I saw Mary. Herself left. No antecedent in the sentence</span></li>
+        <li><span class="no star">b *</span><span>John wrote herself a letter. Features must match</span></li>
+        <li><span class="no star">c *</span><span>Himself washed John. Antecedent cannot follow</span></li>
+        <li><span class="no star">d *</span><span>Jane said the boy bit herself. No NP may intervene</span></li>
       </ul>
       <hr class="hair">
       <div class="gloss-set">
@@ -332,8 +339,8 @@
       <hr class="hair" style="margin:0 0 14px;">
       <p class="lead" style="font-size:18px;">Only performative sentences sound right after <em>I hereby…</em></p>
       <ul class="exlist" style="margin-top:14px; font-size:0.9em;">
-        <li><span class="no">✓</span>I hereby apologize to you.</li>
-        <li><span class="no star">✗</span>?I hereby know you.</li>
+        <li><span class="no">✓</span><span>I hereby apologize to you.</span></li>
+        <li><span class="no star">✗</span><span>?I hereby know you.</span></li>
       </ul>
     </div>
     <div>

@@ -61,6 +61,11 @@
     .slip-row .s { font: italic 400 18px 'Lora'; color: var(--ed-ink); }
     .slip-row .e { font: italic 400 18px 'Lora'; color: var(--ed-accent); }
     .slip-row .ar { font: 400 14px 'Space Grotesk'; color: var(--ed-muted); text-align: center; }
+    /* 요점 + 예시 줄 */
+    .eg-line { display: flex; flex-wrap: wrap; gap: 0 22px; margin-top: 4px; }
+    .eg-line > span { white-space: nowrap; }
+    .rel-line { display: block; margin-top: 4px; }
+    .cite-inline { display: block; font: italic 400 14px 'Lora'; color: var(--ed-muted); margin-top: 6px; }
   </style>
 </head>
 <body data-rail="WEEK 9 · THE MEANING OF LANGUAGE" data-course="Topics in English Linguistics">
@@ -496,17 +501,20 @@
   <h2 style="font-size:40px;">Semantic Features of Nouns</h2>
   <div class="cols">
     <div class="def">Features interact with <i>morphology and syntax</i>: "female" surfaces as <b>&#8209;ess</b> (<i>tigress, actress, princess</i>).
-      <span class="ko-supp" style="display:block; margin-top:8px;">명사의 의미 자질은 형태·통사에 반영되어 '여성'은 -ess로 나타나고, 가산(count)/질량(mass) 자질이 한정사 선택을 지배하며 그 배정은 언어마다 다르다.</span></div>
+      <span class="ko-supp" style="display:block; margin-top:8px;">명사의 의미 자질은 형태·통사와 맞물려, '여성' 자질은 접미사 -ess로 드러난다.</span></div>
     <div>
       <div class="small-label" style="margin-bottom:10px;">COUNT VS. MASS · WHICH DETERMINERS?</div>
       <ul class="exlist" style="font-size:0.9em;">
-        <li><span class="no">a</span>I have a dog. · He has many dogs.</li>
-        <li><span class="no star">b *</span>I have dog. · *He has much dogs.</li>
-        <li><span class="no">c</span>I have rice. · He has much rice.</li>
-        <li><span class="no star">d *</span>I have a rice. · *He has many rice(s).</li>
+        <li><span class="no">a</span><span>I have a dog. · He has many dogs.</span></li>
+        <li><span class="no star">b *</span><span>I have dog. · *He has much dogs.</span></li>
+        <li><span class="no">c</span><span>I have rice. · He has much rice.</span></li>
+        <li><span class="no star">d *</span><span>I have a rice. · *He has many rice(s).</span></li>
       </ul>
       <hr class="hair">
-      <p class="lead" style="font-size:16.5px;">Not grounded in perception: Italian counts <em>spaghetti, mobili, capelli</em> (<i>Ivano ha mangiato molti spaghetti</i>, "many spaghettis"). English pairs both ways: <em>shoes</em> (count) / <em>footwear</em> (mass).</p>
+      <p class="lead" style="font-size:16.5px;">Count vs. mass is not grounded in perception:
+        <span class="rel-line">Italian counts <em>spaghetti, mobili, capelli</em>.</span>
+        <span class="eg-line"><span><i>Ivano ha mangiato molti spaghetti</i></span><span>"many spaghettis"</span></span>
+        <span class="rel-line">English pairs both ways: <em>shoes</em> (count) / <em>footwear</em> (mass).</span></p>
     </div>
   </div>
   <aside class="notes">
@@ -520,7 +528,7 @@
   <h2 style="font-size:40px;">Semantic Features of Verbs</h2>
   <div class="cols">
     <div class="def">Verb meanings also decompose: "cause" in <i>darken, kill, uglify</i>; "go" in <i>swim, throw, give</i>; "become" in <i>break</i>, "cause to become broken."
-      <span class="ko-supp" style="display:block; margin-top:8px;">동사 자질도 통사에 반영된다: 상태 동사(stative)는 수동·진행·명령이 어색하고, ever 같은 부정극어(negative polarity item)는 doubt처럼 부정 자질을 지닌 동사와만 어울린다.</span></div>
+      <span class="ko-supp" style="display:block; margin-top:8px;">동사 의미도 자질로 분해된다: darken·kill의 '원인', swim·throw의 '이동', break의 '되게 함'.</span></div>
     <div>
       <div class="cols-even" style="gap:44px;">
         <div>
@@ -535,7 +543,10 @@
         </div>
       </div>
       <hr class="hair">
-      <p class="lead" style="font-size:16.5px;"><b>Negative polarity</b>: <em>John doubts that he'll ever fly again</em> ✓ vs. <em>*John thinks that he'll ever fly again</em>; <b>doubt</b> means "think that not."</p>
+      <p class="lead" style="font-size:16.5px;"><b>Negative polarity</b>: <em>ever</em> needs a verb with a negative feature.
+        <span class="rel-line"><em>John doubts that he'll ever fly again.</em> ✓</span>
+        <span class="rel-line"><em>*John thinks that he'll ever fly again.</em></span>
+        <span class="rel-line"><b>doubt</b> = "think that not"</span></p>
     </div>
   </div>
   <aside class="notes">
@@ -587,7 +598,9 @@
     <div class="tc"><b>Experiencer</b>one receiving sensory input: awakened <i>Harry Potter</i>.</div>
   </div>
   <hr class="hair" style="margin-top:22px;">
-  <p class="lead" style="font-size:16.5px;">Roles stay constant across structures: <em>The boy opened the door with the key · The key opened the door · The door opened</em>; <b>the door</b> is the theme in all three.
+  <p class="lead" style="font-size:16.5px;">Roles stay constant across structures:
+    <span class="eg-line"><span><em>The boy opened the door with the key.</em></span><span><em>The key opened the door.</em></span><span><em>The door opened.</em></span></span>
+    <span class="rel-line"><b>The door</b> is the theme in all three.</span>
     <span class="ko-supp" style="display:block;">논항구조(argument structure)는 동사가 취하는 NP의 수를, 의미역(thematic roles)은 각 NP의 역할을 정하며, the door처럼 구조가 바뀌어도 의미역은 그대로다.</span></p>
   <aside class="notes">
     자동사 1항, 타동사 2항, 수여동사 3항 — 논항구조는 어휘 항목의 일부. 의미역은 통사 위치가 아니라
