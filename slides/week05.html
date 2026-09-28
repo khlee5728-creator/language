@@ -20,6 +20,32 @@
     .mech { display: block; margin-top: 10px; padding-left: 14px; border-left: 2px solid var(--ed-line); }
     .eg-line { display: flex; flex-wrap: wrap; gap: 0 22px; margin-top: 4px; }
     .eg-line > span { white-space: nowrap; }
+    /* s12 합성어 조합표: 3×3 격자(라벨 위, 단어 아래) — 한 줄에 셋이 들어가 줄바꿈 없음 */
+    .cgrid { display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 12px; }
+    .cgrid > div { padding: 7px 0; border-bottom: 1px solid var(--ed-line); font: italic 400 17.5px/1.4 'Lora'; }
+    .cgrid > div:nth-last-child(-n+3) { border-bottom: 0; }
+    /* 형태소 분석 사례 3·4 */
+    .azdata { display: grid; grid-template-columns: auto 1fr; column-gap: 16px; row-gap: 3px; font: 400 16px/1.45 'Lora'; color: var(--ed-body); }
+    .azdata i { font-size: 18px; color: var(--ed-ink); }
+    .reveal ol.steps { list-style: none; counter-reset: st; margin: 0; padding: 0; }
+    .reveal ol.steps li { list-style: none; counter-increment: st; position: relative; padding: 6px 0 6px 30px; border-bottom: 1px solid var(--ed-line); font: 400 16.5px/1.45 'Lora', 'Noto Serif KR'; color: var(--ed-body); }
+    .steps li:last-child { border-bottom: 0; }
+    .steps li::before { content: counter(st); position: absolute; left: 0; top: 8px; font: 600 12px 'Space Grotesk'; color: var(--ed-accent); letter-spacing: 0.1em; }
+    .steps li b { color: var(--ed-accent); }
+    .morph-result { margin-top: 14px; padding-top: 10px; border-top: 1px solid var(--ed-ink); font: italic 400 18px/1.5 'Lora'; color: var(--ed-ink); }
+    .morph-result .no { font: 600 11px 'Space Grotesk'; letter-spacing: 0.14em; color: var(--ed-muted); font-style: normal; margin-right: 8px; }
+    .reveal table.para { width: 100%; border-collapse: collapse; margin: 6px 0 0; font-size: 18px; }
+    .reveal table.para th { white-space: nowrap; font: 600 11px 'Space Grotesk'; letter-spacing: 0.14em; color: var(--ed-muted); text-align: left; padding: 6px 10px; border-bottom: 1px solid var(--ed-ink); background: none; }
+    .reveal table.para td { font: italic 400 18px 'Lora'; color: var(--ed-ink); padding: 6px 10px; border-bottom: 1px solid var(--ed-line); background: none; }
+    .reveal table.para td.rowh { font: 600 11px 'Space Grotesk'; font-style: normal; letter-spacing: 0.12em; color: var(--ed-muted); white-space: nowrap; }
+    .reveal table.para td b { font-weight: 700; color: var(--ed-accent); }
+    .reveal table.para td .alt { background: color-mix(in srgb, var(--ed-accent) 12%, transparent); padding: 0 3px; }
+    /* s16 malapropism 형태소 분해 행 */
+    .mparse { display: flex; gap: 0; margin-top: 8px; border-top: 1px solid var(--ed-line); border-bottom: 1px solid var(--ed-line); }
+    .mparse > div { flex: 1; text-align: center; padding: 6px 4px; border-right: 1px solid var(--ed-line); font: italic 400 22px/1.25 'Lora'; }
+    .mparse > div:last-child { border-right: 0; }
+    .mparse .no { display: block; font: 600 11px 'Space Grotesk'; letter-spacing: 0.12em; color: var(--ed-muted); font-style: normal; margin-top: 2px; }
+    .cgrid .no { display: block; font: 600 11px 'Space Grotesk'; letter-spacing: 0.1em; color: var(--ed-muted); font-style: normal; }
 
     /* 표지 */
     .cover .booktag { font: 600 12px 'Space Grotesk'; letter-spacing: 0.3em; color: var(--ed-muted); }
@@ -59,8 +85,9 @@
     <li><b>Other Morphological Processes</b><span class="pg">P.55</span></li>
     <li><b>Back-Formations</b><span class="pg">P.55</span></li>
     <li><b>Compounds</b>: <i style="font-size:0.82em;">meaning · universality</i><span class="pg">P.56</span></li>
+    <li><b>"Malapropisms"</b><span class="pg">P.59</span></li>
     <li><b>Sign Language Morphology</b><span class="pg">P.59</span></li>
-    <li><b>Morphological Analysis: Identifying Morphemes</b><span class="pg">P.60</span></li>
+    <li><b>Morphological Analysis: Identifying Morphemes</b>: <i style="font-size:0.82em;">case studies 1–4</i><span class="pg">P.60</span></li>
     <li><b>Summary</b><span class="pg">P.64</span></li>
   </ol>
   <aside class="notes">
@@ -265,15 +292,18 @@
 </section>
 
 <!-- ══ 8 · Evidence the rules are real ══ -->
-<section data-kicker="CH.2 P.54 · EXCEPTIONS AND SUPPLETIONS">
-  <h2 style="font-size:38px;">Evidence the Regular Rules Are Real</h2>
+<section data-kicker="CH.2 P.54 · RULES OF WORD FORMATION">
+  <h2 style="font-size:38px;">Exceptions and Suppletions</h2>
   <div class="quote-stack" style="max-width:680px;">
-    <p>Children <b>over-apply</b> the rule (<i>mans</i>, <i>goed</i>) before learning <i>men</i>, <i>went</i>. The errors prove the rule exists.</p>
-    <p>New and borrowed words go regular: <i>geeks</i> (not <span class="star">*geeken</span>), <i>faxes</i>, and a denominal verb is regular too (<i>flied out</i>, not <span class="star">*flew out</span>).</p>
-    <p>Some inflections have <b>no phonological shape</b>: <i>hit</i> + past and <i>sheep</i> + plural carry a zero morpheme.</p>
+    <p>Children <b>over-apply</b> the rule before learning the irregular forms. These errors show the rule exists.
+      <span class="eg-line"><span><i>mans</i> before <i>men</i></span><span><i>goed</i> before <i>went</i></span></span></p>
+    <p>New and borrowed words go regular, and so do verbs made from nouns.
+      <span class="eg-line"><span><i>geeks</i>, not <span class="accent"><i>*geeken</i></span></span><span><i>faxes</i></span><span><i>flied out</i>, not <span class="accent"><i>*flew out</i></span></span></span></p>
+    <p>Some inflections have <b>no phonological shape</b>: a zero morpheme.
+      <span class="eg-line"><span><i>hit</i> + past → <i>hit</i></span><span><i>sheep</i> + plural → <i>sheep</i></span></span></p>
   </div>
-  <p style="font: italic 400 14px 'Lora'; color: var(--ed-muted); margin-top:14px;">(cf. textbook Ch.2, p.54)</p>
-  <p class="lead" style="font-size:16px;"><span class="ko-supp">아이들의 과잉규칙화(mans, goed), 신어·차용어의 규칙 적용(geeks), 영형태소(hit+past, sheep+plural)는 규칙이 실재함을 보여준다.</span></p>
+  <p class="lead" style="font-size:16px; margin-top:14px;"><span class="ko-supp">아이들의 과잉 적용(mans, goed)과 신어·차용어의 규칙형(geeks)은 규칙이 실재함을 보여 주며, 일부 굴절은 음성형이 없는 영형태소(zero morpheme)다.</span></p>
+  <p style="font: italic 400 14px 'Lora'; color: var(--ed-muted); margin-top:10px;">(cf. textbook Ch.2, p.54)</p>
   <aside class="notes">
     규칙형이 실제 심리적 실체임을 보이는 세 증거: (1) 아이들이 규칙을 과잉적용(mans, goed)했다가 뒤늦게
     불규칙형을 배움 (2) 신어·차용어는 규칙 적용(geeks, faxes) — 명사에서 파생된 동사도 규칙(flied out,
@@ -311,17 +341,17 @@
     but creativity goes further. Ch.2 treats two more processes: <b>back-formation</b> and <b>compounding</b>.
     <span class="ko-supp" style="display:block;">접사 첨가(affixation)가 가장 흔한 단어 형성법이지만, Ch.2는 역형성(back-formation)과 합성(compounding) 두 과정을 더 다룬다.</span></p>
   <hr class="hair" style="max-width:680px; margin-top:28px;">
-  <p class="small-label" style="margin-bottom:10px;">ENRICHMENT · BEYOND THE CH.2 READING · NOT ON THE EXAM</p>
+  <p class="small-label" style="margin-bottom:10px;">ENRICHMENT · BEYOND THE CH.2 READING</p>
   <p style="font: italic 400 17px/1.9 'Lora'; color: var(--ed-body); max-width:680px;">
     <b>Acronym</b>: initials read as a word (<i>NASA, laser</i>) &nbsp;·&nbsp;
     <b>Blend</b>: fuse two words (<i>smoke + fog → smog</i>) &nbsp;·&nbsp;
     <b>Clipping</b>: shorten (<i>advertisement → ad</i>) &nbsp;·&nbsp;
     <b>Eponym</b>: a name becomes a word (<i>sandwich, boycott</i>) &nbsp;·&nbsp;
     <b>Coinage</b>: a fresh invention (<i>google, Kleenex</i>)</p>
-  <p class="ko-supp" style="font-size:14px; margin-top:12px;">두문자어·혼성·절단·명칭어·신조어는 표준 형태론이지만 이 챕터 밖의 심화 내용(시험 제외).</p>
+  <p class="ko-supp" style="font-size:14px; margin-top:12px;">두문자어·혼성·절단·명칭어·신조어는 표준 형태론이지만 이 챕터 밖의 심화 내용이다.</p>
   <aside class="notes">
-    시험 범위 안의 단어 형성 과정은 역형성과 합성어 둘뿐입니다. 아래 두문자어·혼성·절단·명칭어·신조어는
-    표준 형태론이지만 이 챕터에는 나오지 않으므로 '심화(시험 제외)'로 분명히 구분해 안내하세요.
+    Ch.2 본문이 다루는 단어 형성 과정은 역형성과 합성어 둘뿐입니다. 아래 두문자어·혼성·절단·명칭어·신조어는
+    표준 형태론이지만 이 챕터에는 나오지 않으므로 '심화'로 분명히 구분해 안내하세요.
   </aside>
 </section>
 
@@ -350,18 +380,26 @@
 <section data-kicker="CH.2 P.56 · OTHER MORPHOLOGICAL PROCESSES">
   <h2>Compounds</h2>
   <div class="cols">
-    <div class="def">Two or more words joined into one new word: English combines nearly every pair of classes.
-      <span class="ko-supp" style="display:block; margin-top:8px;">합성어(compound)는 둘 이상의 단어가 결합한 새 단어이며, 영어는 거의 모든 품사 조합을 허용하고 오른쪽 단어가 핵(head)이 된다.</span></div>
+    <div class="def">Two or more words joined into one new word: English combines nearly every pair of classes,
+      and new compounds keep appearing (<i>crowdfunding</i>, <i>flash mob</i>, <i>robocall</i>).
+      <span class="ko-supp" style="display:block; margin-top:8px;">합성어(compound)는 둘 이상의 단어가 결합한 새 단어이며, 영어는 거의 모든 품사 조합을 허용하고 새 합성어가 계속 생겨난다.</span></div>
     <div>
-      <ul class="exlist" style="font-size:0.95em;">
-        <li><span class="no">A+A</span><i>bittersweet</i> &nbsp;·&nbsp; <span class="no">A+N</span><i>smartwatch</i> &nbsp;·&nbsp; <span class="no">A+V</span><i>whitewash</i></li>
-        <li><span class="no">N+N</span><i>homework</i> &nbsp;·&nbsp; <span class="no">V+N</span><i>pickpocket</i> &nbsp;·&nbsp; <span class="no">V+V</span><i>sleepwalk</i></li>
-        <li><span class="no">P+A</span><i>overeager</i> &nbsp;·&nbsp; <span class="no">P+N</span><i>outpatient</i> &nbsp;·&nbsp; <span class="no">P+V</span><i>undergo</i></li>
-      </ul>
+      <div class="cgrid">
+        <div><span class="no">A+A</span>bittersweet</div>
+        <div><span class="no">A+N</span>smartwatch</div>
+        <div><span class="no">A+V</span>whitewash</div>
+        <div><span class="no">N+N</span>homework</div>
+        <div><span class="no">V+N</span>pickpocket</div>
+        <div><span class="no">V+V</span>sleepwalk</div>
+        <div><span class="no">P+A</span>overeager</div>
+        <div><span class="no">P+N</span>outpatient</div>
+        <div><span class="no">P+V</span>undergo</div>
+      </div>
       <hr class="hair">
-      <p class="lead" style="font-size:18px;"><b>Right-hand head rule</b> — the rightmost word is the head:
-        a <em>smartwatch</em> is a kind of <em>watch</em> (noun, like its head). Recent coins: <i>crowdfunding, flash mob, robocall</i>.
-        But a <em>meet-up</em> is not a preposition: closed classes stay closed.</p>
+      <p class="lead" style="font-size:18px;"><b>Right-hand head rule</b>: the rightmost word is the head. The head fixes the compound's core meaning and category.
+        <span class="eg-line"><span>a <i>smartwatch</i> is a kind of <i>watch</i> (noun)</span><span><i>sleepwalk</i> is a kind of walking (verb)</span></span></p>
+      <p class="lead" style="font-size:18px; margin-top:12px;"><b>Exception</b>: a <i>meet-up</i> is a kind of meeting, a noun, not a preposition.
+        Prepositions are a closed class that does not readily take new members.</p>
     </div>
   </div>
   <aside class="notes">
@@ -372,8 +410,8 @@
 </section>
 
 <!-- ══ 13 · Headed vs unheaded ══ -->
-<section data-kicker="CH.2 P.57 · COMPOUNDS">
-  <h2 style="font-size:38px;">Headed and Unheaded Compounds</h2>
+<section data-kicker="CH.2 P.57 · OTHER MORPHOLOGICAL PROCESSES">
+  <h2 style="font-size:38px;">Compounds</h2>
   <div class="quote-stack" style="max-width:700px;">
     <p>A <b>headed</b> compound inherits its head's irregular plural: <i>policeman → policemen</i>.</p>
     <p>An <b>unheaded</b> compound has no head to inherit from; the regular rule applies:
@@ -477,6 +515,36 @@
   </aside>
 </section>
 
+<!-- ══ 15c · "Malapropisms" (p.59 box) ══ -->
+<section data-kicker="CH.2 P.59 · RULES OF WORD FORMATION">
+  <h2>"Malapropisms"</h2>
+  <div class="cols">
+    <div class="def">A <b>malapropism</b> misreads a word's morphemes, usually to comic effect.
+      The mistakes reveal the speaker's morphological knowledge.
+      <span class="ko-supp" style="display:block; margin-top:8px;">말라프로피즘(malapropism)은 형태소를 잘못 해석한 우스운 오용이며, 그 실수가 화자의 형태론 지식을 드러낸다.</span></div>
+    <div class="quote-stack compact">
+      <p><i>abdicate</i>: read as <i>ab(s)</i> + <i>dicate</i>, "giving up on a flat stomach"</p>
+      <p><i>gullible</i>: read as <i>gull</i> + <i>-ible</i>, "having to do with seabirds"</p>
+      <p><i>polyglot</i>: read as <i>poly-</i> + <i>glot</i>, "more than one glot"</p>
+      <p style="font: italic 400 14px 'Lora'; color: var(--ed-muted);">(cf. textbook Ch.2, p.59)</p>
+    </div>
+  </div>
+  <p class="small-label" style="margin:14px 0 0;">A MISUSE THAT STILL FOLLOWS THE RULES</p>
+  <div class="mparse">
+    <div>in-<span class="no">'NOT'</span></div>
+    <div>de-<span class="no">'OFF'</span></div>
+    <div>fat<span class="no">'FAT'</span></div>
+    <div>-able<span class="no">'ABLE'</span></div>
+  </div>
+  <p class="lead" style="font-size:17px; margin-top:10px;">For a dieter who never lost weight, <i>indefatigable</i> meant "not able to take the fat off." It really means "tireless."
+    <span class="ko-supp" style="display:block;">살이 안 빠지는 사람에게 '살을 뺄 수 없는'이라는 뜻으로 썼지만, 실제 뜻은 '지칠 줄 모르는'이다.</span></p>
+  <aside class="notes">
+    교재 p.59 박스 "Malapropisms". 오용 자체가 형태소 지식의 증거라는 점이 핵심입니다. 학생들은 단어를 아무렇게나
+    쪼개지 않고, 실제 접두사(in-, de-)와 접미사(-able)의 의미를 규칙대로 적용했습니다. 앞의 '규칙은 실재한다'
+    (과잉 규칙화) 슬라이드와 같은 논리로 연결하세요. 교재 표에는 예시가 더 있으니 학생들에게 직접 찾아보게 해도 좋습니다.
+  </aside>
+</section>
+
 <!-- ══ 16 · Sign Language Morphology ══ -->
 <section data-kicker="CH.2 P.59 · MORPHOLOGY">
   <h2>Sign Language Morphology</h2>
@@ -506,20 +574,90 @@
       <span class="ko-supp" style="display:block; margin-top:8px;">미지 언어 자료에서 의미를 고정한 채 단어 짝을 비교해 반복되는 조각을 분리하면, 그것이 형태소(morpheme)다.</span></div>
     <div>
       <div class="gloss-set">
-        <div class="langlab">PAKU (V. FROMKIN, LAND OF THE LOST)</div>
+        <div class="langlab">CASE STUDY 2 · PAKU (V. FROMKIN, LAND OF THE LOST)</div>
         <div class="sent" style="font-size:24px;">abu "child" → abu<b>ni</b> "children" · me "I" → me<b>ni</b> "we"</div>
         <div class="tr">→ -ni = "복수" 형태소. (cf. textbook Ch.2, pp.60–61)</div>
       </div>
       <hr class="hair">
-      <p class="lead" style="font-size:17px;">Same caution as English: <em>&#8209;er</em> is comparative in <i>taller</i>,
+      <p class="lead" style="font-size:17px;"><span class="small-label" style="display:block; margin-bottom:4px;">CASE STUDY 1 · ENGLISH</span>One form is not always one morpheme: <em>&#8209;er</em> is comparative in <i>taller</i>,
         agentive in <i>singer</i>, and nothing at all in <i>somber</i>.</p>
     </div>
   </div>
   <aside class="notes">
     미지 언어 자료 분석법(교재 Case Study 1–4): 의미가 일정할 때 반복되는 형식 조각을 분리하면 그것이
-    형태소. Paku(프롬킨이 만든 TV 드라마 언어)의 -ni "복수"가 대표 예. 영어 -er처럼 같은 형식이 여러
-    형태소이거나 형태소가 아닐 수 있음을 함께 확인(ugly/uglier/ugliest 사례 연구). 미초아칸 아즈텍어
-    (no-kali "my house" → kali, no-, -mes)와 슬라브어 사례처럼 이형태까지 고려 — 실전 분석 과제의 기초입니다.
+    형태소. 사례 1(영어): 같은 -er이라도 비교급·행위자로 다른 형태소이거나(taller/singer), 형태소가 아닐 수
+    있음(somber). 사례 2(Paku, 프롬킨이 만든 TV 드라마 언어): -ni "복수"처럼 형식과 의미가 1:1로 대응하는 가장
+    단순한 분절. 이어지는 두 장에서 사례 3(여러 접사를 연쇄 추론)과 사례 4(이형태)를 다룹니다.
+  </aside>
+</section>
+
+<!-- ══ 17b · Case Study 3 · Michoacan Aztec ══ -->
+<section data-kicker="CH.2 P.61 · MORPHOLOGICAL ANALYSIS: IDENTIFYING MORPHEMES">
+  <h2>Case Study 3</h2>
+  <div class="cols">
+    <div>
+      <div class="gloss-set"><div class="langlab">MICHOACAN AZTEC (MEXICO)</div></div>
+      <div class="azdata">
+        <i>nokali</i><span>"my house"</span>
+        <i>nokalimes</i><span>"my houses"</span>
+        <i>mokali</i><span>"your house"</span>
+        <i>ikali</i><span>"his house"</span>
+        <i>nopelo</i><span>"my dog"</span>
+        <i>mopelo</i><span>"your dog"</span>
+        <i>mopelomes</i><span>"your dogs"</span>
+        <i>ikwahmili</i><span>"his cornfield"</span>
+        <i>nokwahmili</i><span>"my cornfield"</span>
+      </div>
+      <p style="font: italic 400 14px 'Lora'; color: var(--ed-muted); margin-top:10px;">(cf. textbook Ch.2, pp.61–62)</p>
+    </div>
+    <div>
+      <p class="small-label" style="margin:0 0 6px;">ONE PIECE UNLOCKS THE NEXT</p>
+      <ol class="steps">
+        <li class="fragment">Every "house" form contains <i>kali</i>, so <b>kali</b> = "house" (not <i>kal</i>: the <i>i</i> never drops).</li>
+        <li class="fragment"><i>nokali</i>, <i>nopelo</i>: <b>no-</b> = "my", so <b>pelo</b> = "dog".</li>
+        <li class="fragment"><i>mopelo</i> "your dog": <b>mo-</b> = "your".</li>
+        <li class="fragment"><i>ikali</i> "his house": <b>i-</b> = "his", which leaves <b>kwahmili</b> = "cornfield".</li>
+        <li class="fragment"><i>nokalimes</i>, <i>mopelomes</i>: what remains is <b>&#8209;mes</b> = plural.</li>
+      </ol>
+      <div class="morph-result fragment"><span class="no">ROOTS</span>kali · pelo · kwahmili<br><span class="no">AFFIXES</span>no- · mo- · i- · -mes</div>
+    </div>
+  </div>
+  <aside class="notes">
+    교재 p.61–62 사례 3. 방향키를 누를 때마다 추론 단계가 하나씩 나타납니다. 먼저 자료만 보여주고 학생들에게
+    '집'에 해당하는 조각을 찾게 한 뒤 한 단계씩 공개하세요. 요점은 두 가지입니다. (1) 하나를 확정하면 그것이
+    다음 조각을 푸는 열쇠가 되는 가설→검증의 연쇄 추론. (2) 경계는 모든 자료를 설명하는 쪽으로 정한다(kal이
+    아니라 kali). 한 단어에 접두사(소유)와 접미사(복수)가 함께 붙는다는 점도 짚어 주세요.
+  </aside>
+</section>
+
+<!-- ══ 17c · Case Study 4 · Slavic allomorphs ══ -->
+<section data-kicker="CH.2 P.62 · MORPHOLOGICAL ANALYSIS: IDENTIFYING MORPHEMES">
+  <h2>Case Study 4</h2>
+  <p class="lead" style="font-size:17px; margin-bottom:6px;">Scattered Slavic verb forms become clear once regrouped into a table: one morpheme can have <b>two forms</b>.
+    <span class="ko-supp" style="display:block;">흩어진 슬라브어 동사형을 표로 재배열하면, 하나의 형태소가 두 가지 형태를 가진다는 것이 드러난다.</span></p>
+  <table class="para">
+    <thead><tr><th></th><th>"TOUCH"</th><th>"WATCH"</th><th>"BUY"</th><th>"LIVE"</th></tr></thead>
+    <tbody>
+      <tr><td class="rowh">INFINITIVE</td><td>dir-<b>ati</b></td><td>gled-<b>ati</b></td><td>kupov-<b>ati</b></td><td>stanov-<b>ati</b></td></tr>
+      <tr><td class="rowh">"I"</td><td>dir-<b>am</b></td><td>gled-<b>am</b></td><td><span class="alt">kupuj-<b>em</b></span></td><td><span class="alt">stanuj-<b>em</b></span></td></tr>
+      <tr><td class="rowh">"THEY"</td><td>dir-<b>aju</b></td><td>gled-<b>aju</b></td><td><span class="alt">kupuj-<b>u</b></span></td><td><span class="alt">stanuj-<b>u</b></span></td></tr>
+      <tr><td class="rowh">NOUN</td><td>dir-<b>anje</b></td><td>gled-<b>anje</b></td><td>kupov-<b>anje</b></td><td>stanov-<b>anje</b></td></tr>
+    </tbody>
+  </table>
+  <div class="cols" style="margin-top:14px;">
+    <p class="lead" style="font-size:16.5px; margin:0;">"I" = <i>-am</i> ~ <i>-em</i> and "they" = <i>-aju</i> ~ <i>-u</i>, like English <i>a</i> ~ <i>an</i>.
+      Stems in <i>-ov-</i> become <i>-uj-</i> before them.</p>
+    <p class="lead" style="font-size:16.5px; margin:0;"><span class="small-label" style="display:block; margin-bottom:2px;">PREDICT</span>
+      <i>darujem</i> = "I gift". "To gift" = <span class="fragment"><b><i>darovati</i></b></span></p>
+  </div>
+  <p style="font: italic 400 14px 'Lora'; color: var(--ed-muted); margin-top:10px;">Ch.6 shows why such variation is rule-governed. (cf. textbook Ch.2, pp.62–63)</p>
+  <aside class="notes">
+    교재 p.62–63 사례 4(교재는 동사 7개 × 4형태, 여기서는 4개만 발췌). 먼저 뒤섞인 자료를 표로 재배열하는
+    기법 자체가 요점입니다. dir-/gled-는 -ati·-am·-aju·-anje로 깔끔하지만, -ov 어간(kupov-, stanov-)은 "I"와
+    "they"에서 어간이 -uj-로 바뀌고 어미도 -em, -u가 됩니다. 같은 형태소의 다른 형태 = 이형태(allomorph).
+    영어 a/an, democrat/democracy와 같은 현상이며, 교재 Summary(p.64)가 형태소 분석을 "발음의 작은 차이까지
+    고려해" 형태소를 찾는 과정으로 정리하는 이유입니다. 마지막 예측 문제(darujem → darovati)는 방향키로 정답을
+    공개하세요. 분석이 맞으면 새 단어의 활용형을 예측할 수 있다는 것이 검증 방법입니다. Ch.6 음운 규칙으로 연결.
   </aside>
 </section>
 
@@ -603,12 +741,13 @@
     <li>Rules differ in <b>productivity</b>; irregulars are stored and <b>block</b> the rule</li>
     <li><b>Suppletion</b>, exceptions, and accidental <b>lexical gaps</b> (<i>blick</i>)</li>
     <li>Word-making in Ch.2: <b>compounds</b> (headed, often non-compositional) &amp; <b>back-formations</b>
-      <i style="font-size:0.82em; color: var(--ed-muted);">; acronyms, blends, clipping are enrichment, not on the exam</i></li>
-    <li>Morphology is modality-independent and <b>analyzable</b> in any language</li>
+      <i style="font-size:0.82em; color: var(--ed-muted);">; acronyms, blends, clipping are enrichment</i></li>
+    <li>Even errors follow the rules: <b>malapropisms</b> misread real morphemes (<i>indefatigable</i>)</li>
+    <li>Morphology is modality-independent and <b>analyzable</b> in any language, allomorphs included (<i>-am</i> ~ <i>-em</i>)</li>
   </ol>
   <aside class="notes">
     형태론 2부 정리(교재 p.64 Summary와 대응). 위계 구조·중의성·생산성·불규칙형 저장과 blocking·보충법·
-    어휘 빈칸·합성어·역형성·수화 형태론·형태소 분석. 다음 주부터 단어를 넘어 문장의 구조(통사론)로 나아갑니다.
+    어휘 빈칸·합성어·역형성·말라프로피즘·수화 형태론·형태소 분석. 다음 주부터 단어를 넘어 문장의 구조(통사론)로 나아갑니다.
   </aside>
 </section>
 
@@ -640,6 +779,7 @@
     center: false,
     transition: 'fade',
     transitionSpeed: 'default',
+    pdfSeparateFragments: false,
     plugins: [ RevealNotes ]
   });
 </script>

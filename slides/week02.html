@@ -47,6 +47,17 @@
     @keyframes wag { from {transform:rotate(-14deg)} to {transform:rotate(16deg)} }
     .toon:not(.play) .bub, .toon:not(.play) .think { animation:none; opacity:1; transform:none; }
     .toon:not(.play) .tail-wag { animation:none; }
+
+    /* 예시 단어 줄(week05 .eg-line 동일) */
+    .eg-line { display: flex; flex-wrap: wrap; gap: 0 18px; margin-top: 4px; }
+    .eg-line > span { white-space: nowrap; }
+
+    /* 의성어 비교표 (v14 규칙: .reveal table.xxx) */
+    .reveal table.onoma { width: 100%; }
+    .reveal table.onoma th { white-space: nowrap; padding: 4px 10px 8px 0; }
+    .reveal table.onoma td { font: italic 400 17px 'Lora'; color: var(--ed-ink); padding: 9px 10px 9px 0; }
+    .reveal table.onoma td.k { font: 600 10px 'Space Grotesk'; letter-spacing: 0.2em; color: var(--ed-muted); white-space: nowrap; }
+    .reveal table.onoma td .lg { display: block; margin-top: 3px; font: 600 9.5px 'Space Grotesk'; font-style: normal; letter-spacing: 0.2em; color: var(--ed-muted); }
   </style>
 </head>
 <body data-rail="WEEK 2 · WHAT IS LANGUAGE?" data-course="Topics in English Linguistics">
@@ -161,7 +172,7 @@
   <aside class="notes">
     자의성은 소쉬르 이래 언어의 핵심 성질. 같은 소리 taka가 일본어 "매", 케추아어 "주먹", 줄루어 "작은 새",
     벵골어 "돈"인 것도 같은 논지. 의성어(cock-a-doodle-doo/kukkokiekuu)조차 언어마다 달라
-    오히려 자의성을 뒷받침합니다. boy는 단어지만 moy는 아니라는 것도 어휘 지식의 일부.
+    오히려 자의성을 뒷받침합니다(카툰 뒤 음상징 슬라이드에서 상세). boy는 단어지만 moy는 아니라는 것도 어휘 지식의 일부.
   </aside>
 </section>
 
@@ -254,6 +265,60 @@
     자체 제작 카툰 콩트입니다(저작권 문제 없는 오리지널). AI 생성 영상이 있으면 자동으로 영상+말풍선으로
     재생되고, 없으면 SVG 폴백. Play 버튼으로 소리 포함 수동 재생. 제작법은 docs/AI영상_제작가이드.md.
     "왜 아무 언어도 '정답'이 아닐까?"라고 물으며 자의성으로 연결하세요.
+  </aside>
+</section>
+
+<!-- ══ 7b · Arbitrariness in sign languages ══ -->
+<section data-kicker="CH.1 P.4 · KNOWLEDGE OF WORDS">
+  <h2 style="font-size:38px;">Arbitrary Relation of Form and Meaning</h2>
+  <div class="cols">
+    <div class="def">Sign languages work the same way: a sign's handshape and movement are tied to its meaning <i>by convention</i>.
+      <span class="ko-supp" style="display:block; margin-top:8px;">수어(sign language)에서도 손 모양·움직임과 의미의 연결은 관습(convention)에 따른 것이다.</span></div>
+    <div class="quote-stack compact">
+      <p>Many signs started out as <b>mime</b>: a hand raised to the mouth for <i>eating</i> is not arbitrary.</p>
+      <p>Signs change over time, much as pronunciations do, and the mimed likeness fades.</p>
+      <p>What remains is <b>conventional</b>: the hands alone no longer reveal the meaning.</p>
+      <p>So a signer of Chinese Sign Language (CSL) and a signer of ASL cannot simply understand each other.</p>
+    </div>
+  </div>
+  <p style="font: italic 400 14px 'Lora'; color: var(--ed-muted); margin-top:22px;">Watching a sign language you don't know, you can rarely guess the message from the signs. (cf. textbook Ch.1, p.4)</p>
+  <aside class="notes">
+    교재 p.4: 형식-의미의 관습적·자의적 관계는 수어에도 그대로 적용됩니다. 학생들이 흔히 "수어는 손짓 흉내라서
+    누구나 알아볼 수 있다"고 생각하는데, 이를 정면으로 반박하는 대목입니다. 처음에는 흉내(mime)에서 출발한 수어도
+    시간이 흐르며 음성언어의 발음처럼 변해 도상성이 사라지고 관습이 됩니다. 중국 수어와 미국 수어(ASL)는
+    서로 통하지 않는다는 점을 강조하고, 수업 후반의 수어 슬라이드(p.15)와 연결하세요.
+    질문 예: "수어가 국제 공통어라면 왜 한국수어와 ASL이 따로 있을까?"
+  </aside>
+</section>
+
+<!-- ══ 7c · Sound symbolism ══ -->
+<section data-kicker="CH.1 P.4 · KNOWLEDGE OF WORDS">
+  <h2 style="font-size:38px;">Arbitrary Relation of Form and Meaning</h2>
+  <p class="lead" style="font-size:18px; max-width:760px; margin-bottom:0;">The limit case is <b>sound symbolism</b>, where a word's sound seems to suggest its meaning. Even there, convention has the last word.
+    <span class="ko-supp" style="display:block;">한계 사례는 소리가 의미를 암시하는 듯한 음상징(sound symbolism)이지만, 여기서도 결국 관습이 결정한다.</span></p>
+  <div class="cols-even" style="margin-top:22px; gap:48px;">
+    <div>
+      <div class="small-label" style="margin-bottom:8px;">ONOMATOPOEIA</div>
+      <p style="font: 400 17px/1.55 'Lora'; margin:0 0 10px;">Words like <i>buzz</i> and <i>murmur</i> imitate sounds, yet each language fits them to its own sound system.</p>
+      <table class="onoma">
+        <tr><th></th><th>English</th><th>Elsewhere</th></tr>
+        <tr><td class="k">ROOSTER</td><td>cock-a-doodle-doo</td><td>kukkokiekuu<span class="lg">FINNISH</span></td></tr>
+        <tr><td class="k">TURKEY</td><td>gobble gobble</td><td>glu-glu<span class="lg">TURKISH</span></td></tr>
+      </table>
+    </div>
+    <div class="quote-stack compact">
+      <p>Many English <i>gl-</i> words relate to sight:
+        <span class="eg-line"><span><i>glare</i></span><span><i>gleam</i></span><span><i>glitter</i></span><span><i>glisten</i></span><span><i>glimpse</i></span></span></p>
+      <p>But <i>gl-</i> means nothing of the kind in <i>gladiator</i>, <i>glucose</i>, <i>glory</i>, or <i>globe</i>, nor, perhaps, in other languages.</p>
+      <p>Such words form only a <b>very small part</b> of any vocabulary.</p>
+    </div>
+  </div>
+  <p style="font: italic 400 14px 'Lora'; color: var(--ed-muted); margin-top:18px;">(cf. textbook Ch.1, pp.4–5)</p>
+  <aside class="notes">
+    교재 pp.4–5: 음상징(sound symbolism)은 자의성의 '예외'처럼 보이지만 실은 자의성을 확인시켜 줍니다.
+    의성어도 언어마다 다르고 각 언어의 음운 체계에 맞춰져 있습니다. 한국어 '꼬끼오', '멍멍'과 비교해 보게 하세요.
+    gl- 단어(시각 관련)는 흥미로운 경향이지만 gladiator·glucose처럼 무관한 단어도 많고 어휘 전체에서 극히 일부라는 점이 핵심.
+    질문 예: "한국어에도 소리가 의미를 암시하는 듯한 단어 무리가 있을까?"(반짝반짝/번쩍번쩍 같은 모음 대립은 교재 밖 보충으로만 가볍게).
   </aside>
 </section>
 
@@ -381,7 +446,39 @@
   </div>
   <aside class="notes">
     규범문법은 사회적·정치적 이유로 특정 방언을 우대합니다. 처칠의 풍자("nonsense up with which I will not put"),
-    표준 방언의 사회적 효용(취업 등)도 언급. 대역은 교재 원문 형식(단어별 gloss + 번역). 배경: 1762년 Robert Lowth 주교가 라틴어 문법과 개인 취향을 근거로 "이중부정 금지" 등을 규칙으로 처방(교재 p.11).
+    표준 방언의 사회적 효용(취업 등)도 언급. 대역은 교재 원문 형식(단어별 gloss + 번역). 배경: 1762년 Robert Lowth 주교가 라틴어 문법과 개인 취향을 근거로 "이중부정 금지" 등을 규칙으로 처방(교재 p.10).
+  </aside>
+</section>
+
+<!-- ══ 13b · Speech vs writing ══ -->
+<section data-kicker="CH.1 P.12 · WHAT IS GRAMMAR?">
+  <h2>Prescriptive Grammars</h2>
+  <p class="lead" style="font-size:18px; max-width:700px; margin-bottom:0;">Everything said so far concerns the <em>spoken</em> language. Writing is a different matter.
+    <span class="ko-supp" style="display:block;">지금까지의 논의는 모두 말(speech)에 관한 것이며, 글(writing)은 사정이 다르다.</span></p>
+  <div class="cols-even" style="margin-top:22px;">
+    <div>
+      <div class="small-label" style="margin-bottom:12px;">SPEECH</div>
+      <hr class="hair" style="margin:0 0 14px;">
+      <p class="lead" style="font-size:17px; margin:0 0 8px;">It is <em>acquired</em> naturally, simply by being exposed to it.</p>
+      <p class="lead" style="font-size:17px; margin:0 0 8px;">Its rules are the speaker's unconscious mental grammar.</p>
+    </div>
+    <div>
+      <div class="small-label" style="margin-bottom:12px;">WRITING</div>
+      <hr class="hair" style="margin:0 0 14px;">
+      <p class="lead" style="font-size:17px; margin:0 0 8px;">It must be <em>taught</em>; hearing speech is not enough.</p>
+      <p class="lead" style="font-size:17px; margin:0 0 8px;">It follows prescriptive conventions of grammar, usage, and style.</p>
+    </div>
+  </div>
+  <hr class="hair" style="margin-top:16px;">
+  <p class="lead" style="font-size:18px; margin-bottom:0;">Prescriptive rules have a real place in <b>writing</b>; they do not define the <b>spoken</b> language.
+    <span class="ko-supp" style="display:block;">규범 규칙은 글쓰기에는 제자리가 있지만, 말의 문법을 정하지는 않는다.</span></p>
+  <p style="font: italic 400 14px 'Lora'; color: var(--ed-muted); margin-top:10px;">(cf. textbook Ch.1, p.12)</p>
+  <aside class="notes">
+    교재 p.12, Prescriptive Grammars 절의 마무리: 앞의 논의(모든 방언은 동등하다, 규범은 취향이다)는 말에 해당하고,
+    글은 별개입니다. 글쓰기는 문법·어법·문체의 규범 규칙을 따르고, 말에 노출되는 것만으로 저절로 습득되지 않으며
+    반드시 배워야 합니다(Ch.9에서 상세). 학생들이 "그럼 맞춤법도 필요 없나?"라고 오해하지 않도록, 규범이 글에서는
+    정당한 역할을 한다는 점을 짚으세요. 같은 쪽의 표준 방언 논점(취업·사회적 위신에는 유리하지만 문법이 더 우월한 것은 아님)도
+    함께 언급하면 좋습니다. 질문 예: "받아쓰기는 배웠는데, 말하기는 누가 가르쳐 줬나요?"
   </aside>
 </section>
 
@@ -551,10 +648,10 @@
 
 <!-- ══ 22 · Summary ══ -->
 <section data-kicker="CH.1 · SUMMARY">
-  <h2>Six Things to Keep</h2>
+  <h2>Summary</h2>
   <ol class="recap" style="max-width:660px;">
     <li>Linguistic knowledge is <b>unconscious</b></li>
-    <li>Form–meaning links are <b>arbitrary</b></li>
+    <li>Form–meaning links are <b>arbitrary</b>, in speech and sign</li>
     <li><i>Finite rules, infinite sentences</i>: <b>creativity</b></li>
     <li><b>Competence</b> ≠ <b>performance</b></li>
     <li>Grammar: <b>descriptive</b>, not prescriptive</li>

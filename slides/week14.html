@@ -45,6 +45,36 @@
     .rule-read .seg .sym { font: italic 400 20px 'Lora'; color: var(--ed-accent); display: block; }
     .rule-read .seg .gl { font: 600 10px 'Space Grotesk'; letter-spacing: 0.14em; text-transform: uppercase;
       color: var(--ed-muted); display: block; margin-top: 7px; }
+
+    /* 15b 1차·2차 강세 예시 격자(3×2) */
+    .stress-grid { display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 16px; max-width: 640px; }
+    .stress-grid > span { padding: 7px 0; border-bottom: 1px solid var(--ed-line); font: italic 400 22px/1.35 'Lora'; color: var(--ed-ink); }
+    .stress-grid > span:nth-last-child(-n+3) { border-bottom: 0; }
+
+    /* 18b 어두 3자음군 표(행 = s+파열음, 열 = 셋째 자음) */
+    .reveal table.onset { border-collapse: collapse; width: 100%; max-width: 660px; margin: 10px 0 0; }
+    .reveal table.onset th { white-space: nowrap; font: 600 11px 'Space Grotesk'; letter-spacing: 0.14em; color: var(--ed-muted);
+      text-align: left; padding: 6px 10px; border-bottom: 1px solid var(--ed-ink); background: none; }
+    .reveal table.onset td { font: 400 17px 'Lora'; color: var(--ed-body); padding: 7px 10px; border-bottom: 1px solid var(--ed-line);
+      background: none; white-space: nowrap; }
+    .reveal table.onset tr:last-child td { border-bottom: 0; }
+    .reveal table.onset td.rowh { font: 600 12px 'Space Grotesk'; letter-spacing: 0.1em; color: var(--ed-muted); }
+    .reveal table.onset td .cl { font-weight: 700; color: var(--ed-accent); margin-right: 6px; }
+    .reveal table.onset td i { font: italic 400 17px 'Lora'; color: var(--ed-ink); }
+    .reveal table.onset td.gap { color: var(--ed-muted); font-style: italic; }
+
+    /* 22b 그리스어 분석: 좁은 자료 열 + 단계 목록 */
+    .greek-cols { display: grid; grid-template-columns: 165px minmax(0, 1fr); gap: 36px; align-items: start; }
+    .grdata { display: grid; grid-template-columns: auto 1fr; column-gap: 12px; row-gap: 2px; font: 400 15px/1.5 'Lora'; color: var(--ed-body); }
+    .grdata i { font-size: 17px; color: var(--ed-ink); }
+    .reveal ol.steps { list-style: none; counter-reset: st; margin: 0; padding: 0; }
+    .reveal ol.steps li { list-style: none; counter-increment: st; position: relative; padding: 6px 0 6px 30px; border-bottom: 1px solid var(--ed-line); font: 400 16px/1.45 'Lora', 'Noto Serif KR'; color: var(--ed-body); }
+    .steps li:last-child { border-bottom: 0; }
+    .steps li::before { content: counter(st); position: absolute; left: 0; top: 8px; font: 600 12px 'Space Grotesk'; color: var(--ed-accent); letter-spacing: 0.1em; }
+    .steps li b { color: var(--ed-accent); }
+    .steps .rule-in { font: 400 17px 'Lora'; color: var(--ed-ink); white-space: nowrap; }
+    .morph-result { margin-top: 10px; padding-top: 8px; border-top: 1px solid var(--ed-ink); font: italic 400 17px/1.5 'Lora'; color: var(--ed-ink); }
+    .morph-result .no { font: 600 11px 'Space Grotesk'; letter-spacing: 0.14em; color: var(--ed-muted); font-style: normal; margin-right: 8px; }
   </style>
 </head>
 <body data-rail="WEEK 14 · PHONOLOGY" data-course="Topics in English Linguistics">
@@ -59,13 +89,13 @@
   ✓   The Function of Phonological Rules ........ p.242 → slide 11
   ✓ Prosodic Phonology .......................... p.243 → slide 12
   ✓   Syllable Structure ........................ p.243 → slide 13 (+figure 14)
-  ✓   Word Stress ............................... p.244 → slide 15
+  ✓   Word Stress ............................... p.244 → slides 15–15b (primary/secondary pp.244–245)
   ✓   Sentence and Phrase Stress ................ p.245 → slide 16
   ✓   Intonation ................................ p.246 → slide 17
-  ✓ Sequential Constraints of Phonemes .......... p.247 → slide 18
+  ✓ Sequential Constraints of Phonemes .......... p.247 → slides 18–18b (three-consonant onsets p.247)
   ✓   Lexical Gaps .............................. p.248 → slide 19
   ✓ Why Do Phonological Rules Exist? ............ p.249 → slide 20
-  ✓ Phonological Analysis ....................... p.250 → slides 21–22
+  ✓ Phonological Analysis ....................... p.250 → slides 21–22b (Greek palatals pp.252–253)
   ✓ Summary ..................................... p.254 → slide 27 (deck summary)
   · References for Further Reading / Exercises (pp.255–268) → 과제 안내(슬라이드 26 하단)
 -->
@@ -96,9 +126,9 @@
     <li><b>From One to Many and from Many to One</b><span class="pg">P.241</span></li>
     <li><b>The Function of Phonological Rules</b><span class="pg">P.242</span></li>
     <li><b>Prosodic Phonology</b>: <i style="font-size:0.82em;">syllable · stress · intonation</i><span class="pg">P.243</span></li>
-    <li><b>Sequential Constraints of Phonemes</b>: <i style="font-size:0.82em;">lexical gaps</i><span class="pg">P.247</span></li>
+    <li><b>Sequential Constraints of Phonemes</b>: <i style="font-size:0.82em;">onsets · lexical gaps</i><span class="pg">P.247</span></li>
     <li><b>Why Do Phonological Rules Exist?</b><span class="pg">P.249</span></li>
-    <li><b>Phonological Analysis</b><span class="pg">P.250</span></li>
+    <li><b>Phonological Analysis</b>: <i style="font-size:0.82em;">Finnish · the flap · Greek</i><span class="pg">P.250</span></li>
   </ol>
   <aside class="notes">
     오늘의 키워드: assimilation, dissimilation, epenthesis, deletion, rule notation,
@@ -162,7 +192,7 @@
 
 <!-- ══ 6 · Rule notation ══ -->
 <section data-kicker="CH.6 P.236 · FEATURE-CHANGING RULES">
-  <h2 style="font-size:38px;">Writing the Rule · A → B / C __ D</h2>
+  <h2 style="font-size:38px;">Assimilation Rules</h2>
   <p class="lead" style="font-size:18px; max-width:660px;">Like E = mc², the rule is a shorthand: <em>"A becomes B in the environment after C and before D."</em> The nasalization rule:</p>
   <div class="rule-line">V <b>→</b> [+nasal] <b>/</b> __ [+nasal] <b>$</b></div>
   <div class="rule-read">
@@ -256,7 +286,7 @@
 
 <!-- ══ 10 · Many to one: schwa & German ══ -->
 <section data-kicker="CH.6 P.241 · THE RULES OF PHONOLOGY">
-  <h2 style="font-size:38px;">Many to One · Schwa and Devoicing</h2>
+  <h2 style="font-size:38px;">From One to Many and from Many to One</h2>
   <div class="cols">
     <div class="def">The same phone can realize <i>several</i> phonemes, so the phonetic form alone cannot reveal the phonemic one.
       <span class="ko-supp" style="display:block; margin-top:8px;">같은 음성이 여러 음소를 실현할 수 있으므로, 음성형만 보고는 음소형을 알아낼 수 없다.</span></div>
@@ -387,7 +417,32 @@
   <aside class="notes">
     강세도 규칙의 지배를 받습니다. 명사/동사 대립(pervert, subject)에서 강세가 범주를 가르고,
     접사 첨가로 강세가 이동합니다(photograph→photography). 비강세 모음의 슈와 환원과 연결하세요.
-    미국/영국 laboratory의 강세·모음 차이도 좋은 여담입니다.
+    1차·2차 강세의 구별과 미국/영국 laboratory의 차이는 다음 슬라이드에서 다룹니다.
+  </aside>
+</section>
+
+<!-- ══ 15b · Primary and Secondary Stress ══ -->
+<section data-kicker="CH.6 P.244 · PROSODIC PHONOLOGY">
+  <h2 style="font-size:38px;">Word Stress</h2>
+  <p class="lead" style="font-size:17px; max-width:680px; margin-bottom:8px;">A word may have several stressed vowels, but exactly one is most prominent: <b>primary</b> stress, marked with an acute (´); the others carry <b>secondary</b> stress, marked with a grave (`).
+    <button class="say-btn mini" data-say="resignation, fundamental, linguistics, introductory, systematic, revolution" data-lang="en-US">listen</button>
+    <span class="ko-supp" style="display:block; font-size:15px;">강세 모음 중 가장 두드러진 하나가 1차 강세(´)이고, 나머지는 2차 강세(`)다.</span></p>
+  <div class="stress-grid">
+    <span>rèsignátion</span><span>lìnguístics</span><span>sỳstemátic</span>
+    <span>fùndaméntal</span><span>ìntrodúctory</span><span>rèvolútion</span>
+  </div>
+  <div class="quote-stack compact" style="margin-top:14px; max-width:680px;">
+    <p>Speakers know stress <b>implicitly</b>. Primary vs. secondary is the harder call: try <b>shouting</b> the word across a busy street.</p>
+    <p>Dialects differ: American <i>láboratòry</i> [lǽbərətʰɔ̀ri] has two stresses, British [ləbɔ́rətri] only one.</p>
+    <p>Stress is <b>suprasegmental</b>: a property of the syllable, realized by higher pitch, loudness, and length.</p>
+  </div>
+  <p style="font: italic 400 14px 'Lora'; color: var(--ed-muted); margin-top:8px;">(cf. textbook Ch.6, pp.244–245)</p>
+  <aside class="notes">
+    교재 pp.244–245. 강세 모음이 여럿인 단어에서는 하나만 1차 강세(양음 부호 ´)이고 나머지는 2차 강세(억음 부호 `)입니다.
+    rèsignátion, fùndaméntal을 직접 발음하며 두 강세의 차이를 들려주세요. 강세/비강세 구별은 비강세 모음이 슈와로
+    약화되므로 쉽지만, 1차와 2차의 구별은 어렵습니다. 길 건너 사람에게 외치듯 말해 보게 하는 교재의 요령을 시연해 보세요.
+    미국식 láboratòry는 강세가 둘, 영국식은 하나이며, 영국식에서는 강세 없는 넷째 모음이 탈락합니다(비강세 모음의 약화·탈락).
+    강세는 분절음이 아니라 음절의 속성(초분절 자질)이고, 음높이를 올리거나 더 크게, 더 길게 발음해 실현합니다.
   </aside>
 </section>
 
@@ -451,6 +506,34 @@
   <aside class="notes">
     음소배열 제약(phonotactic constraints)은 음절 단위로 걸립니다. blick/*lbik 대비,
     explicit의 /k$spl/ 분할(합법 coda + 합법 onset), 언어별 차이(폴란드어·일본어·Twi)를 짚으세요. 교재의 배열 예: blick, klib, bilk, kilb는 가능, *lbik, *bkil은 불가능합니다.
+    어두 3자음군 제약은 다음 슬라이드의 표로 정리합니다.
+  </aside>
+</section>
+
+<!-- ══ 18b · Sequential Constraints · Initial Clusters ══ -->
+<section data-kicker="CH.6 P.247 · PHONOLOGY">
+  <h2 style="font-size:34px;">Sequential Constraints of Phonemes</h2>
+  <p class="lead" style="font-size:18px; max-width:680px; margin-bottom:0;">An English word can begin with <b>at most three</b> consonants, and those three are tightly restricted:</p>
+  <table class="onset">
+    <thead><tr><th></th><th>+ /l/</th><th>+ /r/</th><th>+ /w/</th><th>+ /j/</th></tr></thead>
+    <tbody>
+      <tr><td class="rowh">/sp/</td><td><span class="cl">/spl/</span><i>splay</i></td><td><span class="cl">/spr/</span><i>spruce</i></td><td class="gap">*spw</td><td><span class="cl">/spj/</span><i>spew</i></td></tr>
+      <tr><td class="rowh">/st/</td><td class="gap">*stl</td><td><span class="cl">/str/</span><i>streak</i></td><td class="gap">*stw</td><td class="gap">*stj</td></tr>
+      <tr><td class="rowh">/sk/</td><td><span class="cl">/skl/</span><i>sclerosis</i></td><td><span class="cl">/skr/</span><i>screen</i></td><td><span class="cl">/skw/</span><i>squat</i></td><td><span class="cl">/skj/</span><i>skew</i></td></tr>
+    </tbody>
+  </table>
+  <p class="lead" style="font-size:16.5px; max-width:680px; margin-top:12px;">The pattern: /s/ first, then a voiceless stop /p t k/, then a liquid or glide /l r w j/; even so, <i>*stl</i>, <i>*spw</i>, <i>*stw</i>, <i>*stj</i> are excluded.
+    <span class="ko-supp" style="display:block; font-size:15px;">첫째는 /s/, 둘째는 무성 파열음, 셋째는 유음이나 활음이며, 그래도 일부 조합은 허용되지 않는다.</span></p>
+  <hr class="hair" style="margin:14px 0 10px;">
+  <p class="lead" style="font-size:16.5px; max-width:680px;">Also: after a word-initial /tʃ/ or /dʒ/ (<i>chill</i>, <i>Jill</i>) the next sound must be a vowel. <i>chut</i> /tʃʌt/ and <i>jeel</i> /dʒil/ are possible words; */tʃlɔt/ and */dʒpurz/ are not.
+    <span style="font: italic 400 14px 'Lora'; color: var(--ed-muted);">(cf. textbook Ch.6, p.247)</span>
+    <span class="ko-supp" style="display:block; font-size:15px;">어두의 /tʃ/, /dʒ/ 뒤에는 반드시 모음이 와야 한다.</span></p>
+  <aside class="notes">
+    교재 p.247의 어두 3자음군 표를 행(s+파열음)과 열(셋째 자음)로 재배열했습니다. 교재는 표만 제시하므로,
+    학생들에게 표를 보고 공통 패턴(첫째 /s/, 둘째 무성 파열음, 셋째 유음·활음)을 직접 찾게 한 뒤 공개하세요.
+    패턴에 맞아도 *stl, *spw, *stw, *stj처럼 빈칸이 있다는 점이 제약이 세밀하다는 증거입니다.
+    chill/Jill의 /tʃ/, /dʒ/ 뒤 모음 제약도 같은 쪽에 있습니다(교재 예: chut, chone, chack, jal, jeel, jolick).
+    p.248의 condstluct가 불가능한 이유(둘째 음절이 /stl/ 또는 /tl/로 시작해야 함)와 연결하면 음절 단위 제약이 잘 드러납니다.
   </aside>
 </section>
 
@@ -544,7 +627,7 @@
 
 <!-- ══ 22 · Phonological Analysis · the flap ══ -->
 <section data-kicker="CH.6 P.251 · PHONOLOGY">
-  <h2 style="font-size:38px;">Phonological Analysis · The Alveolar Flap</h2>
+  <h2 style="font-size:38px;">Phonological Analysis</h2>
   <p class="lead" style="font-size:18px; max-width:660px;"><em>writer</em> [ɹaɪɾɚ] and <em>rider</em> both surface with [ɾ], but <em>write</em> [ɹaɪt] and <em>ride</em> [ɹaɪd] keep the stops. <button class="say-btn mini" data-say="writer, rider, write, ride" data-lang="en-US">listen</button></p>
   <div class="rule-line" style="font-size:26px;">/t/, /d/ <b>→</b> [ɾ] <b>/</b> V́ __ V</div>
   <p class="lead" style="font-size:17px; max-width:660px;">The flap occurs <em>only</em> between a stressed and an unstressed vowel, where [t] and [d] never do: complementary distribution, so [ɾ] is an allophone of <b>both</b> /t/ and /d/. Phonemically <em>writer</em> is /raɪtər/, from [ɹaɪt].
@@ -553,8 +636,52 @@
   <aside class="notes">
     영어 탄설음 분석: [ɾ]는 강세 모음과 비강세 모음 사이에만, [t]·[d]는 거기 못 옴 —
     상보적 분포이므로 [ɾ]는 /t/와 /d/ 양쪽의 이음(many to one). 기저형은 관련형(write, ride)으로
-    결정합니다. data, latter처럼 증거가 부족한 경우도 있음을 덧붙이세요(그리스어 [k][c][x][ç]
-    분석은 심화 과제로). 가장 단순하고 일반적인 규칙이 최선이라는 교재의 분석 원칙도 짚으세요.
+    결정합니다. data, latter처럼 증거가 부족한 경우도 있음을 덧붙이세요. 그리스어 [k][c][x][ç]
+    분석은 다음 슬라이드에서 단계별로 풉니다. 가장 단순하고 일반적인 규칙이 최선이라는 교재의 분석 원칙도 짚으세요.
+  </aside>
+</section>
+
+<!-- ══ 22b · Phonological Analysis · Greek palatals ══ -->
+<section data-kicker="CH.6 P.252 · PHONOLOGY">
+  <h2 style="font-size:36px;">Phonological Analysis</h2>
+  <div class="greek-cols">
+    <div>
+      <div class="gloss-set" style="margin-bottom:6px;"><div class="langlab">GREEK · EXCERPT</div></div>
+      <div class="grdata">
+        <i>[kano]</i><span>"do"</span>
+        <i>[xano]</i><span>"lose"</span>
+        <i>[kori]</i><span>"daughter"</span>
+        <i>[xori]</i><span>"dances"</span>
+        <i>[krima]</i><span>"shame"</span>
+        <i>[xrima]</i><span>"money"</span>
+        <i>[cino]</i><span>"move"</span>
+        <i>[çino]</i><span>"pour"</span>
+        <i>[ceri]</i><span>"candle"</span>
+        <i>[çeri]</i><span>"hand"</span>
+      </div>
+      <p style="font: italic 400 13px/1.4 'Lora'; color: var(--ed-muted); margin-top:8px;">10 of 16 forms<br>(cf. textbook Ch.6, pp.252–253)</p>
+    </div>
+    <div>
+      <p class="small-label" style="margin:0 0 4px;">FOUR QUESTIONS, ONE RULE</p>
+      <ol class="steps">
+        <li class="fragment"><b>Minimal pairs</b>: [kano] / [xano] and [cino] / [çino], so [k] ≠ [x] and [c] ≠ [ç]. No pair separates [k] / [c] or [x] / [ç].</li>
+        <li class="fragment"><b>Complementary distribution</b>: [k] and [x] occur only before [a o u r]; [c] and [ç] only before the front vowels [i e].</li>
+        <li class="fragment"><b>Phonetic similarity</b>: pair stop with stop and fricative with fricative, all [−anterior]; not [k] with [ç].</li>
+        <li class="fragment"><b>Simplicity criterion</b>: either choice gives equally simple rules, so the natural one decides. Velars palatalize before front vowels (assimilation), so the phonemes are <b>/k/</b> and <b>/x/</b>.</li>
+        <li class="fragment"><b>The rule</b>, with no redundant features: <span class="rule-in">[+velar] → [+palatal] / __ [−back]</span></li>
+      </ol>
+      <div class="morph-result fragment"><span class="no">/k/</span>[k] ~ [c]&nbsp;&nbsp;&nbsp;<span class="no">/x/</span>[x] ~ [ç]: velars surface as palatals before front vowels.
+        <span class="ko-supp" style="display:block; font-style:normal; font-size:14.5px;">/k/와 /x/는 전설 모음 앞에서 각각 구개음 [c], [ç]로 실현된다.</span></div>
+    </div>
+  </div>
+  <aside class="notes">
+    교재 pp.252–253의 그리스어 분석(자료 16개 중 10개 발췌). 방향키를 누를 때마다 단계가 하나씩 나타납니다.
+    먼저 자료만 보여주고 교재의 네 질문(최소대립쌍? 상보적 분포? 음소와 이음? 규칙?)을 학생들이 풀게 하세요.
+    (1) [k]/[x], [c]/[ç]는 최소대립쌍이 있어 별개 음소입니다. (2) [k]/[c], [x]/[ç]는 최소대립쌍이 없고, 비전설 모음과 [r] 앞 대 전설 모음 앞으로 상보적 분포입니다.
+    (3) 음성적 유사성: 파열음끼리, 마찰음끼리 묶습니다([k]와 [ç]를 묶지 않음). (4) 어느 쪽을 기저로 잡아도 규칙의 단순성은 같으므로,
+    여러 언어에서 흔한 자연스러운 규칙(연구개음이 전설 모음 앞에서 구개음화, 즉 동화)을 따라 /k/, /x/를 음소로 택합니다.
+    규칙에는 [consonantal]이나 [syllabic] 같은 잉여 자질을 넣지 않는다는 점도 단순성 기준의 일부입니다.
+    끝으로 이 분석은 주어진 자료에 대한 것이며, 자료가 늘면 재분석이 필요할 수 있다는 교재의 단서를 덧붙이세요.
   </aside>
 </section>
 
@@ -635,9 +762,10 @@
     <li>The <b>syllable</b>: σ → Onset + Rime (Nucleus + Coda); only the nucleus is obligatory</li>
     <li><b>Stress and intonation</b> are prosodic, rule-governed, and can contrast meaning</li>
     <li><b>Phonotactics</b> split accidental gaps (<i>blick</i>) from systematic gaps (<i>*bnick</i>), and rules exist to enforce them</li>
+    <li><b>Analysis</b>: minimal pairs, distribution, then the simplest natural rule</li>
   </ol>
   <aside class="notes">
-    음운론 2부를 정리하며 Ch.4–6(형태론·음성학·음운론) 전체가 마무리됩니다. 규칙·음절·음소배열이
+    음운론 2부를 정리하며 Ch.4–6(의미론·화용론·음성학·음운론) 전체가 마무리됩니다. 규칙·음절·음소배열이
     모두 화자의 무의식적 지식이라는 큰 그림을 다시 강조하세요. 다음 주는 기말고사입니다.
   </aside>
 </section>
@@ -645,19 +773,20 @@
 <!-- ══ 28 · Next week: Final ══ -->
 <section data-kicker="NEXT WEEK · FINAL EXAM · CH.4–6">
   <h2>Final Exam</h2>
-  <p class="lead" style="max-width:620px;">Chapters 4–6 · Weeks 9–14: <em>Morphology, Phonetics &amp; Phonology.</em>
-    <span class="ko-supp" style="display:block;">음소/이음 판별 · 최소대립쌍 · 규칙 표기 해독 · 음절 분석 · 음소배열 제약을 중심으로 복습.</span></p>
+  <p class="lead" style="max-width:620px;">Chapters 4–6 · Weeks 9–14: <em>Meaning, Phonetics &amp; Phonology.</em>
+    <span class="ko-supp" style="display:block;">4–6장(9–14주차): 의미(의미론·화용론), 음성학, 음운론.</span></p>
   <ul class="exlist" style="max-width:620px; margin-top:24px;">
-    <li><span class="no">CH.4</span><b>Morphology</b>: morphemes, word formation, derivation vs. inflection</li>
-    <li><span class="no">CH.5</span><b>Phonetics</b>: consonants, vowels, the IPA, prosody</li>
-    <li><span class="no">CH.6</span><b>Phonology</b>: phonemes vs. allophones, features, rules, the syllable, phonotactics</li>
+    <li><span class="no">CH.4</span><span><b>Meaning</b>: semantic features, lexical relations, thematic roles, implicature, speech acts</span></li>
+    <li><span class="no">CH.5</span><span><b>Phonetics</b>: consonants, vowels, the IPA, prosody</span></li>
+    <li><span class="no">CH.6</span><span><b>Phonology</b>: phonemes vs. allophones, features, rules, the syllable, phonotactics</span></li>
   </ul>
   <hr class="hair" style="max-width:620px; margin-top:30px;">
   <p style="font: 300 17px 'Noto Serif KR'; color: var(--ed-body);">
     <span class="small-label" style="margin-right:14px;">PREPARE</span>Review Weeks 9–14 slides · end-of-chapter exercises · IPA transcription &amp; rule notation</p>
   <aside class="notes">
-    다음 주는 기말고사입니다. 출제 범위는 Ch.4–6(9–14주차). 특히 음소/이음 판별, 최소대립쌍,
-    규칙 표기 해독, 음절 분석, 음소배열 제약은 반드시 복습하도록 안내하세요. IPA 전사 연습도 강조.
+    다음 주는 기말고사입니다. 출제 범위는 Ch.4–6(9–14주차): Ch.4 의미론·화용론, Ch.5 음성학, Ch.6 음운론.
+    Ch.4에서는 의미 자질·어휘 관계·의미역·함축(격률)·화행을, Ch.5–6에서는 음소/이음 판별, 최소대립쌍,
+    규칙 표기 해독, 음절 분석, 음소배열 제약을 반드시 복습하도록 안내하세요. IPA 전사 연습도 강조.
   </aside>
 </section>
 
@@ -674,6 +803,7 @@
     center: false,
     transition: 'fade',
     transitionSpeed: 'default',
+    pdfSeparateFragments: false,
     plugins: [ RevealNotes ]
   });
 </script>

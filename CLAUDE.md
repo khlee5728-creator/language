@@ -26,6 +26,8 @@
 `slides-media.css/js`(TTS·영상·자막) + reveal.js 5.1.0 CDN, 스테이지 960×700, `center:false`.
 
 - **헤더/타이틀은 교재 섹션 제목 그대로(verbatim).** 임의 요약·의역 금지. 히어로 워드(개념어 초대형 타이포) 금지 — 교재 정합성이 우선.
+  한 섹션이 여러 장에 걸치면 **같은 섹션 제목을 반복**한다(서술형 제목·"제목 · 부연" 금지, 2026-09-28 전 덱 통일). 요약 슬라이드 제목은 `Summary`.
+  h2가 섹션 X이면 킥커는 X의 상위 섹션(예: h2 "Question Formation Rules" → 킥커 `… · GRAMMATICAL DEPENDENCIES`). 예외: 영상·ENRICHMENT·NEXT WEEK 슬라이드.
 - **섹션 완전성**: 주차 범위의 교재 섹션은 하나도 건너뛰지 않는다. 덱 신설·개편 시 챕터 헤딩 목록을 추출해 체크리스트로 대조.
 - **킥커 문법**: 내용 `CH.n P.{시작쪽} · {직상위 섹션}` / 미디어 `… · FIGURE|CARTOON|VIDEO` / 퀴즈 `CH.n · PRACTICE|EXERCISE nn` / 요약 `CH.n · SUMMARY` / 목차 `WEEK n · CONTENTS · CH.n PP.a–b` / 교재 밖 보충 `ENRICHMENT · BEYOND THE TEXTBOOK`. 구분자는 ` · `.
 - **목차 슬라이드**: 책 차례식(`recap tight` + `.pg` 시작 쪽수).

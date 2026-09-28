@@ -35,6 +35,17 @@
     .reveal table.feat-table td:first-child { font: italic 400 18px 'Lora'; color: var(--ed-ink); }
     .reveal table.feat-table tr:last-child td { border-bottom: 0; }
 
+    /* 이중목적어 교체 표 (pp.155–156) — .reveal table 접두로 기본 테마보다 우선, 헤더 nowrap */
+    .reveal table.dobj { width: 100%; border-collapse: collapse; margin: 4px 0 0; table-layout: auto; }
+    .reveal table.dobj th { white-space: nowrap; font: 600 11px 'Space Grotesk'; letter-spacing: 0.14em; color: var(--ed-muted);
+      text-align: left; padding: 6px 12px 6px 0; border: 0; border-bottom: 1px solid var(--ed-ink); background: none; }
+    .reveal table.dobj td { font: italic 400 17.5px 'Lora'; color: var(--ed-ink); padding: 7px 12px 7px 0;
+      border: 0; border-bottom: 1px solid var(--ed-line); background: none; text-align: left; vertical-align: baseline; }
+    .reveal table.dobj td.rowh { font: 600 11px 'Space Grotesk'; font-style: normal; letter-spacing: 0.12em; color: var(--ed-muted); white-space: nowrap; }
+    .reveal table.dobj td.vb { white-space: nowrap; font-size: 16px; color: var(--ed-body); }
+    .reveal table.dobj tr.grp td { border-bottom: 1px solid var(--ed-ink); }
+    .reveal table.dobj tr:last-child td { border-bottom: 0; }
+
     /* 의미역 그리드 — 헤어라인만, 색 상자 없음 */
     .role-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px 40px; }
     .role-grid .tc { border-top: 1px solid var(--ed-line); padding-top: 10px;
@@ -441,8 +452,9 @@
   <h2>Semantic Features</h2>
   <div class="cols">
     <div class="def">Meanings decompose into <i>features</i>; antonyms must share a principal feature in which they differ: <i>wet/dry</i> share "liquid".
-      <span class="ko-supp" style="display:block; margin-top:8px;">단어 의미는 의미 자질(semantic features)의 다발로 분해되며, man과 boy처럼 자질을 공유하고 하나만 다른 관계가 체계적으로 설명된다.</span></div>
+      <span class="ko-supp" style="display:block; margin-top:8px;">단어 의미는 의미 자질(semantic features)로 분해되며, 반의어는 주요 자질 하나를 공유하면서 그 값만 다르다(wet/dry는 '액체'를 공유).</span></div>
     <div>
+      <p class="small-label" style="margin:0 0 6px;">A CLASSIC ILLUSTRATION · BEYOND THE TEXTBOOK</p>
       <table class="feat-table">
         <tr><th>WORD</th><th>[±HUMAN]</th><th>[±ADULT]</th><th>[±MALE]</th></tr>
         <tr><td>man</td><td>+</td><td>+</td><td>+</td></tr>
@@ -456,7 +468,7 @@
   </div>
   <aside class="notes">
     의미 자질은 음운 자질과 평행합니다. big/red가 반의어가 못 되는 이유(주요 자질이 size vs color로
-    다름)도 자질로 설명됩니다. 자질은 언어적 의미이지 물리적 지식(H₂O)이 아님을 구분하세요. 또 다른 예: assassin = [+human] + "살해자" + "중요 인물의" 같은 자질 다발.
+    다름)도 자질로 설명됩니다. 자질은 언어적 의미이지 물리적 지식(H₂O)이 아님을 구분하세요. man/woman/boy/girl 표는 교재 밖의 고전적 예시이고, 교재 자체의 예는 wet/dry와 assassin입니다. assassin = [+human] + "살해자" + "중요 인물의" 같은 자질 다발.
   </aside>
 </section>
 
@@ -528,8 +540,37 @@
   </div>
   <aside class="notes">
     사건동사는 수동·진행·명령·부사와 자연스럽지만 상태동사는 어색(?표) — 자질의 통사적 귀결.
-    ever 같은 부정극어는 doubt/refuse(부정 자질 내장)와만 공기. throw류(한 번의 빠른 동작)는
-    이중목적어 교체를 허용하지만 push류(지속적 힘)는 불허 — 미세 자질도 통사에 반영됩니다.
+    ever 같은 부정극어는 doubt/refuse(부정 자질 내장)와만 공기. 미세한 자질 차이가 어순까지 좌우하는
+    사례(throw류 vs. push류)는 다음 슬라이드에서 다룹니다.
+  </aside>
+</section>
+
+<!-- ══ 22b · Semantic Features of Verbs: transfer & the double-object order ══ -->
+<section data-kicker="CH.4 P.155 · SEMANTIC FEATURES AND GRAMMAR">
+  <h2 style="font-size:40px;">Semantic Features of Verbs</h2>
+  <p class="lead" style="font-size:17px; margin-bottom:10px;">Even subtle feature differences matter: all these verbs work with a <i>to</i> phrase (<i>threw the ball to the boy</i>), but only some allow the <b>two-object order</b>.
+    <span class="ko-supp" style="display:block;">미세한 자질 차이도 통사에 영향을 주어, 모두 to 구문은 되지만 두 목적어 어순은 일부 동사만 허용한다.</span></p>
+  <table class="dobj">
+    <thead><tr><th>HOW</th><th>VERBS</th><th>VERB + RECIPIENT + THEME</th></tr></thead>
+    <tbody>
+      <tr><td class="rowh">SINGLE QUICK MOTION</td><td class="vb">throw · toss · kick · fling</td><td>John threw the boy the ball.</td></tr>
+      <tr class="grp"><td class="rowh">PROLONGED FORCE</td><td class="vb">push · pull · lift · haul</td><td><span class="accent">*</span>John pushed the boy the ball.</td></tr>
+      <tr><td class="rowh">EXTERNAL APPARATUS</td><td class="vb">fax · radio · e-mail · phone</td><td>Mary faxed Helen the news.</td></tr>
+      <tr><td class="rowh">TYPE OF VOICE</td><td class="vb">murmur · mumble · mutter · shriek</td><td><span class="accent">*</span>Mary murmured Helen the news.</td></tr>
+    </tbody>
+  </table>
+  <hr class="hair" style="margin-top:16px;">
+  <p class="lead" style="font-size:16.5px;">All share the feature <b>"transfer"</b>: the direct object is what gets transferred, the indirect object is the recipient. The transfer may only be implied, as in <i>John baked Mary a cake</i>.
+    <span class="ko-supp" style="display:block;">이 동사들은 모두 '이전(transfer)' 자질을 지니며, 직접목적어는 옮겨지는 것, 간접목적어는 받는 이이고, 이전은 암시만 될 수도 있다.</span></p>
+  <p style="font: italic 400 14px 'Lora'; color: var(--ed-muted); margin-top:8px;">(cf. textbook Ch.4, pp.155–156)</p>
+  <aside class="notes">
+    교재 pp.155–156, Semantic Features of Verbs 절의 마지막 논점입니다. 네 동사군은 모두 to 구문(John threw the ball
+    to the boy)이 가능하지만, 두 목적어를 나란히 놓는 어순은 일부만 허용합니다.
+    운동 동사: throw류는 한 번의 빠른 동작이라 허용, push류는 힘을 지속적으로 가하므로 불허.
+    전달 동사: fax류는 외부 장치를 통한 전달이라 허용, murmur류는 목소리의 종류를 나타내므로 불허.
+    공통 자질은 '이전(transfer)'이며 직접목적어가 옮겨지는 것, 간접목적어가 수령자입니다. John baked Mary a cake처럼
+    이전이 드러나지 않아도 추론됩니다. 교재는 이런 형식과 의미의 연결이 아동의 규칙 습득을 도울 수 있다고 보고
+    Ch.9에서 다시 다룹니다. 학생들에게 text, whisper 같은 동사를 주고 어느 쪽인지 판단하게 해 보세요(교재 밖 확장 질문).
   </aside>
 </section>
 
@@ -696,13 +737,13 @@
 
 <!-- ══ 30 · Summary ══ -->
 <section data-kicker="CH.4 · SUMMARY">
-  <h2>Six Things to Keep</h2>
+  <h2>Summary</h2>
   <ol class="recap" style="max-width:680px;">
     <li>Speakers know <b>entailment, paraphrase, contradiction, ambiguity</b></li>
     <li>Meaning is <b>compositional</b>: words + structure <i>(Semantic Rules I·II)</i></li>
     <li>Compositionality fails with <b>anomaly, metaphor, idioms</b></li>
     <li><b>Sense</b> ≠ <b>reference</b>, and rich lexical relations</li>
-    <li>Meaning decomposes into <b>semantic features</b>: count/mass, eventive/stative</li>
+    <li>Meaning decomposes into <b>semantic features</b>: count/mass, eventive/stative, "transfer"</li>
     <li>Verbs assign <b>thematic roles</b> to their arguments</li>
   </ol>
   <aside class="notes">
