@@ -49,6 +49,10 @@
     .recap.xs .pg { float: none; position: absolute; right: 0; top: 8px; margin-top: 0; }
 
     .mcq .key { color: var(--ed-accent); }
+    /* 요점 + 예시 줄 (W5와 같은 패턴) */
+    .eg-line { display: flex; flex-wrap: wrap; gap: 0 22px; margin-top: 4px; }
+    .eg-line > span { white-space: nowrap; }
+    .rel-line { display: block; margin-top: 4px; }
   </style>
 </head>
 <body data-rail="WEEK 6 · SYNTAX" data-course="Topics in English Linguistics">
@@ -230,7 +234,7 @@
       </div>
       <hr class="hair">
       <p class="lead" style="font-size:17px;">Force <em>the man with the telescope</em> to be one unit, and meaning 1 disappears:
-        <i>It was the man with the telescope that Mary saw.</i></p>
+        <i>It was the man with the telescope that Sue saw.</i></p>
     </div>
   </div>
   <aside class="notes">
@@ -340,11 +344,11 @@
       <div class="quote-stack ex">
         <p><b>The child</b> found a puppy.</p>
         <p><i>A police officer / Your neighbor / This yellow cat</i> found a puppy.</p>
-        <p>All are <b>NPs</b>; so are <i>John</i>, <i>he</i>, <i>it</i>: single words that fill NP slots.</p>
       </div>
+      <p class="lead" style="font-size:17px; margin-top:10px;">All of these are <b>NPs</b>, and so are single words like <i>John</i>, <i>he</i>, <i>it</i>.</p>
       <hr class="hair">
-      <p class="lead" style="font-size:17px;">NP test frames: <em>Who found ___?</em> · <em>___ was seen by everyone.</em>
-        Only NPs fit, even long ones like <i>the girl that Professor Snape loved</i>.</p>
+      <p class="lead" style="font-size:17px;"><b>NP test frames</b>: only NPs fit, even long ones like <i>the girl that Professor Snape loved</i>.
+        <span class="eg-line"><span><em>Who found ___?</em></span><span><em>___ was seen by everyone.</em></span></span></p>
     </div>
   </div>
   <aside class="notes">
@@ -442,12 +446,14 @@
 <section data-kicker="CH.3 P.89 · SENTENCE STRUCTURE">
   <h2 style="font-size:40px;">Phrase Structure Trees</h2>
   <div class="quote-stack" style="max-width:720px;">
-    <p>A node <b>dominates</b> every node beneath it; S dominates everything.</p>
+    <p>A node <b>dominates</b> every node beneath it, so S dominates everything.</p>
     <p>A node <b>immediately dominates</b> the nodes one level down: VP immediately dominates V and NP.</p>
     <p><b>Sisters</b> are categories immediately dominated by the same node, such as V and NP.</p>
   </div>
   <hr class="hair" style="max-width:720px;">
-  <p class="lead" style="max-width:720px; font-size:18px;">Grammatical relations become precise: the <b>subject</b> is the NP immediately dominated by S; the <b>direct object</b> is the NP immediately dominated by VP.
+  <p class="lead" style="max-width:720px; font-size:18px;">Grammatical relations become precise:
+    <span class="rel-line"><b>Subject</b>: the NP immediately dominated by S</span>
+    <span class="rel-line"><b>Direct object</b>: the NP immediately dominated by VP</span>
     <span class="ko-supp" style="display:block; margin-top:8px;">지배(dominate)·직접 지배·자매(sister) 관계로 주어는 S가 직접 지배하는 NP, 목적어는 VP가 직접 지배하는 NP로 정확히 정의된다.</span></p>
   <aside class="notes">
     나무 어휘(dominate, immediately dominate, sister)를 정확히 익혀야 이후 일치·이동 논의가
@@ -506,8 +512,13 @@
 <section data-kicker="CH.3 P.94 · SENTENCE STRUCTURE">
   <h2 style="font-size:36px;">The Infinity of Language: Recursive Rules</h2>
   <div class="cols">
-    <div class="def">Rules 6, 8, 1 form a <i>recursive set</i>: S contains VP, VP contains CP, CP contains S — <b>round and round</b>.
-      <span class="ko-supp" style="display:block; margin-top:8px;">규칙 6·8·1은 재귀적 집합(recursive set)을 이룬다: S가 VP를, VP가 CP를, CP가 다시 S를 담아 끝없이 돌 수 있다.</span></div>
+    <div class="def">Three rules form a <i>recursive set</i>: S contains VP, VP contains CP, CP contains S, <b>round and round</b>.
+      <div class="psrules" style="margin-top:10px;">
+        <div><span class="nt">S</span><span class="arr">→</span>NP&nbsp;VP</div>
+        <div><span class="nt">VP</span><span class="arr">→</span>V&nbsp;CP</div>
+        <div><span class="nt">CP</span><span class="arr">→</span>C&nbsp;S</div>
+      </div>
+      <span class="ko-supp" style="display:block; margin-top:8px;">세 규칙은 재귀적 집합(recursive set)을 이룬다: S가 VP를, VP가 CP를, CP가 다시 S를 담아 끝없이 돌 수 있다.</span></div>
     <div>
       <div class="quote-stack ex">
         <p>Homer caught a pokemon.</p>
@@ -516,8 +527,8 @@
         <p>Lisa knows that <i>Bart wonders whether …</i></p>
       </div>
       <hr class="hair">
-      <p class="lead" style="font-size:16.5px;">PPs loop too: <em>the person behind the person immediately to the left of …</em>
-        Competence has no limit; only <b>performance</b> (memory, breath) does.</p>
+      <p class="lead" style="font-size:16.5px;">PPs loop too: <em>the person behind the person immediately to the left of …</em></p>
+      <p class="lead" style="font-size:16.5px; margin-top:8px;">Competence has no limit. Only <b>performance</b> (memory, breath) does.</p>
     </div>
   </div>
   <aside class="notes">
@@ -568,9 +579,12 @@
     <li><span class="no">[ __ ]</span><b style="font-style:normal;">intransitive</b>: The baby slept. <span class="gram-star">*The baby slept the toy.</span></li>
     <li><span class="no">[ __ NP ]</span><b style="font-style:normal;">transitive</b>: The child found a puppy. <span class="gram-star">*The boy found.</span></li>
     <li><span class="no">[ __ NP NP ]</span><b style="font-style:normal;">ditransitive</b>: She gave the dog a bone.</li>
-    <li><span class="no">[ __ PP / CP ]</span>Let's think about it. · I think a girl won the race.</li>
+    <li><span class="no">[ __ PP / CP ]</span><b style="font-style:normal;">PP or clause</b>: Let's think about it. · I think a girl won the race.</li>
   </ul>
-  <p class="lead" style="max-width:740px; font-size:18px; margin-top:16px;"><b>C-selection</b> (subcategorization) is stored in each word's lexical entry. <b>S-selection</b> adds semantic demands: <em>!Golf plays John</em>; <em>sleep</em> wants an animate subject, which is why colorless green ideas can't sleep.
+  <p class="lead" style="max-width:740px; font-size:18px; margin-top:16px;"><b>C-selection</b> (subcategorization): the categories a word takes, stored in its lexical entry.
+    <span class="rel-line"><b>S-selection</b>: the semantic demands a word makes on those phrases.</span>
+    <span class="rel-line" style="font-size:16.5px; padding-left:14px;"><em>play</em> wants an animate subject: <em>!Golf plays John</em></span>
+    <span class="rel-line" style="font-size:16.5px; padding-left:14px;"><em>sleep</em> does too: <em>colorless green ideas</em> can't sleep</span>
     <span class="ko-supp" style="display:block; margin-top:8px;">범주 선택(C-selection, 하위범주화)은 각 단어의 어휘 항목에 저장되고, 의미 선택(S-selection)은 의미상의 요구를 더해 !Golf plays John 같은 문장을 걸러 낸다.</span></p>
   <aside class="notes">
     선택(selection) = 핵어가 보충어를 고르는 것. 통사적 선택(C-selection/하위범주화)과 의미적
@@ -585,7 +599,8 @@
   <h2 style="font-size:36px; margin-bottom:10px;">The Three Levels of Phrases</h2>
   <div class="cols-even" style="gap:40px;">
     <div>
-      <p class="lead" style="font-size:17.5px;">A phrase may also open with a <b>specifier</b>: <em>the</em> mother of James Whistler · <em>Nellie's</em> ball · I heard [<em>Pavarotti</em> sing an aria] · Betty made [<em>Jane</em> wary of snakes].</p>
+      <p class="lead" style="font-size:17.5px;">A phrase may also open with a <b>specifier</b>:
+        <span class="eg-line" style="font-size:16.5px;"><span><em>the</em> mother of James Whistler</span><span><em>Nellie's</em> ball</span><span>I heard [<em>Pavarotti</em> sing an aria]</span><span>Betty made [<em>Jane</em> wary of snakes]</span></span></p>
       <hr class="hair">
       <div class="psrules" style="margin-top:4px;">
         <div><span class="nt">XP</span><span class="arr">→</span>(Specifier)&nbsp;<span class="nt">X′</span></div>
@@ -652,9 +667,12 @@
   <h2 style="font-size:36px; margin-bottom:10px;">What Heads the Sentence</h2>
   <div class="cols-even" style="gap:40px;">
     <div>
-      <p class="lead" style="font-size:17.5px;">Every sentence is <b>tensed</b>: <em>John dances / danced</em>; modals are inherently tensed (<em>John may win the race tomorrow</em>, <span class="gram-star">*yesterday</span>). So the natural head of S is <b>T</b>: tense and modality.</p>
+      <p class="lead" style="font-size:17.5px;">Every sentence is <b>tensed</b>, and modals are inherently tensed.
+        <span class="eg-line" style="font-size:16.5px;"><span><em>John dances / danced</em></span><span><em>John may win the race tomorrow</em> / <span class="gram-star">*yesterday</span></span></span>
+        <span class="rel-line" style="margin-top:6px;">So the natural head of S is <b>T</b>: tense and modality.</span></p>
       <hr class="hair">
-      <p class="lead" style="font-size:17.5px;">S is reanalyzed as a <b>TP</b>: the subject NP is its <em>specifier</em>, the VP its <em>complement</em>. When T is separated from V, the dummy <em>do</em> carries the tense: <em>Where did John go?</em></p>
+      <p class="lead" style="font-size:17.5px;">S is reanalyzed as a <b>TP</b>: the subject NP is its <em>specifier</em>, the VP its <em>complement</em>.
+        <span class="rel-line" style="margin-top:6px;">When T is separated from V, the dummy <em>do</em> carries the tense: <em>Where did John go?</em></span></p>
     </div>
     <div style="text-align:center;">
       <svg viewBox="0 0 460 230" style="width:100%; max-width:440px;">
@@ -671,7 +689,7 @@
         <text class="node" x="410" y="180" text-anchor="middle">VP</text>
         <text class="sub"  x="410" y="198" text-anchor="middle">PREDICATE = COMPLEMENT</text>
       </svg>
-      <p class="tree-cap"><em>The girl may cry</em>: may under T; <em>The child ate</em>: T holds +pst, realized on the verb.</p>
+      <p class="tree-cap"><em>The girl may cry</em>: <em>may</em> sits under T.<br><em>The child ate</em>: T holds +pst, realized on the verb.</p>
     </div>
   </div>
   <p class="ko-supp" style="font-size:14px; margin-top:12px;">모든 문장은 시제를 가지므로 S는 시제 T가 핵인 TP로 재분석되며, 주어 NP는 지정어, VP는 보충어이고, T가 V와 떨어지면 허사 do가 시제를 나른다.</p>
@@ -689,7 +707,11 @@
     <li><span class="no">A′ → Int A′</span>really very <b>pretty</b></li>
     <li><span class="no">V′ → V′ PP</span><b>went</b> over the hills through the woods to grandmother's house</li>
   </ul>
-  <p class="lead" style="max-width:740px; font-size:18px; margin-top:16px;">These loops live on the <em>bar</em> level: an <b>adjunct</b> is sister to X′ (a complement is sister to X). Back to the telescope: the instrumental reading hangs the PP on <b>V′</b> as an adjunct; the other reading puts it <b>inside the NP</b>, next to <em>man</em>. Same words, different attachment, different meaning.
+  <p class="lead" style="max-width:740px; font-size:18px; margin-top:16px;">These loops live on the <em>bar</em> level.
+    <span class="rel-line"><b>Adjunct</b>: sister to X′ · <b>Complement</b>: sister to X</span>
+    <span class="rel-line" style="margin-top:10px;">Back to the telescope: same words, different attachment, different meaning.</span>
+    <span class="rel-line" style="font-size:16.5px; padding-left:14px;"><b>Instrument</b> (Sue uses it): the PP hangs on <b>V′</b> as an adjunct</span>
+    <span class="rel-line" style="font-size:16.5px; padding-left:14px;"><b>Possession</b> (the man has it): the PP sits <b>inside the NP</b></span>
     <span class="ko-supp" style="display:block; margin-top:8px;">이런 반복은 바(bar) 층위에서 일어나며, 부가어(adjunct)는 X′의 자매, 보충어는 X의 자매라는 차이가 망원경 문장의 두 해석을 다시 설명한다.</span></p>
   <aside class="notes">
     바(bar) 층위의 재귀가 '한없이 긴 구'를 설명합니다(형용사 나열, really very…, PP 연쇄).
