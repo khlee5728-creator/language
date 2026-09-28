@@ -27,6 +27,11 @@
     /* 형태소 분석 사례 3·4 */
     .azdata { display: grid; grid-template-columns: auto 1fr; column-gap: 16px; row-gap: 3px; font: 400 16px/1.45 'Lora'; color: var(--ed-body); }
     .azdata i { font-size: 18px; color: var(--ed-ink); }
+    .azdata.four { grid-template-columns: auto auto auto auto; column-gap: 12px; font-size: 14.5px; justify-content: start; }
+    .azdata.four > * { white-space: nowrap; }
+    .azdata.four i { font-size: 17px; }
+    .reveal ol.steps.plain li::before { color: var(--ed-muted); }
+    .case-tag { font: 600 11px 'Space Grotesk'; letter-spacing: 0.14em; color: var(--ed-accent); margin-right: 8px; }
     .reveal ol.steps { list-style: none; counter-reset: st; margin: 0; padding: 0; }
     .reveal ol.steps li { list-style: none; counter-increment: st; position: relative; padding: 6px 0 6px 30px; border-bottom: 1px solid var(--ed-line); font: 400 16.5px/1.45 'Lora', 'Noto Serif KR'; color: var(--ed-body); }
     .steps li:last-child { border-bottom: 0; }
@@ -41,8 +46,17 @@
     .reveal table.para td b { font-weight: 700; color: var(--ed-accent); }
     .reveal table.para td .alt { background: color-mix(in srgb, var(--ed-accent) 12%, transparent); padding: 0 3px; }
     /* s16 malapropism 형태소 분해 행 */
+    /* s18 malapropism 대비표: WORD / MISREAD AS / ACTUALLY(단계 공개) */
+    .reveal table.malap { width: 100%; border-collapse: collapse; margin: 4px 0 0; }
+    .reveal table.malap th { white-space: nowrap; font: 600 11px 'Space Grotesk'; letter-spacing: 0.14em; color: var(--ed-muted); text-align: left; padding: 4px 10px 6px 0; border-bottom: 1px solid var(--ed-ink); background: none; }
+    .reveal table.malap td { vertical-align: top; padding: 5px 10px 5px 0; border-bottom: 1px solid var(--ed-line); background: none; font: 400 15.5px/1.35 'Lora', 'Noto Serif KR'; color: var(--ed-body); }
+    .reveal table.malap tr:last-child td { border-bottom: 0; }
+    .reveal table.malap td.w { font: italic 400 19px 'Lora'; color: var(--ed-ink); white-space: nowrap; }
+    .reveal table.malap td.real b { color: var(--ed-accent); font-weight: 700; }
+    .reveal table.malap .etym { display: block; font: italic 400 13px 'Lora'; color: var(--ed-muted); margin-top: 2px; }
+    .reveal table.malap .ko-supp { display: block; font-size: 13px; margin-top: 1px; }
     .mparse { display: flex; gap: 0; margin-top: 8px; border-top: 1px solid var(--ed-line); border-bottom: 1px solid var(--ed-line); }
-    .mparse > div { flex: 1; text-align: center; padding: 6px 4px; border-right: 1px solid var(--ed-line); font: italic 400 22px/1.25 'Lora'; }
+    .mparse > div { flex: 1; text-align: center; padding: 4px 4px; border-right: 1px solid var(--ed-line); font: italic 400 19px/1.2 'Lora'; }
     .mparse > div:last-child { border-right: 0; }
     .mparse .no { display: block; font: 600 11px 'Space Grotesk'; letter-spacing: 0.12em; color: var(--ed-muted); font-style: normal; margin-top: 2px; }
     .cgrid .no { display: block; font: 600 11px 'Space Grotesk'; letter-spacing: 0.1em; color: var(--ed-muted); font-style: normal; }
@@ -278,16 +292,22 @@
       <span class="mech">Irregular, <i>suppletive</i> forms: retrieved whole from the <b>lexicon</b>.</span>
       <span class="ko-supp" style="display:block; margin-top:12px;">규칙형은 규칙으로 만들고, 불규칙형·보충형(suppletive form)은 어휘부(lexicon)에서 통째로 꺼내 쓴다.</span></div>
     <div class="quote-stack">
-      <p><b>Suppletion</b>: the form is wholly unrelated to the base.
-        <span class="eg-line"><span><i>go → went</i></span><span><i>bring → brought</i></span></span></p>
-      <p><b>Exceptions</b>: irregular forms memorized as whole words.
-        <span class="eg-line"><span><i>child → children</i></span><span><i>mouse → mice</i></span></span></p>
+      <p><b>Exceptions</b>: the regular rule skips them, so they are stored whole in the lexicon.
+        <span class="eg-line"><span><i>child → children</i></span><span><i>mouse → mice</i></span><span><i>sing → sang</i></span></span></p>
+      <p>The textbook also calls these irregular forms <b>suppletive</b>.</p>
+      <p>In the strict sense, <b>suppletion</b> is the extreme case: an unrelated form replaces the base.
+        <span class="eg-line"><span><i>go → went</i></span><span><i>good → better</i></span></span></p>
       <p>Stored irregulars win over the rule.
         <span class="eg-line"><span><i>foot → feet</i>, not <span class="accent"><i>*foots</i></span></span><span><i>man → men</i>, not <span class="accent"><i>*mans</i></span></span></span></p>
     </div>
   </div>
   <aside class="notes">
-    보충법(suppletion: go/went)과 불규칙 예외의 구분, 그리고 '규칙 vs 어휘부 저장'이라는 이중 구조.
+    규칙형은 규칙으로, 불규칙형은 어휘부 저장으로 만든다는 이중 구조가 핵심입니다.
+    용어 주의: 교재(p.53)는 규칙이 적용되지 않는 형태를 exceptions라 부르고, 이 불규칙형을 "suppletive"라고도 부르며
+    둘을 넓게 동일시합니다. 일반 언어학에서 좁은 의미의 보충법(suppletion)은 어간이 형태상 무관한 다른 형태로
+    대체되는 극단적 경우(go/went, be/was, good/better)로, 불규칙형의 하위 유형입니다(보충형은 모두 불규칙형이지만
+    그 역은 아님). mice·sang(모음 교체), children(불규칙 접미사)은 불규칙형이지만 보충형은 아니며,
+    bring/brought·think/thought처럼 어간 일부가 남는 경우는 부분 보충(partial suppletion)으로 보기도 합니다.
     저장된 불규칙형이 규칙형을 차단한다(blocking)는 점이 다음 슬라이드(규칙 실재의 증거)로 이어집니다.
   </aside>
 </section>
@@ -519,30 +539,41 @@
 <!-- ══ 15c · "Malapropisms" (p.59 box) ══ -->
 <section data-kicker="CH.2 P.59 · RULES OF WORD FORMATION">
   <h2>"Malapropisms"</h2>
-  <div class="cols">
-    <div class="def">A <b>malapropism</b> misreads a word's morphemes, usually to comic effect.
-      The mistakes reveal the speaker's morphological knowledge.
-      <span class="ko-supp" style="display:block; margin-top:8px;">말라프로피즘(malapropism)은 형태소를 잘못 해석한 우스운 오용이며, 그 실수가 화자의 형태론 지식을 드러낸다.</span></div>
-    <div class="quote-stack compact">
-      <p><i>abdicate</i>: read as <i>ab(s)</i> + <i>dicate</i>, "giving up on a flat stomach"</p>
-      <p><i>gullible</i>: read as <i>gull</i> + <i>-ible</i>, "having to do with seabirds"</p>
-      <p><i>polyglot</i>: read as <i>poly-</i> + <i>glot</i>, "more than one glot"</p>
-      <p style="font: italic 400 14px 'Lora'; color: var(--ed-muted);">(cf. textbook Ch.2, p.59)</p>
-    </div>
-  </div>
-  <p class="small-label" style="margin:14px 0 0;">A MISUSE THAT STILL FOLLOWS THE RULES</p>
+  <p class="lead" style="font-size:17px; margin-bottom:6px;">A <b>malapropism</b> misreads a word's morphemes, usually to comic effect. The mistakes reveal the speaker's morphological knowledge.
+    <span class="ko-supp" style="display:block;">형태소를 잘못 해석한 우스운 오용으로, 오히려 화자의 형태론 지식을 드러낸다.</span></p>
+  <table class="malap">
+    <thead><tr><th style="width:16%;">WORD</th><th style="width:36%;">MISREAD AS</th><th>ACTUALLY</th></tr></thead>
+    <tbody>
+      <tr><td class="w">abdicate</td>
+        <td><i>ab(s)</i> + <i>dicate</i>: "giving up on a flat stomach"</td>
+        <td class="real fragment"><b>to give up a throne or duty</b><span class="etym">Latin <i>ab-</i> 'away' + <i>dicare</i> 'proclaim'</span><span class="ko-supp">(왕위·책임을) 내려놓다</span></td></tr>
+      <tr><td class="w">gullible</td>
+        <td><i>gull</i> 'seabird' + <i>-ible</i>: "having to do with seabirds"</td>
+        <td class="real fragment"><b>easily fooled</b><span class="etym"><i>gull</i> 'to dupe' + <i>-ible</i>: wrong <i>gull</i></span><span class="ko-supp">잘 속는</span></td></tr>
+      <tr><td class="w">polyglot</td>
+        <td><i>poly-</i> + <i>glot</i>: "more than one glot"</td>
+        <td class="real fragment"><b>speaking many languages</b><span class="etym">Greek <i>poly-</i> 'many' + <i>glōtta</i> 'tongue'</span><span class="ko-supp">여러 언어를 하는 (사람)</span></td></tr>
+    </tbody>
+  </table>
+  <p class="small-label" style="margin:12px 0 0;">A MISUSE THAT STILL FOLLOWS THE RULES · <span style="text-transform:none; letter-spacing:0; font: italic 400 15px 'Lora'; color: var(--ed-ink);">indefatigable</span></p>
   <div class="mparse">
     <div>in-<span class="no">'NOT'</span></div>
     <div>de-<span class="no">'OFF'</span></div>
     <div>fat<span class="no">'FAT'</span></div>
     <div>-able<span class="no">'ABLE'</span></div>
   </div>
-  <p class="lead" style="font-size:17px; margin-top:10px;">For a dieter who never lost weight, <i>indefatigable</i> meant "not able to take the fat off." It really means "tireless."
-    <span class="ko-supp" style="display:block;">살이 안 빠지는 사람에게 '살을 뺄 수 없는'이라는 뜻으로 썼지만, 실제 뜻은 '지칠 줄 모르는'이다.</span></p>
+  <p class="lead" style="font-size:16px; margin-top:8px;">For a dieter who never lost weight, it meant "not able to take the fat off."
+    <span class="fragment">It really means <b>"tireless"</b>: <i>in-</i> + <i>de-</i> + <i>fatigare</i> 'tire' + <i>-able</i>.</span>
+    <span style="font: italic 400 13px 'Lora'; color: var(--ed-muted);">(cf. textbook Ch.2, p.59; origins: standard dictionaries)</span>
+    <span class="ko-supp" style="display:block;">살이 안 빠지는 사람에게 '살을 뺄 수 없는'으로 썼지만, 실제 뜻은 '지칠 줄 모르는'이다.</span></p>
   <aside class="notes">
-    교재 p.59 박스 "Malapropisms". 오용 자체가 형태소 지식의 증거라는 점이 핵심입니다. 학생들은 단어를 아무렇게나
-    쪼개지 않고, 실제 접두사(in-, de-)와 접미사(-able)의 의미를 규칙대로 적용했습니다. 앞의 '규칙은 실재한다'
-    (과잉 규칙화) 슬라이드와 같은 논리로 연결하세요. 교재 표에는 예시가 더 있으니 학생들에게 직접 찾아보게 해도 좋습니다.
+    교재 p.59 박스 "Malapropisms". 진행: 방향키를 누르기 전에 "진짜 뜻이 뭘까?"를 먼저 물어보세요. 방향키를 누를 때마다
+    ACTUALLY 열이 한 행씩, 마지막에 indefatigable의 실제 뜻이 나타납니다(PDF에는 모두 펼쳐져 나옴).
+    요점: 오용은 아무렇게나 쪼갠 것이 아니라 아는 형태소로 맞춰 본 결과입니다. gullible은 실제로 gull이라는 형태소가 맞지만
+    동음이의 형태소(갈매기)를 고른 경우이고, polyglot은 poly-는 맞게 분석하고 glot(혀·언어)만 몰랐던 경우입니다.
+    앞의 '규칙은 실재한다'(과잉 규칙화) 슬라이드와 같은 논리로 연결하세요.
+    어원(ab- + dicare, gull '속이다', glōtta, fatigare)은 교재 밖 보충이며 표준 사전 기준입니다.
+    교재 표에는 예시가 더 있으니 학생들에게 직접 찾아보게 해도 좋습니다.
   </aside>
 </section>
 
@@ -566,29 +597,100 @@
   </aside>
 </section>
 
-<!-- ══ 17 · Morphological Analysis ══ -->
+<!-- ══ 17 · Morphological Analysis (overview) ══ -->
 <section data-kicker="CH.2 P.60 · MORPHOLOGY">
   <h2 style="font-size:36px;">Morphological Analysis: Identifying Morphemes</h2>
   <div class="cols">
-    <div class="def">Given data from an unknown language: compare word pairs, hold meaning constant,
-      and isolate the <i>recurring</i> piece: that piece is a morpheme.
-      <span class="ko-supp" style="display:block; margin-top:8px;">미지 언어 자료에서 의미를 고정한 채 단어 짝을 비교해 반복되는 조각을 분리하면, 그것이 형태소(morpheme)다.</span></div>
+    <div class="def">Faced with data from a language, a field linguist looks for <i>recurring</i> forms that keep the same meaning, then checks whether each can stand alone.
+      <span class="ko-supp" style="display:block; margin-top:8px;">현장 언어학자는 자료에서 같은 의미로 반복되는 형식을 찾고, 그 형식이 홀로 쓰일 수 있는지 확인한다.</span></div>
     <div>
-      <div class="gloss-set">
-        <div class="langlab">CASE STUDY 2 · PAKU (V. FROMKIN, LAND OF THE LOST)</div>
-        <div class="sent" style="font-size:24px;">abu "child" → abu<b>ni</b> "children" · me "I" → me<b>ni</b> "we"</div>
-        <div class="tr">→ -ni = "복수" 형태소. (cf. textbook Ch.2, pp.60–61)</div>
-      </div>
-      <hr class="hair">
-      <p class="lead" style="font-size:17px;"><span class="small-label" style="display:block; margin-bottom:4px;">CASE STUDY 1 · ENGLISH</span>One form is not always one morpheme: <em>&#8209;er</em> is comparative in <i>taller</i>,
-        agentive in <i>singer</i>, and nothing at all in <i>somber</i>.</p>
+      <p class="small-label" style="margin:0 0 6px;">FOUR CASE STUDIES, EACH ADDING ONE LESSON</p>
+      <ol class="steps plain">
+        <li><b>English</b>: one form is not always one morpheme.</li>
+        <li><b>Paku</b>: the simplest split, one form for one meaning.</li>
+        <li><b>Michoacan Aztec</b>: each piece you find unlocks the next.</li>
+        <li><b>A Slavic language</b>: one morpheme can have two forms.</li>
+      </ol>
+      <p style="font: italic 400 14px 'Lora'; color: var(--ed-muted); margin-top:10px;">(cf. textbook Ch.2, pp.60–63)</p>
     </div>
   </div>
   <aside class="notes">
-    미지 언어 자료 분석법(교재 Case Study 1–4): 의미가 일정할 때 반복되는 형식 조각을 분리하면 그것이
-    형태소. 사례 1(영어): 같은 -er이라도 비교급·행위자로 다른 형태소이거나(taller/singer), 형태소가 아닐 수
-    있음(somber). 사례 2(Paku, 프롬킨이 만든 TV 드라마 언어): -ni "복수"처럼 형식과 의미가 1:1로 대응하는 가장
-    단순한 분절. 이어지는 두 장에서 사례 3(여러 접사를 연쇄 추론)과 사례 4(이형태)를 다룹니다.
+    교재 pp.60–63의 네 사례를 한 장씩 같은 형식(왼쪽 자료, 오른쪽 단계 공개)으로 다룹니다. 이 슬라이드는 절차와 로드맵입니다.
+    절차: 원어민에게 자료를 모으고, 의미가 같은 반복 형식을 찾고, 그 형식이 단독으로 쓰이는지 확인해 자유/의존을 판별합니다.
+    네 사례는 뒤로 갈수록 어려워집니다: 영어(동음 형태소와 가짜 형태소) → Paku(1:1 분절) → 아즈텍어(연쇄 추론) → 슬라브어(이형태).
+  </aside>
+</section>
+
+<!-- ══ 17a · Case Study 1 · English ══ -->
+<section data-kicker="CH.2 P.60 · MORPHOLOGICAL ANALYSIS: IDENTIFYING MORPHEMES">
+  <h2>Case Study 1</h2>
+  <div class="cols">
+    <div>
+      <div class="gloss-set"><div class="langlab">ENGLISH · COMPARATIVES</div></div>
+      <div class="azdata">
+        <i>ugly</i><span>"very unattractive"</span>
+        <i>uglier</i><span>"more ugly"</span>
+        <i>ugliest</i><span>"most ugly"</span>
+        <i>pretty</i><span>"nice looking"</span>
+        <i>prettier</i><span>"more nice looking"</span>
+        <i>prettiest</i><span>"most nice looking"</span>
+        <i>tall</i><span>"large in height"</span>
+        <i>taller</i><span>"more tall"</span>
+        <i>tallest</i><span>"most tall"</span>
+      </div>
+      <p style="font: italic 400 14px 'Lora'; color: var(--ed-muted); margin-top:10px;">(cf. textbook Ch.2, pp.60–61)</p>
+    </div>
+    <div>
+      <p class="small-label" style="margin:0 0 6px;">SAME SOUND, SAME MORPHEME?</p>
+      <ol class="steps">
+        <li class="fragment"><i>ugly</i> recurs with one meaning in all three forms: a <b>root</b>. So do <i>pretty</i> and <i>tall</i>.</li>
+        <li class="fragment"><b>-er</b> adds "more" and <b>-est</b> adds "most", and neither occurs alone: <b>bound</b> morphemes.</li>
+        <li class="fragment"><i>singer, writer, teacher</i>: this <b>-er</b> turns a verb into "one who does it", a different morpheme with the same sound.</li>
+        <li class="fragment"><i>number, somber, member</i>: here -er means nothing (no one <i>sombs</i>), so each word is <b>one morpheme</b>.</li>
+      </ol>
+      <div class="morph-result fragment"><span class="no">ROOTS</span>ugly · pretty · tall<br><span class="no">BOUND</span>-er "comparative" · -est "superlative"</div>
+    </div>
+  </div>
+  <aside class="notes">
+    교재 pp.60–61 사례 1. 교재는 Zorx 행성에서 온 언어학자가 영어를 분석한다는 설정으로 절차를 보여 줍니다.
+    먼저 자료만 보여 주고 "반복되는 조각이 무엇인가"를 물은 뒤 방향키로 한 단계씩 공개하세요.
+    요점: (1) 반복 + 같은 의미 = 형태소 후보, (2) 단독으로 못 쓰이면 의존 형태소, (3) 소리가 같아도 의미가 다르면 다른 형태소(비교급 -er vs 행위자 -er),
+    (4) 소리 조각이 있어도 의미가 없으면 형태소가 아님(somber, member는 단일 형태소어). 3·4는 학생들이 가장 자주 틀리는 부분입니다.
+  </aside>
+</section>
+
+<!-- ══ 17b0 · Case Study 2 · Paku ══ -->
+<section data-kicker="CH.2 P.61 · MORPHOLOGICAL ANALYSIS: IDENTIFYING MORPHEMES">
+  <h2>Case Study 2</h2>
+  <div class="cols">
+    <div>
+      <div class="gloss-set"><div class="langlab">PAKU · A LANGUAGE MADE FOR TV</div></div>
+      <div class="azdata four">
+        <i>me</i><span>"I"</span><i>meni</i><span>"we"</span>
+        <i>ye</i><span>"you (sg.)"</span><i>yeni</i><span>"you (pl.)"</span>
+        <i>we</i><span>"he"</span><i>weni</i><span>"they (m.)"</span>
+        <i>wa</i><span>"she"</span><i>wani</i><span>"they (f.)"</span>
+        <i>abuma</i><span>"girl"</span><i>abumani</i><span>"girls"</span>
+        <i>adusa</i><span>"boy"</span><i>adusani</i><span>"boys"</span>
+        <i>abu</i><span>"child"</span><i>abuni</i><span>"children"</span>
+        <i>Paku</i><span>"one Paku"</span><i>Pakuni</i><span>"more than one"</span>
+      </div>
+      <p style="font: italic 400 14px 'Lora'; color: var(--ed-muted); margin-top:10px;">(cf. textbook Ch.2, p.61)</p>
+    </div>
+    <div>
+      <p class="small-label" style="margin:0 0 6px;">ONE FORM, ONE MEANING</p>
+      <ol class="steps">
+        <li class="fragment">Every plural form ends in <b>-ni</b>, and no singular form does.</li>
+        <li class="fragment">The rest of each word stays the same: <i>abu</i> / <i>abu-ni</i>, <i>me</i> / <i>me-ni</i>.</li>
+        <li class="fragment">So <b>-ni</b> is a separate morpheme meaning "plural", attached as a suffix.</li>
+      </ol>
+      <div class="morph-result fragment"><span class="no">SUFFIX</span>-ni "plural"</div>
+    </div>
+  </div>
+  <aside class="notes">
+    교재 p.61 사례 2. Paku는 언어학자 빅토리아 프롬킨(교재 저자)이 1970년대 TV 시리즈 Land of the Lost를 위해 만든 언어입니다.
+    같은 절차를 다른 언어에 적용하는 첫 연습으로, 형식 하나가 의미 하나에 대응하는 가장 단순한 분절입니다.
+    학생들에게 직접 풀게 하면 1분 안에 답이 나옵니다. 다음 사례(아즈텍어)부터 한 단어에 여러 접사가 붙어 난도가 올라갑니다.
   </aside>
 </section>
 
