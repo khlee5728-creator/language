@@ -16,6 +16,10 @@
   <link rel="stylesheet" href="assets/editorial-theme.css?v=14" />
   <style>
     :root { --slide-accent: #2e5941; }
+    /* s7 가독성: 정의 한 줄 + 예시 줄 분리(예시 쌍은 줄 안에서 끊기지 않음) */
+    .mech { display: block; margin-top: 10px; padding-left: 14px; border-left: 2px solid var(--ed-line); }
+    .eg-line { display: flex; flex-wrap: wrap; gap: 0 22px; margin-top: 4px; }
+    .eg-line > span { white-space: nowrap; }
 
     /* 표지 */
     .cover .booktag { font: 600 12px 'Space Grotesk'; letter-spacing: 0.3em; color: var(--ed-muted); }
@@ -69,32 +73,32 @@
 <section data-kicker="CH.2 P.49 · MORPHOLOGY · FIGURE">
   <div style="text-align:center;">
     <p class="lead" style="font-size:18px; margin-bottom:8px;">Where we are: last week's map of English morphemes.</p>
-    <svg viewBox="0 0 720 300" style="width:94%; max-width:820px; margin:0 auto;">
+    <svg viewBox="-50 0 770 300" style="width:94%; max-width:820px; margin:0 auto;">
       <g stroke="#1c1a17" stroke-width="1.2" fill="none">
         <line x1="360" y1="42" x2="180" y2="90"/>
         <line x1="360" y1="42" x2="540" y2="90"/>
-        <line x1="180" y1="114" x2="90"  y2="162"/>
-        <line x1="180" y1="114" x2="270" y2="162"/>
+        <line x1="180" y1="114" x2="110" y2="162"/>
+        <line x1="180" y1="114" x2="250" y2="162"/>
         <line x1="540" y1="114" x2="450" y2="162"/>
         <line x1="540" y1="114" x2="630" y2="162"/>
-        <line x1="90"  y1="186" x2="45"  y2="234"/>
-        <line x1="90"  y1="186" x2="150" y2="234"/>
+        <line x1="110" y1="186" x2="30"  y2="234"/>
+        <line x1="110" y1="186" x2="190" y2="234"/>
       </g>
       <g font-family="Space Grotesk" font-size="14" letter-spacing="2" fill="#1c1a17" text-anchor="middle" font-weight="600">
         <text x="360" y="34">MORPHEMES</text>
         <text x="180" y="108">BOUND</text>
         <text x="540" y="108">FREE</text>
-        <text x="90"  y="180">AFFIX</text>
-        <text x="270" y="180">ROOT</text>
+        <text x="110" y="180">AFFIX</text>
+        <text x="250" y="180">ROOT</text>
         <text x="450" y="180">OPEN CLASS</text>
         <text x="630" y="180">CLOSED CLASS</text>
-        <text x="45"  y="252" fill="#2e5941">DERIVATIONAL</text>
-        <text x="150" y="252" fill="#2e5941">INFLECTIONAL</text>
+        <text x="30"  y="252" fill="#2e5941">DERIVATIONAL</text>
+        <text x="190" y="252" fill="#2e5941">INFLECTIONAL</text>
       </g>
       <g font-family="Lora" font-style="italic" font-size="14" fill="#8d8574" text-anchor="middle">
-        <text x="45"  y="274">un- · pre- · -ly · -ment</text>
-        <text x="150" y="274">the 8 suffixes</text>
-        <text x="270" y="204">-ceive · -mit</text>
+        <text x="30"  y="274">un- · pre- · -ly · -ment</text>
+        <text x="190" y="274">the 8 suffixes</text>
+        <text x="250" y="204">-ceive · -mit</text>
         <text x="450" y="204">content words (girl, love)</text>
         <text x="630" y="204">function words (and, the)</text>
       </g>
@@ -241,14 +245,17 @@
 <section data-kicker="CH.2 P.53 · RULES OF WORD FORMATION">
   <h2>Exceptions and Suppletions</h2>
   <div class="cols">
-    <div class="def">Two mechanisms build complex words: regular forms come from <b>rules</b>;
-      irregular, <i>suppletive</i> forms are retrieved whole from the <b>lexicon</b>.
-      <span class="ko-supp" style="display:block; margin-top:8px;">규칙형은 규칙으로 만들고 불규칙형·보충형(suppletive form)은 어휘부(lexicon)에서 통째로 꺼내 쓰며, 저장된 불규칙형이 규칙형을 차단(blocking)한다.</span></div>
+    <div class="def">Two mechanisms build complex words:
+      <span class="mech">Regular forms: built by <b>rules</b>.</span>
+      <span class="mech">Irregular, <i>suppletive</i> forms: retrieved whole from the <b>lexicon</b>.</span>
+      <span class="ko-supp" style="display:block; margin-top:12px;">규칙형은 규칙으로 만들고, 불규칙형·보충형(suppletive form)은 어휘부(lexicon)에서 통째로 꺼내 쓴다.</span></div>
     <div class="quote-stack">
-      <p><b>Suppletion</b>: the form is wholly unrelated to the base (<i>go → went</i>, <i>bring → brought</i>).</p>
-      <p><b>Exceptions</b> are memorized as whole words (<i>child → children</i>, <i>mouse → mice</i>).</p>
-      <p>Stored irregulars win: <i>foot → feet</i> blocks <span class="accent"><i>*foots</i></span>,
-        <i>man → men</i> blocks <span class="accent"><i>*mans</i></span>.</p>
+      <p><b>Suppletion</b>: the form is wholly unrelated to the base.
+        <span class="eg-line"><span><i>go → went</i></span><span><i>bring → brought</i></span></span></p>
+      <p><b>Exceptions</b>: irregular forms memorized as whole words.
+        <span class="eg-line"><span><i>child → children</i></span><span><i>mouse → mice</i></span></span></p>
+      <p>Stored irregulars win over the rule.
+        <span class="eg-line"><span><i>foot → feet</i>, not <span class="accent"><i>*foots</i></span></span><span><i>man → men</i>, not <span class="accent"><i>*mans</i></span></span></span></p>
     </div>
   </div>
   <aside class="notes">
