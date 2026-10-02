@@ -55,6 +55,9 @@
     .rel-line { display: block; margin-top: 4px; }
     .fn { display: block; font: italic 400 13.5px/1.35 'Lora'; color: var(--ed-muted); margin-top: 2px; }
     .fn i { color: var(--ed-body); }
+    .spec-grid { display: grid; grid-template-columns: 30px 1fr; row-gap: 2px; font: italic 400 15.5px/1.45 'Lora'; color: var(--ed-ink); }
+    .spec-grid .no { font: 600 11px 'Space Grotesk'; letter-spacing: 0.1em; color: var(--ed-muted); font-style: normal; padding-top: 4px; }
+    .spec-grid b { color: var(--ed-accent); font-weight: 700; }
     .reveal table.distr { width: 100%; border-collapse: collapse; margin: 0; }
     .reveal table.distr th { white-space: nowrap; font: 600 11px 'Space Grotesk'; letter-spacing: 0.14em; color: var(--ed-muted); text-align: left; padding: 0 8px 6px 0; border-bottom: 1px solid var(--ed-ink); background: none; }
     .reveal table.distr td { vertical-align: top; padding: 7px 8px 7px 0; border-bottom: 1px solid var(--ed-line); background: none; font: 400 15.5px/1.4 'Lora'; color: var(--ed-body); }
@@ -615,14 +618,15 @@
       <li><span class="no">NP</span><span>the <b>mother</b> <u>of James Whistler</u>: head N · PP complement</span></li>
       <li><span class="no">VP</span><span><b>sing</b> <u>an aria</u>: head V · NP complement</span></li>
       <li><span class="no">PP</span><span><b>over</b> <u>the hill</u>: head P · NP complement</span></li>
-      <li><span class="no">AP</span><span><b>wary</b> <u>of snakes</u>: head A · PP complement</span></li>
+      <li><span class="no">AP</span><span><b>wary</b> <u>of snakes</u>: head A · PP complement<span class="fn" style="font-style:normal;">new, rule 9: <b>AP → A PP</b></span></span></li>
     </ul>
   </div>
-  <p class="lead" style="font-size:16.5px; margin-top:16px;">The whole phrase refers to what its head refers to: <em>sing an aria</em> is a singing event. New rule: <b>AP → A PP</b>.</p>
+  <p class="lead" style="font-size:16.5px; margin-top:16px;">Loosely speaking, a phrase refers to what its head refers to: <em>sing an aria</em> is a singing event, and <em>the mother of James Whistler</em> is a mother.</p>
   <aside class="notes">
     핵어(head)·보충어(complement)는 이 섹션의 초석. 네 구 범주가 모두 [핵–보충어] 조직을
     공유함을 예시로 확인하세요. '핵어가 무엇을 요구하는가'가 다음 슬라이드의 선택(selection)으로
-    이어집니다.
+    이어집니다. AP(형용사구)는 교재가 이 지점에서 새로 추가하는 범주이며 규칙 9(AP → A PP)로 생성됩니다(p.96).
+    "구 전체가 핵어가 가리키는 것을 가리킨다"는 교재도 "loosely speaking"이라고 단서를 다는 대략적 경향입니다.
   </aside>
 </section>
 
@@ -653,8 +657,13 @@
   <h2 style="font-size:36px; margin-bottom:10px;">The Three Levels of Phrases</h2>
   <div class="cols-even" style="gap:40px;">
     <div>
-      <p class="lead" style="font-size:17.5px;">A phrase may also open with a <b>specifier</b>:
-        <span class="eg-line" style="font-size:16.5px;"><span><em>the</em> mother of James Whistler</span><span><em>Nellie's</em> ball</span><span>I heard [<em>Pavarotti</em> sing an aria]</span><span>Betty made [<em>Jane</em> wary of snakes]</span></span></p>
+      <p class="lead" style="font-size:16.5px; margin-bottom:6px;">A phrase may also open with a <b>specifier</b>: first, at most one, and possibly empty (<i>dogs with bones</i>).</p>
+      <div class="spec-grid">
+        <span class="no">NP</span><span><b>the</b> mother of James Whistler · <b>Nellie's</b> ball</span>
+        <span class="no">VP</span><span>I heard [<b>Pavarotti</b> sing an aria]</span>
+        <span class="no">AP</span><span>Betty made [<b>Jane</b> wary of snakes]</span>
+        <span class="no">PP</span><span>I saw [<b>everyone</b> at the stadium]</span>
+      </div>
       <hr class="hair">
       <div class="psrules" style="margin-top:4px;">
         <div><span class="nt">XP</span><span class="arr">→</span>(Specifier)&nbsp;<span class="nt">X′</span></div>
@@ -686,6 +695,8 @@
     3층 구조: XP — X′ — X. 지정어는 X′의 자매, 보충어는 X(핵)의 자매. 중간 층위 X′(bar)가 필요한
     이유는 다음 '무한성 재론' 슬라이드의 재귀에서 드러납니다. 수정된 NP/VP 규칙(p.99–100)이 기존
     규칙들을 압축함을 보여주세요. 지정어는 최대 하나이며 핵만이 필수 요소라는 점도 확인.
+    지정어 예시(p.98): NP는 the(한정사)·Nellie's(소유격), VP·AP·PP의 지정어는 잘 안 보이고 주로 다른 문장에 내포될 때
+    드러납니다(대괄호 예문: Pavarotti, Jane, everyone). 지정어 자리는 비어 있을 수도 있습니다(dogs with bones).
   </aside>
 </section>
 
