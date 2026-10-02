@@ -182,10 +182,10 @@ window.QUIZ_BANK = {
  },
  "w06-q3": {
   "week": 6,
-  "q": "Which phrase structure rule expands the verb phrase?",
+  "q": "Which rule lets a VP contain an embedded sentence, as in hoped that the students read the chapter?",
   "opts": {
-   "A": "NP → (Det) (A) N (PP)",
-   "B": "VP → V (NP) (PP)",
+   "A": "VP → V NP",
+   "B": "VP → V CP",
    "C": "PP → P NP"
   },
   "correct": "B"
