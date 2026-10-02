@@ -53,6 +53,13 @@
     .eg-line { display: flex; flex-wrap: wrap; gap: 0 22px; margin-top: 4px; }
     .eg-line > span { white-space: nowrap; }
     .rel-line { display: block; margin-top: 4px; }
+    .fn { display: block; font: italic 400 13.5px/1.35 'Lora'; color: var(--ed-muted); margin-top: 2px; }
+    .fn i { color: var(--ed-body); }
+    .reveal table.distr { width: 100%; border-collapse: collapse; margin: 0; }
+    .reveal table.distr th { white-space: nowrap; font: 600 11px 'Space Grotesk'; letter-spacing: 0.14em; color: var(--ed-muted); text-align: left; padding: 0 8px 6px 0; border-bottom: 1px solid var(--ed-ink); background: none; }
+    .reveal table.distr td { vertical-align: top; padding: 7px 8px 7px 0; border-bottom: 1px solid var(--ed-line); background: none; font: 400 15.5px/1.4 'Lora'; color: var(--ed-body); }
+    .reveal table.distr td.cat { font: 600 13px 'Space Grotesk'; color: var(--ed-accent); letter-spacing: 0.08em; white-space: nowrap; }
+    .reveal table.distr td.eg { font-style: italic; color: var(--ed-ink); white-space: nowrap; }
   </style>
 </head>
 <body data-rail="WEEK 6 · SYNTAX" data-course="Topics in English Linguistics">
@@ -353,7 +360,7 @@
   </div>
   <aside class="notes">
     통사 범주 = 상호 대치 가능한 표현의 가족. 고유명사·대명사도 NP 자리를 채우므로 '완전한 NP'입니다.
-    범주 판별은 의미("명사는 사물 이름")가 아니라 분포로 — with a balloon, went가 NP 틀에 못 들어감을
+    범주 판별은 의미("명사는 사물 이름")가 아니라 분포로(p.87, 두 장 뒤 슬라이드에서 정리) — with a balloon, went가 NP 틀에 못 들어감을
     시연해 보세요(교재 p.85의 목록).
   </aside>
 </section>
@@ -377,9 +384,9 @@
       <div class="small-label" style="margin-bottom:10px;">FUNCTIONAL</div>
       <hr class="hair" style="margin:0 0 6px;">
       <ul class="exlist" style="font-size:0.92em;">
-        <li><span class="no">Det</span><span>a, the, this, those, each, every</span></li>
-        <li><span class="no">T</span><span>tense &amp; modals: will, can, must</span></li>
-        <li><span class="no">C</span><span>complementizers: that, if, whether</span></li>
+        <li><span class="no">Det</span><span>a, the, this, those, each, every<span class="fn">definite or not, near or far: <i>a / the boy</i>, <i>this / that boy</i></span></span></li>
+        <li><span class="no">T</span><span>tense &amp; modals: will, can, must<span class="fn">gives the verb a time frame: <i>John knows Mary</i> / <i>John danced</i></span></span></li>
+        <li><span class="no">C</span><span>complementizers: that, if, whether<span class="fn">introduces an embedded clause: <i>John thinks that Mary is pretty</i></span></span></li>
       </ul>
       <p class="lead" style="font-size:16.5px; margin-top:14px;">Functional categories carry <em>grammatical</em>, not descriptive, content: they are glue rather than picture.</p>
     </div>
@@ -389,6 +396,52 @@
     어휘 범주 다섯 + 대응 구 범주, 그리고 기능 범주(Det, T, C). Jabberwocky의 brillig/slithy(형용사),
     toves/wabe(명사), gyre/gimble(동사)를 '자리'만으로 알아본다는 관찰(p.88)로 분포 기반 범주 지식을
     다시 확인시켜 주세요.
+    기능 범주의 역할(p.87): Det는 한정/비한정(a boy vs the boy)과 근접성(this vs that boy), T는 동사에 시간 틀을 주고
+    영어에서는 동사 위의 (때로 소리 없는) 형태소로 나타나며 미래만 조동사 will로 표현됩니다. 조동사는 가능(may)·필연(must)·
+    능력(can)을 나타내고, have·be도 조동사 부류에 속합니다(John is dancing, John has danced). C는 내포절을 이끕니다.
+  </aside>
+</section>
+
+<!-- ══ 11c · Lexical and Functional Categories · defined by distribution (p.87) ══ -->
+<section data-kicker="CH.3 P.87 · SYNTACTIC CATEGORIES">
+  <h2 style="font-size:38px;">Lexical and Functional Categories</h2>
+  <div class="cols-even">
+    <div>
+      <div class="small-label" style="margin-bottom:10px;">MEANING IS AN UNRELIABLE GUIDE</div>
+      <hr class="hair" style="margin:0 0 8px;">
+      <p class="lead" style="font-size:15.5px; margin:0 0 4px;">Verbs typically name actions, adjectives qualities, nouns entities. But not always:</p>
+      <div class="quote-stack compact">
+        <p>Nouns can name <b>events</b> (<i>marriage, destruction</i>) or <b>states</b> (<i>happiness, loneliness</i>).</p>
+        <p>Abstract nouns name qualities: <i>honor, beauty</i>.</p>
+        <p>In <i>Seeing is believing</i>, both words are nouns, yet neither is a thing.</p>
+        <p><i>of, by, about, with</i> are prepositions with no sense of place.</p>
+      </div>
+    </div>
+    <div>
+      <div class="small-label" style="margin-bottom:10px;">SO: DEFINE BY DISTRIBUTION</div>
+      <table class="distr">
+        <thead><tr><th></th><th>TEST</th><th>EXAMPLE</th></tr></thead>
+        <tbody>
+          <tr class="fragment"><td class="cat">N</td><td>a determiner; a plural marker</td><td class="eg">the boy · boys</td></tr>
+          <tr class="fragment"><td class="cat">V</td><td>an adverb or a modal</td><td class="eg">run fast · may go</td></tr>
+          <tr class="fragment"><td class="cat">A</td><td>a degree word; comparative and superlative</td><td class="eg">very hungry · hungrier</td></tr>
+        </tbody>
+      </table>
+      <p class="lead" style="font-size:16px; margin-top:10px;">Where a word occurs, what it occurs with, and which inflections it takes.
+        <span class="ko-supp" style="display:block;">범주는 의미가 아니라 분포, 곧 나오는 자리·함께 나오는 말·받는 굴절로 정한다.</span></p>
+    </div>
+  </div>
+  <hr class="hair" style="margin-top:12px;">
+  <p class="lead" style="font-size:16px; margin:0;">All languages have syntactic categories such as N, V, and NP, and speakers know them without the technical terms.
+    <span class="ko-supp" style="display:block;">모든 언어에 N·V·NP 같은 통사 범주가 있고, 화자는 용어를 몰라도 이를 안다.</span></p>
+  <p style="font: italic 400 13px 'Lora'; color: var(--ed-muted); margin-top:6px;">(cf. textbook Ch.3, p.87)</p>
+  <aside class="notes">
+    교재 p.87. 진행: 먼저 "명사는 사물의 이름"이라는 학교 문법식 정의를 학생들에게 떠올리게 한 뒤, 왼쪽 반례로 무너뜨리세요
+    (marriage·destruction은 사건, happiness는 상태, Seeing is believing의 seeing은 명사지만 사물이 아님, of·about은 위치가 아님).
+    이어 방향키로 오른쪽 표를 한 행씩 공개하며 분포 기준을 제시합니다: 명사는 한정사와 함께 쓰이고 복수형을 가짐, 동사는 부사나
+    조동사와 함께 쓰임, 형용사는 정도어(very)와 함께 쓰이고 비교급·최상급을 가짐.
+    활동: 앞 슬라이드의 Jabberwocky 단어(slithy, toves, gyre)나 신어를 주고 표의 기준으로 범주를 판정하게 해 보세요.
+    마지막 줄: 범주 지식은 모든 언어에 있고, 대치·판별 테스트(12번 슬라이드)로 드러나는 무의식적 지식입니다.
   </aside>
 </section>
 
@@ -848,6 +901,7 @@
     center: false,
     transition: 'fade',
     transitionSpeed: 'default',
+    pdfSeparateFragments: false,
     plugins: [ RevealNotes ]
   });
 </script>
