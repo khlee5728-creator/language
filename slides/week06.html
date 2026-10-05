@@ -64,6 +64,8 @@
     .reveal table.horder td b { color: var(--ed-accent); font-weight: 700; }
     .reveal table.horder .hg { font: 400 21px/1.3 'Noto Serif KR'; font-style: normal; }
     .reveal table.horder .gl { display: block; font: 400 12.5px 'Space Grotesk'; font-style: normal; letter-spacing: 0.04em; color: var(--ed-muted); margin-top: 4px; }
+    .hyp-grid { display: grid; grid-template-columns: auto 1fr; column-gap: 12px; row-gap: 8px; font: italic 400 17px/1.35 'Lora'; color: var(--ed-ink); padding-bottom: 8px; border-bottom: 1px solid var(--ed-line); }
+    .hyp-grid .no { font: 600 11px 'Space Grotesk'; letter-spacing: 0.12em; color: var(--ed-muted); font-style: normal; padding-top: 5px; }
     .spec-grid { display: grid; grid-template-columns: 30px 1fr; row-gap: 2px; font: italic 400 15.5px/1.45 'Lora'; color: var(--ed-ink); }
     .spec-grid .no { font: 600 11px 'Space Grotesk'; letter-spacing: 0.1em; color: var(--ed-muted); font-style: normal; padding-top: 4px; }
     .spec-grid b { color: var(--ed-accent); font-weight: 700; }
@@ -188,16 +190,26 @@
 <section data-kicker="CH.3 P.79 · SYNTAX">
   <h2>Sentence Structure</h2>
   <div class="cols">
-    <div class="def">Two hypotheses: a sentence is a <i>flat string</i> of words, or a <i>hierarchy</i> of natural units nested inside one another.
-      <span class="ko-supp" style="display:block; margin-top:8px;">문장은 단어의 평평한 나열이라는 가설과, 자연스러운 단위들이 서로 안에 포개진 위계 구조(hierarchy)라는 가설이 맞선다.</span></div>
-    <div class="quote-stack">
-      <p><i>The child found a puppy.</i></p>
-      <p><i>[The child] [found [a puppy]]</i>: the natural subunits are <b>constituents</b>.</p>
-      <p><i>found a</i> is contiguous, but no single node contains just these two words, so it is <b>not</b> a constituent.</p>
+    <div class="def">The linguist compares <b>two competing hypotheses</b>, judged by what speakers know:
+      <span class="rel-line" style="margin-top:8px;"><i>Flat string</i>: captures word order (SVO), and nothing more.</span>
+      <span class="rel-line"><i>Hierarchy</i>: words form natural units nested inside one another. This is what speakers know.</span>
+      <span class="ko-supp" style="display:block; margin-top:8px;">언어학자는 화자의 지식에 비추어 두 경쟁 가설을 비교한다: 평면 구조는 어순만 포착하고, 화자가 아는 것은 단어들이 단위로 포개진 위계 구조다.</span></div>
+    <div>
+      <div class="hyp-grid">
+        <span class="no">FLAT</span><span><i>The · child · found · a · puppy</i><span class="fn">word order (SVO) only</span></span>
+        <span class="no">HIERARCHY</span><span><i>[[The child] [found [a puppy]]]</i><span class="fn">units nested inside units</span></span>
+      </div>
+      <div class="quote-stack compact" style="margin-top:10px;">
+        <p>The nested units are <b>constituents</b>: <i>[a puppy]</i> sits inside <i>[found a puppy]</i>.</p>
+        <p><i>found a</i> is contiguous, but no single node holds just these two words, so it is <b>not</b> a constituent.</p>
+      </div>
     </div>
   </div>
   <p class="lead" style="font-size:17px; margin-top:22px;">A constituent is a node on the tree together with <em>all</em> the words beneath it.</p>
   <aside class="notes">
+    교재 p.79: 언어학자의 기준은 화자의 언어 지식에 맞는 기술이며, 두 경쟁 가설(competing hypotheses)을 같은 문장에 적용해 비교합니다.
+    우단은 교재처럼 같은 예문을 평면 구조와 위계 구조로 나란히 보여 줍니다. 교재가 나머지 구성성분 the child를 찾게 하듯
+    학생들에게 "괄호 안에서 단위를 하나 더 찾아보라"고 물어보세요.
     구성성분(constituent) 개념이 오늘의 초석입니다. 평면 구조 가설은 어순은 포착하지만
     '자연스러운 단위'와 중의성을 설명하지 못합니다. found a처럼 인접해도 성분이 아닐 수 있음을 강조.
     다음 슬라이드의 판별법으로 이어집니다. 나무 용어: 나무는 거꾸로 서 있어 뿌리(root)가 문장 전체, 잎(leaf)이 단어입니다.
@@ -455,6 +467,32 @@
     조동사와 함께 쓰임, 형용사는 정도어(very)와 함께 쓰이고 비교급·최상급을 가짐.
     활동: 앞 슬라이드의 Jabberwocky 단어(slithy, toves, gyre)나 신어를 주고 표의 기준으로 범주를 판정하게 해 보세요.
     마지막 줄: 범주 지식은 모든 언어에 있고, 대치·판별 테스트(12번 슬라이드)로 드러나는 무의식적 지식입니다.
+  </aside>
+</section>
+
+<!-- ══ 11d · Watch (link): Emma Bryce (TED-Ed) ══ -->
+<section data-kicker="ENRICHMENT · BEYOND THE TEXTBOOK · VIDEO">
+  <h2 style="font-size:34px;">One-Word Sentences and How They Work</h2>
+  <div class="cols">
+    <div class="def">One word, three categories: <i>buffalo</i> is a noun (the animal), a verb ("to bully"), and the name of a city. Only its position tells you which.
+      <span class="ko-supp" style="display:block; margin-top:8px;">buffalo 한 단어가 명사(들소)·동사(괴롭히다)·도시 이름(Buffalo) 세 범주로 쓰이며, 어느 것인지는 자리가 정한다.</span></div>
+    <div>
+      <p class="lead" style="font-size:17px;">Emma Bryce's TED-Ed lesson parses <i>Buffalo buffalo Buffalo buffalo buffalo buffalo Buffalo buffalo</i>: a hands-on test of defining categories by distribution, not meaning.</p>
+      <div class="media-controls" style="margin-top:16px; justify-content:flex-start;">
+        <a class="media-btn" style="text-decoration:none;"
+           href="https://ed.ted.com/lessons/buffalo-buffalo-buffalo-one-word-sentences-and-how-they-work-emma-bryce"
+           target="_blank" rel="noopener">Watch on TED-Ed (3 min) ↗</a>
+      </div>
+      <p class="video-credit" style="margin-top:10px;">TED-Ed · Emma Bryce, "Buffalo buffalo Buffalo buffalo buffalo buffalo Buffalo buffalo: One-word sentences and how they work" (2015) · 임베드 미지원, 새 탭 시청</p>
+    </div>
+  </div>
+  <p class="video-print-note">Video (online only): ed.ted.com/lessons/buffalo-buffalo-buffalo-one-word-sentences-and-how-they-work-emma-bryce</p>
+  <aside class="notes">
+    TED-Ed는 유튜브 호스팅이라 임베드가 막혀 있어(오류 153) 링크 시청 전용입니다. 3분 28초.
+    앞 슬라이드의 "범주는 의미가 아니라 분포로 정한다"를 바로 적용하는 활동입니다. 시청 전에 문장을 먼저 보여 주고
+    "어느 buffalo가 명사이고 어느 것이 동사일까?"를 물어보세요. 풀이: [Buffalo buffalo] [(that) Buffalo buffalo buffalo] buffalo [Buffalo buffalo]
+    = "버펄로 시의 들소들, 즉 버펄로 시의 들소들이 괴롭히는 그 들소들이, 버펄로 시의 들소들을 괴롭힌다."
+    관계절이 주어 NP 안에 내포된 구조라 6주차의 구성성분·재귀와도 연결됩니다. 과제 시청으로도 적합합니다.
   </aside>
 </section>
 
@@ -791,6 +829,7 @@
   <p class="lead" style="max-width:760px; font-size:16.5px; margin-top:8px;">The looping pieces are <b>not complements</b>: they are sisters to <span class="xb">X</span>, not to the head. Such phrases are <b>adjuncts</b>.
     <span class="rel-line" style="padding-left:14px;"><b>Complement</b>: sister to X (the head) · <b>Adjunct</b>: sister to <span class="xb">X</span></span></p>
   <p class="lead" style="max-width:760px; font-size:16.5px; margin-top:8px;">Back to the telescope: same words, different attachment, different meaning.
+    <span class="rel-line" style="padding-left:14px; font: italic 400 18px 'Lora'; color: var(--ed-ink);">Sue saw the man with the telescope.</span>
     <span class="rel-line" style="padding-left:14px;"><b>Instrument</b> (Sue uses it): the PP is an <b>adjunct</b>, sister to <span class="xb">V</span> <i>saw the man</i></span>
     <span class="rel-line" style="padding-left:14px;"><b>Possession</b> (the man has it): the PP is a <b>complement</b> of the noun <i>man</i></span>
     <span class="ko-supp" style="display:block; margin-top:8px;">반복되는 요소는 핵어가 아니라 <span class="xb">X</span>의 자매인 부가어(adjunct)이며, 망원경 문장의 두 해석은 PP가 부가어(도구)인지 명사 man의 보충어(소유)인지의 차이다.</span></p>

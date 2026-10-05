@@ -59,10 +59,11 @@
 - **AI 생성 표시 의무**: 카툰 영상마다 "AI-generated animation & voices" 크레딧 — slides-media.js가 자동 주입(v10)하므로 개별 덱에 넣지 않는다.
 
 ### 외부 강연 영상 (TED)
-- **조건부 표준: 주차당 최대 1편, 교재 주제 직결 + 공식 임베드 확인될 때만.** 억지 채움 금지(W6·W7·W14는 의도적 공백).
+- **조건부 표준: 주차당 최대 1편, 교재 주제 직결 + 공식 임베드 확인될 때만.** 억지 채움 금지(W14는 의도적 공백).
+  W7: Cameron Morin "What do all languages have in common?"(TED-Ed지만 ted.com/talks에 있어 임베드 가능) · W6: Emma Bryce "Buffalo buffalo…"(TED-Ed 링크 전용) — 2026-10-05 추가.
 - 패턴: `embed.ted.com` iframe + "Watch with subtitles (EN·한국어) · ted.com ↗" 새 탭 버튼 + `video-print-note` + 발표자 노트에 수업 시청 추천 구간.
 - 임베드는 자막 제어 불가(파라미터 무시) — 자막 필요 시 ted.com 새 탭이 유일한 방법.
-- TED-Ed(유튜브 호스팅)는 임베드 차단(오류 153) — 링크 전용 슬라이드로만.
+- TED-Ed(유튜브 호스팅)는 임베드 차단(오류 153) — 링크 전용 슬라이드로만. 단, ted.com/talks에도 올라간 TED-Ed는 TED 자체 플레이어(hls.ted.com)로 재생돼 임베드 가능 — embed 페이지에 `<video>`가 있는지로 판별.
 - 삽입 전 슬러그·임베드 URL이 200인지 검증한다.
 
 ## 5. 검증 의무
