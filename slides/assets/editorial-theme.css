@@ -46,7 +46,8 @@ html, body, .reveal, .reveal-viewport { background: var(--ed-paper) !important; 
 
 /* ── 타이포 ── */
 .reveal h1, .reveal h2, .reveal h3 { font-family: 'Playfair Display', 'Noto Serif KR', serif; color: var(--ed-ink); text-transform: none; }
-.reveal h2 { font-size: 46px; font-weight: 600; letter-spacing: -0.01em; margin: 0 0 26px; }
+.reveal h2 { font-size: 46px; font-weight: 600; letter-spacing: -0.01em; margin: 0 0 26px; text-wrap: balance; }
+/* 제목 크기 규칙(v15): ≤30자 46px(기본) · 31–42자 40px · 43자 이상 36px. 두 줄이 되면 balance로 고르게 나눔. */
 .reveal .hero-word {
   font: italic 700 120px/1.1 'Playfair Display';
   letter-spacing: -0.02em; margin: 30px 0 24px;
