@@ -72,6 +72,7 @@
     .reveal table.distr td { vertical-align: top; padding: 7px 8px 7px 0; border-bottom: 1px solid var(--ed-line); background: none; font: 400 15.5px/1.4 'Lora'; color: var(--ed-body); }
     .reveal table.distr td.cat { font: 600 13px 'Space Grotesk'; color: var(--ed-accent); letter-spacing: 0.08em; white-space: nowrap; }
     .reveal table.distr td.eg { font-style: italic; color: var(--ed-ink); white-space: nowrap; }
+    .xb { text-decoration: overline; text-decoration-thickness: 1.2px; }
   </style>
 </head>
 <body data-rail="WEEK 6 · SYNTAX" data-course="Topics in English Linguistics">
@@ -675,12 +676,12 @@
       </div>
       <hr class="hair">
       <div class="psrules" style="margin-top:4px;">
-        <div><span class="nt">XP</span><span class="arr">→</span>(Specifier)&nbsp;<span class="nt">X′</span></div>
-        <div><span class="nt">X′</span><span class="arr">→</span>X&nbsp;(Complement)</div>
-        <div style="margin-top:6px;"><span class="nt">NP</span><span class="arr">→</span>(Det)&nbsp;N′<span class="cm">&nbsp;</span></div>
-        <div><span class="nt">N′</span><span class="arr">→</span>N&nbsp;(XP)</div>
-        <div><span class="nt">VP</span><span class="arr">→</span>(Spec)&nbsp;V′</div>
-        <div><span class="nt">V′</span><span class="arr">→</span>V&nbsp;(XP)</div>
+        <div><span class="nt">XP</span><span class="arr">→</span>(Specifier)&nbsp;<span class="nt"><span class="xb">X</span></span></div>
+        <div><span class="nt"><span class="xb">X</span></span><span class="arr">→</span>X&nbsp;(Complement)</div>
+        <div style="margin-top:6px;"><span class="nt">NP</span><span class="arr">→</span>(Det)&nbsp;<span class="xb">N</span><span class="cm">&nbsp;</span></div>
+        <div><span class="nt"><span class="xb">N</span></span><span class="arr">→</span>N&nbsp;(XP)</div>
+        <div><span class="nt">VP</span><span class="arr">→</span>(Spec)&nbsp;<span class="xb">V</span></div>
+        <div><span class="nt"><span class="xb">V</span></span><span class="arr">→</span>V&nbsp;(XP)</div>
       </div>
     </div>
     <div style="text-align:center;">
@@ -691,7 +692,7 @@
         <line x1="330" y1="106" x2="410" y2="160" stroke="#1c1a17" stroke-width="1.4"/>
         <text class="node" x="230" y="28" text-anchor="middle">XP</text>
         <text class="leaf" x="120" y="104" text-anchor="middle">(specifier)</text>
-        <text class="node" x="330" y="102" text-anchor="middle">X′</text>
+        <text class="node" x="330" y="102" text-anchor="middle"><tspan style="text-decoration:overline">X</tspan></text>
         <text class="node" x="250" y="180" text-anchor="middle">X</text>
         <text class="sub"  x="250" y="198" text-anchor="middle">HEAD</text>
         <text class="leaf" x="410" y="180" text-anchor="middle">(complement)</text>
@@ -701,7 +702,9 @@
   </div>
   <p class="ko-supp" style="font-size:14px; margin-top:12px;">구는 지정어(specifier)로 시작할 수 있으며, X-bar 도식은 지정어·핵·보충어의 3층 구조를 NP·VP·AP·PP 모두에 적용되는 하나의 청사진으로 제시한다.</p>
   <aside class="notes">
-    3층 구조: XP — X′ — X. 지정어는 X′의 자매, 보충어는 X(핵)의 자매. 중간 층위 X′(bar)가 필요한
+    표기: 교재는 윗줄 표기(X-bar, X̄: N̄, V̄)를 씁니다. 다른 책이나 논문에서는 같은 것을 프라임 X′(N′, V′)로도 쓰니
+    학생들이 다른 자료를 볼 때 같은 기호임을 알려 주세요.
+    3층 구조: XP — <span style="text-decoration:overline">X</span> — X. 지정어는 <span style="text-decoration:overline">X</span>의 자매, 보충어는 X(핵)의 자매. 중간 층위 <span style="text-decoration:overline">X</span>(bar)가 필요한
     이유는 다음 '무한성 재론' 슬라이드의 재귀에서 드러납니다. 수정된 NP/VP 규칙(p.99–100)이 기존
     규칙들을 압축함을 보여주세요. 지정어는 최대 하나이며 핵만이 필수 요소라는 점도 확인.
     지정어 예시(p.98): NP는 the(한정사)·Nellie's(소유격), VP·AP·PP의 지정어는 잘 안 보이고 주로 다른 문장에 내포될 때
@@ -760,7 +763,7 @@
         <text class="node" x="230" y="28" text-anchor="middle">TP</text>
         <text class="node" x="120" y="102" text-anchor="middle">NP</text>
         <text class="sub"  x="120" y="120" text-anchor="middle">SUBJECT = SPECIFIER</text>
-        <text class="node" x="330" y="102" text-anchor="middle">T′</text>
+        <text class="node" x="330" y="102" text-anchor="middle"><tspan style="text-decoration:overline">T</tspan></text>
         <text class="node" x="250" y="180" text-anchor="middle">T</text>
         <text class="sub"  x="250" y="198" text-anchor="middle">±PST · MODAL</text>
         <text class="node" x="410" y="180" text-anchor="middle">VP</text>
@@ -780,19 +783,19 @@
 <section data-kicker="CH.3 P.103 · THE INTERNAL STRUCTURE OF PHRASES">
   <h2 style="font-size:36px;">The Infinity of Language Revisited</h2>
   <ul class="exlist" style="max-width:740px;">
-    <li><span class="no">N′ → A N′</span><span>the kindhearted, intelligent, handsome <b>boy</b></span></li>
-    <li><span class="no">A′ → Int A′</span><span>really very <b>pretty</b></span></li>
-    <li><span class="no">V′ → V′ PP</span><span><b>went</b> over the hills through the woods to grandmother's house</span></li>
+    <li><span class="no"><span class="xb">N</span> → A <span class="xb">N</span></span><span>the kindhearted, intelligent, handsome <b>boy</b></span></li>
+    <li><span class="no"><span class="xb">A</span> → Int <span class="xb">A</span></span><span>really very <b>pretty</b></span></li>
+    <li><span class="no"><span class="xb">V</span> → <span class="xb">V</span> PP</span><span><b>went</b> over the hills through the woods to grandmother's house</span></li>
   </ul>
   <p class="lead" style="max-width:740px; font-size:18px; margin-top:16px;">These loops live on the <em>bar</em> level.
-    <span class="rel-line"><b>Adjunct</b>: sister to X′ · <b>Complement</b>: sister to X</span>
+    <span class="rel-line"><b>Adjunct</b>: sister to <span class="xb">X</span> · <b>Complement</b>: sister to X</span>
     <span class="rel-line" style="margin-top:10px;">Back to the telescope: same words, different attachment, different meaning.</span>
-    <span class="rel-line" style="font-size:16.5px; padding-left:14px;"><b>Instrument</b> (Sue uses it): the PP hangs on <b>V′</b> as an adjunct</span>
+    <span class="rel-line" style="font-size:16.5px; padding-left:14px;"><b>Instrument</b> (Sue uses it): the PP hangs on <b><span class="xb">V</span></b> as an adjunct</span>
     <span class="rel-line" style="font-size:16.5px; padding-left:14px;"><b>Possession</b> (the man has it): the PP sits <b>inside the NP</b></span>
-    <span class="ko-supp" style="display:block; margin-top:8px;">이런 반복은 바(bar) 층위에서 일어나며, 부가어(adjunct)는 X′의 자매, 보충어는 X의 자매라는 차이가 망원경 문장의 두 해석을 다시 설명한다.</span></p>
+    <span class="ko-supp" style="display:block; margin-top:8px;">이런 반복은 바(bar) 층위에서 일어나며, 부가어(adjunct)는 <span class="xb">X</span>의 자매, 보충어는 X의 자매라는 차이가 망원경 문장의 두 해석을 다시 설명한다.</span></p>
   <aside class="notes">
     바(bar) 층위의 재귀가 '한없이 긴 구'를 설명합니다(형용사 나열, really very…, PP 연쇄).
-    부가어(sister to X′) vs 보충어(sister to X)의 구분이 망원경 문장의 두 나무를 X-bar로 재해석하게
+    부가어(sister to <span style="text-decoration:overline">X</span>) vs 보충어(sister to X)의 구분이 망원경 문장의 두 나무를 X-bar로 재해석하게
     해 줍니다(p.105–106). 구분이 늘 자명하지는 않다는 교재의 단서도 언급하세요.
   </aside>
 </section>
