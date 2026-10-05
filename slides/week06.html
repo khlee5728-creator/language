@@ -55,6 +55,15 @@
     .rel-line { display: block; margin-top: 4px; }
     .fn { display: block; font: italic 400 13.5px/1.35 'Lora'; color: var(--ed-muted); margin-top: 2px; }
     .fn i { color: var(--ed-body); }
+    .reveal table.horder { width: 100%; border-collapse: collapse; margin: 14px 0 0; }
+    .reveal table.horder th { white-space: nowrap; font: 600 11px 'Space Grotesk'; letter-spacing: 0.14em; color: var(--ed-muted); text-align: left; padding: 0 12px 8px 0; border-bottom: 1px solid var(--ed-ink); background: none; vertical-align: bottom; }
+    .reveal table.horder th .beyond { display: block; font-size: 9.5px; letter-spacing: 0.12em; color: var(--ed-accent); margin-top: 2px; }
+    .reveal table.horder td { vertical-align: top; padding: 10px 12px 10px 0; border-bottom: 1px solid var(--ed-line); background: none; font: italic 400 21px/1.3 'Lora'; color: var(--ed-ink); }
+    .reveal table.horder tr:last-child td { border-bottom: 0; }
+    .reveal table.horder td.cat { font: 600 13px 'Space Grotesk'; font-style: normal; color: var(--ed-muted); letter-spacing: 0.08em; padding-top: 14px; width: 44px; }
+    .reveal table.horder td b { color: var(--ed-accent); font-weight: 700; }
+    .reveal table.horder .hg { font: 400 21px/1.3 'Noto Serif KR'; font-style: normal; }
+    .reveal table.horder .gl { display: block; font: 400 12.5px 'Space Grotesk'; font-style: normal; letter-spacing: 0.04em; color: var(--ed-muted); margin-top: 4px; }
     .spec-grid { display: grid; grid-template-columns: 30px 1fr; row-gap: 2px; font: italic 400 15.5px/1.45 'Lora'; color: var(--ed-ink); }
     .spec-grid .no { font: 600 11px 'Space Grotesk'; letter-spacing: 0.1em; color: var(--ed-muted); font-style: normal; padding-top: 4px; }
     .spec-grid b { color: var(--ed-accent); font-weight: 700; }
@@ -687,7 +696,7 @@
         <text class="sub"  x="250" y="198" text-anchor="middle">HEAD</text>
         <text class="leaf" x="410" y="180" text-anchor="middle">(complement)</text>
       </svg>
-      <p class="tree-cap">The X-bar schema — one blueprint for NP, VP, AP, PP: specifier · head · complement.</p>
+      <p class="tree-cap" style="line-height:1.55;"><span style="display:block; font-style:normal; font-weight:600; color:var(--ed-ink);">The X-bar schema</span><span style="display:block; white-space:nowrap;">one blueprint for NP, VP, AP, and PP</span><span style="display:block; white-space:nowrap;">specifier · head · complement</span></p>
     </div>
   </div>
   <p class="ko-supp" style="font-size:14px; margin-top:12px;">구는 지정어(specifier)로 시작할 수 있으며, X-bar 도식은 지정어·핵·보충어의 3층 구조를 NP·VP·AP·PP 모두에 적용되는 하나의 청사진으로 제시한다.</p>
@@ -703,27 +712,30 @@
 <!-- ══ 22 · One blueprint, two orders ══ -->
 <section data-kicker="CH.3 P.100 · THE INTERNAL STRUCTURE OF PHRASES">
   <h2 style="font-size:36px;">The Three Levels of Phrases</h2>
-  <div class="cols">
-    <div class="def">X-bar is hypothesized to be part of <i>Universal Grammar</i>, but languages choose the <b>order</b> of head and complement.
-      <span class="ko-supp" style="display:block; margin-top:8px;">X-bar는 보편문법(Universal Grammar)의 일부로 가정되지만, 핵어와 보충어의 어순은 언어마다 선택한다: 영어는 핵-선행, 일본어는 핵-후행이다.</span></div>
-    <div>
-      <div class="gloss-set">
-        <div class="langlab">JAPANESE · HEAD-FINAL</div>
-        <div class="sent" style="font-size:24px;">Taro-ga <b>inu-o mitsuketa</b></div>
-        <div class="gls">Taro-SUBJ&nbsp;&nbsp;dog-OBJ&nbsp;&nbsp;found</div>
-        <div class="tr">"Taro found a dog": the object precedes the head verb.</div>
-      </div>
-      <div class="gloss-set" style="margin-top:20px;">
-        <div class="langlab">AND INSIDE PP TOO</div>
-        <div class="sent" style="font-size:24px;"><b>niwa-de</b>: garden-in</div>
-        <div class="tr">The NP complement precedes the head P. One sentence heard, the whole order set.</div>
-      </div>
-    </div>
-  </div>
+  <p class="lead" style="font-size:17.5px; max-width:760px;">X-bar is hypothesized to be part of <i>Universal Grammar</i>, but languages choose the <b>order</b> of head and complement.
+    <span class="ko-supp" style="display:block;">X-bar는 보편문법(Universal Grammar)의 일부로 가정되지만, 핵어와 보충어의 어순은 언어마다 선택한다.</span></p>
+  <table class="horder">
+    <thead><tr><th></th><th>ENGLISH · HEAD-INITIAL</th><th>JAPANESE · HEAD-FINAL</th><th>KOREAN · HEAD-FINAL<span class="beyond">BEYOND THE TEXTBOOK</span></th></tr></thead>
+    <tbody>
+      <tr><td class="cat">VP</td>
+        <td><b>found</b> a dog</td>
+        <td>inu-o <b>mitsuketa</b><span class="gl">dog-OBJ found</span></td>
+        <td><span class="hg">개를 <b>찾았다</b></span><span class="gl">gae-reul chaj-ass-da · dog-OBJ found</span></td></tr>
+      <tr><td class="cat">PP</td>
+        <td><b>in</b> the garden</td>
+        <td>niwa-<b>de</b><span class="gl">garden-in</span></td>
+        <td><span class="hg">정원<b>에서</b></span><span class="gl">jeongwon-eseo · garden-in</span></td></tr>
+    </tbody>
+  </table>
+  <p class="lead" style="font-size:17px; margin-top:16px;">In Japanese and Korean, complements precede their heads in VP and PP alike: one sentence heard, the whole order set.
+    <span class="ko-supp" style="display:block;">일본어와 한국어는 VP와 PP 모두에서 보충어가 핵 앞에 오므로, 한 문장만 들어도 전체 어순이 정해진다.</span></p>
+  <p style="font: italic 400 13px 'Lora'; color: var(--ed-muted); margin-top:6px;">(cf. textbook Ch.3, p.100: Japanese <i>Taro-ga inu-o mitsuketa</i> "Taro found a dog")</p>
   <aside class="notes">
-    핵-보충어 어순: 영어는 head-initial, 일본어는 head-final. 일본어 아동은 Taro-ga inu-o mitsuketa
-    한 문장으로 '모든' 보충어가 핵에 선행함을 자동으로 알게 됩니다 — X-bar가 선천적 청사진이라는
-    가설의 매력. Week 7의 원리·매개변수로 직결됩니다.
+    핵-보충어 어순: 영어는 head-initial, 일본어는 head-final(교재 p.100의 예: Taro-ga inu-o mitsuketa, niwa-de).
+    한국어 열은 교재 밖 보충입니다. 한국어도 일본어와 같은 핵-후행 언어라서 목적어가 동사 앞에 오고(개를 찾았다),
+    전치사 대신 후치사를 씁니다(정원에서). 학생들에게 "영어 found a dog와 우리말 개를 찾았다에서 핵(동사)은 어디에 있나?"를
+    물어 직접 비교하게 하세요. 일본어·한국어 아동은 한 문장만 들어도 '모든' 보충어가 핵에 선행함을 알게 됩니다,
+    이것이 X-bar가 선천적 청사진이라는 가설의 매력이며 Week 7의 원리·매개변수(핵 방향 매개변수)로 직결됩니다.
   </aside>
 </section>
 
