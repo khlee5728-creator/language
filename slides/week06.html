@@ -75,6 +75,8 @@
     .reveal table.distr td.cat { font: 600 13px 'Space Grotesk'; color: var(--ed-accent); letter-spacing: 0.08em; white-space: nowrap; }
     .reveal table.distr td.eg { font-style: italic; color: var(--ed-ink); white-space: nowrap; }
     .xb { text-decoration: overline; text-decoration-thickness: 1.2px; }
+    .stage-row { display: flex; align-items: flex-end; justify-content: center; gap: 10px; margin-top: 10px; }
+    .stage-arrow { font: 400 22px 'Lora'; color: var(--ed-muted); padding-bottom: 34px; }
   </style>
 </head>
 <body data-rail="WEEK 6 · SYNTAX" data-course="Topics in English Linguistics">
@@ -602,14 +604,74 @@
   <div class="cols">
     <div class="def">Start at the root <i>S</i>, expand top-down, and stop only when no bottom category matches the left side of any rule.
       <span class="ko-supp" style="display:block; margin-top:8px;">뿌리 S에서 출발해 위에서 아래로 확장하고, 맨 아래 범주가 어떤 규칙의 왼쪽과도 맞지 않을 때 멈춘다.</span></div>
-    <div class="quote-stack ex">
+    <div class="quote-stack ex compact">
       <p>The boys left. <b>VP → V</b></p>
       <p>The wind blew the kite. <b>VP → V NP</b></p>
       <p>The senator hopes that the bill passes. <b>VP → V CP</b></p>
-      <p>Different rule choices, different sentences, but <i>only</i> trees the rules license are grammatical.</p>
     </div>
   </div>
+  <div class="stage-row">
+    <div style="display:flex; align-items:flex-end; gap:10px;"><div class="stage"><svg viewBox="0 0 88 71" style="width:81px; max-width:100%;">
+<text class="node" x="27" y="55" text-anchor="middle" style="fill:#4a2e5c">NP</text>
+<text class="node" x="61" y="55" text-anchor="middle" style="fill:#4a2e5c">VP</text>
+<line x1="44" y1="27" x2="27" y2="41" stroke="#1c1a17" stroke-width="1.3"/>
+<line x1="44" y1="27" x2="61" y2="41" stroke="#1c1a17" stroke-width="1.3"/>
+<text class="node" x="44" y="22" text-anchor="middle" style="fill:#1c1a17">S</text>
+</svg><p class="tree-cap" style="margin-top:2px;">S → NP VP</p></div></div>
+    <div class="fragment" style="display:flex; align-items:flex-end; gap:10px;"><span class="stage-arrow">→</span><div class="stage"><svg viewBox="0 0 122 104" style="width:112px; max-width:100%;">
+<text class="node" x="32" y="88" text-anchor="middle" style="fill:#4a2e5c">Det</text>
+<text class="node" x="66" y="88" text-anchor="middle" style="fill:#4a2e5c">N</text>
+<line x1="48" y1="60" x2="32" y2="74" stroke="#1c1a17" stroke-width="1.3"/>
+<line x1="48" y1="60" x2="66" y2="74" stroke="#1c1a17" stroke-width="1.3"/>
+<text class="node" x="48" y="55" text-anchor="middle" style="fill:#1c1a17">NP</text>
+<text class="node" x="95" y="55" text-anchor="middle" style="fill:#1c1a17">VP</text>
+<line x1="72" y1="27" x2="48" y2="41" stroke="#1c1a17" stroke-width="1.3"/>
+<line x1="72" y1="27" x2="95" y2="41" stroke="#1c1a17" stroke-width="1.3"/>
+<text class="node" x="72" y="22" text-anchor="middle" style="fill:#1c1a17">S</text>
+</svg><p class="tree-cap" style="margin-top:2px;">NP → Det N</p></div></div>
+    <div class="fragment" style="display:flex; align-items:flex-end; gap:10px;"><span class="stage-arrow">→</span><div class="stage"><svg viewBox="0 0 147 104" style="width:135px; max-width:100%;">
+<text class="node" x="32" y="88" text-anchor="middle" style="fill:#1c1a17">Det</text>
+<text class="node" x="66" y="88" text-anchor="middle" style="fill:#1c1a17">N</text>
+<line x1="48" y1="60" x2="32" y2="74" stroke="#1c1a17" stroke-width="1.3"/>
+<line x1="48" y1="60" x2="66" y2="74" stroke="#1c1a17" stroke-width="1.3"/>
+<text class="node" x="48" y="55" text-anchor="middle" style="fill:#1c1a17">NP</text>
+<text class="node" x="90" y="88" text-anchor="middle" style="fill:#4a2e5c">V</text>
+<text class="node" x="120" y="88" text-anchor="middle" style="fill:#4a2e5c">PP</text>
+<line x1="105" y1="60" x2="90" y2="74" stroke="#1c1a17" stroke-width="1.3"/>
+<line x1="105" y1="60" x2="120" y2="74" stroke="#1c1a17" stroke-width="1.3"/>
+<text class="node" x="105" y="55" text-anchor="middle" style="fill:#1c1a17">VP</text>
+<line x1="77" y1="27" x2="48" y2="41" stroke="#1c1a17" stroke-width="1.3"/>
+<line x1="77" y1="27" x2="105" y2="41" stroke="#1c1a17" stroke-width="1.3"/>
+<text class="node" x="77" y="22" text-anchor="middle" style="fill:#1c1a17">S</text>
+</svg><p class="tree-cap" style="margin-top:2px;">VP → V PP</p></div></div>
+    <div class="fragment" style="display:flex; align-items:flex-end; gap:10px;"><span class="stage-arrow">→</span><div class="stage"><svg viewBox="0 0 206 170" style="width:190px; max-width:100%;">
+<text class="node" x="32" y="88" text-anchor="middle" style="fill:#1c1a17">Det</text>
+<text class="node" x="66" y="88" text-anchor="middle" style="fill:#1c1a17">N</text>
+<line x1="48" y1="60" x2="32" y2="74" stroke="#1c1a17" stroke-width="1.3"/>
+<line x1="48" y1="60" x2="66" y2="74" stroke="#1c1a17" stroke-width="1.3"/>
+<text class="node" x="48" y="55" text-anchor="middle" style="fill:#1c1a17">NP</text>
+<text class="node" x="90" y="88" text-anchor="middle" style="fill:#1c1a17">V</text>
+<text class="node" x="116" y="121" text-anchor="middle" style="fill:#4a2e5c">P</text>
+<text class="node" x="150" y="154" text-anchor="middle" style="fill:#4a2e5c">Det</text>
+<text class="node" x="184" y="154" text-anchor="middle" style="fill:#4a2e5c">N</text>
+<line x1="166" y1="126" x2="150" y2="140" stroke="#1c1a17" stroke-width="1.3"/>
+<line x1="166" y1="126" x2="184" y2="140" stroke="#1c1a17" stroke-width="1.3"/>
+<text class="node" x="166" y="121" text-anchor="middle" style="fill:#4a2e5c">NP</text>
+<line x1="141" y1="93" x2="116" y2="107" stroke="#1c1a17" stroke-width="1.3"/>
+<line x1="141" y1="93" x2="166" y2="107" stroke="#1c1a17" stroke-width="1.3"/>
+<text class="node" x="141" y="88" text-anchor="middle" style="fill:#1c1a17">PP</text>
+<line x1="116" y1="60" x2="90" y2="74" stroke="#1c1a17" stroke-width="1.3"/>
+<line x1="116" y1="60" x2="141" y2="74" stroke="#1c1a17" stroke-width="1.3"/>
+<text class="node" x="116" y="55" text-anchor="middle" style="fill:#1c1a17">VP</text>
+<line x1="82" y1="27" x2="48" y2="41" stroke="#1c1a17" stroke-width="1.3"/>
+<line x1="82" y1="27" x2="116" y2="41" stroke="#1c1a17" stroke-width="1.3"/>
+<text class="node" x="82" y="22" text-anchor="middle" style="fill:#1c1a17">S</text>
+</svg><p class="tree-cap" style="margin-top:2px;">PP → P NP, NP → Det N</p></div></div>
+  </div>
+  <p style="font: italic 400 13px 'Lora'; color: var(--ed-muted); margin-top:4px;">(cf. textbook Ch.3, pp.93–94)</p>
   <aside class="notes">
+    아래 4단계 나무는 교재 pp.93–94의 구축 과정입니다(클릭할 때마다 한 단계씩, 새로 붙은 범주는 강조색).
+    교재가 규칙 4(VP → V)도 쓸 수 있었다고 말하듯, VP에 어떤 규칙을 고르느냐에 따라 다른 문장이 나오지만 규칙이 허가한 나무만 문법적입니다.
     나무 만들기 절차: S에서 시작, 하단의 범주가 어떤 규칙의 좌변과 일치하면 계속 확장,
     완전 확장 관례(고유명사·대명사는 예외). 문장 수는 무한하지만 나무는 모두 유한한 규칙에서
     나온다 — 다음 슬라이드(재귀)로 연결. 규칙 적용 순서는 자유이며 같은 규칙을 몇 번이든 다시 쓸 수 있음(NP 규칙 2회 등)도 언급하세요.
@@ -642,6 +704,90 @@
   <aside class="notes">
     재귀가 언어 무한성의 열쇠. Week 2의 '창조성'이 여기서 구조적으로 설명됩니다. 긴 내포문이
     어려워지는 것은 competence가 아니라 performance의 한계(단기기억·피로) 때문임을 꼭 짚어주세요.
+  </aside>
+</section>
+
+<!-- ══ 17b · Recursive Rules · recursion tree (p.95) ══ -->
+<section data-kicker="CH.3 P.95 · SENTENCE STRUCTURE">
+  <h2 style="font-size:40px;">The Infinity of Language: Recursive Rules</h2>
+  <p class="lead" style="font-size:17px; margin:0 0 4px;">Each pass through <b>S → VP → CP → S</b> embeds one more sentence. Here the loop runs three times.
+    <span class="ko-supp" style="display:block;">S → VP → CP → S를 한 바퀴 돌 때마다 문장이 하나 더 내포되며, 이 나무에서는 세 바퀴를 돈다.</span></p>
+  <svg viewBox="0 0 708 430" style="width:100%; display:block; margin:0 auto; max-height:368px;">
+<text class="node" x="33" y="55" text-anchor="middle" style="fill:#1c1a17">NP</text>
+<path d="M33,60 L16,70 L50,70 Z" fill="none" stroke="#1c1a17" stroke-width="1.1"/>
+<text class="leaf" x="33" y="84" text-anchor="middle">Lisa</text>
+<text class="node" x="82" y="88" text-anchor="middle" style="fill:#1c1a17">V</text>
+<line x1="82" y1="93" x2="82" y2="103" stroke="#1c1a17" stroke-width="1.3"/>
+<text class="leaf" x="82" y="117" text-anchor="middle">knows</text>
+<text class="node" x="131" y="121" text-anchor="middle" style="fill:#1c1a17">C</text>
+<line x1="131" y1="126" x2="131" y2="136" stroke="#1c1a17" stroke-width="1.3"/>
+<text class="leaf" x="131" y="150" text-anchor="middle">that</text>
+<text class="node" x="177" y="154" text-anchor="middle" style="fill:#1c1a17">NP</text>
+<path d="M177,159 L160,169 L194,169 Z" fill="none" stroke="#1c1a17" stroke-width="1.1"/>
+<text class="leaf" x="177" y="183" text-anchor="middle">Bart</text>
+<text class="node" x="234" y="187" text-anchor="middle" style="fill:#1c1a17">V</text>
+<line x1="234" y1="192" x2="234" y2="202" stroke="#1c1a17" stroke-width="1.3"/>
+<text class="leaf" x="234" y="216" text-anchor="middle">wonders</text>
+<text class="node" x="302" y="220" text-anchor="middle" style="fill:#1c1a17">C</text>
+<line x1="302" y1="225" x2="302" y2="235" stroke="#1c1a17" stroke-width="1.3"/>
+<text class="leaf" x="302" y="249" text-anchor="middle">whether</text>
+<text class="node" x="362" y="253" text-anchor="middle" style="fill:#1c1a17">NP</text>
+<path d="M362,258 L341,268 L382,268 Z" fill="none" stroke="#1c1a17" stroke-width="1.1"/>
+<text class="leaf" x="362" y="282" text-anchor="middle">Marge</text>
+<text class="node" x="422" y="286" text-anchor="middle" style="fill:#1c1a17">V</text>
+<line x1="422" y1="291" x2="422" y2="301" stroke="#1c1a17" stroke-width="1.3"/>
+<text class="leaf" x="422" y="315" text-anchor="middle">noticed</text>
+<text class="node" x="479" y="319" text-anchor="middle" style="fill:#1c1a17">C</text>
+<line x1="479" y1="324" x2="479" y2="334" stroke="#1c1a17" stroke-width="1.3"/>
+<text class="leaf" x="479" y="348" text-anchor="middle">that</text>
+<text class="node" x="528" y="352" text-anchor="middle" style="fill:#1c1a17">NP</text>
+<path d="M528,357 L508,367 L549,367 Z" fill="none" stroke="#1c1a17" stroke-width="1.1"/>
+<text class="leaf" x="528" y="381" text-anchor="middle">Homer</text>
+<text class="node" x="585" y="385" text-anchor="middle" style="fill:#1c1a17">V</text>
+<line x1="585" y1="390" x2="585" y2="400" stroke="#1c1a17" stroke-width="1.3"/>
+<text class="leaf" x="585" y="414" text-anchor="middle">caught</text>
+<text class="node" x="656" y="385" text-anchor="middle" style="fill:#1c1a17">NP</text>
+<path d="M656,390 L621,400 L692,400 Z" fill="none" stroke="#1c1a17" stroke-width="1.1"/>
+<text class="leaf" x="656" y="414" text-anchor="middle">a pokémon</text>
+<line x1="621" y1="357" x2="585" y2="371" stroke="#1c1a17" stroke-width="1.3"/>
+<line x1="621" y1="357" x2="656" y2="371" stroke="#1c1a17" stroke-width="1.3"/>
+<text class="node" x="621" y="352" text-anchor="middle" style="fill:#1c1a17">VP</text>
+<line x1="575" y1="324" x2="528" y2="338" stroke="#1c1a17" stroke-width="1.3"/>
+<line x1="575" y1="324" x2="621" y2="338" stroke="#1c1a17" stroke-width="1.3"/>
+<text class="node" x="575" y="319" text-anchor="middle" style="fill:#4a2e5c">S</text>
+<line x1="527" y1="291" x2="479" y2="305" stroke="#1c1a17" stroke-width="1.3"/>
+<line x1="527" y1="291" x2="575" y2="305" stroke="#1c1a17" stroke-width="1.3"/>
+<text class="node" x="527" y="286" text-anchor="middle" style="fill:#4a2e5c">CP</text>
+<line x1="475" y1="258" x2="422" y2="272" stroke="#1c1a17" stroke-width="1.3"/>
+<line x1="475" y1="258" x2="527" y2="272" stroke="#1c1a17" stroke-width="1.3"/>
+<text class="node" x="475" y="253" text-anchor="middle" style="fill:#4a2e5c">VP</text>
+<line x1="418" y1="225" x2="362" y2="239" stroke="#1c1a17" stroke-width="1.3"/>
+<line x1="418" y1="225" x2="475" y2="239" stroke="#1c1a17" stroke-width="1.3"/>
+<text class="node" x="418" y="220" text-anchor="middle" style="fill:#4a2e5c">S</text>
+<line x1="360" y1="192" x2="302" y2="206" stroke="#1c1a17" stroke-width="1.3"/>
+<line x1="360" y1="192" x2="418" y2="206" stroke="#1c1a17" stroke-width="1.3"/>
+<text class="node" x="360" y="187" text-anchor="middle" style="fill:#4a2e5c">CP</text>
+<line x1="297" y1="159" x2="234" y2="173" stroke="#1c1a17" stroke-width="1.3"/>
+<line x1="297" y1="159" x2="360" y2="173" stroke="#1c1a17" stroke-width="1.3"/>
+<text class="node" x="297" y="154" text-anchor="middle" style="fill:#4a2e5c">VP</text>
+<line x1="237" y1="126" x2="177" y2="140" stroke="#1c1a17" stroke-width="1.3"/>
+<line x1="237" y1="126" x2="297" y2="140" stroke="#1c1a17" stroke-width="1.3"/>
+<text class="node" x="237" y="121" text-anchor="middle" style="fill:#4a2e5c">S</text>
+<line x1="184" y1="93" x2="131" y2="107" stroke="#1c1a17" stroke-width="1.3"/>
+<line x1="184" y1="93" x2="237" y2="107" stroke="#1c1a17" stroke-width="1.3"/>
+<text class="node" x="184" y="88" text-anchor="middle" style="fill:#4a2e5c">CP</text>
+<line x1="133" y1="60" x2="82" y2="74" stroke="#1c1a17" stroke-width="1.3"/>
+<line x1="133" y1="60" x2="184" y2="74" stroke="#1c1a17" stroke-width="1.3"/>
+<text class="node" x="133" y="55" text-anchor="middle" style="fill:#4a2e5c">VP</text>
+<line x1="83" y1="27" x2="33" y2="41" stroke="#1c1a17" stroke-width="1.3"/>
+<line x1="83" y1="27" x2="133" y2="41" stroke="#1c1a17" stroke-width="1.3"/>
+<text class="node" x="83" y="22" text-anchor="middle" style="fill:#4a2e5c">S</text>
+</svg>
+  <p class="tree-cap" style="margin-top:0;">(cf. textbook Ch.3, p.95)</p>
+  <aside class="notes">
+    교재 p.95의 나무를 덱 스타일로 다시 그렸습니다(이름 NP는 교재처럼 삼각형, a pokémon도 삼각형으로 줄임).
+    강조색 노드 S → VP → CP → S가 재귀 고리이고, 위에서부터 Lisa knows that / Bart wonders whether / Marge noticed that으로 세 번 돈 뒤 Homer caught a pokémon에서 멈춥니다.
+    규칙은 세 개뿐인데 나무는 얼마든지 깊어질 수 있다는 점, 그리고 길어질수록 이해가 어려운 것은 performance의 한계라는 점을 다시 연결하세요.
   </aside>
 </section>
 
@@ -857,27 +1003,174 @@
 <!-- ══ 24 · Infinity Revisited ══ -->
 <section data-kicker="CH.3 P.103 · THE INTERNAL STRUCTURE OF PHRASES">
   <h2 style="font-size:40px;">The Infinity of Language Revisited</h2>
-  <ul class="exlist" style="max-width:740px;">
-    <li><span class="no"><span class="xb">N</span> → A <span class="xb">N</span></span><span>the kindhearted, intelligent, handsome <b>boy</b></span></li>
-    <li><span class="no"><span class="xb">A</span> → Int <span class="xb">A</span></span><span>really very <b>pretty</b></span></li>
-    <li><span class="no"><span class="xb">V</span> → <span class="xb">V</span> PP</span><span><b>went</b> over the hills through the woods to grandmother's house</span></li>
-  </ul>
-  <p class="lead" style="max-width:760px; font-size:16.5px; margin-top:12px;"><b>Why a bar level?</b> A rule NP → A NP would also allow <span class="accent"><i>*kind-hearted, intelligent, the boy</i></span>. Looping on <span class="xb">N</span> keeps the determiner first.</p>
-  <p class="lead" style="max-width:760px; font-size:16.5px; margin-top:8px;">The looping pieces are <b>not complements</b>: they are sisters to <span class="xb">X</span>, not to the head. Such phrases are <b>adjuncts</b>.
-    <span class="rel-line" style="padding-left:14px;"><b>Complement</b>: sister to X (the head) · <b>Adjunct</b>: sister to <span class="xb">X</span></span></p>
-  <p class="lead" style="max-width:760px; font-size:16.5px; margin-top:8px;">Back to the telescope: same words, different attachment, different meaning.
-    <span class="rel-line" style="padding-left:14px; font: italic 400 18px 'Lora'; color: var(--ed-ink);">Sue saw the man with the telescope.</span>
-    <span class="rel-line" style="padding-left:14px;"><b>Instrument</b> (Sue uses it): the PP is an <b>adjunct</b>, sister to <span class="xb">V</span> <i>saw the man</i></span>
-    <span class="rel-line" style="padding-left:14px;"><b>Possession</b> (the man has it): the PP is a <b>complement</b> of the noun <i>man</i></span>
-    <span class="ko-supp" style="display:block; margin-top:8px;">반복되는 요소는 핵어가 아니라 <span class="xb">X</span>의 자매인 부가어(adjunct)이며, 망원경 문장의 두 해석은 PP가 부가어(도구)인지 명사 man의 보충어(소유)인지의 차이다.</span></p>
+  <div class="cols" style="align-items:start;">
+    <div>
+      <p class="lead" style="font-size:17px; margin:0 0 6px;">Adjectives can pile up without limit. A recursive rule on <span class="xb">N</span> generates them:
+        <span class="rel-line" style="margin-top:6px;"><b><span class="xb">N</span> → A <span class="xb">N</span></b></span>
+        <span class="ko-supp" style="display:block;">형용사는 끝없이 쌓일 수 있으며, <span class="xb">N</span>에 대한 재귀 규칙이 이를 생성한다.</span></p>
+      <svg viewBox="0 0 371 232" style="width:100%; margin-top:4px;">
+<text class="node" x="32" y="55" text-anchor="middle" style="fill:#1c1a17">Det</text>
+<line x1="32" y1="60" x2="32" y2="70" stroke="#1c1a17" stroke-width="1.3"/>
+<text class="leaf" x="32" y="84" text-anchor="middle">the</text>
+<text class="node" x="102" y="88" text-anchor="middle" style="fill:#1c1a17">A</text>
+<line x1="102" y1="93" x2="102" y2="103" stroke="#1c1a17" stroke-width="1.3"/>
+<text class="leaf" x="102" y="117" text-anchor="middle">kindhearted</text>
+<text class="node" x="199" y="121" text-anchor="middle" style="fill:#1c1a17">A</text>
+<line x1="199" y1="126" x2="199" y2="136" stroke="#1c1a17" stroke-width="1.3"/>
+<text class="leaf" x="199" y="150" text-anchor="middle">intelligent</text>
+<text class="node" x="285" y="154" text-anchor="middle" style="fill:#1c1a17">A</text>
+<line x1="285" y1="159" x2="285" y2="169" stroke="#1c1a17" stroke-width="1.3"/>
+<text class="leaf" x="285" y="183" text-anchor="middle">handsome</text>
+<text class="node" x="342" y="187" text-anchor="middle" style="fill:#1c1a17">N</text>
+<line x1="342" y1="192" x2="342" y2="202" stroke="#1c1a17" stroke-width="1.3"/>
+<text class="leaf" x="342" y="216" text-anchor="middle">boy</text>
+<line x1="342" y1="159" x2="342" y2="173" stroke="#1c1a17" stroke-width="1.3"/>
+<text class="node" x="342" y="154" text-anchor="middle" style="fill:#1c1a17"><tspan style="text-decoration:overline">N</tspan></text>
+<line x1="314" y1="126" x2="285" y2="140" stroke="#1c1a17" stroke-width="1.3"/>
+<line x1="314" y1="126" x2="342" y2="135" stroke="#1c1a17" stroke-width="1.3"/>
+<text class="node" x="314" y="121" text-anchor="middle" style="fill:#4a2e5c"><tspan style="text-decoration:overline">N</tspan></text>
+<line x1="256" y1="93" x2="199" y2="107" stroke="#1c1a17" stroke-width="1.3"/>
+<line x1="256" y1="93" x2="314" y2="102" stroke="#1c1a17" stroke-width="1.3"/>
+<text class="node" x="256" y="88" text-anchor="middle" style="fill:#4a2e5c"><tspan style="text-decoration:overline">N</tspan></text>
+<line x1="179" y1="60" x2="102" y2="74" stroke="#1c1a17" stroke-width="1.3"/>
+<line x1="179" y1="60" x2="256" y2="69" stroke="#1c1a17" stroke-width="1.3"/>
+<text class="node" x="179" y="55" text-anchor="middle" style="fill:#4a2e5c"><tspan style="text-decoration:overline">N</tspan></text>
+<line x1="105" y1="27" x2="32" y2="41" stroke="#1c1a17" stroke-width="1.3"/>
+<line x1="105" y1="27" x2="179" y2="36" stroke="#1c1a17" stroke-width="1.3"/>
+<text class="node" x="105" y="22" text-anchor="middle" style="fill:#1c1a17">NP</text>
+</svg>
+      <p class="tree-cap" style="margin-top:0;">(cf. textbook Ch.3, p.103)</p>
+    </div>
+    <div>
+      <p class="lead" style="font-size:17px; margin:0;"><b>Why a bar level?</b> A rule NP → A NP would also allow <span class="accent"><i>*kind-hearted, intelligent, the boy</i></span>. Looping on <span class="xb">N</span> keeps the determiner first.
+        <span class="ko-supp" style="display:block;">NP → A NP 규칙은 한정사가 중간에 오는 비문까지 허용하므로, <span class="xb">N</span>에서 반복해야 한정사가 맨 앞에 남는다.</span></p>
+      <hr class="hair" style="margin:14px 0;">
+      <p class="lead" style="font-size:17px; margin:0;">Intensifiers loop the same way inside an AP:
+        <span class="rel-line" style="margin-top:6px;"><b><span class="xb">A</span> → Int <span class="xb">A</span></b>: <i>really very pretty</i></span>
+        <span class="ko-supp" style="display:block;">강의어(intensifier)도 AP 안에서 같은 방식으로 반복된다.</span></p>
+    </div>
+  </div>
   <aside class="notes">
-    교재 pp.103–106의 흐름: (1) 형용사·강의어·PP는 몇 개든 반복될 수 있고, 이를 위해 바(bar) 층위의 재귀 규칙이 필요합니다.
-    (2) 바 층위가 필요한 근거: NP → A NP로 반복시키면 *kind-hearted, intelligent, the boy처럼 한정사가 중간에 오는 것까지 허용됩니다.
-    (3) 연결 고리: 이렇게 반복되는 요소는 핵어의 자매가 아니므로 보충어가 아니라 부가어입니다(<span style="text-decoration:overline">X</span>의 자매).
-    (4) 구분 기준은 구조적으로 분명하지만(보충어는 X의 자매, 부가어는 <span style="text-decoration:overline">X</span>의 자매) 실제 문장에서는 늘 쉽지 않다는 교재의 단서도 언급하세요.
-    (5) 망원경 문장: 도구 해석에서 PP는 <span style="text-decoration:overline">V</span>에 붙은 부가어, 소유 해석에서 PP는 명사 man의 보충어(같은 NP 안).
+    교재 pp.103–105. 형용사는 몇 개든 쌓일 수 있고(kindhearted, intelligent, handsome…), 이를 위해 <span style="text-decoration:overline">N</span> 층위의 재귀 규칙이 필요합니다.
+    나무에서 강조색 <span style="text-decoration:overline">N</span>이 자기 자신을 다시 품는 것이 재귀입니다.
+    바 층위가 필요한 근거(p.104): NP → A NP로 반복시키면 *kind-hearted, intelligent, the boy처럼 한정사가 중간에 오는 것까지 허용됩니다.
+    교재 p.104의 카툰(100번 반복되는 very)은 강의어 재귀 <span style="text-decoration:overline">A</span> → Int <span style="text-decoration:overline">A</span>의 예입니다(카툰은 저작권상 싣지 않음).
     참고: 교재는 p.96에서 AP → A PP를 규칙 9로, p.103에서 <span style="text-decoration:overline">N</span> → A <span style="text-decoration:overline">N</span>도 다시 규칙 9로 번호를 매깁니다(교재 쪽 중복).
     21번 슬라이드에 AP 규칙을 규칙 9로 표시했으므로 이 슬라이드에는 번호를 붙이지 않았습니다.
+  </aside>
+</section>
+
+<!-- ══ 24b · Infinity Revisited · V-bar recursion and adjuncts (p.105) ══ -->
+<section data-kicker="CH.3 P.105 · THE INTERNAL STRUCTURE OF PHRASES">
+  <h2 style="font-size:40px;">The Infinity of Language Revisited</h2>
+  <p class="lead" style="font-size:17px; margin:0 0 4px;">PPs loop on <span class="xb">V</span>: <b><span class="xb">V</span> → <span class="xb">V</span> PP</b>, as in <i>go over the hills through the woods to grandmother's house</i>.
+    <span class="ko-supp" style="display:block;">PP는 <span class="xb">V</span>에서 반복된다(<span class="xb">V</span> → <span class="xb">V</span> PP).</span></p>
+  <svg viewBox="0 0 491 199" style="width:100%; display:block; margin:0 auto; max-width:560px;">
+<text class="node" x="25" y="154" text-anchor="middle" style="fill:#1c1a17">V</text>
+<line x1="25" y1="159" x2="25" y2="169" stroke="#1c1a17" stroke-width="1.3"/>
+<text class="leaf" x="25" y="183" text-anchor="middle">go</text>
+<line x1="25" y1="126" x2="25" y2="140" stroke="#1c1a17" stroke-width="1.3"/>
+<text class="node" x="25" y="121" text-anchor="middle" style="fill:#1c1a17"><tspan style="text-decoration:overline">V</tspan></text>
+<text class="node" x="101" y="121" text-anchor="middle" style="fill:#1c1a17">PP</text>
+<path d="M101,126 L47,136 L154,136 Z" fill="none" stroke="#1c1a17" stroke-width="1.1"/>
+<text class="leaf" x="101" y="150" text-anchor="middle">over the hills</text>
+<line x1="63" y1="93" x2="25" y2="102" stroke="#1c1a17" stroke-width="1.3"/>
+<line x1="63" y1="93" x2="101" y2="107" stroke="#1c1a17" stroke-width="1.3"/>
+<text class="node" x="63" y="88" text-anchor="middle" style="fill:#4a2e5c"><tspan style="text-decoration:overline">V</tspan></text>
+<text class="node" x="231" y="88" text-anchor="middle" style="fill:#1c1a17">PP</text>
+<path d="M231,93 L166,103 L296,103 Z" fill="none" stroke="#1c1a17" stroke-width="1.1"/>
+<text class="leaf" x="231" y="117" text-anchor="middle">through the woods</text>
+<line x1="147" y1="60" x2="63" y2="69" stroke="#1c1a17" stroke-width="1.3"/>
+<line x1="147" y1="60" x2="231" y2="74" stroke="#1c1a17" stroke-width="1.3"/>
+<text class="node" x="147" y="55" text-anchor="middle" style="fill:#4a2e5c"><tspan style="text-decoration:overline">V</tspan></text>
+<text class="node" x="392" y="55" text-anchor="middle" style="fill:#1c1a17">PP</text>
+<path d="M392,60 L308,70 L475,70 Z" fill="none" stroke="#1c1a17" stroke-width="1.1"/>
+<text class="leaf" x="392" y="84" text-anchor="middle">to grandmother's house</text>
+<line x1="269" y1="27" x2="147" y2="36" stroke="#1c1a17" stroke-width="1.3"/>
+<line x1="269" y1="27" x2="392" y2="41" stroke="#1c1a17" stroke-width="1.3"/>
+<text class="node" x="269" y="22" text-anchor="middle" style="fill:#4a2e5c"><tspan style="text-decoration:overline">V</tspan></text>
+</svg>
+  <p class="tree-cap" style="margin-top:0;">(cf. textbook Ch.3, p.105)</p>
+  <hr class="hair" style="margin:10px 0;">
+  <p class="lead" style="font-size:17px; margin:0;">The looping pieces are <b>not complements</b>: they are sisters to <span class="xb">X</span>, not to the head. Such phrases are <b>adjuncts</b>.
+    <span class="rel-line" style="padding-left:14px;"><b>Complement</b>: sister to X (the head) · <b>Adjunct</b>: sister to <span class="xb">X</span></span>
+    <span class="ko-supp" style="display:block; margin-top:6px;">반복되는 요소는 핵어가 아니라 <span class="xb">X</span>의 자매이므로 보충어가 아닌 부가어(adjunct)다.</span></p>
+  <aside class="notes">
+    교재 p.105. 세 PP는 모두 <span style="text-decoration:overline">V</span>의 자매이고 핵어 go의 자매가 아니므로 보충어가 아니라 부가어입니다.
+    앞 슬라이드의 형용사(<span style="text-decoration:overline">N</span>의 자매), 강의어(<span style="text-decoration:overline">A</span>의 자매)도 마찬가지로 부가어입니다.
+    구분 기준은 구조적으로 분명하지만(보충어는 X의 자매, 부가어는 <span style="text-decoration:overline">X</span>의 자매) 실제 문장에서는 늘 쉽지 않다는 교재의 단서도 언급하세요.
+  </aside>
+</section>
+
+<!-- ══ 24c · Infinity Revisited · telescope trees (p.106) ══ -->
+<section data-kicker="CH.3 P.105 · THE INTERNAL STRUCTURE OF PHRASES">
+  <h2 style="font-size:40px;">The Infinity of Language Revisited</h2>
+  <p class="lead" style="font-size:17px; margin:0 0 4px;">Back to <i>Sue saw the man with the telescope</i>: same words, different attachment, different meaning.
+    <span class="ko-supp" style="display:block;">같은 단어라도 PP가 붙는 자리가 다르면 의미가 달라진다.</span></p>
+  <div class="cols-even" style="gap:24px; align-items:end;">
+    <div><svg viewBox="0 0 313 199" style="width:100%;">
+<text class="node" x="29" y="55" text-anchor="middle" style="fill:#1c1a17">NP</text>
+<path d="M29,60 L16,70 L42,70 Z" fill="none" stroke="#1c1a17" stroke-width="1.1"/>
+<text class="leaf" x="29" y="84" text-anchor="middle">Sue</text>
+<text class="node" x="67" y="154" text-anchor="middle" style="fill:#1c1a17">V</text>
+<line x1="67" y1="159" x2="67" y2="169" stroke="#1c1a17" stroke-width="1.3"/>
+<text class="leaf" x="67" y="183" text-anchor="middle">saw</text>
+<text class="node" x="120" y="154" text-anchor="middle" style="fill:#1c1a17">NP</text>
+<path d="M120,159 L92,169 L148,169 Z" fill="none" stroke="#1c1a17" stroke-width="1.1"/>
+<text class="leaf" x="120" y="183" text-anchor="middle">the man</text>
+<line x1="94" y1="126" x2="67" y2="140" stroke="#1c1a17" stroke-width="1.3"/>
+<line x1="94" y1="126" x2="120" y2="140" stroke="#1c1a17" stroke-width="1.3"/>
+<text class="node" x="94" y="121" text-anchor="middle" style="fill:#4a2e5c"><tspan style="text-decoration:overline">V</tspan></text>
+<text class="node" x="229" y="121" text-anchor="middle" style="fill:#4a2e5c">PP</text>
+<path d="M229,126 L160,136 L297,136 Z" fill="none" stroke="#1c1a17" stroke-width="1.1"/>
+<text class="leaf" x="229" y="150" text-anchor="middle" style="fill:#4a2e5c; font-weight:700">with the telescope</text>
+<line x1="161" y1="93" x2="94" y2="102" stroke="#1c1a17" stroke-width="1.3"/>
+<line x1="161" y1="93" x2="229" y2="107" stroke="#1c1a17" stroke-width="1.3"/>
+<text class="node" x="161" y="88" text-anchor="middle" style="fill:#1c1a17"><tspan style="text-decoration:overline">V</tspan></text>
+<line x1="161" y1="60" x2="161" y2="69" stroke="#1c1a17" stroke-width="1.3"/>
+<text class="node" x="161" y="55" text-anchor="middle" style="fill:#1c1a17">VP</text>
+<line x1="95" y1="27" x2="29" y2="41" stroke="#1c1a17" stroke-width="1.3"/>
+<line x1="95" y1="27" x2="161" y2="41" stroke="#1c1a17" stroke-width="1.3"/>
+<text class="node" x="95" y="22" text-anchor="middle" style="fill:#1c1a17">S</text>
+</svg><p class="tree-cap" style="line-height:1.6;"><b style="font-style:normal;">Instrument</b> (Sue uses it): the PP is an <b style="font-style:normal;">adjunct</b>, sister to <span class="xb">V</span> <i>saw the man</i></p></div>
+    <div><svg viewBox="0 0 327 232" style="width:100%;">
+<text class="node" x="29" y="55" text-anchor="middle" style="fill:#1c1a17">NP</text>
+<path d="M29,60 L16,70 L42,70 Z" fill="none" stroke="#1c1a17" stroke-width="1.1"/>
+<text class="leaf" x="29" y="84" text-anchor="middle">Sue</text>
+<text class="node" x="67" y="121" text-anchor="middle" style="fill:#1c1a17">V</text>
+<line x1="67" y1="126" x2="67" y2="136" stroke="#1c1a17" stroke-width="1.3"/>
+<text class="leaf" x="67" y="150" text-anchor="middle">saw</text>
+<text class="node" x="108" y="154" text-anchor="middle" style="fill:#1c1a17">Det</text>
+<line x1="108" y1="159" x2="108" y2="169" stroke="#1c1a17" stroke-width="1.3"/>
+<text class="leaf" x="108" y="183" text-anchor="middle">the</text>
+<text class="node" x="148" y="187" text-anchor="middle" style="fill:#4a2e5c">N</text>
+<line x1="148" y1="192" x2="148" y2="202" stroke="#1c1a17" stroke-width="1.3"/>
+<text class="leaf" x="148" y="216" text-anchor="middle" style="fill:#4a2e5c; font-weight:700">man</text>
+<text class="node" x="242" y="187" text-anchor="middle" style="fill:#4a2e5c">PP</text>
+<path d="M242,192 L174,202 L311,202 Z" fill="none" stroke="#1c1a17" stroke-width="1.1"/>
+<text class="leaf" x="242" y="216" text-anchor="middle" style="fill:#4a2e5c; font-weight:700">with the telescope</text>
+<line x1="195" y1="159" x2="148" y2="173" stroke="#1c1a17" stroke-width="1.3"/>
+<line x1="195" y1="159" x2="242" y2="173" stroke="#1c1a17" stroke-width="1.3"/>
+<text class="node" x="195" y="154" text-anchor="middle" style="fill:#1c1a17"><tspan style="text-decoration:overline">N</tspan></text>
+<line x1="152" y1="126" x2="108" y2="140" stroke="#1c1a17" stroke-width="1.3"/>
+<line x1="152" y1="126" x2="195" y2="135" stroke="#1c1a17" stroke-width="1.3"/>
+<text class="node" x="152" y="121" text-anchor="middle" style="fill:#1c1a17">NP</text>
+<line x1="109" y1="93" x2="67" y2="107" stroke="#1c1a17" stroke-width="1.3"/>
+<line x1="109" y1="93" x2="152" y2="107" stroke="#1c1a17" stroke-width="1.3"/>
+<text class="node" x="109" y="88" text-anchor="middle" style="fill:#1c1a17"><tspan style="text-decoration:overline">V</tspan></text>
+<line x1="109" y1="60" x2="109" y2="69" stroke="#1c1a17" stroke-width="1.3"/>
+<text class="node" x="109" y="55" text-anchor="middle" style="fill:#1c1a17">VP</text>
+<line x1="69" y1="27" x2="29" y2="41" stroke="#1c1a17" stroke-width="1.3"/>
+<line x1="69" y1="27" x2="109" y2="41" stroke="#1c1a17" stroke-width="1.3"/>
+<text class="node" x="69" y="22" text-anchor="middle" style="fill:#1c1a17">S</text>
+</svg><p class="tree-cap" style="line-height:1.6;"><b style="font-style:normal;">Possession</b> (the man has it): the PP is a <b style="font-style:normal;">complement</b> of the noun <i>man</i></p></div>
+  </div>
+  <p style="font: italic 400 13px 'Lora'; color: var(--ed-muted); margin-top:4px;">(cf. textbook Ch.3, p.106)</p>
+  <aside class="notes">
+    교재 p.106의 두 나무(교재도 여기서부터 내부 구조를 생략할 때 삼각형을 쓴다고 밝힙니다).
+    도구 해석: saw의 보충어는 the man뿐이고, PP는 <span style="text-decoration:overline">V</span>(saw the man)의 자매인 부가어입니다.
+    소유 해석: the man with the telescope가 하나의 NP이고, PP는 핵어 man의 자매인 보충어입니다.
+    11번 슬라이드의 중의성 나무를 X-bar로 다시 그린 것이므로, 두 슬라이드를 오가며 비교해 보세요.
   </aside>
 </section>
 

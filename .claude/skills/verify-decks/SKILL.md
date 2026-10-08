@@ -25,7 +25,7 @@ description: 강의 슬라이드 덱(slides/week*.html)의 표준 검증 스위�
   const sr=document.querySelector('.slides').getBoundingClientRect().right;
   const oV=[],oH=[]; let media={video:0,cues:0,ted:0,tedlink:0};
   for(let i=0;i<secs.length;i++){
-    const s=secs[i];
+    const s=secs[i]; Reveal.slide(i,0,99);  // viewDistance 밖 슬라이드는 display:none이라 scrollHeight=0 → 반드시 이동 후 측정
     s.querySelectorAll('.mcq-explain').forEach(e=>e.classList.add('show')); // 해설 열린 상태 포함
     if(s.scrollHeight>stage) oV.push(i+1);
     s.querySelectorAll('.mcq-explain').forEach(e=>e.classList.remove('show'));
