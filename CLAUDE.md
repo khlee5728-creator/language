@@ -22,7 +22,7 @@
 
 ## 3. 에디토리얼 디자인 시스템 (전 덱 공통)
 
-에셋: `slides/assets/editorial-theme.css` + `slides-editorial.js`(레일·킥커·폴리오 주입) +
+에셋: `slides/assets/editorial-theme.css` + `slides-editorial.js`(레일·킥커·폴리오 주입, v3부터 휴대폰 세로 화면에만 '가로 전체화면' 버튼 — 터치·세로·폭 600px 미만 조건, 전체화면·방향 고정 미지원 브라우저(아이폰)에선 미생성) +
 `slides-media.css/js`(TTS·영상·자막) + reveal.js 5.1.0 CDN, 스테이지 960×700, `center:false`.
 
 - **헤더/타이틀은 교재 섹션 제목 그대로(verbatim).** 임의 요약·의역 금지. 히어로 워드(개념어 초대형 타이포) 금지 — 교재 정합성이 우선.
