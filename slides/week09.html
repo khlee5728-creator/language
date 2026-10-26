@@ -222,10 +222,10 @@
       <span class="ko-supp" style="display:block; margin-top:8px;">심적 문법에는 단어 의미를 구와 문장의 의미로 합성하는 의미 규칙(semantic rules)이 있다.</span></div>
     <div>
       <div class="gloss-set">
-        <div class="langlab">WORD MEANINGS (FREGE · RUSSELL)</div>
+        <div class="langlab">WORD MEANINGS · P.139</div>
         <div class="sent" style="font-size:23px;">Jack → the individual Jack</div>
         <div class="sent" style="font-size:23px; margin-top:10px;">swim → the set of individuals that swim</div>
-        <div class="sent" style="font-size:23px; margin-top:10px;">kiss → the set of pairs ⟨X, Y⟩ such that X kissed Y</div>
+        <div class="sent" style="font-size:23px; margin-top:10px;">kiss → the set of pairs of individuals X and Y such that X kissed Y</div>
         <div class="tr">고유명은 개체를, 술어는 집합을 지시한다. 이 재료를 규칙이 합성한다.</div>
       </div>
     </div>
@@ -244,12 +244,12 @@
       <div class="small-label" style="margin-bottom:12px;">SEMANTIC RULE I · P.139</div>
       <hr class="hair" style="margin:0 0 14px;">
       <p class="lead" style="font-size:18px;">[NP VP] is <b>true</b> if the meaning of NP, an individual, is a <em>member</em> of the meaning of VP, a set.</p>
-      <p style="font: italic 400 17px 'Lora'; color: var(--ed-muted); margin-top:10px;">Jack swims: true iff Jack ∈ {the swimmers}.</p>
+      <p style="font: italic 400 17px 'Lora'; color: var(--ed-muted); margin-top:10px;">Jack swims: true if Jack is a member of the set of swimmers.</p>
     </div>
     <div>
       <div class="small-label" style="margin-bottom:12px;">SEMANTIC RULE II · P.140</div>
       <hr class="hair" style="margin:0 0 14px;">
-      <p class="lead" style="font-size:18px;">[V NP] denotes the set of individuals X such that <em>⟨X, NP⟩</em> is in the meaning of V.</p>
+      <p class="lead" style="font-size:18px;">[V NP] is the set of individuals X such that X is the <em>first member</em> of a pair in the meaning of V whose second member is the meaning of NP.</p>
       <p style="font: italic 400 17px 'Lora'; color: var(--ed-muted); margin-top:10px;">kissed Laura = {all who kissed Laura}; then Rule I applies.</p>
     </div>
   </div>
@@ -436,7 +436,7 @@
 <section data-kicker="CH.4 P.149 · LEXICAL SEMANTICS (WORD MEANINGS)">
   <h2>Lexical Relations</h2>
   <div class="quote-stack compact" style="font-size:0.92em;">
-    <p><b>Synonyms</b> like <i>sofa/couch</i> or the English–Latin pairs <i>manly/virile</i>, <i>go down/descend</i> are never perfect.</p>
+    <p><b>Synonyms</b> share a meaning, like <i>sofa/couch</i> or the English–Latin pairs <i>manly/virile</i>, <i>go down/descend</i>, though it has been said that no two are ever <i>perfect</i>.</p>
     <p><b>Complementary antonyms</b> exclude each other: <i>alive/dead</i>, <i>present/absent</i>; <i>alive</i> means "not dead."</p>
     <p><b>Gradable antonyms</b> are relative: <i>big/small</i>, <i>hot/cold</i>; a small elephant beats a large mouse.</p>
     <p><b>Relational opposites</b> show one relation from two viewpoints: <i>give/receive</i>, <i>buy/sell</i>, <i>employer/employee</i>.</p>
@@ -593,10 +593,12 @@
     <div class="tc"><b>Agent</b>the doer: <i>The boy</i> rolled a red ball.</div>
     <div class="tc"><b>Theme</b>the undergoer: the boy rolled <i>a red ball</i>.</div>
     <div class="tc"><b>Goal</b>the endpoint: threw the ball <i>to the girl</i>.</div>
-    <div class="tc"><b>Source</b>where the action originates: <i>Professor Snape</i> awakened…</div>
-    <div class="tc"><b>Instrument</b>the means: awakened Harry <i>with his wand</i>.</div>
-    <div class="tc"><b>Experiencer</b>one receiving sensory input: awakened <i>Harry Potter</i>.</div>
+    <div class="tc"><b>Source</b>where the action originates</div>
+    <div class="tc"><b>Experiencer</b>one receiving sensory input</div>
+    <div class="tc"><b>Instrument</b>the means used to accomplish the action</div>
   </div>
+  <p class="lead" style="font-size:17px; margin-top:12px; text-align:center;"><em><u>Professor Snape</u> awakened <u>Harry Potter</u> <u>with his wand</u>.</em>
+    <span class="rel-line" style="font: 600 11px 'Space Grotesk'; letter-spacing: 0.2em; color: var(--ed-muted);">SOURCE · EXPERIENCER · INSTRUMENT</span></p>
   <hr class="hair" style="margin-top:22px;">
   <p class="lead" style="font-size:16.5px;">Roles stay constant across structures:
     <span class="eg-line"><span><em>The boy opened the door with the key.</em></span><span><em>The key opened the door.</em></span><span><em>The door opened.</em></span></span>
@@ -666,17 +668,18 @@
 
 <!-- ══ 25 · Practice Q1 ══ -->
 <section data-kicker="CH.4 · PRACTICE 01">
-  <div class="mcq" data-qid="w09-q1">
-    <div class="mcq-q"><span class="qnum">Q1</span>"<em>Jack boiled the water</em>" entails "<em>The water boiled</em>." This relation is called:</div>
+  <div class="mcq" data-qid="w09-q1b">
+    <div class="mcq-q"><span class="qnum">Q1</span>Which statement is correct?</div>
     <div class="mcq-opts">
-      <button class="mcq-opt" data-correct="true"><span class="opt-key">A</span>Entailment</button>
-      <button class="mcq-opt"><span class="opt-key">B</span>Contradiction</button>
-      <button class="mcq-opt"><span class="opt-key">C</span>Anomaly</button>
+      <button class="mcq-opt"><span class="opt-key">A</span>"<em>Jack swims</em>" entails "<em>Jack swims beautifully</em>."</button>
+      <button class="mcq-opt" data-correct="true"><span class="opt-key">B</span>"<em>Jack swims beautifully</em>" entails "<em>Jack swims</em>."</button>
+      <button class="mcq-opt"><span class="opt-key">C</span>"<em>Jack doesn't swim beautifully</em>" entails "<em>Jack doesn't swim</em>."</button>
     </div>
-    <div class="mcq-explain"><span class="lbl">Explanation</span>If the first sentence is true, the second must also be true: that one-way truth relation is entailment.</div>
+    <div class="mcq-explain"><span class="lbl">Explanation</span>Entailment runs in one direction: whenever <em>Jack swims beautifully</em> is true, <em>Jack swims</em> must be true, but not the reverse (A). Negation reverses the direction: <em>Jack doesn't swim</em> entails <em>Jack doesn't swim beautifully</em>, so C has it backwards.</div>
   </div>
   <aside class="notes">
-    함의의 단방향성을 확인하는 문항입니다. 학생이 선택 후 해설을 공개하세요.
+    함의의 방향을 확인하는 문항입니다(교재 pp.135–136, 6번 슬라이드). A는 방향이 거꾸로이고(헤엄친다고 해서 잘 헤엄치는 것은 아님),
+    C는 부정하면 방향이 뒤집힌다는 점을 놓친 함정입니다. 학생이 선택한 뒤 해설을 공개하세요.
   </aside>
 </section>
 

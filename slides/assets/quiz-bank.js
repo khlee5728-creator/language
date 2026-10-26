@@ -262,6 +262,8 @@ window.QUIZ_BANK = {
  },
  "w09-q1": {
   "week": 9,
+  "retired": true,
+  "note": "2026-10-26 교체됨 → w09-q1b. 교체 전에 풀린 응답 기록을 해석하기 위해 남겨 둠(대시보드 문항 목록에서는 제외)",
   "q": "\"Jack boiled the water\" entails \"The water boiled.\" This relation is called:",
   "opts": {
    "A": "Entailment",
@@ -269,6 +271,16 @@ window.QUIZ_BANK = {
    "C": "Anomaly"
   },
   "correct": "A"
+ },
+ "w09-q1b": {
+  "week": 9,
+  "q": "Which statement is correct?",
+  "opts": {
+   "A": "\"Jack swims\" entails \"Jack swims beautifully.\"",
+   "B": "\"Jack swims beautifully\" entails \"Jack swims.\"",
+   "C": "\"Jack doesn't swim beautifully\" entails \"Jack doesn't swim.\""
+  },
+  "correct": "B"
  },
  "w09-q2": {
   "week": 9,
