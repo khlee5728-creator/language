@@ -55,6 +55,17 @@
     /* 25번: 의미역 이름을 각 NP 밑줄 바로 아래에 (ruby 주석) */
     .role-sent ruby { ruby-position: under; -webkit-ruby-position: after; ruby-align: center; }
     .role-sent rt { font: 600 10.5px 'Space Grotesk'; font-style: normal; letter-spacing: 0.2em; color: var(--ed-muted); padding-top: 4px; padding-left: 0.2em; }
+    /* 23번: 동사 자질 표 · 사건/상태 테스트 표 (기본 테마를 이기도록 .reveal table.xxx) */
+    .reveal table.vfeat, .reveal table.evst { width: 100%; border-collapse: collapse; margin: 6px 0 0; }
+    .reveal table.vfeat th, .reveal table.evst th { font: 600 10.5px 'Space Grotesk'; letter-spacing: 0.18em; color: var(--ed-muted);
+      text-align: left; white-space: nowrap; background: none; border: 0; border-bottom: 1px solid var(--ed-line); padding: 4px 10px 4px 0; }
+    .reveal table.vfeat td, .reveal table.evst td { font: 400 15.5px/1.35 'Lora'; color: var(--ed-body); border: 0;
+      border-bottom: 1px solid var(--ed-line); padding: 5px 10px 5px 0; text-align: left; vertical-align: top; background: none; }
+    .reveal table.vfeat td:first-child { font: 600 14px 'Lora'; color: var(--ed-ink); white-space: nowrap; width: 76px; }
+    .reveal table.vfeat td:nth-child(2) { white-space: nowrap; width: 158px; }
+    .reveal table.evst { margin-top: 12px; }
+    .reveal table.evst td:first-child { font: 600 10.5px 'Space Grotesk'; letter-spacing: 0.16em; color: var(--ed-muted); white-space: nowrap; width: 110px; padding-top: 8px; }
+    .reveal table.evst th i { font-style: italic; text-transform: none; letter-spacing: 0; font-family: 'Lora'; font-size: 12.5px; }
     .role-grid .tc i { font: italic 400 15.5px 'Lora'; color: var(--ed-ink); }
 
     /* 슬립 오브 텅 대응표 */
@@ -529,33 +540,31 @@
 <!-- ══ 22 · Semantic Features of Verbs ══ -->
 <section data-kicker="CH.4 P.154 · SEMANTIC FEATURES AND GRAMMAR">
   <h2>Semantic Features of Verbs</h2>
-  <div class="cols">
-    <div class="def">Verb meanings also decompose: "cause" in <i>darken, kill, uglify</i>; "go" in <i>swim, throw, give</i>; "become" in <i>break</i>, "cause to become broken."
-      <span class="ko-supp" style="display:block; margin-top:8px;">동사 의미도 자질로 분해된다: darken·kill의 '원인', swim·throw의 '이동', break의 '되게 함'.</span></div>
-    <div>
-      <div class="cols-even" style="gap:44px;">
-        <div>
-          <div class="small-label" style="margin-bottom:10px;">EVENTIVES</div>
-          <hr class="hair" style="margin:0 0 12px;">
-          <p style="font: italic 400 17.5px/1.8 'Lora'; margin:0;">Mary was kissed by John.<br>John is eating oysters.<br>Kiss Mary!</p>
-        </div>
-        <div>
-          <div class="small-label" style="margin-bottom:10px;">STATIVES</div>
-          <hr class="hair" style="margin:0 0 12px;">
-          <p style="font: italic 400 17.5px/1.8 'Lora'; margin:0;">?Mary is known by John.<br>?John is liking oysters.<br>?Know Mary!</p>
-        </div>
-      </div>
-      <hr class="hair">
-      <p class="lead" style="font-size:16.5px;"><b>Negative polarity</b>: <em>ever</em> needs a verb with a negative feature.
-        <span class="rel-line"><em>John doubts that he'll ever fly again.</em> ✓</span>
-        <span class="rel-line"><em>*John thinks that he'll ever fly again.</em></span>
-        <span class="rel-line"><b>doubt</b> = "think that not"</span></p>
-    </div>
-  </div>
+  <p class="lead" style="font-size:16.5px; margin:0 0 8px;">Verb meanings also decompose into features, and some features have syntactic consequences.
+    <span class="ko-supp" style="display:block;">동사 의미도 자질로 분해되며, 어떤 자질은 통사에 영향을 준다.</span></p>
+  <table class="vfeat">
+    <tr><th>FEATURE</th><th>VERBS</th><th>MEANING</th></tr>
+    <tr><td>"cause"</td><td><i>darken · kill · uglify</i></td><td>cause to become dark · cause to die · cause to become ugly</td></tr>
+    <tr><td>"go"</td><td><i>swim · throw · give</i></td><td>a change in location or possession</td></tr>
+    <tr><td>"become"</td><td><i>break</i></td><td>the end state: "cause" to "become" broken</td></tr>
+  </table>
+  <table class="evst">
+    <tr><th>TEST</th><th>EVENTIVE · <i>kiss</i></th><th>STATIVE · <i>know</i></th></tr>
+    <tr><td>PASSIVE</td><td><i>Mary was kissed by John.</i></td><td><i>?Mary is known by John.</i></td></tr>
+    <tr><td>PROGRESSIVE</td><td><i>John is kissing Mary.</i></td><td><i>?John is knowing Mary.</i></td></tr>
+    <tr><td>IMPERATIVE</td><td><i>Kiss Mary!</i></td><td><i>?Know Mary!</i></td></tr>
+    <tr><td>ADVERB</td><td><i>John deliberately kissed Mary.</i></td><td><i>?John deliberately knows Mary.</i></td></tr>
+  </table>
+  <p style="font: italic 400 13px 'Lora'; color: var(--ed-muted); margin:4px 0 0;">? = odd · * = ungrammatical (cf. textbook Ch.4, pp.154–155)</p>
+  <hr class="hair" style="margin:10px 0 8px;">
+  <p class="lead" style="font-size:16px; margin:0;"><b>Negative polarity</b>: <em>ever</em> needs a verb with a negative feature; <b>doubt</b> = "think that not."
+    <span class="eg-line" style="margin-top:4px;"><span><em>John doubts that he'll ever fly a plane again.</em></span><span><em>*John thinks that he'll ever fly a plane again.</em></span></span></p>
   <aside class="notes">
-    사건동사는 수동·진행·명령·부사와 자연스럽지만 상태동사는 어색(?표) — 자질의 통사적 귀결.
-    ever 같은 부정극어는 doubt/refuse(부정 자질 내장)와만 공기. 미세한 자질 차이가 어순까지 좌우하는
-    사례(throw류 vs. push류)는 다음 슬라이드에서 다룹니다.
+    교재 pp.154–155. 위 표: 동사 의미의 세 자질. "cause"(darken·kill·uglify), "go"(위치나 소유의 변화: swim·throw·give, 교재는 crawl·fly·buy도 듦),
+    "become"(동작의 끝 상태: break = "cause" to "become" broken). swim에는 '액체 안', crawl에는 '표면 가까이' 같은 추가 자질도 있습니다.
+    가운데 표: 사건동사는 수동·진행·명령·부사(deliberately)와 자연스럽지만 상태동사는 어색합니다(?표). 교재의 네 테스트를 행으로 나눴습니다.
+    아래: ever 같은 부정극어(negative polarity item)는 not 같은 부정 요소가 필요한데, doubt·refuse는 의미 안에 '부정' 자질이 있어 not 없이도 허용됩니다.
+    미세한 자질 차이가 어순까지 좌우하는 사례(throw류 vs. push류)는 다음 슬라이드에서 다룹니다.
   </aside>
 </section>
 
