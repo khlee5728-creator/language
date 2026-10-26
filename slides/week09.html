@@ -52,6 +52,9 @@
       font: 300 15.5px/1.55 'Noto Serif KR'; color: var(--ed-body); }
     .role-grid .tc b { display: block; font: 600 12px 'Space Grotesk'; letter-spacing: 0.2em;
       text-transform: uppercase; color: var(--ed-accent); margin-bottom: 4px; }
+    /* 25번: 의미역 이름을 각 NP 밑줄 바로 아래에 (ruby 주석) */
+    .role-sent ruby { ruby-position: under; -webkit-ruby-position: after; ruby-align: center; }
+    .role-sent rt { font: 600 10.5px 'Space Grotesk'; font-style: normal; letter-spacing: 0.2em; color: var(--ed-muted); padding-top: 4px; padding-left: 0.2em; }
     .role-grid .tc i { font: italic 400 15.5px 'Lora'; color: var(--ed-ink); }
 
     /* 슬립 오브 텅 대응표 */
@@ -597,8 +600,7 @@
     <div class="tc"><b>Experiencer</b>one receiving sensory input</div>
     <div class="tc"><b>Instrument</b>the means used to accomplish the action</div>
   </div>
-  <p class="lead" style="font-size:17px; margin-top:12px; text-align:center;"><em><u>Professor Snape</u> awakened <u>Harry Potter</u> <u>with his wand</u>.</em>
-    <span class="rel-line" style="font: 600 11px 'Space Grotesk'; letter-spacing: 0.2em; color: var(--ed-muted);">SOURCE · EXPERIENCER · INSTRUMENT</span></p>
+  <p class="lead role-sent" style="font-size:17px; margin-top:12px; text-align:center;"><em><ruby><u>Professor Snape</u><rt>SOURCE</rt></ruby> awakened <ruby><u>Harry Potter</u><rt>EXPERIENCER</rt></ruby> <ruby><u>with his wand</u><rt>INSTRUMENT</rt></ruby>.</em></p>
   <hr class="hair" style="margin-top:22px;">
   <p class="lead" style="font-size:16.5px;">Roles stay constant across structures:
     <span class="eg-line"><span><em>The boy opened the door with the key.</em></span><span><em>The key opened the door.</em></span><span><em>The door opened.</em></span></span>
