@@ -30,6 +30,22 @@
     .word-row.deix { gap: 40px; }
     .word-row.deix .w b { font-size: 24px; line-height: 1.32; }
     .exlist .exnote { display: block; margin-top: 2px; font: 400 14px 'Lora'; color: var(--ed-muted); }
+    /* 10번: violate vs flout 대비 */
+    .vf-def { font: 400 16.5px/1.5 'Lora','Noto Serif KR'; color: var(--ed-body); margin: 0 0 14px; }
+    .vf-def .ko-supp { display: block; margin-top: 4px; font-size: 15.5px; }
+    .dlg2 { display: grid; grid-template-columns: 80px 1fr; gap: 6px 10px; align-items: baseline;
+      border-left: 1px solid var(--ed-line); padding: 2px 0 2px 18px; }
+    .dlg2 .sp { font: 600 10.5px 'Space Grotesk'; letter-spacing: 0.2em; color: var(--ed-muted); }
+    .dlg2 .ln { font: italic 400 17.5px/1.4 'Lora'; color: var(--ed-ink); }
+    .vf-why { font: 400 16px/1.5 'Lora'; color: var(--ed-body); margin: 14px 0 0; }
+    .vf-why .mx, .fl-list .mx { font: 600 10.5px 'Space Grotesk'; letter-spacing: 0.18em; color: var(--ed-accent); }
+    .vf-why .mx { margin-right: 10px; }
+    .reveal ul.fl-list { list-style: none; margin: 0; padding: 0; display: block; }
+    .fl-list li { display: grid; grid-template-columns: 1fr auto; column-gap: 12px; align-items: baseline;
+      padding: 7px 0; border-bottom: 1px solid var(--ed-line); }
+    .fl-list li:last-child { border-bottom: 0; }
+    .fl-list .ex { font: italic 400 17px/1.35 'Lora'; color: var(--ed-ink); }
+    .fl-list .imp { grid-column: 1 / -1; font: 400 14.5px/1.4 'Lora'; color: var(--ed-muted); margin-top: 2px; }
     .dlg { border-left: 1px solid var(--ed-line); padding-left: 28px; }
     .dlg p { font: italic 400 19px/1.75 'Lora'; margin: 0 0 10px; color: var(--ed-ink); }
     .dlg p:last-child { margin-bottom: 0; }
@@ -271,27 +287,40 @@
   <div class="cols-even">
     <div>
       <div class="small-label" style="margin-bottom:12px;">VIOLATE · QUIETLY UNCOOPERATIVE</div>
-      <hr class="hair" style="margin:0 0 14px;">
-      <div class="dlg">
-        <p><span class="sp">POLONIUS</span>What do you read, my lord?</p>
-        <p><span class="sp">HAMLET</span>Words, words, words.</p>
+      <hr class="hair" style="margin:0 0 12px;">
+      <p class="vf-def">A speaker breaks a maxim simply to be uncooperative; nothing is implicated.
+        <span class="ko-supp">협력하지 않으려고 격률을 어기는 것이며, 함축은 생기지 않는다.</span></p>
+      <div class="dlg2">
+        <span class="sp">POLONIUS</span><span class="ln">What do you read, my lord?</span>
+        <span class="sp">HAMLET</span><span class="ln">Words, words, words.</span>
       </div>
-      <p class="lead" style="font-size:16.5px; margin-top:12px;">Feigning madness, Hamlet gives too little, then far too much, information: <b>Quantity</b> broken in both directions.</p>
+      <p class="vf-why"><span class="mx">QUANTITY</span>Feigning madness, Hamlet gives too little information.</p>
     </div>
     <div>
       <div class="small-label" style="margin-bottom:12px;">FLOUT · OPENLY, TO IMPLICATE</div>
-      <hr class="hair" style="margin:0 0 14px;">
-      <p class="lead" style="font-size:16.5px;">To <b>flout</b> a maxim is to break it so the hearer notices, and computes an implicature. "<em>The turkey sure was moist</em>" flouts <b>Relation</b>.</p>
-      <p class="lead" style="font-size:16.5px; margin-top:12px;"><em>Can you pass the salt?</em> A literal answer states the obvious (<b>Quantity</b>), so the hearer seeks the reason: <em>a request</em>.</p>
+      <hr class="hair" style="margin:0 0 12px;">
+      <p class="vf-def">A speaker breaks a maxim on purpose, so the hearer notices and computes an implicature.
+        <span class="ko-supp">격률을 일부러 어겨, 청자가 알아채고 함축을 계산하게 하는 것이다.</span></p>
+      <ul class="fl-list">
+        <li><span class="ex">Words, words, words.</span><span class="mx">QUANTITY</span>
+          <span class="imp">→ same reply, sane Hamlet: he doesn't want Polonius to know</span></li>
+        <li><span class="ex">The turkey sure was moist.</span><span class="mx">RELATION</span>
+          <span class="imp">→ Mom doesn't like the girl</span></li>
+        <li><span class="ex">Can you pass the salt?</span><span class="mx">QUANTITY</span>
+          <span class="imp">→ a request for the salt</span></li>
+        <li><span class="ex">It's cold in here.</span><span class="mx">RELATION</span>
+          <span class="imp">→ to someone by an open window: close it</span></li>
+      </ul>
     </div>
   </div>
-  <hr class="hair" style="margin-top:26px;">
-  <p class="lead" style="font-size:16.5px;"><em>It's cold in here</em> to someone by an open window: <b>Relation</b> explains the "close it" reading.
-    <span class="ko-supp" style="display:block;">열린 창가의 사람에게 It's cold in here라고 하면 '창문을 닫아 달라'로 읽히는 것은 관계(Relation)의 격률 때문이다.</span></p>
   <aside class="notes">
-    햄릿 대화(2막 2장)는 격률 위반이 담화를 어떻게 비틀거리게 하는지 보여줍니다. 같은 발화도
-    맥락에 따라 '함축을 위한 flout'이 될 수 있음(비밀로 하고 싶다는 함축). Can you pass the salt?와
-    It's cold in here는 교재가 양·관계 격률로 설명하는 대표 예입니다.
+    교재 pp.166–167. 왼쪽: 격률 위반(violate)은 협력할 생각이 없어서 어기는 것으로 함축이 없습니다.
+    햄릿(2막 2장)은 미친 척하며 Words, words, words로 너무 적게 답합니다(양의 격률). 교재 원문의 대화는 더 이어지는데,
+    마지막 긴 대답(Slanders, sir…)은 반대로 너무 많이 말해 양의 격률을 양쪽으로 어기며(태도의 격률 위반으로도 볼 수 있음),
+    What is the matter를 '두 사람 사이의 문제'로 받아친 것은 관계의 격률 위반입니다.
+    오른쪽: 무시(flout)는 일부러 어겨 함축을 만드는 것. 같은 Words, words, words도 제정신인 햄릿이 말하면
+    '무엇을 읽는지 알리고 싶지 않다'는 함축이 됩니다. 이 대비가 이 슬라이드의 핵심입니다.
+    The turkey sure was moist(관계), Can you pass the salt?(양: 문자적으로 답하면 뻔한 말), It's cold in here(관계: 창가의 사람에게 하는 말이라 '닫아 달라')는 교재 p.167의 예입니다.
   </aside>
 </section>
 
