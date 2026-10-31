@@ -22,17 +22,18 @@
 
 ## 3. 에디토리얼 디자인 시스템 (전 덱 공통)
 
-에셋: `slides/assets/editorial-theme.css` + `slides-editorial.js`(레일·킥커·폴리오 주입, v3부터 휴대폰 세로 화면에만 '가로 전체화면' 버튼 — 터치·세로·폭 600px 미만 조건, 전체화면·방향 고정 미지원 브라우저(아이폰)에선 미생성) +
+에셋: `slides/assets/editorial-theme.css` + `slides-editorial.js`(레일·킥커·폴리오 주입, v5부터 섹션 위계 경로·목차 들여쓰기, v3부터 휴대폰 세로 화면에만 '가로 전체화면' 버튼 — 터치·세로·폭 600px 미만 조건, 전체화면·방향 고정 미지원 브라우저(아이폰)에선 미생성) +
 `slides-media.css/js`(TTS·영상·자막) + reveal.js 5.1.0 CDN, 스테이지 960×700, `center:false`.
 
 - **헤더/타이틀은 교재 섹션 제목 그대로(verbatim).** 임의 요약·의역 금지. 히어로 워드(개념어 초대형 타이포) 금지 — 교재 정합성이 우선.
   한 섹션이 여러 장에 걸치면 **같은 섹션 제목을 반복**한다(서술형 제목·"제목 · 부연" 금지, 2026-09-28 전 덱 통일). 요약 슬라이드 제목은 `Summary`.
-  h2가 섹션 X이면 킥커는 X의 상위 섹션(예: h2 "Question Formation Rules" → 킥커 `… · GRAMMATICAL DEPENDENCIES`). 예외: 영상·ENRICHMENT·NEXT WEEK 슬라이드.
+  h2가 섹션 X이면 X의 상위 섹션 경로(장 제목 제외, 교재 제목 그대로)를 `<section data-path="Grammatical Dependencies › Question Formation Rules">`로 단다(최상위 섹션은 생략).
+  slides-editorial.js(v5+)가 킥커 같은 줄에 이탤릭으로 붙이며, 길어서 두 줄이 되면 맨 위부터 `…`로 접는다. 교재에 없는 번호는 쓰지 않는다. 예외: 영상·ENRICHMENT·NEXT WEEK 슬라이드.
 - **제목 크기 규칙(v15)**: 제목 글자 수로만 정한다. ≤30자 기본 46px(인라인 지정 없음) · 31–42자 `font-size:40px` · 43자 이상 `font-size:36px`.
   두 줄이 되면 테마의 `text-wrap: balance`가 고르게 나눈다. 본문 공간이 부족하다고 제목을 임의로 줄이지 말고 본문을 조정한다.
 - **섹션 완전성**: 주차 범위의 교재 섹션은 하나도 건너뛰지 않는다. 덱 신설·개편 시 챕터 헤딩 목록을 추출해 체크리스트로 대조.
-- **킥커 문법**: 내용 `CH.n P.{시작쪽} · {직상위 섹션}` / 미디어 `… · FIGURE|CARTOON|VIDEO` / 퀴즈 `CH.n · PRACTICE|EXERCISE nn` / 요약 `CH.n · SUMMARY` / 목차 `WEEK n · CONTENTS · CH.n PP.a–b` / 교재 밖 보충 `ENRICHMENT · BEYOND THE TEXTBOOK`. 구분자는 ` · `.
-- **목차 슬라이드**: 책 차례식(`recap tight` + `.pg` 시작 쪽수).
+- **킥커 문법**: 내용 `CH.n P.{시작쪽}`(쪽수만, 상위 섹션은 data-path로) / 미디어 `… · FIGURE|CARTOON|VIDEO` / 퀴즈 `CH.n · PRACTICE|EXERCISE nn` / 요약 `CH.n · SUMMARY` / 목차 `WEEK n · CONTENTS · CH.n PP.a–b` / 교재 밖 보충 `ENRICHMENT · BEYOND THE TEXTBOOK`. 구분자는 ` · `.
+- **목차 슬라이드**: 책 차례식(`recap tight outline` + `.pg` 시작 쪽수). 하위 섹션은 `<li class="lv2|lv3">`로 들여 쓰고 순번은 숨긴다(목차에 보이는 상위 항목 수만큼 한 단계씩).
 - **폴리오**: `N / total` (slides-editorial.js 자동) — 코스명 등 다른 텍스트 금지.
 - **챕터 악센트**: W1 `#2b3a67` · Ch.1 `#7a2e2e` · Ch.2 `#2e5941` · Ch.3 `#4a2e5c` · Ch.4 `#8a5a20` · Ch.5 `#24513f` · Ch.6 `#6e1f28`.
 - 이모지·색 상자·그라데이션 금지. 헤어라인과 타이포그래피로만 위계 표현.
