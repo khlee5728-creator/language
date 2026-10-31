@@ -344,11 +344,23 @@ window.QUIZ_BANK = {
  },
  "w10-q3": {
   "week": 10,
+  "retired": true,
+  "note": "2026-10-31 교체됨 → w10-q3b(교재 밖 용어 indirect speech act가 정답이던 문항). 교체 전 응답 해석용으로 보존",
   "q": "\"Could you pass the salt?\" at dinner is an example of:",
   "opts": {
    "A": "A direct speech act (a genuine question)",
    "B": "An indirect speech act (a request)",
    "C": "A presupposition"
+  },
+  "correct": "B"
+ },
+ "w10-q3b": {
+  "week": 10,
+  "q": "At dinner, \"Can you pass the salt?\" is understood as a request because answering it literally would violate the maxim of:",
+  "opts": {
+   "A": "Quality",
+   "B": "Quantity",
+   "C": "Manner"
   },
   "correct": "B"
  },
