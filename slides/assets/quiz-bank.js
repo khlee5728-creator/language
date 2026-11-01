@@ -334,11 +334,11 @@ window.QUIZ_BANK = {
  },
  "w10-q2": {
   "week": 10,
-  "q": "A: \"Are you coming to the party?\" B: \"I have to work early tomorrow.\" B most likely implicates:",
+  "q": "SUE: \"Are you coming to the party?\" BILL: \"I have to work early tomorrow.\" What does Bill most likely implicate?",
   "opts": {
-   "A": "No, B is not coming.",
-   "B": "B does not understand the question.",
-   "C": "B is asking about the time."
+   "A": "No, Bill is not coming.",
+   "B": "Bill does not understand the question.",
+   "C": "Bill is asking about the time."
   },
   "correct": "A"
  },

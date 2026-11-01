@@ -45,6 +45,8 @@
       padding: 7px 0; border-bottom: 1px solid var(--ed-line); }
     .fl-list li:last-child { border-bottom: 0; }
     .fl-list .ex { font: italic 400 17.5px/1.35 'Lora'; color: var(--ed-ink); }
+    .fl-list.mg li { grid-template-columns: 200px 80px 1fr; }
+    .fl-list.mg .imp { grid-column: auto; margin-top: 0; }
     .fl-list .imp { grid-column: 1 / -1; font: 400 14px/1.4 'Lora'; color: var(--ed-muted); margin-top: 2px; }
     .dlg { border-left: 1px solid var(--ed-line); padding-left: 28px; }
     .dlg p { font: italic 400 19px/1.75 'Lora'; margin: 0 0 10px; color: var(--ed-ink); }
@@ -52,8 +54,22 @@
     .dlg .sp { font: 600 11px 'Space Grotesk'; letter-spacing: 0.2em; color: var(--ed-muted);
       font-style: normal; margin-right: 10px; }
     .dlg.obey p { font-size: 17.5px; line-height: 1.5; margin-bottom: 2px; }
-    .dlg .imp { font: 400 16px/1.5 'Lora'; font-style: normal; color: var(--ed-muted); }
-    .dlg .imp b { color: var(--ed-accent); }
+    /* 7번: 함축 대화 블록 — 라벨 칸 + 대사 칸 격자, 블록마다 헤어라인 */
+    .imp-def { border-top: 1px solid var(--ed-line); padding-top: 16px; max-width: 760px;
+      font: 400 18px/1.7 'Lora', 'Noto Serif KR'; color: var(--ed-body); }
+    .imp-set { display: grid; grid-template-columns: 64px 1fr; gap: 2px 14px; align-items: baseline;
+      border-top: 1px solid var(--ed-line); padding-top: 10px; margin-top: 10px; max-width: 760px; }
+    .imp-set .tag { grid-column: 1 / -1; font: 600 11px 'Space Grotesk'; letter-spacing: 0.2em; color: var(--ed-accent); margin-bottom: 4px; }
+    .imp-set .sp { font: 600 11px 'Space Grotesk'; letter-spacing: 0.2em; color: var(--ed-muted); }
+    .imp-set .ln { font: italic 400 19px/1.5 'Lora'; color: var(--ed-ink); }
+    .imp-set .ln .add { font-weight: 600; }
+    .imp-set .imp { font: 400 16px/1.5 'Lora'; color: var(--ed-muted); margin-top: 4px; }
+    .imp-set .imp b { color: var(--ed-accent); }
+    /* 17번: 연습문제 대화 지문 */
+    .mcq-dlg { border-left: 1px solid var(--ed-line); padding-left: 24px; margin: 4px 0 26px; }
+    .mcq-dlg p { font: italic 400 22px/1.6 'Lora'; color: var(--ed-ink); margin: 0 0 4px; }
+    .mcq-dlg .sp { display: inline-block; width: 64px; font: 600 11px 'Space Grotesk'; letter-spacing: 0.2em;
+      color: var(--ed-muted); font-style: normal; }
 
     /* 격률 그리드 — 헤어라인만, 색 상자 없음 */
     .maxim-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px 48px; }
@@ -209,26 +225,28 @@
 <!-- ══ 8 · Implicature ══ -->
 <section data-kicker="CH.4 P.163" data-path="Pragmatics">
   <h2>Implicature</h2>
-  <div class="cols">
-    <div class="def">An <i>implicature</i> is an inference based not only on the utterance, but on what the speaker is trying to convey: <i>a sketch, not a photograph</i>.
-      <span class="ko-supp" style="display:block; margin-top:8px;">함축(implicature)은 발화뿐 아니라 화자가 전하려는 바에 근거한 추론으로, 사진이 아니라 스케치와 같다.</span></div>
-    <div>
-      <div class="dlg">
-        <p><span class="sp">DAD</span>Very nice girl. What do you think, Hon?</p>
-        <p><span class="sp">MOM</span>The turkey sure was moist.</p>
-        <p class="imp">→ Mom <b>implicates</b> that she doesn't particularly like Toni, without saying so.</p>
-      </div>
-      <div class="dlg" style="margin-top:20px;">
-        <p><span class="sp">SUE</span>Does Mary have a boyfriend?</p>
-        <p><span class="sp">BILL</span>She's been driving to Santa Barbara every weekend.</p>
-      </div>
-      <hr class="hair">
-      <p class="lead" style="font-size:17px;">Implicatures are <b>cancellable</b>: "…Toni basted it every ten minutes" cancels the implicature. Entailments cannot be cancelled.</p>
-    </div>
+  <div class="imp-def">An <i>implicature</i> is an inference based not only on the utterance, but on what the speaker is trying to convey: <i>a sketch, not a photograph</i>.
+    <span class="ko-supp" style="display:block; margin-top:6px;">함축(implicature)은 발화뿐 아니라 화자가 전하려는 바에 근거한 추론으로, 사진이 아니라 스케치와 같다.</span></div>
+  <div class="imp-set">
+    <span class="sp">DAD</span><span class="ln">Very nice girl. What do you think, Hon?</span>
+    <span class="sp">MOM</span><span class="ln">The turkey sure was moist.</span>
+    <span></span><span class="imp">→ Mom <b>implicates</b> that she doesn't particularly like Toni, without saying so.</span>
+  </div>
+  <div class="imp-set">
+    <span class="sp">SUE</span><span class="ln">Does Mary have a boyfriend?</span>
+    <span class="sp">BILL</span><span class="ln">She's been driving to Santa Barbara every weekend.</span>
+    <span></span><span class="imp">→ Bill <b>implicates</b> that Mary has a boyfriend, who lives in Santa Barbara.</span>
+  </div>
+  <div class="imp-set">
+    <span class="tag">CANCELLABLE</span>
+    <span class="sp">MOM</span><span class="ln">The turkey sure was moist. <span class="add">Toni basted it every ten minutes.</span></span>
+    <span></span><span class="imp">→ The added sentence <b>cancels</b>, or at least weakens, the implicature.</span>
   </div>
   <aside class="notes">
     함축은 발화 + 화자의 의도에 대한 추론입니다. 교재의 칠면조 대화가 핵심 예 — 문자적 요약과
-    실제 전달 의미의 간극을 보여주세요. 추가 정보로 취소 가능하다는 점이 함의(entailment)와의
+    실제 전달 의미의 간극을 보여주세요. 둘째 대화(p.165)에서 Bill은 Mary가 매주 Santa Barbara에 간다고만 말하지만
+    남자 친구가 있고 그가 그곳에 산다는 것을 함축합니다. 셋째 블록(p.167): 엄마가 한 문장을 덧붙이면 칭찬의 이유가
+    생겨 함축이 취소되거나 약해집니다. 추가 정보로 취소 가능하다는 점이 함의(entailment)와의
     결정적 차이입니다(Jon killed Jim의 함의는 무슨 말을 해도 취소 불가).
   </aside>
 </section>
@@ -262,41 +280,48 @@
   <h2>Maxims of Discourse</h2>
   <div class="cols-even">
     <div>
-      <div class="small-label" style="margin-bottom:12px;">VIOLATE · QUIETLY UNCOOPERATIVE</div>
+      <div class="small-label" style="margin-bottom:12px;">VIOLATE · TO BE UNCOOPERATIVE</div>
       <hr class="hair" style="margin:0 0 12px;">
-      <p class="vf-def">A speaker breaks a maxim simply to be uncooperative; nothing is implicated.
-        <span class="ko-supp">협력하지 않으려고 격률을 어기는 것이며, 함축은 생기지 않는다.</span></p>
+      <p class="vf-def">A maxim is violated when a speaker chooses to be uncooperative, for whatever reason.
+        <span class="ko-supp">어떤 이유로든 협력하지 않기로 한 화자가 격률을 어기는 것이다.</span></p>
       <div class="dlg2">
         <span class="sp">POLONIUS</span><span class="ln">What do you read, my lord?</span>
         <span class="sp">HAMLET</span><span class="ln">Words, words, words.</span>
       </div>
-      <p class="vf-why"><span class="mx">QUANTITY</span>Feigning madness, Hamlet gives too little information.</p>
+      <p class="vf-why"><span class="mx">QUANTITY</span>Feigning insanity, Hamlet gives too little information.</p>
     </div>
     <div>
-      <div class="small-label" style="margin-bottom:12px;">FLOUT · OPENLY, TO IMPLICATE</div>
+      <div class="small-label" style="margin-bottom:12px;">FLOUT · IN ORDER TO IMPLICATE</div>
       <hr class="hair" style="margin:0 0 12px;">
-      <p class="vf-def">A speaker breaks a maxim on purpose, so the hearer notices and computes an implicature.
-        <span class="ko-supp">격률을 일부러 어겨, 청자가 알아채고 함축을 계산하게 하는 것이다.</span></p>
+      <p class="vf-def">To flout a maxim is to choose not to follow it in order to implicate something.
+        <span class="ko-supp">무언가를 함축하려고 격률을 따르지 않기로 하는 것이다.</span></p>
       <ul class="fl-list">
         <li><span class="ex">Words, words, words.</span><span class="mx">QUANTITY</span>
           <span class="imp">→ same reply, sane Hamlet: he doesn't want Polonius to know</span></li>
         <li><span class="ex">The turkey sure was moist.</span><span class="mx">RELATION</span>
           <span class="imp">→ Mom doesn't like the girl</span></li>
-        <li><span class="ex">Can you pass the salt?</span><span class="mx">QUANTITY</span>
-          <span class="imp">→ a request for the salt</span></li>
-        <li><span class="ex">It's cold in here.</span><span class="mx">RELATION</span>
-          <span class="imp">→ to someone by an open window: close it</span></li>
       </ul>
     </div>
   </div>
+  <hr class="hair" style="margin:20px 0 10px;">
+  <div class="small-label" style="margin-bottom:4px;">THE MAXIMS ALSO GUIDE INTERPRETATION</div>
+  <ul class="fl-list mg">
+    <li><span class="ex">Can you pass the salt?</span><span class="mx">QUANTITY</span>
+      <span class="imp">→ answering "Yes, I can" would state the obvious: a request</span></li>
+    <li><span class="ex">It's cold in here.</span><span class="mx">RELATION</span>
+      <span class="imp">→ why else say it to the person by the open window? Close it</span></li>
+  </ul>
   <aside class="notes">
-    교재 pp.166–167. 왼쪽: 격률 위반(violate)은 협력할 생각이 없어서 어기는 것으로 함축이 없습니다.
+    교재 pp.166–167. 왼쪽: 격률 위반(violate)은 어떤 이유로든 협력하지 않기로 해서 어기는 것입니다.
     햄릿(2막 2장)은 미친 척하며 Words, words, words로 너무 적게 답합니다(양의 격률). 교재 원문의 대화는 더 이어지는데,
     마지막 긴 대답(Slanders, sir…)은 반대로 너무 많이 말해 양의 격률을 양쪽으로 어기며(태도의 격률 위반으로도 볼 수 있음),
     What is the matter를 '두 사람 사이의 문제'로 받아친 것은 관계의 격률 위반입니다.
     오른쪽: 무시(flout)는 일부러 어겨 함축을 만드는 것. 같은 Words, words, words도 제정신인 햄릿이 말하면
     '무엇을 읽는지 알리고 싶지 않다'는 함축이 됩니다. 이 대비가 이 슬라이드의 핵심입니다.
-    The turkey sure was moist(관계), Can you pass the salt?(양: 문자적으로 답하면 뻔한 말), It's cold in here(관계: 창가의 사람에게 하는 말이라 '닫아 달라')는 교재 p.167의 예입니다.
+    The turkey sure was moist는 교재가 관계의 격률을 무시(flout)한 예로 명시합니다(pp.166–167).
+    아래 줄의 두 예는 flout의 예가 아닙니다(p.167). Can you pass the salt?는 묻는 사람이 격률을 어기는 것이 아니라,
+    문자적으로 "Yes, I can"이라고 답하면 뻔한 말을 하게 되어 양의 격률 위반이 되므로 청자가 질문의 이유를 찾아 요청으로 이해한다는 설명입니다.
+    It's cold in here는 관계의 격률이 해석을 이끄는 예입니다. 창가의 그 사람에게 굳이 말한 이유를 생각하면 '닫아 달라'가 됩니다.
   </aside>
 </section>
 
@@ -457,16 +482,20 @@
 <!-- ══ 16 · Practice Q2 ══ -->
 <section data-kicker="CH.4 · PRACTICE 02">
   <div class="mcq" data-qid="w10-q2">
-    <div class="mcq-q"><span class="qnum">Q2</span>A: "<em>Are you coming to the party?</em>" B: "<em>I have to work early tomorrow.</em>" B most likely implicates:</div>
-    <div class="mcq-opts">
-      <button class="mcq-opt" data-correct="true"><span class="opt-key">A</span>No, B is not coming.</button>
-      <button class="mcq-opt"><span class="opt-key">B</span>B does not understand the question.</button>
-      <button class="mcq-opt"><span class="opt-key">C</span>B is asking about the time.</button>
+    <div class="mcq-dlg">
+      <p><span class="sp">SUE</span>Are you coming to the party?</p>
+      <p><span class="sp">BILL</span>I have to work early tomorrow.</p>
     </div>
-    <div class="mcq-explain"><span class="lbl">Explanation</span>Assuming B is being relevant (maxim of Relation), the hearer infers a reason for declining → the conversational implicature "No." The literal words never say "no."</div>
+    <div class="mcq-q"><span class="qnum">Q2</span>What does Bill most likely implicate?</div>
+    <div class="mcq-opts">
+      <button class="mcq-opt" data-correct="true"><span class="opt-key">A</span>No, Bill is not coming.</button>
+      <button class="mcq-opt"><span class="opt-key">B</span>Bill does not understand the question.</button>
+      <button class="mcq-opt"><span class="opt-key">C</span>Bill is asking about the time.</button>
+    </div>
+    <div class="mcq-explain"><span class="lbl">Explanation</span>Sue assumes Bill is being relevant (maxim of Relation), so she takes his early start as a reason for declining. The implicature is "No," though his words never say so.</div>
   </div>
   <aside class="notes">
-    관계 격률을 전제로 함축을 추론하는 전형적 예입니다. 문자적 의미와 함축된 의미의 차이를 강조하세요.
+    관계 격률을 전제로 함축을 추론하는 전형적 예입니다(교재 p.164의 SUE·BILL 대화와 같은 구조). 문자적 의미와 함축된 의미의 차이를 강조하세요.
   </aside>
 </section>
 
