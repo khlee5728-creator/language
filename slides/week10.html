@@ -26,7 +26,7 @@
       font: italic 400 15px 'Lora'; color: var(--ed-muted); }
 
     /* 대화(담화) 스택 */
-    /* 4번 직시어 세로 목록 · 6번 예문 설명 */
+    /* 4번 직시어 세로 목록 */
     .word-row.deix { gap: 40px; }
     .word-row.deix .w b { font-size: 24px; line-height: 1.32; }
     /* 4번: 명시 vs 직시 대응 */
@@ -35,7 +35,17 @@
     .vz .ln { font: italic 400 17.5px/1.45 'Lora'; color: var(--ed-ink); }
     .vz .ln b { font-weight: 600; }
     .vz .imp { font: 400 16px/1.5 'Lora'; color: var(--ed-muted); margin-top: 2px; }
-    .exlist .exnote { display: block; margin-top: 2px; font: 400 14px 'Lora'; color: var(--ed-muted); }
+    /* 6번: 언어적 맥락 두 갈래(문장 안 · 문장 밖), 교재 예문 번호 */
+    .lc { display: grid; grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr); gap: 28px; }
+    .lc-col { border-top: 1px solid var(--ed-line); padding-top: 10px; }
+    .lc-tag { font: 600 11px 'Space Grotesk'; letter-spacing: 0.18em; color: var(--ed-accent); margin-bottom: 8px; }
+    .lc-def { font: 400 16px/1.5 'Lora'; color: var(--ed-body); margin: 0 0 8px; }
+    .lc-it { display: grid; grid-template-columns: 34px 1fr; gap: 0 4px; align-items: baseline; margin-bottom: 7px; }
+    .lc-it .no { font: 600 11px 'Space Grotesk'; letter-spacing: 0.08em; color: var(--ed-muted); }
+    .lc-it .ln { font: italic 400 16px/1.42 'Lora'; color: var(--ed-ink); margin: 0; }
+    .lc-it .ln b { font-weight: 600; }
+    .lc-it .sp { display: inline-block; width: 46px; font: 600 10.5px 'Space Grotesk'; font-style: normal; letter-spacing: 0.16em; color: var(--ed-muted); }
+    .lc-it .nt { font: 400 14px/1.4 'Lora'; color: var(--ed-muted); margin: 1px 0 0; }
     /* 9번: violate vs flout 대비 */
     .vf-def { font: 400 17px/1.5 'Lora','Noto Serif KR'; color: var(--ed-body); margin: 0 0 14px; }
     .vf-def .ko-supp { display: block; margin-top: 4px; font-size: 17px; }
@@ -204,31 +214,36 @@
   </aside>
 </section>
 
-<!-- ══ 7 · Linguistic context ══ -->
+<!-- ══ 6 · Linguistic context ══ -->
 <section data-kicker="CH.4 P.162" data-path="Pragmatics › Pronouns and Other Deictic Words">
   <h2 style="font-size:40px;">Pronouns and Linguistic Context</h2>
-  <div class="cols">
-    <div class="def"><i>Reflexive pronouns</i> (&#8209;self/&#8209;selves) need a sentence-internal <b>antecedent</b>: matching in person, gender, number, and in the right position.
-      <span class="ko-supp" style="display:block; margin-top:8px;">재귀대명사(-self/-selves)는 인칭·성·수가 일치하고 올바른 위치에 있는, 문장 안의 선행사(antecedent)를 필요로 한다.</span></div>
-    <div>
-      <ul class="exlist" style="font-size:0.9em; display:block;">
-        <li><span class="no star">a *</span><span>I saw Mary. Herself left.<span class="exnote">No antecedent in the sentence</span></span></li>
-        <li><span class="no star">b *</span><span>John wrote herself a letter.<span class="exnote">Features must match</span></span></li>
-        <li><span class="no star">c *</span><span>Himself washed John.<span class="exnote">Antecedent cannot follow</span></span></li>
-        <li><span class="no star">d *</span><span>Jane said the boy bit herself.<span class="exnote">No NP may intervene</span></span></li>
-      </ul>
-      <hr class="hair">
-      <div class="gloss-set">
-        <div class="langlab">ACROSS SENTENCES · REFERENCE RESOLUTION</div>
-        <div class="sent" style="font-size:22px;">Sue likes pizza. <b>She</b> thinks <b>it</b> is the perfect food.</div>
-        <div class="tr"><em>she</em>는 선행사 <em>Sue</em>와, <em>it</em>은 <em>pizza</em>와 공지시(co-refer)한다.</div>
-      </div>
+  <p class="lead" style="font-size:17px; margin:0 0 14px;">Linguistic context resolves the reference of a pronoun in two ways: <b>sentence-internally</b> or <b>sentence-externally</b>.
+    <span class="ko-supp" style="display:block; margin-top:4px;">언어적 맥락은 문장 안에서, 또는 문장 밖에서 대명사의 지시를 정한다.</span></p>
+  <div class="lc">
+    <div class="lc-col">
+      <div class="lc-tag">SENTENCE-INTERNAL · REFLEXIVE PRONOUNS</div>
+      <p class="lc-def"><i>-self/-selves</i> needs an <b>antecedent</b> in the same sentence, nearby in the right way.</p>
+      <div class="lc-it"><span class="no">(1a)</span><div><p class="ln">*I saw Mary. Herself left.</p><p class="nt">no antecedent in the sentence</p></div></div>
+      <div class="lc-it"><span class="no">(1b)</span><div><p class="ln">*John wrote herself/themselves a letter.</p><p class="nt">person, gender, number must match</p></div></div>
+      <div class="lc-it"><span class="no">(2a)</span><div><p class="ln">*Himself washed John.</p><p class="nt">the antecedent cannot follow</p></div></div>
+      <div class="lc-it"><span class="no">(2b)</span><div><p class="ln">*Jane said the boy bit herself.</p><p class="nt">no other NP may come in between</p></div></div>
+    </div>
+    <div class="lc-col">
+      <div class="lc-tag">SENTENCE-EXTERNAL · NONREFLEXIVE PRONOUNS</div>
+      <div class="lc-it"><span class="no">(3)</span><div><p class="ln"><b>Sue</b> likes <b>pizza</b>. <b>She</b> thinks <b>it</b> is the perfect food.</p><p class="nt">the antecedent is in a preceding sentence</p></div></div>
+      <div class="lc-it"><span class="no">(4)</span><div><p class="ln"><span class="sp">SUE</span>I just got back from <b>Rome</b>.</p><p class="ln"><span class="sp">MARY</span>I've always wanted to go <b>there</b>!</p><p class="nt">the antecedent is in another speaker's utterance</p></div></div>
+      <div class="lc-it"><span class="no">(5)</span><div><p class="ln"><span class="sp">JOHN</span>It seems that <b>the man</b> loves <b>the woman</b>.</p><p class="ln"><span class="sp">BILL</span>Many people think <b>he</b> loves <b>her</b>.</p><p class="nt">Stress <i>her</i>: situational context now resolves it (Bill points at another woman).</p></div></div>
     </div>
   </div>
+  <hr class="hair" style="margin:14px 0 8px;">
+  <p class="lead" style="font-size:16px; margin:0;">Reference is constrained by gender and number marking, reflexivity, and context.</p>
   <aside class="notes">
-    재귀대명사는 문장 내부의 선행사를, 그것도 올바른 위치의 선행사를 요구합니다(a–d).
-    비재귀 대명사는 다른 문장·다른 화자의 발화 속 선행사와도 공지시 가능(Sue… She… it).
-    강세를 주면(her 강조) 상황 맥락으로 지시가 넘어가는 것도 흥미로운 포인트.
+    교재 pp.162–163. 언어적 맥락으로 대명사의 지시를 정하는 두 갈래를 좌우로 나눴습니다.
+    왼쪽: 재귀대명사는 문장 안의 선행사가 있어야 하고(1a), 인칭·성·수가 맞아야 하며(1b),
+    선행사가 뒤에 오거나(2a) 사이에 다른 명사구가 끼면(2b) 안 됩니다. 곧 '가까이, 알맞은 자리에' 있어야 합니다.
+    오른쪽: 비재귀 대명사는 앞 문장(3), 다른 화자의 발화(4)에서도 선행사를 찾습니다.
+    (5)를 소리 내어 읽되 her에 강세를 주면, Bill이 방 건너편의 다른 여성을 가리키는 상황처럼 상황 맥락으로 지시가 넘어갑니다.
+    맨 아래 줄은 섹션의 결론: 성·수 표지, 재귀 여부, 언어·상황 맥락이 함께 지시를 제약합니다.
   </aside>
 </section>
 
