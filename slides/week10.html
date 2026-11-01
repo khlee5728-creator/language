@@ -29,6 +29,12 @@
     /* 4번 직시어 세로 목록 · 6번 예문 설명 */
     .word-row.deix { gap: 40px; }
     .word-row.deix .w b { font-size: 24px; line-height: 1.32; }
+    /* 4번: 명시 vs 직시 대응 */
+    .vz { display: grid; grid-template-columns: 104px 1fr; gap: 4px 12px; align-items: baseline; }
+    .vz .tag { font: 600 11px 'Space Grotesk'; letter-spacing: 0.18em; color: var(--ed-muted); }
+    .vz .ln { font: italic 400 17.5px/1.45 'Lora'; color: var(--ed-ink); }
+    .vz .ln b { font-weight: 600; }
+    .vz .imp { font: 400 16px/1.5 'Lora'; color: var(--ed-muted); margin-top: 2px; }
     .exlist .exnote { display: block; margin-top: 2px; font: 400 14px 'Lora'; color: var(--ed-muted); }
     /* 9번: violate vs flout 대비 */
     .vf-def { font: 400 17px/1.5 'Lora','Noto Serif KR'; color: var(--ed-body); margin: 0 0 14px; }
@@ -148,28 +154,32 @@
 <!-- ══ 4 · Deictic words ══ -->
 <section data-kicker="CH.4 P.160" data-path="Pragmatics">
   <h2 style="font-size:40px;">Pronouns and Other Deictic Words</h2>
-  <div class="cols">
+  <div class="cols" style="grid-template-columns:minmax(0,1fr) 262px; gap:36px;">
     <div class="def"><i>Deictic</i> words take part of their meaning from context and the <i>orientation of the speaker</i>: pronouns, demonstratives, adverbs, prepositions.
       <span class="ko-supp" style="display:block; margin-top:8px;">직시(deixis) 표현인 대명사·지시사·부사·전치사는 의미의 일부를 맥락과 화자의 정향에서 얻는다.</span></div>
     <div>
-      <div class="word-row deix" style="margin-top:0; padding-top:0; border-top:0;">
+      <div class="word-row deix" style="margin-top:0; padding-top:0; border-top:0; gap:28px;">
         <div class="w"><b>I<br>you<br>she</b><span>PERSON</span></div>
         <div class="w"><b>here<br>this<br>that</b><span>PLACE</span></div>
         <div class="w"><b>now<br>today<br>tomorrow</b><span>TIME</span></div>
       </div>
-      <hr class="hair">
-      <p class="lead" style="font-size:17px;"><span class="rel-line" style="margin-top:0;">Natural: "<em>I really like it in Venice. Today there was a boat parade here.</em>"</span>
-        <span class="rel-line">Bizarre: "<em>Taylor Swift… on September 16, 2016, in Venice, Italy…</em>"</span>
-        <span class="rel-line" style="margin-top:8px;"><b>We speak in shortcuts.</b></span></p>
     </div>
   </div>
-  <hr class="hair" style="margin:14px 0 10px;">
+  <hr class="hair" style="margin:16px 0 10px;">
+  <div class="small-label" style="margin-bottom:6px;">SPOKEN BY TAYLOR SWIFT IN VENICE ON SEPTEMBER 16, 2016</div>
+  <div class="vz">
+    <span class="tag">EXPLICIT (1)</span><span class="ln"><b>Taylor Swift</b> really likes it in Venice, Italy. <b>On September 16, 2016</b>, there was a boat parade in the canals <b>in Venice, Italy</b>.</span>
+    <span class="tag">DEICTIC (2)</span><span class="ln"><b>I</b> really like it in Venice. <b>Today</b> there was a boat parade in the canals <b>here</b>.</span>
+    <span></span><span class="imp">→ (2) sounds far more natural: we are used to these shortcuts.</span>
+  </div>
+  <hr class="hair" style="margin:12px 0 10px;">
   <p class="lead" style="font-size:17px; margin:0;"><b>Reference resolution</b> draws on two kinds of context: <b>linguistic</b> (what has been said) and <b>situational</b> (nonlinguistic knowledge).
-    <span class="ko-supp" style="display:block; margin-top:6px;">대명사의 지시 대상을 찾는 지시 해소(reference resolution)에는 언어적 맥락과 상황적 맥락이 쓰인다.</span></p>
+    <span class="ko-supp" style="display:block; margin-top:4px;">지시 해소(reference resolution)에는 언어적 맥락과 상황적 맥락이 쓰인다.</span></p>
   <aside class="notes">
     직시어: 대명사(she, it, I), 지시사(this, that), 부사(here, there, now, today), 전치사(behind, before).
-    교재의 Taylor Swift 베네치아 예 — 완전 명시 버전(1)과 직시 버전(2)을 대비하면 직시가 얼마나
-    기본값인지 드러납니다. 직시어마다 지시할 수 있는 대상의 종류는 정해져 있습니다(p.161): here/there는 장소, now/then은 시간,
+    교재의 Taylor Swift 베네치아 예(p.160): 같은 장면을 지나치게 명시적으로 말한 (1)과 직시어로 말한 (2)를 대비하면
+    직시가 얼마나 기본값인지 드러납니다. 굵게 표시한 짝(Taylor Swift↔I, On September 16, 2016↔Today, in Venice, Italy↔here)을 짚어 주세요.
+    교재는 (1)을 틀린 문장이 아니라 "extremely explicit"하다고 하며, (2)가 훨씬 자연스럽다고 설명합니다. 직시어마다 지시할 수 있는 대상의 종류는 정해져 있습니다(p.161): here/there는 장소, now/then은 시간,
     this/that은 이미 언급되었거나 알려진 것, he/she는 사람, I는 화자만 지시할 만큼 제약적입니다. 그래도 실제 지시 대상은 맥락으로 정해집니다. 용어: 직시 표현의 지시 대상을 찾는 일이 지시 해소(reference resolution)이며, 맥락은 언어적·상황적 두 종류(다음 두 슬라이드).
   </aside>
 </section>
