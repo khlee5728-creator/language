@@ -62,6 +62,18 @@
     .fl-list li:last-child { border-bottom: 0; }
     .fl-list .ex { font: italic 400 17.5px/1.35 'Lora'; color: var(--ed-ink); }
     .fl-list.mg li { grid-template-columns: 200px 80px 1fr; }
+    /* 전제: 예문 목록 + 함의·전제·함축 비교표 (기본 테마를 이기도록 .reveal table.ps-cmp) */
+    .fl-list.ps li { grid-template-columns: 1fr; padding: 6px 0; }
+    .fl-list.ps .ex { font-size: 17px; }
+    .reveal table.ps-cmp { width: 100%; border-collapse: collapse; margin: 18px 0 0; table-layout: fixed; }
+    .reveal table.ps-cmp th { font: 600 10.5px 'Space Grotesk'; letter-spacing: 0.18em; color: var(--ed-accent); text-align: left;
+      white-space: nowrap; background: none; border: 0; border-bottom: 1px solid var(--ed-line); padding: 4px 12px 4px 0; }
+    .reveal table.ps-cmp td { font: 400 14.5px/1.4 'Lora'; color: var(--ed-body); text-align: left; vertical-align: top;
+      background: none; border: 0; border-bottom: 1px solid var(--ed-line); padding: 7px 12px 7px 0; }
+    .reveal table.ps-cmp th:first-child, .reveal table.ps-cmp td:first-child { width: 118px; }
+    .reveal table.ps-cmp td:first-child { font: 600 10.5px 'Space Grotesk'; letter-spacing: 0.16em; color: var(--ed-muted); padding-top: 10px; }
+    .reveal table.ps-cmp td i { color: var(--ed-ink); }
+    .reveal table.ps-cmp td.na { color: var(--ed-muted); }
     .fl-list.mg .imp { grid-column: auto; margin-top: 0; }
     .fl-list .imp { grid-column: 1 / -1; font: 400 14px/1.4 'Lora'; color: var(--ed-muted); margin-top: 2px; }
     .dlg { border-left: 1px solid var(--ed-line); padding-left: 28px; }
@@ -90,10 +102,9 @@
     /* 격률 그리드 — 헤어라인만, 색 상자 없음 */
     .maxim-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px 48px; }
     .maxim-grid .mc { border-top: 1px solid var(--ed-line); padding-top: 12px;
-      font: 300 16.5px/1.65 'Noto Serif KR'; color: var(--ed-body); }
+      font: 400 16.5px/1.6 'Lora', 'Noto Serif KR'; color: var(--ed-body); }
     .maxim-grid .mc b { display: block; font: 600 12px 'Space Grotesk'; letter-spacing: 0.2em;
       text-transform: uppercase; color: var(--ed-accent); margin-bottom: 6px; }
-    .maxim-grid .mc i { font: italic 400 16.5px 'Lora'; }
 
     /* 보충(교재 밖) 슬라이드 */
     .enrich { border-top: 1px solid var(--ed-line); border-bottom: 1px solid var(--ed-line);
@@ -150,14 +161,15 @@
       <span class="ko-supp" style="display:block; margin-top:8px;">화용론(pragmatics)은 진리조건 너머의 의미, 곧 화자가 대화와 담화에서 문자적 의미를 어떻게 쓰는지를 연구한다.</span></div>
     <div class="quote-stack">
       <p>An utterance is as sketchy as a Rembrandt drawing: <b>hearers fill in the gaps</b> <span style="font-style:normal; font-size:0.75em; color:var(--ed-muted);">(Levinson 2000)</span>.</p>
-      <p>Is <i>It's cold in here</i> a statement, or a request to close the window?</p>
-      <p>Interpretation depends on <b>who, where, when, and why</b>.</p>
+      <p>Lexical and compositional semantics give <b>literal meaning</b>, stated in truth conditions; it is not the only meaning we use.</p>
+      <p>Like an artist who sketches, a speaker uses sentences that are not 100 percent explicit, and has <b>reasons</b> for each choice.</p>
     </div>
   </div>
   <aside class="notes">
-    화용론과 의미론의 경계를 분명히 하세요. 교재는 렘브란트 스케치의 비유로 시작합니다 — 발화는
-    장면의 '스냅사진'이 아니라 스케치이고, 청자가 여백을 채웁니다. "It's cold in here"처럼 형식은
-    진술문이지만 기능은 요청일 수 있다는 점이 화용론의 출발점입니다.
+    교재 pp.159–160. 화용론과 의미론의 경계를 분명히 하세요. 교재는 렘브란트 스케치의 비유로 시작합니다. 발화는
+    장면의 '스냅사진'이 아니라 스케치이고, 청자가 여백을 채웁니다. 앞에서 다룬 어휘 의미론과 합성 의미론은
+    진리조건으로 기술되는 문자적 의미였는데, 의사소통에는 그 밖의 의미(extra-truth-conditional)도 쓰입니다.
+    화가가 사진 대신 스케치를 고르듯 화자도 이유가 있어 덜 명시적인 문장을 고릅니다. 이어지는 섹션들이 그 방식들입니다.
   </aside>
 </section>
 
@@ -189,13 +201,13 @@
     직시어: 대명사(she, it, I), 지시사(this, that), 부사(here, there, now, today), 전치사(behind, before).
     교재의 Taylor Swift 베네치아 예(p.160): 같은 장면을 지나치게 명시적으로 말한 (1)과 직시어로 말한 (2)를 대비하면
     직시가 얼마나 기본값인지 드러납니다. 굵게 표시한 짝(Taylor Swift↔I, On September 16, 2016↔Today, in Venice, Italy↔here)을 짚어 주세요.
-    교재는 (1)을 틀린 문장이 아니라 "extremely explicit"하다고 하며, (2)가 훨씬 자연스럽다고 설명합니다. 직시어마다 지시할 수 있는 대상의 종류는 정해져 있습니다(p.161): here/there는 장소, now/then은 시간,
+    교재는 (1)을 틀린 문장이 아니라 "extremely explicit"하다고 하며, (2)가 훨씬 자연스럽다고 설명합니다.
+    Taylor Swift, September 16, 2016 같은 고유명사는 맥락과 무관하게 늘 같은 대상을 가리키지만, here, tomorrow, this 같은 직시어는 맥락이 있어야 지시 대상이 정해집니다(p.160). 직시어마다 지시할 수 있는 대상의 종류는 정해져 있습니다(p.161): here/there는 장소, now/then은 시간,
     this/that은 이미 언급되었거나 알려진 것, he/she는 사람, I는 화자만 지시할 만큼 제약적입니다. 그래도 실제 지시 대상은 맥락으로 정해집니다. 용어: 직시 표현의 지시 대상을 찾는 일이 지시 해소(reference resolution)이며, 맥락은 언어적·상황적 두 종류(다음 두 슬라이드).
   </aside>
 </section>
 
-<!-- ══ 5 · Figure: anchored to the speaker ══ -->
-<!-- ══ 6 · Situational context ══ -->
+<!-- ══ 5 · Situational context ══ -->
 <section data-kicker="CH.4 P.161" data-path="Pragmatics › Pronouns and Other Deictic Words">
   <h2 style="font-size:40px;">Pronouns and Situational Context</h2>
   <div class="quote-stack" style="max-width:760px; font-size:0.95em;">
@@ -247,7 +259,7 @@
   </aside>
 </section>
 
-<!-- ══ 8 · Implicature ══ -->
+<!-- ══ 7 · Implicature ══ -->
 <section data-kicker="CH.4 P.163" data-path="Pragmatics">
   <h2>Implicature</h2>
   <div class="imp-def">An <i>implicature</i> is an inference based not only on the utterance, but on what the speaker is trying to convey: <i>a sketch, not a photograph</i>.
@@ -268,7 +280,7 @@
     <span></span><span class="imp">→ The added sentence <b>cancels</b>, or at least weakens, the implicature.</span>
   </div>
   <aside class="notes">
-    함축은 발화 + 화자의 의도에 대한 추론입니다. 교재의 칠면조 대화가 핵심 예 — 문자적 요약과
+    함축은 발화 + 화자의 의도에 대한 추론입니다. 교재의 칠면조 대화가 핵심 예입니다. 문자적 요약과
     실제 전달 의미의 간극을 보여주세요. 둘째 대화(p.165)에서 Bill은 Mary가 매주 Santa Barbara에 간다고만 말하지만
     남자 친구가 있고 그가 그곳에 산다는 것을 함축합니다. 셋째 블록(p.167): 엄마가 한 문장을 덧붙이면 칭찬의 이유가
     생겨 함축이 취소되거나 약해집니다. 추가 정보로 취소 가능하다는 점이 함의(entailment)와의
@@ -276,18 +288,18 @@
   </aside>
 </section>
 
-<!-- ══ 9 · Maxims of Discourse ══ -->
+<!-- ══ 8 · Maxims of Discourse ══ -->
 <section data-kicker="CH.4 P.165" data-path="Pragmatics › Implicature">
   <h2>Maxims of Discourse</h2>
-  <p class="lead" style="font-size:17px; margin-bottom:18px;">Grice: implicatures are calculable because speakers follow, and assume others follow, implicit <em>maxims</em>, known en masse as the <b>cooperative principle</b>.</p>
+  <p class="lead" style="font-size:17px; margin-bottom:18px;">Grice: implicatures are calculable because speakers follow, and assume others follow, implicit <b>maxims</b>, known en masse as the <b>cooperative principle</b>.
+    <span class="ko-supp" style="display:block; margin-top:4px;">Grice: 화자들이 격률(maxims)을 따르고 서로 그렇게 가정하기에 함축을 계산할 수 있으며, 이를 통틀어 협력 원리(cooperative principle)라 한다.</span></p>
   <div class="maxim-grid">
     <div class="mc"><b>Quality · Truth</b>Do not say what you believe to be false, or what you lack adequate evidence for.</div>
-    <div class="mc"><b>Quantity · Information</b>Be as informative as required: <i>no more, no less</i>.</div>
+    <div class="mc"><b>Quantity · Information</b>Be as informative as required: no more, no less.</div>
     <div class="mc"><b>Relation · Relevance</b>Be relevant to the matter under discussion.</div>
     <div class="mc"><b>Manner · Clarity</b>Avoid obscurity, ambiguity, wordiness; be orderly.</div>
   </div>
-  <p class="ko-supp" style="font-size:16.5px; margin-top:16px;">Grice의 협력 원리(cooperative principle): 화자들이 질·양·관계·태도의 격률(maxims)을 따르고 서로 그렇게 가정하기에 함축을 계산할 수 있다.</p>
-  <hr class="hair" style="margin:14px 0 10px;">
+  <hr class="hair" style="margin:18px 0 10px;">
   <p class="lead" style="font-size:17px; margin:0 0 6px;">A maxim is <b>obeyed</b> in a literal discourse, with no implicature:</p>
   <div class="dlg obey">
     <p><span class="sp">DAD</span>Very nice girl. What do you think, Hon?</p>
@@ -300,7 +312,7 @@
   </aside>
 </section>
 
-<!-- ══ 10 · Violate vs Flout ══ -->
+<!-- ══ 9 · Violate vs Flout ══ -->
 <section data-kicker="CH.4 P.166" data-path="Pragmatics › Implicature">
   <h2>Maxims of Discourse</h2>
   <div class="cols-even">
@@ -350,26 +362,64 @@
   </aside>
 </section>
 
+<!-- ══ 10 · Cartoon: Can you pass the salt? (p.167) ══ -->
+<section data-kicker="CH.4 P.167 · CARTOON">
+  <div class="video-scene" style="text-align:center;">
+    <div class="video-stage">
+      <video src="assets/media/w10_toon_speechacts.mp4" preload="metadata" playsinline></video>
+      <span class="cue sub" data-start="2.3" data-end="4.0"><b>Can you</b> pass the salt? <span class="ko">소금 좀 건네줄 수 있어?</span></span>
+      <span class="cue sub" data-start="4.0" data-end="6.6">Yes, I <b>can</b>! <span class="ko">응, 할 수 있어! (…그리고 안 건넴)</span><span class="gl">…AND THEN HE DOES NOT MOVE</span></span>
+      <span class="cue sub" data-start="12.55" data-end="13.95">Here you go! <span class="ko">여기 있어!</span><span class="gl">"CAN YOU…?" = A REQUEST, NOT A QUESTION</span></span>
+      <span class="cue think" data-start="14.2" data-end="18.0" style="left:50%; top:6%; translate:-50% 0; --rot:-1deg;">Humans never mean what they say.<span class="ko">인간은 말한 대로 뜻하는 법이 없어.</span></span>
+    </div>
+    <div class="video-fallback">
+      <p class="lead">"Can you pass the salt?"에 문자 그대로 "Yes, I can"이라고만 답하면 뻔한 말만 하는 양의 격률 위반이 된다. 그래서 청자는 요청으로 이해한다(p.167).</p>
+    </div>
+  </div>
+  <aside class="notes">
+    소금 콩트: 주황의 "Can you pass the salt?"에 보라가 문자적으로 "Yes, I can!"만 하고 소금통에
+    손을 얹은 채 가만히 있습니다. 민트가 한숨 쉬며 대신 건네고, 테이블 아래 강아지가 체념합니다.
+    교재 p.167의 설명: 문자 그대로 답하면 뻔한 것을 말하게 되어 양의 격률을 어기므로, 청자는 질문한 이유를 찾아
+    요청으로 이해합니다. 바로 앞 슬라이드 아래 줄의 첫 예와 같습니다.
+    ▶ Play를 눌러야 재생됩니다(음성 포함).
+  </aside>
+</section>
+
 <!-- ══ 11 · Presupposition ══ -->
 <section data-kicker="CH.4 P.167" data-path="Pragmatics">
   <h2>Presupposition</h2>
   <div class="cols">
-    <div class="def"><i>Presuppositions</i>: situations that must exist for an utterance to be <b>appropriate</b>.
-      <span class="ko-supp" style="display:block; margin-top:8px;">전제(presupposition)는 발화가 적절하려면 성립해야 하는 상황이다.</span>
-      <hr class="hair" style="margin:16px 0 12px;">
-      <p class="lead" style="font-size:17px; margin:0;">Unlike <b>entailments</b>, presuppositions survive negation: <i>Jon killed Jim</i> entails that Jim died; <i>Jon did not kill Jim</i> does not.
-        <span class="ko-supp" style="display:block; margin-top:6px;">함의(entailment)는 부정하면 사라지지만 전제는 부정해도 남는다.</span></p></div>
-    <div class="quote-stack">
-      <p><i>The present King of France is bald</i> is grammatical and meaningful, yet <i>inappropriate</i>: France has no king.</p>
-      <p><i>Have you stopped hugging your border collie?</i> presupposes that you hugged it.</p>
-      <p>Presuppositions <b>hold up under negation</b>: <i>I am not sorry that the team lost</i> still presupposes the team lost.</p>
-      <p>Unlike implicatures, they <b>cannot be cancelled</b>: "<i>…oh, the team didn't lose after all</i>" is incongruous.</p>
-    </div>
+    <div class="def"><i>Presuppositions</i>: situations that must exist for an utterance to be <b>appropriate</b>. Speakers take them for granted.
+      <span class="ko-supp" style="display:block; margin-top:8px;">전제(presupposition)는 발화가 적절하려면 성립해야 하는 상황이며, 화자는 이를 당연하게 여긴다.</span></div>
+    <ul class="fl-list ps">
+      <li><span class="ex">The present King of France is bald.</span>
+        <span class="imp">→ there is presently a king of France; grammatical and meaningful, yet inappropriate</span></li>
+      <li><span class="ex">Have you stopped hugging your border collie?</span>
+        <span class="imp">→ you hugged your border collie</span></li>
+      <li><span class="ex">The river Avon runs through Stratford.</span>
+        <span class="imp">→ the river and the town exist</span></li>
+      <li><span class="ex">Take some more tea.</span>
+        <span class="imp">→ you have already had some, which the March Hare ignores</span></li>
+    </ul>
   </div>
+  <table class="ps-cmp">
+    <tr><th></th><th>ENTAILMENT</th><th>PRESUPPOSITION</th><th>IMPLICATURE</th></tr>
+    <tr><td>NEGATION</td>
+      <td>Lost: <i>Jon did not kill Jim</i> does not entail that Jim died.</td>
+      <td>Survives: <i>I am not sorry that the team lost</i> still presupposes the loss.</td>
+      <td class="na">Not discussed in the text.</td></tr>
+    <tr><td>CANCELLATION</td>
+      <td>Impossible: it is logically necessary.</td>
+      <td>Incongruous: <i>I'm sorry that the team lost. Oh, the team didn't lose after all.</i></td>
+      <td>Possible: <i>The turkey sure was moist. Toni basted it every ten minutes.</i></td></tr>
+  </table>
   <aside class="notes">
-    전제의 진단법 = 부정 시험(negation test): 부정해도 유지되면 전제. 함축과 달리 취소하면 모순이
-    생기고, 함의와 달리 부정문에서도 살아남습니다(Jon did not kill Jim은 Jim의 죽음을 함의하지 않음).
-    앨리스의 티파티("take more tea")가 전제 무시의 희극적 사례.
+    교재 pp.167–168. 오른쪽: 전제의 예. 왕이 없는 프랑스의 왕, 껴안기를 '멈췄냐'는 질문, 강과 도시의 존재,
+    그리고 장 첫머리 인용인 앨리스의 티파티입니다. Take some more tea는 이미 차를 마셨다는 전제를 깔고 있어,
+    한 잔도 못 마신 앨리스가 당황합니다(교재 요약 p.171도 이 예를 씁니다).
+    아래 표: 세 개념의 차이를 교재가 말한 범위에서 정리했습니다. 함의는 부정하면 사라지고 취소할 수 없습니다.
+    전제는 부정해도 남고, 뒤에서 부정하면 앞 말을 철회하는 셈이라 모순이 됩니다. 함축은 덧붙인 말로 취소되거나 약해집니다(p.167).
+    함축이 부정에서 어떻게 되는지는 교재가 다루지 않아 'Not discussed'로 표시했습니다.
   </aside>
 </section>
 
@@ -422,32 +472,13 @@
     <span class="ko-supp" style="display:block;">Band practice, my house, 6 to 8은 맥락에 따라 상기도 경고도 될 수 있으며, 발화수반력(illocutionary force)이 맥락에 달려 있으므로 화행 이론은 화용론에 속한다.</span></p>
   <aside class="notes">
     hereby 검사는 비공식적이지만 유용한 판별법입니다. 수행동사가 없어도(5달러 내기 예) 맥락상
-    행위력이 전달될 수 있음 — 발화수반력이 맥락 의존적이므로 화행 이론은 화용론의 일부입니다.
+    행위력이 전달될 수 있습니다. 발화수반력이 맥락 의존적이므로 화행 이론은 화용론의 일부입니다.
   </aside>
 </section>
 
-<!-- ══ 13b · Cartoon: indirect speech act video ══ -->
-<section data-kicker="CH.4 P.169 · SPEECH ACTS · CARTOON">
-  <div class="video-scene" style="text-align:center;">
-    <div class="video-stage">
-      <video src="assets/media/w10_toon_speechacts.mp4" preload="metadata" playsinline></video>
-      <span class="cue sub" data-start="2.3" data-end="4.0"><b>Can you</b> pass the salt? <span class="ko">소금 좀 건네줄 수 있어?</span></span>
-      <span class="cue sub" data-start="4.0" data-end="6.6">Yes, I <b>can</b>! <span class="ko">응, 할 수 있어! (…그리고 안 건넴)</span><span class="gl">…AND THEN HE DOES NOT MOVE</span></span>
-      <span class="cue sub" data-start="12.55" data-end="13.95">Here you go! <span class="ko">여기 있어!</span><span class="gl">"CAN YOU…?" = A REQUEST, NOT A QUESTION</span></span>
-      <span class="cue think" data-start="14.2" data-end="18.0" style="left:50%; top:6%; translate:-50% 0; --rot:-1deg;">Humans never mean what they say.<span class="ko">인간은 말한 대로 뜻하는 법이 없어.</span></span>
-    </div>
-    <div class="video-fallback">
-      <p class="lead">"Can you pass the salt?" 능력 질문이 아니라 요청이다(간접화행).</p>
-    </div>
-  </div>
-  <aside class="notes">
-    간접화행 콩트: 주황의 "Can you pass the salt?"에 보라가 문자적으로 "Yes, I can!"만 하고 소금통에
-    손을 얹은 채 가만히 — 민트가 한숨 쉬며 대신 건네고, 테이블 아래 강아지가 체념합니다.
-    ▶ Play를 눌러야 재생됩니다(음성 포함).
-  </aside>
-</section>
 
-<!-- ══ 13c · Watch: Pinker ══ -->
+
+<!-- ══ 14 · Watch: Pinker ══ -->
 <section data-kicker="CH.4 P.169 · SPEECH ACTS · VIDEO">
   <h2>The Logic of Indirect Speech</h2>
   <p class="lead" style="font-size:17px; margin-bottom:14px;">Steven Pinker on veiled requests, polite bribes, and why we say <i>"If you could pass the salt, that would be great."</i>
@@ -465,12 +496,12 @@
   <p class="video-credit" style="text-align:center; margin-top:8px;">TED · Steven Pinker, "What our language habits reveal" (2005)</p>
   <p class="video-print-note">Video (online only): ted.com/talks/steven_pinker_what_our_language_habits_reveal</p>
   <aside class="notes">
-    공식 TED 임베드(재배포 아님). 17분 — 간접화행 파트(중반 10:00~)만 수업 시청 권장, 전편은 과제.
+    공식 TED 임베드(재배포 아님). 17분 분량이며, 간접화행 파트(중반 10:00~)만 수업 시청 권장, 전편은 과제.
     소금 콩트의 문자적 응답 개그가 왜 웃긴지를 Pinker의 'plausible deniability' 논리로 해설할 수 있습니다.
   </aside>
 </section>
 
-<!-- ══ 14 · Enrichment ══ -->
+<!-- ══ 15 · Enrichment ══ -->
 <section data-kicker="ENRICHMENT · BEYOND THE TEXTBOOK">
   <h2>Direct vs. Indirect Acts</h2>
   <div class="enrich">
@@ -488,7 +519,7 @@
   </aside>
 </section>
 
-<!-- ══ 15 · Practice Q1 ══ -->
+<!-- ══ 16 · Practice Q1 ══ -->
 <section data-kicker="CH.4 · PRACTICE 01">
   <div class="mcq" data-qid="w10-q1">
     <div class="mcq-q"><span class="qnum">Q1</span>Which word in "<em>Meet me here tomorrow</em>" is <b>not</b> deictic?</div>
@@ -504,7 +535,7 @@
   </aside>
 </section>
 
-<!-- ══ 16 · Practice Q2 ══ -->
+<!-- ══ 17 · Practice Q2 ══ -->
 <section data-kicker="CH.4 · PRACTICE 02">
   <div class="mcq" data-qid="w10-q2">
     <div class="mcq-dlg">
@@ -524,7 +555,7 @@
   </aside>
 </section>
 
-<!-- ══ 17 · Practice Q3 ══ -->
+<!-- ══ 18 · Practice Q3 ══ -->
 <section data-kicker="CH.4 · PRACTICE 03">
   <div class="mcq" data-qid="w10-q3b">
     <div class="mcq-q"><span class="qnum">Q3</span>At dinner, "<em>Can you pass the salt?</em>" is understood as a request because answering it literally would violate the maxim of:</div>
@@ -537,30 +568,33 @@
   </div>
   <aside class="notes">
     교재 p.167의 설명 그대로입니다. 문자적으로 답하면 뻔한 것을 말하게 되어 양(Quantity)의 격률을 어기므로,
-    청자는 질문한 이유를 찾아 '소금을 건네 달라'는 뜻으로 이해합니다. 13번 콩트(Yes, I can!)와 연결해 보세요.
+    청자는 질문한 이유를 찾아 '소금을 건네 달라'는 뜻으로 이해합니다. 10번 콩트(Yes, I can!)와 연결해 보세요.
     직접/간접 화행이라는 용어는 15번 보충 슬라이드의 내용입니다.
   </aside>
 </section>
 
-<!-- ══ 18 · Exercise Q4 ══ -->
-<section data-kicker="CH.4 · EXERCISE 04">
-  <div class="mcq" data-qid="w10-q4">
-    <div class="mcq-q"><span class="qnum">Q4</span>Which maxim is most clearly flouted by an obviously exaggerated statement like "<em>I've told you a million times</em>"?
-      <span style="font: italic 400 15px 'Lora'; color: var(--ed-muted); white-space:nowrap;">(cf. textbook Ch.4, pp.165–167)</span></div>
-    <div class="mcq-opts">
-      <button class="mcq-opt" data-correct="true"><span class="opt-key">A</span>Quality</button>
-      <button class="mcq-opt"><span class="opt-key">B</span>Manner</button>
-      <button class="mcq-opt"><span class="opt-key">C</span>Relation</button>
+<!-- ══ 19 · Practice Q4 ══ -->
+<section data-kicker="CH.4 · PRACTICE 04">
+  <div class="mcq" data-qid="w10-q4b">
+    <div class="mcq-dlg">
+      <p><span class="sp">JIN</span>So, how was the new restaurant?</p>
+      <p><span class="sp">MINA</span>The napkins were lovely.</p>
     </div>
-    <div class="mcq-explain"><span class="lbl">Explanation</span>The speaker asserts something literally false (they have not said it a million times), flouting the maxim of Quality, which prompts the hearer to infer the intended meaning "very often / I'm frustrated."</div>
+    <div class="mcq-q"><span class="qnum">Q4</span>Mina is not being uncooperative; she wants to hint that the food was bad. With respect to the maxim of Relation, Mina is:</div>
+    <div class="mcq-opts">
+      <button class="mcq-opt"><span class="opt-key">A</span>obeying it</button>
+      <button class="mcq-opt"><span class="opt-key">B</span>violating it</button>
+      <button class="mcq-opt" data-correct="true"><span class="opt-key">C</span>flouting it</button>
+    </div>
+    <div class="mcq-explain"><span class="lbl">Explanation</span>Mina chooses not to follow the maxim of Relation in order to implicate that the food was disappointing: she is flouting it. Violating means choosing to be uncooperative, like Hamlet feigning insanity; obeying would be a literal answer such as "Not great."</div>
   </div>
   <aside class="notes">
-    교재 Ch.4 함축 연습을 개념 중심으로 재구성한 문항입니다(원문 복제 아님).
-    과장·반어가 질(Quality) 격률 위배로 함축을 낳는다는 점을 설명하세요.
+    교재 pp.166–167의 정의(violate: 협력하지 않기로 하고 어김 · flout: 함축하려고 일부러 따르지 않음 · obey: 함축 없는 문자적 대화)를
+    적용하는 자작 문항입니다. 칠면조 대화(관계의 격률 flout)와 같은 구조입니다. 오답 B와 C의 차이가 '협력하려는가'에 있음을 짚어 주세요.
   </aside>
 </section>
 
-<!-- ══ 19 · Exercise Q5 ══ -->
+<!-- ══ 20 · Exercise Q5 ══ -->
 <section data-kicker="CH.4 · EXERCISE 05">
   <div class="mcq" data-qid="w10-q5">
     <div class="mcq-q"><span class="qnum">Q5</span>What does "<em>Sam regrets selling his car</em>" presuppose, even when negated?
@@ -579,16 +613,16 @@
   </aside>
 </section>
 
-<!-- ══ 20 · Summary ══ -->
+<!-- ══ 21 · Summary ══ -->
 <section data-kicker="CH.4 · SUMMARY">
   <h2>Summary</h2>
   <ol class="recap" style="max-width:680px;">
-    <li>Pragmatics = <b>extra-truth-conditional</b> meaning in context</li>
-    <li><b>Deictic words</b>: anchored to the speaker's here-and-now</li>
-    <li><b>Reference resolution</b>: linguistic &amp; situational context; reflexives are picky</li>
-    <li><b>Implicature</b>: inferred via the cooperative principle; cancellable</li>
-    <li>Violate vs. <b>flout</b> a maxim: flouting triggers implicature; <b>presupposition</b> survives negation</li>
-    <li><b>Speech acts</b>: performatives, the "I hereby" test, <i>illocutionary force</i></li>
+    <li>Pragmatics = <b>extra-truth-conditional</b> meaning: how speakers use literal meaning in context</li>
+    <li><b>Deictic words</b> and pronouns get their reference from linguistic or situational context</li>
+    <li><b>Implicature</b>: inferred because speakers follow Grice's <b>maxims</b> (the cooperative principle)</li>
+    <li>A maxim is obeyed, violated, or <b>flouted</b> to implicate; implicatures can be <b>cancelled</b></li>
+    <li><b>Presupposition</b>: what must hold for an utterance to be appropriate (<i>Take some more tea</i>); it survives negation</li>
+    <li><b>Speech acts</b>: performative verbs, the <i>I hereby</i> test, <b>illocutionary force</b></li>
   </ol>
   <aside class="notes">
     화용론은 "말한 것 너머의 의미"를 추론하는 체계입니다. 직시·함축·전제·화행이 어떻게
@@ -596,7 +630,7 @@
   </aside>
 </section>
 
-<!-- ══ 21 · Next week ══ -->
+<!-- ══ 22 · Next week ══ -->
 <section data-kicker="NEXT WEEK · CH.5 PP.183–198">
   <h2>From Meaning <em>to Sound</em></h2>
   <p class="lead" style="max-width:620px;">Phonetics (Part 1): Consonants, why spelling ≠ sound, and how the vocal tract shapes speech.

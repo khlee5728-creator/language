@@ -366,6 +366,8 @@ window.QUIZ_BANK = {
  },
  "w10-q4": {
   "week": 10,
+  "retired": true,
+  "note": "2026-11-02 교체됨 → w10-q4b(교재에 없는 질의 격률 flout 예를 교재 근거처럼 표시하던 문항). 교체 전 응답 해석용으로 보존",
   "q": "Which maxim is most clearly flouted by an obviously exaggerated statement like \"I've told you a million times\"? (cf. textbook Ch.4, pp.165–167)",
   "opts": {
    "A": "Quality",
@@ -373,6 +375,16 @@ window.QUIZ_BANK = {
    "C": "Relation"
   },
   "correct": "A"
+ },
+ "w10-q4b": {
+  "week": 10,
+  "q": "JIN: \"So, how was the new restaurant?\" MINA: \"The napkins were lovely.\" Mina is not being uncooperative; she wants to hint that the food was bad. With respect to the maxim of Relation, Mina is:",
+  "opts": {
+   "A": "obeying it",
+   "B": "violating it",
+   "C": "flouting it"
+  },
+  "correct": "C"
  },
  "w10-q5": {
   "week": 10,
