@@ -26,32 +26,33 @@
       font: italic 400 15px 'Lora'; color: var(--ed-muted); }
 
     /* 대화(담화) 스택 */
-    /* 4번 직시어 세로 목록 · 7번 예문 설명 */
+    /* 4번 직시어 세로 목록 · 6번 예문 설명 */
     .word-row.deix { gap: 40px; }
     .word-row.deix .w b { font-size: 24px; line-height: 1.32; }
     .exlist .exnote { display: block; margin-top: 2px; font: 400 14px 'Lora'; color: var(--ed-muted); }
-    /* 10번: violate vs flout 대비 */
-    .vf-def { font: 400 16.5px/1.5 'Lora','Noto Serif KR'; color: var(--ed-body); margin: 0 0 14px; }
-    .vf-def .ko-supp { display: block; margin-top: 4px; font-size: 15.5px; }
+    /* 9번: violate vs flout 대비 */
+    .vf-def { font: 400 17px/1.5 'Lora','Noto Serif KR'; color: var(--ed-body); margin: 0 0 14px; }
+    .vf-def .ko-supp { display: block; margin-top: 4px; font-size: 17px; }
     .dlg2 { display: grid; grid-template-columns: 80px 1fr; gap: 6px 10px; align-items: baseline;
       border-left: 1px solid var(--ed-line); padding: 2px 0 2px 18px; }
-    .dlg2 .sp { font: 600 10.5px 'Space Grotesk'; letter-spacing: 0.2em; color: var(--ed-muted); }
+    .dlg2 .sp { font: 600 11px 'Space Grotesk'; letter-spacing: 0.2em; color: var(--ed-muted); }
     .dlg2 .ln { font: italic 400 17.5px/1.4 'Lora'; color: var(--ed-ink); }
-    .vf-why { font: 400 16px/1.5 'Lora'; color: var(--ed-body); margin: 14px 0 0; }
-    .vf-why .mx, .fl-list .mx { font: 600 10.5px 'Space Grotesk'; letter-spacing: 0.18em; color: var(--ed-accent); }
+    .vf-why { font: 400 17px/1.5 'Lora'; color: var(--ed-body); margin: 14px 0 0; }
+    .vf-why .mx, .fl-list .mx { font: 600 11px 'Space Grotesk'; letter-spacing: 0.18em; color: var(--ed-accent); }
     .vf-why .mx { margin-right: 10px; }
     .reveal ul.fl-list { list-style: none; margin: 0; padding: 0; display: block; }
     .fl-list li { display: grid; grid-template-columns: 1fr auto; column-gap: 12px; align-items: baseline;
       padding: 7px 0; border-bottom: 1px solid var(--ed-line); }
     .fl-list li:last-child { border-bottom: 0; }
-    .fl-list .ex { font: italic 400 17px/1.35 'Lora'; color: var(--ed-ink); }
-    .fl-list .imp { grid-column: 1 / -1; font: 400 14.5px/1.4 'Lora'; color: var(--ed-muted); margin-top: 2px; }
+    .fl-list .ex { font: italic 400 17.5px/1.35 'Lora'; color: var(--ed-ink); }
+    .fl-list .imp { grid-column: 1 / -1; font: 400 14px/1.4 'Lora'; color: var(--ed-muted); margin-top: 2px; }
     .dlg { border-left: 1px solid var(--ed-line); padding-left: 28px; }
     .dlg p { font: italic 400 19px/1.75 'Lora'; margin: 0 0 10px; color: var(--ed-ink); }
     .dlg p:last-child { margin-bottom: 0; }
     .dlg .sp { font: 600 11px 'Space Grotesk'; letter-spacing: 0.2em; color: var(--ed-muted);
       font-style: normal; margin-right: 10px; }
-    .dlg .imp { font: 300 16px 'Noto Serif KR'; font-style: normal; color: var(--ed-body); }
+    .dlg.obey p { font-size: 17.5px; line-height: 1.5; margin-bottom: 2px; }
+    .dlg .imp { font: 400 16px/1.5 'Lora'; font-style: normal; color: var(--ed-muted); }
     .dlg .imp b { color: var(--ed-accent); }
 
     /* 격률 그리드 — 헤어라인만, 색 상자 없음 */
@@ -146,50 +147,18 @@
         <span class="rel-line" style="margin-top:8px;"><b>We speak in shortcuts.</b></span></p>
     </div>
   </div>
+  <hr class="hair" style="margin:14px 0 10px;">
+  <p class="lead" style="font-size:17px; margin:0;"><b>Reference resolution</b> draws on two kinds of context: <b>linguistic</b> (what has been said) and <b>situational</b> (nonlinguistic knowledge).
+    <span class="ko-supp" style="display:block; margin-top:6px;">대명사의 지시 대상을 찾는 지시 해소(reference resolution)에는 언어적 맥락과 상황적 맥락이 쓰인다.</span></p>
   <aside class="notes">
     직시어: 대명사(she, it, I), 지시사(this, that), 부사(here, there, now, today), 전치사(behind, before).
     교재의 Taylor Swift 베네치아 예 — 완전 명시 버전(1)과 직시 버전(2)을 대비하면 직시가 얼마나
-    기본값인지 드러납니다. I는 화자만 지시 가능할 만큼 제약적이지만, 그래도 맥락이 필요합니다. 용어: 직시 표현의 지시 대상을 찾는 일이 지시 해소(reference resolution)이며, 맥락은 언어적·상황적 두 종류(다음 두 슬라이드).
+    기본값인지 드러납니다. 직시어마다 지시할 수 있는 대상의 종류는 정해져 있습니다(p.161): here/there는 장소, now/then은 시간,
+    this/that은 이미 언급되었거나 알려진 것, he/she는 사람, I는 화자만 지시할 만큼 제약적입니다. 그래도 실제 지시 대상은 맥락으로 정해집니다. 용어: 직시 표현의 지시 대상을 찾는 일이 지시 해소(reference resolution)이며, 맥락은 언어적·상황적 두 종류(다음 두 슬라이드).
   </aside>
 </section>
 
 <!-- ══ 5 · Figure: anchored to the speaker ══ -->
-<section data-kicker="CH.4 P.160 · PRONOUNS AND OTHER DEICTIC WORDS · FIGURE">
-  <div style="text-align:center;">
-    <svg viewBox="0 0 680 250" style="width:84%; max-width:700px; margin-top:4px;">
-      <!-- center -->
-      <circle cx="340" cy="125" r="70" fill="none" stroke="#1c1a17" stroke-width="1.4"/>
-      <text x="340" y="112" text-anchor="middle" font-family="Space Grotesk" font-size="12" letter-spacing="4" fill="#8d8574">SPEAKER</text>
-      <text x="340" y="144" text-anchor="middle" font-family="Lora" font-style="italic" font-size="19" fill="#1c1a17">I · here · now</text>
-      <!-- person axis right -->
-      <line x1="412" y1="125" x2="576" y2="125" stroke="#8a5a20" stroke-width="1.6" stroke-dasharray="7 6"/>
-      <text x="618" y="122" text-anchor="middle" font-family="Lora" font-style="italic" font-size="20" fill="#1c1a17">you</text>
-      <text x="618" y="142" text-anchor="middle" font-family="Space Grotesk" font-size="10" letter-spacing="3" fill="#8d8574">PERSON</text>
-      <!-- person axis left -->
-      <line x1="268" y1="125" x2="104" y2="125" stroke="#8a5a20" stroke-width="1.6" stroke-dasharray="7 6"/>
-      <text x="66" y="122" text-anchor="middle" font-family="Lora" font-style="italic" font-size="20" fill="#1c1a17">she</text>
-      <text x="66" y="142" text-anchor="middle" font-family="Space Grotesk" font-size="10" letter-spacing="3" fill="#8d8574">PERSON</text>
-      <!-- place axis -->
-      <line x1="290" y1="174" x2="168" y2="222" stroke="#8a5a20" stroke-width="1.6" stroke-dasharray="7 6"/>
-      <text x="122" y="230" text-anchor="middle" font-family="Lora" font-style="italic" font-size="20" fill="#1c1a17">there</text>
-      <text x="122" y="248" text-anchor="middle" font-family="Space Grotesk" font-size="10" letter-spacing="3" fill="#8d8574">PLACE</text>
-      <!-- time axis -->
-      <line x1="340" y1="53" x2="340" y2="26" stroke="#8a5a20" stroke-width="1.6" stroke-dasharray="7 6"/>
-      <text x="340" y="16" text-anchor="middle" font-family="Lora" font-style="italic" font-size="20" fill="#1c1a17">then</text>
-      <!-- place axis right-down -->
-      <line x1="390" y1="174" x2="512" y2="222" stroke="#8a5a20" stroke-width="1.6" stroke-dasharray="7 6"/>
-      <text x="558" y="230" text-anchor="middle" font-family="Lora" font-style="italic" font-size="20" fill="#1c1a17">that way</text>
-      <text x="558" y="248" text-anchor="middle" font-family="Space Grotesk" font-size="10" letter-spacing="3" fill="#8d8574">DIRECTION</text>
-    </svg>
-    <p class="lead" style="font-size:17px; margin-top:12px;">Every deictic word is anchored to the speaker's <em>here-and-now</em>: move the speaker, and the references move too.
-      <span class="ko-supp" style="display:block;">모든 직시어는 화자의 '지금·여기'를 축으로 삼으므로, 화자가 이동하면 here/there/now/then의 지시도 함께 움직인다.</span></p>
-  </div>
-  <aside class="notes">
-    화자의 here-and-now를 축으로 인칭·장소·시간·방향이 방사되는 그림입니다. 화자가 이동하면
-    지시 대상이 바뀐다는 상대성을 각인시키세요.
-  </aside>
-</section>
-
 <!-- ══ 6 · Situational context ══ -->
 <section data-kicker="CH.4 P.161" data-path="Pragmatics › Pronouns and Other Deictic Words">
   <h2 style="font-size:40px;">Pronouns and Situational Context</h2>
@@ -254,7 +223,7 @@
         <p><span class="sp">BILL</span>She's been driving to Santa Barbara every weekend.</p>
       </div>
       <hr class="hair">
-      <p class="lead" style="font-size:16.5px;">Implicatures are <b>cancellable</b>: "…Toni basted it every ten minutes" cancels the implicature. Entailments cannot be cancelled.</p>
+      <p class="lead" style="font-size:17px;">Implicatures are <b>cancellable</b>: "…Toni basted it every ten minutes" cancels the implicature. Entailments cannot be cancelled.</p>
     </div>
   </div>
   <aside class="notes">
@@ -275,9 +244,16 @@
     <div class="mc"><b>Manner · Clarity</b>Avoid obscurity, ambiguity, wordiness; be orderly.</div>
   </div>
   <p class="ko-supp" style="font-size:16.5px; margin-top:16px;">Grice의 협력 원리(cooperative principle): 화자들이 질·양·관계·태도의 격률(maxims)을 따르고 서로 그렇게 가정하기에 함축을 계산할 수 있다.</p>
+  <hr class="hair" style="margin:14px 0 10px;">
+  <p class="lead" style="font-size:17px; margin:0 0 6px;">A maxim is <b>obeyed</b> in a literal discourse, with no implicature:</p>
+  <div class="dlg obey">
+    <p><span class="sp">DAD</span>Very nice girl. What do you think, Hon?</p>
+    <p><span class="sp">MOM</span>Not really.</p>
+  </div>
   <aside class="notes">
     Grice의 네 격률(질·양·관계·태도). 이는 규범이 아니라 화자들이 서로에게 가정하는 전략이며,
     바로 이 가정 위에서 함축이 계산됩니다. 길 안내가 성립하는 것도 질 격률의 가정 덕분.
+    아래 대화는 격률을 그대로 지킨(obey) 경우입니다(p.166). 문자 그대로 답해 함축이 없으며, 다음 슬라이드의 위반(violate)·무시(flout)와 대비하는 기준점입니다.
   </aside>
 </section>
 
@@ -329,7 +305,10 @@
   <h2>Presupposition</h2>
   <div class="cols">
     <div class="def"><i>Presuppositions</i>: situations that must exist for an utterance to be <b>appropriate</b>.
-      <span class="ko-supp" style="display:block; margin-top:8px;">전제(presupposition)는 발화가 적절하려면 성립해야 하는 상황이다.</span></div>
+      <span class="ko-supp" style="display:block; margin-top:8px;">전제(presupposition)는 발화가 적절하려면 성립해야 하는 상황이다.</span>
+      <hr class="hair" style="margin:16px 0 12px;">
+      <p class="lead" style="font-size:17px; margin:0;">Unlike <b>entailments</b>, presuppositions survive negation: <i>Jon killed Jim</i> entails that Jim died; <i>Jon did not kill Jim</i> does not.
+        <span class="ko-supp" style="display:block; margin-top:6px;">함의(entailment)는 부정하면 사라지지만 전제는 부정해도 남는다.</span></p></div>
     <div class="quote-stack">
       <p><i>The present King of France is bald</i> is grammatical and meaningful, yet <i>inappropriate</i>: France has no king.</p>
       <p><i>Have you stopped hugging your border collie?</i> presupposes that you hugged it.</p>
@@ -355,9 +334,12 @@
       <p>I <b>challenge</b> you to a match.</p>
       <p>I <b>nominate</b> Batman for mayor of Gotham City.</p>
       <p>I <b>pronounce</b> you husband and wife.</p>
-      <p style="font-style:normal; font-size:0.8em; color:var(--ed-muted);">Saying it is doing it: every language has hundreds of these.</p>
+      <p style="font-style:normal; font-size:16px; color:var(--ed-muted);">Saying it is doing it: every language has hundreds of these.</p>
     </div>
   </div>
+  <hr class="hair" style="margin:14px 0 10px;">
+  <p class="lead" style="font-size:17px; margin:0;">Typical performative sentences are <b>first person</b>, <b>present tense</b>, <b>affirmative</b>, and <b>declarative</b>.
+    <span class="ko-supp" style="display:block; margin-top:6px;">전형적인 수행문은 1인칭·현재시제·긍정·평서문이다.</span></p>
   <aside class="notes">
     "I warn you that there is a sheepdog in the closet"는 말하는 동시에 경고하는 행위입니다.
     수행문의 전형: 1인칭 주어·현재시제·긍정 평서문. 다음 슬라이드에서 판별 검사와
@@ -372,7 +354,7 @@
     <div>
       <div class="small-label" style="margin-bottom:12px;">THE "I HEREBY ___" TEST</div>
       <hr class="hair" style="margin:0 0 14px;">
-      <p class="lead" style="font-size:18px;">Only performative sentences sound right after <em>I hereby…</em></p>
+      <p class="lead" style="font-size:17px;">Only performative sentences sound right after <em>I hereby…</em></p>
       <ul class="exlist" style="margin-top:14px; font-size:0.9em;">
         <li><span class="no">✓</span><span>I hereby apologize to you.</span></li>
         <li><span class="no star">✗</span><span>?I hereby know you.</span></li>
@@ -501,8 +483,8 @@
   </div>
   <aside class="notes">
     교재 p.167의 설명 그대로입니다. 문자적으로 답하면 뻔한 것을 말하게 되어 양(Quantity)의 격률을 어기므로,
-    청자는 질문한 이유를 찾아 '소금을 건네 달라'는 뜻으로 이해합니다. 14번 콩트(Yes, I can!)와 연결해 보세요.
-    직접/간접 화행이라는 용어는 16번 보충 슬라이드의 내용입니다.
+    청자는 질문한 이유를 찾아 '소금을 건네 달라'는 뜻으로 이해합니다. 13번 콩트(Yes, I can!)와 연결해 보세요.
+    직접/간접 화행이라는 용어는 15번 보충 슬라이드의 내용입니다.
   </aside>
 </section>
 
