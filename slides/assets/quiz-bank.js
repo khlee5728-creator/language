@@ -380,9 +380,9 @@ window.QUIZ_BANK = {
   "week": 10,
   "q": "JIN: \"So, how was the new restaurant?\" MINA: \"The napkins were lovely.\" Mina is not being uncooperative; she wants to hint that the food was bad. With respect to the maxim of Relation, Mina is:",
   "opts": {
-   "A": "obeying it",
-   "B": "violating it",
-   "C": "flouting it"
+   "A": "obeying it: answering literally, with no implicature",
+   "B": "violating it: choosing to be uncooperative",
+   "C": "flouting it: not following it in order to implicate"
   },
   "correct": "C"
  },
