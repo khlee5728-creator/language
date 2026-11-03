@@ -25,33 +25,21 @@
     .cover .foot { margin-top: 46px; border-top: 1px solid var(--ed-line); padding-top: 16px;
       font: italic 400 15px 'Lora'; color: var(--ed-muted); }
 
-    /* 에디토리얼 헤어라인 도표(자음표) — 기본 테마 표 스타일 오버라이드 */
-    .reveal table.ed-table { border-collapse: collapse; width: 100%; margin: 0; }
-    .reveal table.ed-table th {
-      font: 600 10.5px 'Space Grotesk' !important; letter-spacing: 0.12em; text-transform: uppercase;
-      color: var(--ed-muted) !important; border: 1px solid #cfc8b8; padding: 8px 4px;
-      background: transparent !important; text-align: center;
-    }
-    .reveal table.ed-table th.rowlab { text-align: left; padding-left: 12px; color: var(--ed-ink) !important; letter-spacing: 0.16em; }
-    .reveal table.ed-table td {
-      font: 400 21px 'Lora'; color: var(--ed-ink);
-      border: 1px solid #cfc8b8; padding: 6px 4px; text-align: center;
-    }
-    .reveal table.ed-table tr:nth-child(even) td,
-    .reveal table.ed-table tr:hover td { background: transparent !important; }
-    .reveal table.ed-table td small { font: 400 15px 'Lora'; color: var(--ed-muted); }
-
-    /* 소형 헤어라인 표(사분류) */
-    .reveal table.mini-table { border-collapse: collapse; width: auto; margin: 0; }
-    .reveal table.mini-table th {
-      font: 600 10.5px 'Space Grotesk' !important; letter-spacing: 0.16em; text-transform: uppercase;
-      color: var(--ed-muted) !important; border: 1px solid #cfc8b8; padding: 8px 22px;
-      background: transparent !important;
-    }
-    .reveal table.mini-table td { font: 400 20px 'Lora'; color: var(--ed-ink); border: 1px solid #cfc8b8; padding: 8px 22px; text-align: center; }
-    .reveal table.mini-table tr:nth-child(even) td,
-    .reveal table.mini-table tr:hover td { background: transparent !important; }
-    .reveal table.mini-table td small { font: 400 15px 'Lora'; color: var(--ed-muted); }
+    /* 자음표 · 사분류표: 가로 헤어라인 표(기본 테마를 이기도록 .reveal table.xxx) */
+    .reveal table.ed-table, .reveal table.mini-table { border-collapse: collapse; margin: 0; }
+    .reveal table.ed-table { width: 100%; }
+    .reveal table.mini-table { width: auto; }
+    .reveal table.ed-table th, .reveal table.mini-table th {
+      font: 600 10.5px 'Space Grotesk'; letter-spacing: 0.12em; text-transform: uppercase; white-space: nowrap;
+      color: var(--ed-muted); background: none; border: 0; border-bottom: 1px solid var(--ed-line); padding: 8px 4px; text-align: center; }
+    .reveal table.ed-table th.rowlab { text-align: left; padding-left: 0; color: var(--ed-ink); letter-spacing: 0.16em; }
+    .reveal table.mini-table th { letter-spacing: 0.16em; padding: 8px 22px; }
+    .reveal table.ed-table td, .reveal table.mini-table td {
+      font: 400 21px 'Lora'; color: var(--ed-ink); background: none; border: 0; border-bottom: 1px solid var(--ed-line); padding: 6px 4px; text-align: center; }
+    .reveal table.mini-table td { font-size: 20px; padding: 8px 22px; }
+    .reveal table.ed-table tr:nth-child(even) td, .reveal table.ed-table tr:hover td,
+    .reveal table.mini-table tr:nth-child(even) td, .reveal table.mini-table tr:hover td { background: none; }
+    .reveal table.ed-table td small, .reveal table.mini-table td small { font: 400 15px 'Lora'; color: var(--ed-muted); }
   </style>
 </head>
 <body data-rail="WEEK 11 · PHONETICS" data-course="Topics in English Linguistics">
@@ -64,11 +52,11 @@
   ─ Articulatory Phonetics ............ p.188 → slide 7 (+ vocal-tract figure, slide 8)
   ─ Consonants ........................ p.189 → slide 9
   ─ Place of Articulation ............. p.189 → slide 10
-  ─ Manner of Articulation ............ p.191 → slide 11
-      · Voiced and Voiceless Sounds ... p.192 → slide 12 (aspiration p.193 → slide 13)
-      · Nasal and Oral Sounds ......... p.193 → slide 14
-      · Stops … Glides (run-in heads) . p.195–197 → slide 15
-  ─ Phonetic Symbols for American English Consonants p.197 → slide 16 (chart)
+  ─ Manner of Articulation ............ p.191 → slide 11 (+ TED video, slide 12)
+      · Voiced and Voiceless Sounds ... p.192 → slide 13 (aspiration p.193 → slide 14)
+      · Nasal and Oral Sounds ......... p.193 → slide 15 (+ cartoon, slide 16)
+      · Stops … Glides (run-in heads) . p.195–197 → slide 17
+  ─ Phonetic Symbols for American English Consonants p.197 → slide 18 (chart)
 -->
 <div class="reveal">
 <div class="slides">
@@ -117,7 +105,7 @@
         <div class="langlab">NO BREAKS BETWEEN SPOKEN WORDS</div>
         <div class="sent" style="font-size:25px;">I scream <span style="color:var(--ed-muted);">/</span> Ice cream · grade A <span style="color:var(--ed-muted);">/</span> gray day
           <button class="say-btn mini" data-say="I scream. Ice cream." data-lang="en-US">listen</button></div>
-        <div class="tr">인쇄하면 다른 두 표현이, 발음하면 같게 들린다.</div>
+        <div class="tr">말할 때는 단어 사이에 끊김이 없다.</div>
       </div>
       <div class="quote-stack">
         <p>Knowing the language is what lets you <b>cut the stream</b> into pieces.</p>
@@ -144,7 +132,7 @@
         <p>Languages differ in their <b>inventories</b> of speech sounds.</p>
       </div>
       <hr class="hair">
-      <p style="font: 300 16.5px 'Noto Serif KR'; color: var(--ed-body); margin:0;">
+      <p style="font: 400 16.5px 'Lora', 'Noto Serif KR'; color: var(--ed-body); margin:0;">
         <span class="small-label" style="margin-right:12px;">THREE BRANCHES</span>acoustic · auditory · <b class="accent">articulatory</b> phonetics: this chapter</p>
     </div>
   </div>
@@ -193,7 +181,7 @@
   <p class="lead" style="font-size:17px;">Six spellings of <em>ou</em>, six different vowels: the transcription records what is <b>said</b>, not written.
     <span class="ko-supp" style="display:block;">같은 철자 ou가 여섯 가지 모음으로 발음되듯, 전사는 쓰인 것이 아니라 말한 것을 기록한다.</span></p>
   <aside class="notes">
-    though/thought/rough/bough/through/would — 같은 ou 철자가 여섯 모음(gh는 rough에서만 [f]).
+    though/thought/rough/bough/through/would는 같은 ou 철자가 여섯 모음으로 발음됩니다(gh는 rough에서만 [f]).
     영어 철자로 하나처럼 보이는 소리들(θ, ð, ʃ, ŋ, tʃ, dʒ)이 IPA에선 고유 기호를 갖습니다.
     schwa [ə]는 무강세 짧은 모음 표기임도 언급하세요. 표기 관례: 교재는 IPA의 [ɹ] 대신 가독성을 위해 [r]를 씁니다.
   </aside>
@@ -206,7 +194,7 @@
     <div class="def">Most speech sounds are made by pushing <i>lung air</i> through the vocal tract and shaping it on the way out.
       <span class="ko-supp" style="display:block; margin-top:8px;">대부분의 말소리는 폐의 공기를 성도(vocal tract)로 밀어내면서 그 통로에서 모양을 빚어 만든다.</span></div>
     <div class="quote-stack">
-      <p>The <b>glottis</b> is the opening between the vocal cords, inside the <i>larynx</i>.</p>
+      <p>The <b>glottis</b> is the opening between the vocal cords, inside the <b>larynx</b>.</p>
       <p>The <b>pharynx</b> is the tube of the throat above the larynx.</p>
       <p>The <b>oral cavity</b> is the mouth, and the <b>nasal cavity</b> is the nose.</p>
       <p>The <b>tongue and lips</b> are the fast movers that reshape the tract.</p>
@@ -266,8 +254,8 @@
     <div class="def">Consonants are produced with some <i>restriction or closure</i> in the vocal tract that impedes the airflow.
       <span class="ko-supp" style="display:block; margin-top:8px;">자음(consonant)은 성도 안의 막힘이나 좁힘이 기류를 방해하며 만들어지는 소리다.</span></div>
     <div class="quote-stack">
-      <p>In phonetics, <b>consonant</b> and <b>vowel</b> name types of <i>sounds</i>, not letters.</p>
-      <p>Each consonant is classified by <b>where</b> and <b>how</b> the air is obstructed: its <i>place</i> and <i>manner</i> of articulation, plus <i>voicing</i>.</p>
+      <p>In phonetics, <i>consonant</i> and <i>vowel</i> name types of <b>sounds</b>, not letters.</p>
+      <p>Each consonant is classified by where and how the air is obstructed: its <b>place</b> and <b>manner</b> of articulation, plus <b>voicing</b>.</p>
     </div>
   </div>
   <aside class="notes">
@@ -312,7 +300,7 @@
   </aside>
 </section>
 
-<!-- ══ 11c · Watch: Tom Thum ══ -->
+<!-- ══ 12 · Watch: Tom Thum ══ -->
 <section data-kicker="CH.5 P.189 · CONSONANTS · VIDEO">
   <h2>The Orchestra in My Mouth</h2>
   <p class="lead" style="font-size:17px; margin-bottom:14px;">Beatboxer Tom Thum builds trumpets, basslines and drum kits from nothing but places and manners of articulation.
@@ -335,7 +323,7 @@
   </aside>
 </section>
 
-<!-- ══ 12 · Voiced and Voiceless Sounds ══ -->
+<!-- ══ 13 · Voiced and Voiceless Sounds ══ -->
 <section data-kicker="CH.5 P.192" data-path="Articulatory Phonetics › Consonants › Manner of Articulation">
   <h2>Voiced and Voiceless Sounds</h2>
   <div class="cols-even">
@@ -361,7 +349,7 @@
   </aside>
 </section>
 
-<!-- ══ 13 · Aspiration (Voiced and Voiceless cont.) ══ -->
+<!-- ══ 14 · Aspiration (Voiced and Voiceless cont.) ══ -->
 <section data-kicker="CH.5 P.193" data-path="Articulatory Phonetics › Consonants › Manner of Articulation">
   <h2>Voiced and Voiceless Sounds</h2>
   <div class="cols-even">
@@ -392,7 +380,7 @@
   </aside>
 </section>
 
-<!-- ══ 14 · Nasal and Oral Sounds ══ -->
+<!-- ══ 15 · Nasal and Oral Sounds ══ -->
 <section data-kicker="CH.5 P.193" data-path="Articulatory Phonetics › Consonants › Manner of Articulation">
   <h2>Nasal and Oral Sounds</h2>
   <div class="cols">
@@ -414,15 +402,15 @@
   </aside>
 </section>
 
-<!-- ══ 14b · Cartoon: nasal sounds video (v2, 2026-09-27) ══ -->
+<!-- ══ 16 · Cartoon: nasal sounds video (v2, 2026-09-27) ══ -->
 <section data-kicker="CH.5 P.193 · MANNER OF ARTICULATION · CARTOON">
   <div class="video-scene" style="text-align:center;">
     <div class="video-stage">
       <video src="assets/media/w11_toon_nasal.mp4" preload="metadata" playsinline></video>
-      <span class="cue sub" data-start="0.2" data-end="2.5"><b>By dabe is</b>… <span class="ko">바 다베 이즈… (My name is)</span><span class="gl">NOSE PINCHED · m → b, n → d</span></span>
-      <span class="cue sub" data-start="2.75" data-end="4.55">Say <b>banana</b> with your nose closed! <span class="ko">코 막고 banana 말해 봐!</span></span>
-      <span class="cue sub" data-start="4.95" data-end="6.5"><b>Badada</b>. <span class="ko">바다다. (banana)</span><span class="gl">NASALS BLOCKED → ORAL STOPS</span></span>
-      <span class="cue sub" data-start="6.95" data-end="8.6">The <b>nose</b> is a speaker. <span class="ko">코도 스피커야.</span><span class="gl">NASAL · VELUM DOWN, AIR THROUGH THE NOSE</span></span>
+      <span class="cue sub" data-start="0.0" data-end="2.6"><b>By dabe is</b>… <span class="ko">바 다베 이즈… (My name is)</span><span class="gl">NOSE PINCHED · m → b, n → d</span></span>
+      <span class="cue sub" data-start="2.68" data-end="4.85">Say <b>banana</b> with your nose closed! <span class="ko">코 막고 banana 말해 봐!</span></span>
+      <span class="cue sub" data-start="4.9" data-end="6.5"><b>Badada</b>. <span class="ko">바다다. (banana)</span><span class="gl">NASALS BLOCKED → ORAL STOPS</span></span>
+      <span class="cue sub" data-start="6.88" data-end="8.71">The <b>nose</b> is a speaker. <span class="ko">코도 스피커야.</span><span class="gl">NASAL · VELUM DOWN, AIR THROUGH THE NOSE</span></span>
       <span class="cue think" data-start="8.85" data-end="11.2" data-slow="0.45" style="left:50%; top:6%; translate:-50% 0; --rot:-1deg;">My nose isn't for talking. It's for the <b>treat</b> in your pocket.<span class="ko">내 코는 말하는 용도가 아니야. 네 주머니 속 간식용이지.</span></span>
     </div>
     <div class="video-fallback">
@@ -431,35 +419,36 @@
   </div>
   <aside class="notes">
     비음 콩트(v2): 주황이 코를 잡고 "My name is…"를 말하면 "By dabe is…"가 되고, "banana"는 "Badada"가 됩니다.
-    코를 막으면 연구개가 내려가도 공기가 코로 못 나가므로 비음 m·n이 같은 자리의 구강 파열음 b·d로 들립니다 — 비음의
-    정의(p.193, 연구개 하강 → 비강 통로)를 몸으로 확인하는 실험. 학생들에게 코를 잡고 "morning"을 말해 보게 하세요.
+    코를 막으면 연구개가 내려가도 공기가 코로 못 나가므로 비음 m·n이 같은 자리의 구강 파열음 b·d로 들립니다. 비음의
+    정의(p.193, 연구개 하강 → 비강 통로)를 몸으로 확인하는 실험입니다. 학생들에게 코를 잡고 "morning"을 말해 보게 하세요.
     강아지 펀치라인은 코의 다른 용도(냄새). ▶ Play를 눌러야 재생됩니다(음성 포함).
   </aside>
 </section>
 
-<!-- ══ 15 · Manner classes: stops → glides ══ -->
+<!-- ══ 17 · Manner classes: stops → glides ══ -->
 <section data-kicker="CH.5 P.195" data-path="Articulatory Phonetics › Consonants">
   <h2 style="margin-bottom:14px;">Manner of Articulation</h2>
   <ul class="exlist" style="font-size:0.86em;">
-    <li><span class="no">01</span><span><b>Stops</b>: airstream fully blocked, then released · [p b m t d n k g ŋ ʔ] (+ [tʃ dʒ])</span></li>
+    <li><span class="no">01</span><span><b>Stops</b>: airstream fully blocked, then released · [p b m t d n k g ŋ ʔ] (+ [tʃ dʒ]); all other sounds are <b>continuants</b></span></li>
     <li><span class="no">02</span><span><b>Fricatives</b>: narrow passage, audible friction · [f v θ ð s z ʃ ʒ h] (velar [x ɣ] in <i>Bach, loch</i>)</span></li>
     <li><span class="no">03</span><span><b>Affricates</b>: stop + gradual fricative release · [tʃ dʒ] (<i>church, judge</i>)</span></li>
     <li><span class="no">04</span><span><b>Liquids</b>: some obstruction, no friction · [l r]</span></li>
     <li><span class="no">05</span><span><b>Glides</b>: little obstruction, always before a vowel · [j w]; [w] labiovelar</span></li>
     <li><span class="no">06</span><span><b>Approximants</b>: cover term for [w j r l]; central vs. lateral</span></li>
   </ul>
-  <p style="font: italic 400 15px 'Lora'; color: var(--ed-muted); margin-top:12px;">Beyond English: trills [r̃ ʀ], the flap [ɾ] (<i>writer</i> = <i>rider</i> [raɪɾər]), and the clicks of Zulu and Xhosa.</p>
+  <p style="font: italic 400 15px 'Lora'; color: var(--ed-muted); margin-top:12px;">Beyond English: the alveolar trill (IPA [r]) and uvular trill [ʀ], the flap [ɾ] (<i>writer</i> = <i>rider</i> [raɪɾər]), and the clicks of Zulu and Xhosa.</p>
   <aside class="notes">
     폐쇄 정도 순 배열: 완전 폐쇄(stop) → 마찰(fricative) → 근접(glide). 파찰음은 폐쇄+마찰의 결합.
-    stop 이외 소리는 continuant입니다. 미국 영어의 탄설음 [ɾ](writer/rider 동음), 전동음·흡착음도
+    stop 이외 소리는 모두 지속음(continuant, p.195)입니다. 교재는 IPA의 치경 전동음 기호 [r]를 영어 r에 빌려 쓴다고 밝힙니다(p.197). 미국 영어의 탄설음 [ɾ](writer/rider 동음), 전동음·흡착음도
     IPA가 포괄함을 언급하세요.
   </aside>
 </section>
 
-<!-- ══ 16 · Chart: American English consonants ══ -->
+<!-- ══ 18 · Chart: American English consonants ══ -->
 <section data-kicker="CH.5 P.197" data-path="Articulatory Phonetics › Consonants">
   <h2 style="font-size:36px; margin-bottom:10px;">Phonetic Symbols for American English Consonants</h2>
-  <p style="font: italic 400 15px 'Lora'; color: var(--ed-muted); margin-bottom:14px;">Rows = manner · columns = place. Two symbols in a cell: left voiceless, right voiced.</p>
+  <p style="font: italic 400 15px 'Lora'; color: var(--ed-muted); margin-bottom:14px;">Rows = manner · columns = place. Two symbols in a cell: left voiceless, right voiced.
+    <span class="ko-supp" style="display:block; font-style:normal; font-size:14px; margin-top:4px;">행은 조음 방법, 열은 조음 위치이며, 한 칸에 기호가 둘이면 왼쪽이 무성음, 오른쪽이 유성음이다.</span></p>
   <table class="ed-table" style="font-size:0.9em;">
     <tr>
       <th class="rowlab">&nbsp;</th><th>Bilabial</th><th>Labiodental</th><th>Interdental</th><th>Alveolar</th><th>Palatal</th><th>Velar</th><th>Glottal</th>
@@ -469,16 +458,15 @@
     <tr><th class="rowlab">Affricate</th><td></td><td></td><td></td><td></td><td>tʃ&nbsp;&nbsp;dʒ</td><td></td><td></td></tr>
     <tr><th class="rowlab">Nasal</th><td>m</td><td></td><td></td><td>n</td><td></td><td>ŋ</td><td></td></tr>
     <tr><th class="rowlab">Liquid</th><td></td><td></td><td></td><td>l&nbsp;&nbsp;r</td><td></td><td></td><td></td></tr>
-    <tr><th class="rowlab">Glide</th><td>w</td><td></td><td></td><td></td><td>j</td><td><small>(w)</small></td><td></td></tr>
+    <tr><th class="rowlab">Glide</th><td>ʍ&nbsp;&nbsp;w</td><td></td><td></td><td></td><td>j</td><td><small>(ʍ&nbsp;&nbsp;w)</small></td><td></td></tr>
   </table>
-  <p class="ko-supp" style="font-size:14px; margin-top:12px;">행은 조음 방법, 열은 조음 위치이며, 한 칸에 기호가 둘이면 왼쪽이 무성음, 오른쪽이 유성음이다.</p>
   <aside class="notes">
-    영어 자음표(교재 Table 5.4를 재조판한 요약본 — 스캔 아님). 임의 자음을 지목해 학생이
-    "유성/무성 + 위치 + 방법" 라벨을 표에서 읽어내게 연습시키세요. 예: [v] = voiced labiodental fricative. 표에서 비음·유음·활음 칸에 기호가 하나뿐인 이유는 영어에서 이들이 모두 유성이기 때문입니다.
+    영어 자음표(교재 Table 5.4를 재조판한 요약본이며 스캔이 아닙니다). 임의 자음을 지목해 학생이
+    "유성/무성 + 위치 + 방법" 라벨을 표에서 읽어내게 연습시키세요. 예: [v] = voiced labiodental fricative. 표에서 비음·유음 칸에 기호가 하나뿐인 이유는 영어에서 이들이 모두 유성이기 때문입니다. 활음에는 which를 witch와 구별해 발음하는 화자의 무성 [ʍ]가 있고, [ʍ w]는 순연구개음이라 양순·연구개 두 칸에 적습니다(Table 5.4).
   </aside>
 </section>
 
-<!-- ══ 17 · Practice Q1 ══ -->
+<!-- ══ 19 · Practice Q1 ══ -->
 <section data-kicker="CH.5 · PRACTICE 01">
   <div class="mcq" data-qid="w11-q1">
     <div class="mcq-q"><span class="qnum">Q1</span>Why can't English spelling reliably represent pronunciation?</div>
@@ -494,7 +482,7 @@
   </aside>
 </section>
 
-<!-- ══ 18 · Practice Q2 ══ -->
+<!-- ══ 20 · Practice Q2 ══ -->
 <section data-kicker="CH.5 · PRACTICE 02">
   <div class="mcq" data-qid="w11-q2">
     <div class="mcq-q"><span class="qnum">Q2</span>The consonant [v] is a voiced…</div>
@@ -503,14 +491,14 @@
       <button class="mcq-opt" data-correct="true"><span class="opt-key">B</span>labiodental fricative</button>
       <button class="mcq-opt"><span class="opt-key">C</span>velar nasal</button>
     </div>
-    <div class="mcq-explain"><span class="lbl">Explanation</span> [v] is made with the lower lip against the upper teeth (labiodental) and continuous friction (fricative), with vocal-fold vibration (voiced) → voiced labiodental fricative.</div>
+    <div class="mcq-explain"><span class="lbl">Explanation</span> [v] is made with the lower lip against the upper teeth (labiodental) and continuous friction (fricative), with vocal-cord vibration (voiced) → voiced labiodental fricative.</div>
   </div>
   <aside class="notes">
     자음 3요소 라벨 읽기 문항입니다. 학생이 자음표에서 [v]의 위치·방법·유성성을 확인하게 하세요.
   </aside>
 </section>
 
-<!-- ══ 19 · Practice Q3 ══ -->
+<!-- ══ 21 · Practice Q3 ══ -->
 <section data-kicker="CH.5 · PRACTICE 03">
   <div class="mcq" data-qid="w11-q3">
     <div class="mcq-q"><span class="qnum">Q3</span>Which sound is a <em>voiceless velar stop</em>?</div>
@@ -526,11 +514,11 @@
   </aside>
 </section>
 
-<!-- ══ 20 · Exercise Q4 ══ -->
-<section data-kicker="CH.5 · EXERCISE 04">
+<!-- ══ 22 · Practice Q4 ══ -->
+<section data-kicker="CH.5 · PRACTICE 04">
   <div class="mcq" data-qid="w11-q4">
     <div class="mcq-q"><span class="qnum">Q4</span>How many <b>sound segments</b> (not letters) are in the word <em>thought</em>?
-      <span style="font: italic 400 15px 'Lora'; color: var(--ed-muted);">(cf. textbook Ch.5, pp.184–187)</span></div>
+      <span style="font: italic 400 15px 'Lora'; color: var(--ed-muted);">(cf. textbook Ch.5, pp.184, 188)</span></div>
     <div class="mcq-opts">
       <button class="mcq-opt" data-correct="true"><span class="opt-key">A</span>3: [θ] [ɔ] [t]</button>
       <button class="mcq-opt"><span class="opt-key">B</span>7: one per letter</button>
@@ -539,16 +527,16 @@
     <div class="mcq-explain"><span class="lbl">Explanation</span> Spelling has seven letters, but only three sounds: [θ] (<em>th</em>), a vowel, and [t]. The letters <em>ough</em> spell a single vowel and <em>gh</em> is silent: exactly why we count segments, not letters.</div>
   </div>
   <aside class="notes">
-    교재 Ch.5 분절음 세기 연습을 개념 중심으로 재구성한 문항입니다(원문 복제 아님).
+    교재 p.184(분절음)와 p.188의 thought [θɔt] 전사를 바탕으로 만든 문항입니다. 교재 연습문제에는 분절음 세기 문항이 없습니다.
     철자 수 ≠ 소리 수임을 thought [θɔt]로 극명히 보여주세요.
   </aside>
 </section>
 
-<!-- ══ 21 · Exercise Q5 ══ -->
+<!-- ══ 23 · Exercise Q5 ══ -->
 <section data-kicker="CH.5 · EXERCISE 05">
   <div class="mcq" data-qid="w11-q5">
     <div class="mcq-q"><span class="qnum">Q5</span>Which set of words all <b>begin</b> with the same consonant <em>sound</em>?
-      <span style="font: italic 400 15px 'Lora'; color: var(--ed-muted);">(cf. textbook Ch.5, pp.186–187)</span></div>
+      <span style="font: italic 400 15px 'Lora'; color: var(--ed-muted);">(cf. textbook Ch.5, p.187 · Exercise 1, p.210)</span></div>
     <div class="mcq-opts">
       <button class="mcq-opt" data-correct="true"><span class="opt-key">A</span>city · scene · psychology</button>
       <button class="mcq-opt"><span class="opt-key">B</span>cat · city · ceiling</button>
@@ -556,22 +544,22 @@
     </div>
     <div class="mcq-explain"><span class="lbl">Explanation</span> <em>city, scene, psychology</em> all begin with [s] despite different spellings (<em>c, sc, ps</em>). In B, <em>cat</em> starts with [k] but <em>city/ceiling</em> with [s]; in C, the three initials are [g], [f], [dʒ].</div>
   </div>
-  <p class="ko-supp" style="font-size:14px; margin-top:16px;">더 풀어보기: 교재 Ch.5 끝의 Exercises 1–6(첫소리·끝소리 전사, 3요소 라벨 쓰기)을 과제로 권장.</p>
+  <p class="ko-supp" style="font-size:14px; margin-top:16px;">더 풀어보기: 교재 Ch.5 Exercises 1·2(p.210, 첫소리·끝소리 기호 쓰기)와 6(p.212, 기술을 보고 기호 쓰기)의 자음 문항을 과제로 권장. 모음 문항은 다음 주.</p>
   <aside class="notes">
-    교재 Ch.5 소리-철자 연습을 재구성했습니다. 철자가 달라도 같은 소리로 시작할 수 있음을
+    교재 Ch.5 Exercise 1(p.210, 첫소리 기호 쓰기, 예시 psycho [s])과 p.187의 묵음 철자(psychology)를 재구성했습니다. 철자가 달라도 같은 소리로 시작할 수 있음을
     [s] 예로 확인시키세요. 하단의 추가 Exercises는 과제로 안내.
   </aside>
 </section>
 
-<!-- ══ 22 · Summary ══ -->
+<!-- ══ 24 · Summary ══ -->
 <section data-kicker="CH.5 · SUMMARY">
   <h2>Summary</h2>
   <ol class="recap" style="max-width:680px;">
-    <li>Speech divides into discrete <b>sound segments</b></li>
+    <li>Speech is continuous, yet speakers hear discrete <b>sound segments</b></li>
     <li>Spelling ≠ sound → the <b>IPA</b>: one symbol, one sound, in <b>[ ]</b></li>
-    <li>Consonants = <i>obstructed airflow</i> in the <b>vocal tract</b></li>
-    <li>Label each consonant by <b>voicing · place · manner</b></li>
-    <li>Voiceless stops split into <b>aspirated</b> [pʰ] <i>pit</i> / unaspirated [p] <i>spit</i></li>
+    <li>Consonants: airflow is <b>obstructed</b> somewhere in the <b>vocal tract</b></li>
+    <li>Label each consonant by <b>voicing · place · manner</b>; [pʰ] <i>pit</i> is aspirated, [p] <i>spit</i> is not</li>
+    <li>Velum up = <b>oral</b>, velum down = <b>nasal</b>; stops, fricatives, affricates, liquids, glides</li>
     <li>The consonant chart: <b>place × manner</b> coordinates</li>
   </ol>
   <aside class="notes">
@@ -580,13 +568,13 @@
   </aside>
 </section>
 
-<!-- ══ 23 · Next week ══ -->
+<!-- ══ 25 · Next week ══ -->
 <section data-kicker="NEXT WEEK · CH.5 PP.199–215">
   <h2>Vowels, Prosody &amp; Sign</h2>
   <p class="lead" style="max-width:620px;">Open the tract and the obstruction disappears — <em>so how do we tell one vowel from another?</em>
     <span class="ko-supp" style="display:block;">모음의 4차원 기술 · 이중모음 · 운율 · 수화의 음성학 · Ch.5 pp.199–215.</span></p>
   <hr class="hair" style="max-width:620px; margin-top:34px;">
-  <p style="font: 300 17px 'Noto Serif KR'; color: var(--ed-body);">
+  <p style="font: 400 17px 'Lora', 'Noto Serif KR'; color: var(--ed-body);">
     <span class="small-label" style="margin-right:14px;">PREPARE</span>Read Ch.5 pp.199–215 · end-of-chapter exercises</p>
   <aside class="notes">
     다음 주는 모음과 운율입니다. 자음이 '기류의 방해'라면 모음은 '방해 없는 공명'임을 예고하며,

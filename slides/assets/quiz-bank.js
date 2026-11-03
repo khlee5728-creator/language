@@ -428,7 +428,7 @@ window.QUIZ_BANK = {
  },
  "w11-q4": {
   "week": 11,
-  "q": "How many sound segments (not letters) are in the word thought? (cf. textbook Ch.5, pp.184–187)",
+  "q": "How many sound segments (not letters) are in the word thought? (cf. textbook Ch.5, pp.184, 188)",
   "opts": {
    "A": "3 — [θ] [ɔ] [t]",
    "B": "7 — one per letter",
@@ -438,7 +438,7 @@ window.QUIZ_BANK = {
  },
  "w11-q5": {
   "week": 11,
-  "q": "Which set of words all begin with the same consonant sound? (cf. textbook Ch.5, pp.186–187)",
+  "q": "Which set of words all begin with the same consonant sound? (cf. textbook Ch.5, p.187 · Exercise 1, p.210)",
   "opts": {
    "A": "city · scene · psychology",
    "B": "cat · city · ceiling",
