@@ -41,6 +41,36 @@
     .reveal table.mini-table tr:nth-child(even) td, .reveal table.mini-table tr:hover td { background: none; }
     .reveal table.ed-table td small, .reveal table.mini-table td small { font: 400 15px 'Lora'; color: var(--ed-muted); }
 
+    /* 3번: 글로는 다르고 소리는 같은 쌍(한 쌍 = 한 줄, 쌍마다 발음 버튼) */
+    .reveal table.sp-pairs { border-collapse: collapse; margin: 4px 0 8px; width: auto; }
+    .reveal table.sp-pairs td { font: italic 400 19px/1.35 'Lora'; color: var(--ed-ink); white-space: nowrap; text-align: left;
+      background: none; border: 0; border-bottom: 1px solid var(--ed-line); padding: 5px 10px 5px 0; }
+    .reveal table.sp-pairs tr:first-child td { border-top: 1px solid var(--ed-line); }
+    .reveal table.sp-pairs td.eq { font: 400 18px 'Lora'; color: var(--ed-accent); padding: 5px 12px 5px 2px; }
+    .reveal table.sp-pairs td.ply { padding-right: 0; padding-left: 6px; }
+    .reveal table.sp-pairs tr:nth-child(even) td, .reveal table.sp-pairs tr:hover td { background: none; }
+    /* 5번: 철자≠소리 다섯 유형(번호 대신 유형 라벨) */
+    .mm { display: grid; grid-template-columns: 196px 1fr; gap: 0 18px; align-items: baseline; border-top: 1px solid var(--ed-line); }
+    .mm > span { border-bottom: 1px solid var(--ed-line); padding: 7px 0; }
+    .mm .tag { font: 600 10.5px 'Space Grotesk'; letter-spacing: 0.14em; color: var(--ed-accent); align-self: stretch; padding-top: 11px; }
+    .mm .ex { font: 400 17px/1.4 'Lora'; color: var(--ed-ink); }
+    .mm .ex b { font-weight: 700; color: var(--ed-accent); }
+    .mm .nt { display: block; font: 400 13.5px/1.35 'Lora'; color: var(--ed-muted); margin-top: 1px; }
+    /* 6번: IPA 표(교재 Table 5.1 배열, 자체 키워드) */
+    .ipa-chart { display: grid; grid-template-columns: 1.45fr 1fr; gap: 40px; border-top: 1px solid var(--ed-line); padding-top: 8px; }
+    .ipa-grid { display: grid; gap: 0 18px; }
+    .ipa-grid.c3 { grid-template-columns: repeat(3, 1fr); }
+    .ipa-grid.c2 { grid-template-columns: repeat(2, 1fr); }
+    .ipa-grid span { display: flex; align-items: baseline; gap: 10px; border-bottom: 1px solid var(--ed-line); padding: 1px 0; }
+    .ipa-grid b { font: 400 18px/1.3 'Lora'; color: var(--ed-ink); min-width: 26px; }
+    .ipa-grid i { font: italic 400 15px/1.3 'Lora'; color: var(--ed-body); }
+    /* 7번: 철자 → 발음 전사 표 */
+    .reveal table.tr-tab { border-collapse: collapse; width: 100%; margin: 0; }
+    .reveal table.tr-tab th { font: 600 10.5px 'Space Grotesk'; letter-spacing: 0.16em; color: var(--ed-muted); text-align: left; white-space: nowrap;
+      background: none; border: 0; border-bottom: 1px solid var(--ed-line); padding: 4px 10px 4px 0; }
+    .reveal table.tr-tab td { font: 400 18px/1.25 'Lora'; color: var(--ed-ink); text-align: left; background: none; border: 0;
+      border-bottom: 1px solid var(--ed-line); padding: 3px 10px 3px 0; }
+    .reveal table.tr-tab tr:nth-child(even) td, .reveal table.tr-tab tr:hover td { background: none; }
     /* 9번: 자체 성도 단면도 + 조음 위치 선택(번호·목록 클릭 → 강조·자음·예시·발음) */
     .vt { display: grid; grid-template-columns: 440px minmax(0, 1fr); gap: 30px; align-items: start; }
     .vt-fig { width: 440px; height: auto; display: block; }
@@ -93,15 +123,15 @@
   ─ Phonetics: The Sounds of Language ... p.183 → cover
   ─ Sound Segments .................... p.184 → slide 3
   ─ Speech Sounds, Like Snowflakes .... p.185 → slide 4
-  ─ The Phonetic Alphabet ............. p.186 → slides 5–6 (+ TED-Ed video, slide 7)
-  ─ Articulatory Phonetics ............ p.188 → slide 8 (+ vocal-tract figure, slide 9; TED endoscopy video, slide 10)
-  ─ Consonants ........................ p.189 → slide 11
-  ─ Place of Articulation ............. p.189 → slide 12
-  ─ Manner of Articulation ............ p.191 → slide 13
-      · Voiced and Voiceless Sounds ... p.192 → slide 14 (aspiration p.193 → slide 15)
-      · Nasal and Oral Sounds ......... p.193 → slide 16 (+ cartoon, slide 17)
-      · Stops … Glides (run-in heads) . p.195–197 → slide 18
-  ─ Phonetic Symbols for American English Consonants p.197 → slide 19 (chart)
+  ─ The Phonetic Alphabet ............. p.186 → slides 5–7 (+ TED-Ed video, slide 8)
+  ─ Articulatory Phonetics ............ p.188 → slide 9 (+ vocal-tract figure, slide 10; TED endoscopy video, slide 11)
+  ─ Consonants ........................ p.189 → slide 12
+  ─ Place of Articulation ............. p.189 → slide 13
+  ─ Manner of Articulation ............ p.191 → slide 14
+      · Voiced and Voiceless Sounds ... p.192 → slide 15 (aspiration p.193 → slide 16)
+      · Nasal and Oral Sounds ......... p.193 → slide 17 (+ cartoon, slide 18)
+      · Stops … Glides (run-in heads) . p.195–197 → slide 19
+  ─ Phonetic Symbols for American English Consonants p.197 → slide 20 (chart)
 -->
 <div class="reveal">
 <div class="slides">
@@ -146,21 +176,26 @@
     <div class="def">The study of speech sounds is <i>phonetics</i>. Speech is physically continuous, yet speakers hear discrete <i>segments</i>.
       <span class="ko-supp" style="display:block; margin-top:8px;">음성학(phonetics)은 말소리를 연구하며, 말소리는 물리적으로 연속이지만 화자는 이를 분절음(segment)으로 듣는다.</span></div>
     <div>
-      <div class="gloss-set" style="margin-bottom:24px;">
-        <div class="langlab">NO BREAKS BETWEEN SPOKEN WORDS</div>
-        <div class="sent" style="font-size:25px;">I scream <span style="color:var(--ed-muted);">/</span> Ice cream · grade A <span style="color:var(--ed-muted);">/</span> gray day
-          <button class="say-btn mini" data-say="I scream. Ice cream." data-lang="en-US">listen</button></div>
-        <div class="tr">말할 때는 단어 사이에 끊김이 없다.</div>
-      </div>
       <div class="quote-stack">
         <p>Knowing the language is what lets you <b>cut the stream</b> into pieces.</p>
         <p>History agrees: <i>a napron</i> was misheard so often it became <i>an apron</i>.</p>
       </div>
     </div>
   </div>
+  <hr class="hair" style="margin:16px 0 10px;">
+  <div class="gloss-set" style="margin:0;">
+    <div class="langlab">NO BREAKS BETWEEN SPOKEN WORDS</div>
+    <table class="sp-pairs">
+      <tr><td>I scream</td><td class="eq">≈</td><td>ice cream</td><td class="ply"><button class="say-btn mini" data-say="I scream. Ice cream." data-lang="en-US">listen</button></td></tr>
+      <tr><td>grade A</td><td class="eq">≈</td><td>gray day</td><td class="ply"><button class="say-btn mini" data-say="Grade A. Gray day." data-lang="en-US">listen</button></td></tr>
+      <tr><td>the sun's rays meet</td><td class="eq">≈</td><td>the sons raise meat</td><td class="ply"><button class="say-btn mini" data-say="The sun's rays meet. The sons raise meat." data-lang="en-US">listen</button></td></tr>
+    </table>
+    <div class="tr">말할 때는 단어 사이에 끊김이 없다.</div>
+  </div>
   <aside class="notes">
     bus는 물리적으로 한 덩어리 소리지만 영어를 알기에 [b]-[u]-[s]로 쪼갤 수 있습니다. 목 가다듬는 소리는
     말이 아니므로 분절 불가. "holing don"(hold on) 아동 예화와 napron→apron의 어경계 오분석도 소개하세요.
+    표의 세 쌍은 교재 p.185의 예입니다. 쌍마다 listen을 눌러 글로는 다르지만 소리로는 구별이 어렵다는 점을 들려주세요.
   </aside>
 </section>
 
@@ -187,52 +222,77 @@
   </aside>
 </section>
 
-<!-- ══ 5 · The Phonetic Alphabet ══ -->
+<!-- ══ 5 · The Phonetic Alphabet: spelling ≠ sound ══ -->
 <section data-kicker="CH.5 P.186">
   <h2>The Phonetic Alphabet</h2>
-  <div class="cols">
-    <div class="def">Orthography is an unreliable guide to sound. Phonetics needs one symbol for each sound: the <b>IPA</b>, written in square brackets <i>[ ]</i>.
-      <span class="ko-supp" style="display:block; margin-top:8px;">철자는 발음의 믿을 만한 안내자가 아니므로, 음성학은 '한 기호 = 한 소리'인 국제음성기호(IPA)를 각괄호 [ ] 안에 쓴다.</span></div>
-    <ul class="exlist" style="font-size:0.95em;">
-      <li><span class="no">01</span><span>One sound, many spellings: [f] in <i>f</i>ish, <i>ph</i>one, enou<i>gh</i>, co<i>ff</i>ee</span></li>
-      <li><span class="no">02</span><span>One letter, many sounds: <i>c</i> = [k] in <i>cat</i>, [s] in <i>city</i></span></li>
-      <li><span class="no">03</span><span>Silent letters: <i>k</i>now, lam<i>b</i>, i<i>s</i>land, <i>w</i>rite</span></li>
-      <li><span class="no">04</span><span>One letter, two sounds: <i>x</i> = [ks] in <i>sex</i></span></li>
-      <li><span class="no">05</span><span>Shaw's joke: <i>fish</i> spelled <b>ghoti</b> = <i>gh</i> (tou<i>gh</i>) + <i>o</i> (w<i>o</i>men) + <i>ti</i> (na<i>ti</i>on)</span></li>
-    </ul>
+  <p class="lead" style="font-size:17px; margin:0 0 14px;"><b>Orthography</b>, or spelling, does not represent sounds consistently. A science of sound needs the <b>same symbol for the same sound</b>, every time.
+    <span class="ko-supp" style="display:block; margin-top:4px;">철자(orthography)는 소리를 일관되게 나타내지 못하므로, 소리의 과학에는 같은 소리에 늘 같은 기호가 필요하다.</span></p>
+  <div class="mm">
+    <span class="tag">ONE SOUND · MANY SPELLINGS</span><span class="ex"><i>Did h<b>e</b> bel<b>ie</b>ve that C<b>ae</b>sar could s<b>ee</b> the p<b>eo</b>ple s<b>ei</b>ze the s<b>ea</b>s?</i><span class="nt">one vowel, seven spellings</span></span>
+    <span class="tag">ONE LETTER · MANY SOUNDS</span><span class="ex"><i>My f<b>a</b>ther w<b>a</b>nted m<b>a</b>ny <b>a</b> vill<b>a</b>ge d<b>a</b>me b<b>a</b>dly.</i><span class="nt">the letter <i>a</i>, several different vowels</span></span>
+    <span class="tag">SEVERAL LETTERS · ONE SOUND</span><span class="ex"><i><b>sh</b>oot · <b>ch</b>aracter · <b>Th</b>omas · <b>ph</b>ysics · rou<b>gh</b> · na<b>ti</b>on</i></span>
+    <span class="tag">ONE LETTER · TWO SOUNDS</span><span class="ex"><i>se<b>x</b></i> = [sɛks]: <i>x</i> stands for [ks]</span>
+    <span class="tag">SILENT LETTERS</span><span class="ex"><i><b>k</b>not · <b>p</b>sychology · i<b>s</b>land · de<b>b</b>t · <b>h</b>onest</i></span>
   </div>
+  <hr class="hair" style="margin:14px 0 8px;">
+  <p class="lead" style="font-size:16.5px; margin:0;">Shaw: <i>fish</i> could be spelled <b>ghoti</b>, <i>gh</i> as in <i>tough</i>, <i>o</i> as in <i>women</i>, <i>ti</i> as in <i>nation</i>. Spelling reform failed; phoneticians built a new alphabet instead.
+    <span class="ko-supp" style="display:block; margin-top:4px;">철자 개혁은 실패했고, 음성학자들은 대신 새로운 음성 기호 체계를 만들었다.</span></p>
   <aside class="notes">
-    철자-발음 불일치의 네 유형 + 쇼의 ghoti 일화. "Did he believe that Caesar could see the people
-    seize the seas?"(같은 모음, 열한 가지 철자)도 판서용으로 좋습니다. 음성 기호는 항상 각괄호 [ ] 안에.
+    교재 pp.186–187의 순서 그대로입니다. 같은 소리의 여러 철자(Caesar 문장의 [i]: e, ie, ae, ee, eo, ei, ea) → 같은 글자의 여러 소리(father 문장의 a)
+    → 여러 글자가 한 소리(sh, ch, th, ph, gh, ti) → 한 글자가 두 소리(x = [ks]) → 묵음 글자. 마지막 줄이 쇼의 ghoti와 철자 개혁의 실패입니다.
+    다섯 유형은 순서가 있는 단계가 아니라 나란한 범주라 번호 대신 유형 이름을 달았습니다. 교재는 Caesar 문장 외에 amoeba 문장, y·oe·ey·i 철자까지 들어 열한 가지 철자를 보입니다.
   </aside>
 </section>
 
-<!-- ══ 6 · The Phonetic Alphabet II: transcription ══ -->
+<!-- ══ 6 · The Phonetic Alphabet: the IPA (cf. Table 5.1) ══ -->
+<section data-kicker="CH.5 P.187">
+  <h2>The Phonetic Alphabet</h2>
+  <p class="lead" style="font-size:17px; margin:0 0 12px;">The <b>IPA</b> (International Phonetic Alphabet) writes the sounds of all languages with ordinary letters and invented symbols: <b>one symbol, one sound</b>, in [ ].
+    <span class="ko-supp" style="display:block; margin-top:4px;">국제음성기호(IPA)는 모든 언어의 소리를 '한 기호 = 한 소리'로 [ ] 안에 적는다.</span></p>
+  <div class="ipa-chart">
+    <div><div class="small-label" style="margin-bottom:6px;">CONSONANTS</div><div class="ipa-grid c3"><span><b>p</b><i>pen</i></span><span><b>t</b><i>ten</i></span><span><b>k</b><i>kit</i></span><span><b>b</b><i>bed</i></span><span><b>d</b><i>den</i></span><span><b>g</b><i>get</i></span><span><b>m</b><i>man</i></span><span><b>n</b><i>net</i></span><span><b>ŋ</b><i>sing</i></span><span><b>f</b><i>fan</i></span><span><b>s</b><i>sun</i></span><span><b>h</b><i>hat</i></span><span><b>v</b><i>van</i></span><span><b>z</b><i>zoo</i></span><span><b>l</b><i>let</i></span><span><b>θ</b><i>thin</i></span><span><b>tʃ</b><i>chin</i></span><span><b>r</b><i>red</i></span><span><b>ð</b><i>then</i></span><span><b>dʒ</b><i>jam</i></span><span><b>j</b><i>yes</i></span><span><b>ʃ</b><i>she</i></span><span><b>ʍ</b><i>when*</i></span><span><b>w</b><i>wet</i></span><span><b>ʒ</b><i>vision</i></span></div></div>
+    <div><div class="small-label" style="margin-bottom:6px;">VOWELS · NEXT WEEK IN DETAIL</div><div class="ipa-grid c2"><span><b>i</b><i>see</i></span><span><b>ɪ</b><i>sit</i></span><span><b>e</b><i>say</i></span><span><b>ɛ</b><i>set</i></span><span><b>u</b><i>too</i></span><span><b>ʊ</b><i>book</i></span><span><b>o</b><i>go</i></span><span><b>ɔ</b><i>four</i></span><span><b>æ</b><i>sat</i></span><span><b>ɑ</b><i>father</i></span><span><b>ʌ</b><i>cup</i></span><span><b>ə</b><i>about</i></span><span><b>aɪ</b><i>my</i></span><span><b>aʊ</b><i>now</i></span><span><b>ɔɪ</b><i>toy</i></span></div></div>
+  </div>
+  <p class="fn" style="font: italic 400 13.5px 'Lora'; color: var(--ed-muted); margin:10px 0 0;">Symbols and layout as in Table 5.1 (p.187); key words are our own. *For speakers who say <i>when</i> with a puff of air.</p>
+  <aside class="notes">
+    교재 Table 5.1(p.187)의 기호와 배열(자음 3열, 모음 2열)을 그대로 따르되, 예시 단어는 교재 표를 옮기지 않고 새로 골랐습니다.
+    학생에게는 교재 p.187의 표를 함께 펴 보게 하세요. 모음 기호는 다음 주(Vowels)에 자세히 다룹니다.
+    교재 관례: 이중모음 [aɪ aʊ ɔɪ]는 한 소리로 취급하고, [e]·[o]는 bait·boat의 모음입니다. 모든 기호를 다 담은 것은 아니며 사람과 위치에 따라 소리는 달라질 수 있다고 교재도 밝힙니다.
+  </aside>
+</section>
+
+<!-- ══ 7 · The Phonetic Alphabet: reading the chart, transcription ══ -->
 <section data-kicker="CH.5 P.188">
   <h2>The Phonetic Alphabet</h2>
-  <div class="cols-even">
-    <ul class="exlist">
-      <li><span class="no">OU</span><span>though [ðo] · thought [θɔt]</span></li>
-      <li><span class="no">OU</span><span>rough [rʌf] · bough [baʊ]</span></li>
-      <li><span class="no">OU</span><span>through [θru] · would [wʊd]</span></li>
-    </ul>
-    <div class="quote-stack">
-      <p>[θ] <i>thin</i> · [ð] <i>this</i> · [ʃ] <i>ship</i> · [ŋ] <i>sing</i></p>
-      <p>[tʃ] <i>church</i> · [dʒ] <i>judge</i> · [ə] schwa, unstressed <i>sofa</i></p>
-      <p>Some speakers split <i>witch</i> [w] from <i>which</i> [ʍ].</p>
+  <div class="cols-even" style="grid-template-columns: minmax(0,1.4fr) minmax(0,0.6fr); gap:40px;">
+    <div class="quote-stack" style="font-size:0.84em;">
+      <p><b>Schwa</b> [ə]: a short vowel in an unstressed syllable, as in <i>about</i>, <i>sofa</i>.</p>
+      <p>Some speakers say <i>which</i> [ʍ] with a puff of air, unlike <i>witch</i> [w].</p>
+      <p>Varieties of English differ; your speech may need other symbols.</p>
+      <p>The IPA's [ɹ] is written [r] in this book, for clarity.</p>
+    </div>
+    <div>
+      <table class="tr-tab">
+        <tr><th>SPELLING</th><th>PRONUNCIATION</th></tr>
+        <tr><td><i>though</i></td><td>[ðo]</td></tr>
+        <tr><td><i>thought</i></td><td>[θɔt]</td></tr>
+        <tr><td><i>rough</i></td><td>[rʌf]</td></tr>
+        <tr><td><i>bough</i></td><td>[baʊ]</td></tr>
+        <tr><td><i>through</i></td><td>[θru]</td></tr>
+        <tr><td><i>would</i></td><td>[wʊd]</td></tr>
+      </table>
     </div>
   </div>
-  <hr class="hair" style="margin-top:26px;">
-  <p class="lead" style="font-size:17px;">Six spellings of <em>ou</em>, six different vowels: the transcription records what is <b>said</b>, not written.
-    <span class="ko-supp" style="display:block;">같은 철자 ou가 여섯 가지 모음으로 발음되듯, 전사는 쓰인 것이 아니라 말한 것을 기록한다.</span></p>
+  <hr class="hair" style="margin:16px 0 8px;">
+  <p class="lead" style="font-size:17px; margin:0;">One spelling <i>ou</i>, six different vowels: a transcription records what is <b>said</b>, not written.
+    <span class="ko-supp" style="display:block; margin-top:4px;">같은 철자 ou가 여섯 가지 모음이 되듯, 전사는 쓰인 것이 아니라 말한 것을 기록한다.</span></p>
   <aside class="notes">
-    though/thought/rough/bough/through/would는 같은 ou 철자가 여섯 모음으로 발음됩니다(gh는 rough에서만 [f]).
-    영어 철자로 하나처럼 보이는 소리들(θ, ð, ʃ, ŋ, tʃ, dʒ)이 IPA에선 고유 기호를 갖습니다.
-    schwa [ə]는 무강세 짧은 모음 표기임도 언급하세요. 표기 관례: 교재는 IPA의 [ɹ] 대신 가독성을 위해 [r]를 씁니다.
+    교재 p.188의 표 읽는 법 네 가지(schwa, which/witch, 영어 변종, [ɹ] 대신 [r])와 철자→발음 전사 예입니다.
+    오른쪽 표: ou가 여섯 모음으로 발음되고, gh는 rough에서만 [f], th는 [θ] 또는 [ð] 한 소리, would의 l은 묵음입니다.
   </aside>
 </section>
 
-<!-- ══ 7 · Watch: Okrent ══ -->
+<!-- ══ 8 · Watch: Okrent ══ -->
 <section data-kicker="CH.5 P.186 · THE PHONETIC ALPHABET · VIDEO">
   <h2>Why Is English So Confusing?</h2>
   <p class="lead" style="font-size:17px; margin-bottom:14px;">Linguist Arika Okrent explains how English spelling and sound drifted apart, and why spelling reformers keep proposing fixes.
@@ -253,11 +313,11 @@
     공식 TED 임베드입니다. TED-Ed지만 ted.com/talks에 올라가 있어 TED 자체 플레이어로 재생됩니다. 5분 13초라 전편 시청이 가능합니다.
     교재 p.187의 ghoti 일화(enough의 gh, women의 o, nation의 ti)와 철자 개혁 이야기에 바로 이어집니다.
     소리 변화나 인쇄술 같은 철자 역사는 교재 밖 보충이므로, '그래서 한 기호 = 한 소리인 IPA가 필요하다'로 정리해 주세요.
-    W11은 TED 2편 예외 주차입니다(다른 1편은 9번 성도 그림 뒤 내시경 영상).
+    W11은 TED 2편 예외 주차입니다(다른 1편은 10번 성도 그림 뒤 내시경 영상).
   </aside>
 </section>
 
-<!-- ══ 8 · Articulatory Phonetics ══ -->
+<!-- ══ 9 · Articulatory Phonetics ══ -->
 <section data-kicker="CH.5 P.188">
   <h2>Articulatory Phonetics</h2>
   <div class="cols">
@@ -276,7 +336,7 @@
   </aside>
 </section>
 
-<!-- ══ 9 · Figure: the vocal tract ══ -->
+<!-- ══ 10 · Figure: the vocal tract ══ -->
 <section data-kicker="CH.5 P.190 · ARTICULATORY PHONETICS · FIGURE">
   <div class="vt">
     <svg class="vt-fig" viewBox="0 70 400 400" role="img" aria-label="Midsagittal view of the vocal tract with eight places of articulation">
@@ -383,7 +443,7 @@
   }</script>
 </section>
 
-<!-- ══ 10 · Watch: Thum & Broadhurst ══ -->
+<!-- ══ 11 · Watch: Thum & Broadhurst ══ -->
 <section data-kicker="CH.5 P.189 · ARTICULATORY PHONETICS · VIDEO">
   <h2 style="font-size:36px;">What Happens in Your Throat When You Beatbox?</h2>
   <p class="lead" style="font-size:17px; margin-bottom:14px;">A laryngeal surgeon films beatboxer Tom Thum's vocal tract from the inside: the <b>vocal cords</b> vibrating, the <b>soft palate</b> sealing off the nose, the tongue root and the pharynx.
@@ -411,7 +471,7 @@
   </aside>
 </section>
 
-<!-- ══ 11 · Consonants ══ -->
+<!-- ══ 12 · Consonants ══ -->
 <section data-kicker="CH.5 P.189" data-path="Articulatory Phonetics">
   <h2>Consonants</h2>
   <div class="cols">
@@ -428,7 +488,7 @@
   </aside>
 </section>
 
-<!-- ══ 12 · Place of Articulation ══ -->
+<!-- ══ 13 · Place of Articulation ══ -->
 <section data-kicker="CH.5 P.189" data-path="Articulatory Phonetics › Consonants">
   <h2 style="margin-bottom:16px;">Place of Articulation</h2>
   <ul class="exlist" style="font-size:0.9em;">
@@ -447,7 +507,7 @@
   </aside>
 </section>
 
-<!-- ══ 13 · Manner of Articulation ══ -->
+<!-- ══ 14 · Manner of Articulation ══ -->
 <section data-kicker="CH.5 P.191" data-path="Articulatory Phonetics › Consonants">
   <h2>Manner of Articulation</h2>
   <div class="cols">
@@ -464,7 +524,7 @@
   </aside>
 </section>
 
-<!-- ══ 14 · Voiced and Voiceless Sounds ══ -->
+<!-- ══ 15 · Voiced and Voiceless Sounds ══ -->
 <section data-kicker="CH.5 P.192" data-path="Articulatory Phonetics › Consonants › Manner of Articulation">
   <h2>Voiced and Voiceless Sounds</h2>
   <div class="cols-even">
@@ -481,17 +541,17 @@
   </div>
   <hr class="hair" style="margin-top:28px;">
   <p class="lead" style="font-size:18px;">Fingers in your ears: <em>z-z-z-z</em> hums, <em>s-s-s-s</em> only hisses.
-    <button class="say-btn mini" data-say="seal, zeal. fine, vine. rope, robe." data-lang="en-US">pairs</button>
+    <button class="say-btn mini" data-say="rope, robe. fine, vine. seal, zeal. choke, joke." data-lang="en-US">pairs</button>
     <span style="font: italic 400 16px 'Lora'; display:block; margin-top:8px;">rope/robe [rop]/[rob] · fine/vine · seal/zeal · choke/joke: voicing alone splits the pair.</span>
     <span class="ko-supp" style="display:block; margin-top:6px;">귀를 막으면 z-z-z는 울리고 s-s-s는 바람 소리만 나며, rope/robe처럼 유성성(voicing) 하나로 단어 쌍이 갈린다.</span></p>
   <aside class="notes">
     귀 막고 z/s 발음 실험, 속삭이면 전부 무성이 되는 실험(Sue/zoo)을 시켜보세요.
     rope/robe처럼 유성성만 다른 쌍이 변별됨을 강조합니다.
-    앞의 내시경 영상(10번)에서 본 성대 진동 장면(07:31–09:15)을 다시 떠올리게 하세요.
+    앞의 내시경 영상(11번)에서 본 성대 진동 장면(07:31–09:15)을 다시 떠올리게 하세요.
   </aside>
 </section>
 
-<!-- ══ 15 · Aspiration (Voiced and Voiceless cont.) ══ -->
+<!-- ══ 16 · Aspiration (Voiced and Voiceless cont.) ══ -->
 <section data-kicker="CH.5 P.193" data-path="Articulatory Phonetics › Consonants › Manner of Articulation">
   <h2>Voiced and Voiceless Sounds</h2>
   <div class="cols-even">
@@ -522,7 +582,7 @@
   </aside>
 </section>
 
-<!-- ══ 16 · Nasal and Oral Sounds ══ -->
+<!-- ══ 17 · Nasal and Oral Sounds ══ -->
 <section data-kicker="CH.5 P.193" data-path="Articulatory Phonetics › Consonants › Manner of Articulation">
   <h2>Nasal and Oral Sounds</h2>
   <div class="cols">
@@ -541,11 +601,11 @@
   <aside class="notes">
     연구개(velum)를 엄지로 만져보는 교재의 실습, 감기 때 콧소리가 나는 이유(연구개 폐쇄 불량)도
     소개하세요. voiced/voiceless × oral/nasal 사분류(Table 5.3)로 정리하고, [p]·[n]의 3요소 라벨을 시범. raid/rain, rug/rung 같은 쌍도 구강/비강 대립만으로 단어가 갈리는 예로 제시하세요.
-    앞의 내시경 영상(10번)에서 kh 발음 때 연구개가 닫히던 장면(10:02–10:47)을 다시 떠올리게 하세요.
+    앞의 내시경 영상(11번)에서 kh 발음 때 연구개가 닫히던 장면(10:02–10:47)을 다시 떠올리게 하세요.
   </aside>
 </section>
 
-<!-- ══ 17 · Cartoon: nasal sounds video (v2, 2026-09-27) ══ -->
+<!-- ══ 18 · Cartoon: nasal sounds video (v2, 2026-09-27) ══ -->
 <section data-kicker="CH.5 P.193 · MANNER OF ARTICULATION · CARTOON">
   <div class="video-scene" style="text-align:center;">
     <div class="video-stage">
@@ -568,7 +628,7 @@
   </aside>
 </section>
 
-<!-- ══ 18 · Manner classes: stops → glides ══ -->
+<!-- ══ 19 · Manner classes: stops → glides ══ -->
 <section data-kicker="CH.5 P.195" data-path="Articulatory Phonetics › Consonants">
   <h2 style="margin-bottom:14px;">Manner of Articulation</h2>
   <ul class="exlist" style="font-size:0.86em;">
@@ -587,7 +647,7 @@
   </aside>
 </section>
 
-<!-- ══ 19 · Chart: American English consonants ══ -->
+<!-- ══ 20 · Chart: American English consonants ══ -->
 <section data-kicker="CH.5 P.197" data-path="Articulatory Phonetics › Consonants">
   <h2 style="font-size:36px; margin-bottom:10px;">Phonetic Symbols for American English Consonants</h2>
   <p style="font: italic 400 15px 'Lora'; color: var(--ed-muted); margin-bottom:14px;">Rows = manner · columns = place. Two symbols in a cell: left voiceless, right voiced.
@@ -609,7 +669,7 @@
   </aside>
 </section>
 
-<!-- ══ 20 · Practice Q1 ══ -->
+<!-- ══ 21 · Practice Q1 ══ -->
 <section data-kicker="CH.5 · PRACTICE 01">
   <div class="mcq" data-qid="w11-q1">
     <div class="mcq-q"><span class="qnum">Q1</span>Why can't English spelling reliably represent pronunciation?</div>
@@ -625,7 +685,7 @@
   </aside>
 </section>
 
-<!-- ══ 21 · Practice Q2 ══ -->
+<!-- ══ 22 · Practice Q2 ══ -->
 <section data-kicker="CH.5 · PRACTICE 02">
   <div class="mcq" data-qid="w11-q2">
     <div class="mcq-q"><span class="qnum">Q2</span>The consonant [v] is a voiced…</div>
@@ -641,7 +701,7 @@
   </aside>
 </section>
 
-<!-- ══ 22 · Practice Q3 ══ -->
+<!-- ══ 23 · Practice Q3 ══ -->
 <section data-kicker="CH.5 · PRACTICE 03">
   <div class="mcq" data-qid="w11-q3">
     <div class="mcq-q"><span class="qnum">Q3</span>Which sound is a <em>voiceless velar stop</em>?</div>
@@ -657,7 +717,7 @@
   </aside>
 </section>
 
-<!-- ══ 23 · Practice Q4 ══ -->
+<!-- ══ 24 · Practice Q4 ══ -->
 <section data-kicker="CH.5 · PRACTICE 04">
   <div class="mcq" data-qid="w11-q4">
     <div class="mcq-q"><span class="qnum">Q4</span>How many <b>sound segments</b> (not letters) are in the word <em>thought</em>?
@@ -675,7 +735,7 @@
   </aside>
 </section>
 
-<!-- ══ 24 · Exercise Q5 ══ -->
+<!-- ══ 25 · Exercise Q5 ══ -->
 <section data-kicker="CH.5 · EXERCISE 05">
   <div class="mcq" data-qid="w11-q5">
     <div class="mcq-q"><span class="qnum">Q5</span>Which set of words all <b>begin</b> with the same consonant <em>sound</em>?
@@ -694,7 +754,7 @@
   </aside>
 </section>
 
-<!-- ══ 25 · Summary ══ -->
+<!-- ══ 26 · Summary ══ -->
 <section data-kicker="CH.5 · SUMMARY">
   <h2>Summary</h2>
   <ol class="recap" style="max-width:680px;">
@@ -711,7 +771,7 @@
   </aside>
 </section>
 
-<!-- ══ 26 · Next week ══ -->
+<!-- ══ 27 · Next week ══ -->
 <section data-kicker="NEXT WEEK · CH.5 PP.199–215">
   <h2>Vowels, Prosody &amp; Sign</h2>
   <p class="lead" style="max-width:620px;">Open the tract and the obstruction disappears — <em>so how do we tell one vowel from another?</em>
