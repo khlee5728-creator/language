@@ -114,6 +114,29 @@
     .f53 .lab.sm { font-size: 7px; }
     .reveal table.vv-pairs.nb td:first-child { font-size: 19px; width: 54px; }
     .fnote { font: italic 400 14px/1.45 'Lora'; color: var(--ed-muted); margin: 8px 0 0; }
+    /* 24번: 자음표(교재 Table 5.4 배열 — 방법 행을 무성/유성 줄로) */
+    .reveal table.c54 th.rowlab { white-space: nowrap; vertical-align: middle; font-size: 10px; }
+    .reveal table.c54 th.rowlab .par { text-transform: none; letter-spacing: 0; font: italic 400 12px 'Lora'; color: var(--ed-muted); }
+    .reveal table.c54 th.vc { text-transform: none; letter-spacing: 0; font: italic 400 13px 'Lora'; color: var(--ed-muted); text-align: left; padding: 3px 10px 3px 4px; }
+    .reveal table.c54 td { font-size: 18px; padding: 3px 4px; }
+    .reveal table.c54 tr.gs td, .reveal table.c54 tr.gs th.vc { border-bottom: 1px dotted var(--ed-line); }
+    /* 13·23번: 조음 위치·방법 헤어라인 표(줄마다 발음). 13번 번호는 Figure 5.1·10번 그림 번호 */
+    .reveal table.pl-tab { border-collapse: collapse; width: 100%; margin: 0; }
+    .reveal table.pl-tab td { font: 400 14.5px/1.35 'Lora'; color: var(--ed-body); text-align: left; vertical-align: baseline; background: none; border: 0;
+      border-bottom: 1px solid var(--ed-line); padding: 5px 10px 5px 0; }
+    .reveal table.pl-tab tr:first-child td { border-top: 1px solid var(--ed-line); }
+    .reveal table.pl-tab tr:nth-child(even) td, .reveal table.pl-tab tr:hover td { background: none; }
+    .reveal table.pl-tab td.pn { width: 24px; padding-right: 6px; }
+    .reveal table.pl-tab td.pn span { display: inline-flex; align-items: center; justify-content: center; width: 17px; height: 17px; border: 1.2px solid var(--ed-accent);
+      border-radius: 50%; font: 700 9.5px 'Space Grotesk'; color: var(--ed-accent); }
+    .reveal table.pl-tab td.nm { font: 600 10px 'Space Grotesk'; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ed-accent); white-space: nowrap; }
+    .reveal table.pl-tab td.sy { font: 400 16.5px/1.3 'Lora'; color: var(--ed-ink); white-space: nowrap; }
+    .reveal table.pl-tab td.ex { color: var(--ed-ink); }
+    .reveal table.pl-tab td.ply { padding-right: 0; text-align: right; white-space: nowrap; }
+    .reveal table.pl-tab td.ply .say-btn + .say-btn { margin-left: 4px; }
+    .reveal table.pl-tab tr.na td { color: var(--ed-muted); }
+    .reveal table.pl-tab tr.na td.nm, .reveal table.pl-tab tr.na td.sy { color: var(--ed-muted); }
+    .reveal table.pl-tab.pc, .reveal table.pl-tab.mn { table-layout: fixed; }
     /* 9번: 자체 성도 단면도 + 조음 위치 선택(번호·목록 클릭 → 강조·자음·예시·발음) */
     .vt { display: grid; grid-template-columns: 440px minmax(0, 1fr); gap: 30px; align-items: start; }
     .vt-fig { width: 440px; height: auto; display: block; }
@@ -173,8 +196,8 @@
   ─ Manner of Articulation ............ p.191 → slide 14
       · Voiced and Voiceless Sounds ... p.192 → slides 15–17 (+ timing figure after Figure 5.2, slide 18)
       · Nasal and Oral Sounds ......... p.193 → slides 19, 21 (+ figure after Figure 5.3, slide 20; cartoon, slide 22)
-      · Stops … Glides (run-in heads) . p.195–197 → slide 23
-  ─ Phonetic Symbols for American English Consonants p.197 → slide 24 (chart)
+      · Stops … Glides (run-in heads) . p.195–197 → slides 23–24 (trills, flaps, clicks on 24)
+  ─ Phonetic Symbols for American English Consonants p.197 → slide 25 (chart)
 -->
 <div class="reveal">
 <div class="slides">
@@ -533,19 +556,26 @@
 
 <!-- ══ 13 · Place of Articulation ══ -->
 <section data-kicker="CH.5 P.189" data-path="Articulatory Phonetics › Consonants">
-  <h2 style="margin-bottom:16px;">Place of Articulation</h2>
-  <ul class="exlist" style="font-size:0.9em;">
-    <li><span class="no">01</span><span><b>Bilabial</b>: both lips · [p b m] (<i>pat, bat, mat</i>)</span></li>
-    <li><span class="no">02</span><span><b>Labiodental</b>: lip + teeth · [f v] (<i>fan, van</i>)</span></li>
-    <li><span class="no">03</span><span><b>Interdental</b>: tongue tip + teeth · [θ ð] (<i>thin, this</i>)</span></li>
-    <li><span class="no">04</span><span><b>Alveolar</b>: tongue + ridge · [t d n s z l r]; [l] lateral, [r] curled back</span></li>
-    <li><span class="no">05</span><span><b>Palatal</b>: front of tongue + palate · [ʃ ʒ tʃ dʒ j] (<i>mission, measure, cheap, judge, yoyo</i>)</span></li>
-    <li><span class="no">06</span><span><b>Velar</b>: back of tongue + velum · [k g ŋ] (<i>kick, gig, bang</i>)</span></li>
-    <li><span class="no">07</span><span><b>Uvular</b>: [ʀ q ɢ] (French trilled <i>r</i>, Arabic); not ordinary English sounds</span></li>
-    <li><span class="no">08</span><span><b>Glottal</b>: [h] (<i>hat</i>); the glottal stop [ʔ] in <i>uh-oh</i> [ʔʌʔo]</span></li>
-  </ul>
+  <h2>Place of Articulation</h2>
+  <p class="lead" style="font-size:17px; margin:0 0 10px;">Consonants are classified by <b>where</b> the airflow is restricted in the vocal tract: the <b>place of articulation</b>, shaped by the tongue and lips.
+    <span class="ko-supp" style="display:block; margin-top:4px;">자음은 기류가 막히는 자리, 곧 조음 위치(place of articulation)로 분류한다.</span></p>
+  <table class="pl-tab pc">
+    <colgroup><col style="width:28px"><col style="width:100px"><col style="width:186px"><col style="width:118px"><col><col style="width:58px"></colgroup>
+      <tr><td class="pn"><span>1</span></td><td class="nm">Bilabial</td><td class="ar">both lips</td><td class="sy">[p b m]</td><td class="ex"><i>pie · buy · my</i></td><td class="ply"><button class="say-btn mini" data-say="pie. buy. my." data-lang="en-US">listen</button></td></tr>
+      <tr><td class="pn"><span>2</span></td><td class="nm">Labiodental</td><td class="ar">lower lip + upper teeth</td><td class="sy">[f v]</td><td class="ex"><i>fine · vine</i></td><td class="ply"><button class="say-btn mini" data-say="fine. vine." data-lang="en-US">listen</button></td></tr>
+      <tr><td class="pn"><span>3</span></td><td class="nm">Interdental</td><td class="ar">tongue tip between the teeth</td><td class="sy">[θ ð]</td><td class="ex"><i>thigh · thy</i></td><td class="ply"><button class="say-btn mini" data-say="thigh. thy." data-lang="en-US">listen</button></td></tr>
+      <tr><td class="pn"><span>4</span></td><td class="nm">Alveolar</td><td class="ar">tongue + alveolar ridge</td><td class="sy">[t d n s z l r]</td><td class="ex"><i>tie · die · night · sue · zoo · lye · rye</i></td><td class="ply"><button class="say-btn mini" data-say="tie. die. night. sue. zoo. lye. rye." data-lang="en-US">listen</button></td></tr>
+      <tr><td class="pn"><span>5</span></td><td class="nm">Palatal</td><td class="ar">front of tongue + palate</td><td class="sy">[ʃ ʒ tʃ dʒ j]</td><td class="ex"><i>mission · measure · cheap · judge · yoyo</i></td><td class="ply"><button class="say-btn mini" data-say="mission. measure. cheap. judge. yoyo." data-lang="en-US">listen</button></td></tr>
+      <tr><td class="pn"><span>6</span></td><td class="nm">Velar</td><td class="ar">back of tongue + velum</td><td class="sy">[k g ŋ]</td><td class="ex"><i>kick · gig · bang</i></td><td class="ply"><button class="say-btn mini" data-say="kick. gig. bang." data-lang="en-US">listen</button></td></tr>
+      <tr class="na"><td class="pn"><span>7</span></td><td class="nm">Uvular</td><td class="ar">back of tongue + uvula</td><td class="sy">[ʀ q ɢ]</td><td class="ex">not in English: French <i>r</i> in <i>rouge</i></td><td class="ply"><button class="say-btn mini" data-say="rouge" data-lang="fr-FR">listen</button></td></tr>
+      <tr><td class="pn"><span>8</span></td><td class="nm">Glottal</td><td class="ar">at the glottis</td><td class="sy">[h ʔ]</td><td class="ex"><i>high · uh-oh</i> [ʔʌʔo]</td><td class="ply"><button class="say-btn mini" data-say="high. uh-oh." data-lang="en-US">listen</button></td></tr>
+  </table>
+  <p class="fnote" style="margin-top:8px;">Alveolars: [t d n] tip on the ridge · [s z] air over a lowered tip · [l] <b>lateral</b>, air over the sides · [r] tip curled back. Some speakers make interdentals behind the teeth (<i>dental</i>).</p>
   <aside class="notes">
-    앞→뒤 순서의 여덟 위치. 각 위치의 대표 자음을 학생이 직접 발음하며 조음체를 느끼게 하세요.
+    교재 pp.189–192의 순서입니다. 먼저 조음 위치의 정의(기류가 막히는 자리, 혀와 입술이 좁힘을 만듦)를 확인하세요.
+    번호 1–8은 교재 Figure 5.1과 10번 성도 그림의 번호와 같습니다(그래서 이 슬라이드는 번호를 유지). 예시 단어는 교재 Table 5.5와 본문(p.191)의 단어입니다.
+    치간음은 혀끝을 이 사이에 넣지만, 이 뒤에 대기만 하는 화자도 있어 그 경우 치음(dental)이라 부릅니다. 거울을 보며 think, these를 발음해 보게 하세요.
+    치경음 일곱 개는 혀를 치경에 올리는 방식이 다릅니다(아래 메모). Lolita의 l처럼 [l]은 혀 옆으로 공기가 나가는 설측음입니다. 구개수음은 영어에 없으며 프랑스어 r, 아랍어 [q ɢ]가 예입니다.
     성문 폐쇄음 [ʔ]는 uh-oh에 두 번 들어 있습니다(마이클 잭슨 창법 일화도 교재에 있음).
   </aside>
 </section>
@@ -765,14 +795,14 @@
     <span><svg width="34" height="12"><line x1="2" y1="6" x2="32" y2="6" stroke="var(--ed-accent)" stroke-width="2" stroke-dasharray="5 4"/></svg>airflow</span>
     <span><svg width="14" height="14"><line x1="7" y1="1" x2="7" y2="13" stroke="#6e1f28" stroke-width="2.4" stroke-linecap="round"/></svg>lips together</span>
     <span><svg width="14" height="14"><path d="M 2,2 L 12,12 M 12,2 L 2,12" stroke="#6e1f28" stroke-width="2.4" stroke-linecap="round"/></svg>nose closed off</span>
-    <span class="tm-say"><button class="say-btn mini" data-say="ma" data-lang="en-US">ma</button><button class="say-btn mini" data-say="ba" data-lang="en-US">ba</button><button class="say-btn mini" data-say="pa" data-lang="en-US">pa</button></span>
+    <span class="tm-say"><button class="say-btn mini" data-say="mat" data-lang="en-US">mat</button><button class="say-btn mini" data-say="bat" data-lang="en-US">bat</button><button class="say-btn mini" data-say="pat" data-lang="en-US">pat</button></span>
   </div>
   <p class="lead" style="font-size:16.5px; margin:12px 0 0;">Position of the lips and velum: [m] with lips together and the velum down; [b] and [p] with lips together and the velum up.
     <span class="ko-supp" style="display:block; margin-top:4px;">[m]은 입술을 닫고 연구개를 내리며, [b]와 [p]는 입술을 닫고 연구개를 올린다.</span></p>
   <aside class="notes">
     교재 Figure 5.3(p.194)의 내용을 9번 성도 그림을 바탕으로 자체 도식으로 다시 그렸습니다(교재 그림 복제 아님).
     왼쪽 [m]: 입술은 닫혔지만 연구개가 내려가 있어 공기가 코로 나갑니다. 오른쪽 [b][p]: 연구개가 올라가 코로 가는 길이 막히고, 공기는 입술에서 막힙니다.
-    세 소리 모두 입술에서 기류가 막히는 같은 자리의 소리이고, [m]과 [b]는 유성이라는 점에서 [p]와 다르며, [m]은 비음이라는 점에서 [b]와 다릅니다(다음 슬라이드).
+    mat · bat · pat 버튼으로 첫소리만 다른 세 단어를 들려주세요. 세 소리 모두 입술에서 기류가 막히는 같은 자리의 소리이고, [m]과 [b]는 유성이라는 점에서 [p]와 다르며, [m]은 비음이라는 점에서 [b]와 다릅니다(다음 슬라이드).
   </aside>
 </section>
 
@@ -839,46 +869,76 @@
 
 <!-- ══ 23 · Manner classes: stops → glides ══ -->
 <section data-kicker="CH.5 P.195" data-path="Articulatory Phonetics › Consonants">
-  <h2 style="margin-bottom:14px;">Manner of Articulation</h2>
-  <ul class="exlist" style="font-size:0.86em;">
-    <li><span class="no">01</span><span><b>Stops</b>: airstream fully blocked, then released · [p b m t d n k g ŋ ʔ] (+ [tʃ dʒ]); all other sounds are <b>continuants</b></span></li>
-    <li><span class="no">02</span><span><b>Fricatives</b>: narrow passage, audible friction · [f v θ ð s z ʃ ʒ h] (velar [x ɣ] in <i>Bach, loch</i>)</span></li>
-    <li><span class="no">03</span><span><b>Affricates</b>: stop + gradual fricative release · [tʃ dʒ] (<i>church, judge</i>)</span></li>
-    <li><span class="no">04</span><span><b>Liquids</b>: some obstruction, no friction · [l r]</span></li>
-    <li><span class="no">05</span><span><b>Glides</b>: little obstruction, always before a vowel · [j w]; [w] labiovelar</span></li>
-    <li><span class="no">06</span><span><b>Approximants</b>: cover term for [w j r l]; central vs. lateral</span></li>
-  </ul>
-  <p style="font: italic 400 15px 'Lora'; color: var(--ed-muted); margin-top:12px;">Beyond English: the alveolar trill (IPA [r]) and uvular trill [ʀ], the flap [ɾ] (<i>writer</i> = <i>rider</i> [raɪɾər]), and the clicks of Zulu and Xhosa.</p>
+  <h2>Manner of Articulation</h2>
+  <table class="pl-tab mn">
+    <colgroup><col style="width:104px"><col style="width:232px"><col style="width:212px"><col><col style="width:58px"></colgroup>
+      <tr><td class="nm">Stops</td><td class="ar">completely blocked for a moment</td><td class="sy">[p b m t d n k g ŋ tʃ dʒ ʔ]</td><td class="ex"><i>pie · tie · kite</i></td><td class="ply"><button class="say-btn mini" data-say="pie. tie. kite." data-lang="en-US">listen</button></td></tr>
+      <tr><td class="nm">Fricatives</td><td class="ar">obstructed enough to cause <b>friction</b></td><td class="sy">[f v θ ð s z ʃ ʒ h]</td><td class="ex"><i>thin · then</i></td><td class="ply"><button class="say-btn mini" data-say="thin. then." data-lang="en-US">listen</button></td></tr>
+      <tr><td class="nm">Affricates</td><td class="ar">stop closure, then a gradual fricative release</td><td class="sy">[tʃ dʒ]</td><td class="ex"><i>church · judge</i></td><td class="ply"><button class="say-btn mini" data-say="church. judge." data-lang="en-US">listen</button></td></tr>
+      <tr><td class="nm">Liquids</td><td class="ar">some obstruction, but no real friction</td><td class="sy">[l r]</td><td class="ex"><i>lye · rye</i></td><td class="ply"><button class="say-btn mini" data-say="lye. rye." data-lang="en-US">listen</button></td></tr>
+      <tr><td class="nm">Glides</td><td class="ar">little obstruction; always followed by a vowel</td><td class="sy">[j w ʍ]</td><td class="ex"><i>you · we</i></td><td class="ply"><button class="say-btn mini" data-say="you. we." data-lang="en-US">listen</button></td></tr>
+      <tr><td class="nm">Approximants</td><td class="ar">articulators come close, with no friction</td><td class="sy">[w j r] · [l]</td><td class="ex"><i>central · lateral</i></td><td class="ply"></td></tr>
+  </table>
+  <p class="fnote" style="margin-top:10px;">Stops are the only sounds that fully stop the air; all others are <b>continuants</b>, as in <i>tack</i> vs. <i>sack</i>. Affricates are not continuants, because of their stop closure.</p>
+  <p class="ko-supp" style="font-size:15px; margin-top:6px;">파열음만 기류를 완전히 막고 나머지는 모두 지속음(continuant)이며, 파찰음은 폐쇄 때문에 지속음이 아니다.</p>
   <aside class="notes">
-    폐쇄 정도 순 배열: 완전 폐쇄(stop) → 마찰(fricative) → 근접(glide). 파찰음은 폐쇄+마찰의 결합.
-    stop 이외 소리는 모두 지속음(continuant, p.195)입니다. 교재는 IPA의 치경 전동음 기호 [r]를 영어 r에 빌려 쓴다고 밝힙니다(p.197). 미국 영어의 탄설음 [ɾ](writer/rider 동음), 전동음·흡착음도
-    IPA가 포괄함을 언급하세요.
+    교재 pp.195–197의 소제목(run-in head) 순서입니다. 이 부류들은 순서가 있는 단계가 아니라 나란한 범주이고 교재에도 번호가 없어, 번호 대신 부류 이름을 라벨로 달았습니다.
+    파열음은 구강에서 기류가 잠깐 완전히 막히는 소리이고 나머지는 모두 지속음(continuant)입니다(tack은 파열음 [t], sack은 지속음 [s]로 갈림).
+    마찰음은 마찰이 날 만큼 막히는 지속음(velar [x ɣ]: Bach, loch), 파찰음은 폐쇄 뒤 마찰을 동반하는 점진적 개방(church, judge)으로 폐쇄 때문에 지속음이 아닙니다.
+    유음 [l r]은 막힘은 있으나 마찰은 없고 음향적으로 비슷해 외국인 화자가 혼동하기도 합니다. 활음 [j w]는 늘 모음이 뒤따르고 단어 끝에 오지 않습니다(say, saw의 y·w는 모음). [w]는 순연구개음, [ʍ]는 그 무성음.
+    근접음(approximant)은 [w j r l]을 묶는 말로, 중설 [w j r]과 설측 [l]로 나뉩니다.
+    영어 밖의 전동음·탄설음·흡착음은 다음 슬라이드에서 다룹니다.
   </aside>
 </section>
 
-<!-- ══ 24 · Chart: American English consonants ══ -->
+<!-- ══ 24 · Manner of Articulation: beyond English ══ -->
+<section data-kicker="CH.5 P.197" data-path="Articulatory Phonetics › Consonants">
+  <h2>Manner of Articulation</h2>
+  <p class="lead" style="font-size:17px; margin:0 0 12px;">The IPA has symbols for the sounds of all the world's languages, including some that English does not use.
+    <span class="ko-supp" style="display:block; margin-top:4px;">IPA는 영어에 없는 소리까지 세계 모든 언어의 소리를 기호로 나타낸다.</span></p>
+  <table class="pl-tab mn">
+    <colgroup><col style="width:72px"><col style="width:188px"><col style="width:66px"><col><col style="width:132px"></colgroup>
+      <tr><td class="nm">Trills</td><td class="ar">rapid vibration of an articulator</td><td class="sy">[r] [ʀ]</td><td class="ex">Spanish <i>perro</i> [r], alveolar · French <i>rouge</i> [ʀ], uvular</td><td class="ply"><button class="say-btn mini" data-say="perro" data-lang="es-ES">perro</button><button class="say-btn mini" data-say="rouge" data-lang="fr-FR">rouge</button></td></tr>
+      <tr><td class="nm">Flap</td><td class="ar">a quick flick of the tongue against the ridge</td><td class="sy">[ɾ]</td><td class="ex">Spanish <i>pero</i> · American <i>writer</i> = <i>rider</i></td><td class="ply"><button class="say-btn mini" data-say="pero" data-lang="es-ES">pero</button><button class="say-btn mini" data-say="writer. rider." data-lang="en-US">writer</button></td></tr>
+      <tr><td class="nm">Clicks</td><td class="ar">air moved in the mouth between articulators</td><td class="sy"></td><td class="ex"><i>tsk</i> (Zulu) · lateral click (Xhosa)</td><td class="ply"></td></tr>
+  </table>
+  <p class="fnote" style="margin-top:10px;">This book writes English r as [r], so the IPA alveolar trill symbol [r] is "co-opted" (p.197). In <i>Xhosa</i>, the <i>X</i> stands for a lateral click.</p>
+  <aside class="notes">
+    교재 p.197의 소제목 Trills and flaps, Clicks입니다. 전동음: 스페인어 perro의 치경 전동음(IPA 기호 [r], 교재는 이 기호를 영어 r에 빌려 씀), 프랑스어 rouge의 구개수 전동음 [ʀ].
+    탄설음 [ɾ]: 아주 빠른 d처럼 들리며 스페인어 pero('그러나'), 영국 영어 very, 그리고 미국 영어 writer와 rider(둘 다 [raɪɾər])에 나옵니다.
+    흡착음: 못마땅할 때 내는 tsk는 Zulu 등 남아프리카 언어의 치경 흡착음이고, 말을 몰 때 내는 소리 같은 설측 흡착음이 Xhosa에 있습니다.
+    발음 버튼은 브라우저 음성(스페인어·프랑스어)을 쓰므로 PC마다 소리가 다를 수 있습니다.
+  </aside>
+</section>
+
+<!-- ══ 25 · Chart: American English consonants ══ -->
 <section data-kicker="CH.5 P.197" data-path="Articulatory Phonetics › Consonants">
   <h2 style="font-size:36px; margin-bottom:10px;">Phonetic Symbols for American English Consonants</h2>
-  <p style="font: italic 400 15px 'Lora'; color: var(--ed-muted); margin-bottom:14px;">Rows = manner · columns = place. Two symbols in a cell: left voiceless, right voiced.
-    <span class="ko-supp" style="display:block; font-style:normal; font-size:14px; margin-top:4px;">행은 조음 방법, 열은 조음 위치이며, 한 칸에 기호가 둘이면 왼쪽이 무성음, 오른쪽이 유성음이다.</span></p>
-  <table class="ed-table" style="font-size:0.9em;">
-    <tr>
-      <th class="rowlab">&nbsp;</th><th>Bilabial</th><th>Labiodental</th><th>Interdental</th><th>Alveolar</th><th>Palatal</th><th>Velar</th><th>Glottal</th>
-    </tr>
-    <tr><th class="rowlab">Stop</th><td>p&nbsp;&nbsp;b</td><td></td><td></td><td>t&nbsp;&nbsp;d</td><td></td><td>k&nbsp;&nbsp;g</td><td>ʔ</td></tr>
-    <tr><th class="rowlab">Fricative</th><td></td><td>f&nbsp;&nbsp;v</td><td>θ&nbsp;&nbsp;ð</td><td>s&nbsp;&nbsp;z</td><td>ʃ&nbsp;&nbsp;ʒ</td><td></td><td>h</td></tr>
-    <tr><th class="rowlab">Affricate</th><td></td><td></td><td></td><td></td><td>tʃ&nbsp;&nbsp;dʒ</td><td></td><td></td></tr>
-    <tr><th class="rowlab">Nasal</th><td>m</td><td></td><td></td><td>n</td><td></td><td>ŋ</td><td></td></tr>
-    <tr><th class="rowlab">Liquid</th><td></td><td></td><td></td><td>l&nbsp;&nbsp;r</td><td></td><td></td><td></td></tr>
-    <tr><th class="rowlab">Glide</th><td>ʍ&nbsp;&nbsp;w</td><td></td><td></td><td></td><td>j</td><td><small>(ʍ&nbsp;&nbsp;w)</small></td><td></td></tr>
+  <p style="font: italic 400 15px 'Lora'; color: var(--ed-muted); margin-bottom:10px;">Rows = manner, voiceless and voiced on separate lines · columns = place (cf. Table 5.4, p.198).
+    <span class="ko-supp" style="display:block; font-style:normal; font-size:14px; margin-top:4px;">행은 조음 방법(무성·유성을 나눈 줄), 열은 조음 위치다.</span></p>
+  <table class="ed-table c54">
+    <tr><th class="rowlab">&nbsp;</th><th class="vc"></th><th>Bilabial</th><th>Labiodental</th><th>Interdental</th><th>Alveolar</th><th>Palatal</th><th>Velar</th><th>Glottal</th></tr>
+    <tr class="gs"><th class="rowlab" rowspan="2">Stop <span class="par">(oral)</span></th><th class="vc">voiceless</th><td>p</td><td></td><td></td><td>t</td><td></td><td>k</td><td>ʔ</td></tr>
+    <tr><th class="vc">voiced</th><td>b</td><td></td><td></td><td>d</td><td></td><td>g</td><td></td></tr>
+    <tr><th class="rowlab" rowspan="1">Nasal <span class="par">(voiced)</span></th><th class="vc"></th><td>m</td><td></td><td></td><td>n</td><td></td><td>ŋ</td><td></td></tr>
+    <tr class="gs"><th class="rowlab" rowspan="2">Fricative</th><th class="vc">voiceless</th><td></td><td>f</td><td>θ</td><td>s</td><td>ʃ</td><td></td><td>h</td></tr>
+    <tr><th class="vc">voiced</th><td></td><td>v</td><td>ð</td><td>z</td><td>ʒ</td><td></td><td></td></tr>
+    <tr class="gs"><th class="rowlab" rowspan="2">Affricate</th><th class="vc">voiceless</th><td></td><td></td><td></td><td></td><td>tʃ</td><td></td><td></td></tr>
+    <tr><th class="vc">voiced</th><td></td><td></td><td></td><td></td><td>dʒ</td><td></td><td></td></tr>
+    <tr class="gs"><th class="rowlab" rowspan="2">Glide</th><th class="vc">voiceless</th><td>ʍ</td><td></td><td></td><td></td><td></td><td>ʍ</td><td></td></tr>
+    <tr><th class="vc">voiced</th><td>w</td><td></td><td></td><td></td><td>j</td><td>w</td><td></td></tr>
+    <tr class="gs"><th class="rowlab" rowspan="2">Liquid <span class="par">(voiced)</span></th><th class="vc">(central)</th><td></td><td></td><td></td><td>r</td><td></td><td></td><td></td></tr>
+    <tr><th class="vc">(lateral)</th><td></td><td></td><td></td><td>l</td><td></td><td></td><td></td></tr>
   </table>
   <aside class="notes">
-    영어 자음표(교재 Table 5.4를 재조판한 요약본이며 스캔이 아닙니다). 임의 자음을 지목해 학생이
-    "유성/무성 + 위치 + 방법" 라벨을 표에서 읽어내게 연습시키세요. 예: [v] = voiced labiodental fricative. 표에서 비음·유음 칸에 기호가 하나뿐인 이유는 영어에서 이들이 모두 유성이기 때문입니다. 활음에는 which를 witch와 구별해 발음하는 화자의 무성 [ʍ]가 있고, [ʍ w]는 순연구개음이라 양순·연구개 두 칸에 적습니다(Table 5.4).
+    영어 자음표입니다. 교재 Table 5.4(p.198)의 배열(행: 조음 방법을 무성·유성 줄로 나눔, 열: 조음 위치)을 그대로 따라 다시 조판했습니다(스캔 아님).
+    임의 자음을 지목해 학생이 "유성/무성 + 위치 + 방법" 라벨을 표에서 읽어내게 연습시키세요. 예: [v] = voiced labiodental fricative.
+    괄호 속 자질 (oral), (voiced)는 보통 말하지 않습니다(p.197): 비음이라고 하지 않으면 모두 구강음이고, 영어의 비음은 모두 유성이기 때문입니다. 유음도 유성이며, 중설(central) [r]과 설측(lateral) [l]로 나뉩니다.
+    활음의 무성 [ʍ]는 which를 witch와 구별해 발음하는 화자의 소리이고, [ʍ w]는 입술과 연구개를 함께 쓰는 순연구개음이라 양순·연구개 두 칸에 모두 적습니다.
   </aside>
 </section>
 
-<!-- ══ 25 · Practice Q1 ══ -->
+<!-- ══ 26 · Practice Q1 ══ -->
 <section data-kicker="CH.5 · PRACTICE 01">
   <div class="mcq" data-qid="w11-q1">
     <div class="mcq-q"><span class="qnum">Q1</span>Why can't English spelling reliably represent pronunciation?</div>
@@ -894,7 +954,7 @@
   </aside>
 </section>
 
-<!-- ══ 26 · Practice Q2 ══ -->
+<!-- ══ 27 · Practice Q2 ══ -->
 <section data-kicker="CH.5 · PRACTICE 02">
   <div class="mcq" data-qid="w11-q2">
     <div class="mcq-q"><span class="qnum">Q2</span>The consonant [v] is a voiced…</div>
@@ -910,7 +970,7 @@
   </aside>
 </section>
 
-<!-- ══ 27 · Practice Q3 ══ -->
+<!-- ══ 28 · Practice Q3 ══ -->
 <section data-kicker="CH.5 · PRACTICE 03">
   <div class="mcq" data-qid="w11-q3">
     <div class="mcq-q"><span class="qnum">Q3</span>Which sound is a <em>voiceless velar stop</em>?</div>
@@ -926,7 +986,7 @@
   </aside>
 </section>
 
-<!-- ══ 28 · Practice Q4 ══ -->
+<!-- ══ 29 · Practice Q4 ══ -->
 <section data-kicker="CH.5 · PRACTICE 04">
   <div class="mcq" data-qid="w11-q4">
     <div class="mcq-q"><span class="qnum">Q4</span>How many <b>sound segments</b> (not letters) are in the word <em>thought</em>?
@@ -944,7 +1004,7 @@
   </aside>
 </section>
 
-<!-- ══ 29 · Exercise Q5 ══ -->
+<!-- ══ 30 · Exercise Q5 ══ -->
 <section data-kicker="CH.5 · EXERCISE 05">
   <div class="mcq" data-qid="w11-q5">
     <div class="mcq-q"><span class="qnum">Q5</span>Which set of words all <b>begin</b> with the same consonant <em>sound</em>?
@@ -963,7 +1023,7 @@
   </aside>
 </section>
 
-<!-- ══ 30 · Summary ══ -->
+<!-- ══ 31 · Summary ══ -->
 <section data-kicker="CH.5 · SUMMARY">
   <h2>Summary</h2>
   <ol class="recap" style="max-width:680px;">
@@ -980,7 +1040,7 @@
   </aside>
 </section>
 
-<!-- ══ 31 · Next week ══ -->
+<!-- ══ 32 · Next week ══ -->
 <section data-kicker="NEXT WEEK · CH.5 PP.199–215">
   <h2>Vowels, Prosody &amp; Sign</h2>
   <p class="lead" style="max-width:620px;">Open the tract and the obstruction disappears — <em>so how do we tell one vowel from another?</em>
