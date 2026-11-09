@@ -97,6 +97,23 @@
     .tm-legend { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 22px; margin-top: 14px; font: 400 14px 'Lora'; color: var(--ed-body); }
     .tm-legend > span { display: inline-flex; align-items: center; gap: 8px; }
     .tm-legend .tm-say { margin-left: auto; gap: 6px; }
+    /* 19–21번: 비음·구강음(교재 pp.193–195) · 그림 5.3 자체 도식 */
+    .f53-heads { display: grid; grid-template-columns: 1fr 1fr; gap: 0 24px; margin: 4px 0 4px; }
+    .f53 { width: 100%; height: auto; display: block; }
+    .f53 .skin { fill: #f1ebdf; stroke: var(--ed-ink); stroke-width: 1.4; stroke-linejoin: round; }
+    .f53 .air { fill: var(--ed-paper, #faf8f3); stroke: var(--ed-paper, #faf8f3); stroke-width: 1.2; }
+    .f53 .wall { fill: none; stroke: var(--ed-ink); stroke-width: 1.4; stroke-linejoin: round; stroke-linecap: round; }
+    .f53 .bone { fill: #ddd4c3; stroke: var(--ed-ink); stroke-width: 1.2; }
+    .f53 .tooth { fill: #fffdf8; stroke: var(--ed-ink); stroke-width: 1.1; }
+    .f53 .tongue { fill: #e9d6cb; stroke: var(--ed-ink); stroke-width: 1.4; }
+    .f53 .soft { fill: #d9c0b2; stroke: var(--ed-ink); stroke-width: 1.4; stroke-linejoin: round; }
+    .f53 .flow { fill: none; stroke: var(--ed-accent); stroke-width: 2; stroke-dasharray: 5 4; marker-end: url(#arw53); }
+    .f53 .arwh { fill: var(--ed-accent); }
+    .f53 .block { stroke: #6e1f28; stroke-width: 2.4; stroke-linecap: round; }
+    .f53 .lab { font: 600 8px 'Space Grotesk', sans-serif; letter-spacing: 1.2px; fill: var(--ed-muted); }
+    .f53 .lab.sm { font-size: 7px; }
+    .reveal table.vv-pairs.nb td:first-child { font-size: 19px; width: 54px; }
+    .fnote { font: italic 400 14px/1.45 'Lora'; color: var(--ed-muted); margin: 8px 0 0; }
     /* 9번: 자체 성도 단면도 + 조음 위치 선택(번호·목록 클릭 → 강조·자음·예시·발음) */
     .vt { display: grid; grid-template-columns: 440px minmax(0, 1fr); gap: 30px; align-items: start; }
     .vt-fig { width: 440px; height: auto; display: block; }
@@ -155,9 +172,9 @@
   ─ Place of Articulation ............. p.189 → slide 13
   ─ Manner of Articulation ............ p.191 → slide 14
       · Voiced and Voiceless Sounds ... p.192 → slides 15–17 (+ timing figure after Figure 5.2, slide 18)
-      · Nasal and Oral Sounds ......... p.193 → slide 19 (+ cartoon, slide 20)
-      · Stops … Glides (run-in heads) . p.195–197 → slide 21
-  ─ Phonetic Symbols for American English Consonants p.197 → slide 22 (chart)
+      · Nasal and Oral Sounds ......... p.193 → slides 19, 21 (+ figure after Figure 5.3, slide 20; cartoon, slide 22)
+      · Stops … Glides (run-in heads) . p.195–197 → slide 23
+  ─ Phonetic Symbols for American English Consonants p.197 → slide 24 (chart)
 -->
 <div class="reveal">
 <div class="slides">
@@ -619,7 +636,7 @@
     <span class="ko-supp" style="display:block; margin-top:4px;">무성 파열음은 개방 뒤 성대가 닫히는 시점에 따라 두 부류로 나뉘며, pit과 spit의 [p]는 음성적으로 다르다.</span></p>
   <div class="cols-even">
     <div>
-      <div class="small-label" style="margin-bottom:10px;">ASPIRATED [pʰ tʰ kʰ]</div>
+      <div class="small-label" style="margin-bottom:10px;">ASPIRATED <span style="text-transform:none;">[pʰ tʰ kʰ]</span></div>
       <hr class="hair" style="margin:0 0 12px;">
       <p class="lead" style="font-size:18px;"><i>pit</i> [pʰɪt]: the cords stay open briefly after the lips part; a <b>puff of air</b> escapes.
         <button class="say-btn mini" data-say="pit" data-lang="en-US">pit</button>
@@ -627,7 +644,7 @@
         <button class="say-btn mini" data-say="kin" data-lang="en-US">kin</button></p>
     </div>
     <div>
-      <div class="small-label" style="margin-bottom:10px;">UNASPIRATED [p t k]</div>
+      <div class="small-label" style="margin-bottom:10px;">UNASPIRATED <span style="text-transform:none;">[p t k]</span></div>
       <hr class="hair" style="margin:0 0 12px;">
       <p class="lead" style="font-size:18px;"><i>spit</i> [spɪt]: the cords start vibrating as soon as the lips open; <b>no puff</b>.
         <button class="say-btn mini" data-say="spit" data-lang="en-US">spit</button>
@@ -707,30 +724,97 @@
   </aside>
 </section>
 
-<!-- ══ 19 · Nasal and Oral Sounds ══ -->
+<!-- ══ 19 · Nasal and Oral Sounds: the velum ══ -->
 <section data-kicker="CH.5 P.193" data-path="Articulatory Phonetics › Consonants › Manner of Articulation">
   <h2>Nasal and Oral Sounds</h2>
-  <div class="cols">
-    <div class="def">When the velum is <i>raised</i>, air exits only through the mouth: the sound is <b>oral</b>. When it is <i>lowered</i>, air also flows through the nose: the sound is <b>nasal</b>.
-      <span class="ko-supp" style="display:block; margin-top:8px;">연구개(velum)를 올리면 공기가 입으로만 나가는 구강음(oral), 내리면 코로도 나가는 비음(nasal)이다.</span></div>
+  <p class="lead" style="font-size:17px; margin:0 0 14px;">[b] and [m] are both voiced bilabials. What tells them apart? The <b>velum</b>, the soft palate at the back of the roof of the mouth.
+    <span class="ko-supp" style="display:block; margin-top:4px;">[b]와 [m]은 둘 다 유성 양순음인데, 둘을 가르는 것은 입천장 뒤쪽의 연구개(velum)다.</span></p>
+  <div class="cols-even">
     <div>
-      <table class="mini-table" style="margin-bottom:18px;">
-        <tr><th></th><th>Oral</th><th>Nasal</th></tr>
-        <tr><th style="text-align:left;">Voiced</th><td>b&nbsp;&nbsp;d&nbsp;&nbsp;g</td><td>m&nbsp;&nbsp;n&nbsp;&nbsp;ŋ</td></tr>
-        <tr><th style="text-align:left;">Voiceless</th><td>p&nbsp;&nbsp;t&nbsp;&nbsp;k</td><td><small>–*</small></td></tr>
-      </table>
-      <p style="font: italic 400 14px 'Lora'; color: var(--ed-muted); margin:0 0 14px;">*Nasal consonants in English are usually voiced; voiceless nasals occur in other languages.</p>
-      <p class="lead" style="font-size:17.5px;">Full three-part labels: [p] is a <b>voiceless bilabial oral</b> sound, and [n] is a <b>voiced alveolar nasal</b>.</p>
+      <div class="small-label" style="margin-bottom:10px;">VELUM UP · ORAL</div>
+      <hr class="hair" style="margin:0 0 12px;">
+      <p class="lead" style="font-size:18px;">Raised against the back of the throat, the velum cuts off the nose: air escapes only through the mouth. Most sounds in all languages are <b>oral</b>.</p>
+    </div>
+    <div>
+      <div class="small-label" style="margin-bottom:10px;">VELUM DOWN · NASAL</div>
+      <hr class="hair" style="margin:0 0 12px;">
+      <p class="lead" style="font-size:18px;">Lowered, it lets air escape through both the nose and the mouth: the sound is <b>nasal</b>. So [m] is nasal, and [b] is oral.</p>
     </div>
   </div>
+  <div class="small-label" style="margin:18px 0 6px;">TRY IT</div>
+  <div class="try">
+    <p>Slide your thumb along the roof of your mouth: the hard <b>palate</b> gives way to the soft <b>velum</b>.</p>
+    <p>Open wide in a mirror and say <i>aaah</i>: the velum ends in the <b>uvula</b>.</p>
+  </div>
   <aside class="notes">
-    연구개(velum)를 엄지로 만져보는 교재의 실습, 감기 때 콧소리가 나는 이유(연구개 폐쇄 불량)도
-    소개하세요. voiced/voiceless × oral/nasal 사분류(Table 5.3)로 정리하고, [p]·[n]의 3요소 라벨을 시범. raid/rain, rug/rung 같은 쌍도 구강/비강 대립만으로 단어가 갈리는 예로 제시하세요.
+    교재 pp.193–194의 순서입니다. [b]와 [m]은 둘 다 유성 양순음인데 무엇이 다른가라는 질문으로 시작합니다.
+    입천장은 앞의 단단한 경구개(palate)와 뒤의 부드러운 연구개(velum)로 나뉘고, 연구개 끝이 구개수(uvula)입니다. 엄지 실습(손 씻고, 손톱이 아래로 가게)과 거울 실습을 교재대로 소개하세요.
+    연구개가 올라가 목 뒤에 닿으면 코로 가는 길이 막혀 구강음, 내려가면 코와 입으로 함께 나가 비음입니다. 대부분의 언어에서 대부분의 소리는 구강음입니다.
     앞의 내시경 영상(11번)에서 kh 발음 때 연구개가 닫히던 장면(10:02–10:47)을 다시 떠올리게 하세요.
   </aside>
 </section>
 
-<!-- ══ 20 · Cartoon: nasal sounds video (v2, 2026-09-27) ══ -->
+<!-- ══ 20 · Figure: lips and velum for [m] vs. [b] [p] (cf. Figure 5.3) ══ -->
+<section data-kicker="CH.5 P.194 · NASAL AND ORAL SOUNDS · FIGURE">
+  <div class="f53-heads">
+    <div><span class="small-label"><span style="text-transform:none;">[m]</span> · VELUM DOWN · NASAL</span></div>
+    <div><span class="small-label"><span style="text-transform:none;">[b] [p]</span> · VELUM UP · ORAL</span></div>
+  </div>
+  <svg class="f53" viewBox="0 84 680 250" role="img" aria-label="Lips and velum for m (velum down) and b, p (velum up)"><defs><marker id="arw53" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" class="arwh"/></marker></defs><clipPath id="c53a"><rect x="0" y="84" width="330" height="250"/></clipPath><clipPath id="c53b"><rect x="350" y="84" width="330" height="250"/></clipPath><g clip-path="url(#c53a)"><g transform="translate(0,0)"><path class="skin" d="M 92,6 C 78,30 74,52 76,74 C 70,92 52,112 34,128 C 28,134 31,142 42,144 C 54,146 62,150 66,158 C 64,170 56,184 52,198 C 50,206 54,213 60,217 C 53,221 50,232 53,242 C 56,252 66,256 74,262 C 66,272 63,290 69,306 C 77,322 102,331 132,334 C 172,338 205,356 214,396 L 218,466 L 400,466 L 400,6 Z"/><path class="air" d="M 66,158 C 74,150 84,140 96,128 C 110,112 140,100 180,96 C 222,92 262,98 292,112 C 300,118 304,130 304,150 C 310,190 312,240 310,300 L 306,466 L 268,466 L 268,420 C 268,400 270,380 272,362 L 268,346 L 280,262 L 278,236 L 240,175 L 96,172 C 84,172 74,166 66,158 Z"/><path class="air" d="M 64,214 C 80,212 96,200 108,190 C 116,182 128,178 146,176 C 182,172 220,176 240,180 L 282,236 L 282,262 L 104,234 C 98,236 92,232 88,226 L 64,221 Z"/><path class="bone" d="M 92,172 C 140,170 200,170 240,169 L 240,180 C 220,176 182,172 146,176 C 128,178 116,182 108,190 C 102,188 96,184 92,180 Z"/><path class="soft" d="M 240,169 C 262,170 284,186 292,210 C 296,222 294,234 288,238 C 282,240 278,232 278,222 C 272,204 258,186 240,180 Z"/><path class="tongue" d="M 100,232 C 108,222 126,212 150,206 C 180,199 220,198 246,207 C 266,215 277,236 279,262 C 281,298 276,328 268,346 C 240,344 200,338 170,326 C 140,312 118,298 108,282 C 101,268 98,248 100,232 Z"/><path class="wall" d="M 66,158 C 74,166 84,172 92,172 M 66,158 C 74,150 84,140 96,128 C 110,112 140,100 180,96 C 222,92 262,98 292,112 C 300,118 304,130 304,150 C 310,190 312,240 310,300 L 308,340"/><path class="tooth" d="M 86,189 L 100,190 C 101,198 99,208 96,216 C 92,219 87,217 85,213 C 84,205 84,197 86,189 Z"/><path class="tooth" d="M 88,224 C 92,221 97,221 100,224 L 102,246 L 88,246 C 87,238 87,230 88,224 Z"/><path class="flow" d="M 300,320 C 300,260 302,190 298,150 C 290,118 240,112 180,118 C 130,124 96,140 72,154"/><path class="block" d="M 70,208 L 70,226"/><text class="lab sm" x="128" y="146">AIR OUT THROUGH THE NOSE</text><text class="lab" x="8" y="246">LIPS</text><text class="lab" x="8" y="256">TOGETHER</text></g></g><g clip-path="url(#c53b)"><g transform="translate(350,0)"><path class="skin" d="M 92,6 C 78,30 74,52 76,74 C 70,92 52,112 34,128 C 28,134 31,142 42,144 C 54,146 62,150 66,158 C 64,170 56,184 52,198 C 50,206 54,213 60,217 C 53,221 50,232 53,242 C 56,252 66,256 74,262 C 66,272 63,290 69,306 C 77,322 102,331 132,334 C 172,338 205,356 214,396 L 218,466 L 400,466 L 400,6 Z"/><path class="air" d="M 66,158 C 74,150 84,140 96,128 C 110,112 140,100 180,96 C 222,92 262,98 292,112 C 300,118 304,130 304,150 C 310,190 312,240 310,300 L 306,466 L 268,466 L 268,420 C 268,400 270,380 272,362 L 268,346 L 280,262 L 278,236 L 240,175 L 96,172 C 84,172 74,166 66,158 Z"/><path class="air" d="M 64,214 C 80,212 96,200 108,190 C 116,182 128,178 146,176 C 182,172 220,176 240,180 L 282,236 L 282,262 L 104,234 C 98,236 92,232 88,226 L 64,221 Z"/><path class="bone" d="M 92,172 C 140,170 200,170 240,169 L 240,180 C 220,176 182,172 146,176 C 128,178 116,182 108,190 C 102,188 96,184 92,180 Z"/><path class="soft" d="M 240,169 C 258,164 282,152 304,146 L 306,158 C 292,162 280,170 272,178 C 268,184 262,186 256,184 C 250,182 246,181 240,180 Z"/><path class="tongue" d="M 100,232 C 108,222 126,212 150,206 C 180,199 220,198 246,207 C 266,215 277,236 279,262 C 281,298 276,328 268,346 C 240,344 200,338 170,326 C 140,312 118,298 108,282 C 101,268 98,248 100,232 Z"/><path class="wall" d="M 66,158 C 74,166 84,172 92,172 M 66,158 C 74,150 84,140 96,128 C 110,112 140,100 180,96 C 222,92 262,98 292,112 C 300,118 304,130 304,150 C 310,190 312,240 310,300 L 308,340"/><path class="tooth" d="M 86,189 L 100,190 C 101,198 99,208 96,216 C 92,219 87,217 85,213 C 84,205 84,197 86,189 Z"/><path class="tooth" d="M 88,224 C 92,221 97,221 100,224 L 102,246 L 88,246 C 87,238 87,230 88,224 Z"/><path class="flow" d="M 296,320 C 296,280 292,240 270,214 C 240,190 180,190 120,200 L 84,210"/><path class="block" d="M 286,140 L 296,150 M 296,140 L 286,150"/><path class="block" d="M 70,208 L 70,226"/><text class="lab sm" x="140" y="146">NASAL PASSAGE CLOSED</text><text class="lab" x="8" y="246">LIPS</text><text class="lab" x="8" y="256">TOGETHER</text></g></g></svg>
+  <div class="tm-legend" style="margin-top:10px;">
+    <span><svg width="34" height="12"><line x1="2" y1="6" x2="32" y2="6" stroke="var(--ed-accent)" stroke-width="2" stroke-dasharray="5 4"/></svg>airflow</span>
+    <span><svg width="14" height="14"><line x1="7" y1="1" x2="7" y2="13" stroke="#6e1f28" stroke-width="2.4" stroke-linecap="round"/></svg>lips together</span>
+    <span><svg width="14" height="14"><path d="M 2,2 L 12,12 M 12,2 L 2,12" stroke="#6e1f28" stroke-width="2.4" stroke-linecap="round"/></svg>nose closed off</span>
+    <span class="tm-say"><button class="say-btn mini" data-say="ma" data-lang="en-US">ma</button><button class="say-btn mini" data-say="ba" data-lang="en-US">ba</button><button class="say-btn mini" data-say="pa" data-lang="en-US">pa</button></span>
+  </div>
+  <p class="lead" style="font-size:16.5px; margin:12px 0 0;">Position of the lips and velum: [m] with lips together and the velum down; [b] and [p] with lips together and the velum up.
+    <span class="ko-supp" style="display:block; margin-top:4px;">[m]은 입술을 닫고 연구개를 내리며, [b]와 [p]는 입술을 닫고 연구개를 올린다.</span></p>
+  <aside class="notes">
+    교재 Figure 5.3(p.194)의 내용을 9번 성도 그림을 바탕으로 자체 도식으로 다시 그렸습니다(교재 그림 복제 아님).
+    왼쪽 [m]: 입술은 닫혔지만 연구개가 내려가 있어 공기가 코로 나갑니다. 오른쪽 [b][p]: 연구개가 올라가 코로 가는 길이 막히고, 공기는 입술에서 막힙니다.
+    세 소리 모두 입술에서 기류가 막히는 같은 자리의 소리이고, [m]과 [b]는 유성이라는 점에서 [p]와 다르며, [m]은 비음이라는 점에서 [b]와 다릅니다(다음 슬라이드).
+  </aside>
+</section>
+
+<!-- ══ 21 · Nasal and Oral Sounds: pairs, four classes ══ -->
+<section data-kicker="CH.5 P.194" data-path="Articulatory Phonetics › Consonants › Manner of Articulation">
+  <h2>Nasal and Oral Sounds</h2>
+  <div class="cols-even" style="gap:44px;">
+    <div>
+      <div class="small-label" style="margin-bottom:6px;">SAME PLACE · LIPS CLOSED</div>
+      <table class="vv-pairs nb">
+        <tr><td>[p]</td><td>voiceless</td><td>oral</td></tr>
+        <tr><td>[b]</td><td>voiced</td><td>oral</td></tr>
+        <tr><td>[m]</td><td>voiced</td><td><b>nasal</b></td></tr>
+      </table>
+      <div class="small-label" style="margin:16px 0 6px;">ORAL / NASAL · SAME PLACE</div>
+      <table class="vv-pairs">
+        <tr><td><i>raid / rain</i></td><td>[red] / [ren]</td><td class="ply"><button class="say-btn mini" data-say="raid. rain." data-lang="en-US">listen</button></td></tr>
+        <tr><td><i>rug / rung</i></td><td>[rʌg] / [rʌŋ]</td><td class="ply"><button class="say-btn mini" data-say="rug. rung." data-lang="en-US">listen</button></td></tr>
+      </table>
+      <p class="fnote">A cold sounds "nasally" because mucus keeps the velum from closing properly.</p>
+    </div>
+    <div>
+      <div class="small-label" style="margin-bottom:6px;">FOUR CLASSES OF SPEECH SOUNDS</div>
+      <table class="mini-table" style="margin-bottom:8px;">
+        <tr><th></th><th>Oral</th><th>Nasal</th></tr>
+        <tr><th style="text-align:left;">Voiced</th><td>b&nbsp;&nbsp;d&nbsp;&nbsp;g</td><td>m&nbsp;&nbsp;n&nbsp;&nbsp;ŋ</td></tr>
+        <tr><th style="text-align:left;">Voiceless</th><td>p&nbsp;&nbsp;t&nbsp;&nbsp;k</td><td><small>–*</small></td></tr>
+      </table>
+      <p class="fnote">*Nasal consonants in English are usually voiced; voiceless nasals occur in other languages.</p>
+    </div>
+  </div>
+  <hr class="hair" style="margin:16px 0 8px;">
+  <p class="lead" style="font-size:17px; margin:0;">Three ways to classify consonants so far, <b>voicing</b>, <b>place</b>, and <b>nasalization</b>: [p] is voiceless bilabial oral; [n] is voiced alveolar nasal.
+    <span class="ko-supp" style="display:block; margin-top:4px;">지금까지의 자음 분류 기준은 유성성·조음 위치·비음성 세 가지이며, [p]는 무성 양순 구강음, [n]은 유성 치경 비음이다.</span></p>
+  <aside class="notes">
+    교재 pp.194–195의 순서입니다. [p][b][m]은 모두 입술에서 기류를 막고, [m][b]는 유성이라는 점에서 [p]와, [m]은 비음이라는 점에서 [b]와 다릅니다.
+    같은 구강/비강 차이가 raid/rain, rug/rung에도 있습니다([d][g]는 연구개를 올리고, [n][ŋ]은 내림). 감기에 걸리면 콧소리가 나는 이유도 교재대로 짚으세요.
+    비음과 유성 두 자질로 모든 말소리를 네 부류(Table 5.3)로 나눌 수 있고, 지금까지 배운 세 기준으로 [p]·[n]에 3요소 라벨을 붙여 보게 하세요.
+  </aside>
+</section>
+
+<!-- ══ 22 · Cartoon: nasal sounds video (v2, 2026-09-27) ══ -->
 <section data-kicker="CH.5 P.193 · MANNER OF ARTICULATION · CARTOON">
   <div class="video-scene" style="text-align:center;">
     <div class="video-stage">
@@ -753,7 +837,7 @@
   </aside>
 </section>
 
-<!-- ══ 21 · Manner classes: stops → glides ══ -->
+<!-- ══ 23 · Manner classes: stops → glides ══ -->
 <section data-kicker="CH.5 P.195" data-path="Articulatory Phonetics › Consonants">
   <h2 style="margin-bottom:14px;">Manner of Articulation</h2>
   <ul class="exlist" style="font-size:0.86em;">
@@ -772,7 +856,7 @@
   </aside>
 </section>
 
-<!-- ══ 22 · Chart: American English consonants ══ -->
+<!-- ══ 24 · Chart: American English consonants ══ -->
 <section data-kicker="CH.5 P.197" data-path="Articulatory Phonetics › Consonants">
   <h2 style="font-size:36px; margin-bottom:10px;">Phonetic Symbols for American English Consonants</h2>
   <p style="font: italic 400 15px 'Lora'; color: var(--ed-muted); margin-bottom:14px;">Rows = manner · columns = place. Two symbols in a cell: left voiceless, right voiced.
@@ -794,7 +878,7 @@
   </aside>
 </section>
 
-<!-- ══ 23 · Practice Q1 ══ -->
+<!-- ══ 25 · Practice Q1 ══ -->
 <section data-kicker="CH.5 · PRACTICE 01">
   <div class="mcq" data-qid="w11-q1">
     <div class="mcq-q"><span class="qnum">Q1</span>Why can't English spelling reliably represent pronunciation?</div>
@@ -810,7 +894,7 @@
   </aside>
 </section>
 
-<!-- ══ 24 · Practice Q2 ══ -->
+<!-- ══ 26 · Practice Q2 ══ -->
 <section data-kicker="CH.5 · PRACTICE 02">
   <div class="mcq" data-qid="w11-q2">
     <div class="mcq-q"><span class="qnum">Q2</span>The consonant [v] is a voiced…</div>
@@ -826,7 +910,7 @@
   </aside>
 </section>
 
-<!-- ══ 25 · Practice Q3 ══ -->
+<!-- ══ 27 · Practice Q3 ══ -->
 <section data-kicker="CH.5 · PRACTICE 03">
   <div class="mcq" data-qid="w11-q3">
     <div class="mcq-q"><span class="qnum">Q3</span>Which sound is a <em>voiceless velar stop</em>?</div>
@@ -842,7 +926,7 @@
   </aside>
 </section>
 
-<!-- ══ 26 · Practice Q4 ══ -->
+<!-- ══ 28 · Practice Q4 ══ -->
 <section data-kicker="CH.5 · PRACTICE 04">
   <div class="mcq" data-qid="w11-q4">
     <div class="mcq-q"><span class="qnum">Q4</span>How many <b>sound segments</b> (not letters) are in the word <em>thought</em>?
@@ -860,7 +944,7 @@
   </aside>
 </section>
 
-<!-- ══ 27 · Exercise Q5 ══ -->
+<!-- ══ 29 · Exercise Q5 ══ -->
 <section data-kicker="CH.5 · EXERCISE 05">
   <div class="mcq" data-qid="w11-q5">
     <div class="mcq-q"><span class="qnum">Q5</span>Which set of words all <b>begin</b> with the same consonant <em>sound</em>?
@@ -879,7 +963,7 @@
   </aside>
 </section>
 
-<!-- ══ 28 · Summary ══ -->
+<!-- ══ 30 · Summary ══ -->
 <section data-kicker="CH.5 · SUMMARY">
   <h2>Summary</h2>
   <ol class="recap" style="max-width:680px;">
@@ -896,7 +980,7 @@
   </aside>
 </section>
 
-<!-- ══ 29 · Next week ══ -->
+<!-- ══ 31 · Next week ══ -->
 <section data-kicker="NEXT WEEK · CH.5 PP.199–215">
   <h2>Vowels, Prosody &amp; Sign</h2>
   <p class="lead" style="max-width:620px;">Open the tract and the obstruction disappears — <em>so how do we tell one vowel from another?</em>
