@@ -137,6 +137,8 @@
     .reveal table.pl-tab tr.na td { color: var(--ed-muted); }
     .reveal table.pl-tab tr.na td.nm, .reveal table.pl-tab tr.na td.sy { color: var(--ed-muted); }
     .reveal table.pl-tab.pc, .reveal table.pl-tab.mn { table-layout: fixed; }
+    /* 4번: 음성학 세 분과 */
+    .try.br3 p { font-size: 15.5px; padding: 4px 0; }
     /* 9번: 자체 성도 단면도 + 조음 위치 선택(번호·목록 클릭 → 강조·자음·예시·발음) */
     .vt { display: grid; grid-template-columns: 440px minmax(0, 1fr); gap: 30px; align-items: start; }
     .vt-fig { width: 440px; height: auto; display: block; }
@@ -243,7 +245,7 @@
       <span class="ko-supp" style="display:block; margin-top:8px;">음성학(phonetics)은 말소리를 연구하며, 말소리는 물리적으로 연속이지만 화자는 이를 분절음(segment)으로 듣는다.</span></div>
     <div>
       <div class="quote-stack">
-        <p>Knowing the language is what lets you <b>cut the stream</b> into pieces.</p>
+        <p><i>bus</i> is one continuous sound, yet you hear <b>three sounds</b> in it, because you know English.</p>
         <p>History agrees: <i>a napron</i> was misheard so often it became <i>an apron</i>.</p>
       </div>
     </div>
@@ -278,8 +280,12 @@
         <p>Languages differ in their <b>inventories</b> of speech sounds.</p>
       </div>
       <hr class="hair">
-      <p style="font: 400 16.5px 'Lora', 'Noto Serif KR'; color: var(--ed-body); margin:0;">
-        <span class="small-label" style="margin-right:12px;">THREE BRANCHES</span>acoustic · auditory · <b class="accent">articulatory</b> phonetics: this chapter</p>
+      <div class="small-label" style="margin-bottom:4px;">THREE BRANCHES OF PHONETICS</div>
+      <div class="try br3">
+        <p><b>Acoustic</b>: the physical properties of sounds</p>
+        <p><b>Auditory</b>: how listeners perceive them</p>
+        <p><b class="accent">Articulatory</b>: how the vocal tract produces them; this chapter</p>
+      </div>
     </div>
   </div>
   <aside class="notes">
@@ -387,13 +393,14 @@
 <section data-kicker="CH.5 P.188">
   <h2>Articulatory Phonetics</h2>
   <div class="cols">
-    <div class="def">Most speech sounds are made by pushing <i>lung air</i> through the vocal tract and shaping it on the way out.
+    <div class="def">Most speech sounds are made by pushing <b>lung air</b> through the vocal tract and shaping it on the way out.
       <span class="ko-supp" style="display:block; margin-top:8px;">대부분의 말소리는 폐의 공기를 성도(vocal tract)로 밀어내면서 그 통로에서 모양을 빚어 만든다.</span></div>
     <div class="quote-stack">
       <p>The <b>glottis</b> is the opening between the vocal cords, inside the <b>larynx</b>.</p>
       <p>The <b>pharynx</b> is the tube of the throat above the larynx.</p>
       <p>The <b>oral cavity</b> is the mouth, and the <b>nasal cavity</b> is the nose.</p>
       <p>The <b>tongue and lips</b> are the fast movers that reshape the tract.</p>
+      <p>Together these make up the <b>vocal tract</b>; changing its shape gives the different sounds of language.</p>
     </div>
   </div>
   <aside class="notes">
@@ -541,8 +548,8 @@
 <section data-kicker="CH.5 P.189" data-path="Articulatory Phonetics">
   <h2>Consonants</h2>
   <div class="cols">
-    <div class="def">Consonants are produced with some <i>restriction or closure</i> in the vocal tract that impedes the airflow.
-      <span class="ko-supp" style="display:block; margin-top:8px;">자음(consonant)은 성도 안의 막힘이나 좁힘이 기류를 방해하며 만들어지는 소리다.</span></div>
+    <div class="def">The sounds of all languages fall into two classes, <b>consonants</b> and <b>vowels</b>. Consonants are produced with some <b>restriction or closure</b> in the vocal tract that impedes the airflow.
+      <span class="ko-supp" style="display:block; margin-top:8px;">모든 언어의 소리는 자음과 모음 두 부류로 나뉘며, 자음(consonant)은 성도 안의 막힘이나 좁힘이 기류를 방해하며 만들어지는 소리다.</span></div>
     <div class="quote-stack">
       <p>In phonetics, <i>consonant</i> and <i>vowel</i> name types of <b>sounds</b>, not letters.</p>
       <p>Each consonant is classified by where and how the air is obstructed: its <b>place</b> and <b>manner</b> of articulation, plus <b>voicing</b>.</p>
@@ -584,16 +591,16 @@
 <section data-kicker="CH.5 P.191" data-path="Articulatory Phonetics › Consonants">
   <h2>Manner of Articulation</h2>
   <div class="cols">
-    <div class="def">Place alone cannot separate <i>[p] · [b] · [m]</i>, all bilabial. We also ask <i>how</i> the airstream is affected.
+    <div class="def">Place alone cannot separate [p], [b] and [m], all bilabial, or [t], [d] and [n], all alveolar. We also ask <b>how</b> the airstream is affected.
       <span class="ko-supp" style="display:block; margin-top:8px;">[p]·[b]·[m]은 모두 양순음이라 위치만으로는 구별되지 않으므로, 기류가 어떻게 영향을 받는지도 따져야 한다.</span></div>
     <div class="quote-stack">
       <p>The air may be <b>fully</b> or <b>partially blocked</b>, and the vocal cords may <b>vibrate</b> or stay apart.</p>
-      <p>Voicing, nasality and degree of closure are the manner dimensions.</p>
+      <p>This is the <b>manner of articulation</b>.</p>
     </div>
   </div>
   <aside class="notes">
-    [p]/[b]/[m], [t]/[d]/[n]은 위치가 같으므로 방법으로만 구별됩니다. 이어지는 세 슬라이드:
-    유성/무성 → 기식 → 구강/비강, 그다음 폐쇄 정도에 따른 여섯 부류.
+    교재 pp.191–192. [p]/[b]/[m], [t]/[d]/[n]은 위치가 같으므로 위치만으로는 구별되지 않습니다. 조음 방법은 기류가 완전히/부분적으로 막히는지, 성대가 진동하는지를 말합니다.
+    이어지는 구성: Voiced and Voiceless Sounds(15–18번, 그림 5.2 포함) → Nasal and Oral Sounds(19–22번, 그림 5.3·카툰 포함) → 파열음부터 활음까지의 방법 부류(23–24번) → 자음표(25번).
   </aside>
 </section>
 
@@ -947,10 +954,10 @@
       <button class="mcq-opt"><span class="opt-key">B</span>English has too few letters to write any words.</button>
       <button class="mcq-opt"><span class="opt-key">C</span>Spelling always matches pronunciation exactly.</button>
     </div>
-    <div class="mcq-explain"><span class="lbl">Explanation</span> [f] is spelled <em>f, ph, gh, ff</em>; the letter <em>c</em> is [k] or [s]; silent letters occur (<em>know</em>). The mismatch is why the IPA is needed.</div>
+    <div class="mcq-explain"><span class="lbl">Explanation</span> One vowel has many spellings (<em>he, believe, Caesar, see, seize, seas</em>); one letter has many sounds (the <em>a</em> in <em>father, many, village</em>); some letters are silent (<em>knot, psychology</em>). The mismatch is why the IPA is needed.</div>
   </div>
   <aside class="notes">
-    철자-발음 불일치가 IPA의 존재 이유임을 확인하는 문항입니다.
+    철자-발음 불일치가 IPA의 존재 이유임을 확인하는 문항입니다. 해설의 예는 5번 슬라이드(교재 pp.186–187)의 예문과 같습니다.
   </aside>
 </section>
 
