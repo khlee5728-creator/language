@@ -25,15 +25,37 @@
     .cover .foot { margin-top: 46px; border-top: 1px solid var(--ed-line); padding-top: 16px;
       font: italic 400 15px 'Lora'; color: var(--ed-muted); }
 
-    /* 에디토리얼 헤어라인 표 */
-    .ed-table { border-collapse: collapse; width: 100%; max-width: 660px; margin: 0; }
-    .ed-table th { font: 600 11px 'Space Grotesk'; letter-spacing: 0.2em; text-transform: uppercase;
-      color: var(--ed-muted); text-align: left; padding: 6px 18px 8px 0; border-bottom: 1px solid var(--ed-ink); }
-    .ed-table td { font: 400 17px 'Lora'; color: var(--ed-body); padding: 9px 18px 9px 0;
-      border-bottom: 1px solid var(--ed-line); vertical-align: baseline; }
-    .ed-table tr:last-child td { border-bottom: 0; }
-    .ed-table td.form { font: italic 700 19px 'Lora'; color: var(--ed-accent); white-space: nowrap; }
-    .ed-table td.c, .ed-table th.c { text-align: center; padding-right: 0; }
+    /* 에디토리얼 헤어라인 표(기본 테마를 이기도록 .reveal table.ed-table) */
+    .reveal table.ed-table { border-collapse: collapse; width: 100%; max-width: 660px; margin: 0; }
+    .reveal table.ed-table th { font: 600 11px 'Space Grotesk'; letter-spacing: 0.2em; text-transform: uppercase; white-space: nowrap;
+      color: var(--ed-muted); text-align: left; padding: 6px 18px 8px 0; background: none; border: 0; border-bottom: 1px solid var(--ed-ink); }
+    .reveal table.ed-table td { font: 400 17px 'Lora'; color: var(--ed-body); padding: 9px 18px 9px 0; background: none; border: 0;
+      border-bottom: 1px solid var(--ed-line); vertical-align: baseline; text-align: left; }
+    .reveal table.ed-table tr:last-child td { border-bottom: 0; }
+    .reveal table.ed-table tr:nth-child(even) td, .reveal table.ed-table tr:hover td { background: none; }
+    .reveal table.ed-table td.form { font: italic 700 19px 'Lora'; color: var(--ed-accent); white-space: nowrap; }
+    .reveal table.ed-table td.c, .reveal table.ed-table th.c { text-align: center; padding-right: 0; }
+    /* 17 복합 명사 대 형용사+명사 */
+    .reveal table.ed-table.pairs td { padding: 8px 18px 8px 0; }
+    .reveal table.ed-table.pairs td i { font: italic 400 21px 'Lora'; color: var(--ed-ink); margin-right: 10px; }
+    .reveal table.ed-table.pairs td .g { font: 400 14.5px 'Lora'; color: var(--ed-muted); white-space: nowrap; }
+
+    /* 목차 두 단 */
+    .reveal ol.recap.toc2 { columns: 2; column-gap: 44px; max-width: none; }
+    .reveal ol.recap.toc2 li { break-inside: avoid; padding-top: 5px; padding-bottom: 5px; }
+
+    /* 19 억양 곡선: 가장 높은 음의 음절을 위로 올려 표시 */
+    .tn-set { border-top: 1px solid var(--ed-line); padding: 12px 0 10px; }
+    .tn-set:last-of-type { border-bottom: 1px solid var(--ed-line); }
+    .tn-sent { font: italic 400 25px/1.9 'Lora'; color: var(--ed-ink); margin: 2px 0 2px; }
+    .tn-sent .pk { display: inline-block; transform: translateY(-0.42em); color: var(--ed-accent); }
+    .tn-note { font: 400 16px/1.45 'Lora', 'Noto Serif KR'; color: var(--ed-body); }
+
+    /* 20 네 음소 배열 */
+    .arr { display: grid; grid-template-columns: 128px 1fr; column-gap: 14px; row-gap: 6px; align-items: baseline; margin-bottom: 14px; }
+    .arr .small-label { margin: 0; }
+    .arr .f { font: 400 21px 'Lora'; color: var(--ed-ink); word-spacing: 0.25em; }
+    .arr .f.no { color: var(--ed-muted); }
 
     /* 규칙 표시: 헤어라인 프레임 세리프 라인 */
     .rule-line { border-top: 1px solid var(--ed-line); border-bottom: 1px solid var(--ed-line);
@@ -93,16 +115,16 @@
   ✓   From One to Many and from Many to One ..... p.241 → slides 9–10
   ✓   The Function of Phonological Rules ........ p.242 → slide 11
   ✓ Prosodic Phonology .......................... p.243 → slide 12
-  ✓   Syllable Structure ........................ p.243 → slide 13 (+figure 14)
-  ✓   Word Stress ............................... p.244 → slides 15–15b (primary/secondary pp.244–245)
-  ✓   Sentence and Phrase Stress ................ p.245 → slide 16
-  ✓   Intonation ................................ p.246 → slide 17
-  ✓ Sequential Constraints of Phonemes .......... p.247 → slides 18–18b (three-consonant onsets p.247)
-  ✓   Lexical Gaps .............................. p.248 → slide 19
-  ✓ Why Do Phonological Rules Exist? ............ p.249 → slide 20
-  ✓ Phonological Analysis ....................... p.250 → slides 21–22b (Greek palatals pp.252–253)
-  ✓ Summary ..................................... p.254 → slide 27 (deck summary)
-  · References for Further Reading / Exercises (pp.255–268) → 과제 안내(슬라이드 26 하단)
+  ✓   Syllable Structure ........................ p.243 → slide 13 (+figure 14, splints)
+  ✓   Word Stress ............................... p.244 → slides 15–16 (primary/secondary pp.244–245)
+  ✓   Sentence and Phrase Stress ................ p.245 → slide 17
+  ✓   Intonation ................................ p.246 → slides 18–19 (Tristram p.246)
+  ✓ Sequential Constraints of Phonemes .......... p.247 → slides 20–22 (onsets p.247, syllable basis p.248)
+  ✓   Lexical Gaps .............................. p.248 → slide 23 (+cartoon 24)
+  ✓ Why Do Phonological Rules Exist? ............ p.249 → slide 25
+  ✓ Phonological Analysis ....................... p.250 → slides 26–28 (Greek palatals pp.252–253)
+  ✓ Summary ..................................... p.254 → slide 33 (deck summary)
+  · References for Further Reading / Exercises (pp.255–268) → 과제 안내(슬라이드 32 하단)
 -->
 <div class="reveal">
 <div class="slides">
@@ -124,16 +146,23 @@
 <!-- ══ 2 · Contents ══ -->
 <section data-kicker="WEEK 14 · CONTENTS · CH.6 PP.233–268">
   <h2>Today</h2>
-  <ol class="recap tight outline" style="max-width:690px;">
+  <ol class="recap tight outline toc2">
     <li><b>The Rules of Phonology</b><span class="pg">P.233</span></li>
-    <li class="lv2"><b>Feature-Changing Rules</b>: <i style="font-size:0.82em;">assimilation · dissimilation</i><span class="pg">P.235</span></li>
+    <li class="lv2"><b>Feature-Changing Rules</b><span class="pg">P.235</span></li>
+    <li class="lv3"><b>Assimilation Rules</b><span class="pg">P.235</span></li>
+    <li class="lv3"><b>Dissimilation Rules</b><span class="pg">P.237</span></li>
     <li class="lv2"><b>Segment Insertion and Deletion Rules</b><span class="pg">P.239</span></li>
     <li class="lv2"><b>From One to Many and from Many to One</b><span class="pg">P.241</span></li>
     <li class="lv2"><b>The Function of Phonological Rules</b><span class="pg">P.242</span></li>
-    <li><b>Prosodic Phonology</b>: <i style="font-size:0.82em;">syllable · stress · intonation</i><span class="pg">P.243</span></li>
-    <li><b>Sequential Constraints of Phonemes</b>: <i style="font-size:0.82em;">onsets · lexical gaps</i><span class="pg">P.247</span></li>
+    <li style="break-before: column;"><b>Prosodic Phonology</b><span class="pg">P.243</span></li>
+    <li class="lv2"><b>Syllable Structure</b><span class="pg">P.243</span></li>
+    <li class="lv2"><b>Word Stress</b><span class="pg">P.244</span></li>
+    <li class="lv2"><b>Sentence and Phrase Stress</b><span class="pg">P.245</span></li>
+    <li class="lv2"><b>Intonation</b><span class="pg">P.246</span></li>
+    <li><b>Sequential Constraints of Phonemes</b><span class="pg">P.247</span></li>
+    <li class="lv2"><b>Lexical Gaps</b><span class="pg">P.248</span></li>
     <li><b>Why Do Phonological Rules Exist?</b><span class="pg">P.249</span></li>
-    <li><b>Phonological Analysis</b>: <i style="font-size:0.82em;">Finnish · the flap · Greek</i><span class="pg">P.250</span></li>
+    <li><b>Phonological Analysis</b><span class="pg">P.250</span></li>
   </ol>
   <aside class="notes">
     오늘의 키워드: assimilation, dissimilation, epenthesis, deletion, rule notation,
@@ -168,7 +197,7 @@
     <div class="quote-stack">
       <p>The plural /z/ turns <b>[−voiced]</b> after a voiceless sound: <i>cats</i> /kæt+z/ → [kæts].</p>
       <p>The negative /ɪn/ shifts its <b>place</b>: <i>impossible, intolerant, incongruous</i>.</p>
-      <p>Aspiration <b>adds</b> a nondistinctive feature: <i>pit, repeat, quip, chip</i>, even across a consonant.</p>
+      <p>Aspiration <b>adds</b> a nondistinctive feature: <i>pit</i>, <i>repeat</i>; even across a consonant, <i>crib</i>, <i>clip</i>, <i>quip</i>; and the affricate of <i>chip</i>.</p>
     </div>
   </div>
   <aside class="notes">
@@ -191,7 +220,9 @@
   </div>
   <aside class="notes">
     동화가 가장 흔하며 대부분 조음 경제성에서 비롯됩니다. 유성성 동화(복수·과거), 조음위치 동화
-    (Akan·영어의 동기관 비음), 모음 비음화 — 다음 슬라이드에서 비음화를 형식 표기로 적습니다.
+    (Akan·영어의 동기관 비음), 모음 비음화. 다음 슬라이드에서 비음화를 형식 표기로 적습니다.
+    교재 p.237은 수어의 동화도 소개합니다: ASL의 blood는 red와 flow의 합성어인데, red의 손모양(검지를 세운 주먹)이
+    뒤따르는 flow의 펼친 손모양으로 바뀌고 위치(턱)는 그대로입니다.
   </aside>
 </section>
 
@@ -207,12 +238,12 @@
     <div class="seg"><span class="sym">__ [+nasal]</span><span class="gl">before nasal segments</span></div>
     <div class="seg"><span class="sym">$</span><span class="gl">within a syllable</span></div>
   </div>
-  <p class="lead" style="font-size:16px; margin-top:20px;">The underscore marks the target's position; the <b>$</b> is a syllable boundary: it keeps the rule from crossing over, so <em>bean</em> nasalizes but <em>denote</em> /dɪ$noʊt/ does not.
+  <p class="lead" style="font-size:16px; margin-top:20px;">The underscore marks the target's position; the <b>$</b> is a syllable boundary: it keeps the rule from crossing over, so <em>den</em> /dɛn/ → [dɛ̃n] (but <em>deck</em> stays oral), while <em>denote</em> /di$not/ does not nasalize.
     <span style="font: italic 400 14px 'Lora'; color: var(--ed-muted);">(cf. textbook Ch.6, p.236)</span>
-    <span class="ko-supp" style="display:block;">밑줄은 대상의 자리, $는 음절 경계를 표시하므로 규칙이 음절을 넘지 못한다: bean은 비음화되지만 denote는 아니다.</span></p>
+    <span class="ko-supp" style="display:block;">밑줄은 대상의 자리, $는 음절 경계를 표시하므로 규칙이 음절을 넘지 못한다: den은 비음화되지만 denote는 아니다.</span></p>
   <aside class="notes">
     규칙 표기법의 네 요소(대상·결과·환경·밑줄 위치)를 또박또박 읽어주세요. $ 덕분에 규칙이
-    음절 경계를 넘지 못합니다(bean은 비음화, denote는 비적용). 12주차 비음화를 이 형식으로
+    음절 경계를 넘지 못합니다(den은 비음화, deck은 뒤가 비음이 아니라 그대로, dental /dɛn$təl/은 비음화, denote는 비적용). 12주차 비음화를 이 형식으로
     다시 쓰면 규칙이 어떻게 이음을 도출하는지 한눈에 보입니다.
   </aside>
 </section>
@@ -264,8 +295,9 @@
     <button class="say-btn mini" data-say="sign, signature" data-lang="en-US">listen</button>
     <span class="ko-supp" style="display:block;">묵음 g도 삭제 규칙의 결과다: sign, design에서 사라진 [g]가 signature, designation에서는 다시 나타난다.</span></p>
   <aside class="notes">
-    삽입(schwa epenthesis)과 삭제(비강세 모음 탈락, g 삭제)를 대비합니다. sign/signature,
-    gnostic/agnostic의 규칙적 교체가 '침묵하는 g'의 정체 — 철자가 아니라 규칙의 문제입니다. 교재에 따르면 삭제 규칙이 삽입 규칙보다 훨씬 흔하며, g 삭제는 비음 앞에서 규칙적으로 일어납니다.
+    삽입(schwa epenthesis)과 삭제(비강세 모음 탈락, g 삭제)를 대비합니다. 교재는 슈와 삽입의 이유로 squeeze를 듭니다:
+    [z]만 붙이면 [skwizː]가 되는데, 영어는 장단 자음을 대립시키지 않아 [skwiz]와 구별하기 어렵습니다. sign/signature,
+    gnostic/agnostic의 규칙적 교체가 '침묵하는 g'의 정체입니다. 철자가 아니라 규칙의 문제입니다. 교재에 따르면 삭제 규칙이 삽입 규칙보다 훨씬 흔하며, g 삭제는 비음 앞에서 규칙적으로 일어납니다.
   </aside>
 </section>
 
@@ -285,7 +317,7 @@
     <span class="ko-supp" style="display:block;">음소 하나가 단 하나의 음성으로만 실현되는 일은 드물고, 음성 하나가 여러 음소를 대신할 수도 있다.</span></p>
   <aside class="notes">
     교재 p.241의 네 규칙 기능 표입니다. 하나의 음소가 여러 음성으로(one to many),
-    하나의 음성이 여러 음소에서(many to one) — 다음 슬라이드에서 슈와와 독일어로 확인합니다.
+    하나의 음성이 여러 음소에서(many to one). 다음 슬라이드에서 슈와와 독일어로 확인합니다.
   </aside>
 </section>
 
@@ -306,7 +338,7 @@
     </div>
   </div>
   <aside class="notes">
-    비강세 모음은 슈와로 환원 — [ə]는 여러 음소의 실현. 독일어 어말 무성음화(Bund/bunt)도
+    비강세 모음은 슈와로 환원되므로 [ə]는 여러 음소의 실현입니다. 독일어 어말 무성음화(Bund/bunt)도
     many-to-one: [bʊnt]만 듣고는 기저형을 알 수 없고, 관련형(Bundes 등)이 필요합니다. [ə]는 사실상 모든 영어 모음 음소의 이음이 될 수 있다는 점도 언급하세요.
   </aside>
 </section>
@@ -336,12 +368,12 @@
   <h2>Prosodic Phonology</h2>
   <p class="lead" style="max-width:620px;">Beyond the segment: phonology also governs <em>syllables</em>, <em>stress</em>, and <em>pitch</em>; properties of whole strings, not single sounds.
     <span class="ko-supp" style="display:block;">음운론은 분절음 너머의 음절·강세·음높이도 지배하며, 이는 낱소리가 아니라 연쇄 전체의 속성이다: 운율 음운론(prosodic phonology).</span></p>
-  <ul class="exlist" style="max-width:620px; margin-top:24px;">
-    <li><span class="no">01</span><span><b>Syllable Structure</b>: how phonemes group into σ</span></li>
-    <li><span class="no">02</span><span><b>Word Stress</b>: which syllable stands out</span></li>
-    <li><span class="no">03</span><span><b>Sentence and Phrase Stress</b>: prominence above the word</span></li>
-    <li><span class="no">04</span><span><b>Intonation</b>: the pitch contour of the utterance</span></li>
-  </ul>
+  <div class="quote-stack" style="max-width:620px; margin-top:24px;">
+    <p><b>Syllable Structure</b>: how phonemes group into σ</p>
+    <p><b>Word Stress</b>: which syllable stands out</p>
+    <p><b>Sentence and Phrase Stress</b>: prominence above the word</p>
+    <p><b>Intonation</b>: the pitch contour of the utterance</p>
+  </div>
   <aside class="notes">
     운율 음운론의 지도를 먼저 제시합니다. 이하 네 슬라이드가 각각 음절·단어 강세·구 강세·억양을
     다룹니다. 강세·억양이 '분절음이 아니라 음절/발화의 속성'이라는 점이 공통 논지입니다.
@@ -352,8 +384,8 @@
 <section data-kicker="CH.6 P.243" data-path="Prosodic Phonology">
   <h2>Syllable Structure</h2>
   <div class="cols">
-    <div class="def">A syllable (σ) is a phonological unit of one or more phonemes. Every syllable has a <i>nucleus</i>, usually a vowel.
-      <span class="ko-supp" style="display:block; margin-top:8px;">음절(syllable, σ)은 하나 이상의 음소로 이루어진 음운 단위이며, 모든 음절에는 대개 모음인 핵(nucleus)이 있다.</span></div>
+    <div class="def">A syllable (σ) is a phonological unit of one or more phonemes. Every syllable has a <i>nucleus</i>, usually a vowel, but possibly a syllabic liquid or nasal.
+      <span class="ko-supp" style="display:block; margin-top:8px;">음절(syllable, σ)은 하나 이상의 음소로 이루어진 음운 단위이며, 모든 음절에는 핵(nucleus)이 있다. 핵은 대개 모음이지만 음절성 유음이나 비음일 수도 있다.</span></div>
     <div class="quote-stack">
       <p>The consonants before the nucleus form the <b>onset</b>; those after it, the <b>coda</b>.</p>
       <p>Nucleus + coda make the <b>rime</b>, what rhyming words share: <i>Jill / hill</i>, <i>down / crown</i>.</p>
@@ -368,39 +400,38 @@
 
 <!-- ══ 14 · Figure: syllable tree ══ -->
 <section data-kicker="CH.6 P.244 · SYLLABLE STRUCTURE · FIGURE">
-  <p class="lead" style="font-size:17px; margin-bottom:4px; text-align:center;">The hierarchical structure of the syllable: <em>cat</em> mapped onto the tree.</p>
+  <p class="lead" style="font-size:17px; margin-bottom:4px; text-align:center;">The hierarchical structure of the syllable, drawn for the textbook's <em>splints</em>.</p>
   <div style="text-align:center;">
-    <svg viewBox="0 0 620 320" style="width:78%; max-width:640px; margin:0.1em auto;">
-      <!-- sigma -->
+    <svg viewBox="0 0 620 320" style="width:78%; max-width:640px; margin:0.1em auto;" role="img" aria-label="Syllable tree for splints">
       <text x="310" y="40" text-anchor="middle" font-family="Lora" font-style="italic" font-size="28" fill="#6e1f28">σ</text>
-      <line x1="300" y1="50" x2="180" y2="95" stroke="#1c1a17" stroke-width="1.4"/>
-      <line x1="320" y1="50" x2="420" y2="95" stroke="#1c1a17" stroke-width="1.4"/>
-      <!-- onset -->
-      <text x="180" y="112" text-anchor="middle" font-family="Space Grotesk" font-size="13" letter-spacing="2" fill="#8d8574">ONSET</text>
-      <!-- rime -->
-      <text x="420" y="112" text-anchor="middle" font-family="Space Grotesk" font-size="13" letter-spacing="2" fill="#8d8574">RIME</text>
-      <line x1="405" y1="122" x2="345" y2="170" stroke="#1c1a17" stroke-width="1.4"/>
-      <line x1="435" y1="122" x2="495" y2="170" stroke="#1c1a17" stroke-width="1.4"/>
-      <!-- nucleus & coda -->
-      <text x="345" y="188" text-anchor="middle" font-family="Space Grotesk" font-size="12" letter-spacing="2" fill="#6e1f28">NUCLEUS</text>
-      <text x="495" y="188" text-anchor="middle" font-family="Space Grotesk" font-size="12" letter-spacing="2" fill="#6e1f28">CODA</text>
-      <!-- segment lines -->
-      <line x1="180" y1="122" x2="180" y2="230" stroke="#cfc8b8" stroke-width="1.2"/>
-      <line x1="345" y1="198" x2="345" y2="230" stroke="#cfc8b8" stroke-width="1.2"/>
-      <line x1="495" y1="198" x2="495" y2="230" stroke="#cfc8b8" stroke-width="1.2"/>
-      <!-- segments: k æ t -->
-      <text x="180" y="256" text-anchor="middle" font-family="Lora" font-style="italic" font-size="26" fill="#1c1a17">k</text>
-      <text x="345" y="256" text-anchor="middle" font-family="Lora" font-style="italic" font-size="26" fill="#1c1a17">æ</text>
-      <text x="495" y="256" text-anchor="middle" font-family="Lora" font-style="italic" font-size="26" fill="#1c1a17">t</text>
-      <!-- word -->
-      <text x="340" y="298" text-anchor="middle" font-family="Lora" font-style="italic" font-size="15" fill="#8d8574">cat = [kæt]</text>
+      <line x1="300" y1="50" x2="170" y2="95" stroke="#1c1a17" stroke-width="1.4"/>
+      <line x1="320" y1="50" x2="440" y2="95" stroke="#1c1a17" stroke-width="1.4"/>
+      <text x="170" y="112" text-anchor="middle" font-family="Space Grotesk" font-size="13" letter-spacing="2" fill="#8d8574">ONSET</text>
+      <text x="440" y="112" text-anchor="middle" font-family="Space Grotesk" font-size="13" letter-spacing="2" fill="#8d8574">RIME</text>
+      <line x1="425" y1="122" x2="355" y2="170" stroke="#1c1a17" stroke-width="1.4"/>
+      <line x1="455" y1="122" x2="515" y2="170" stroke="#1c1a17" stroke-width="1.4"/>
+      <text x="355" y="188" text-anchor="middle" font-family="Space Grotesk" font-size="12" letter-spacing="2" fill="#6e1f28">NUCLEUS</text>
+      <text x="515" y="188" text-anchor="middle" font-family="Space Grotesk" font-size="12" letter-spacing="2" fill="#6e1f28">CODA</text>
+      <line x1="170" y1="122" x2="115" y2="230" stroke="#cfc8b8" stroke-width="1.2"/>
+      <line x1="170" y1="122" x2="170" y2="230" stroke="#cfc8b8" stroke-width="1.2"/>
+      <line x1="170" y1="122" x2="225" y2="230" stroke="#cfc8b8" stroke-width="1.2"/>
+      <line x1="355" y1="198" x2="355" y2="230" stroke="#cfc8b8" stroke-width="1.2"/>
+      <line x1="515" y1="198" x2="465" y2="230" stroke="#cfc8b8" stroke-width="1.2"/>
+      <line x1="515" y1="198" x2="515" y2="230" stroke="#cfc8b8" stroke-width="1.2"/>
+      <line x1="515" y1="198" x2="565" y2="230" stroke="#cfc8b8" stroke-width="1.2"/>
+      <g font-family="Lora" font-size="26" fill="#1c1a17" text-anchor="middle">
+        <text x="115" y="256">s</text><text x="170" y="256">p</text><text x="225" y="256">l</text>
+        <text x="355" y="256">ɪ</text>
+        <text x="465" y="256">n</text><text x="515" y="256">t</text><text x="565" y="256">s</text>
+      </g>
+      <text x="340" y="298" text-anchor="middle" font-family="Lora" font-size="15" fill="#8d8574"><tspan font-style="italic">splints</tspan> = /splɪnts/</text>
     </svg>
   </div>
-  <p class="ko-supp" style="font-size:14px; text-align:center; margin-top:6px;">음절의 위계 구조를 cat에 대응시킨 나무 그림이다: 두음(onset) k, 핵(nucleus) æ, 말음(coda) t.</p>
+  <p class="ko-supp" style="font-size:14px; text-align:center; margin-top:6px;">교재의 예 splints를 음절 나무에 대응시킨 그림이다: 두음(onset) spl, 핵(nucleus) ɪ, 말음(coda) nts.</p>
   <aside class="notes">
     음절 나무: σ → Onset + Rime, Rime → Nucleus + Coda. 핵만 필수이고 두음·말음은 선택적입니다.
-    cat=[kæt]을 나무에 대응시켜 각 자리를 확인시키세요. 교재의 예는 splints — 두음·말음에
-    자음군이 올 수 있음도 언급. 이 구조가 강세·음소배열 논의의 토대입니다.
+    교재 p.244의 splints를 나무에 대응시켜 각 자리를 확인시키세요. 두음(spl)과 말음(nts)에 자음군이 올 수 있다는 점이
+    한눈에 보입니다. 이 구조가 강세·음소배열 논의의 토대입니다. 그림은 교재 도식을 참고해 자체 제작했습니다.
   </aside>
 </section>
 
@@ -409,19 +440,20 @@
   <h2>Word Stress</h2>
   <div class="cols">
     <div class="def">In every English content word one or more syllables are <i>stressed</i>, and stress can be <b>contrastive</b>.
-      <span class="ko-supp" style="display:block; margin-top:8px;">영어의 모든 내용어에서는 하나 이상의 <b>음절</b>에 강세(stress)가 놓이며, 강세는 뜻을 가르는 대립적 자질이 될 수 있다.</span></div>
+      <span class="ko-supp" style="display:block; margin-top:8px;">영어의 모든 내용어에서는 하나 이상의 음절에 강세(stress)가 놓이며, 강세는 뜻을 가르는 <b>대립적</b> 자질이 될 수 있다.</span></div>
     <div>
       <ul class="exlist">
-        <li><span class="no">N</span><span>PERvert · SUBject<button class="say-btn mini" data-say="My neighbor is a pervert. Let's change the subject." data-lang="en-US">♪</button></span></li>
-        <li><span class="no">V</span><span>perVERT · subJECT<button class="say-btn mini" data-say="Don't pervert the idea. He'll subject us to criticism." data-lang="en-US">♪</button></span></li>
-        <li><span class="no">–</span><span>PHOtograph · phoTOGraphy: stress shifts as affixes attach<button class="say-btn mini" data-say="photograph, photography" data-lang="en-US">♪</button></span></li>
+        <li><span class="no">N</span><span><i>pérvert</i> · <i>súbject</i><button class="say-btn mini" data-say="My neighbor is a pervert. Let's change the subject." data-lang="en-US">♪</button></span></li>
+        <li><span class="no">V</span><span><i>pervért</i> · <i>subjéct</i><button class="say-btn mini" data-say="Don't pervert the idea. He'll subject us to criticism." data-lang="en-US">♪</button></span></li>
+        <li><span class="no">A·N</span><span><i>inválid</i> "not valid" · <i>ínvalid</i> "a sickly person"<button class="say-btn mini" data-say="That argument is invalid. He has been an invalid for years." data-lang="en-US">♪</button></span></li>
       </ul>
-      <p class="lead" style="font-size:16px; margin-top:14px;">Unstressed vowels reduce to schwa, which is why the shift changes the whole vowel pattern.</p>
+      <p class="lead" style="font-size:16px; margin-top:14px;">Stress here separates nouns from verbs, and other categories too. The acute accent (´) marks the stressed syllable.</p>
     </div>
   </div>
   <aside class="notes">
     강세도 규칙의 지배를 받습니다. 명사/동사 대립(pervert, subject)에서 강세가 범주를 가르고,
-    접사 첨가로 강세가 이동합니다(photograph→photography). 비강세 모음의 슈와 환원과 연결하세요.
+    교재는 형용사 inválid(타당하지 않은)와 명사 ínvalid(병약자)의 대립도 듭니다. 교재는 강세 음절을 양음 부호(´)로 표시합니다.
+    접미사에 따라 강세가 옮겨 가며 모음이 슈와로 약화되는 예(compete/competition)는 앞의 p.241 슬라이드와 연결하세요.
     1차·2차 강세의 구별과 미국/영국 laboratory의 차이는 다음 슬라이드에서 다룹니다.
   </aside>
 </section>
@@ -454,27 +486,27 @@
 <!-- ══ 16 · Sentence and Phrase Stress ══ -->
 <section data-kicker="CH.6 P.245" data-path="Prosodic Phonology">
   <h2>Sentence and Phrase Stress</h2>
-  <div class="cols">
-    <div class="def">Above the word, one syllable of the phrase receives <i>primary</i> stress, and its position distinguishes compounds from phrases.
-      <span class="ko-supp" style="display:block; margin-top:8px;">단어보다 큰 구에서도 한 음절이 1차 강세를 받으며, 그 위치로 복합어와 구가 구별된다.</span></div>
-    <div>
-      <div class="gloss-set" style="margin-bottom:24px;">
-        <div class="langlab">COMPOUND NOUN · STRESS ON THE FIRST WORD</div>
-        <div class="sent" style="font-size:25px;">a GREENhouse · a HOT dog
-          <button class="say-btn mini" data-say="a greenhouse; a hotdog" data-lang="en-US">listen</button></div>
-        <div class="tr">식물 기르는 온실 · 소시지 핫도그.</div>
-      </div>
-      <div class="gloss-set">
-        <div class="langlab">ADJECTIVE + NOUN PHRASE · STRESS ON THE SECOND</div>
-        <div class="sent" style="font-size:25px;">a green HOUSE · a hot DOG
-          <button class="say-btn mini" data-say="a green house; a hot dog" data-lang="en-US">listen</button></div>
-        <div class="tr">초록색 집 · 더워하는 개: 강세만으로 구조가 갈린다.</div>
-      </div>
-    </div>
-  </div>
+  <p class="lead" style="font-size:18px; max-width:680px;">In a phrase, as in a word, only <b>one</b> vowel gets primary stress; the others are demoted to secondary. A compound noun stresses its first part, an adjective + noun phrase the noun.
+    <span class="ko-supp" style="display:block; font-size:15px;">구에서도 단어처럼 1차 강세는 한 모음뿐이고 나머지는 2차 강세로 강등된다. 복합 명사는 앞부분에, 형용사+명사 구는 명사에 강세가 온다.</span></p>
+  <table class="ed-table pairs" style="max-width:700px; margin-top:6px;">
+    <thead><tr><th>Compound noun</th><th>Adjective + noun</th></tr></thead>
+    <tbody>
+      <tr><td><i>tíghtròpe</i><span class="g">"a rope for acrobatics"</span></td><td><i>tìght rópe</i><span class="g">"a rope drawn taut"</span></td></tr>
+      <tr><td><i>Rédcòat</i><span class="g">"a British soldier"</span></td><td><i>rèd cóat</i><span class="g">"a coat that is red"</span></td></tr>
+      <tr><td><i>hótdòg</i><span class="g">"a frankfurter"</span></td><td><i>hòt dóg</i><span class="g">"an overheated dog"</span></td></tr>
+      <tr><td><i>Whíte Hòuse</i><span class="g">"the President's house"</span></td><td><i>whìte hóuse</i><span class="g">"a house painted white"</span></td></tr>
+    </tbody>
+  </table>
+  <p class="lead" style="font-size:16px; margin-top:12px;">So stress is predictable from morphology and syntax: the phonology interacts with the rest of the grammar.
+    <button class="say-btn mini" data-say="tightrope, Redcoat, hotdog, the White House" data-lang="en-US">compounds</button>
+    <button class="say-btn mini" data-say="a tight rope, a red coat, a hot dog, a white house" data-lang="en-US">phrases</button>
+    <span class="ko-supp" style="display:block; font-size:15px;">강세는 형태·통사에서 예측되며, 음운론이 문법의 다른 부문과 상호작용함을 보여 준다.</span>
+    <span class="cite-inline">(cf. textbook Ch.6, pp.245–246)</span></p>
   <aside class="notes">
-    복합어/구의 강세 대비(GREENhouse vs. green HOUSE). 강세가 형태·통사에서 예측된다는 점 —
-    음운론이 문법의 다른 부문과 상호작용한다는 증거입니다.
+    교재 pp.245–246의 네 쌍입니다. 복합 명사(한 단어, 하이픈, 띄어 쓴 두 단어 모두 가능)는 앞부분에, 형용사+명사 구는 명사에 1차 강세가 옵니다.
+    학생들에게 쌍을 소리 내어 읽게 하고 강세 위치를 느끼게 하세요(모국어 화자가 아니면 원어민 발음을 듣게 하라는 것이 교재의 권고입니다).
+    강세가 형태·통사에서 예측된다는 점은 음운론이 문법의 다른 부문과 상호작용한다는 증거입니다. 앞 절의 명사/동사 강세 대립(subject)도 통사 범주로 예측됩니다.
+    TTS는 구 강세를 정확히 재현하지 못할 수 있으니 직접 발음해 들려주는 편이 좋습니다.
   </aside>
 </section>
 
@@ -485,8 +517,8 @@
     <div class="def">In non-tone languages like English, pitch works as the <i>contour</i> of the whole utterance: intonation.
       <span class="ko-supp" style="display:block; margin-top:8px;">영어처럼 성조가 없는 언어에서 음높이는 발화 전체의 곡선으로 작동하며, 이것이 억양(intonation)이다.</span></div>
     <div class="quote-stack">
-      <p><i>"What is your middle name, David?"</i> with <b>falling</b> pitch is a question addressed to David.</p>
-      <p>The same words with <b>rising</b> pitch on <i>David</i> ask whether the middle name <b>is</b> David.</p>
+      <p><i>"What is your middle name, David?"</i> with <b>falling</b> pitch at the end asks David to reveal his middle name.</p>
+      <p>The same words with <b>rising</b> pitch at the end ask whether the middle name <b>is</b> David.</p>
       <p>Intonation can reflect <b>syntactic and semantic</b> differences the segments alone never show.</p>
     </div>
   </div>
@@ -496,22 +528,51 @@
   </aside>
 </section>
 
+<!-- ══ 17b · Intonation · Tristram ══ -->
+<section data-kicker="CH.6 P.246" data-path="Prosodic Phonology">
+  <h2>Intonation</h2>
+  <p class="lead" style="font-size:18px; max-width:680px; margin-bottom:10px;">A sentence ambiguous in writing can be unambiguous in speech, because the <em>pitch contour</em> differs.
+    <span class="ko-supp" style="display:block; font-size:15px;">글로는 중의적인 문장도 말로 하면 음높이 곡선이 달라 중의성이 사라질 수 있다.</span></p>
+  <div class="tn-set">
+    <div class="small-label">ISOLDE IS TO FOLLOW TRISTRAM</div>
+    <div class="tn-sent">Tristram left directions for Isolde to <span class="pk">fól</span>low.</div>
+    <div class="tn-note">Pitch rises on the first syllable of <i>follow</i>, then falls; primary stress is on <i>follow</i>.
+      <span class="ko-supp" style="display:block; font-size:14.5px;">follow의 첫 음절에서 음이 올라갔다 내려가며, 1차 강세는 follow에 온다.</span></div>
+  </div>
+  <div class="tn-set">
+    <div class="small-label">ISOLDE IS TO FOLLOW THE DIRECTIONS</div>
+    <div class="tn-sent">Tristram left di<span class="pk">réc</span>tions for Isolde to follow.</div>
+    <div class="tn-note">The highest pitch falls on the second syllable of <i>directions</i>; primary stress is on <i>directions</i>.
+      <span class="ko-supp" style="display:block; font-size:14.5px;">가장 높은 음은 directions의 둘째 음절에 오며, 1차 강세는 directions에 온다.</span></div>
+  </div>
+  <p style="font: italic 400 14px 'Lora'; color: var(--ed-muted); margin-top:8px;">Raised syllable = pitch peak (cf. textbook Ch.6, p.246)</p>
+  <aside class="notes">
+    교재 p.246의 Tristram 문장은 글로는 중의적입니다. Isolde가 Tristram을 따라가라는 뜻이면 follow의 첫 음절에서 음이 올랐다 내려가고,
+    지시문을 읽고 따르라는 뜻이면 directions의 둘째 음절이 가장 높습니다. 위로 올린 음절이 음높이의 정점입니다(교재의 곡선 표기를 단순화).
+    먼저 문장만 보여 주고 두 가지 뜻을 찾게 한 뒤, 두 읽기를 직접 발화해 들려주세요.
+    음높이는 성조 언어와 비성조 언어 모두에서 중요하지만 작동 방식이 다르다는 교재의 결론으로 마무리합니다.
+  </aside>
+</section>
+
 <!-- ══ 18 · Sequential Constraints of Phonemes ══ -->
 <section data-kicker="CH.6 P.247">
   <h2 style="font-size:40px;">Sequential Constraints of Phonemes</h2>
-  <div class="cols">
-    <div class="def">Give a speaker /b/, /ɪ/, /k/, /l/: only some arrangements are possible words. That knowledge is <i>phonotactics</i>.
-      <span class="ko-supp" style="display:block; margin-top:8px;">/b ɪ k l/ 네 음소를 주면 가능한 배열은 일부뿐이며, 그것을 아는 지식이 음소배열론(phonotactics)이다.</span></div>
-    <div class="quote-stack">
-      <p>After an initial /b, g, k, p/ no second <b>stop</b> may follow in the syllable; initial /l/ or /r/ demands a <b>vowel</b> next.</p>
-      <p>Constraints are based on the <b>syllable</b>: <i>explicit</i> works because /k$spl/ splits into a legal coda, then a legal onset.</p>
-      <p>Every language differs: Polish allows <i>kto</i>, Japanese bans almost all clusters, Twi words end only in vowels or nasals.</p>
-    </div>
+  <p class="lead" style="font-size:18px; max-width:680px; margin-bottom:12px;">Arrange /b/, /ɪ/, /k/, /l/ into English words, and only <i>some</i> orders work. Knowing which ones is part of your phonology.
+    <span class="ko-supp" style="display:block; font-size:15px;">/b/ /ɪ/ /k/ /l/로 영어 단어를 만들면 일부 배열만 가능하며, 어느 배열이 가능한지 아는 것도 음운 지식이다.</span></p>
+  <div class="arr">
+    <span class="small-label">POSSIBLE</span><span class="f">/blɪk/ &nbsp;/klɪb/ &nbsp;/bɪlk/ &nbsp;/kɪlb/</span>
+    <span class="small-label">NOT POSSIBLE</span><span class="f no">*/lbkɪ/ &nbsp;*/ɪlbk/ &nbsp;*/bkɪl/ &nbsp;*/ɪlkb/</span>
+  </div>
+  <div class="quote-stack compact" style="max-width:680px;">
+    <p>Told of a new <i>blick</i>, you ask what a blick is; told of a new <i>lbick</i>, you ask "a new <b>what</b>?"</p>
+    <p>After /b/, /g/, /k/, or /p/, no second <b>stop</b> may follow in the same syllable.</p>
+    <p>A word beginning with /l/ or /r/ must continue with a <b>vowel</b>, which is why <i>*lbick</i> sounds un-English.</p>
   </div>
   <aside class="notes">
-    음소배열 제약(phonotactic constraints)은 음절 단위로 걸립니다. blick/*lbik 대비,
-    explicit의 /k$spl/ 분할(합법 coda + 합법 onset), 언어별 차이(폴란드어·일본어·Twi)를 짚으세요. 교재의 배열 예: blick, klib, bilk, kilb는 가능, *lbik, *bkil은 불가능합니다.
-    어두 3자음군 제약은 다음 슬라이드의 표로 정리합니다.
+    교재 p.247. 네 음소의 배열 중 /blɪk/, /klɪb/, /bɪlk/, /kɪlb/만 가능하고 */lbkɪ/, */ɪlbk/, */bkɪl/, */ɪlkb/는 불가능합니다(교재 PDF 원문으로 확인).
+    blick이라는 말을 들으면 그게 뭐냐고 묻지만 lbick은 알아듣지 못한다는 반응 차이가 화자의 음소배열 지식을 보여 줍니다.
+    이 지식은 대개 무의식적이며, 십자말풀이를 즐기는 사람이 이런 제약을 더 잘 의식한다는 교재의 언급도 곁들이세요.
+    어두 3자음군과 /tʃ/, /dʒ/ 뒤 제약은 다음 슬라이드의 표로 정리합니다.
   </aside>
 </section>
 
@@ -540,7 +601,27 @@
     학생들에게 표를 보고 공통 패턴(첫째 /s/, 둘째 무성 파열음, 셋째 유음·활음)을 직접 찾게 한 뒤 공개하세요.
     패턴에 맞아도 *stl, *spw, *stw, *stj처럼 빈칸이 있다는 점이 제약이 세밀하다는 증거입니다.
     chill/Jill의 /tʃ/, /dʒ/ 뒤 모음 제약도 같은 쪽에 있습니다(교재 예: chut, chone, chack, jal, jeel, jolick).
-    p.248의 condstluct가 불가능한 이유(둘째 음절이 /stl/ 또는 /tl/로 시작해야 함)와 연결하면 음절 단위 제약이 잘 드러납니다.
+    음절 단위 제약(explicit, condstluct)은 다음 슬라이드에서 다룹니다.
+  </aside>
+</section>
+
+<!-- ══ 18c · Sequential Constraints · syllable basis ══ -->
+<section data-kicker="CH.6 P.248">
+  <h2 style="font-size:40px;">Sequential Constraints of Phonemes</h2>
+  <div class="cols">
+    <div class="def">These limits on sequences of segments are <i>phonotactic constraints</i>, and their basis is the <b>syllable</b>, not the word.
+      <span class="ko-supp" style="display:block; margin-top:8px;">분절음 연쇄에 대한 이런 제한을 음소배열 제약(phonotactic constraints)이라 하며, 기준 단위는 단어가 아니라 음절이다.</span></div>
+    <div class="quote-stack">
+      <p><i>explicit</i> /ɛk$splɪs$ɪt/ is fine: a legal coda /k/ meets a legal onset /spl/. <i>*condstluct</i> fails: its second syllable would need the onset /stl/ or /tl/.</p>
+      <p>Other languages, other limits: Polish allows /zl/ and /kt/ (<i>zlev</i>, <i>kto</i>); Japanese bans most onset clusters; Twi words end only in a vowel or a nasal, yet /mba/ is a Twi word.</p>
+      <p>Sign languages have forbidden combinations too: in the ASL compound <i>blood</i>, the whole handshape, finger orientation included, must assimilate.</p>
+    </div>
+  </div>
+  <aside class="notes">
+    교재 p.248. 제약은 음절 단위로 걸립니다: 음절 첫머리에 올 수 있는 자음군만 단어 첫머리에 오고, 음절 끝에 올 수 있는 자음군만 단어 끝에 옵니다.
+    explicit의 /kspl/은 음절 경계로 나뉘어 합법이지만, condstluct는 둘째 음절이 /stl/이나 /tl/로 시작해야 하므로 불가능합니다.
+    언어마다 제약이 다릅니다: 폴란드어 /zlev/(싱크대), /kto/(누구), 크로아티아어 이름 Mladen, 일본어의 엄격한 음절 첫머리 제약, Twi의 어말 제약(/pik/는 불가능, /mba/는 Twi 단어).
+    수어에도 금지된 자질 조합이 있고 수어마다 다릅니다. 아이들은 언어를 습득하며 음소와 함께 이 제약도 배웁니다.
   </aside>
 </section>
 
@@ -549,44 +630,49 @@
   <h2>Lexical Gaps</h2>
   <div class="cols-even">
     <div>
-      <div class="small-label" style="margin-bottom:12px;">ACCIDENTAL GAP · POSSIBLE WORD</div>
+      <div class="small-label" style="margin-bottom:12px;">ACTUAL WORDS</div>
       <hr class="hair" style="margin:0 0 14px;">
-      <p class="lead" style="font-size:18px;"><em>blick</em>, <em>creek</em>-like <em>cruck</em> obey the constraints but happen to lack a meaning. They <b>could</b> become words.</p>
+      <p class="lead" style="font-size:18px;"><em>bot</em> [bɑt] and <em>crake</em> [kʰrek] are English words, even if not every speaker knows them.</p>
     </div>
     <div>
-      <div class="small-label" style="margin-bottom:12px;">SYSTEMATIC GAP · IMPOSSIBLE WORD</div>
+      <div class="small-label" style="margin-bottom:12px;">POSSIBLE, BUT NOT WORDS</div>
       <hr class="hair" style="margin:0 0 14px;">
-      <p class="lead" style="font-size:18px;"><em>*bnick</em> and <em>*ngick</em> violate the constraints: /bn-/ and initial /ŋ/ are banned. They can <b>never</b> be English words.</p>
+      <p class="lead" style="font-size:18px;">[bʊt] (rhymes with <em>put</em>), <em>creck</em> [kʰrɛk], <em>cruke</em> [kʰruk], <em>cruk</em> [kʰrʌk], <em>crike</em> [kʰraɪk] obey the constraints but lack a meaning.</p>
     </div>
   </div>
-  <hr class="hair" style="margin-top:30px;">
-  <p class="lead" style="font-size:17px;">An actual word is a possible word <em>plus</em> a meaning, which is why <em>Bic</em>, <em>Xerox</em>, and <em>Spam</em> could launch, but <em>Zhleet</em> [ʒlit] never will.
-    <span class="ko-supp" style="display:block;">실제 단어는 가능한 단어에 뜻이 더해진 것이므로 Bic, Xerox, Spam은 출시될 수 있었지만 Zhleet [ʒlit]는 결코 그럴 수 없다.</span></p>
+  <hr class="hair" style="margin-top:16px;">
+  <p class="lead" style="font-size:17px;">An actual word is a possible word <em>plus</em> a meaning. Possible words without one are <b>nonsense words</b>, also called <b>accidental gaps</b> or <b>lexical gaps</b>.
+    <span class="ko-supp" style="display:block;">실제 단어는 가능한 단어에 뜻이 더해진 것이다. 뜻이 없는 가능한 단어는 무의미어(nonsense word)이며 우연한 공백(accidental gap), 어휘 공백(lexical gap)이라고도 한다.</span></p>
+  <p class="lead" style="font-size:17px; margin-top:4px;">That is why <em>Bic</em>, <em>Xerox</em>, <em>Kodak</em>, and <em>Spam</em> could launch as names, but <em>Zhleet</em> [ʒlit], an impossible word, never would.
+    <span class="ko-supp" style="display:block;">그래서 Bic, Xerox, Kodak, Spam은 상품명이 될 수 있었지만 불가능한 단어 Zhleet [ʒlit]는 그럴 수 없다.</span>
+    <span class="cite-inline">(cf. textbook Ch.6, pp.248–249)</span></p>
   <aside class="notes">
-    우연적 공백(가능하나 비어 있음)과 체계적 공백(규칙이 원천 봉쇄)의 구분이 화자의 규칙 지식을
-    증명합니다. 신제품 이름 짓기(Bic, Xerox, Kodak)가 음소배열 지식의 실전 응용입니다.
+    교재 pp.248–249. 실재 단어(bot, crake)와, 음소배열 제약은 지키지만 뜻이 없는 가능한 단어([bʊt], creck, cruke, cruk, crike)를 대비합니다.
+    교재는 이런 빈칸을 무의미어, 우연한 공백(accidental gap), 어휘 공백(lexical gap)이라 부릅니다.
+    제약을 어겨 원천적으로 불가능한 배열(Zhleet, *lbick)을 '체계적 공백(systematic gap)'이라 부르는 개론서도 있지만,
+    이 교재는 그 용어를 쓰지 않으므로 보충 설명으로만 소개하세요. 신제품 이름 짓기(Bic, Xerox, Kodak, Glaxo, Spam)가 음소배열 지식의 실전 응용입니다.
   </aside>
 </section>
 
 <!-- ══ 19b · Cartoon: phonotactics video ══ -->
-<section data-kicker="CH.6 P.248 · PHONOTACTICS · CARTOON">
+<section data-kicker="CH.6 P.248 · LEXICAL GAPS · CARTOON">
   <div class="video-scene" style="text-align:center;">
     <div class="video-stage">
       <video src="assets/media/w14_toon_phonotactics.mp4" preload="metadata" playsinline></video>
-      <span class="cue sub" data-start="1.8" data-end="3.2">She needs a <b>name</b>! <span class="ko">얘 이름이 필요해!</span></span>
+      <span class="cue sub" data-start="1.8" data-end="3.5">She needs a <b>name</b>! <span class="ko">얘 이름이 필요해!</span></span>
       <span class="cue sub" data-start="3.9" data-end="5.5">How about <b>Blick</b>? <span class="ko">블릭(Blick) 어때?</span><span class="gl">POSSIBLE WORD ✓</span></span>
       <span class="cue sub" data-start="5.95" data-end="9.85">Or maybe… B-<b>Bnick</b>? <span class="ko">아니면… 브-브닉(Bnick)?</span><span class="gl">*BN- IMPOSSIBLE IN ENGLISH</span></span>
-      <span class="cue think" data-start="10.9" data-end="12.0" data-slow="0.5" style="left:50%; top:6%; translate:-50% 0; --rot:-1deg;">Even my ears reject *bnick.<span class="ko">내 귀도 *bnick은 거부한다.</span></span>
+      <span class="cue think" data-start="10.9" data-end="13.0" data-slow="0.5" style="left:50%; top:6%; translate:-50% 0; --rot:-1deg;">Even my ears reject *bnick.<span class="ko">내 귀도 *bnick은 거부한다.</span></span>
     </div>
     <div class="video-fallback">
       <p class="lead">새 친구의 이름 후보: Blick은 승인, *bnick은 발음 단계에서 탈락(규칙이 막는 배열).</p>
     </div>
   </div>
   <aside class="notes">
-    음소배열 콩트: 이름이 없는 새 강아지 친구가 등장 — Blick은 가능한 배열이라 즉시 이름으로
-    승인되고(가능한 단어가 지시 대상을 얻어 '실재 단어'가 되는 순간, 교재 p.248의 논지),
-    Bnick은 말하는 사람조차 버벅입니다. 영어 화자가 /bn-/을 발음하지 못한다는 것 자체가
-    음소배열 제약의 산 증거. ▶ Play를 눌러야 재생됩니다(음성 포함).
+    음소배열 콩트: 이름이 없는 새 강아지 친구가 등장합니다. Blick은 가능한 배열이라 즉시 이름으로
+    승인되고(가능한 단어가 뜻을 얻어 '실재 단어'가 되는 순간, 교재 p.249의 논지),
+    Bnick은 말하는 사람조차 버벅입니다. Bnick은 교재의 예는 아니지만 /bn-/ 역시 영어 단어 첫머리에 올 수 없는 배열이며,
+    영어 화자가 이를 발음하기 어렵다는 것 자체가 음소배열 제약의 증거입니다. ▶ Play를 눌러야 재생됩니다(음성 포함).
   </aside>
 </section>
 
@@ -597,15 +683,16 @@
     <div class="def">Why don't phonemic forms surface intact? Often, a rule exists to make the output <i>obey the constraints</i>.
       <span class="ko-supp" style="display:block; margin-top:8px;">음소형이 그대로 나오지 않는 이유는, 규칙이 흔히 출력이 제약(constraint)을 지키도록 고치는 장치이기 때문이다.</span></div>
     <div class="quote-stack">
-      <p>English bans same-syllable obstruent pairs that differ at most in voicing: no [dd], [td], [sz].</p>
-      <p>So <i>mend + d</i> would be illegal; schwa insertion rescues it: <b>[mɛndəd]</b>.</p>
-      <p>And <i>walk + d</i> would mix voicing; devoicing rescues it: <b>[wɔkt]</b>. The rules serve the constraints.</p>
+      <p><b>(A)</b> Syllable-final obstruents must agree in voicing: *[kasb] and *[kabs], but [kasp] and [kɛbz]. Devoicing obeys it: <i>reaped</i> [ript], <i>peaked</i> [pʰikt].</p>
+      <p><b>(B)</b> No two obstruents alike except possibly in voicing within a syllable: no [kk], [kg], [sz]. Schwa insertion obeys it: <i>mended</i> [mɛndəd], <i>vented</i> [vɛntəd].</p>
+      <p>The constraints are more general than any one rule: <i>smooth</i> takes <i>-ness</i>, not the <i>-th</i> of <i>width</i>.</p>
     </div>
   </div>
   <aside class="notes">
-    과거시제 규칙의 두 부분(슈와 삽입·무성음화)이 모두 '너무 닮은 장애음 연쇄 금지'라는
-    일반 제약을 지키기 위한 장치임을 보입니다. smooth의 명사가 *smoothth가 아니라
-    smoothness인 것도 같은 제약의 소행입니다.
+    교재 pp.249–250. 과거시제 규칙의 두 부분이 각각 일반 제약을 지키는 장치임을 보입니다. 무성음화는 제약 (A)(음절 끝 장애음 연쇄의 유성성 일치)를,
+    슈와 삽입은 제약 (B)(유성성 말고는 같은 장애음끼리 한 음절에 나란히 올 수 없음)를 지킵니다. [lɪpd], [mɪkd]는 [bkɪl]처럼 불가능한 단어입니다.
+    smooth의 명사가 width처럼 -th를 붙인 형태가 아니라 smoothness인 것도 (B)로 설명됩니다([ðθ]는 유성성만 다른 연쇄).
+    규칙은 기저형을 최소한으로 고쳐 표면 제약에 맞추는 장치라는 결론으로 마무리하세요. egg, puppy의 겹자음 철자는 발음상 [ɛg], [pʰʌpi]라는 점도 덧붙일 수 있습니다.
   </aside>
 </section>
 
@@ -635,15 +722,15 @@
 <!-- ══ 22 · Phonological Analysis · the flap ══ -->
 <section data-kicker="CH.6 P.251">
   <h2>Phonological Analysis</h2>
-  <p class="lead" style="font-size:18px; max-width:660px;"><em>writer</em> [ɹaɪɾɚ] and <em>rider</em> both surface with [ɾ], but <em>write</em> [ɹaɪt] and <em>ride</em> [ɹaɪd] keep the stops. <button class="say-btn mini" data-say="writer, rider, write, ride" data-lang="en-US">listen</button></p>
+  <p class="lead" style="font-size:18px; max-width:660px;"><em>writer</em> and <em>rider</em> both surface as [raɪɾər], but <em>write</em> [raɪt] and <em>ride</em> [raɪd] keep the stops. <button class="say-btn mini" data-say="writer, rider, write, ride" data-lang="en-US">listen</button></p>
   <div class="rule-line" style="font-size:26px;">/t/, /d/ <b>→</b> [ɾ] <b>/</b> V́ __ V</div>
   <p class="lead" style="font-size:17px; max-width:660px;">The flap occurs <em>only</em> between a stressed and an unstressed vowel, where [t] and [d] never do.
     <span class="rel-line">Complementary distribution: [ɾ] is an allophone of <b>both</b> /t/ and /d/.</span>
-    <span class="rel-line">So phonemically <em>writer</em> is /raɪtər/, as in [ɹaɪt].</span>
+    <span class="rel-line">So phonemically <em>writer</em> is /raɪtər/ and <em>rider</em> /raɪdər/, as <em>write</em> and <em>ride</em> show.</span>
     <span class="ko-supp" style="display:block; margin-top:8px;">[ɾ]는 강세 모음과 비강세 모음 사이에만 오고 [t] [d]는 거기 못 오므로 상보적 분포이며, [ɾ]는 /t/와 /d/ 양쪽의 이음이다.</span>
     <span class="cite-inline">(cf. textbook Ch.6, pp.251–252)</span></p>
   <aside class="notes">
-    영어 탄설음 분석: [ɾ]는 강세 모음과 비강세 모음 사이에만, [t]·[d]는 거기 못 옴 —
+    영어 탄설음 분석: [ɾ]는 강세 모음과 비강세 모음 사이에만 오고, [t]·[d]는 거기 못 옵니다.
     상보적 분포이므로 [ɾ]는 /t/와 /d/ 양쪽의 이음(many to one). 기저형은 관련형(write, ride)으로
     결정합니다. data, latter처럼 증거가 부족한 경우도 있음을 덧붙이세요. 그리스어 [k][c][x][ç]
     분석은 다음 슬라이드에서 단계별로 풉니다. 가장 단순하고 일반적인 규칙이 최선이라는 교재의 분석 원칙도 짚으세요.
@@ -673,11 +760,10 @@
     <div>
       <p class="small-label" style="margin:0 0 4px;">FOUR QUESTIONS, ONE RULE</p>
       <ol class="steps">
-        <li class="fragment"><b>Minimal pairs</b>: [kano] / [xano] and [cino] / [çino], so [k] ≠ [x] and [c] ≠ [ç]. No pair separates [k] / [c] or [x] / [ç].</li>
-        <li class="fragment"><b>Complementary distribution</b>: [k] and [x] occur only before [a o u r]; [c] and [ç] only before the front vowels [i e].</li>
-        <li class="fragment"><b>Phonetic similarity</b>: pair stop with stop and fricative with fricative, all [−anterior]; not [k] with [ç].</li>
-        <li class="fragment"><b>Simplicity criterion</b>: either choice gives equally simple rules, so the natural one decides. Velars palatalize before front vowels (assimilation), so the phonemes are <b>/k/</b> and <b>/x/</b>.</li>
-        <li class="fragment"><b>The rule</b>, with no redundant features: <span class="rule-in">[+velar] → [+palatal] / __ [−back]</span></li>
+        <li class="fragment"><b>Minimal pairs?</b> [kano] / [xano] and [cino] / [çino], so [k] ≠ [x] and [c] ≠ [ç]. No pair separates [k] / [c] or [x] / [ç].</li>
+        <li class="fragment"><b>Complementary distribution?</b> [k] and [x] occur only before [a o u r]; [c] and [ç] only before the front vowels [i e]. By phonetic similarity, pair stop with stop ([k] / [c]) and fricative with fricative ([x] / [ç]).</li>
+        <li class="fragment"><b>Phonemes and allophones?</b> Both choices give equally simple rules, so the natural one decides: velars palatalize before front vowels (assimilation). The phonemes are <b>/k/</b> and <b>/x/</b>.</li>
+        <li class="fragment"><b>The rule?</b> With no redundant features: <span class="rule-in">[+velar] → [+palatal] / __ [−back]</span></li>
       </ol>
       <div class="morph-result fragment"><span class="no">/k/</span>[k] ~ [c]&nbsp;&nbsp;&nbsp;<span class="no">/x/</span>[x] ~ [ç]: velars surface as palatals before front vowels.
         <span class="ko-supp" style="display:block; font-style:normal; font-size:14.5px;">/k/와 /x/는 전설 모음 앞에서 각각 구개음 [c], [ç]로 실현된다.</span></div>
@@ -687,9 +773,9 @@
     교재 pp.252–253의 그리스어 분석(자료 16개 중 10개 발췌). 방향키를 누를 때마다 단계가 하나씩 나타납니다.
     먼저 자료만 보여주고 교재의 네 질문(최소대립쌍? 상보적 분포? 음소와 이음? 규칙?)을 학생들이 풀게 하세요.
     (1) [k]/[x], [c]/[ç]는 최소대립쌍이 있어 별개 음소입니다. (2) [k]/[c], [x]/[ç]는 최소대립쌍이 없고, 비전설 모음과 [r] 앞 대 전설 모음 앞으로 상보적 분포입니다.
-    (3) 음성적 유사성: 파열음끼리, 마찰음끼리 묶습니다([k]와 [ç]를 묶지 않음). (4) 어느 쪽을 기저로 잡아도 규칙의 단순성은 같으므로,
-    여러 언어에서 흔한 자연스러운 규칙(연구개음이 전설 모음 앞에서 구개음화, 즉 동화)을 따라 /k/, /x/를 음소로 택합니다.
-    규칙에는 [consonantal]이나 [syllabic] 같은 잉여 자질을 넣지 않는다는 점도 단순성 기준의 일부입니다.
+    교재는 여기서 음성적 유사성도 확인합니다: 둘 다 [−anterior]인 파열음끼리, 마찰음끼리 묶습니다([k]와 [x], [c]와 [ç]는 덜 닮음).
+    (3) 어느 쪽을 기저로 잡아도 규칙의 단순성은 같으므로, 여러 언어에서 흔한 자연스러운 규칙(연구개음이 전설 모음 앞에서 구개음화, 즉 동화)을 따라 /k/, /x/를 음소로 택합니다.
+    (4) 규칙에는 [consonantal]이나 [syllabic] 같은 잉여 자질을 넣지 않는다는 점도 단순성 기준의 일부입니다.
     끝으로 이 분석은 주어진 자료에 대한 것이며, 자료가 늘면 재분석이 필요할 수 있다는 교재의 단서를 덧붙이세요.
   </aside>
 </section>
@@ -727,24 +813,24 @@
 </section>
 
 <!-- ══ 25 · Exercise Q3 ══ -->
-<section data-kicker="CH.6 · EXERCISE 03">
+<section data-kicker="CH.6 · PRACTICE 03">
   <div class="mcq" data-qid="w14-q3">
-    <div class="mcq-q"><span class="qnum">Q3</span>Which nonsense word is an <span class="accent">*impossible</span> English word (a systematic gap)?
-      <span style="font: italic 400 15px 'Lora'; color: var(--ed-muted);">(cf. textbook Ch.6, pp.217, 249)</span></div>
+    <div class="mcq-q"><span class="qnum">Q3</span>Which form is an <span class="accent">*impossible</span> English word?
+      <span style="font: italic 400 15px 'Lora'; color: var(--ed-muted);">(cf. textbook Ch.6, pp.247–249)</span></div>
     <div class="mcq-opts">
       <button class="mcq-opt"><span class="opt-key">A</span><em>blick</em> [blɪk]</button>
-      <button class="mcq-opt"><span class="opt-key">B</span><em>strick</em> [strɪk]</button>
-      <button class="mcq-opt" data-correct="true"><span class="opt-key">C</span><em>bnick</em> [bnɪk]</button>
+      <button class="mcq-opt"><span class="opt-key">B</span><em>crike</em> [kʰraɪk]</button>
+      <button class="mcq-opt" data-correct="true"><span class="opt-key">C</span><em>lbick</em> [lbɪk]</button>
     </div>
-    <div class="mcq-explain"><span class="lbl">Explanation</span>English phonotactics forbid the initial cluster /bn-/, so <em>bnick</em> is a systematic gap that can never be a word. <em>blick</em> and <em>strick</em> obey English rules and are merely accidental gaps.</div>
+    <div class="mcq-explain"><span class="lbl">Explanation</span>In English, a word that begins with /l/ must continue with a vowel, so <em>lbick</em> violates the phonotactic constraints and can never be a word. <em>blick</em> and <em>crike</em> obey the constraints: they are possible words that merely lack a meaning (accidental gaps).</div>
   </div>
   <aside class="notes">
-    체계적 공백 판별 문항(재구성). /bn-/ 어두 자음군이 영어에서 금지된다는 제약을 확인시키세요.
+    가능한 단어와 불가능한 단어 판별 문항(재구성, 교재 pp.247–249의 blick, crike, *lbick). /l/로 시작하면 다음은 모음이어야 한다는 제약을 확인시키세요.
   </aside>
 </section>
 
 <!-- ══ 26 · Exercise Q4 ══ -->
-<section data-kicker="CH.6 · EXERCISE 04">
+<section data-kicker="CH.6 · PRACTICE 04">
   <div class="mcq" data-qid="w14-q4">
     <div class="mcq-q"><span class="qnum">Q4</span>The rule <em>V → [+nasal] / __ [+nasal] $</em> should be read as:
       <span style="font: italic 400 15px 'Lora'; color: var(--ed-muted);">(cf. textbook Ch.6, p.236)</span></div>
@@ -753,7 +839,7 @@
       <button class="mcq-opt"><span class="opt-key">B</span>A nasal consonant becomes a vowel before another nasal.</button>
       <button class="mcq-opt"><span class="opt-key">C</span>A vowel is deleted after a nasal consonant.</button>
     </div>
-    <div class="mcq-explain"><span class="lbl">Explanation</span>The target (left of →) is a vowel; the change is [+nasal]; the environment places the vowel before a [+nasal] segment marked by the bar __. The <b>$</b> is a syllable boundary, so nasalization applies only within one syllable (<em>bean</em>), not across it (<em>denote</em>).</div>
+    <div class="mcq-explain"><span class="lbl">Explanation</span>The target (left of →) is a vowel; the change is [+nasal]; the environment places the vowel before a [+nasal] segment marked by the bar __. The <b>$</b> is a syllable boundary, so nasalization applies only within one syllable (<em>den</em> [dɛ̃n]), not across it (<em>denote</em>).</div>
   </div>
   <p class="ko-supp" style="font-size:14px; margin-top:16px;">더 풀어보기: 교재 Ch.6 Exercises(pp.255–268)의 자료에서 규칙 도출, 음절 분석, 음소배열 판별을 과제로 권장.</p>
   <aside class="notes">
@@ -770,7 +856,7 @@
     <li>Written <i>A → B / C __ D</i>, targeting <b>natural classes</b>; order can matter</li>
     <li>The <b>syllable</b>: σ → Onset + Rime (Nucleus + Coda); only the nucleus is obligatory</li>
     <li><b>Stress and intonation</b> are prosodic, rule-governed, and can contrast meaning</li>
-    <li><b>Phonotactics</b> split accidental gaps (<i>blick</i>) from systematic gaps (<i>*bnick</i>), and rules exist to enforce them</li>
+    <li><b>Phonotactics</b>: <i>blick</i>, not <i>*lbick</i>; rules exist partly to enforce it</li>
     <li><b>Analysis</b>: minimal pairs, distribution, then the simplest natural rule</li>
   </ol>
   <aside class="notes">

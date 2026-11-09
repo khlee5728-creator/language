@@ -572,11 +572,11 @@ window.QUIZ_BANK = {
  },
  "w14-q3": {
   "week": 14,
-  "q": "Which nonsense word is an *impossible English word (a systematic gap)? (cf. textbook Ch.6, pp.217, 249)",
+  "q": "Which form is an *impossible English word? (cf. textbook Ch.6, pp.247–249)",
   "opts": {
    "A": "blick [blɪk]",
-   "B": "strick [strɪk]",
-   "C": "bnick [bnɪk]"
+   "B": "crike [kʰraɪk]",
+   "C": "lbick [lbɪk]"
   },
   "correct": "C"
  },
