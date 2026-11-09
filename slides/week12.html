@@ -28,8 +28,9 @@
     /* 모음 예시 단어 진열(헤어라인, 무배경) */
     .vgrid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 0 30px; margin-top: 6px; }
     .vgrid .v { border-top: 1px solid var(--ed-line); padding: 10px 0 14px; }
-    .vgrid .v b { display: block; font: 400 30px 'Lora'; color: var(--ed-ink); }
-    .vgrid .v span { display: block; margin-top: 4px; font: 600 10.5px 'Space Grotesk'; letter-spacing: 0.16em; color: var(--ed-muted); text-transform: uppercase; }
+    .vgrid .v .sy { display: block; font: 400 30px 'Lora'; color: var(--ed-ink); }
+    .vgrid .v i { display: block; margin-top: 4px; font: italic 400 16px 'Lora'; color: var(--ed-body); }
+    .vgrid .v i b { font-weight: 700; color: var(--ed-accent); }
 
     /* 성조 표(태국어 [naː]): 가로 헤어라인 표 */
     .reveal table.mini-table { border-collapse: collapse; width: 100%; margin: 0; }
@@ -97,7 +98,7 @@
   <div class="booktag">AN INTRODUCTION TO LANGUAGE · 11TH ED. — FROMKIN · RODMAN · HYAMS</div>
   <h1>Phonetics: The Sounds<br>of Language</h1>
   <div class="part">Part 2 · Vowels, Prosody &amp; Sign</div>
-  <p class="lead">Open the vocal tract and the obstruction is gone — <em>what shapes a vowel?</em>
+  <p class="lead">Open the vocal tract and the obstruction is gone — what shapes a vowel?
     <span class="ko-supp" style="display:block;">성도를 열어 막힘이 사라지면, 무엇이 모음을 빚어낼까?</span></p>
   <div class="foot">Week 12 · Chapter 5, pp. 199–215 · Topics in English Linguistics</div>
   <aside class="notes">
@@ -197,18 +198,18 @@
 <section data-kicker="CH.5 P.201" data-path="Articulatory Phonetics › Vowels">
   <h2>Tongue Position</h2>
   <div class="vgrid">
-    <div class="v"><b>i</b><span>s<u>ee</u></span></div>
-    <div class="v"><b>ɪ</b><span>s<u>i</u>t</span></div>
-    <div class="v"><b>e</b><span>s<u>ay</u></span></div>
-    <div class="v"><b>ɛ</b><span>s<u>e</u>t</span></div>
-    <div class="v"><b>æ</b><span>s<u>a</u>t</span></div>
-    <div class="v"><b>u</b><span>t<u>oo</u></span></div>
-    <div class="v"><b>ʊ</b><span>b<u>oo</u>k</span></div>
-    <div class="v"><b>o</b><span>g<u>o</u></span></div>
-    <div class="v"><b>ɔ</b><span>f<u>ou</u>r</span></div>
-    <div class="v"><b>ɑ</b><span>f<u>a</u>ther</span></div>
-    <div class="v"><b>ʌ</b><span>c<u>u</u>p</span></div>
-    <div class="v"><b>ə</b><span><u>a</u>bout</span></div>
+    <div class="v"><span class="sy">i</span><i>s<b>ee</b></i></div>
+    <div class="v"><span class="sy">ɪ</span><i>s<b>i</b>t</i></div>
+    <div class="v"><span class="sy">e</span><i>s<b>ay</b></i></div>
+    <div class="v"><span class="sy">ɛ</span><i>s<b>e</b>t</i></div>
+    <div class="v"><span class="sy">æ</span><i>s<b>a</b>t</i></div>
+    <div class="v"><span class="sy">u</span><i>t<b>oo</b></i></div>
+    <div class="v"><span class="sy">ʊ</span><i>b<b>oo</b>k</i></div>
+    <div class="v"><span class="sy">o</span><i>g<b>o</b></i></div>
+    <div class="v"><span class="sy">ɔ</span><i>f<b>ou</b>r</i></div>
+    <div class="v"><span class="sy">ɑ</span><i>f<b>a</b>ther</i></div>
+    <div class="v"><span class="sy">ʌ</span><i>c<b>u</b>p</i></div>
+    <div class="v"><span class="sy">ə</span><i><b>a</b>bout</i></div>
   </div>
   <hr class="hair" style="margin-top:8px;">
   <p class="lead" style="font-size:17px;">Judge by <b>sound</b>, never by letter: the same <i>oo</i> is [u] in <i>too</i> but [ʊ] in <i>book</i>.
@@ -283,7 +284,7 @@
 <section data-kicker="CH.5 P.201" data-path="Articulatory Phonetics › Vowels">
   <h2>Diphthongs</h2>
   <div class="cols">
-    <div class="def">A diphthong is a sequence of two vowel sounds <i>bonded together</i> in one syllable. Simple, steady vowels are <b>monophthongs</b>.
+    <div class="def">A diphthong is a sequence of two vowel sounds <b>bonded together</b> in one syllable. Simple, steady vowels are <b>monophthongs</b>.
       <span class="ko-supp" style="display:block; margin-top:8px;">이중모음(diphthong)은 두 모음이 한 음절 안에 묶인 연쇄이고, 흔들림 없는 단일 모음은 단모음(monophthong)이다.</span></div>
     <div>
       <ul class="exlist">
@@ -536,7 +537,7 @@
 <section data-kicker="CH.5 P.206">
   <h2 style="font-size:36px;">Phonetic Symbols and Spelling Correspondences</h2>
   <div class="cols">
-    <div class="def">One letter may hide <b>two sounds</b>: the letter <b>p</b> spells both [p] (<i>spit</i>) and [pʰ] (<i>pit</i>).
+    <div class="def">One letter may hide <b>two sounds</b>: the letter <i>p</i> spells both [p] (<i>spit</i>) and [pʰ] (<i>pit</i>).
       <span class="ko-supp" style="display:block; margin-top:8px;">글자 하나가 두 소리를 감출 수 있다: 철자 p는 spit의 [p]도, pit의 [pʰ]도 적는다.</span></div>
     <div>
       <ul class="exlist" style="font-size:0.9em;">
@@ -562,11 +563,11 @@
     <div class="def">Signs are articulated too: ASL signs are formed from three major features, in the <b>signing space</b> from waist to forehead.
       <span class="ko-supp" style="display:block; margin-top:8px;">수화도 조음된다: ASL 수화는 허리에서 이마까지의 수화 공간(signing space)에서 세 가지 주요 자질로 만들어진다.</span></div>
     <div>
-      <ul class="exlist">
-        <li><span class="no">01</span><span><b>Handshape</b>: configuration of the hand (ASL has over 30)</span></li>
-        <li><span class="no">02</span><span><b>Movement</b>: of hand and arms in signing space</span></li>
-        <li><span class="no">03</span><span><b>Location</b>: of the hands in signing space</span></li>
-      </ul>
+      <div class="quote-stack">
+        <p><b>Handshape</b>: configuration of the hand (ASL has over 30)</p>
+        <p><b>Movement</b>: of hand and arms in signing space</p>
+        <p><b>Location</b>: of the hands in signing space</p>
+      </div>
       <hr class="hair">
       <p class="lead" style="font-size:17.5px;">"Mother" is a 5-handshape tapping the chin. "Father" and "fine" differ <b>only in location</b>: the signed analogue of a minimal pair.</p>
     </div>
@@ -581,7 +582,7 @@
 <!-- ══ 22 · Practice Q1 ══ -->
 <section data-kicker="CH.5 · PRACTICE 01">
   <div class="mcq" data-qid="w12-q1">
-    <div class="mcq-q"><span class="qnum">Q1</span>Which vowel is <em>high, front,</em> and <em>tense</em>?</div>
+    <div class="mcq-q"><span class="qnum">Q1</span>Which vowel is <b>high, front,</b> and <b>tense</b>?</div>
     <div class="mcq-opts">
       <button class="mcq-opt" data-correct="true"><span class="opt-key">A</span>[i] as in <em>beat</em></button>
       <button class="mcq-opt"><span class="opt-key">B</span>[u] as in <em>boot</em></button>
@@ -614,7 +615,7 @@
 <!-- ══ 24 · Practice Q3 ══ -->
 <section data-kicker="CH.5 · PRACTICE 03">
   <div class="mcq" data-qid="w12-q3">
-    <div class="mcq-q"><span class="qnum">Q3</span>Which word contains a <em>diphthong</em>?
+    <div class="mcq-q"><span class="qnum">Q3</span>Which word contains a <b>diphthong</b>?
       <span style="font: italic 400 15px 'Lora'; color: var(--ed-muted);">(cf. textbook Ch.5, pp.201–202)</span></div>
     <div class="mcq-opts">
       <button class="mcq-opt"><span class="opt-key">A</span><em>bet</em></button>
