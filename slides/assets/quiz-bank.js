@@ -461,7 +461,7 @@ window.QUIZ_BANK = {
   "q": "In English, why is the vowel in ban [bæ̃n] nasalized but the one in bad [bæd] is not?",
   "opts": {
    "A": "Nasalization distinguishes the two words' meanings.",
-   "B": "The vowel is nasalized predictably before a nasal consonant — an allophonic rule.",
+   "B": "English vowels are nasalized predictably before a nasal consonant in the same syllable.",
    "C": "English vowels are always nasalized."
   },
   "correct": "B"
@@ -478,7 +478,19 @@ window.QUIZ_BANK = {
  },
  "w12-q4": {
   "week": 12,
+  "retired": true,
+  "note": "2026-11-09 교체됨 → w12-q4b(교재 밖 예 만다린 mā/mà를 교재 Nupe 예로). 교체 전 응답 해석용으로 보존",
   "q": "Mandarin mā \"mother\" vs. mà \"scold\" differ only in pitch. This shows Mandarin is a: (cf. textbook Ch.5, pp.205–206)",
+  "opts": {
+   "A": "Tone language",
+   "B": "Intonation language",
+   "C": "Stress-timed language"
+  },
+  "correct": "A"
+ },
+ "w12-q4b": {
+  "week": 12,
+  "q": "In Nupe, [ba] said with a relatively high pitch means \"to be sour\"; with a low pitch, \"to count\". This shows that Nupe is a: (cf. textbook Ch.5, p.205)",
   "opts": {
    "A": "Tone language",
    "B": "Intonation language",
