@@ -61,8 +61,12 @@
     .ipa-grid { display: grid; gap: 0 18px; }
     .ipa-grid.c3 { grid-template-columns: repeat(3, 1fr); }
     .ipa-grid.c2 { grid-template-columns: repeat(2, 1fr); }
-    .ipa-grid span { display: flex; align-items: baseline; gap: 10px; border-bottom: 1px solid var(--ed-line); padding: 1px 0; }
-    .ipa-grid b { font: 400 18px/1.3 'Lora'; color: var(--ed-ink); min-width: 26px; }
+    /* 목차 4단계 들여쓰기(slides-editorial.js는 lv3까지) */
+    .reveal .recap.outline li.lv4 { padding-left: 90px; font-size: 16px; }
+    .reveal .recap.outline li.lv4 b { font-weight: 400; }
+    .ipa-grid > span { display: flex; align-items: baseline; gap: 10px; border-bottom: 1px solid var(--ed-line); padding: 1px 0; }
+    .ipa-grid .sy { font: 400 18px/1.3 'Lora'; color: var(--ed-ink); min-width: 26px; }
+    .ipa-grid i b { font-weight: 700; color: var(--ed-accent); }
     .ipa-grid i { font: italic 400 15px/1.3 'Lora'; color: var(--ed-body); }
     /* 7번: 철자 → 발음 전사 표 */
     .reveal table.tr-tab { border-collapse: collapse; width: 100%; margin: 0; }
@@ -209,7 +213,7 @@
   <div class="booktag">AN INTRODUCTION TO LANGUAGE · 11TH ED. — FROMKIN · RODMAN · HYAMS</div>
   <h1>Phonetics: The Sounds<br>of Language</h1>
   <div class="part">Part 1 · Consonants &amp; the IPA</div>
-  <p class="lead">How are the sounds of speech <em>made</em>, and how do we write them down, one symbol per sound?
+  <p class="lead">How are the sounds of speech <b>made</b>, and how do we write them down, one symbol per sound?
     <span class="ko-supp" style="display:block;">말소리는 어떻게 만들어지며, 어떻게 '한 기호 = 한 소리'로 적는가.</span></p>
   <div class="foot">Week 11 · Chapter 5, pp. 183–198 · Topics in English Linguistics</div>
   <aside class="notes">
@@ -224,11 +228,13 @@
   <ol class="recap tight outline" style="max-width:700px;">
     <li><b>Sound Segments</b><span class="pg">P.184</span></li>
     <li class="lv2"><b>Speech Sounds, Like Snowflakes</b><span class="pg">P.185</span></li>
-    <li><b>The Phonetic Alphabet</b>: <i style="font-size:0.82em;">why spelling fails · [ ] brackets</i><span class="pg">P.186</span></li>
-    <li><b>Articulatory Phonetics</b>: <i style="font-size:0.82em;">the vocal tract</i><span class="pg">P.188</span></li>
+    <li><b>The Phonetic Alphabet</b><span class="pg">P.186</span></li>
+    <li><b>Articulatory Phonetics</b><span class="pg">P.188</span></li>
     <li class="lv2"><b>Consonants</b><span class="pg">P.189</span></li>
     <li class="lv3"><b>Place of Articulation</b><span class="pg">P.189</span></li>
-    <li class="lv3"><b>Manner of Articulation</b>: <i style="font-size:0.82em;">voicing · nasality · stops → glides</i><span class="pg">P.191</span></li>
+    <li class="lv3"><b>Manner of Articulation</b><span class="pg">P.191</span></li>
+    <li class="lv4"><b>Voiced and Voiceless Sounds</b><span class="pg">P.192</span></li>
+    <li class="lv4"><b>Nasal and Oral Sounds</b><span class="pg">P.193</span></li>
     <li class="lv3"><b>Phonetic Symbols for American English Consonants</b><span class="pg">P.197</span></li>
   </ol>
   <aside class="notes">
@@ -241,7 +247,7 @@
 <section data-kicker="CH.5 P.184">
   <h2>Sound Segments</h2>
   <div class="cols">
-    <div class="def">The study of speech sounds is <i>phonetics</i>. Speech is physically continuous, yet speakers hear discrete <i>segments</i>.
+    <div class="def">The study of speech sounds is <b>phonetics</b>. Speech is physically continuous, yet speakers hear discrete <b>segments</b>.
       <span class="ko-supp" style="display:block; margin-top:8px;">음성학(phonetics)은 말소리를 연구하며, 말소리는 물리적으로 연속이지만 화자는 이를 분절음(segment)으로 듣는다.</span></div>
     <div>
       <div class="quote-stack">
@@ -307,7 +313,7 @@
     <span class="tag">SILENT LETTERS</span><span class="ex"><i><b>k</b>not · <b>p</b>sychology · i<b>s</b>land · de<b>b</b>t · <b>h</b>onest</i></span>
   </div>
   <hr class="hair" style="margin:14px 0 8px;">
-  <p class="lead" style="font-size:16.5px; margin:0;">Shaw: <i>fish</i> could be spelled <b>ghoti</b>, <i>gh</i> as in <i>tough</i>, <i>o</i> as in <i>women</i>, <i>ti</i> as in <i>nation</i>. Spelling reform failed; phoneticians built a new alphabet instead.
+  <p class="lead" style="font-size:16.5px; margin:0;">Shaw: <i>fish</i> could be spelled <i><b>ghoti</b></i>, <i>gh</i> as in <i>tough</i>, <i>o</i> as in <i>women</i>, <i>ti</i> as in <i>nation</i>. Spelling reform failed; phoneticians built a new alphabet instead.
     <span class="ko-supp" style="display:block; margin-top:4px;">철자 개혁은 실패했고, 음성학자들은 대신 새로운 음성 기호 체계를 만들었다.</span></p>
   <aside class="notes">
     교재 pp.186–187의 순서 그대로입니다. 같은 소리의 여러 철자(Caesar 문장의 [i]: e, ie, ae, ee, eo, ei, ea) → 같은 글자의 여러 소리(father 문장의 a)
@@ -322,8 +328,8 @@
   <p class="lead" style="font-size:17px; margin:0 0 12px;">The <b>IPA</b> (International Phonetic Alphabet) writes the sounds of all languages with ordinary letters and invented symbols: <b>one symbol, one sound</b>, in [ ].
     <span class="ko-supp" style="display:block; margin-top:4px;">국제음성기호(IPA)는 모든 언어의 소리를 '한 기호 = 한 소리'로 [ ] 안에 적는다.</span></p>
   <div class="ipa-chart">
-    <div><div class="small-label" style="margin-bottom:6px;">CONSONANTS</div><div class="ipa-grid c3"><span><b>p</b><i>pen</i></span><span><b>t</b><i>ten</i></span><span><b>k</b><i>kit</i></span><span><b>b</b><i>bed</i></span><span><b>d</b><i>den</i></span><span><b>g</b><i>get</i></span><span><b>m</b><i>man</i></span><span><b>n</b><i>net</i></span><span><b>ŋ</b><i>sing</i></span><span><b>f</b><i>fan</i></span><span><b>s</b><i>sun</i></span><span><b>h</b><i>hat</i></span><span><b>v</b><i>van</i></span><span><b>z</b><i>zoo</i></span><span><b>l</b><i>let</i></span><span><b>θ</b><i>thin</i></span><span><b>tʃ</b><i>chin</i></span><span><b>r</b><i>red</i></span><span><b>ð</b><i>then</i></span><span><b>dʒ</b><i>jam</i></span><span><b>j</b><i>yes</i></span><span><b>ʃ</b><i>she</i></span><span><b>ʍ</b><i>when*</i></span><span><b>w</b><i>wet</i></span><span><b>ʒ</b><i>vision</i></span></div></div>
-    <div><div class="small-label" style="margin-bottom:6px;">VOWELS · NEXT WEEK IN DETAIL</div><div class="ipa-grid c2"><span><b>i</b><i>see</i></span><span><b>ɪ</b><i>sit</i></span><span><b>e</b><i>say</i></span><span><b>ɛ</b><i>set</i></span><span><b>u</b><i>too</i></span><span><b>ʊ</b><i>book</i></span><span><b>o</b><i>go</i></span><span><b>ɔ</b><i>four</i></span><span><b>æ</b><i>sat</i></span><span><b>ɑ</b><i>father</i></span><span><b>ʌ</b><i>cup</i></span><span><b>ə</b><i>about</i></span><span><b>aɪ</b><i>my</i></span><span><b>aʊ</b><i>now</i></span><span><b>ɔɪ</b><i>toy</i></span></div></div>
+    <div><div class="small-label" style="margin-bottom:6px;">CONSONANTS</div><div class="ipa-grid c3"><span><span class="sy">p</span><i><b>p</b>en</i></span><span><span class="sy">t</span><i><b>t</b>en</i></span><span><span class="sy">k</span><i><b>k</b>it</i></span><span><span class="sy">b</span><i><b>b</b>ed</i></span><span><span class="sy">d</span><i><b>d</b>en</i></span><span><span class="sy">g</span><i><b>g</b>et</i></span><span><span class="sy">m</span><i><b>m</b>an</i></span><span><span class="sy">n</span><i><b>n</b>et</i></span><span><span class="sy">ŋ</span><i>si<b>ng</b></i></span><span><span class="sy">f</span><i><b>f</b>an</i></span><span><span class="sy">s</span><i><b>s</b>un</i></span><span><span class="sy">h</span><i><b>h</b>at</i></span><span><span class="sy">v</span><i><b>v</b>an</i></span><span><span class="sy">z</span><i><b>z</b>oo</i></span><span><span class="sy">l</span><i><b>l</b>et</i></span><span><span class="sy">θ</span><i><b>th</b>in</i></span><span><span class="sy">tʃ</span><i><b>ch</b>in</i></span><span><span class="sy">r</span><i><b>r</b>ed</i></span><span><span class="sy">ð</span><i><b>th</b>en</i></span><span><span class="sy">dʒ</span><i><b>j</b>am</i></span><span><span class="sy">j</span><i><b>y</b>es</i></span><span><span class="sy">ʃ</span><i><b>sh</b>e</i></span><span><span class="sy">ʍ</span><i><b>wh</b>en*</i></span><span><span class="sy">w</span><i><b>w</b>et</i></span><span><span class="sy">ʒ</span><i>vi<b>s</b>ion</i></span></div></div>
+    <div><div class="small-label" style="margin-bottom:6px;">VOWELS · NEXT WEEK IN DETAIL</div><div class="ipa-grid c2"><span><span class="sy">i</span><i>s<b>ee</b></i></span><span><span class="sy">ɪ</span><i>s<b>i</b>t</i></span><span><span class="sy">e</span><i>s<b>ay</b></i></span><span><span class="sy">ɛ</span><i>s<b>e</b>t</i></span><span><span class="sy">u</span><i>t<b>oo</b></i></span><span><span class="sy">ʊ</span><i>b<b>oo</b>k</i></span><span><span class="sy">o</span><i>g<b>o</b></i></span><span><span class="sy">ɔ</span><i>f<b>ou</b>r</i></span><span><span class="sy">æ</span><i>s<b>a</b>t</i></span><span><span class="sy">ɑ</span><i>f<b>a</b>ther</i></span><span><span class="sy">ʌ</span><i>c<b>u</b>p</i></span><span><span class="sy">ə</span><i><b>a</b>bout</i></span><span><span class="sy">aɪ</span><i>m<b>y</b></i></span><span><span class="sy">aʊ</span><i>n<b>ow</b></i></span><span><span class="sy">ɔɪ</span><i>t<b>oy</b></i></span></div></div>
   </div>
   <p class="fn" style="font: italic 400 13.5px 'Lora'; color: var(--ed-muted); margin:10px 0 0;">Symbols and layout as in Table 5.1 (p.187); key words are our own. *For speakers who say <i>when</i> with a puff of air.</p>
   <aside class="notes">
@@ -577,7 +583,7 @@
       <tr class="na"><td class="pn"><span>7</span></td><td class="nm">Uvular</td><td class="ar">back of tongue + uvula</td><td class="sy">[ʀ q ɢ]</td><td class="ex">not in English: French <i>r</i> in <i>rouge</i></td><td class="ply"><button class="say-btn mini" data-say="rouge" data-lang="fr-FR">listen</button></td></tr>
       <tr><td class="pn"><span>8</span></td><td class="nm">Glottal</td><td class="ar">at the glottis</td><td class="sy">[h ʔ]</td><td class="ex"><i>high · uh-oh</i> [ʔʌʔo]</td><td class="ply"><button class="say-btn mini" data-say="high. uh-oh." data-lang="en-US">listen</button></td></tr>
   </table>
-  <p class="fnote" style="margin-top:8px;">Alveolars: [t d n] tip on the ridge · [s z] air over a lowered tip · [l] <b>lateral</b>, air over the sides · [r] tip curled back. Some speakers make interdentals behind the teeth (<i>dental</i>).</p>
+  <p class="fnote" style="margin-top:8px;">Alveolars: [t d n] tip on the ridge · [s z] air over a lowered tip · [l] <b>lateral</b>, air over the sides · [r] tip curled back. Some speakers make interdentals behind the teeth (<b>dental</b>).</p>
   <aside class="notes">
     교재 pp.189–192의 순서입니다. 먼저 조음 위치의 정의(기류가 막히는 자리, 혀와 입술이 좁힘을 만듦)를 확인하세요.
     번호 1–8은 교재 Figure 5.1과 10번 성도 그림의 번호와 같습니다(그래서 이 슬라이드는 번호를 유지). 예시 단어는 교재 Table 5.5와 본문(p.191)의 단어입니다.
@@ -884,7 +890,7 @@
       <tr><td class="nm">Affricates</td><td class="ar">stop closure, then a gradual fricative release</td><td class="sy">[tʃ dʒ]</td><td class="ex"><i>church · judge</i></td><td class="ply"><button class="say-btn mini" data-say="church. judge." data-lang="en-US">listen</button></td></tr>
       <tr><td class="nm">Liquids</td><td class="ar">some obstruction, but no real friction</td><td class="sy">[l r]</td><td class="ex"><i>lye · rye</i></td><td class="ply"><button class="say-btn mini" data-say="lye. rye." data-lang="en-US">listen</button></td></tr>
       <tr><td class="nm">Glides</td><td class="ar">little obstruction; always followed by a vowel</td><td class="sy">[j w ʍ]</td><td class="ex"><i>you · we</i></td><td class="ply"><button class="say-btn mini" data-say="you. we." data-lang="en-US">listen</button></td></tr>
-      <tr><td class="nm">Approximants</td><td class="ar">articulators come close, with no friction</td><td class="sy">[w j r] · [l]</td><td class="ex"><i>central · lateral</i></td><td class="ply"></td></tr>
+      <tr><td class="nm">Approximants</td><td class="ar">articulators come close, with no friction</td><td class="sy">[w j r] · [l]</td><td class="ex"><span style="font-style:normal; color:var(--ed-muted);">central · lateral</span></td><td class="ply"></td></tr>
   </table>
   <p class="fnote" style="margin-top:10px;">Stops are the only sounds that fully stop the air; all others are <b>continuants</b>, as in <i>tack</i> vs. <i>sack</i>. Affricates are not continuants, because of their stop closure.</p>
   <p class="ko-supp" style="font-size:15px; margin-top:6px;">파열음만 기류를 완전히 막고 나머지는 모두 지속음(continuant)이며, 파찰음은 폐쇄 때문에 지속음이 아니다.</p>
@@ -980,7 +986,7 @@
 <!-- ══ 28 · Practice Q3 ══ -->
 <section data-kicker="CH.5 · PRACTICE 03">
   <div class="mcq" data-qid="w11-q3">
-    <div class="mcq-q"><span class="qnum">Q3</span>Which sound is a <em>voiceless velar stop</em>?</div>
+    <div class="mcq-q"><span class="qnum">Q3</span>Which sound is a <b>voiceless velar stop</b>?</div>
     <div class="mcq-opts">
       <button class="mcq-opt"><span class="opt-key">A</span>[g]</button>
       <button class="mcq-opt" data-correct="true"><span class="opt-key">B</span>[k]</button>
@@ -1014,7 +1020,7 @@
 <!-- ══ 30 · Exercise Q5 ══ -->
 <section data-kicker="CH.5 · EXERCISE 05">
   <div class="mcq" data-qid="w11-q5">
-    <div class="mcq-q"><span class="qnum">Q5</span>Which set of words all <b>begin</b> with the same consonant <em>sound</em>?
+    <div class="mcq-q"><span class="qnum">Q5</span>Which set of words all <b>begin</b> with the same consonant <b>sound</b>?
       <span style="font: italic 400 15px 'Lora'; color: var(--ed-muted);">(cf. textbook Ch.5, p.187 · Exercise 1, p.210)</span></div>
     <div class="mcq-opts">
       <button class="mcq-opt" data-correct="true"><span class="opt-key">A</span>city · scene · psychology</button>
@@ -1050,7 +1056,7 @@
 <!-- ══ 32 · Next week ══ -->
 <section data-kicker="NEXT WEEK · CH.5 PP.199–215">
   <h2>Vowels, Prosody &amp; Sign</h2>
-  <p class="lead" style="max-width:620px;">Open the tract and the obstruction disappears — <em>so how do we tell one vowel from another?</em>
+  <p class="lead" style="max-width:620px;">Open the tract and the obstruction disappears — so how do we tell one vowel from another?
     <span class="ko-supp" style="display:block;">모음의 4차원 기술 · 이중모음 · 운율 · 수화의 음성학 · Ch.5 pp.199–215.</span></p>
   <hr class="hair" style="max-width:620px; margin-top:34px;">
   <p style="font: 400 17px 'Lora', 'Noto Serif KR'; color: var(--ed-body);">
