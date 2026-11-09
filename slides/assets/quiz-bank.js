@@ -504,7 +504,7 @@ window.QUIZ_BANK = {
   "opts": {
    "A": "Separate phonemes (a minimal pair)",
    "B": "Allophones of one phoneme",
-   "C": "In free variation"
+   "C": "In complementary distribution"
   },
   "correct": "A"
  },
@@ -530,6 +530,8 @@ window.QUIZ_BANK = {
  },
  "w13-q4": {
   "week": 13,
+  "retired": true,
+  "note": "2026-11-09 교체됨 → w13-q4b(교재 밖 예 bead/beat 모음 길이를 교재 Akan 비음 모음 예로). 교체 전 응답 해석용으로 보존",
   "q": "In English, the vowel in bead is longer than in beat. What is vowel length here? (cf. textbook Ch.6, p.230)",
   "opts": {
    "A": "A distinctive (contrastive) feature",
@@ -537,6 +539,16 @@ window.QUIZ_BANK = {
    "C": "Free variation"
   },
   "correct": "B"
+ },
+ "w13-q4b": {
+  "week": 13,
+  "q": "In Akan, [pam] \"sew\" and [pãm] \"confederate\" differ only in vowel nasality. In Akan, vowel nasality is: (cf. textbook Ch.6, p.229)",
+  "opts": {
+   "A": "A distinctive (phonemic) feature",
+   "B": "A predictable, nondistinctive feature",
+   "C": "An allophonic difference, as in English"
+  },
+  "correct": "A"
  },
  "w14-q1": {
   "week": 14,

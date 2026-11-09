@@ -25,17 +25,25 @@
     .cover .foot { margin-top: 46px; border-top: 1px solid var(--ed-line); padding-top: 16px;
       font: italic 400 15px 'Lora'; color: var(--ed-muted); }
 
-    /* 에디토리얼 헤어라인 표 */
-    .ed-table { border-collapse: collapse; width: 100%; max-width: 660px; margin: 0; }
-    .ed-table th { font: 600 11px 'Space Grotesk'; letter-spacing: 0.2em; text-transform: uppercase;
-      color: var(--ed-muted); text-align: left; padding: 6px 18px 8px 0; border-bottom: 1px solid var(--ed-ink); }
-    .ed-table td { font: 400 17px 'Lora'; color: var(--ed-body); padding: 9px 18px 9px 0;
-      border-bottom: 1px solid var(--ed-line); vertical-align: baseline; }
-    .ed-table tr:last-child td { border-bottom: 0; }
-    .ed-table td.form { font: italic 700 20px 'Lora'; color: var(--ed-accent); white-space: nowrap; }
-    .ed-table td.c, .ed-table th.c { text-align: center; padding-right: 0; }
-    .ed-table td.ko { font: 300 14px 'Noto Serif KR'; color: var(--ed-muted); }
-
+    /* 에디토리얼 헤어라인 표(기본 테마를 이기도록 .reveal table.ed-table) */
+    .reveal table.ed-table { border-collapse: collapse; width: 100%; max-width: 660px; margin: 0; }
+    .reveal table.ed-table th { font: 600 11px 'Space Grotesk'; letter-spacing: 0.2em; text-transform: uppercase; white-space: nowrap;
+      color: var(--ed-muted); text-align: left; padding: 6px 18px 8px 0; background: none; border: 0; border-bottom: 1px solid var(--ed-ink); }
+    .reveal table.ed-table td { font: 400 17px 'Lora'; color: var(--ed-body); padding: 9px 18px 9px 0; background: none; border: 0;
+      border-bottom: 1px solid var(--ed-line); vertical-align: baseline; text-align: left; }
+    .reveal table.ed-table tr:last-child td { border-bottom: 0; }
+    .reveal table.ed-table tr:nth-child(even) td, .reveal table.ed-table tr:hover td { background: none; }
+    .reveal table.ed-table td.form { font: italic 700 20px 'Lora'; color: var(--ed-accent); white-space: nowrap; }
+    .reveal table.ed-table td.c, .reveal table.ed-table th.c { text-align: center; padding-right: 0; }
+    /* 13번: b_t 열두 단어(모음 음소 찾기) */
+    .bt { display: grid; grid-template-columns: repeat(6, 1fr); gap: 0 14px; margin: 6px 0 4px; }
+    .bt span { border-top: 1px solid var(--ed-line); padding: 6px 0 8px; font: italic 400 17px 'Lora'; color: var(--ed-ink); }
+    .bt span small { display: block; font: 400 15px 'Lora'; font-style: normal; color: var(--ed-body); }
+    /* 9번 등: 규칙 문장(영문) */
+    .gloss-set .rl { font: 400 15.5px/1.45 'Lora'; color: var(--ed-body); margin: 4px 0 2px; }
+    .fnote { font: italic 400 14px/1.45 'Lora'; color: var(--ed-muted); margin: 8px 0 0; }
+    .reveal ol.recap.toc2 { columns: 2; column-gap: 44px; max-width: none; }
+    .reveal ol.recap.toc2 li { break-inside: avoid; padding-top: 5px; padding-bottom: 5px; }
     /* 규칙 표시: 헤어라인 프레임 세리프 라인 */
     .rule-line { border-top: 1px solid var(--ed-line); border-bottom: 1px solid var(--ed-line);
       padding: 18px 0; margin: 18px 0; text-align: center;
@@ -46,7 +54,7 @@
     .reveal table.len { border-collapse: collapse; width: 100%; max-width: 440px; margin: 0; }
     .reveal table.len th { white-space: nowrap; font: 600 11px 'Space Grotesk'; letter-spacing: 0.2em; color: var(--ed-muted);
       text-align: left; padding: 6px 14px 8px 0; border-bottom: 1px solid var(--ed-ink); background: none; }
-    .reveal table.len td { font: 400 16px/1.4 'Lora'; color: var(--ed-body); padding: 9px 14px 9px 0;
+    .reveal table.len td { font: 400 16px/1.4 'Lora'; color: var(--ed-body); padding: 6px 14px 6px 0;
       border-bottom: 1px solid var(--ed-line); vertical-align: baseline; background: none; }
     .reveal table.len tr:last-child td { border-bottom: 0; }
     .reveal table.len td .rom { font: italic 700 21px 'Lora'; color: var(--ed-accent); white-space: nowrap; }
@@ -57,22 +65,22 @@
 <body data-rail="WEEK 13 · PHONOLOGY" data-course="Topics in English Linguistics">
 <!--
   SECTION COMPLETENESS · CH.6 PP.216–232 (Fromkin 11e)
-  ✓ Phonology: The Sound Patterns of Language ... p.216 → slide 3
-  ✓ The Pronunciation of Morphemes .............. p.217 → slide 4
-  ✓   The Pronunciation of Plurals .............. p.217 → slides 5–6
-  ✓   Additional Examples of Allomorphs ......... p.220 → slide 7
-  ✓ Phonemes: The Phonological Units of Language  p.222 → slide 8
-  ✓   Illustration of Allophones ................ p.222 → slides 9–11 (+figure 10)
-  ✓   Phonemes and How to Find Them ............. p.224 → slide 12
-  ✓   Complementary Distribution ................ p.225 → slide 13
-  ✓   The Need for Similarity ................... p.227 → slide 14
-  ✓   Distinctive Features of Phonemes .......... p.227 → slide 15
-  ✓     Feature Values .......................... p.228 → slide 16
-  ✓     Nondistinctive Features ................. p.229 → slide 17
-  ✓     Phonemic Patterns May Vary across Languages p.230 → slides 18–18b (Thai aspiration · Korean vowel length)
-  ✓     Natural Classes of Speech Sounds ........ p.231 → slide 19
+  ✓ Phonology: The Sound Patterns of Language ... p.216 → slides 3–4 (chapter intro, pp.216–217)
+  ✓ The Pronunciation of Morphemes .............. p.217 → slide 5
+  ✓   The Pronunciation of Plurals .............. p.217 → slides 6–7
+  ✓   Additional Examples of Allomorphs ......... p.220 → slides 8–9 (past tense · Akan, overgeneralization)
+  ✓ Phonemes: The Phonological Units of Language  p.222 → slide 10
+  ✓   Illustration of Allophones ................ p.222 → slides 11–13 (+figure 12)
+  ✓   Phonemes and How to Find Them ............. p.224 → slide 14 (+cartoon 15)
+  ✓   Complementary Distribution ................ p.225 → slide 16
+  ✓   The Need for Similarity ................... p.227 → slide 17
+  ✓   Distinctive Features of Phonemes .......... p.227 → slide 18
+  ✓     Feature Values .......................... p.228 → slide 19
+  ✓     Nondistinctive Features ................. p.229 → slide 20
+  ✓     Phonemic Patterns May Vary across Languages p.230 → slides 21–22 (Thai aspiration · Korean vowel length)
+  ✓     Natural Classes of Speech Sounds ........ p.231 → slide 23 (+Table 6.4)
   ✓     Feature Specifications for American English
-        Consonants and Vowels ................... p.232 → slide 20
+        Consonants and Vowels ................... p.232 → slide 24
 -->
 <div class="reveal">
 <div class="slides">
@@ -94,15 +102,22 @@
 <!-- ══ 2 · Contents ══ -->
 <section data-kicker="WEEK 13 · CONTENTS · CH.6 PP.216–232">
   <h2>Today</h2>
-  <ol class="recap tight outline" style="max-width:690px;">
+  <ol class="recap tight outline toc2">
     <li><b>Phonology: The Sound Patterns of Language</b><span class="pg">P.216</span></li>
-    <li><b>The Pronunciation of Morphemes</b>: <i style="font-size:0.82em;">plurals · past tense</i><span class="pg">P.217</span></li>
+    <li><b>The Pronunciation of Morphemes</b><span class="pg">P.217</span></li>
+    <li class="lv2"><b>The Pronunciation of Plurals</b><span class="pg">P.217</span></li>
+    <li class="lv2"><b>Additional Examples of Allomorphs</b><span class="pg">P.220</span></li>
     <li><b>Phonemes: The Phonological Units of Language</b><span class="pg">P.222</span></li>
-    <li class="lv2"><b>Illustration of Allophones</b>: <i style="font-size:0.82em;">nasal vowels · aspiration · flap</i><span class="pg">P.222</span></li>
-    <li class="lv2"><b>Phonemes and How to Find Them</b>: <i style="font-size:0.82em;">minimal pairs</i><span class="pg">P.224</span></li>
-    <li class="lv2"><b>Complementary Distribution</b>: <i style="font-size:0.82em;">&amp; the need for similarity</i><span class="pg">P.225</span></li>
-    <li class="lv2"><b>Distinctive Features of Phonemes</b>: <i style="font-size:0.82em;">values · nondistinctive</i><span class="pg">P.227</span></li>
-    <li class="lv3"><b>Phonemic Patterns · Natural Classes · Feature Specifications</b><span class="pg">P.230</span></li>
+    <li class="lv2"><b>Illustration of Allophones</b><span class="pg">P.222</span></li>
+    <li class="lv2"><b>Phonemes and How to Find Them</b><span class="pg">P.224</span></li>
+    <li class="lv2"><b>Complementary Distribution</b><span class="pg">P.225</span></li>
+    <li class="lv2" style="break-before: column;"><b>The Need for Similarity</b><span class="pg">P.227</span></li>
+    <li class="lv2"><b>Distinctive Features of Phonemes</b><span class="pg">P.227</span></li>
+    <li class="lv3"><b>Feature Values</b><span class="pg">P.228</span></li>
+    <li class="lv3"><b>Nondistinctive Features</b><span class="pg">P.229</span></li>
+    <li class="lv3"><b>Phonemic Patterns May Vary across Languages</b><span class="pg">P.230</span></li>
+    <li class="lv3"><b>Natural Classes of Speech Sounds</b><span class="pg">P.231</span></li>
+    <li class="lv3"><b>Feature Specifications for American English Consonants and Vowels</b><span class="pg">P.232</span></li>
   </ol>
   <aside class="notes">
     오늘의 키워드: phoneme, allophone, allomorph, minimal pair, complementary distribution,
@@ -130,34 +145,53 @@
 
 <!-- ══ 4 · The Pronunciation of Morphemes ══ -->
 <section data-kicker="CH.6 P.217">
-  <h2>The Pronunciation of Morphemes</h2>
+  <h2 style="font-size:40px;">Phonology: The Sound Patterns of Language</h2>
   <div class="cols">
-    <div class="def">Phonology is both the speaker's <i>knowledge</i> of sound patterns and the linguist's <i>description</i> of it.
+    <div class="def">Phonology is both the speaker's <b>knowledge</b> of sound patterns and the linguist's <b>description</b> of it.
       <span class="ko-supp" style="display:block; margin-top:8px;">음운론(phonology)은 화자가 지닌 소리 패턴의 지식이자, 그 지식에 대한 언어학자의 기술이기도 하다.</span></div>
     <div class="quote-stack">
       <p>It tells you which sounds are native and which are foreign.</p>
       <p>It tells you <i>black</i> is a word, <i>blick</i> a possible word, and <b>*mbick</b> impossible.</p>
+      <p>Voicing separates words (<i>pat/bat</i>); vowel nasality does not in English, but does in Portuguese: <i>pão</i> "bread", <i>pao</i> "stick".</p>
       <p>And it adjusts the pronunciation of morphemes, like the plural, to their surroundings.</p>
     </div>
   </div>
   <aside class="notes">
-    음운론의 정의(지식+기술)와 그 지식의 내용(소리 목록, 가능한 단어, 형태소 발음 조정)을
+    교재 p.217(장 도입부, 첫 섹션 제목 앞). 음운론의 정의(지식+기술)와 그 지식의 내용(소리 목록, 가능한 단어, 변별 자질, 형태소 발음 조정)을
     소개합니다. blick/*mbick 대비는 14주차 음소배열 제약의 예고편입니다. '문법'이라는 용어처럼 음운론도 화자의 지식과 그에 대한 기술이라는 이중 의미를 지닌다는 점을 짚으세요.
   </aside>
 </section>
 
-<!-- ══ 5 · The Pronunciation of Plurals ══ -->
+<!-- ══ 5 · The Pronunciation of Morphemes ══ -->
+<section data-kicker="CH.6 P.217">
+  <h2>The Pronunciation of Morphemes</h2>
+  <div class="cols">
+    <div class="def">Knowledge of phonology determines how we pronounce words and their parts, <b>morphemes</b>. A morpheme is often pronounced differently in different contexts.
+      <span class="ko-supp" style="display:block; margin-top:8px;">음운 지식은 단어와 그 부분인 형태소(morpheme)의 발음을 정하며, 한 형태소가 맥락에 따라 다르게 발음되는 일이 많다.</span></div>
+    <div class="quote-stack">
+      <p>This variation is described with <b>phonological rules</b>, which speakers usually apply unconsciously.</p>
+      <p>The spelling misleads: the plural is written <i>s</i> or <i>es</i>, yet it is pronounced [z], [s] or [əz].</p>
+      <p>We begin with English, then turn to other languages.</p>
+    </div>
+  </div>
+  <aside class="notes">
+    교재 p.217. 형태소(2장)의 발음이 맥락에 따라 달라지는 현상을 (대개 무의식적인) 음운 규칙으로 기술한다는 섹션 도입입니다.
+    다음 슬라이드의 복수형이 첫 예이고, 과거시제·소유격·3인칭 단수, 그리고 Akan의 부정 형태소로 이어집니다.
+  </aside>
+</section>
+
+<!-- ══ 6 · The Pronunciation of Plurals ══ -->
 <section data-kicker="CH.6 P.217" data-path="The Pronunciation of Morphemes">
   <h2>The Pronunciation of Plurals</h2>
-  <p class="lead" style="font-size:18px; max-width:660px;">One plural morpheme: three regular pronunciations, or <em>allomorphs</em>, chosen by the final sound of the noun.</p>
+  <p class="lead" style="font-size:18px; max-width:660px;">One plural morpheme: three regular pronunciations, or <b>allomorphs</b>, chosen by the final sound of the noun.</p>
   <table class="ed-table" style="margin-top:14px;">
     <tr><th>Allomorph</th><th>Environment</th><th>Example</th></tr>
     <tr><td class="form">[z]</td><td>after voiced nonsibilant segments</td><td><i>dogs, cabs, boys</i> <button class="say-btn mini" data-say="dogs, cabs, boys" data-lang="en-US">listen</button></td></tr>
     <tr><td class="form">[s]</td><td>after voiceless nonsibilant segments</td><td><i>cats, caps, backs</i> <button class="say-btn mini" data-say="cats, caps, backs" data-lang="en-US">listen</button></td></tr>
     <tr><td class="form">[əz]</td><td>after sibilant segments</td><td><i>buses, badges, bushes</i> <button class="say-btn mini" data-say="buses, badges, bushes" data-lang="en-US">listen</button></td></tr>
   </table>
-  <p class="lead" style="font-size:16px; margin-top:16px;">Irregulars (<em>children, oxen, mice, sheep</em>) follow no rule and are memorized one by one.
-    <span class="ko-supp" style="display:block;">children, oxen, mice, sheep 같은 불규칙 복수는 규칙을 따르지 않아 하나씩 외운다.</span></p>
+  <p class="lead" style="font-size:16px; margin-top:14px;">Minimal pairs such as <i>cab/cap</i> and <i>bag/badge</i> show that the <b>final segment</b> decides. Irregulars (<i>children, oxen, mice, sheep</i>) follow no rule and are memorized one by one.
+    <span class="ko-supp" style="display:block;">cab/cap, bag/badge 같은 최소대립쌍이 마지막 분절음이 결정함을 보여 주며, 불규칙 복수는 하나씩 외운다.</span></p>
   <aside class="notes">
     이형태(allomorph)는 하나의 형태소가 음운 환경에 따라 규칙적으로 달라지는 음성 실현입니다.
     최소대립쌍(cab/cap, bag/badge)이 '마지막 분절음이 결정한다'는 근거가 됩니다.
@@ -165,11 +199,11 @@
   </aside>
 </section>
 
-<!-- ══ 6 · Plural rules in order ══ -->
+<!-- ══ 7 · Plural rules in order ══ -->
 <section data-kicker="CH.6 P.219" data-path="The Pronunciation of Morphemes">
   <h2>The Pronunciation of Plurals</h2>
   <div class="cols">
-    <div class="def">The stored form of the plural is a single <i>basic representation</i>: /z/.
+    <div class="def">The stored form of the plural is a single <b>basic representation</b>: /z/.
       <span class="ko-supp" style="display:block; margin-top:8px;">복수의 저장형은 기저형(basic representation) /z/ 하나다.</span></div>
     <div>
       <div class="rule-line" style="font-size:19px; margin-top:0;">1&nbsp;&nbsp;Insert <b>[ə]</b> before /z/ after a sibilant&nbsp;&nbsp;·&nbsp;&nbsp;2&nbsp;&nbsp;Devoice /z/ to <b>[s]</b> after a voiceless sound</div>
@@ -187,10 +221,11 @@
   <aside class="notes">
     삽입 규칙이 먼저, 무성음화가 나중. 순서를 바꾸면 bus의 복수가 *[bʌsəs]로 잘못 도출됩니다.
     기저형이 /z/인 이유(가장 넓은 분포)와 morphophonemic rule(특정 형태소에만 적용)이라는 용어를 짚으세요.
+    horse의 끝소리가 [s]인 것은 /s/와 앞의 /r/ 사이에 형태소 경계가 없기 때문이라는 교재의 지적도 덧붙이세요(p.220).
   </aside>
 </section>
 
-<!-- ══ 7 · Additional Examples of Allomorphs ══ -->
+<!-- ══ 8 · Additional Examples of Allomorphs ══ -->
 <section data-kicker="CH.6 P.220" data-path="The Pronunciation of Morphemes">
   <h2 style="font-size:40px;">Additional Examples of Allomorphs</h2>
   <p class="lead" style="font-size:18px; max-width:660px;">The regular past tense runs on the same track: basic form /d/, three surface allomorphs.</p>
@@ -209,11 +244,31 @@
   </aside>
 </section>
 
-<!-- ══ 8 · Phonemes: The Phonological Units of Language ══ -->
+<!-- ══ 9 · Additional Examples of Allomorphs: Akan ══ -->
+<section data-kicker="CH.6 P.221" data-path="The Pronunciation of Morphemes">
+  <h2 style="font-size:40px;">Additional Examples of Allomorphs</h2>
+  <p class="lead" style="font-size:17px; margin:0 0 10px;">Other languages vary morphemes by rule too. The Akan negative morpheme is a nasal that takes the <b>place of articulation</b> of the following consonant ([mɪ] "I").
+    <span class="ko-supp" style="display:block; margin-top:4px;">다른 언어도 규칙에 따라 형태소가 달라진다. Akan의 부정 형태소는 뒤 자음의 조음 위치를 따르는 비음이다.</span></p>
+  <table class="ed-table" style="max-width:none;">
+    <tr><th>Before</th><th>Affirmative</th><th>Negative</th></tr>
+    <tr><td>[p]</td><td><i>mɪ pɛ</i> "I like"</td><td><i>mɪ <b>m</b>pɛ</i> "I don't like"</td></tr>
+    <tr><td>[t]</td><td><i>mɪ tɪ</i> "I speak"</td><td><i>mɪ <b>n</b>tɪ</i> "I don't speak"</td></tr>
+    <tr><td>[k]</td><td><i>mɪ kɔ</i> "I go"</td><td><i>mɪ <b>ŋ</b>kɔ</i> "I don't go"</td></tr>
+  </table>
+  <p class="lead" style="font-size:16px; margin-top:12px;">This <b>homorganic nasal rule</b> (same place of articulation) is found in many languages. And because rules refer to segments, not words, children learn thousands of forms at once, and overapply them: <i>mouses</i>, <i>mans</i>.
+    <span class="ko-supp" style="display:block; margin-top:4px;">이 동기관 비음 규칙은 여러 언어에 있으며, 규칙이 분절음을 기준으로 하기에 아이들은 한꺼번에 익히고 mouses, mans처럼 과잉 적용하기도 한다.</span></p>
+  <aside class="notes">
+    교재 p.221. Akan 부정 형태소의 세 이형태: p 앞 [m], t 앞 [n], k 앞 [ŋ]. 규칙은 '뒤 자음의 조음 위치에 맞춰 비음의 위치를 바꾼다'이고, 이를 동기관 비음 규칙(homorganic nasal rule)이라 합니다.
+    영어의 in-/im- 같은 예(impossible, intolerable)를 말로 덧붙이면 학생들이 바로 이해합니다(교재 밖 보충).
+    음운 규칙이 단어별이 아니라 분절음의 성질에 기대므로 아이들은 한 번 익힌 규칙으로 수많은 형태를 알게 되고, 그 증거가 mouses, mans 같은 과잉 일반화입니다(9장에서 다시 다룸).
+  </aside>
+</section>
+
+<!-- ══ 10 · Phonemes: The Phonological Units of Language ══ -->
 <section data-kicker="CH.6 P.222">
   <h2 style="font-size:36px;">Phonemes: The Phonological Units of Language</h2>
   <div class="cols">
-    <div class="def">A <i>phoneme</i> is the abstract basic form of a sound, sensed mentally, not spoken or heard.
+    <div class="def">A <b>phoneme</b> is the abstract basic form of a sound, sensed mentally, not spoken or heard.
       <span class="ko-supp" style="display:block; margin-top:8px;">음소(phoneme)는 소리의 추상적 기본형으로, 말해지거나 들리는 것이 아니라 머릿속에서 감지되는 단위다.</span></div>
     <div class="quote-stack">
       <p>Phonemes <b>distinguish words</b> in the mental lexicon.</p>
@@ -221,41 +276,43 @@
       <p>Slashes mark phonemes, /p/; brackets mark allophones, [pʰ] in <i>pit</i> and [p] in <i>spit</i>.</p>
     </div>
   </div>
-  <p class="lead" style="font-size:16px; margin-top:18px;">Phonological rules operate on phonemes to make explicit <em>which allophone is pronounced where</em>.</p>
+  <p class="lead" style="font-size:16px; margin-top:18px;">Phonological rules operate on phonemes to make explicit which allophone is pronounced where.</p>
   <aside class="notes">
     음소는 '뜻을 가르는 심리적 범주', 이음은 그 물리적 실현입니다. /슬래시/와 [대괄호]의
     표기 관례를 분명히 하세요. Sapir의 표현대로 화자가 '느끼는' 것은 음소입니다.
   </aside>
 </section>
 
-<!-- ══ 9 · Illustration of Allophones ══ -->
+<!-- ══ 11 · Illustration of Allophones ══ -->
 <section data-kicker="CH.6 P.222" data-path="Phonemes: The Phonological Units of Language">
   <h2>Illustration of Allophones</h2>
   <div class="cols">
-    <div class="def">Every English vowel phoneme has an <i>oral</i> and a <i>nasalized</i> allophone, chosen by rule, not at random.
+    <div class="def">Every English vowel phoneme has an <b>oral</b> and a <b>nasalized</b> allophone, chosen by rule, not at random.
       <span class="ko-supp" style="display:block; margin-top:8px;">영어의 모든 모음 음소는 구강 이음과 비음화 이음을 가지며, 어느 쪽이 나올지는 무작위가 아니라 규칙이 정한다.</span></div>
     <div>
       <div class="gloss-set" style="margin-bottom:26px;">
         <div class="langlab">ORAL VS. NASAL · SAME PHONEME /i/</div>
         <div class="sent" style="font-size:24px;">bead [bid] · bean [bĩn]
           <button class="say-btn mini" data-say="bead, bean" data-lang="en-US">listen</button></div>
-        <div class="tr">비음화는 뜻을 바꾸지 못한다. *[bĩd]처럼 어색할 뿐.</div>
+        <p class="rl">Vowels are nasalized before a nasal consonant in the same syllable. A nasal [bĩd] would sound odd, but still mean <i>bead</i>.</p>
+        <div class="tr">같은 음절의 비자음 앞에서 모음이 비음화되며, 비음화는 뜻을 바꾸지 못한다.</div>
       </div>
       <div class="gloss-set">
         <div class="langlab">ASPIRATION · SAME PHONEME /p/</div>
         <div class="sent" style="font-size:24px;">pit [pʰɪt] · spit [spɪt]
           <button class="say-btn mini" data-say="pit, spit" data-lang="en-US">listen</button></div>
-        <div class="tr">무성 파열음은 강세 음절 첫머리에서 유기음이 된다.</div>
+        <p class="rl">Voiceless stops are aspirated when they occur initially in a stressed syllable.</p>
+        <div class="tr">무성 파열음은 강세 음절 첫머리에서 기식음이 된다.</div>
       </div>
     </div>
   </div>
   <aside class="notes">
-    두 가지 대표 이음 규칙: (1) 모음 비음화 — 같은 음절의 비음 자음 앞, (2) 유기음화 —
-    강세 음절 초의 무성 파열음. 어느 쪽도 뜻을 가르지 못한다는 점이 '이음'의 정의적 성질입니다.
+    교재 pp.222–223의 두 규칙 문장입니다(Table 6.1, 6.2). (1) 모음 비음화: 같은 음절의 비음 자음 앞. (2) 기식음화:
+    강세 음절 초의 무성 파열음. 반대로 bead를 bed로 바꾸면(모음 높이) 다른 단어가 되므로 [i]와 [ɛ]는 다른 음소입니다. 어느 쪽도 뜻을 가르지 못한다는 점이 '이음'의 정의적 성질입니다.
   </aside>
 </section>
 
-<!-- ══ 10 · Figure: phoneme → allophones ══ -->
+<!-- ══ 12 · Figure: phoneme → allophones ══ -->
 <section data-kicker="CH.6 P.223 · ILLUSTRATION OF ALLOPHONES · FIGURE">
   <p class="lead" style="font-size:17px; margin-bottom:4px; text-align:center;">One abstract phoneme: different <em>allophones</em>, each in its own environment.</p>
   <div style="text-align:center;">
@@ -263,20 +320,20 @@
       <!-- phoneme node -->
       <rect x="250" y="24" width="140" height="56" rx="2" fill="#faf8f3" stroke="#1c1a17" stroke-width="1.4"/>
       <text x="320" y="48" text-anchor="middle" font-family="Space Grotesk" font-size="11" letter-spacing="3" fill="#8d8574">PHONEME</text>
-      <text x="320" y="70" text-anchor="middle" font-family="Lora" font-style="italic" font-size="22" fill="#1c1a17">/p/</text>
+      <text x="320" y="70" text-anchor="middle" font-family="Lora" font-size="22" fill="#1c1a17">/p/</text>
       <!-- branches -->
       <line x1="290" y1="80" x2="150" y2="150" stroke="#6e1f28" stroke-width="1.6"/>
       <line x1="350" y1="80" x2="490" y2="150" stroke="#6e1f28" stroke-width="1.6"/>
       <!-- allophone nodes -->
       <rect x="60" y="150" width="180" height="62" rx="2" fill="#faf8f3" stroke="#1c1a17" stroke-width="1.4"/>
-      <text x="150" y="176" text-anchor="middle" font-family="Lora" font-style="italic" font-size="22" fill="#1c1a17">[pʰ]</text>
+      <text x="150" y="176" text-anchor="middle" font-family="Lora" font-size="22" fill="#1c1a17">[pʰ]</text>
       <text x="150" y="198" text-anchor="middle" font-family="Space Grotesk" font-size="10" letter-spacing="3" fill="#8d8574">ASPIRATED</text>
       <rect x="400" y="150" width="180" height="62" rx="2" fill="#faf8f3" stroke="#1c1a17" stroke-width="1.4"/>
-      <text x="490" y="176" text-anchor="middle" font-family="Lora" font-style="italic" font-size="22" fill="#1c1a17">[p]</text>
+      <text x="490" y="176" text-anchor="middle" font-family="Lora" font-size="22" fill="#1c1a17">[p]</text>
       <text x="490" y="198" text-anchor="middle" font-family="Space Grotesk" font-size="10" letter-spacing="3" fill="#8d8574">UNASPIRATED</text>
       <!-- environments -->
-      <text x="150" y="244" text-anchor="middle" font-family="Lora" font-style="italic" font-size="14" fill="#8d8574">word-initial: <tspan font-style="normal" fill="#1c1a17">pit</tspan> [pʰɪt]</text>
-      <text x="490" y="244" text-anchor="middle" font-family="Lora" font-style="italic" font-size="14" fill="#8d8574">after s: <tspan font-style="normal" fill="#1c1a17">spit</tspan> [spɪt]</text>
+      <text x="150" y="244" text-anchor="middle" font-family="Lora" font-style="italic" font-size="14" fill="#8d8574">stressed-syllable-initial: <tspan font-style="normal" fill="#1c1a17">pit</tspan> [pʰɪt]</text>
+      <text x="490" y="244" text-anchor="middle" font-family="Lora" font-style="italic" font-size="14" fill="#8d8574">after /s/: <tspan font-style="normal" fill="#1c1a17">spit</tspan> [spɪt]</text>
       <!-- complementary note -->
       <text x="320" y="284" text-anchor="middle" font-family="Space Grotesk" font-size="11" letter-spacing="3" fill="#6e1f28">COMPLEMENTARY DISTRIBUTION · NEVER CONTRASTIVE</text>
     </svg>
@@ -284,11 +341,11 @@
   <p class="ko-supp" style="font-size:14px; text-align:center; margin-top:6px;">추상적 음소 /p/ 하나가 환경에 따라 [pʰ]와 [p]라는 서로 다른 이음으로 실현되며, 뜻은 결코 달라지지 않는다.</p>
   <aside class="notes">
     이 도식이 오늘의 핵심입니다. 추상적 음소 /p/가 환경에 따라 유기음 [pʰ](어두)와 무기음 [p](s 뒤)로
-    실현됩니다. 두 이음은 절대 같은 환경에 못 오므로 상보적 분포이고, 뜻을 가르지 못합니다.
+    실현됩니다. 두 이음은 절대 같은 환경에 못 오므로 상보적 분포이고, 뜻을 가르지 못합니다. 교재의 환경은 "강세 음절 첫머리"(Table 6.2)입니다.
   </aside>
 </section>
 
-<!-- ══ 11 · Illustration of Allophones · the flap ══ -->
+<!-- ══ 13 · Illustration of Allophones · the flap ══ -->
 <section data-kicker="CH.6 P.224" data-path="Phonemes: The Phonological Units of Language">
   <h2>Illustration of Allophones</h2>
   <p class="lead" style="font-size:18px; max-width:660px;">The classic English case: one phoneme /t/, three allophones in complementary distribution.</p>
@@ -298,7 +355,7 @@
     <tr><td class="form">[t]</td><td>directly before or after [s]</td><td><i>stick</i> [stɪk] · <i>blitz</i> <button class="say-btn mini" data-say="stick, blitz" data-lang="en-US">listen</button></td></tr>
     <tr><td class="form">[ɾ]</td><td>between a stressed and an unstressed vowel</td><td><i>bitter</i> [bɪɾər] <button class="say-btn mini" data-say="bitter" data-lang="en-US">listen</button></td></tr>
   </table>
-  <p class="lead" style="font-size:16px; margin-top:16px;">The flap [ɾ] is why <em>writer</em> [ɹaɪɾɚ] and <em>rider</em> can sound alike, yet /t/ and /d/ remain separate phonemes.
+  <p class="lead" style="font-size:16px; margin-top:16px;">The flap [ɾ] is why <em>writer</em> [raɪɾər] and <em>rider</em> can sound alike, yet /t/ and /d/ remain separate phonemes.
     <button class="say-btn mini" data-say="writer, rider" data-lang="en-US">listen</button>
     <span style="font: italic 400 14px 'Lora'; color: var(--ed-muted);">(cf. textbook Ch.6, pp.224–225)</span>
     <span class="ko-supp" style="display:block;">탄설음(flap) [ɾ] 때문에 writer와 rider가 비슷하게 들리지만, /t/와 /d/는 여전히 별개의 음소다.</span></p>
@@ -309,38 +366,31 @@
   </aside>
 </section>
 
-<!-- ══ 12 · Phonemes and How to Find Them ══ -->
+<!-- ══ 14 · Phonemes and How to Find Them ══ -->
 <section data-kicker="CH.6 P.224" data-path="Phonemes: The Phonological Units of Language">
   <h2>Phonemes and How to Find Them</h2>
-  <div class="cols">
-    <div class="def">Phonemes are the <i>dark matter</i> of phonology: never directly observable. The test is to swap a sound and see if <b>meaning changes</b>.
-      <span class="ko-supp" style="display:block; margin-top:8px;">음소는 직접 관찰할 수 없으므로, 소리 하나를 바꿔 뜻이 달라지는지 시험해 찾는다.</span></div>
-    <div>
-      <ul class="exlist">
-        <li><span class="no">01</span><span>pat / bat: /p/ vs. /b/<button class="say-btn mini" data-say="pat, bat" data-lang="en-US">♪</button></span></li>
-        <li><span class="no">02</span><span>sip / zip: /s/ vs. /z/<button class="say-btn mini" data-say="sip, zip" data-lang="en-US">♪</button></span></li>
-        <li><span class="no">03</span><span>beat / bit: /i/ vs. /ɪ/<button class="say-btn mini" data-say="beat, bit" data-lang="en-US">♪</button></span></li>
-        <li><span class="no">04</span><span>mat / cat: /m/ vs. /k/<button class="say-btn mini" data-say="mat, cat" data-lang="en-US">♪</button></span></li>
-      </ul>
-      <p class="lead" style="font-size:16px; margin-top:14px;">One minimal pair is enough: the two sounds are <b class="accent">contrastive phonemes</b>.</p>
-    </div>
-  </div>
+  <p class="lead" style="font-size:17px; margin:0 0 6px;">Phonemes are the <b>dark matter</b> of phonology, never directly observable. Swap one sound in a word: if the meaning changes, the two sounds belong to different phonemes.
+    <span class="ko-supp" style="display:block; margin-top:4px;">음소는 직접 관찰할 수 없으므로, 소리 하나를 바꿔 뜻이 달라지면 두 소리가 서로 다른 음소라고 판단한다.</span></p>
+  <div class="bt"><span>beat<small>[bit]</small></span><span>bit<small>[bɪt]</small></span><span>bait<small>[bet]</small></span><span>bet<small>[bɛt]</small></span><span>bat<small>[bæt]</small></span><span>bite<small>[baɪt]</small></span><span>boot<small>[but]</small></span><span>but<small>[bʌt]</small></span><span>boat<small>[bot]</small></span><span>bought<small>[bɔt]</small></span><span>bout<small>[baʊt]</small></span><span>bot<small>[bɑt]</small></span></div>
+  <p class="lead" style="font-size:16px; margin:6px 0 0;">Any two of these <i>b_t</i> words form a <b>minimal pair</b>: at least 12 vowel phonemes. Add <i>book/beak</i> [ʊ] and <i>boy/buy</i> [ɔɪ]: 11 monophthongs and 3 diphthongs.
+    <button class="say-btn mini" data-say="beat, bit, bait, bet, bat, bite, boot, but, boat, bought, bout, bot" data-lang="en-US">listen</button></p>
+  <p class="fnote">Each pronunciation of a phoneme is a <b>phone</b>; the phones of one phoneme are its allophones. Phonemic /bon/ is pronounced [bõn].</p>
   <aside class="notes">
-    최소대립쌍(minimal pair)은 음소를 확인하는 가장 강력한 도구입니다. 같은 위치에서 한 소리만
-    다르고 뜻이 달라지면 그 소리들은 변별적(contrastive)입니다. 음소는 관찰 불가능한
-    추상 단위이므로 이런 간접 검사가 필요함을 강조하세요.
+    교재 pp.224–225의 방법 그대로입니다. 모음만 다른 b_t 열두 단어 중 어느 둘이든 최소대립쌍이므로 영어에는 적어도 12개의 모음 음소가 있고,
+    book/beak로 [ʊ], boy/buy로 [ɔɪ]를 더해 단모음 11개와 이중모음 3개가 됩니다(이중모음은 한 소리로 셈). 영어 변이형에 따라 조금 다를 수 있습니다.
+    음소의 실제 발음 하나하나가 phone이고, 한 음소의 phone들이 그 음소의 이음입니다. 음소는 /슬래시/, 이음은 [대괄호]: bone은 /bon/ → [bõn].
   </aside>
 </section>
 
-<!-- ══ 12b · Cartoon: minimal pair video ══ -->
-<section data-kicker="CH.6 P.224 · PHONEMES: THE PHONOLOGICAL UNITS OF LANGUAGE · CARTOON">
+<!-- ══ 15 · Cartoon: minimal pair video ══ -->
+<section data-kicker="CH.6 P.224 · PHONEMES AND HOW TO FIND THEM · CARTOON">
   <div class="video-scene" style="text-align:center;">
     <div class="video-stage">
       <video src="assets/media/w13_toon_minimalpairs.mp4" preload="metadata" playsinline></video>
-      <span class="cue sub" data-start="0.25" data-end="2.0">Look! A sh<b>ee</b>p! <span class="ko">저기 봐! 양(sheep)이야!</span><span class="gl">[i]</span></span>
-      <span class="cue sub" data-start="2.05" data-end="3.6">You mean the sh<b>i</b>p? <span class="ko">배(ship) 말하는 거지?</span><span class="gl">[ɪ]</span></span>
-      <span class="cue sub" data-start="3.65" data-end="6.05">No — a sh<b>ee</b>p on the sh<b>i</b>p! <span class="ko">아니: 배(ship) 위의 양(sheep)!</span><span class="gl">[i] vs [ɪ]</span></span>
-      <span class="cue think" data-start="9.95" data-end="12.0" data-slow="0.85" style="left:50%; top:6%; translate:-50% 0; --rot:-1deg;">Small vowel. Big difference.<span class="ko">작은 모음 하나, 큰 차이.</span></span>
+      <span class="cue sub" data-start="0.2" data-end="2.2">Look! A sh<b>ee</b>p! <span class="ko">저기 봐! 양(sheep)이야!</span><span class="gl">[i]</span></span>
+      <span class="cue sub" data-start="2.25" data-end="3.82">You mean the sh<b>i</b>p? <span class="ko">배(ship) 말하는 거지?</span><span class="gl">[ɪ]</span></span>
+      <span class="cue sub" data-start="3.85" data-end="6.25">No — a sh<b>ee</b>p on the sh<b>i</b>p! <span class="ko">아니: 배(ship) 위의 양(sheep)!</span><span class="gl">[i] vs [ɪ]</span></span>
+      <span class="cue think" data-start="9.95" data-end="12.2" data-slow="0.85" style="left:50%; top:6%; translate:-50% 0; --rot:-1deg;">Small vowel. Big difference.<span class="ko">작은 모음 하나, 큰 차이.</span></span>
     </div>
     <div class="video-fallback">
       <p class="lead">"a sheep on the ship": 모음 하나([i]/[ɪ])가 단어를 가른다(최소대립쌍).</p>
@@ -349,60 +399,61 @@
   <aside class="notes">
     최소대립쌍 콩트: 배 갑판의 양털 둔덕(정체 은폐)을 두고 sheep/ship 오해가 오가다,
     "No — a sheep on the ship!"에서 최소대립쌍 두 단어가 한 문장에서 직접 대조되고 양이 고개를
-    들어 정체를 공개합니다. 변별 음소의 기능을 대사 자체가 시연하는 구조 — 수업에서 이 문장을
+    들어 정체를 공개합니다. 변별 음소의 기능을 대사 자체가 시연하는 구조입니다. 수업에서 이 문장을
     학생들에게 따라 읽히면 [i]/[ɪ] 발음 연습까지 됩니다. ▶ Play를 눌러야 재생됩니다.
   </aside>
 </section>
 
-<!-- ══ 13 · Complementary Distribution ══ -->
+<!-- ══ 16 · Complementary Distribution ══ -->
 <section data-kicker="CH.6 P.225" data-path="Phonemes: The Phonological Units of Language">
   <h2>Complementary Distribution</h2>
   <div class="cols">
-    <div class="def">Allophones of one phoneme occur in <i>mutually exclusive</i> environments: where one appears, the other never does.
+    <div class="def">Allophones of one phoneme occur in <b>mutually exclusive</b> environments: where one appears, the other never does.
       <span class="ko-supp" style="display:block; margin-top:8px;">한 음소의 이음들은 상보적 분포(complementary distribution)를 이룬다: 하나가 나오는 환경에 다른 하나는 결코 나오지 않는다.</span></div>
     <div class="quote-stack">
       <p>Oral vowels appear before <b>oral</b> consonants and word-finally; nasal vowels appear before <b>nasal</b> consonants.</p>
       <p>The choice is <b>rule-governed</b> and predictable, so it can never distinguish words.</p>
-      <p><span class="small-label" style="display:block; margin-bottom:2px;">BEYOND THE TEXTBOOK</span>Compare <i>free variation</i>: final /t/ in <i>cat</i> may be released [kʰætʰ] or unreleased [kʰæt̚] in the <b>same</b> position, yet it remains one phoneme and no meaning changes.</p>
+      <p>Writing works the same way: capital and lowercase letters (<b>allographs</b>) appear in complementary contexts, and cursive <i>l</i> starts low after <i>g</i> but mid-line after <i>b</i>.</p>
     </div>
   </div>
   <aside class="notes">
-    상보적 분포는 이음 판별의 핵심 기준입니다. 교재는 필기체 소문자/대문자, Superman과
-    Clark Kent 비유로 설명합니다 — 같은 자리에 결코 함께 나타나지 않는 두 변이형.
-    자유 변이(같은 환경에서 교체 가능하나 뜻이 안 바뀌는 경우: 개방/비개방 파열음)와 대조하세요.
+    교재 pp.225–227. 상보적 분포는 이음 판별의 핵심 기준입니다(Table 6.3: 구강 모음은 어말과 구강 자음 앞, 비음 모음은 비자음 앞).
+    교재는 인쇄 문자의 대문자/소문자(allograph), 필기체 l의 두 변이형, Superman과 Clark Kent 비유로 설명합니다. 같은 자리에 결코 함께 나타나지 않는 두 변이형입니다.
+    [교재 밖 보충] 자유 변이(같은 환경에서 교체 가능하나 뜻이 바뀌지 않음, 예: cat 끝 /t/의 개방 [tʰ]·비개방 [t̚])와 대조해 말로 덧붙일 수 있습니다.
   </aside>
 </section>
 
-<!-- ══ 14 · The Need for Similarity ══ -->
+<!-- ══ 17 · The Need for Similarity ══ -->
 <section data-kicker="CH.6 P.227" data-path="Phonemes: The Phonological Units of Language">
   <h2>The Need for Similarity</h2>
   <div class="cols">
-    <div class="def">Complementary distribution alone is not enough: allophones of one phoneme must also be <i>phonetically similar</i>.
+    <div class="def">Complementary distribution alone is not enough: allophones of one phoneme must also be <b>phonetically similar</b>.
       <span class="ko-supp" style="display:block; margin-top:8px;">상보적 분포만으로는 부족하며, 한 음소의 이음이 되려면 음성적으로도 서로 닮아야 한다.</span></div>
     <div class="quote-stack">
-      <p>English [h] and [ŋ] never occur in the same position: [h] appears only syllable-initially, and [ŋ] never does.</p>
+      <p>English [ŋ] never begins a word and [h] never ends one: they are in complementary distribution.</p>
       <p>Yet no one calls them one phoneme: they share <b>almost no features</b>.</p>
       <p>[pʰ] and [p], or [i] and [ĩ], differ by a <b>single feature</b>, so they are genuine allophones.</p>
     </div>
   </div>
   <aside class="notes">
     분포만 보면 [h]와 [ŋ]도 상보적이지만, 음성적으로 닮지 않아 한 음소의 이음으로 묶지 않습니다.
-    '상보적 분포 + 유사성'이라는 두 조건을 함께 제시하세요.
+    '상보적 분포 + 유사성'이라는 두 조건을 함께 제시하세요. 화자는 한 음소의 이음들을 같은 소리로 지각합니다(bead와 bean의 모음 차이를 대부분 모름, p.227).
   </aside>
 </section>
 
-<!-- ══ 15 · Distinctive Features of Phonemes ══ -->
+<!-- ══ 18 · Distinctive Features of Phonemes ══ -->
 <section data-kicker="CH.6 P.227" data-path="Phonemes: The Phonological Units of Language">
   <h2 style="font-size:40px;">Distinctive Features of Phonemes</h2>
   <div class="cols">
-    <div class="def">When a single feature distinguishes one phoneme from another, hence one word from another, it is a <i>distinctive feature</i>.
+    <div class="def">When a single feature distinguishes one phoneme from another, hence one word from another, it is a <b>distinctive feature</b>.
       <span class="ko-supp" style="display:block; margin-top:8px;">자질 하나가 음소를, 그리하여 단어를 가르면 그것이 변별 자질(distinctive feature)이다.</span></div>
     <div>
       <div class="gloss-set">
         <div class="langlab">VOICING IS DISTINCTIVE IN ENGLISH</div>
         <div class="sent" style="font-size:26px;">seal [sil] · zeal [zil]
           <button class="say-btn mini" data-say="seal, zeal" data-lang="en-US">listen</button></div>
-        <div class="tr">[s]와 [z]는 유성성 하나로 대립한다. feel/veal, cap/cab도 같은 자질.</div>
+        <p class="rl">Voicing also separates <i>feel/veal</i> and <i>cap/cab</i>.</p>
+        <div class="tr">유성성(voicing)은 seal/zeal, feel/veal, cap/cab을 가르는 변별 자질이다.</div>
       </div>
       <hr class="hair">
       <p class="lead" style="font-size:17px;">A minimal pair means the two sounds are <b>not</b> in complementary distribution: they contrast.</p>
@@ -414,11 +465,11 @@
   </aside>
 </section>
 
-<!-- ══ 16 · Feature Values ══ -->
+<!-- ══ 19 · Feature Values ══ -->
 <section data-kicker="CH.6 P.228" data-path="Phonemes: The Phonological Units of Language › Distinctive Features of Phonemes">
   <h2>Feature Values</h2>
   <div class="cols">
-    <div class="def">Each feature carries a value: <i>plus</i> for presence, <i>minus</i> for absence. A phoneme is a <b>bundle of feature values</b>.
+    <div class="def">Each feature carries a value: <b>plus</b> for presence, <b>minus</b> for absence. A phoneme is a <b>bundle of feature values</b>.
       <span class="ko-supp" style="display:block; margin-top:8px;">자질은 있으면 플러스, 없으면 마이너스 값을 지니며, 음소는 이런 자질 값의 묶음(bundle of feature values)이다.</span></div>
     <div>
       <table class="ed-table" style="max-width:420px;">
@@ -437,7 +488,7 @@
   </aside>
 </section>
 
-<!-- ══ 17 · Nondistinctive Features ══ -->
+<!-- ══ 20 · Nondistinctive Features ══ -->
 <section data-kicker="CH.6 P.229" data-path="Phonemes: The Phonological Units of Language › Distinctive Features of Phonemes">
   <h2>Nondistinctive Features</h2>
   <div class="cols">
@@ -447,46 +498,49 @@
       <p><b>Aspiration</b> on English voiceless stops is predictable from position.</p>
       <p><b>Vowel nasality</b> in English is predictable before nasal consonants, but nasality is <b>distinctive</b> for English consonants (<i>met/net</i> must be learned).</p>
       <p><b>Vowel length</b> in English is <b>nonphonemic</b>: lengthening a vowel never makes a new word.</p>
+      <p>Vowel nasality is <b>distinctive</b> in Portuguese and Akan: Akan [pam] "sew" vs. [pãm] "confederate".</p>
     </div>
   </div>
-  <p class="lead" style="font-size:16px; margin-top:16px;">The same feature can be distinctive for one class of sounds and predictable for another.</p>
+  <p class="lead" style="font-size:16px; margin-top:8px;">The same feature can be distinctive for one class of sounds and predictable for another.</p>
   <aside class="notes">
     예측 가능한 자질은 규칙으로 채워지므로 어휘부에 저장되지 않습니다. 모음 길이: 교재(p.230)는 영어에서
     길이가 비음소적이라는 점만 말합니다. 유성 자음 앞에서 모음이 길어지는 현상(bead/beat)은 교재 밖 보충으로
-    덧붙이면 좋습니다(연습문제 Q4에서 사용). 비음성은 영어 자음에는
-    변별적(met/net), 모음에는 예측 가능 — '자질의 지위는 부류별·언어별'이라는 논지가
-    다음 슬라이드(태국어)로 이어집니다.
+    덧붙이면 좋습니다. 비음성은 영어 자음에는
+    변별적(met/net), 모음에는 예측 가능합니다. Akan과 포르투갈어에서는 모음 비음성이 변별적이라(같은 음성, 다른 음소 체계, p.229)
+    '자질의 지위는 부류별·언어별'이라는 논지가 다음 슬라이드(태국어)로 이어집니다.
   </aside>
 </section>
 
-<!-- ══ 18 · Phonemic Patterns May Vary across Languages ══ -->
+<!-- ══ 21 · Phonemic Patterns May Vary across Languages ══ -->
 <section data-kicker="CH.6 P.230" data-path="Phonemes: The Phonological Units of Language › Distinctive Features of Phonemes">
   <h2 style="font-size:36px;">Phonemic Patterns May Vary across Languages</h2>
   <div class="cols">
-    <div class="def">The same phones, [p, t, k, pʰ, tʰ, kʰ], occur in English and Thai. Their <i>organization</i> differs.
+    <div class="def">The same phones, [p, t, k, pʰ, tʰ, kʰ], occur in English and Thai. Their <b>organization</b> differs.
       <span class="ko-supp" style="display:block; margin-top:8px;">영어와 태국어에는 같은 음성 [p t k pʰ tʰ kʰ]가 있지만, 그 조직 방식이 다르다.</span></div>
     <div>
       <div class="gloss-set">
         <div class="langlab">THAI · ASPIRATION IS CONTRASTIVE</div>
-        <div class="sent" style="font-size:23px;">[paa] "forest" · [pʰaa] "to split"</div>
-        <div class="tr">[tam] 빻다 / [tʰam] 하다 · [kat] 물다 / [kʰat] 끼어들다: 최소대립쌍.</div>
+        <div class="sent" style="font-size:21px;">[paa] "forest" · [pʰaa] "to split"</div>
+        <p class="rl">[tam] "to pound" · [tʰam] "to do" &nbsp;|&nbsp; [kat] "to bite" · [kʰat] "to interrupt"</p>
+        <div class="tr">태국어에서는 기식 유무만 다른 최소대립쌍이 있어 기식이 변별 자질이다.</div>
       </div>
       <hr class="hair">
       <p class="lead" style="font-size:16px;">Consonant <b>length</b> is phonemic in Italian (<em>nonno/nono</em>) and Luganda; ASL signs contrast minimally in handshape, movement, or location.</p>
+      <p class="fnote">Phonetic representation shows how sounds are pronounced; phonemic representation shows how they pattern.</p>
     </div>
   </div>
   <aside class="notes">
     같은 음성 목록이라도 언어마다 조직이 다릅니다: 태국어 유기음은 음소적. 이탈리아어·루간다어의
-    자음 길이, ASL의 수형·이동·위치 최소대립까지 — '변별성은 언어 상대적'이라는 일반화.
+    자음 길이, ASL의 수형·이동·위치 최소대립까지: '변별성은 언어 상대적'이라는 일반화입니다.
     다음 슬라이드: 교재가 같은 쪽에서 드는 한국어 모음 길이 최소대립쌍.
   </aside>
 </section>
 
-<!-- ══ 18b · Phonemic Patterns · Korean vowel length ══ -->
+<!-- ══ 22 · Phonemic Patterns · Korean vowel length ══ -->
 <section data-kicker="CH.6 P.230" data-path="Phonemes: The Phonological Units of Language › Distinctive Features of Phonemes">
   <h2 style="font-size:36px;">Phonemic Patterns May Vary across Languages</h2>
   <div class="cols">
-    <div class="def">In English, lengthening a vowel or consonant never creates a new word: length is <i>nonphonemic</i>. In some dialects of Korean, vowel length alone separates words, so there it is a <b>distinctive</b>, unpredictable feature.
+    <div class="def">In English, lengthening a vowel or consonant never creates a new word: length is <b>nonphonemic</b>. In some dialects of Korean, vowel length alone separates words, so there it is a <b>distinctive</b>, unpredictable feature.
       <span class="ko-supp" style="display:block; margin-top:8px;">영어에서 길이는 새 단어를 만들지 못하지만, 한국어 일부 방언에서는 모음 길이만으로 단어가 갈리므로 변별 자질이다.</span></div>
     <div>
       <div class="gloss-set">
@@ -504,9 +558,8 @@
         </table>
       </div>
       <hr class="hair">
-      <p class="lead" style="font-size:16px;">Hangul spells each pair identically; only the length mark <b>ː</b> tells them apart.
+      <p class="lead" style="font-size:16px;">Hangul spells each pair identically; only the length mark <b>ː</b> tells them apart. <span style="font: italic 400 14px 'Lora'; color: var(--ed-muted);">(cf. textbook Ch.6, p.230)</span>
         <span class="ko-supp" style="display:block; margin-top:4px;">한글 표기는 같고, 장음 기호 ː만이 두 단어를 구별한다.</span></p>
-      <p style="font: italic 400 14px 'Lora'; color: var(--ed-muted); margin-top:8px;">(cf. textbook Ch.6, p.230)</p>
     </div>
   </div>
   <aside class="notes">
@@ -520,11 +573,11 @@
   </aside>
 </section>
 
-<!-- ══ 19 · Natural Classes of Speech Sounds ══ -->
+<!-- ══ 23 · Natural Classes of Speech Sounds ══ -->
 <section data-kicker="CH.6 P.231" data-path="Phonemes: The Phonological Units of Language › Distinctive Features of Phonemes">
   <h2 style="font-size:40px;">Natural Classes of Speech Sounds</h2>
   <div class="cols">
-    <div class="def">A <i>natural class</i> is a group of sounds described by fewer features than any of its members alone.
+    <div class="def">A <b>natural class</b> is a group of sounds described by fewer features than any of its members alone.
       <span class="ko-supp" style="display:block; margin-top:8px;">자연 부류(natural class)는 구성원 하나하나를 기술할 때보다 더 적은 자질로 기술되는 소리 집합이다.</span></div>
     <div class="quote-stack">
       <p><i>Nasalize vowels before m, n, or ŋ</i> is a rule with a <b>phonetic reason</b>: the velum lowers early.</p>
@@ -532,22 +585,30 @@
       <p>Phonological rules apply to natural classes, which is why segments are <b>bundles of features</b>.</p>
     </div>
   </div>
+  <div class="small-label" style="margin:12px 0 4px;">MAJOR NATURAL CLASSES · CF. TABLE 6.4</div>
+  <table class="ed-table" style="max-width:none;">
+    <tr><th></th><th class="c">Obstruents</th><th class="c">Nasals</th><th class="c">Liquids</th><th class="c">Glides</th><th class="c">Vowels</th></tr>
+    <tr><td>consonantal</td><td class="c">+</td><td class="c">+</td><td class="c">+</td><td class="c">−</td><td class="c">−</td></tr>
+    <tr><td>sonorant</td><td class="c">−</td><td class="c">+</td><td class="c">+</td><td class="c">+</td><td class="c">+</td></tr>
+    <tr><td>syllabic</td><td class="c">−</td><td class="c">+/−</td><td class="c">+/−</td><td class="c">−</td><td class="c">+</td></tr>
+    <tr><td>nasal</td><td class="c">−</td><td class="c">+</td><td class="c">−</td><td class="c">−</td><td class="c">+/−</td></tr>
+  </table>
   <aside class="notes">
     자연 부류: 소수의 자질로 기술되는 소리 집합. 규칙은 개별 소리가 아니라 자연 부류에
     작동합니다(m,n,ŋ 앞 비음화는 자연스럽고, p,i,z 앞 비음화 규칙은 어떤 언어에도 없음).
-    이 일반성이 다음 주 규칙 표기의 토대입니다. 예: /m n ŋ/은 [+nasal] 하나로, /p t k tʃ/는 [−voiced, −continuant] 둘로 기술됩니다.
+    이 일반성이 다음 주 규칙 표기의 토대입니다. 아래 표는 교재 Table 6.4(p.232)의 자질 명세이고, +/−는 맥락에 따라 달라짐을 뜻합니다(wagon의 성절 [n̩]). 예: /m n ŋ/은 [+nasal] 하나로, /p t k tʃ/는 [−voiced, −continuant] 둘로 기술됩니다.
   </aside>
 </section>
 
-<!-- ══ 20 · Feature Specifications ══ -->
+<!-- ══ 24 · Feature Specifications ══ -->
 <section data-kicker="CH.6 P.232" data-path="Phonemes: The Phonological Units of Language › Distinctive Features of Phonemes">
   <h2 style="font-size:36px;">Feature Specifications for American English Consonants and Vowels</h2>
   <div class="cols">
-    <div class="def">The book's Tables 6.5–6.6 give a feature matrix for every English phoneme: the full inventory as <i>+/− grids</i>.
+    <div class="def">The book's Tables 6.5–6.6 give a feature matrix for every English phoneme: the full inventory as +/− grids.
       <span class="ko-supp" style="display:block; margin-top:8px;">교재 Table 6.5–6.6은 영어의 모든 음소를 +/− 자질 행렬로 제시한다.</span></div>
     <div class="quote-stack">
-      <p>[+high] picks out <i>i, ɪ, u, ʊ</i>: the high vowels.</p>
-      <p>[+voice, −continuant] picks out <i>b, m, d, n, g, ŋ, ʤ</i>: the voiced stops.</p>
+      <p>[+high] picks out [i ɪ u ʊ]: the high vowels.</p>
+      <p>[+voice, −continuant] picks out [b m d n g ŋ dʒ]: the voiced stops.</p>
       <p>Any class a rule needs can be <b>read off the chart</b> by its features.</p>
     </div>
   </div>
@@ -557,23 +618,23 @@
   </aside>
 </section>
 
-<!-- ══ 21 · Practice Q1 ══ -->
+<!-- ══ 25 · Practice Q1 ══ -->
 <section data-kicker="CH.6 · PRACTICE 01">
   <div class="mcq" data-qid="w13-q1">
     <div class="mcq-q"><span class="qnum">Q1</span>The pair <em>pat</em> / <em>bat</em> shows that /p/ and /b/ are:</div>
     <div class="mcq-opts">
       <button class="mcq-opt" data-correct="true"><span class="opt-key">A</span>Separate phonemes (a minimal pair)</button>
       <button class="mcq-opt"><span class="opt-key">B</span>Allophones of one phoneme</button>
-      <button class="mcq-opt"><span class="opt-key">C</span>In free variation</button>
+      <button class="mcq-opt"><span class="opt-key">C</span>In complementary distribution</button>
     </div>
     <div class="mcq-explain"><span class="lbl">Explanation</span>Swapping /p/ and /b/ in the same position changes the word's meaning, so they form a minimal pair and are therefore contrastive, separate phonemes.</div>
   </div>
   <aside class="notes">
-    최소대립쌍 → 별개 음소라는 추론을 확인합니다. B/C는 이음·자유변이 개념과 대비되는 오답입니다.
+    최소대립쌍 → 별개 음소라는 추론을 확인합니다. B/C는 이음·상보적 분포 개념과 대비되는 오답입니다(최소대립쌍이 있으면 상보적 분포가 아님, p.228).
   </aside>
 </section>
 
-<!-- ══ 22 · Practice Q2 ══ -->
+<!-- ══ 26 · Practice Q2 ══ -->
 <section data-kicker="CH.6 · PRACTICE 02">
   <div class="mcq" data-qid="w13-q2">
     <div class="mcq-q"><span class="qnum">Q2</span>Aspirated [pʰ] occurs word-initially and plain [p] occurs after [s]. This distribution is called:</div>
@@ -589,8 +650,8 @@
   </aside>
 </section>
 
-<!-- ══ 23 · Exercise Q3 ══ -->
-<section data-kicker="CH.6 · EXERCISE 03">
+<!-- ══ 27 · Exercise Q3 ══ -->
+<section data-kicker="CH.6 · PRACTICE 03">
   <div class="mcq" data-qid="w13-q3">
     <div class="mcq-q"><span class="qnum">Q3</span>Which pronunciation of the plural morpheme appears in <em>buses</em>?
       <span style="font: italic 400 15px 'Lora'; color: var(--ed-muted);">(cf. textbook Ch.6, pp.217–220)</span></div>
@@ -602,29 +663,30 @@
     <div class="mcq-explain"><span class="lbl">Explanation</span>After a sibilant like [s], the plural is [əz] (an epenthetic schwa breaks up the two sibilants). [s] follows voiceless non-sibilants, [z] follows voiced non-sibilants.</div>
   </div>
   <aside class="notes">
-    이형태 선택 규칙 문항(재구성). 치찰음 뒤에서 [əz](삽입 schwa)가 오는 이유(같은 치찰음 연속 회피)를 짚으세요.
+    교재 pp.217–220의 복수 이형태 규칙을 적용하는 자작 문항입니다. 치찰음 뒤에서 [əz](삽입 schwa)가 오는 이유(같은 치찰음 연속 회피)를 짚으세요.
   </aside>
 </section>
 
-<!-- ══ 24 · Exercise Q4 ══ -->
-<section data-kicker="CH.6 · EXERCISE 04">
-  <div class="mcq" data-qid="w13-q4">
-    <div class="mcq-q"><span class="qnum">Q4</span>In English, the vowel in <em>bead</em> is longer than in <em>beat</em>. What is vowel length here?
-      <span style="font: italic 400 15px 'Lora'; color: var(--ed-muted);">(length in English: cf. textbook Ch.6, p.230)</span></div>
+<!-- ══ 28 · Exercise Q4 ══ -->
+<section data-kicker="CH.6 · PRACTICE 04">
+  <div class="mcq" data-qid="w13-q4b">
+    <div class="mcq-q"><span class="qnum">Q4</span>In Akan, [pam] "sew" and [pãm] "confederate" differ only in vowel nasality. In Akan, vowel nasality is:
+      <span style="font: italic 400 15px 'Lora'; color: var(--ed-muted);">(cf. textbook Ch.6, p.229)</span></div>
     <div class="mcq-opts">
-      <button class="mcq-opt"><span class="opt-key">A</span>A distinctive (contrastive) feature</button>
-      <button class="mcq-opt" data-correct="true"><span class="opt-key">B</span>A predictable, nondistinctive feature</button>
-      <button class="mcq-opt"><span class="opt-key">C</span>Free variation</button>
+      <button class="mcq-opt" data-correct="true"><span class="opt-key">A</span>A distinctive (phonemic) feature</button>
+      <button class="mcq-opt"><span class="opt-key">B</span>A predictable, nondistinctive feature</button>
+      <button class="mcq-opt"><span class="opt-key">C</span>An allophonic difference, as in English</button>
     </div>
-    <div class="mcq-explain"><span class="lbl">Explanation</span>Length is fully predictable from the voicing of the following consonant (longer before voiced [d]), so it is nondistinctive in English. As the textbook notes, length is nonphonemic in English: no English words differ by vowel length alone.</div>
+    <div class="mcq-explain"><span class="lbl">Explanation</span>[pam] and [pãm] form a minimal pair, so vowel nasality in Akan is unpredictable and distinctive. In English, vowel nasality is predictable before nasal consonants, so there it is nondistinctive: the same phones, different phonemic systems.</div>
   </div>
   <p class="ko-supp" style="font-size:14px; margin-top:16px;">더 풀어보기: 교재 Ch.6 끝의 Exercises(최소대립쌍 찾기, 이음/음소 판별)를 과제로 권장.</p>
   <aside class="notes">
-    예측 가능 자질 판별 문항(재구성). 유성 자음 앞 장음화가 규칙적이라 비변별적임을 확인시키세요.
+    교재 p.229의 Akan 최소대립쌍으로 만든 문항입니다. 같은 자질(모음 비음성)이 영어에서는 예측 가능·비변별적, Akan에서는 변별적이라는 대비를 확인시키세요.
+    이전 판은 교재 밖 예(bead/beat의 모음 길이)를 써서 교재 예로 바꿨습니다(qid w13-q4 → w13-q4b).
   </aside>
 </section>
 
-<!-- ══ 24b · Watch (link): Gina Cooke ══ -->
+<!-- ══ 29 · Watch (link): Gina Cooke ══ -->
 <section data-kicker="ENRICHMENT · BEYOND THE TEXTBOOK · VIDEO">
   <h2>Why Is There a "b" in <i>Doubt</i>?</h2>
   <div class="cols">
@@ -642,12 +704,12 @@
   </div>
   <p class="video-print-note">Video (online only): ed.ted.com/lessons/beyond-the-shadow-of-a-doubt-gina-cooke</p>
   <aside class="notes">
-    TED-Ed는 유튜브 임베드가 차단되어 있어(오류 153 확인) 링크 시청 전용입니다. 5분 애니메이션 —
+    TED-Ed는 유튜브 임베드가 차단되어 있어(오류 153 확인) 링크 시청 전용입니다. 5분 애니메이션으로,
     음소 분석(소리)과 철자(표기)의 불일치를 역사로 설명. 과제 시청으로도 적합합니다.
   </aside>
 </section>
 
-<!-- ══ 25 · Summary ══ -->
+<!-- ══ 30 · Summary ══ -->
 <section data-kicker="CH.6 · SUMMARY">
   <h2>Summary</h2>
   <ol class="recap" style="max-width:680px;">
@@ -655,7 +717,7 @@
     <li>One morpheme, several <b>allomorphs</b>: plural [z s əz], past [d t əd], from /z/ and /d/</li>
     <li><b>Phonemes</b> contrast; <b>allophones</b> are predictable variants</li>
     <li><b>Minimal pairs</b> find phonemes; <b>complementary distribution</b> (+ similarity) finds allophones</li>
-    <li>Features carry <b>± values</b>; distinctive vs. predictable is <i>language-relative</i> (Thai aspiration)</li>
+    <li>Features carry <b>± values</b>; distinctive vs. predictable is <b>language-relative</b> (Thai aspiration)</li>
     <li>Rules target <b>natural classes</b>: sounds as bundles of features</li>
   </ol>
   <aside class="notes">
@@ -664,10 +726,10 @@
   </aside>
 </section>
 
-<!-- ══ 26 · Next week ══ -->
+<!-- ══ 31 · Next week ══ -->
 <section data-kicker="NEXT WEEK · CH.6 PP.233–268">
   <h2>The Rules of Phonology</h2>
-  <p class="lead" style="max-width:620px;">How does /p/ <em>become</em> [pʰ]? Next week the phoneme–allophone map turns into explicit rules: A → B / C __ D.
+  <p class="lead" style="max-width:620px;">How does /p/ <b>become</b> [pʰ]? Next week the phoneme–allophone map turns into explicit rules: A → B / C __ D.
     <span class="ko-supp" style="display:block;">음운 규칙 · 음절 구조 · 강세 · 음소배열 제약 · Ch.6 pp.233–268.</span></p>
   <hr class="hair" style="max-width:620px; margin-top:34px;">
   <p style="font: 400 17px 'Lora', 'Noto Serif KR'; color: var(--ed-body);">
