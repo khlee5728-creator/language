@@ -63,6 +63,7 @@
 
 ### 외부 강연 영상 (TED)
 - **조건부 표준: 주차당 최대 1편, 교재 주제 직결 + 공식 임베드 확인될 때만.** 억지 채움 금지(W14는 의도적 공백).
+  예외: **W11은 사용자 결정으로 2편**(2026-11-09) — Okrent "Why is English so confusing?"(TED-Ed, The Phonetic Alphabet 뒤) + Thum·Broadhurst "What happens in your throat when you beatbox?"(내시경, Nasal and Oral Sounds 카툰 뒤). 수업 활용은 교수 재량.
   W7: Cameron Morin "What do all languages have in common?"(TED-Ed지만 ted.com/talks에 있어 임베드 가능) · W6: Emma Bryce "Buffalo buffalo…"(TED-Ed 링크 전용) — 2026-10-05 추가.
 - 패턴: `embed.ted.com` iframe + "Watch with subtitles (EN·한국어) · ted.com ↗" 새 탭 버튼 + `video-print-note` + 발표자 노트에 수업 시청 추천 구간.
 - 임베드는 자막 제어 불가(파라미터 무시) — 자막 필요 시 ted.com 새 탭이 유일한 방법.
