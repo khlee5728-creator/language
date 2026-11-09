@@ -88,14 +88,14 @@
     /* 22b 그리스어 분석: 좁은 자료 열 + 단계 목록 */
     .greek-cols { display: grid; grid-template-columns: 165px minmax(0, 1fr); gap: 36px; align-items: start; }
     .grdata { display: grid; grid-template-columns: auto 1fr; column-gap: 12px; row-gap: 2px; font: 400 15px/1.5 'Lora'; color: var(--ed-body); }
-    .grdata i { font-size: 17px; color: var(--ed-ink); }
+    .grdata .w { font-size: 17px; color: var(--ed-ink); }
     .reveal ol.steps { list-style: none; counter-reset: st; margin: 0; padding: 0; }
     .reveal ol.steps li { list-style: none; counter-increment: st; position: relative; padding: 6px 0 6px 30px; border-bottom: 1px solid var(--ed-line); font: 400 16px/1.45 'Lora', 'Noto Serif KR'; color: var(--ed-body); }
     .steps li:last-child { border-bottom: 0; }
     .steps li::before { content: counter(st); position: absolute; left: 0; top: 8px; font: 600 12px 'Space Grotesk'; color: var(--ed-accent); letter-spacing: 0.1em; }
     .steps li b { color: var(--ed-accent); }
     .steps .rule-in { font: 400 17px 'Lora'; color: var(--ed-ink); white-space: nowrap; }
-    .morph-result { margin-top: 10px; padding-top: 8px; border-top: 1px solid var(--ed-ink); font: italic 400 17px/1.5 'Lora'; color: var(--ed-ink); }
+    .morph-result { margin-top: 10px; padding-top: 8px; border-top: 1px solid var(--ed-ink); font: 400 17px/1.5 'Lora'; color: var(--ed-ink); }
     .morph-result .no { font: 600 11px 'Space Grotesk'; letter-spacing: 0.14em; color: var(--ed-muted); font-style: normal; margin-right: 8px; }
     /* 요점 + 예시 줄 */
     .eg-line { display: flex; flex-wrap: wrap; gap: 0 22px; margin-top: 4px; }
@@ -174,7 +174,7 @@
 <section data-kicker="CH.6 P.233">
   <h2>The Rules of Phonology</h2>
   <div class="cols">
-    <div class="def">The link between a word's phonemic form and its phonetic form is <i>rule-governed</i>, and the rules are part of the speaker's knowledge.
+    <div class="def">The link between a word's phonemic form and its phonetic form is <b>rule-governed</b>, and the rules are part of the speaker's knowledge.
       <span class="ko-supp" style="display:block; margin-top:8px;">단어의 음소형과 음성형을 잇는 것은 규칙이며, 그 규칙은 화자가 지닌 지식의 일부다.</span></div>
     <div class="quote-stack">
       <p>English nasals are always voiced, so voicing <b>need not be stored</b> for /m n ŋ/.</p>
@@ -210,7 +210,7 @@
 <section data-kicker="CH.6 P.235" data-path="The Rules of Phonology › Feature-Changing Rules">
   <h2>Assimilation Rules</h2>
   <div class="cols">
-    <div class="def">A sound becomes <i>more like</i> its neighbor: articulatory economy at work. The most common rule type of all.
+    <div class="def">A sound becomes <b>more like</b> its neighbor: articulatory economy at work. The most common rule type of all.
       <span class="ko-supp" style="display:block; margin-top:8px;">동화(assimilation)는 소리가 이웃 소리를 닮아가는 것으로, 조음의 경제성에서 비롯되며 가장 흔한 규칙 유형이다.</span></div>
     <div class="quote-stack">
       <p><b>Voicing assimilation</b>: plural and past endings agree in voicing with the stem ([kæts], [wɔkt]).</p>
@@ -252,7 +252,7 @@
 <section data-kicker="CH.6 P.237" data-path="The Rules of Phonology › Feature-Changing Rules">
   <h2>Dissimilation Rules</h2>
   <div class="cols">
-    <div class="def">The mirror image: a sound becomes <i>less like</i> its neighbor, to ease articulation.
+    <div class="def">The mirror image: a sound becomes <b>less like</b> its neighbor, to ease articulation.
       <span class="ko-supp" style="display:block; margin-top:8px;">이화(dissimilation)는 동화의 거울상으로, 소리가 이웃 소리와 덜 닮게 바뀌어 발음을 쉽게 만든다.</span></div>
     <div>
       <div class="gloss-set" style="margin-bottom:24px;">
@@ -312,7 +312,7 @@
     <tr><td><b>3</b>&nbsp;&nbsp;Delete segments</td><td>g-deletion before nasals in English</td></tr>
     <tr><td><b>4</b>&nbsp;&nbsp;Add segments</td><td>schwa insertion in English plural and past tense</td></tr>
   </table>
-  <p class="lead" style="font-size:16px; margin-top:16px;">Rarely is a phoneme realized as one and only one phone, and one phone may serve <em>several</em> phonemes.
+  <p class="lead" style="font-size:16px; margin-top:16px;">Rarely is a phoneme realized as one and only one phone, and one phone may serve <b>several</b> phonemes.
     <span style="font: italic 400 14px 'Lora'; color: var(--ed-muted);">(cf. textbook Ch.6, p.241)</span>
     <span class="ko-supp" style="display:block;">음소 하나가 단 하나의 음성으로만 실현되는 일은 드물고, 음성 하나가 여러 음소를 대신할 수도 있다.</span></p>
   <aside class="notes">
@@ -325,7 +325,7 @@
 <section data-kicker="CH.6 P.241" data-path="The Rules of Phonology">
   <h2 style="font-size:40px;">From One to Many and from Many to One</h2>
   <div class="cols">
-    <div class="def">The same phone can realize <i>several</i> phonemes, so the phonetic form alone cannot reveal the phonemic one.
+    <div class="def">The same phone can realize <b>several</b> phonemes, so the phonetic form alone cannot reveal the phonemic one.
       <span class="ko-supp" style="display:block; margin-top:8px;">같은 음성이 여러 음소를 실현할 수 있으므로, 음성형만 보고는 음소형을 알아낼 수 없다.</span></div>
     <div>
       <ul class="exlist">
@@ -346,7 +346,7 @@
 <!-- ══ 11 · The Function of Phonological Rules ══ -->
 <section data-kicker="CH.6 P.242" data-path="The Rules of Phonology">
   <h2 style="font-size:40px;">The Function of Phonological Rules</h2>
-  <p class="lead" style="font-size:18px; max-width:660px;">Rules are the <em>input–output function</em> from stored form to spoken form; applying them step by step is a <b>derivation</b>.</p>
+  <p class="lead" style="font-size:18px; max-width:660px;">Rules are the <b>input–output function</b> from stored form to spoken form; applying them step by step is a <b>derivation</b>.</p>
   <div class="rule-line" style="font-size:22px;">/phonemic representation/ <b>→ rules →</b> [phonetic representation]</div>
   <table class="ed-table" style="max-width:560px;">
     <tr><th>Derivation of tempest</th><th class="c">/tɛmpɛst/</th></tr>
@@ -366,7 +366,7 @@
 <!-- ══ 12 · Prosodic Phonology ══ -->
 <section data-kicker="CH.6 P.243">
   <h2>Prosodic Phonology</h2>
-  <p class="lead" style="max-width:620px;">Beyond the segment: phonology also governs <em>syllables</em>, <em>stress</em>, and <em>pitch</em>; properties of whole strings, not single sounds.
+  <p class="lead" style="max-width:620px;">Beyond the segment: phonology also governs <b>syllables</b>, <b>stress</b>, and <b>pitch</b>; properties of whole strings, not single sounds.
     <span class="ko-supp" style="display:block;">음운론은 분절음 너머의 음절·강세·음높이도 지배하며, 이는 낱소리가 아니라 연쇄 전체의 속성이다: 운율 음운론(prosodic phonology).</span></p>
   <div class="quote-stack" style="max-width:620px; margin-top:24px;">
     <p><b>Syllable Structure</b>: how phonemes group into σ</p>
@@ -384,7 +384,7 @@
 <section data-kicker="CH.6 P.243" data-path="Prosodic Phonology">
   <h2>Syllable Structure</h2>
   <div class="cols">
-    <div class="def">A syllable (σ) is a phonological unit of one or more phonemes. Every syllable has a <i>nucleus</i>, usually a vowel, but possibly a syllabic liquid or nasal.
+    <div class="def">A syllable (σ) is a phonological unit of one or more phonemes. Every syllable has a <b>nucleus</b>, usually a vowel, but possibly a syllabic liquid or nasal.
       <span class="ko-supp" style="display:block; margin-top:8px;">음절(syllable, σ)은 하나 이상의 음소로 이루어진 음운 단위이며, 모든 음절에는 핵(nucleus)이 있다. 핵은 대개 모음이지만 음절성 유음이나 비음일 수도 있다.</span></div>
     <div class="quote-stack">
       <p>The consonants before the nucleus form the <b>onset</b>; those after it, the <b>coda</b>.</p>
@@ -439,8 +439,8 @@
 <section data-kicker="CH.6 P.244" data-path="Prosodic Phonology">
   <h2>Word Stress</h2>
   <div class="cols">
-    <div class="def">In every English content word one or more syllables are <i>stressed</i>, and stress can be <b>contrastive</b>.
-      <span class="ko-supp" style="display:block; margin-top:8px;">영어의 모든 내용어에서는 하나 이상의 음절에 강세(stress)가 놓이며, 강세는 뜻을 가르는 <b>대립적</b> 자질이 될 수 있다.</span></div>
+    <div class="def">In every English content word one or more syllables are <b>stressed</b>, and stress can be <b>contrastive</b>.
+      <span class="ko-supp" style="display:block; margin-top:8px;">영어의 모든 내용어에서는 하나 이상의 음절에 강세(stress)가 놓이며, 강세는 뜻을 가르는 대립적 자질이 될 수 있다.</span></div>
     <div>
       <ul class="exlist">
         <li><span class="no">N</span><span><i>pérvert</i> · <i>súbject</i><button class="say-btn mini" data-say="My neighbor is a pervert. Let's change the subject." data-lang="en-US">♪</button></span></li>
@@ -514,7 +514,7 @@
 <section data-kicker="CH.6 P.246" data-path="Prosodic Phonology">
   <h2>Intonation</h2>
   <div class="cols">
-    <div class="def">In non-tone languages like English, pitch works as the <i>contour</i> of the whole utterance: intonation.
+    <div class="def">In non-tone languages like English, pitch works as the <b>contour</b> of the whole utterance: intonation.
       <span class="ko-supp" style="display:block; margin-top:8px;">영어처럼 성조가 없는 언어에서 음높이는 발화 전체의 곡선으로 작동하며, 이것이 억양(intonation)이다.</span></div>
     <div class="quote-stack">
       <p><i>"What is your middle name, David?"</i> with <b>falling</b> pitch at the end asks David to reveal his middle name.</p>
@@ -531,7 +531,7 @@
 <!-- ══ 17b · Intonation · Tristram ══ -->
 <section data-kicker="CH.6 P.246" data-path="Prosodic Phonology">
   <h2>Intonation</h2>
-  <p class="lead" style="font-size:18px; max-width:680px; margin-bottom:10px;">A sentence ambiguous in writing can be unambiguous in speech, because the <em>pitch contour</em> differs.
+  <p class="lead" style="font-size:18px; max-width:680px; margin-bottom:10px;">A sentence ambiguous in writing can be unambiguous in speech, because the <b>pitch contour</b> differs.
     <span class="ko-supp" style="display:block; font-size:15px;">글로는 중의적인 문장도 말로 하면 음높이 곡선이 달라 중의성이 사라질 수 있다.</span></p>
   <div class="tn-set">
     <div class="small-label">ISOLDE IS TO FOLLOW TRISTRAM</div>
@@ -557,7 +557,7 @@
 <!-- ══ 18 · Sequential Constraints of Phonemes ══ -->
 <section data-kicker="CH.6 P.247">
   <h2 style="font-size:40px;">Sequential Constraints of Phonemes</h2>
-  <p class="lead" style="font-size:18px; max-width:680px; margin-bottom:12px;">Arrange /b/, /ɪ/, /k/, /l/ into English words, and only <i>some</i> orders work. Knowing which ones is part of your phonology.
+  <p class="lead" style="font-size:18px; max-width:680px; margin-bottom:12px;">Arrange /b/, /ɪ/, /k/, /l/ into English words, and only <b>some</b> orders work. Knowing which ones is part of your phonology.
     <span class="ko-supp" style="display:block; font-size:15px;">/b/ /ɪ/ /k/ /l/로 영어 단어를 만들면 일부 배열만 가능하며, 어느 배열이 가능한지 아는 것도 음운 지식이다.</span></p>
   <div class="arr">
     <span class="small-label">POSSIBLE</span><span class="f">/blɪk/ &nbsp;/klɪb/ &nbsp;/bɪlk/ &nbsp;/kɪlb/</span>
@@ -609,7 +609,7 @@
 <section data-kicker="CH.6 P.248">
   <h2 style="font-size:40px;">Sequential Constraints of Phonemes</h2>
   <div class="cols">
-    <div class="def">These limits on sequences of segments are <i>phonotactic constraints</i>, and their basis is the <b>syllable</b>, not the word.
+    <div class="def">These limits on sequences of segments are <b>phonotactic constraints</b>, and their basis is the <b>syllable</b>, not the word.
       <span class="ko-supp" style="display:block; margin-top:8px;">분절음 연쇄에 대한 이런 제한을 음소배열 제약(phonotactic constraints)이라 하며, 기준 단위는 단어가 아니라 음절이다.</span></div>
     <div class="quote-stack">
       <p><i>explicit</i> /ɛk$splɪs$ɪt/ is fine: a legal coda /k/ meets a legal onset /spl/. <i>*condstluct</i> fails: its second syllable would need the onset /stl/ or /tl/.</p>
@@ -641,7 +641,7 @@
     </div>
   </div>
   <hr class="hair" style="margin-top:16px;">
-  <p class="lead" style="font-size:17px;">An actual word is a possible word <em>plus</em> a meaning. Possible words without one are <b>nonsense words</b>, also called <b>accidental gaps</b> or <b>lexical gaps</b>.
+  <p class="lead" style="font-size:17px;">An actual word is a possible word <b>plus</b> a meaning. Possible words without one are <b>nonsense words</b>, also called <b>accidental gaps</b> or <b>lexical gaps</b>.
     <span class="ko-supp" style="display:block;">실제 단어는 가능한 단어에 뜻이 더해진 것이다. 뜻이 없는 가능한 단어는 무의미어(nonsense word)이며 우연한 공백(accidental gap), 어휘 공백(lexical gap)이라고도 한다.</span></p>
   <p class="lead" style="font-size:17px; margin-top:4px;">That is why <em>Bic</em>, <em>Xerox</em>, <em>Kodak</em>, and <em>Spam</em> could launch as names, but <em>Zhleet</em> [ʒlit], an impossible word, never would.
     <span class="ko-supp" style="display:block;">그래서 Bic, Xerox, Kodak, Spam은 상품명이 될 수 있었지만 불가능한 단어 Zhleet [ʒlit]는 그럴 수 없다.</span>
@@ -680,7 +680,7 @@
 <section data-kicker="CH.6 P.249">
   <h2 style="font-size:40px;">Why Do Phonological Rules Exist?</h2>
   <div class="cols">
-    <div class="def">Why don't phonemic forms surface intact? Often, a rule exists to make the output <i>obey the constraints</i>.
+    <div class="def">Why don't phonemic forms surface intact? Often, a rule exists to make the output <b>obey the constraints</b>.
       <span class="ko-supp" style="display:block; margin-top:8px;">음소형이 그대로 나오지 않는 이유는, 규칙이 흔히 출력이 제약(constraint)을 지키도록 고치는 장치이기 때문이다.</span></div>
     <div class="quote-stack">
       <p><b>(A)</b> Syllable-final obstruents must agree in voicing: *[kasb] and *[kabs], but [kasp] and [kɛbz]. Devoicing obeys it: <i>reaped</i> [ript], <i>peaked</i> [pʰikt].</p>
@@ -700,7 +700,7 @@
 <section data-kicker="CH.6 P.250">
   <h2>Phonological Analysis</h2>
   <div class="cols">
-    <div class="def">Given transcribed data, the phonologist asks: are two phones <i>separate phonemes</i>, or allophones of one?
+    <div class="def">Given transcribed data, the phonologist asks: are two phones <b>separate phonemes</b>, or allophones of one?
       <span class="ko-supp" style="display:block; margin-top:8px;">전사된 자료를 받은 음운론자는 두 음성이 별개의 음소인지, 한 음소의 이음인지를 묻는다.</span></div>
     <div>
       <div class="gloss-set">
@@ -724,7 +724,7 @@
   <h2>Phonological Analysis</h2>
   <p class="lead" style="font-size:18px; max-width:660px;"><em>writer</em> and <em>rider</em> both surface as [raɪɾər], but <em>write</em> [raɪt] and <em>ride</em> [raɪd] keep the stops. <button class="say-btn mini" data-say="writer, rider, write, ride" data-lang="en-US">listen</button></p>
   <div class="rule-line" style="font-size:26px;">/t/, /d/ <b>→</b> [ɾ] <b>/</b> V́ __ V</div>
-  <p class="lead" style="font-size:17px; max-width:660px;">The flap occurs <em>only</em> between a stressed and an unstressed vowel, where [t] and [d] never do.
+  <p class="lead" style="font-size:17px; max-width:660px;">The flap occurs <b>only</b> between a stressed and an unstressed vowel, where [t] and [d] never do.
     <span class="rel-line">Complementary distribution: [ɾ] is an allophone of <b>both</b> /t/ and /d/.</span>
     <span class="rel-line">So phonemically <em>writer</em> is /raɪtər/ and <em>rider</em> /raɪdər/, as <em>write</em> and <em>ride</em> show.</span>
     <span class="ko-supp" style="display:block; margin-top:8px;">[ɾ]는 강세 모음과 비강세 모음 사이에만 오고 [t] [d]는 거기 못 오므로 상보적 분포이며, [ɾ]는 /t/와 /d/ 양쪽의 이음이다.</span>
@@ -744,16 +744,16 @@
     <div>
       <div class="gloss-set" style="margin-bottom:6px;"><div class="langlab">GREEK · EXCERPT</div></div>
       <div class="grdata">
-        <i>[kano]</i><span>"do"</span>
-        <i>[xano]</i><span>"lose"</span>
-        <i>[kori]</i><span>"daughter"</span>
-        <i>[xori]</i><span>"dances"</span>
-        <i>[krima]</i><span>"shame"</span>
-        <i>[xrima]</i><span>"money"</span>
-        <i>[cino]</i><span>"move"</span>
-        <i>[çino]</i><span>"pour"</span>
-        <i>[ceri]</i><span>"candle"</span>
-        <i>[çeri]</i><span>"hand"</span>
+        <span class="w">[kano]</span><span>"do"</span>
+        <span class="w">[xano]</span><span>"lose"</span>
+        <span class="w">[kori]</span><span>"daughter"</span>
+        <span class="w">[xori]</span><span>"dances"</span>
+        <span class="w">[krima]</span><span>"shame"</span>
+        <span class="w">[xrima]</span><span>"money"</span>
+        <span class="w">[cino]</span><span>"move"</span>
+        <span class="w">[çino]</span><span>"pour"</span>
+        <span class="w">[ceri]</span><span>"candle"</span>
+        <span class="w">[çeri]</span><span>"hand"</span>
       </div>
       <p style="font: italic 400 13px/1.4 'Lora'; color: var(--ed-muted); margin-top:8px;">10 of 16 forms<br>(cf. textbook Ch.6, pp.252–253)</p>
     </div>
@@ -799,7 +799,7 @@
 <!-- ══ 24 · Practice Q2 ══ -->
 <section data-kicker="CH.6 · PRACTICE 02">
   <div class="mcq" data-qid="w14-q2">
-    <div class="mcq-q"><span class="qnum">Q2</span>In the syllable tree, which node is <em>obligatory</em> in every syllable?</div>
+    <div class="mcq-q"><span class="qnum">Q2</span>In the syllable tree, which node is <b>obligatory</b> in every syllable?</div>
     <div class="mcq-opts">
       <button class="mcq-opt"><span class="opt-key">A</span>Onset</button>
       <button class="mcq-opt" data-correct="true"><span class="opt-key">B</span>Nucleus</button>
@@ -868,7 +868,7 @@
 <!-- ══ 28 · Next week: Final ══ -->
 <section data-kicker="NEXT WEEK · FINAL EXAM · CH.4–6">
   <h2>Final Exam</h2>
-  <p class="lead" style="max-width:620px;">Chapters 4–6 · Weeks 9–14: <em>Meaning, Phonetics &amp; Phonology.</em>
+  <p class="lead" style="max-width:620px;">Chapters 4–6 · Weeks 9–14: Meaning, Phonetics &amp; Phonology.
     <span class="ko-supp" style="display:block;">4–6장(9–14주차): 의미(의미론·화용론), 음성학, 음운론.</span></p>
   <ul class="exlist" style="max-width:620px; margin-top:24px;">
     <li><span class="no">CH.4</span><span><b>Meaning</b>: semantic features, lexical relations, thematic roles, implicature, speech acts</span></li>
