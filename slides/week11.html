@@ -70,11 +70,21 @@
       padding: 3px 0; border-bottom: 1px solid var(--ed-line); font: 400 16px/1.35 'Lora'; color: var(--ed-body); }
     .vt-list button:hover, .vt-list button[aria-pressed="true"] { color: var(--ed-ink); }
     .vt-list button[aria-pressed="true"] { font-weight: 600; }
-    .vt-list .n { font: 700 11px 'Space Grotesk'; color: var(--ed-accent); width: 12px; }
-    .vt-detail { margin-top: 12px; height: 164px; overflow: hidden; }
-    .vt-head { font: 600 10px 'Space Grotesk'; letter-spacing: 0.14em; color: var(--ed-accent); }
-    .vt-sym { font: 400 21px/1.3 'Lora'; color: var(--ed-ink); margin: 6px 0 4px; }
-    .vt-ex { font: italic 400 15.5px/1.45 'Lora'; color: var(--ed-body); margin-bottom: 6px; }
+    .vt-list .n { flex: none; align-self: center; display: inline-flex; align-items: center; justify-content: center; width: 17px; height: 17px;
+      border: 1.2px solid var(--ed-accent); border-radius: 50%; font: 700 9.5px 'Space Grotesk'; color: var(--ed-accent); }
+    .vt-list button[aria-pressed="true"] .n { background: var(--ed-accent); color: var(--ed-paper, #faf8f3); }
+    /* 선택 결과: 초록 2px 선으로 목록과 분리, 기호를 가장 크게 */
+    .vt-detail { margin-top: 34px; border-top: 2px solid var(--ed-accent); padding-top: 12px; height: 170px; overflow: hidden; }
+    .vt-empty { font: italic 400 15px/1.45 'Lora'; color: var(--ed-muted); }
+    .vt-body { display: none; }
+    .vt-detail.sel .vt-empty { display: none; }
+    .vt-detail.sel .vt-body { display: block; animation: vtIn .2s ease; }
+    @keyframes vtIn { from { opacity: 0; transform: translateY(3px); } to { opacity: 1; transform: none; } }
+    .vt-head { font: 700 10.5px 'Space Grotesk'; letter-spacing: 0.16em; color: var(--ed-accent); }
+    .vt-sym { font: 400 29px/1.25 'Lora'; color: var(--ed-ink); word-spacing: 0.12em; margin: 4px 0 2px; white-space: nowrap; }
+    .vt-desc { font: 400 15.5px/1.4 'Lora'; color: var(--ed-body); }
+    .vt-ex { font: italic 400 15.5px/1.45 'Lora'; color: var(--ed-body); margin-top: 4px; }
+    .vt-ex .say-btn { font-style: normal; margin-left: 8px; vertical-align: 1px; }
   </style>
 </head>
 <body data-rail="WEEK 11 · PHONETICS" data-course="Topics in English Linguistics">
@@ -343,10 +353,13 @@
         <li><button type="button" data-p="8"><span class="n">8</span>Glottal</button></li>
       </ol>
       <div class="vt-detail" aria-live="polite">
-        <div class="vt-head">SELECT A NUMBER</div>
-        <div class="vt-sym">[ ]</div>
-        <div class="vt-ex">The place lights up, with its consonants.</div>
-        <button class="say-btn mini vt-say" data-say="" data-lang="en-US" style="visibility:hidden;">listen</button>
+        <div class="vt-empty">Select a number on the figure or the list.</div>
+        <div class="vt-body">
+          <div class="vt-head"></div>
+          <div class="vt-sym"></div>
+          <div class="vt-desc"></div>
+          <div class="vt-ex"><span class="vt-words"></span><button class="say-btn mini vt-say" data-say="" data-lang="en-US">listen</button></div>
+        </div>
       </div>
     </div>
   </div>
@@ -359,14 +372,14 @@
     연구개(velum)는 다음 슬라이드들의 비음/구강음 구분에서 다시 중요해집니다.
   </aside>
   <script type="application/json" class="vt-data">{
-    "1": ["BILABIAL · BOTH LIPS", "[p] [b] [m]", "pie · buy · my", "pie. buy. my.", "en-US"],
-    "2": ["LABIODENTAL · LOWER LIP + UPPER TEETH", "[f] [v]", "fine · vine", "fine. vine.", "en-US"],
-    "3": ["INTERDENTAL · TONGUE TIP BETWEEN THE TEETH", "[θ] [ð]", "thigh · thy", "thigh. thy.", "en-US"],
-    "4": ["ALVEOLAR · TONGUE + ALVEOLAR RIDGE", "[t] [d] [n] [s] [z] [l] [r]", "tie · die · night · sue · zoo · lye · rye", "tie. die. night. sue. zoo. lye. rye.", "en-US"],
-    "5": ["PALATAL · FRONT OF TONGUE + HARD PALATE", "[ʃ] [ʒ] [tʃ] [dʒ] [j]", "shoe · measure · cheese · jump · you", "shoe. measure. cheese. jump. you.", "en-US"],
-    "6": ["VELAR · BACK OF TONGUE + VELUM", "[k] [g] [ŋ]", "kite · guy · sing", "kite. guy. sing.", "en-US"],
-    "7": ["UVULAR · BACK OF TONGUE + UVULA", "[ʀ] [q] [ɢ]", "not in English: French r in rouge", "rouge", "fr-FR"],
-    "8": ["GLOTTAL · AT THE GLOTTIS", "[h] [ʔ]", "high · uh-oh", "high. uh-oh.", "en-US"]
+    "1": ["BILABIAL · BOTH LIPS", "[p b m]", "pie · buy · my", "pie. buy. my.", "en-US"],
+    "2": ["LABIODENTAL · LOWER LIP + UPPER TEETH", "[f v]", "fine · vine", "fine. vine.", "en-US"],
+    "3": ["INTERDENTAL · TONGUE TIP BETWEEN THE TEETH", "[θ ð]", "thigh · thy", "thigh. thy.", "en-US"],
+    "4": ["ALVEOLAR · TONGUE + ALVEOLAR RIDGE", "[t d n s z l r]", "tie · die · night · sue · zoo · lye · rye", "tie. die. night. sue. zoo. lye. rye.", "en-US"],
+    "5": ["PALATAL · FRONT OF TONGUE + HARD PALATE", "[ʃ ʒ tʃ dʒ j]", "shoe · measure · cheese · jump · you", "shoe. measure. cheese. jump. you.", "en-US"],
+    "6": ["VELAR · BACK OF TONGUE + VELUM", "[k g ŋ]", "kite · guy · sing", "kite. guy. sing.", "en-US"],
+    "7": ["UVULAR · BACK OF TONGUE + UVULA", "[ʀ q ɢ]", "not in English: French r in rouge", "rouge", "fr-FR"],
+    "8": ["GLOTTAL · AT THE GLOTTIS", "[h ʔ]", "high · uh-oh", "high. uh-oh.", "en-US"]
   }</script>
 </section>
 
@@ -738,7 +751,8 @@
     document.querySelectorAll('.vt').forEach(function (vt) {
       var sec = vt.closest('section');
       var data = JSON.parse(sec.querySelector('.vt-data').textContent);
-      var head = vt.querySelector('.vt-head'), sym = vt.querySelector('.vt-sym'), ex = vt.querySelector('.vt-ex'), say = vt.querySelector('.vt-say');
+      var box = vt.querySelector('.vt-detail'), head = vt.querySelector('.vt-head'), sym = vt.querySelector('.vt-sym'),
+          desc = vt.querySelector('.vt-desc'), words = vt.querySelector('.vt-words'), say = vt.querySelector('.vt-say');
       function pick(p) {
         var d = data[p]; if (!d) return;
         vt.querySelectorAll('[data-p]').forEach(function (el) {
@@ -746,8 +760,11 @@
           el.classList.toggle('on', on);
           if (el.tagName === 'BUTTON') el.setAttribute('aria-pressed', on ? 'true' : 'false');
         });
-        head.textContent = p + ' · ' + d[0]; sym.textContent = d[1]; ex.textContent = d[2];
-        say.setAttribute('data-say', d[3]); say.setAttribute('data-lang', d[4]); say.style.visibility = 'visible';
+        var hd = d[0].split(' · ');   // "VELAR · BACK OF TONGUE + VELUM" → 라벨 / 설명
+        head.textContent = p + ' · ' + hd[0]; desc.textContent = (hd[1] || '').toLowerCase();
+        sym.textContent = d[1]; words.textContent = d[2];
+        say.setAttribute('data-say', d[3]); say.setAttribute('data-lang', d[4]);
+        box.classList.remove('sel'); void box.offsetWidth; box.classList.add('sel');   // 바뀔 때마다 페이드인
       }
       vt.querySelectorAll('.pl, .vt-list button').forEach(function (el) {
         el.addEventListener('click', function () { pick(el.getAttribute('data-p')); });
