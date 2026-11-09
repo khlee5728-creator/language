@@ -40,6 +40,41 @@
     .reveal table.ed-table tr:nth-child(even) td, .reveal table.ed-table tr:hover td,
     .reveal table.mini-table tr:nth-child(even) td, .reveal table.mini-table tr:hover td { background: none; }
     .reveal table.ed-table td small, .reveal table.mini-table td small { font: 400 15px 'Lora'; color: var(--ed-muted); }
+
+    /* 9번: 자체 성도 단면도 + 조음 위치 선택(번호·목록 클릭 → 강조·자음·예시·발음) */
+    .vt { display: grid; grid-template-columns: 440px minmax(0, 1fr); gap: 30px; align-items: start; }
+    .vt-fig { width: 440px; height: auto; display: block; }
+    .vt-fig .skin { fill: #f1ebdf; stroke: var(--ed-ink); stroke-width: 1.4; stroke-linejoin: round; }
+    .vt-fig .air { fill: var(--ed-paper, #faf8f3); stroke: var(--ed-paper, #faf8f3); stroke-width: 1.2; }
+    .vt-fig .wall { fill: none; stroke: var(--ed-ink); stroke-width: 1.4; stroke-linejoin: round; stroke-linecap: round; }
+    .vt-fig .bone { fill: #ddd4c3; stroke: var(--ed-ink); stroke-width: 1.2; }
+    .vt-fig .tooth { fill: #fffdf8; stroke: var(--ed-ink); stroke-width: 1.1; }
+    .vt-fig .tongue { fill: #e9d6cb; stroke: var(--ed-ink); stroke-width: 1.4; }
+    .vt-fig .soft { fill: #ead9cf; stroke: var(--ed-ink); stroke-width: 1.3; stroke-linejoin: round; }
+    .vt-fig .lab { font: 600 8px 'Space Grotesk', sans-serif; letter-spacing: 1.2px; fill: var(--ed-muted); }
+    .vt-fig .lab.sm { font-size: 7px; }
+    .vt-fig .leadg { stroke: #b3ab9b; stroke-width: 0.7; fill: none; }
+    .vt-fig .hl { fill: none; stroke: var(--ed-accent); stroke-width: 5; stroke-linecap: round; opacity: 0; transition: opacity .2s; }
+    .vt-fig .hl.on { opacity: .4; }
+    .vt-fig .pl { cursor: pointer; }
+    .vt-fig .num circle { fill: var(--ed-paper, #faf8f3); stroke: var(--ed-accent); stroke-width: 1.3; }
+    .vt-fig .num text { font: 700 9px 'Space Grotesk', sans-serif; fill: var(--ed-accent); text-anchor: middle; dominant-baseline: central; }
+    .vt-fig .pl.on .num circle { fill: var(--ed-accent); }
+    .vt-fig .pl.on .num text { fill: var(--ed-paper, #faf8f3); }
+    .vt-fig .lead { stroke: var(--ed-accent); stroke-width: 0.8; fill: none; }
+    .vt-fig .dot { fill: var(--ed-accent); }
+    .reveal ol.vt-list { list-style: none; margin: 0; padding: 0; display: block; }
+    .reveal ol.vt-list li { margin: 0; padding: 0; }
+    .reveal ol.vt-list li::before { content: none; }
+    .vt-list button { all: unset; box-sizing: border-box; cursor: pointer; display: flex; align-items: baseline; gap: 12px; width: 100%;
+      padding: 3px 0; border-bottom: 1px solid var(--ed-line); font: 400 16px/1.35 'Lora'; color: var(--ed-body); }
+    .vt-list button:hover, .vt-list button[aria-pressed="true"] { color: var(--ed-ink); }
+    .vt-list button[aria-pressed="true"] { font-weight: 600; }
+    .vt-list .n { font: 700 11px 'Space Grotesk'; color: var(--ed-accent); width: 12px; }
+    .vt-detail { margin-top: 12px; height: 164px; overflow: hidden; }
+    .vt-head { font: 600 10px 'Space Grotesk'; letter-spacing: 0.14em; color: var(--ed-accent); }
+    .vt-sym { font: 400 21px/1.3 'Lora'; color: var(--ed-ink); margin: 6px 0 4px; }
+    .vt-ex { font: italic 400 15.5px/1.45 'Lora'; color: var(--ed-body); margin-bottom: 6px; }
   </style>
 </head>
 <body data-rail="WEEK 11 · PHONETICS" data-course="Topics in English Linguistics">
@@ -233,43 +268,106 @@
 
 <!-- ══ 9 · Figure: the vocal tract ══ -->
 <section data-kicker="CH.5 P.190 · ARTICULATORY PHONETICS · FIGURE">
-  <div style="text-align:center;">
-    <svg viewBox="0 0 620 320" style="width:76%; max-width:640px; margin-top:4px;">
-      <!-- head outline (simplified midsagittal, own drawing) -->
-      <path d="M120,40 C270,10 470,30 500,120 C520,180 470,220 430,235
-               L430,300 L360,300 L360,250 C300,255 210,255 170,235
-               C120,210 90,150 120,40 Z"
-            fill="#faf8f3" stroke="#1c1a17" stroke-width="1.6"/>
-      <!-- palate line -->
-      <path d="M180,150 C260,120 340,120 420,145" fill="none" stroke="#cfc8b8" stroke-width="1.6" stroke-dasharray="5 5"/>
-      <!-- tongue -->
-      <path d="M200,235 C250,200 320,205 380,225 C350,250 250,255 200,235 Z"
-            fill="none" stroke="#24513f" stroke-width="1.6"/>
-      <text x="290" y="242" text-anchor="middle" font-family="Space Grotesk" font-size="10" letter-spacing="3" fill="#24513f">TONGUE</text>
-      <!-- lips -->
-      <circle cx="150" cy="200" r="9" fill="none" stroke="#1c1a17" stroke-width="1.4"/>
-      <!-- place labels -->
-      <text x="140" y="175" font-family="Space Grotesk" font-size="12" font-weight="600" letter-spacing="1.5" fill="#24513f">1 bilabial</text>
-      <text x="200" y="140" font-family="Space Grotesk" font-size="12" font-weight="600" letter-spacing="1.5" fill="#24513f">2·3 (labio·inter)dental</text>
-      <text x="285" y="112" font-family="Space Grotesk" font-size="12" font-weight="600" letter-spacing="1.5" fill="#24513f">4 alveolar</text>
-      <text x="380" y="112" font-family="Space Grotesk" font-size="12" font-weight="600" letter-spacing="1.5" fill="#24513f">5 palatal</text>
-      <text x="440" y="150" font-family="Space Grotesk" font-size="12" font-weight="600" letter-spacing="1.5" fill="#24513f">6 velar</text>
-      <text x="437" y="222" font-family="Space Grotesk" font-size="12" font-weight="600" letter-spacing="1.5" fill="#24513f">8 glottal</text>
-      <!-- tick marks -->
-      <circle cx="196" cy="150" r="3" fill="#24513f"/>
-      <circle cx="270" cy="126" r="3" fill="#24513f"/>
-      <circle cx="352" cy="124" r="3" fill="#24513f"/>
-      <circle cx="415" cy="146" r="3" fill="#24513f"/>
-      <circle cx="425" cy="205" r="3" fill="#24513f"/>
-      <text x="300" y="300" text-anchor="middle" font-family="Lora" font-style="italic" font-size="12" fill="#8d8574">simplified midsagittal sketch, after Figure 5.1 (7 uvular lies between 6 and 8)</text>
+  <div class="vt">
+    <svg class="vt-fig" viewBox="0 70 400 400" role="img" aria-label="Midsagittal view of the vocal tract with eight places of articulation">
+      <!-- head & neck silhouette (face to the left) -->
+      <path class="skin" d="M 92,6 C 78,30 74,52 76,74 C 70,92 52,112 34,128 C 28,134 31,142 42,144
+         C 54,146 62,150 66,158 C 64,170 56,184 52,198 C 50,206 55,212 66,214
+         L 66,221 C 55,222 50,232 53,242 C 56,252 66,256 74,262
+         C 66,272 63,290 69,306 C 77,322 102,331 132,334
+         C 172,338 205,356 214,396 L 218,466 L 400,466 L 400,6 Z"/>
+      <!-- airways: nose, nasal cavity, pharynx, larynx / oral cavity -->
+      <path class="air" d="M 66,158 C 74,150 84,140 96,128 C 110,112 140,100 180,96 C 222,92 262,98 292,112
+         C 300,118 304,130 304,150 C 310,190 312,240 310,300 L 306,466 L 268,466 L 268,420
+         C 268,400 270,380 272,362 L 268,346 L 280,262 L 278,236 L 240,175 L 96,172 C 84,172 74,166 66,158 Z"/>
+      <path class="air" d="M 66,214 C 80,212 96,200 108,190 C 116,182 128,178 146,176 C 182,172 220,176 240,180 L 282,236 L 282,262 L 104,234
+         C 98,236 92,232 88,226 L 66,221 Z"/>
+      <!-- hard palate, velum + uvula, tongue, epiglottis -->
+      <path class="bone" d="M 92,172 C 140,170 200,170 240,169 L 240,180 C 220,176 182,172 146,176
+         C 128,178 116,182 108,190 C 102,188 96,184 92,180 Z"/>
+      <path class="soft" d="M 240,169 C 262,170 284,186 292,210 C 296,222 294,234 288,238 C 282,240 278,232 278,222
+         C 272,204 258,186 240,180 Z"/>
+      <path class="tongue" d="M 100,232 C 108,222 126,212 150,206 C 180,199 220,198 246,207 C 266,215 277,236 279,262
+         C 281,298 276,328 268,346 C 240,344 200,338 170,326 C 140,312 118,298 108,282 C 101,268 98,248 100,232 Z"/>
+      <path class="soft" d="M 268,346 C 274,332 284,322 292,322 C 296,326 290,334 284,342 C 280,350 276,358 272,362 Z"/>
+      <!-- walls: nostril floor, nasal roof + pharynx, larynx; vocal cords -->
+      <path class="wall" d="M 66,158 C 74,166 84,172 92,172"/>
+      <path class="wall" d="M 66,158 C 74,150 84,140 96,128 C 110,112 140,100 180,96 C 222,92 262,98 292,112
+         C 300,118 304,130 304,150 C 310,190 312,240 310,300 L 306,466"/>
+      <path class="wall" d="M 272,362 C 270,380 268,400 268,420 L 268,466"/>
+      <path class="wall" d="M 300,384 L 300,466"/>
+      <path class="soft" d="M 268,405 L 287,410 L 268,415 Z"/>
+      <path class="soft" d="M 300,404 L 292,410 L 300,416 Z"/>
+      <!-- teeth -->
+      <path class="tooth" d="M 86,189 L 100,190 C 101,198 99,208 96,216 C 92,219 87,217 85,213 C 84,205 84,197 86,189 Z"/>
+      <path class="tooth" d="M 88,224 C 92,221 97,221 100,224 L 102,246 L 88,246 C 87,238 87,230 88,224 Z"/>
+      <!-- highlight strokes, one per place -->
+      <path class="hl" data-p="1" d="M 58,213 L 66,214 M 58,222 L 66,221"/>
+      <path class="hl" data-p="2" d="M 86,214 L 70,220"/>
+      <path class="hl" data-p="3" d="M 96,216 L 103,226"/>
+      <path class="hl" data-p="4" d="M 100,193 C 106,190 112,186 120,182"/>
+      <path class="hl" data-p="5" d="M 128,178 C 160,173 200,173 238,179"/>
+      <path class="hl" data-p="6" d="M 242,182 C 258,189 270,202 277,220"/>
+      <path class="hl" data-p="7" d="M 279,228 C 281,236 286,239 290,236"/>
+      <path class="hl" data-p="8" d="M 287,410 L 292,410"/>
+      <!-- anatomy labels -->
+      <text class="lab" x="160" y="134">NASAL CAVITY</text>
+      <text class="lab sm" x="140" y="165">HARD PALATE</text>
+      <text class="lab sm" x="132" y="194">ORAL CAVITY</text>
+      <text class="lab" x="164" y="270">TONGUE</text>
+      <path class="leadg" d="M 286,196 L 324,196"/><text class="lab" x="328" y="199">VELUM</text>
+      <path class="leadg" d="M 292,236 L 324,236"/><text class="lab" x="328" y="239">UVULA</text>
+      <text class="lab" x="320" y="296">PHARYNX</text>
+      <path class="leadg" d="M 300,410 L 324,410"/><text class="lab" x="328" y="406">VOCAL</text><text class="lab" x="328" y="416">CORDS</text>
+      <text class="lab" x="320" y="446">LARYNX</text>
+      <!-- places of articulation (Figure 5.1 numbering) -->
+      <g class="pl" data-p="1"><path class="lead" d="M 60,218 L 30,218"/><circle class="dot" cx="61" cy="218" r="2"/><g class="num"><circle cx="22" cy="218" r="8"/><text x="22" y="218">1</text></g></g>
+      <g class="pl" data-p="2"><path class="lead" d="M 84,217 L 44,250"/><circle class="dot" cx="84" cy="217" r="2"/><g class="num"><circle cx="38" cy="255" r="8"/><text x="38" y="255">2</text></g></g>
+      <g class="pl" data-p="3"><path class="lead" d="M 99,219 L 44,184"/><circle class="dot" cx="99" cy="219" r="2"/><g class="num"><circle cx="38" cy="180" r="8"/><text x="38" y="180">3</text></g></g>
+      <g class="pl" data-p="4"><circle class="dot" cx="112" cy="187" r="2"/><g class="num"><circle cx="122" cy="203" r="8"/><text x="122" y="203">4</text></g></g>
+      <g class="pl" data-p="5"><circle class="dot" cx="214" cy="175" r="2"/><g class="num"><circle cx="222" cy="190" r="8"/><text x="222" y="190">5</text></g></g>
+      <g class="pl" data-p="6"><circle class="dot" cx="262" cy="196" r="2"/><g class="num"><circle cx="256" cy="212" r="8"/><text x="256" y="212">6</text></g></g>
+      <g class="pl" data-p="7"><circle class="dot" cx="285" cy="239" r="2"/><g class="num"><circle cx="295" cy="254" r="8"/><text x="295" y="254">7</text></g></g>
+      <g class="pl" data-p="8"><path class="lead" d="M 289,410 L 284,430"/><circle class="dot" cx="289" cy="410" r="2"/><g class="num"><circle cx="283" cy="437" r="8"/><text x="283" y="437">8</text></g></g>
     </svg>
-    <p class="lead" style="font-size:17px; margin-top:14px;">Places of articulation run <em>front to back</em>: lips → teeth → ridge → palate → velum → uvula → glottis.
-      <span class="ko-supp" style="display:block;">조음 위치는 입술(앞)에서 성문(뒤)으로 차례로 이동한다.</span></p>
+    <div class="vt-panel">
+      <div class="small-label" style="margin-bottom:6px;">PLACES OF ARTICULATION · FRONT TO BACK</div>
+      <ol class="vt-list">
+        <li><button type="button" data-p="1"><span class="n">1</span>Bilabial</button></li>
+        <li><button type="button" data-p="2"><span class="n">2</span>Labiodental</button></li>
+        <li><button type="button" data-p="3"><span class="n">3</span>Interdental</button></li>
+        <li><button type="button" data-p="4"><span class="n">4</span>Alveolar</button></li>
+        <li><button type="button" data-p="5"><span class="n">5</span>Palatal</button></li>
+        <li><button type="button" data-p="6"><span class="n">6</span>Velar</button></li>
+        <li><button type="button" data-p="7"><span class="n">7</span>Uvular</button></li>
+        <li><button type="button" data-p="8"><span class="n">8</span>Glottal</button></li>
+      </ol>
+      <div class="vt-detail" aria-live="polite">
+        <div class="vt-head">SELECT A NUMBER</div>
+        <div class="vt-sym">[ ]</div>
+        <div class="vt-ex">The place lights up, with its consonants.</div>
+        <button class="say-btn mini vt-say" data-say="" data-lang="en-US" style="visibility:hidden;">listen</button>
+      </div>
+    </div>
   </div>
+  <p class="lead" style="font-size:17px; margin:10px 0 0;">Places of articulation run <b>front to back</b>, from the lips to the glottis.
+    <span class="ko-supp" style="display:block; margin-top:4px;">조음 위치는 입술(앞)에서 성문(뒤)으로 차례로 이어진다.</span></p>
   <aside class="notes">
-    간이 정중시상 단면도(교재 그림 복제가 아닌 자체 도식). 교재 Figure 5.1의 번호 관례(1 양순 …
-    7 구개수, 8 성문)를 따릅니다. 앞→뒤 순서를 손으로 짚으며 설명하세요.
+    자체 정중시상 단면도입니다(교재 그림을 따라 그리지 않았고, 번호 관례만 교재 Figure 5.1을 따릅니다: 1 양순 … 7 구개수, 8 성문).
+    오른쪽 목록이나 그림의 번호를 누르면 해당 위치가 강조되고, 그 자리의 자음 기호와 교재 Table 5.5의 예시 단어가 나타납니다. listen 버튼으로 발음을 들려줄 수 있습니다.
+    앞에서 뒤로 하나씩 눌러 가며 학생이 직접 발음해 조음체를 느끼게 하세요. 7 구개수음은 영어에 없으므로 교재(p.191, p.197)의 프랑스어 r(rouge)을 프랑스어 음성으로 들려줍니다.
+    연구개(velum)는 다음 슬라이드들의 비음/구강음 구분에서 다시 중요해집니다.
   </aside>
+  <script type="application/json" class="vt-data">{
+    "1": ["BILABIAL · BOTH LIPS", "[p] [b] [m]", "pie · buy · my", "pie. buy. my.", "en-US"],
+    "2": ["LABIODENTAL · LOWER LIP + UPPER TEETH", "[f] [v]", "fine · vine", "fine. vine.", "en-US"],
+    "3": ["INTERDENTAL · TONGUE TIP BETWEEN THE TEETH", "[θ] [ð]", "thigh · thy", "thigh. thy.", "en-US"],
+    "4": ["ALVEOLAR · TONGUE + ALVEOLAR RIDGE", "[t] [d] [n] [s] [z] [l] [r]", "tie · die · night · sue · zoo · lye · rye", "tie. die. night. sue. zoo. lye. rye.", "en-US"],
+    "5": ["PALATAL · FRONT OF TONGUE + HARD PALATE", "[ʃ] [ʒ] [tʃ] [dʒ] [j]", "shoe · measure · cheese · jump · you", "shoe. measure. cheese. jump. you.", "en-US"],
+    "6": ["VELAR · BACK OF TONGUE + VELUM", "[k] [g] [ŋ]", "kite · guy · sing", "kite. guy. sing.", "en-US"],
+    "7": ["UVULAR · BACK OF TONGUE + UVULA", "[ʀ] [q] [ɢ]", "not in English: French r in rouge", "rouge", "fr-FR"],
+    "8": ["GLOTTAL · AT THE GLOTTIS", "[h] [ʔ]", "high · uh-oh", "high. uh-oh.", "en-US"]
+  }</script>
 </section>
 
 <!-- ══ 10 · Consonants ══ -->
@@ -634,5 +732,28 @@
 <script src="assets/slides-ko-toggle.js"></script>
 <script src="assets/slides-media.js?v=10"></script>
 <script src="assets/slides-editorial.js?v=6"></script>
+<script>
+  /* 9번 성도 그림: 번호(그림) 또는 목록 클릭 → 강조 + 자음 기호 + 예시 + 발음 버튼 */
+  (function () {
+    document.querySelectorAll('.vt').forEach(function (vt) {
+      var sec = vt.closest('section');
+      var data = JSON.parse(sec.querySelector('.vt-data').textContent);
+      var head = vt.querySelector('.vt-head'), sym = vt.querySelector('.vt-sym'), ex = vt.querySelector('.vt-ex'), say = vt.querySelector('.vt-say');
+      function pick(p) {
+        var d = data[p]; if (!d) return;
+        vt.querySelectorAll('[data-p]').forEach(function (el) {
+          var on = el.getAttribute('data-p') === p;
+          el.classList.toggle('on', on);
+          if (el.tagName === 'BUTTON') el.setAttribute('aria-pressed', on ? 'true' : 'false');
+        });
+        head.textContent = p + ' · ' + d[0]; sym.textContent = d[1]; ex.textContent = d[2];
+        say.setAttribute('data-say', d[3]); say.setAttribute('data-lang', d[4]); say.style.visibility = 'visible';
+      }
+      vt.querySelectorAll('.pl, .vt-list button').forEach(function (el) {
+        el.addEventListener('click', function () { pick(el.getAttribute('data-p')); });
+      });
+    });
+  })();
+</script>
 </body>
 </html>
