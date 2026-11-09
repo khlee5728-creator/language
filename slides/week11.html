@@ -71,6 +71,32 @@
     .reveal table.tr-tab td { font: 400 18px/1.25 'Lora'; color: var(--ed-ink); text-align: left; background: none; border: 0;
       border-bottom: 1px solid var(--ed-line); padding: 3px 10px 3px 0; }
     .reveal table.tr-tab tr:nth-child(even) td, .reveal table.tr-tab tr:hover td { background: none; }
+    /* 15–17번: 유성/무성(교재 pp.192–193) — 실험 줄, 최소대립쌍 표 */
+    .try p { font: 400 17px/1.5 'Lora'; color: var(--ed-body); margin: 0; padding: 5px 0; border-bottom: 1px solid var(--ed-line); }
+    .try p:first-child { border-top: 1px solid var(--ed-line); }
+    .reveal table.vv-pairs { border-collapse: collapse; width: 100%; margin: 0; }
+    .reveal table.vv-pairs td { font: 400 17px/1.3 'Lora'; color: var(--ed-ink); text-align: left; white-space: nowrap; background: none; border: 0;
+      border-bottom: 1px solid var(--ed-line); padding: 5px 10px 5px 0; }
+    .reveal table.vv-pairs tr:first-child td { border-top: 1px solid var(--ed-line); }
+    .reveal table.vv-pairs td:nth-child(2) { color: var(--ed-body); }
+    .reveal table.vv-pairs td.ply { padding-right: 0; text-align: right; }
+    .reveal table.vv-pairs tr:nth-child(even) td, .reveal table.vv-pairs tr:hover td { background: none; }
+    /* 18번: 입술 폐쇄·성대 진동 타이밍(교재 Figure 5.2, 자체 도식) */
+    .tm-fig { width: 100%; height: auto; display: block; }
+    .tm-fig .rel { stroke: var(--ed-muted); stroke-width: 1; stroke-dasharray: 4 4; }
+    .tm-fig .lab { font: 600 9px 'Space Grotesk', sans-serif; letter-spacing: 1.4px; fill: var(--ed-muted); }
+    .tm-fig .trk { font: 600 8.5px 'Space Grotesk', sans-serif; letter-spacing: 1.3px; fill: var(--ed-muted); }
+    .tm-fig .sym { font: 400 24px 'Lora', serif; fill: var(--ed-ink); }
+    .tm-fig .word { font: italic 400 17px 'Lora', serif; fill: var(--ed-body); }
+    .tm-fig .seg { font: 400 15px 'Lora', serif; fill: var(--ed-body); }
+    .tm-fig .closed { fill: var(--ed-ink); }
+    .tm-fig .open, .tm-fig .apart { stroke: var(--ed-muted); stroke-width: 1.2; }
+    .tm-fig .vib { fill: none; stroke: var(--ed-accent); stroke-width: 1.8; }
+    .tm-fig .puff { fill: var(--ed-accent); opacity: 0.12; }
+    .tm-fig .puffl { font: italic 400 13px 'Lora', serif; fill: var(--ed-accent); }
+    .tm-legend { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 22px; margin-top: 14px; font: 400 14px 'Lora'; color: var(--ed-body); }
+    .tm-legend > span { display: inline-flex; align-items: center; gap: 8px; }
+    .tm-legend .tm-say { margin-left: auto; gap: 6px; }
     /* 9번: 자체 성도 단면도 + 조음 위치 선택(번호·목록 클릭 → 강조·자음·예시·발음) */
     .vt { display: grid; grid-template-columns: 440px minmax(0, 1fr); gap: 30px; align-items: start; }
     .vt-fig { width: 440px; height: auto; display: block; }
@@ -128,10 +154,10 @@
   ─ Consonants ........................ p.189 → slide 12
   ─ Place of Articulation ............. p.189 → slide 13
   ─ Manner of Articulation ............ p.191 → slide 14
-      · Voiced and Voiceless Sounds ... p.192 → slide 15 (aspiration p.193 → slide 16)
-      · Nasal and Oral Sounds ......... p.193 → slide 17 (+ cartoon, slide 18)
-      · Stops … Glides (run-in heads) . p.195–197 → slide 19
-  ─ Phonetic Symbols for American English Consonants p.197 → slide 20 (chart)
+      · Voiced and Voiceless Sounds ... p.192 → slides 15–17 (+ timing figure after Figure 5.2, slide 18)
+      · Nasal and Oral Sounds ......... p.193 → slide 19 (+ cartoon, slide 20)
+      · Stops … Glides (run-in heads) . p.195–197 → slide 21
+  ─ Phonetic Symbols for American English Consonants p.197 → slide 22 (chart)
 -->
 <div class="reveal">
 <div class="slides">
@@ -524,65 +550,164 @@
   </aside>
 </section>
 
-<!-- ══ 15 · Voiced and Voiceless Sounds ══ -->
+<!-- ══ 15 · Voiced and Voiceless Sounds: cords apart vs. vibrating ══ -->
 <section data-kicker="CH.5 P.192" data-path="Articulatory Phonetics › Consonants › Manner of Articulation">
   <h2>Voiced and Voiceless Sounds</h2>
   <div class="cols-even">
     <div>
       <div class="small-label" style="margin-bottom:12px;">VOICELESS · CORDS APART</div>
       <hr class="hair" style="margin:0 0 14px;">
-      <p class="lead" style="font-size:19px;">Air flows freely through the open glottis: [s] and [p] in <em>super</em>.</p>
+      <p class="lead" style="font-size:18.5px;">The vocal cords are apart, so air flows freely through the glottis: [s] and [p] in <i>super</i> [supər].</p>
     </div>
     <div>
       <div class="small-label" style="margin-bottom:12px;">VOICED · CORDS VIBRATE</div>
       <hr class="hair" style="margin:0 0 14px;">
-      <p class="lead" style="font-size:19px;">Air forces the closed cords to vibrate: [b] and [z] in <em>buzz</em>.</p>
+      <p class="lead" style="font-size:18.5px;">The cords are together; the airstream forces its way through and makes them <b>vibrate</b>: [b] and [z] in <i>buzz</i> [bʌz].</p>
     </div>
   </div>
-  <hr class="hair" style="margin-top:28px;">
-  <p class="lead" style="font-size:18px;">Fingers in your ears: <em>z-z-z-z</em> hums, <em>s-s-s-s</em> only hisses.
-    <button class="say-btn mini" data-say="rope, robe. fine, vine. seal, zeal. choke, joke." data-lang="en-US">pairs</button>
-    <span style="font: italic 400 16px 'Lora'; display:block; margin-top:8px;">rope/robe [rop]/[rob] · fine/vine · seal/zeal · choke/joke: voicing alone splits the pair.</span>
-    <span class="ko-supp" style="display:block; margin-top:6px;">귀를 막으면 z-z-z는 울리고 s-s-s는 바람 소리만 나며, rope/robe처럼 유성성(voicing) 하나로 단어 쌍이 갈린다.</span></p>
+  <hr class="hair" style="margin:22px 0 10px;">
+  <div class="small-label" style="margin-bottom:6px;">TRY IT</div>
+  <div class="try">
+    <p>Fingers in your ears: <i>z-z-z-z</i> buzzes, <i>s-s-s-s</i> only hisses.</p>
+    <p>Whisper <i>Sue</i> and <i>zoo</i>: whispering makes every sound voiceless, so the two match.</p>
+  </div>
+  <p class="ko-supp" style="font-size:16px; margin:10px 0 0;">성대가 떨어져 있으면 무성음, 붙어서 진동하면 유성음이며, 귀를 막거나 속삭여 보면 차이를 느낄 수 있다.</p>
   <aside class="notes">
-    귀 막고 z/s 발음 실험, 속삭이면 전부 무성이 되는 실험(Sue/zoo)을 시켜보세요.
-    rope/robe처럼 유성성만 다른 쌍이 변별됨을 강조합니다.
+    교재 p.192의 순서입니다. 무성음(성대가 떨어져 공기가 성문을 자유롭게 통과, super의 [s][p]) → 유성음(성대가 붙어 기류가 밀고 나가며 진동, buzz의 [b][z]).
+    두 실험: 귀를 막고 z/s 발음하기, 속삭이면 모든 소리가 무성이 되어 Sue와 zoo가 같아지는 것.
     앞의 내시경 영상(11번)에서 본 성대 진동 장면(07:31–09:15)을 다시 떠올리게 하세요.
   </aside>
 </section>
 
-<!-- ══ 16 · Aspiration (Voiced and Voiceless cont.) ══ -->
+<!-- ══ 16 · Voiced and Voiceless Sounds: minimal pairs ══ -->
+<section data-kicker="CH.5 P.192" data-path="Articulatory Phonetics › Consonants › Manner of Articulation">
+  <h2>Voiced and Voiceless Sounds</h2>
+  <p class="lead" style="font-size:17px; margin:0 0 12px;">The voiced/voiceless distinction is very important in English: in each pair, <b>voicing alone</b> differs; the lips and tongue are in the same position.
+    <span class="ko-supp" style="display:block; margin-top:4px;">유성/무성의 구별은 영어에서 매우 중요하며, 아래 각 쌍은 유성성(voicing) 하나만 다르다.</span></p>
+  <div class="cols-even" style="gap:40px;">
+    <div>
+      <div class="small-label" style="margin-bottom:6px;">VOICELESS / VOICED · AT THE END</div>
+      <table class="vv-pairs">
+        <tr><td><i>rope / robe</i></td><td>[rop] / [rob]</td><td class="ply"><button class="say-btn mini" data-say="rope. robe." data-lang="en-US">listen</button></td></tr>
+        <tr><td><i>fate / fade</i></td><td>[fet] / [fed]</td><td class="ply"><button class="say-btn mini" data-say="fate. fade." data-lang="en-US">listen</button></td></tr>
+        <tr><td><i>rack / rag</i></td><td>[ræk] / [ræg]</td><td class="ply"><button class="say-btn mini" data-say="rack. rag." data-lang="en-US">listen</button></td></tr>
+        <tr><td><i>wreath / wreathe</i></td><td>[riθ] / [rið]</td><td class="ply"><button class="say-btn mini" data-say="wreath. wreathe." data-lang="en-US">listen</button></td></tr>
+      </table>
+    </div>
+    <div>
+      <div class="small-label" style="margin-bottom:6px;">VOICELESS / VOICED · AT THE START</div>
+      <table class="vv-pairs">
+        <tr><td><i>fine / vine</i></td><td>[faɪn] / [vaɪn]</td><td class="ply"><button class="say-btn mini" data-say="fine. vine." data-lang="en-US">listen</button></td></tr>
+        <tr><td><i>peat / beat</i></td><td>[pit] / [bit]</td><td class="ply"><button class="say-btn mini" data-say="peat. beat." data-lang="en-US">listen</button></td></tr>
+        <tr><td><i>seal / zeal</i></td><td>[sil] / [zil]</td><td class="ply"><button class="say-btn mini" data-say="seal. zeal." data-lang="en-US">listen</button></td></tr>
+        <tr><td><i>tote / dote</i></td><td>[tot] / [dot]</td><td class="ply"><button class="say-btn mini" data-say="tote. dote." data-lang="en-US">listen</button></td></tr>
+        <tr><td><i>choke / joke</i></td><td>[tʃok] / [dʒok]</td><td class="ply"><button class="say-btn mini" data-say="choke. joke." data-lang="en-US">listen</button></td></tr>
+        <tr><td><i>kale / gale</i></td><td>[kel] / [gel]</td><td class="ply"><button class="say-btn mini" data-say="kale. gale." data-lang="en-US">listen</button></td></tr>
+      </table>
+    </div>
+  </div>
+  <aside class="notes">
+    교재 p.192의 두 묶음입니다. 왼쪽: 첫 단어가 무성음으로, 둘째 단어가 유성음으로 끝나는 쌍. 오른쪽: 무성음/유성음으로 시작하는 쌍.
+    각 쌍에서 입술과 혀의 위치는 같고 유성성만 다르다는 점을 강조하세요. 쌍마다 listen으로 들려줄 수 있습니다.
+  </aside>
+</section>
+
+<!-- ══ 17 · Voiced and Voiceless Sounds: aspiration ══ -->
 <section data-kicker="CH.5 P.193" data-path="Articulatory Phonetics › Consonants › Manner of Articulation">
   <h2>Voiced and Voiceless Sounds</h2>
+  <p class="lead" style="font-size:17px; margin:0 0 14px;">Voiceless stops fall into <b>two classes</b>, depending on when the vocal cords close after the release: <i>pit</i> and <i>spit</i> differ phonetically.
+    <span class="ko-supp" style="display:block; margin-top:4px;">무성 파열음은 개방 뒤 성대가 닫히는 시점에 따라 두 부류로 나뉘며, pit과 spit의 [p]는 음성적으로 다르다.</span></p>
   <div class="cols-even">
     <div>
-      <div class="small-label" style="margin-bottom:12px;">ASPIRATED [pʰ tʰ kʰ]</div>
-      <hr class="hair" style="margin:0 0 14px;">
-      <p class="lead" style="font-size:18.5px;"><em>pit</em> [pʰɪt]: the cords stay open briefly after release; a <b>puff of air</b> escapes.
+      <div class="small-label" style="margin-bottom:10px;">ASPIRATED [pʰ tʰ kʰ]</div>
+      <hr class="hair" style="margin:0 0 12px;">
+      <p class="lead" style="font-size:18px;"><i>pit</i> [pʰɪt]: the cords stay open briefly after the lips part; a <b>puff of air</b> escapes.
         <button class="say-btn mini" data-say="pit" data-lang="en-US">pit</button>
         <button class="say-btn mini" data-say="tick" data-lang="en-US">tick</button>
         <button class="say-btn mini" data-say="kin" data-lang="en-US">kin</button></p>
     </div>
     <div>
-      <div class="small-label" style="margin-bottom:12px;">UNASPIRATED [p t k]</div>
-      <hr class="hair" style="margin:0 0 14px;">
-      <p class="lead" style="font-size:18.5px;"><em>spit</em> [spɪt]: voicing starts as soon as the lips open; <b>no puff</b>.
+      <div class="small-label" style="margin-bottom:10px;">UNASPIRATED [p t k]</div>
+      <hr class="hair" style="margin:0 0 12px;">
+      <p class="lead" style="font-size:18px;"><i>spit</i> [spɪt]: the cords start vibrating as soon as the lips open; <b>no puff</b>.
         <button class="say-btn mini" data-say="spit" data-lang="en-US">spit</button>
         <button class="say-btn mini" data-say="stick" data-lang="en-US">stick</button>
         <button class="say-btn mini" data-say="skin" data-lang="en-US">skin</button></p>
     </div>
   </div>
-  <hr class="hair" style="margin-top:26px;">
-  <p class="lead" style="font-size:17px;">Palm test: two inches from your lips. The raised <em>ʰ</em> marks aspiration:
-    <span style="font: italic 400 16.5px 'Lora'; display:block; margin-top:6px;">pool [pʰul] / spool [spul] · tale [tʰel] / stale [stel] · kale [kʰel] / scale [skel]</span>
-    <span class="ko-supp" style="display:block; margin-top:6px;">입술 앞에 손바닥을 대고 확인할 수 있으며, 위첨자 ʰ는 기식(aspiration)을 표시한다: pool [pʰul] / spool [spul].</span></p>
+  <div class="try" style="margin-top:20px;">
+    <p>Voiced [b d g]: the cords vibrate <b>throughout</b> the closure and into the vowel.</p>
+    <p>Palm test, two inches from your lips. A raised <b>ʰ</b> marks aspiration: <i>pool</i> [pʰul] / <i>spool</i> [spul] · <i>tale</i> [tʰel] / <i>stale</i> [stel] · <i>kale</i> [kʰel] / <i>scale</i> [skel]</p>
+  </div>
   <aside class="notes">
-    기식은 폐쇄 개방 후 성대 진동 시작까지의 시차입니다. 손바닥 실험(pit/tick/kin은 훅, spit/stick/skin은
-    없음)을 전원에게 시키세요. TTS 버튼으로도 대비를 들려줄 수 있습니다. 유성 [b d g]는 폐쇄 내내 진동. 기식 유무가 환경에 따라 예측 가능하다는 점은 다음 장 음운론의 이음(allophone) 논의의 복선입니다.
+    교재 pp.192–193의 순서입니다. pit과 spit의 [p]는 듣기에는 비슷해도 음성적으로 다릅니다(다음 장 음운론에서 이유를 다룸).
+    무성 파열음은 성대가 닫히는 시점에 따라 두 부류: pit(개방 뒤 잠시 성대가 열려 있어 바람이 새는 기식음) / spit(입술이 열리자마자 진동하는 비기식음).
+    tick·kin은 기식, stick·skin은 비기식. 유성 [b d g]는 폐쇄 내내 진동합니다. 손바닥 실험을 전원에게 시키고, 위첨자 ʰ 표기를 확인하세요.
+    다음 슬라이드의 그림(교재 Figure 5.2)이 세 경우의 타이밍을 보여 줍니다. 기식 유무가 환경에 따라 예측 가능하다는 점은 다음 장 음운론의 이음(allophone) 논의의 복선입니다.
   </aside>
 </section>
 
-<!-- ══ 17 · Nasal and Oral Sounds ══ -->
+<!-- ══ 18 · Figure: timing of lip closure and voicing (cf. Figure 5.2) ══ -->
+<section data-kicker="CH.5 P.193 · VOICED AND VOICELESS SOUNDS · FIGURE">
+  <div style="margin-top:6px;">
+    <svg class="tm-fig" viewBox="0 0 760 300" role="img" aria-label="Timing of lip closure and vocal-cord vibration for [b], [p] and aspirated [pʰ]">
+      <line class="rel" x1="450" y1="16" x2="450" y2="296"/>
+      <text class="lab" x="450" y="10" text-anchor="middle">LIPS OPEN (RELEASE)</text>
+      <text class="sym" x="0" y="58">[b]</text><text class="word" x="0" y="82">bin</text>
+      <text class="trk" x="178" y="47" text-anchor="end">LIPS</text>
+      <text class="trk" x="178" y="77" text-anchor="end">CORDS</text>
+      <line class="open" x1="190" y1="44" x2="250" y2="44"/>
+      <rect class="closed" x="250" y="39" width="200" height="10"/>
+      <line class="open" x1="450" y1="44" x2="740" y2="44"/>
+      <line class="apart" x1="190" y1="74" x2="250" y2="74"/>
+      <path class="vib" d="M 250.0,74.0 L 251.5,70.5 L 253.0,69.0 L 254.5,70.5 L 256.0,74.0 L 257.5,77.5 L 259.0,79.0 L 260.5,77.5 L 262.0,74.0 L 263.5,70.5 L 265.0,69.0 L 266.5,70.5 L 268.0,74.0 L 269.5,77.5 L 271.0,79.0 L 272.5,77.5 L 274.0,74.0 L 275.5,70.5 L 277.0,69.0 L 278.5,70.5 L 280.0,74.0 L 281.5,77.5 L 283.0,79.0 L 284.5,77.5 L 286.0,74.0 L 287.5,70.5 L 289.0,69.0 L 290.5,70.5 L 292.0,74.0 L 293.5,77.5 L 295.0,79.0 L 296.5,77.5 L 298.0,74.0 L 299.5,70.5 L 301.0,69.0 L 302.5,70.5 L 304.0,74.0 L 305.5,77.5 L 307.0,79.0 L 308.5,77.5 L 310.0,74.0 L 311.5,70.5 L 313.0,69.0 L 314.5,70.5 L 316.0,74.0 L 317.5,77.5 L 319.0,79.0 L 320.5,77.5 L 322.0,74.0 L 323.5,70.5 L 325.0,69.0 L 326.5,70.5 L 328.0,74.0 L 329.5,77.5 L 331.0,79.0 L 332.5,77.5 L 334.0,74.0 L 335.5,70.5 L 337.0,69.0 L 338.5,70.5 L 340.0,74.0 L 341.5,77.5 L 343.0,79.0 L 344.5,77.5 L 346.0,74.0 L 347.5,70.5 L 349.0,69.0 L 350.5,70.5 L 352.0,74.0 L 353.5,77.5 L 355.0,79.0 L 356.5,77.5 L 358.0,74.0 L 359.5,70.5 L 361.0,69.0 L 362.5,70.5 L 364.0,74.0 L 365.5,77.5 L 367.0,79.0 L 368.5,77.5 L 370.0,74.0 L 371.5,70.5 L 373.0,69.0 L 374.5,70.5 L 376.0,74.0 L 377.5,77.5 L 379.0,79.0 L 380.5,77.5 L 382.0,74.0 L 383.5,70.5 L 385.0,69.0 L 386.5,70.5 L 388.0,74.0 L 389.5,77.5 L 391.0,79.0 L 392.5,77.5 L 394.0,74.0 L 395.5,70.5 L 397.0,69.0 L 398.5,70.5 L 400.0,74.0 L 401.5,77.5 L 403.0,79.0 L 404.5,77.5 L 406.0,74.0 L 407.5,70.5 L 409.0,69.0 L 410.5,70.5 L 412.0,74.0 L 413.5,77.5 L 415.0,79.0 L 416.5,77.5 L 418.0,74.0 L 419.5,70.5 L 421.0,69.0 L 422.5,70.5 L 424.0,74.0 L 425.5,77.5 L 427.0,79.0 L 428.5,77.5 L 430.0,74.0 L 431.5,70.5 L 433.0,69.0 L 434.5,70.5 L 436.0,74.0 L 437.5,77.5 L 439.0,79.0 L 440.5,77.5 L 442.0,74.0 L 443.5,70.5 L 445.0,69.0 L 446.5,70.5 L 448.0,74.0 L 449.5,77.5 L 451.0,79.0 L 452.5,77.5 L 454.0,74.0 L 455.5,70.5 L 457.0,69.0 L 458.5,70.5 L 460.0,74.0 L 461.5,77.5 L 463.0,79.0 L 464.5,77.5 L 466.0,74.0 L 467.5,70.5 L 469.0,69.0 L 470.5,70.5 L 472.0,74.0 L 473.5,77.5 L 475.0,79.0 L 476.5,77.5 L 478.0,74.0 L 479.5,70.5 L 481.0,69.0 L 482.5,70.5 L 484.0,74.0 L 485.5,77.5 L 487.0,79.0 L 488.5,77.5 L 490.0,74.0 L 491.5,70.5 L 493.0,69.0 L 494.5,70.5 L 496.0,74.0 L 497.5,77.5 L 499.0,79.0 L 500.5,77.5 L 502.0,74.0 L 503.5,70.5 L 505.0,69.0 L 506.5,70.5 L 508.0,74.0 L 509.5,77.5 L 511.0,79.0 L 512.5,77.5 L 514.0,74.0 L 515.5,70.5 L 517.0,69.0 L 518.5,70.5 L 520.0,74.0 L 521.5,77.5 L 523.0,79.0 L 524.5,77.5 L 526.0,74.0 L 527.5,70.5 L 529.0,69.0 L 530.5,70.5 L 532.0,74.0 L 533.5,77.5 L 535.0,79.0 L 536.5,77.5 L 538.0,74.0 L 539.5,70.5 L 541.0,69.0 L 542.5,70.5 L 544.0,74.0 L 545.5,77.5 L 547.0,79.0 L 548.5,77.5 L 550.0,74.0 L 551.5,70.5 L 553.0,69.0 L 554.5,70.5 L 556.0,74.0 L 557.5,77.5 L 559.0,79.0 L 560.5,77.5 L 562.0,74.0 L 563.5,70.5 L 565.0,69.0 L 566.5,70.5 L 568.0,74.0 L 569.5,77.5 L 571.0,79.0 L 572.5,77.5 L 574.0,74.0 L 575.5,70.5 L 577.0,69.0 L 578.5,70.5 L 580.0,74.0 L 581.5,77.5 L 583.0,79.0 L 584.5,77.5 L 586.0,74.0 L 587.5,70.5 L 589.0,69.0 L 590.5,70.5 L 592.0,74.0 L 593.5,77.5 L 595.0,79.0 L 596.5,77.5 L 598.0,74.0 L 599.5,70.5 L 601.0,69.0 L 602.5,70.5 L 604.0,74.0 L 605.5,77.5 L 607.0,79.0 L 608.5,77.5 L 610.0,74.0 L 611.5,70.5 L 613.0,69.0 L 614.5,70.5 L 616.0,74.0 L 617.5,77.5 L 619.0,79.0 L 620.5,77.5 L 622.0,74.0 L 623.5,70.5 L 625.0,69.0 L 626.5,70.5 L 628.0,74.0 L 629.5,77.5 L 631.0,79.0 L 632.5,77.5 L 634.0,74.0 L 635.5,70.5 L 637.0,69.0 L 638.5,70.5 L 640.0,74.0 L 641.5,77.5 L 643.0,79.0 L 644.5,77.5 L 646.0,74.0 L 647.5,70.5 L 649.0,69.0 L 650.5,70.5 L 652.0,74.0 L 653.5,77.5 L 655.0,79.0 L 656.5,77.5 L 658.0,74.0 L 659.5,70.5 L 661.0,69.0 L 662.5,70.5 L 664.0,74.0 L 665.5,77.5 L 667.0,79.0 L 668.5,77.5 L 670.0,74.0 L 671.5,70.5 L 673.0,69.0 L 674.5,70.5 L 676.0,74.0 L 677.5,77.5 L 679.0,79.0 L 680.5,77.5 L 682.0,74.0 L 683.5,70.5 L 685.0,69.0 L 686.5,70.5 L 688.0,74.0 L 689.5,77.5 L 691.0,79.0 L 692.5,77.5 L 694.0,74.0 L 695.5,70.5 L 697.0,69.0 L 698.5,70.5 L 700.0,74.0 L 701.5,77.5 L 703.0,79.0 L 704.5,77.5 L 706.0,74.0 L 707.5,70.5 L 709.0,69.0 L 710.5,70.5 L 712.0,74.0 L 713.5,77.5 L 715.0,79.0 L 716.5,77.5 L 718.0,74.0 L 719.5,70.5 L 721.0,69.0 L 722.5,70.5 L 724.0,74.0 L 725.5,77.5 L 727.0,79.0 L 728.5,77.5 L 730.0,74.0 L 731.5,70.5 L 733.0,69.0 L 734.5,70.5 L 736.0,74.0 L 737.5,77.5 L 739.0,79.0 L 740.0,78.3"/>
+      <text class="seg" x="350" y="98" text-anchor="middle">b</text>
+      <text class="seg" x="560" y="98" text-anchor="middle">ɪ</text>
+      <text class="seg" x="690" y="98" text-anchor="middle">n</text>
+      <text class="sym" x="0" y="158">[p]</text><text class="word" x="0" y="182">spin</text>
+      <text class="trk" x="178" y="147" text-anchor="end">LIPS</text>
+      <text class="trk" x="178" y="177" text-anchor="end">CORDS</text>
+      <line class="open" x1="190" y1="144" x2="320" y2="144"/>
+      <rect class="closed" x="320" y="139" width="130" height="10"/>
+      <line class="open" x1="450" y1="144" x2="740" y2="144"/>
+      <line class="apart" x1="190" y1="174" x2="450" y2="174"/>
+      <path class="vib" d="M 450.0,174.0 L 451.5,170.5 L 453.0,169.0 L 454.5,170.5 L 456.0,174.0 L 457.5,177.5 L 459.0,179.0 L 460.5,177.5 L 462.0,174.0 L 463.5,170.5 L 465.0,169.0 L 466.5,170.5 L 468.0,174.0 L 469.5,177.5 L 471.0,179.0 L 472.5,177.5 L 474.0,174.0 L 475.5,170.5 L 477.0,169.0 L 478.5,170.5 L 480.0,174.0 L 481.5,177.5 L 483.0,179.0 L 484.5,177.5 L 486.0,174.0 L 487.5,170.5 L 489.0,169.0 L 490.5,170.5 L 492.0,174.0 L 493.5,177.5 L 495.0,179.0 L 496.5,177.5 L 498.0,174.0 L 499.5,170.5 L 501.0,169.0 L 502.5,170.5 L 504.0,174.0 L 505.5,177.5 L 507.0,179.0 L 508.5,177.5 L 510.0,174.0 L 511.5,170.5 L 513.0,169.0 L 514.5,170.5 L 516.0,174.0 L 517.5,177.5 L 519.0,179.0 L 520.5,177.5 L 522.0,174.0 L 523.5,170.5 L 525.0,169.0 L 526.5,170.5 L 528.0,174.0 L 529.5,177.5 L 531.0,179.0 L 532.5,177.5 L 534.0,174.0 L 535.5,170.5 L 537.0,169.0 L 538.5,170.5 L 540.0,174.0 L 541.5,177.5 L 543.0,179.0 L 544.5,177.5 L 546.0,174.0 L 547.5,170.5 L 549.0,169.0 L 550.5,170.5 L 552.0,174.0 L 553.5,177.5 L 555.0,179.0 L 556.5,177.5 L 558.0,174.0 L 559.5,170.5 L 561.0,169.0 L 562.5,170.5 L 564.0,174.0 L 565.5,177.5 L 567.0,179.0 L 568.5,177.5 L 570.0,174.0 L 571.5,170.5 L 573.0,169.0 L 574.5,170.5 L 576.0,174.0 L 577.5,177.5 L 579.0,179.0 L 580.5,177.5 L 582.0,174.0 L 583.5,170.5 L 585.0,169.0 L 586.5,170.5 L 588.0,174.0 L 589.5,177.5 L 591.0,179.0 L 592.5,177.5 L 594.0,174.0 L 595.5,170.5 L 597.0,169.0 L 598.5,170.5 L 600.0,174.0 L 601.5,177.5 L 603.0,179.0 L 604.5,177.5 L 606.0,174.0 L 607.5,170.5 L 609.0,169.0 L 610.5,170.5 L 612.0,174.0 L 613.5,177.5 L 615.0,179.0 L 616.5,177.5 L 618.0,174.0 L 619.5,170.5 L 621.0,169.0 L 622.5,170.5 L 624.0,174.0 L 625.5,177.5 L 627.0,179.0 L 628.5,177.5 L 630.0,174.0 L 631.5,170.5 L 633.0,169.0 L 634.5,170.5 L 636.0,174.0 L 637.5,177.5 L 639.0,179.0 L 640.5,177.5 L 642.0,174.0 L 643.5,170.5 L 645.0,169.0 L 646.5,170.5 L 648.0,174.0 L 649.5,177.5 L 651.0,179.0 L 652.5,177.5 L 654.0,174.0 L 655.5,170.5 L 657.0,169.0 L 658.5,170.5 L 660.0,174.0 L 661.5,177.5 L 663.0,179.0 L 664.5,177.5 L 666.0,174.0 L 667.5,170.5 L 669.0,169.0 L 670.5,170.5 L 672.0,174.0 L 673.5,177.5 L 675.0,179.0 L 676.5,177.5 L 678.0,174.0 L 679.5,170.5 L 681.0,169.0 L 682.5,170.5 L 684.0,174.0 L 685.5,177.5 L 687.0,179.0 L 688.5,177.5 L 690.0,174.0 L 691.5,170.5 L 693.0,169.0 L 694.5,170.5 L 696.0,174.0 L 697.5,177.5 L 699.0,179.0 L 700.5,177.5 L 702.0,174.0 L 703.5,170.5 L 705.0,169.0 L 706.5,170.5 L 708.0,174.0 L 709.5,177.5 L 711.0,179.0 L 712.5,177.5 L 714.0,174.0 L 715.5,170.5 L 717.0,169.0 L 718.5,170.5 L 720.0,174.0 L 721.5,177.5 L 723.0,179.0 L 724.5,177.5 L 726.0,174.0 L 727.5,170.5 L 729.0,169.0 L 730.5,170.5 L 732.0,174.0 L 733.5,177.5 L 735.0,179.0 L 736.5,177.5 L 738.0,174.0 L 739.5,170.5 L 740.0,169.7"/>
+      <text class="seg" x="255" y="198" text-anchor="middle">s</text>
+      <text class="seg" x="385" y="198" text-anchor="middle">p</text>
+      <text class="seg" x="560" y="198" text-anchor="middle">ɪ</text>
+      <text class="seg" x="690" y="198" text-anchor="middle">n</text>
+      <text class="sym" x="0" y="258">[pʰ]</text><text class="word" x="0" y="282">pin</text>
+      <text class="trk" x="178" y="247" text-anchor="end">LIPS</text>
+      <text class="trk" x="178" y="277" text-anchor="end">CORDS</text>
+      <rect class="puff" x="450" y="232" width="70" height="54"/>
+      <text class="puffl" x="485.0" y="226" text-anchor="middle">puff of air</text>
+      <line class="open" x1="190" y1="244" x2="320" y2="244"/>
+      <rect class="closed" x="320" y="239" width="130" height="10"/>
+      <line class="open" x1="450" y1="244" x2="740" y2="244"/>
+      <line class="apart" x1="190" y1="274" x2="520" y2="274"/>
+      <path class="vib" d="M 520.0,274.0 L 521.5,270.5 L 523.0,269.0 L 524.5,270.5 L 526.0,274.0 L 527.5,277.5 L 529.0,279.0 L 530.5,277.5 L 532.0,274.0 L 533.5,270.5 L 535.0,269.0 L 536.5,270.5 L 538.0,274.0 L 539.5,277.5 L 541.0,279.0 L 542.5,277.5 L 544.0,274.0 L 545.5,270.5 L 547.0,269.0 L 548.5,270.5 L 550.0,274.0 L 551.5,277.5 L 553.0,279.0 L 554.5,277.5 L 556.0,274.0 L 557.5,270.5 L 559.0,269.0 L 560.5,270.5 L 562.0,274.0 L 563.5,277.5 L 565.0,279.0 L 566.5,277.5 L 568.0,274.0 L 569.5,270.5 L 571.0,269.0 L 572.5,270.5 L 574.0,274.0 L 575.5,277.5 L 577.0,279.0 L 578.5,277.5 L 580.0,274.0 L 581.5,270.5 L 583.0,269.0 L 584.5,270.5 L 586.0,274.0 L 587.5,277.5 L 589.0,279.0 L 590.5,277.5 L 592.0,274.0 L 593.5,270.5 L 595.0,269.0 L 596.5,270.5 L 598.0,274.0 L 599.5,277.5 L 601.0,279.0 L 602.5,277.5 L 604.0,274.0 L 605.5,270.5 L 607.0,269.0 L 608.5,270.5 L 610.0,274.0 L 611.5,277.5 L 613.0,279.0 L 614.5,277.5 L 616.0,274.0 L 617.5,270.5 L 619.0,269.0 L 620.5,270.5 L 622.0,274.0 L 623.5,277.5 L 625.0,279.0 L 626.5,277.5 L 628.0,274.0 L 629.5,270.5 L 631.0,269.0 L 632.5,270.5 L 634.0,274.0 L 635.5,277.5 L 637.0,279.0 L 638.5,277.5 L 640.0,274.0 L 641.5,270.5 L 643.0,269.0 L 644.5,270.5 L 646.0,274.0 L 647.5,277.5 L 649.0,279.0 L 650.5,277.5 L 652.0,274.0 L 653.5,270.5 L 655.0,269.0 L 656.5,270.5 L 658.0,274.0 L 659.5,277.5 L 661.0,279.0 L 662.5,277.5 L 664.0,274.0 L 665.5,270.5 L 667.0,269.0 L 668.5,270.5 L 670.0,274.0 L 671.5,277.5 L 673.0,279.0 L 674.5,277.5 L 676.0,274.0 L 677.5,270.5 L 679.0,269.0 L 680.5,270.5 L 682.0,274.0 L 683.5,277.5 L 685.0,279.0 L 686.5,277.5 L 688.0,274.0 L 689.5,270.5 L 691.0,269.0 L 692.5,270.5 L 694.0,274.0 L 695.5,277.5 L 697.0,279.0 L 698.5,277.5 L 700.0,274.0 L 701.5,270.5 L 703.0,269.0 L 704.5,270.5 L 706.0,274.0 L 707.5,277.5 L 709.0,279.0 L 710.5,277.5 L 712.0,274.0 L 713.5,270.5 L 715.0,269.0 L 716.5,270.5 L 718.0,274.0 L 719.5,277.5 L 721.0,279.0 L 722.5,277.5 L 724.0,274.0 L 725.5,270.5 L 727.0,269.0 L 728.5,270.5 L 730.0,274.0 L 731.5,277.5 L 733.0,279.0 L 734.5,277.5 L 736.0,274.0 L 737.5,270.5 L 739.0,269.0 L 740.0,269.7"/>
+      <text class="seg" x="385" y="298" text-anchor="middle">p</text>
+      <text class="seg" x="485" y="298" text-anchor="middle">ʰ</text>
+      <text class="seg" x="600" y="298" text-anchor="middle">ɪ</text>
+      <text class="seg" x="700" y="298" text-anchor="middle">n</text>
+    </svg>
+  </div>
+  <div class="tm-legend">
+    <span><svg width="34" height="12"><rect x="2" y="1" width="30" height="10" fill="var(--ed-ink)"/></svg>lips closed</span>
+    <span><svg width="34" height="12"><line x1="2" y1="6" x2="32" y2="6" stroke="var(--ed-muted)" stroke-width="1.2"/></svg>lips open · cords apart</span>
+    <span><svg width="34" height="12"><path d="M 2.0,6.0 L 3.5,2.8 L 5.0,2.2 L 6.5,4.8 L 8.0,8.4 L 9.5,10.0 L 11.0,8.4 L 12.5,4.8 L 14.0,2.2 L 15.5,2.8 L 17.0,6.0 L 18.5,9.2 L 20.0,9.8 L 21.5,7.2 L 23.0,3.6 L 24.5,2.0 L 26.0,3.6 L 27.5,7.2 L 29.0,9.8 L 30.5,9.2 L 32.0,6.0" fill="none" stroke="var(--ed-accent)" stroke-width="1.6"/></svg>cords vibrating</span>
+    <span class="tm-say"><button class="say-btn mini" data-say="bin" data-lang="en-US">bin</button><button class="say-btn mini" data-say="spin" data-lang="en-US">spin</button><button class="say-btn mini" data-say="pin" data-lang="en-US">pin</button></span>
+  </div>
+  <p class="lead" style="font-size:16.5px; margin:12px 0 0;">Timing of lip closure and vocal-cord vibration for voiced [b], voiceless unaspirated [p], and voiceless aspirated [pʰ].
+    <span class="ko-supp" style="display:block; margin-top:4px;">유성 [b], 무성 비기식 [p], 무성 기식 [pʰ]에서 입술 폐쇄와 성대 진동의 타이밍.</span></p>
+  <aside class="notes">
+    교재 Figure 5.2(p.193)의 내용을 자체 도식으로 다시 그렸습니다(교재 그림 복제 아님). 세로 점선이 입술이 열리는 순간입니다.
+    [b] bin: 폐쇄 내내 성대가 진동. [p] spin: 입술이 열리는 순간 진동 시작. [pʰ] pin: 입술이 열린 뒤에도 잠시 성대가 열려 있어 바람이 샌 다음 진동 시작.
+    즉 기식(aspiration)은 '개방과 진동 시작 사이의 시차'입니다. bin·spin·pin 버튼으로 세 소리를 비교해 들려주세요.
+  </aside>
+</section>
+
+<!-- ══ 19 · Nasal and Oral Sounds ══ -->
 <section data-kicker="CH.5 P.193" data-path="Articulatory Phonetics › Consonants › Manner of Articulation">
   <h2>Nasal and Oral Sounds</h2>
   <div class="cols">
@@ -605,7 +730,7 @@
   </aside>
 </section>
 
-<!-- ══ 18 · Cartoon: nasal sounds video (v2, 2026-09-27) ══ -->
+<!-- ══ 20 · Cartoon: nasal sounds video (v2, 2026-09-27) ══ -->
 <section data-kicker="CH.5 P.193 · MANNER OF ARTICULATION · CARTOON">
   <div class="video-scene" style="text-align:center;">
     <div class="video-stage">
@@ -628,7 +753,7 @@
   </aside>
 </section>
 
-<!-- ══ 19 · Manner classes: stops → glides ══ -->
+<!-- ══ 21 · Manner classes: stops → glides ══ -->
 <section data-kicker="CH.5 P.195" data-path="Articulatory Phonetics › Consonants">
   <h2 style="margin-bottom:14px;">Manner of Articulation</h2>
   <ul class="exlist" style="font-size:0.86em;">
@@ -647,7 +772,7 @@
   </aside>
 </section>
 
-<!-- ══ 20 · Chart: American English consonants ══ -->
+<!-- ══ 22 · Chart: American English consonants ══ -->
 <section data-kicker="CH.5 P.197" data-path="Articulatory Phonetics › Consonants">
   <h2 style="font-size:36px; margin-bottom:10px;">Phonetic Symbols for American English Consonants</h2>
   <p style="font: italic 400 15px 'Lora'; color: var(--ed-muted); margin-bottom:14px;">Rows = manner · columns = place. Two symbols in a cell: left voiceless, right voiced.
@@ -669,7 +794,7 @@
   </aside>
 </section>
 
-<!-- ══ 21 · Practice Q1 ══ -->
+<!-- ══ 23 · Practice Q1 ══ -->
 <section data-kicker="CH.5 · PRACTICE 01">
   <div class="mcq" data-qid="w11-q1">
     <div class="mcq-q"><span class="qnum">Q1</span>Why can't English spelling reliably represent pronunciation?</div>
@@ -685,7 +810,7 @@
   </aside>
 </section>
 
-<!-- ══ 22 · Practice Q2 ══ -->
+<!-- ══ 24 · Practice Q2 ══ -->
 <section data-kicker="CH.5 · PRACTICE 02">
   <div class="mcq" data-qid="w11-q2">
     <div class="mcq-q"><span class="qnum">Q2</span>The consonant [v] is a voiced…</div>
@@ -701,7 +826,7 @@
   </aside>
 </section>
 
-<!-- ══ 23 · Practice Q3 ══ -->
+<!-- ══ 25 · Practice Q3 ══ -->
 <section data-kicker="CH.5 · PRACTICE 03">
   <div class="mcq" data-qid="w11-q3">
     <div class="mcq-q"><span class="qnum">Q3</span>Which sound is a <em>voiceless velar stop</em>?</div>
@@ -717,7 +842,7 @@
   </aside>
 </section>
 
-<!-- ══ 24 · Practice Q4 ══ -->
+<!-- ══ 26 · Practice Q4 ══ -->
 <section data-kicker="CH.5 · PRACTICE 04">
   <div class="mcq" data-qid="w11-q4">
     <div class="mcq-q"><span class="qnum">Q4</span>How many <b>sound segments</b> (not letters) are in the word <em>thought</em>?
@@ -735,7 +860,7 @@
   </aside>
 </section>
 
-<!-- ══ 25 · Exercise Q5 ══ -->
+<!-- ══ 27 · Exercise Q5 ══ -->
 <section data-kicker="CH.5 · EXERCISE 05">
   <div class="mcq" data-qid="w11-q5">
     <div class="mcq-q"><span class="qnum">Q5</span>Which set of words all <b>begin</b> with the same consonant <em>sound</em>?
@@ -754,7 +879,7 @@
   </aside>
 </section>
 
-<!-- ══ 26 · Summary ══ -->
+<!-- ══ 28 · Summary ══ -->
 <section data-kicker="CH.5 · SUMMARY">
   <h2>Summary</h2>
   <ol class="recap" style="max-width:680px;">
@@ -771,7 +896,7 @@
   </aside>
 </section>
 
-<!-- ══ 27 · Next week ══ -->
+<!-- ══ 29 · Next week ══ -->
 <section data-kicker="NEXT WEEK · CH.5 PP.199–215">
   <h2>Vowels, Prosody &amp; Sign</h2>
   <p class="lead" style="max-width:620px;">Open the tract and the obstruction disappears — <em>so how do we tell one vowel from another?</em>
