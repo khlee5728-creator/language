@@ -68,6 +68,21 @@
     .f54 .lab.sm { font-size: 10px; fill: var(--ed-muted); }
     .tm-legend { display: flex; justify-content: flex-end; margin-top: 8px; }
     .tm-legend .say-btn + .say-btn { margin-left: 6px; }
+    /* 11 긴장·이완 대응표(교재 p.202 배열) */
+    .reveal table.tl-tab { border-collapse: collapse; width: 100%; max-width: 600px; margin: 0; }
+    .reveal table.tl-tab th { font: 600 11px 'Space Grotesk'; letter-spacing: 0.2em; text-transform: uppercase; white-space: nowrap;
+      color: var(--ed-muted); text-align: left; padding: 4px 18px 7px 0; background: none; border: 0; border-bottom: 1px solid var(--ed-ink); }
+    .reveal table.tl-tab td { font: 400 17px/1.3 'Lora'; color: var(--ed-body); text-align: left; padding: 6px 18px 6px 0; background: none; border: 0;
+      border-bottom: 1px solid var(--ed-line); }
+    .reveal table.tl-tab tr:last-child td { border-bottom: 0; }
+    .reveal table.tl-tab tr:nth-child(even) td, .reveal table.tl-tab tr:hover td { background: none; }
+    .reveal table.tl-tab .sy { display: inline-block; min-width: 36px; font: 400 21px 'Lora'; color: var(--ed-ink); }
+    .reveal table.tl-tab i { font: italic 400 17px 'Lora'; color: var(--ed-body); }
+    .reveal table.tl-tab .dip { display: inline-block; margin-right: 18px; white-space: nowrap; }
+    .dist { display: grid; grid-template-columns: 150px 1fr; column-gap: 14px; row-gap: 4px; align-items: baseline; max-width: 680px; }
+    .dist .small-label { margin: 0; }
+    .dist .f { font: 400 17px/1.5 'Lora'; color: var(--ed-ink); word-spacing: 0.15em; }
+    .dist .f.no { color: var(--ed-muted); }
   </style>
 </head>
 <body data-rail="WEEK 12 · PHONETICS" data-course="Topics in English Linguistics">
@@ -335,21 +350,26 @@
 <!-- ══ 11 · Tense and Lax Vowels ══ -->
 <section data-kicker="CH.5 P.202" data-path="Articulatory Phonetics › Vowels">
   <h2>Tense and Lax Vowels</h2>
-  <div class="cols-even">
-    <div>
-      <div class="small-label" style="margin-bottom:12px;">TENSE · HIGHER · LONGER</div>
-      <hr class="hair" style="margin:0 0 14px;">
-      <p style="font: 400 19px/1.9 'Lora'; margin:0;">i <i>beat</i> · e <i>bait</i> · u <i>boot</i> · o <i>boat</i> · ɔ <i>saw</i> · ɑ <i>pa</i><br>+ the diphthongs aɪ · aʊ · ɔɪ</p>
-    </div>
-    <div>
-      <div class="small-label" style="margin-bottom:12px;">LAX · LOWER · SHORTER</div>
-      <hr class="hair" style="margin:0 0 14px;">
-      <p style="font: 400 19px/1.9 'Lora'; margin:0;">ɪ <i>bit</i> · ɛ <i>bet</i> · ʊ <i>put</i> · ʌ <i>hut</i> · æ <i>hat</i> · ə <i>about</i></p>
-    </div>
+  <table class="tl-tab" style="margin-top:4px;">
+    <colgroup><col style="width:58%"><col></colgroup>
+    <thead><tr><th>Tense · higher · longer</th><th>Lax · lower · shorter</th></tr></thead>
+    <tbody>
+      <tr><td><span class="sy">i</span><i>beat</i></td><td><span class="sy">ɪ</span><i>bit</i></td></tr>
+      <tr><td><span class="sy">e</span><i>bait</i></td><td><span class="sy">ɛ</span><i>bet</i></td></tr>
+      <tr><td><span class="sy">u</span><i>boot</i></td><td><span class="sy">ʊ</span><i>put</i></td></tr>
+      <tr><td><span class="sy">o</span><i>boat</i></td><td><span class="sy">ʌ</span><i>hut</i></td></tr>
+      <tr><td><span class="sy">ɔ</span><i>saw</i></td><td><span class="sy">æ</span><i>hat</i></td></tr>
+      <tr><td><span class="sy">ɑ</span><i>pa</i></td><td><span class="sy">ə</span><i>about</i></td></tr>
+      <tr><td><span class="dip"><span class="sy">aɪ</span><i>high</i></span><span class="dip"><span class="sy">aʊ</span><i>how</i></span><span class="dip"><span class="sy">ɔɪ</span><i>boy</i></span></td><td></td></tr>
+    </tbody>
+  </table>
+  <hr class="hair" style="margin:18px 0 12px;">
+  <p class="lead" style="font-size:17px; margin:0 0 6px;">Tense vowels may end a word; lax vowels ordinarily cannot.</p>
+  <div class="dist">
+    <span class="small-label">TENSE · WORDS</span><span class="f"><i>see</i> · <i>say</i> · <i>sue</i> · <i>sew</i> · <i>pa</i> · <i>sigh</i> · <i>how</i> · <i>soy</i></span>
+    <span class="small-label">LAX · NOT WORDS</span><span class="f no">*[sɪ] *[sɛ] *[sʊ] *[sʌ] *[sæ] *[sə]</span>
   </div>
-  <hr class="hair" style="margin-top:28px;">
-  <p class="lead" style="font-size:18px;">Tense vowels can end a word: <em>see, say, sue, sew, pa, sigh, how, soy</em>. Lax vowels ordinarily cannot: <b class="accent">*[sɪ] *[sɛ] *[sʊ]</b> are not possible English words.
-    <span class="ko-supp" style="display:block;">긴장모음(tense vowel)은 어말에 올 수 있지만 이완모음(lax vowel)은 보통 오지 못한다: *[sɪ] *[sɛ]는 영어 단어가 못 된다.</span></p>
+  <p class="ko-supp" style="font-size:15px; margin-top:8px;">긴장모음은 어말에 올 수 있지만(see, say…) 이완모음은 보통 오지 못한다(*[sɪ], *[sɛ] 등은 영어 단어가 아니다).</p>
   <aside class="notes">
     tense/lax는 근육 긴장 + 길이 + 혀 높이의 미세 차이를 아우릅니다. 어말 분포 테스트(see는 되지만
     *[sɪ]는 불가)가 가장 선명한 증거입니다.
