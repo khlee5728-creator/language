@@ -32,7 +32,7 @@
 - **제목 크기 규칙(v15)**: 제목 글자 수로만 정한다. ≤30자 기본 46px(인라인 지정 없음) · 31–42자 `font-size:40px` · 43자 이상 `font-size:36px`.
   두 줄이 되면 테마의 `text-wrap: balance`가 고르게 나눈다. 본문 공간이 부족하다고 제목을 임의로 줄이지 말고 본문을 조정한다.
 - **섹션 완전성**: 주차 범위의 교재 섹션은 하나도 건너뛰지 않는다. 덱 신설·개편 시 챕터 헤딩 목록을 추출해 체크리스트로 대조.
-- **킥커 문법**: 내용 `CH.n P.{시작쪽}`(쪽수만, 상위 섹션은 data-path로) / 미디어 `… · FIGURE|CARTOON|VIDEO` / 퀴즈 `CH.n · PRACTICE|EXERCISE nn` / 요약 `CH.n · SUMMARY` / 목차 `WEEK n · CONTENTS · CH.n PP.a–b` / 교재 밖 보충 `ENRICHMENT · BEYOND THE TEXTBOOK`. 구분자는 ` · `.
+- **킥커 문법**: 내용 `CH.n P.{시작쪽}`(쪽수만, 상위 섹션은 data-path로) / 미디어 `… · FIGURE|CARTOON|VIDEO|3D MODEL` / 퀴즈 `CH.n · PRACTICE|EXERCISE nn` / 요약 `CH.n · SUMMARY` / 목차 `WEEK n · CONTENTS · CH.n PP.a–b` / 교재 밖 보충 `ENRICHMENT · BEYOND THE TEXTBOOK`. 구분자는 ` · `.
 - **목차 슬라이드**: 책 차례식(`recap tight outline` + `.pg` 시작 쪽수). 하위 섹션은 `<li class="lv2|lv3">`로 들여 쓰고 순번은 숨긴다(목차에 보이는 상위 항목 수만큼 한 단계씩).
 - **폴리오**: `N / total` (slides-editorial.js 자동) — 코스명 등 다른 텍스트 금지.
 - **챕터 악센트**: W1 `#2b3a67` · Ch.1 `#7a2e2e` · Ch.2 `#2e5941` · Ch.3 `#4a2e5c` · Ch.4 `#8a5a20` · Ch.5 `#24513f` · Ch.6 `#6e1f28`.
@@ -65,6 +65,8 @@
 - **조건부 표준: 주차당 최대 1편, 교재 주제 직결 + 공식 임베드 확인될 때만.** 억지 채움 금지(W14는 의도적 공백).
   예외: **W11은 사용자 결정으로 2편**(2026-11-09) — Okrent "Why is English so confusing?"(TED-Ed, The Phonetic Alphabet 뒤) + Thum·Broadhurst "What happens in your throat when you beatbox?"(내시경, 성도 그림 바로 뒤 · 2026-11-09 이동). 수업 활용은 교수 재량.
   W7: Cameron Morin "What do all languages have in common?"(TED-Ed지만 ted.com/talks에 있어 임베드 가능) · W6: Emma Bryce "Buffalo buffalo…"(TED-Ed 링크 전용) — 2026-10-05 추가.
+  W12: Julian Treasure TED 슬라이드는 사용자 결정으로 3D 조음 모형 임베드 슬라이드로 대체(2026-11-15, 모음 절 끝 13번) — W12는 TED 없음.
+  3D 조음 모형(별도 저장소 khlee5728-creator/vocal3d, 배포 주소 https://khlee5728-creator.github.io/vocal3d/): 임베드는 `data-src` iframe(해당 슬라이드에서만 로드) + `max-width:none`(Reveal의 iframe 95% 제한 해제) + 125% 크기를 0.8배로 축소(넓은 배치 유지) + 새 탭 버튼 + `video-print-note`.
 - 패턴: `embed.ted.com` iframe + "Watch with subtitles (EN·한국어) · ted.com ↗" 새 탭 버튼 + `video-print-note` + 발표자 노트에 수업 시청 추천 구간.
 - 임베드는 자막 제어 불가(파라미터 무시) — 자막 필요 시 ted.com 새 탭이 유일한 방법.
 - TED-Ed(유튜브 호스팅)는 임베드 차단(오류 153) — 링크 전용 슬라이드로만. 단, ted.com/talks에도 올라간 TED-Ed는 TED 자체 플레이어(hls.ted.com)로 재생돼 임베드 가능 — embed 페이지에 `<video>`가 있는지로 판별.
