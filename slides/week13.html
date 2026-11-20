@@ -35,6 +35,21 @@
     .reveal table.ed-table tr:nth-child(even) td, .reveal table.ed-table tr:hover td { background: none; }
     .reveal table.ed-table td.form { font: italic 700 20px 'Lora'; color: var(--ed-accent); white-space: nowrap; }
     .reveal table.ed-table td.c, .reveal table.ed-table th.c { text-align: center; padding-right: 0; }
+    /* 7번: 순서 있는 두 규칙(라벨 + 문장) + 전체 폭 도출표 */
+    .rules2 { margin-top: 14px; grid-template-columns: auto minmax(0, 1fr); gap: 36px; }
+    .rules2 p { margin: 0; border-top: 1px solid var(--ed-line); padding-top: 10px; font: 400 17px/1.5 'Lora'; color: var(--ed-ink); }
+    .rules2 p b { color: var(--ed-accent); font-weight: 700; }
+    .rules2 .rn { display: block; font: 600 11px 'Space Grotesk'; letter-spacing: 0.2em; color: var(--ed-muted); margin-bottom: 3px; }
+    .reveal table.ed-table.deriv { max-width: none; table-layout: fixed; margin-top: 20px; }
+    .reveal table.ed-table.deriv th.c { font: 400 17px 'Lora'; letter-spacing: 0; text-transform: none; color: var(--ed-ink); }
+    .reveal table.ed-table.deriv td { font-size: 18px; padding-top: 8px; padding-bottom: 8px; }
+    .reveal table.ed-table.deriv td:first-child, .reveal table.ed-table.deriv th:first-child { width: 37%; }
+    .reveal table.ed-table.deriv td:first-child { font-size: 16px; white-space: nowrap; }
+    .reveal table.ed-table.deriv td .hint { font-size: 14px; color: var(--ed-muted); margin-left: 8px; }
+    .reveal table.ed-table.deriv td.chg { color: var(--ed-accent); font-weight: 700; }
+    .reveal table.ed-table.deriv td.na { color: var(--ed-muted); }
+    .reveal table.ed-table.deriv tr:nth-last-child(2) td { border-bottom-color: var(--ed-ink); }
+    .reveal table.ed-table.deriv tr:last-child td { color: var(--ed-ink); font-weight: 700; }
     /* 13번: b_t 열두 단어(모음 음소 찾기) */
     .bt { display: grid; grid-template-columns: repeat(6, 1fr); gap: 0 14px; margin: 6px 0 4px; }
     .bt span { border-top: 1px solid var(--ed-line); padding: 6px 0 8px; font: italic 400 17px 'Lora'; color: var(--ed-ink); }
@@ -78,9 +93,9 @@
   ✓     Feature Values .......................... p.228 → slide 19
   ✓     Nondistinctive Features ................. p.229 → slide 20
   ✓     Phonemic Patterns May Vary across Languages p.230 → slides 21–22 (Thai aspiration · Korean vowel length)
-  ✓     Natural Classes of Speech Sounds ........ p.231 → slide 23 (+Table 6.4)
+  ✓     Natural Classes of Speech Sounds ........ p.231 → slides 23–24 (Table 6.4)
   ✓     Feature Specifications for American English
-        Consonants and Vowels ................... p.232 → slide 24
+        Consonants and Vowels ................... p.232 → slide 25
 -->
 <div class="reveal">
 <div class="slides">
@@ -134,12 +149,13 @@
     <div class="quote-stack">
       <p>English nasalizes vowels only next to nasal consonants; Portuguese puts them <b>anywhere</b>.</p>
       <p>The [ŋ] of <i>song</i> cannot begin an English word, but it begins Vietnamese <i>Nguyen</i>.</p>
-      <p>The silent <i>g</i> of <i>sign</i> returns in <i>signal</i>: a <b>pattern</b>, not an exception.</p>
+      <p>The silent <i>g</i> of <i>sign</i> returns in <i>signal</i>, the <i>n</i> of <i>autumn</i> in <i>autumnal</i>, the <i>b</i> of <i>bomb</i> in <i>bombard</i>: a <b>pattern</b>, not an exception.</p>
     </div>
   </div>
   <aside class="notes">
     챕터 도입: 같은 소리 재료라도 언어마다 패턴이 다릅니다. sign/signal, autumn/autumnal,
-    bomb/bombard의 '숨었다 나타나는' 소리로 음운 패턴의 존재를 체감시키세요.
+    bomb/bombard(교재 p.217의 세 쌍)의 '숨었다 나타나는' 소리로 음운 패턴의 존재를 체감시키세요.
+    한 쌍만 보면 예외처럼 보이지만 세 쌍이 같은 방식으로 움직인다는 점이 '패턴'의 근거입니다.
   </aside>
 </section>
 
@@ -171,7 +187,6 @@
     <div class="quote-stack">
       <p>This variation is described with <b>phonological rules</b>, which speakers usually apply unconsciously.</p>
       <p>The spelling misleads: the plural is written <i>s</i> or <i>es</i>, yet it is pronounced [z], [s] or [əz].</p>
-      <p>We begin with English, then turn to other languages.</p>
     </div>
   </div>
   <aside class="notes">
@@ -202,22 +217,21 @@
 <!-- ══ 7 · Plural rules in order ══ -->
 <section data-kicker="CH.6 P.219" data-path="The Pronunciation of Morphemes">
   <h2>The Pronunciation of Plurals</h2>
-  <div class="cols">
-    <div class="def">The stored form of the plural is a single <b>basic representation</b>: /z/.
-      <span class="ko-supp" style="display:block; margin-top:8px;">복수의 저장형은 기저형(basic representation) /z/ 하나다.</span></div>
-    <div>
-      <div class="rule-line" style="font-size:19px; margin-top:0;">1&nbsp;&nbsp;Insert <b>[ə]</b> before /z/ after a sibilant&nbsp;&nbsp;·&nbsp;&nbsp;2&nbsp;&nbsp;Devoice /z/ to <b>[s]</b> after a voiceless sound</div>
-      <table class="ed-table">
-        <tr><th></th><th class="c">bus + pl.</th><th class="c">butt + pl.</th><th class="c">bug + pl.</th></tr>
-        <tr><td>basic form</td><td class="c">/bʌs + z/</td><td class="c">/bʌt + z/</td><td class="c">/bʌg + z/</td></tr>
-        <tr><td>rule 1 (insert ə)</td><td class="c">ə</td><td class="c">–</td><td class="c">–</td></tr>
-        <tr><td>rule 2 (devoice)</td><td class="c">–</td><td class="c">s</td><td class="c">–</td></tr>
-        <tr><td>phonetic form</td><td class="c"><b>[bʌsəz]</b></td><td class="c"><b>[bʌts]</b></td><td class="c"><b>[bʌgz]</b></td></tr>
-      </table>
-    </div>
+  <p class="lead" style="font-size:18px;">The plural is stored as one <b>basic representation</b>, /z/; two ordered rules do the rest.
+    <span class="ko-supp" style="display:block;">기저형(basic representation)은 /z/ 하나이고, 나머지는 순서 있는 두 규칙이 만든다.</span></p>
+  <div class="cols-even rules2">
+    <p><span class="rn">RULE 1</span>After a sibilant, insert <b>[ə]</b> before /z/.</p>
+    <p><span class="rn">RULE 2</span>After a voiceless sound, /z/ becomes <b>[s]</b>.</p>
   </div>
-  <p class="lead" style="font-size:15px; margin-top:8px;">Reverse the order and <em>buses</em> comes out wrong: *[bʌsəs]. Such morpheme-specific rules are <b>morphophonemic</b> rules.
-    <span class="ko-supp">순서를 바꾸면 *[bʌsəs]가 잘못 도출되며, 이런 형태소 전용 규칙이 형태음운 규칙(morphophonemic rule)이다.</span></p>
+  <table class="ed-table deriv">
+    <tr><th></th><th class="c"><i>bus</i> + pl.</th><th class="c"><i>butt</i> + pl.</th><th class="c"><i>bug</i> + pl.</th></tr>
+    <tr><td>Basic representation</td><td class="c">/bʌs + z/</td><td class="c">/bʌt + z/</td><td class="c">/bʌg + z/</td></tr>
+    <tr><td>Rule 1 <span class="hint">insert [ə]</span></td><td class="c chg">ə</td><td class="c na">–</td><td class="c na">–</td></tr>
+    <tr><td>Rule 2 <span class="hint">devoice /z/</span></td><td class="c na">–</td><td class="c chg">s</td><td class="c na">–</td></tr>
+    <tr><td>Phonetic representation</td><td class="c">[bʌsəz]</td><td class="c">[bʌts]</td><td class="c">[bʌgz]</td></tr>
+  </table>
+  <p class="lead" style="font-size:16px; margin-top:14px;">Rule 1 must apply first: in the reverse order <em>buses</em> comes out wrong, *[bʌsəs]. Rules tied to particular morphemes are <b>morphophonemic rules</b>.
+    <span class="ko-supp" style="display:block;">규칙 1이 먼저다. 순서를 바꾸면 *[bʌsəs]가 잘못 도출되며, 이런 형태소 전용 규칙이 형태음운 규칙(morphophonemic rule)이다.</span></p>
   <aside class="notes">
     삽입 규칙이 먼저, 무성음화가 나중. 순서를 바꾸면 bus의 복수가 *[bʌsəs]로 잘못 도출됩니다.
     기저형이 /z/인 이유(가장 넓은 분포)와 morphophonemic rule(특정 형태소에만 적용)이라는 용어를 짚으세요.
@@ -229,11 +243,11 @@
 <section data-kicker="CH.6 P.220" data-path="The Pronunciation of Morphemes">
   <h2 style="font-size:40px;">Additional Examples of Allomorphs</h2>
   <p class="lead" style="font-size:18px; max-width:660px;">The regular past tense runs on the same track: basic form /d/, three surface allomorphs.</p>
-  <table class="ed-table" style="margin-top:14px;">
+  <table class="ed-table" style="margin-top:14px; max-width:none;">
     <tr><th>Allomorph</th><th>Environment</th><th>Example</th></tr>
-    <tr><td class="form">[d]</td><td>after voiced segments (other than [d])</td><td><i>begged</i> [bɛgd] · <i>played</i> <button class="say-btn mini" data-say="begged, played" data-lang="en-US">listen</button></td></tr>
-    <tr><td class="form">[t]</td><td>after voiceless segments (other than [t])</td><td><i>walked</i> [wɔkt] <button class="say-btn mini" data-say="walked" data-lang="en-US">listen</button></td></tr>
-    <tr><td class="form">[əd]</td><td>after a non-nasal alveolar stop [t] or [d]</td><td><i>wanted</i> [wɑntəd] <button class="say-btn mini" data-say="wanted" data-lang="en-US">listen</button></td></tr>
+    <tr><td class="form">[d]</td><td>after voiced segments (other than [d])</td><td style="white-space:nowrap;"><i>begged</i> [bɛgd] · <i>played</i> [pled] <button class="say-btn mini" data-say="begged, played" data-lang="en-US">listen</button></td></tr>
+    <tr><td class="form">[t]</td><td>after voiceless segments (other than [t])</td><td style="white-space:nowrap;"><i>walked</i> [wɔkt] · <i>kissed</i> [kɪst] <button class="say-btn mini" data-say="walked, kissed" data-lang="en-US">listen</button></td></tr>
+    <tr><td class="form">[əd]</td><td>after a non-nasal alveolar stop [t] or [d]</td><td style="white-space:nowrap;"><i>wanted</i> [wɑntəd] · <i>raided</i> [redəd] <button class="say-btn mini" data-say="wanted, raided" data-lang="en-US">listen</button></td></tr>
   </table>
   <p class="lead" style="font-size:16px; margin-top:16px;">The possessive and the third-person singular <em>&#8209;s</em> obey the very same rules as the plural: <em>ship's</em> [s], <em>woman's</em> [z], <em>judge's</em> [əz].
     <span class="ko-supp" style="display:block;">소유격과 3인칭 단수 -s도 복수와 똑같은 규칙을 따른다: ship's [s], woman's [z], judge's [əz].</span></p>
@@ -349,18 +363,18 @@
 <section data-kicker="CH.6 P.224" data-path="Phonemes: The Phonological Units of Language">
   <h2>Illustration of Allophones</h2>
   <p class="lead" style="font-size:18px; max-width:660px;">The classic English case: one phoneme /t/, three allophones in complementary distribution.</p>
-  <table class="ed-table" style="margin-top:14px;">
+  <table class="ed-table" style="margin-top:14px; max-width:none;">
     <tr><th>Allophone</th><th>Environment</th><th>Example</th></tr>
-    <tr><td class="form">[tʰ]</td><td>initially in a stressed syllable</td><td><i>tick</i> [tʰɪk] <button class="say-btn mini" data-say="tick" data-lang="en-US">listen</button></td></tr>
-    <tr><td class="form">[t]</td><td>directly before or after [s]</td><td><i>stick</i> [stɪk] · <i>blitz</i> <button class="say-btn mini" data-say="stick, blitz" data-lang="en-US">listen</button></td></tr>
-    <tr><td class="form">[ɾ]</td><td>between a stressed and an unstressed vowel</td><td><i>bitter</i> [bɪɾər] <button class="say-btn mini" data-say="bitter" data-lang="en-US">listen</button></td></tr>
+    <tr><td class="form">[tʰ]</td><td>initially in a stressed syllable</td><td style="white-space:nowrap;"><i>tick</i> [tʰɪk] <button class="say-btn mini" data-say="tick" data-lang="en-US">listen</button></td></tr>
+    <tr><td class="form">[t]</td><td>directly before or after /s/</td><td style="white-space:nowrap;"><i>stick</i> [stɪk] · <i>blitz</i> [blɪts] <button class="say-btn mini" data-say="stick, blitz" data-lang="en-US">listen</button></td></tr>
+    <tr><td class="form">[ɾ]</td><td>between a stressed and an unstressed vowel</td><td style="white-space:nowrap;"><i>bitter</i> [bɪɾər] <button class="say-btn mini" data-say="bitter" data-lang="en-US">listen</button></td></tr>
   </table>
   <p class="lead" style="font-size:16px; margin-top:16px;">The flap [ɾ] is why <em>writer</em> [raɪɾər] and <em>rider</em> can sound alike, yet /t/ and /d/ remain separate phonemes.
     <button class="say-btn mini" data-say="writer, rider" data-lang="en-US">listen</button>
     <span style="font: italic 400 14px 'Lora'; color: var(--ed-muted);">(cf. textbook Ch.6, pp.224–225)</span>
     <span class="ko-supp" style="display:block;">탄설음(flap) [ɾ] 때문에 writer와 rider가 비슷하게 들리지만, /t/와 /d/는 여전히 별개의 음소다.</span></p>
   <aside class="notes">
-    영어 음운론의 간판 예시입니다. 하나의 음소 /t/가 [tʰ](강세 음절 초), [t]([s] 앞뒤),
+    영어 음운론의 간판 예시입니다. 하나의 음소 /t/가 [tʰ](강세 음절 초), [t](/s/ 앞뒤),
     [ɾ](강세 모음과 비강세 모음 사이)로 실현됩니다. writer~rider가 비슷하게 들려도
     /t/·/d/는 여전히 별개 음소라는 점을 강조하세요. bitter를 [tʰ]로 발음해도 단어는 그대로이고 부자연스럽게 들릴 뿐이라는 교재의 지적도 활용하세요.
   </aside>
@@ -580,12 +594,26 @@
     <div class="def">A <b>natural class</b> is a group of sounds described by fewer features than any of its members alone.
       <span class="ko-supp" style="display:block; margin-top:8px;">자연 부류(natural class)는 구성원 하나하나를 기술할 때보다 더 적은 자질로 기술되는 소리 집합이다.</span></div>
     <div class="quote-stack">
+      <p>/p, t, k, tʃ/ are the class <span style="white-space:nowrap;">[−voiced, −continuant]</span>; /p/ alone needs one feature more, [+labial].</p>
       <p><i>Nasalize vowels before m, n, or ŋ</i> is a rule with a <b>phonetic reason</b>: the velum lowers early.</p>
       <p><i>Nasalize vowels before p, i, or z</i> names a motley set with <b>no natural class</b>, so no such rule exists.</p>
       <p>Phonological rules apply to natural classes, which is why segments are <b>bundles of features</b>.</p>
     </div>
   </div>
-  <div class="small-label" style="margin:12px 0 4px;">MAJOR NATURAL CLASSES · CF. TABLE 6.4</div>
+  <aside class="notes">
+    자연 부류: 소수의 자질로 기술되는 소리 집합. 규칙은 개별 소리가 아니라 자연 부류에
+    작동합니다(m,n,ŋ 앞 비음화는 자연스럽고, p,i,z 앞 비음화 규칙은 어떤 언어에도 없음).
+    이 일반성이 다음 주 규칙 표기의 토대입니다. 첫 줄의 예는 교재 p.232: /p t k tʃ/는 [−voiced, −continuant] 둘로 기술되지만
+    /p/ 하나를 집어내려면 [+labial]이 더 필요합니다. /m n ŋ/은 [+nasal], [+consonantal]로 기술됩니다.
+  </aside>
+</section>
+
+<!-- ══ 24 · Natural Classes of Speech Sounds · Table 6.4 ══ -->
+<section data-kicker="CH.6 P.232" data-path="Phonemes: The Phonological Units of Language › Distinctive Features of Phonemes">
+  <h2 style="font-size:40px;">Natural Classes of Speech Sounds</h2>
+  <p class="lead" style="font-size:18px; max-width:660px;">The sound classes of Chapter 5 are natural classes too: a few <b>+</b> and <b>−</b> feature values pick out each one.
+    <span class="ko-supp" style="display:block;">5장의 소리 부류도 자연 부류이며, 몇 개의 +/− 자질 값으로 각각을 가려낼 수 있다.</span></p>
+  <div class="small-label" style="margin:22px 0 6px;">MAJOR NATURAL CLASSES · CF. TABLE 6.4</div>
   <table class="ed-table" style="max-width:none;">
     <tr><th></th><th class="c">Obstruents</th><th class="c">Nasals</th><th class="c">Liquids</th><th class="c">Glides</th><th class="c">Vowels</th></tr>
     <tr><td>consonantal</td><td class="c">+</td><td class="c">+</td><td class="c">+</td><td class="c">−</td><td class="c">−</td></tr>
@@ -593,14 +621,15 @@
     <tr><td>syllabic</td><td class="c">−</td><td class="c">+/−</td><td class="c">+/−</td><td class="c">−</td><td class="c">+</td></tr>
     <tr><td>nasal</td><td class="c">−</td><td class="c">+</td><td class="c">−</td><td class="c">−</td><td class="c">+/−</td></tr>
   </table>
+  <p class="lead" style="font-size:16px; margin-top:18px;"><b>+/−</b> means the value depends on context: a word-initial nasal is [−syllabic], but the final nasal of <em>wagon</em> [wægn̩] can be [+syllabic].
+    <span class="ko-supp" style="display:block;">+/−는 맥락에 따라 값이 달라진다는 뜻이다. 어두 비음은 [−syllabic]이지만 wagon의 끝 비음은 [+syllabic]일 수 있다.</span></p>
   <aside class="notes">
-    자연 부류: 소수의 자질로 기술되는 소리 집합. 규칙은 개별 소리가 아니라 자연 부류에
-    작동합니다(m,n,ŋ 앞 비음화는 자연스럽고, p,i,z 앞 비음화 규칙은 어떤 언어에도 없음).
-    이 일반성이 다음 주 규칙 표기의 토대입니다. 아래 표는 교재 Table 6.4(p.232)의 자질 명세이고, +/−는 맥락에 따라 달라짐을 뜻합니다(wagon의 성절 [n̩]). 예: /m n ŋ/은 [+nasal] 하나로, /p t k tʃ/는 [−voiced, −continuant] 둘로 기술됩니다.
+    교재 Table 6.4(p.232)의 자질 명세입니다. 열 하나를 세로로 읽으면 그 부류의 정의가 됩니다(예: 활음은 [−consonantal, +sonorant, −syllabic]).
+    +/−는 맥락에 따라 달라짐을 뜻합니다(wagon의 성절 [n̩]). 모음의 nasal이 +/−인 것은 영어에서 비음 앞 모음이 비음화되기 때문입니다.
   </aside>
 </section>
 
-<!-- ══ 24 · Feature Specifications ══ -->
+<!-- ══ 25 · Feature Specifications ══ -->
 <section data-kicker="CH.6 P.232" data-path="Phonemes: The Phonological Units of Language › Distinctive Features of Phonemes">
   <h2 style="font-size:36px;">Feature Specifications for American English Consonants and Vowels</h2>
   <div class="cols">
@@ -618,7 +647,7 @@
   </aside>
 </section>
 
-<!-- ══ 25 · Practice Q1 ══ -->
+<!-- ══ 26 · Practice Q1 ══ -->
 <section data-kicker="CH.6 · PRACTICE 01">
   <div class="mcq" data-qid="w13-q1">
     <div class="mcq-q"><span class="qnum">Q1</span>The pair <em>pat</em> / <em>bat</em> shows that /p/ and /b/ are:</div>
@@ -634,10 +663,10 @@
   </aside>
 </section>
 
-<!-- ══ 26 · Practice Q2 ══ -->
+<!-- ══ 27 · Practice Q2 ══ -->
 <section data-kicker="CH.6 · PRACTICE 02">
   <div class="mcq" data-qid="w13-q2">
-    <div class="mcq-q"><span class="qnum">Q2</span>Aspirated [pʰ] occurs word-initially and plain [p] occurs after [s]. This distribution is called:</div>
+    <div class="mcq-q"><span class="qnum">Q2</span>Aspirated [pʰ] occurs word-initially and plain [p] occurs after /s/. This distribution is called:</div>
     <div class="mcq-opts">
       <button class="mcq-opt"><span class="opt-key">A</span>A minimal pair</button>
       <button class="mcq-opt" data-correct="true"><span class="opt-key">B</span>Complementary distribution</button>
@@ -650,7 +679,7 @@
   </aside>
 </section>
 
-<!-- ══ 27 · Exercise Q3 ══ -->
+<!-- ══ 28 · Exercise Q3 ══ -->
 <section data-kicker="CH.6 · PRACTICE 03">
   <div class="mcq" data-qid="w13-q3">
     <div class="mcq-q"><span class="qnum">Q3</span>Which pronunciation of the plural morpheme appears in <em>buses</em>?
@@ -667,7 +696,7 @@
   </aside>
 </section>
 
-<!-- ══ 28 · Exercise Q4 ══ -->
+<!-- ══ 29 · Exercise Q4 ══ -->
 <section data-kicker="CH.6 · PRACTICE 04">
   <div class="mcq" data-qid="w13-q4b">
     <div class="mcq-q"><span class="qnum">Q4</span>In Akan, [pam] "sew" and [pãm] "confederate" differ only in vowel nasality. In Akan, vowel nasality is:
@@ -686,7 +715,7 @@
   </aside>
 </section>
 
-<!-- ══ 29 · Watch (link): Gina Cooke ══ -->
+<!-- ══ 30 · Watch (link): Gina Cooke ══ -->
 <section data-kicker="ENRICHMENT · BEYOND THE TEXTBOOK · VIDEO">
   <h2>Why Is There a "b" in <i>Doubt</i>?</h2>
   <div class="cols">
@@ -709,7 +738,7 @@
   </aside>
 </section>
 
-<!-- ══ 30 · Summary ══ -->
+<!-- ══ 31 · Summary ══ -->
 <section data-kicker="CH.6 · SUMMARY">
   <h2>Summary</h2>
   <ol class="recap" style="max-width:680px;">
@@ -726,7 +755,7 @@
   </aside>
 </section>
 
-<!-- ══ 31 · Next week ══ -->
+<!-- ══ 32 · Next week ══ -->
 <section data-kicker="NEXT WEEK · CH.6 PP.233–268">
   <h2>The Rules of Phonology</h2>
   <p class="lead" style="max-width:620px;">How does /p/ <b>become</b> [pʰ]? Next week the phoneme–allophone map turns into explicit rules: A → B / C __ D.

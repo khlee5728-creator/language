@@ -1,6 +1,6 @@
 ---
 name: verify-decks
-description: 강의 슬라이드 덱(slides/week*.html)의 표준 검증 스위트를 실행한다. 덱을 수정·신설했을 때, 배포(푸시) 전, 또는 사용자가 "덱 검증"·"슬라이드 검사"를 요청할 때 사용. 세로/가로 오버플로우·MCQ 해설·영상 로드·큐·TED 임베드를 일괄 점검하고 표 형식으로 보고한다.
+description: 강의 슬라이드 덱(slides/week*.html)의 표준 검증 스위트를 실행한다. 덱을 수정·신설했을 때, 배포(푸시) 전, 또는 사용자가 "덱 검증"·"슬라이드 검사"를 요청할 때 사용. 세로/가로 오버플로우·쪽 번호 겹침·MCQ 해설·영상 로드·큐·TED 임베드를 일괄 점검하고 표 형식으로 보고한다.
 ---
 
 # verify-decks — 덱 일괄 검증
@@ -23,11 +23,20 @@ description: 강의 슬라이드 덱(slides/week*.html)의 표준 검증 스위�
   const secs=[...document.querySelectorAll('.reveal .slides > section')];
   const stage=document.querySelector('.reveal .slides').clientHeight;      // 700
   const sr=document.querySelector('.slides').getBoundingClientRect().right;
-  const oV=[],oH=[]; let media={video:0,cues:0,ted:0,tedlink:0};
+  const oV=[],oH=[],oF=[]; let media={video:0,cues:0,ted:0,tedlink:0};
+  // 쪽 번호(.ed-pagenum, 우하단 top 648px) 겹침: 글자·그림의 실제 잉크가 쪽 번호 상자 ±4px에 닿는지
+  const skip=e=>e.closest('aside,.ed-pagenum,.ed-kicker,.ed-rail,.ed-railtxt');
+  const folioHit=s=>{ const f=s.querySelector('.ed-pagenum'); if(!f) return false; const fr=f.getBoundingClientRect(); if(!fr.width) return false;
+    const pad=4*Reveal.getScale(), hit=r=>r.width&&r.height&&r.right>fr.left-pad&&r.left<fr.right+pad&&r.bottom>fr.top-pad&&r.top<fr.bottom+pad;
+    const tw=document.createTreeWalker(s,NodeFilter.SHOW_TEXT); let n;
+    while(n=tw.nextNode()){ const p=n.parentElement; if(!n.nodeValue.trim()||skip(p)||!p.getClientRects().length) continue;
+      const rg=document.createRange(); rg.selectNodeContents(n); if([...rg.getClientRects()].some(hit)) return true; }
+    return [...s.querySelectorAll('img,video,iframe,button,svg *')].some(e=>!skip(e)&&hit(e.getBoundingClientRect())); };  // svg는 상자가 아니라 안쪽 도형으로
   for(let i=0;i<secs.length;i++){
     const s=secs[i]; Reveal.slide(i,0,99);  // viewDistance 밖 슬라이드는 display:none이라 scrollHeight=0 → 반드시 이동 후 측정
     s.querySelectorAll('.mcq-explain').forEach(e=>e.classList.add('show')); // 해설 열린 상태 포함
     if(s.scrollHeight>stage) oV.push(i+1);
+    if(folioHit(s)) oF.push(i+1);
     s.querySelectorAll('.mcq-explain').forEach(e=>e.classList.remove('show'));
     if([...s.querySelectorAll('p,div,ul,ol,h2,table')].some(el=>el.getBoundingClientRect().right>sr+3)) oH.push(i+1);
     media.video+=s.querySelectorAll('.video-scene video').length;
@@ -35,9 +44,14 @@ description: 강의 슬라이드 덱(slides/week*.html)의 표준 검증 스위�
     media.ted+=s.querySelectorAll('iframe[src*="embed.ted.com"]').length;
     media.tedlink+=s.querySelectorAll('a[href*="ed.ted.com"]').length;
   }
-  return JSON.stringify({total:secs.length,oV,oH,media});
+  return JSON.stringify({total:secs.length,oV,oH,oF,media});
 })()
 ```
+
+쪽 번호 겹침(`oF`)은 세로 오버플로우 기준(700)으로는 잡히지 않는다: 쪽 번호가 648px에 고정돼 있어
+본문이 650–700px 사이로 내려오면 `oV`는 비어 있어도 쪽 번호와 겹친다(W13 23번 사고, 2026-11-21).
+`oF`에 걸리면 글자를 줄이지 말고 본문을 줄이거나 슬라이드를 나눈다. 왼쪽에 놓인 출처 표기처럼
+쪽 번호와 가로로 떨어진 내용은 648px 아래에 있어도 걸리지 않는다.
 
 주의: `getBoundingClientRect` 가로 검사는 현재 슬라이드가 아닌 섹션에서는 Reveal 변환의 영향을
 받을 수 있다. 가로 이상이 의심되면 해당 슬라이드만 `Reveal.slide(i)` 후 재측정로 확정한다.
@@ -60,10 +74,11 @@ await new Promise(res=>{ if(v.readyState>=1) return res(v.duration);
 |---|---|
 | 세로 오버플로우 | 0건 (MCQ 해설 열림 포함, scrollHeight ≤ 700) |
 | 가로 넘침 | 0건 (stage 우측 경계 +3px 초과 요소 없음) |
+| 쪽 번호 겹침 | 0건 (MCQ 해설 열림 포함, 글자·그림이 쪽 번호 상자 ±4px에 닿지 않음) |
 | 영상 | metadata 로드 성공, duration 일치, 큐 존재 |
 | TED | 임베드 iframe 존재(해당 덱), 링크 슬라이드는 a[href] 존재 |
 
 ## 보고 형식
 
-덱별 한 줄 표: `덱 | 슬라이드 수 | 오버플로우 | 미디어(영상/큐/TED) | 판정`.
+덱별 한 줄 표: `덱 | 슬라이드 수 | 오버플로우 | 쪽 번호 겹침 | 미디어(영상/큐/TED) | 판정`.
 실패가 있었으면 원인과 수정 내용을 함께 기록. 수정한 경우 재스캔 결과가 최종 판정이다.
