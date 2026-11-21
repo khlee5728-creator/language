@@ -42,7 +42,7 @@
 - **요점 목록(.quote-stack) 규칙(v11)**: 재구성한 요점은 **정체** + 줄 사이 헤어라인(불릿 기호 없음). 줄 안에서 언급되는 예문·단어(use–mention)는 `<i>`, 강조어는 `<b>`. 예문 자체를 나열하는 블록(This is the house that Jack built…, 최소대립쌍 등)만 `quote-stack ex`로 표시해 이탤릭 유지. 요점 문장을 이탤릭으로 쓰지 않는다(이탤릭=예문·인용 전용).
 - **작은 회색 주석 규칙(v16)**: 작은 회색 **이탤릭**은 (1) 출처 표기 `(cf. textbook Ch.n, p.x)`·표나 그림의 원전 표시, (2) 그림 캡션(`.tree-cap`)과 읽는 법 범례(`? = odd`, `Rows = manner…`)에만 쓴다.
   언어에 관한 **내용이 있는 주석은 작은 회색 정체**로 쓰고(`.fnote`·`.fn`·`.ex-note`·`.etym`은 정체), 그 안의 예문·언급된 낱말만 `<i>`, 뒤에 붙는 출처만 `<i>(cf. …)</i>`.
-  교재의 핵심 정의·요점은 주석으로 내리지 말고 본문(`.lead`·`.quote-stack`)에 둔다(W13 14·21번 전례). 국문(`.ko-supp`)은 어디에 들어가도 이탤릭이 되지 않는다(테마가 강제).
+  교재의 핵심 정의·요점은 주석으로 내리지 말고 본문(`.lead`·`.quote-stack`)에 둔다(W13 15·22번 전례). 국문(`.ko-supp`)은 어디에 들어가도 이탤릭이 되지 않는다(테마가 강제).
 - **2단 구분선 규칙(v16)**: 세로줄은 2단 배치(`.cols`/`.cols-even`)의 것이다. 오른쪽 단에 무엇이 오든(요점 목록·표·예문·그림) 단 사이 한가운데에 긋고, 두 단 중 긴 쪽 높이까지 내려온다(테마가 자동으로 그림 — 덱에서 따로 넣지 않는다).
   요점 목록(`.quote-stack`) 자체에는 세로줄이 없다. 단 간격을 바꿀 때는 `gap`이 아니라 `--cols-gap`을 쓴다(`style="--cols-gap:36px;"`) — `gap`을 직접 쓰면 줄이 한가운데에서 벗어난다.
   왼쪽 단 내용이 290px을 넘으면 줄을 넘어가므로 `grid-template-columns: max-content minmax(0,1fr)` 등으로 단 폭을 맞춘다(W5 22번 전례).
@@ -55,7 +55,7 @@
   (2) 맺음 문장에는 새 개념·용어나 결론이 담길 때만 붙이고, 앞 내용을 되풀이하거나 예만 드는 문장에는 붙이지 않는다.
   (3) 요점 목록 줄(`.quote-stack`), 좌우로 나란한 세부 문장, 표, 예문, 캡션에는 붙이지 않는다. (4) 화면의 국문은 모두 '가 한국어' 토글로 숨겨져야 한다:
   국문은 반드시 `.ko-supp`로 쓴다(예시 묶음 아래는 `<div class="tr ko-supp">`, 그림 안 글자도 `class="ko-supp"`). `.tr`에 국문을 그대로 쓰면 토글이 안 먹는다.
-  예외: 목표·목차 같은 목록 슬라이드(W1 6번), 자리가 없어 중심 문장의 국문이 정의 칸 국문에 합쳐진 장(W7 4번), 언어 자료로 쓰인 한국어 낱말(W2 그림의 "개!", W13 22번).
+  예외: 목표·목차 같은 목록 슬라이드(W1 6번), 자리가 없어 중심 문장의 국문이 정의 칸 국문에 합쳐진 장(W7 4번), 언어 자료로 쓰인 한국어 낱말(W2 그림의 "개!", W13 23번).
   줄을 늘리면 넘침·쪽 번호 겹침이 생기기 쉬우니 추가 뒤 반드시 검증한다.
 - **대시 규칙**: 제목·라벨·버튼 구분자 ` · ` / "용어: 설명"은 콜론 / 삽입·부연은 쉼표(대등절은 세미콜론) / 국문은 콜론·마침표(국문에 em dash 금지) / 범위는 en dash(pp.1–15) / 어두 연쇄 표기는 하이픈(nk-).
   em dash( — )는 **진짜 끊김·수사적 전환에만, 슬라이드당 최대 1개**. 예외: 서지 표기(11TH ED. — 저자), 카툰 대사·자막 큐 원문.
@@ -77,6 +77,7 @@
 - **조건부 표준: 주차당 최대 1편, 교재 주제 직결 + 공식 임베드 확인될 때만.** 억지 채움 금지(W14는 의도적 공백).
   예외: **W11은 사용자 결정으로 2편**(2026-11-09) — Okrent "Why is English so confusing?"(TED-Ed, The Phonetic Alphabet 뒤) + Thum·Broadhurst "What happens in your throat when you beatbox?"(내시경, 성도 그림 바로 뒤 · 2026-11-09 이동). 수업 활용은 교수 재량.
   W7: Cameron Morin "What do all languages have in common?"(TED-Ed지만 ted.com/talks에 있어 임베드 가능) · W6: Emma Bryce "Buffalo buffalo…"(TED-Ed 링크 전용) — 2026-10-05 추가.
+  W13: Gina Cooke "Why is there a 'b' in doubt?"(TED-Ed지만 ted.com/talks에 있어 임베드) — 링크 전용·연습 문제 뒤에서 도입 절 뒤 5번으로 이동(2026-11-21, sign/signal 직후).
   W12: Julian Treasure TED 슬라이드는 사용자 결정으로 3D 조음 모형 임베드 슬라이드로 대체(2026-11-15, 모음 절 끝 13번) — W12는 TED 없음.
   3D 조음 모형(별도 저장소 khlee5728-creator/vocal3d, 배포 주소 https://khlee5728-creator.github.io/vocal3d/): 임베드는 `data-src` iframe(해당 슬라이드에서만 로드) + `max-width:none`(Reveal의 iframe 95% 제한 해제) + 125% 크기를 0.8배로 축소(넓은 배치 유지) + 새 탭 버튼 + `video-print-note`.
 - 패턴: `embed.ted.com` iframe + "Watch with subtitles (EN·한국어) · ted.com ↗" 새 탭 버튼 + `video-print-note` + 발표자 노트에 수업 시청 추천 구간.
