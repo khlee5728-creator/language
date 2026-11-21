@@ -73,6 +73,9 @@
     .cursive-fig .cl > span { position: relative; padding-left: 0.9em; }
     .cursive-fig .v { color: var(--ed-accent); }
     .cursive-cap { font: italic 400 14px 'Lora'; color: var(--ed-muted); margin: 6px 0 0; }
+    /* 12·19번: 대표 낱말 쌍. 크기 24px 통일, 낱말만 이탤릭이고 대괄호 발음 표기는 정체 */
+    .gloss-set .sent.pair { font-size: 24px; font-style: normal; }
+    .gloss-set .sent.pair i { font-style: italic; }
     /* 22번: 태국어 최소대립쌍 세 쌍(무기음 | 유기음)을 같은 크기로 나란히 */
     .gloss-set .pairs2 { display: grid; grid-template-columns: max-content max-content; gap: 2px 30px; font: 400 18px/1.35 'Lora'; color: var(--ed-ink); }
     /* 10번 등: 규칙 문장(영문) */
@@ -361,14 +364,14 @@
     <div>
       <div class="gloss-set" style="margin-bottom:26px;">
         <div class="langlab">ORAL VS. NASAL · SAME PHONEME /i/</div>
-        <div class="sent" style="font-size:24px;">bead [bid] · bean [bĩn]
+        <div class="sent pair"><i>bead</i> [bid] · <i>bean</i> [bĩn]
           <button class="say-btn mini" data-say="bead, bean" data-lang="en-US">listen</button></div>
         <p class="rl">Vowels are nasalized before a nasal consonant in the same syllable. A nasal [bĩd] would sound odd, but still mean <i>bead</i>.</p>
         <div class="tr ko-supp" style="font-size:15.5px; margin-top:6px;">같은 음절의 비자음 앞에서 모음이 비음화되며, 비음화는 뜻을 바꾸지 못한다.</div>
       </div>
       <div class="gloss-set">
         <div class="langlab">ASPIRATION · SAME PHONEME /p/</div>
-        <div class="sent" style="font-size:24px;">pit [pʰɪt] · spit [spɪt]
+        <div class="sent pair"><i>pit</i> [pʰɪt] · <i>spit</i> [spɪt]
           <button class="say-btn mini" data-say="pit, spit" data-lang="en-US">listen</button></div>
         <p class="rl">Voiceless stops are aspirated when they occur initially in a stressed syllable.</p>
         <div class="tr ko-supp" style="font-size:15.5px; margin-top:6px;">무성 파열음은 강세 음절 첫머리에서 기식음이 된다.</div>
@@ -528,7 +531,7 @@
     <div>
       <div class="gloss-set">
         <div class="langlab">VOICING IS DISTINCTIVE IN ENGLISH</div>
-        <div class="sent" style="font-size:26px;">seal [sil] · zeal [zil]
+        <div class="sent pair"><i>seal</i> [sil] · <i>zeal</i> [zil]
           <button class="say-btn mini" data-say="seal, zeal" data-lang="en-US">listen</button></div>
         <p class="rl">Voicing also separates <i>feel/veal</i> and <i>cap/cab</i>.</p>
         <div class="tr ko-supp" style="font-size:15.5px; margin-top:6px;">유성성(voicing)은 seal/zeal, feel/veal, cap/cab을 가르는 변별 자질이다.</div>
