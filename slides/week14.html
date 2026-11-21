@@ -68,6 +68,12 @@
     .rule-read .seg .gl { font: 600 10px 'Space Grotesk'; letter-spacing: 0.14em; text-transform: uppercase;
       color: var(--ed-muted); display: block; margin-top: 7px; }
 
+    /* 8 삽입 규칙의 형식 표기(좁은 단 안의 작은 규칙 줄) */
+    .rule-mini { border-top: 1px solid var(--ed-line); border-bottom: 1px solid var(--ed-line); padding: 9px 0; margin: 12px 0 5px;
+      font: italic 400 19px 'Lora'; color: var(--ed-ink); white-space: nowrap; }
+    .rule-mini b { color: var(--ed-accent); font-weight: 700; font-style: normal; }
+    .rule-mini-gl { font: 600 10px 'Space Grotesk'; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ed-muted); }
+
     /* 15b 1차·2차 강세 예시 격자(3×2) */
     .stress-grid { display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 16px; max-width: 640px; }
     .stress-grid > span { padding: 7px 0; border-bottom: 1px solid var(--ed-line); font: italic 400 22px/1.35 'Lora'; color: var(--ed-ink); }
@@ -177,14 +183,16 @@
     <div class="def">The link between a word's phonemic form and its phonetic form is <b>rule-governed</b>, and the rules are part of the speaker's knowledge.
       <span class="ko-supp" style="display:block; margin-top:8px;">단어의 음소형과 음성형을 잇는 것은 규칙이며, 그 규칙은 화자가 지닌 지식의 일부다.</span></div>
     <div class="quote-stack">
-      <p>English nasals are always voiced, so voicing <b>need not be stored</b> for /m n ŋ/.</p>
-      <p>Back vowels are round, so rounding is <b>redundant</b> for /u ʊ o ɔ/.</p>
+      <p>English nasals /m n ŋ/ are always voiced and back vowels /u ʊ o ɔ/ always round, so these values need not be stored: <b>underspecification</b>.</p>
+      <p>The phonetic form is an abstraction too: it leaves out absolute pitch, speed and loudness.</p>
       <p>Rules differ across languages, but their <b>kinds</b>, and the natural classes they target, are universal.</p>
     </div>
   </div>
   <aside class="notes">
     음운 규칙은 화자 지식의 일부. 기저(음소) 표상은 과소명세(underspecification)되고
-    잉여 자질은 규칙이 채웁니다. 규칙의 '종류'는 보편적이라는 문장이 이 절의 전체 지도입니다.
+    잉여 자질은 규칙이 채웁니다. 음소 표상에는 예측할 수 없는 변별 자질만 들어갑니다. 음성 표상도 물리적 신호 그대로가 아니라
+    화자·시점이 달라져도 변하지 않는 부분만 담은 추상화입니다(절대 음높이, 말의 빠르기, 크기는 언어적으로 무의미, pp.233–235).
+    규칙의 '종류'는 보편적이라는 문장이 이 절의 전체 지도입니다.
   </aside>
 </section>
 
@@ -200,9 +208,13 @@
       <p>Aspiration <b>adds</b> a nondistinctive feature: <i>pit</i>, <i>repeat</i>; even across a consonant, <i>crib</i>, <i>clip</i>, <i>quip</i>; and the affricate of <i>chip</i>.</p>
     </div>
   </div>
+  <hr class="hair" style="margin:16px 0 10px;">
+  <p class="lead" style="font-size:16px; margin:0;"><b>Aspiration rule</b>: a voiceless noncontinuant becomes [+aspirated] at the start of a syllable before a stressed vowel, with or without a consonant in between. So the /p/ of <em>inspect</em> and <em>compass</em> stays plain.
+    <span class="ko-supp" style="display:block;">기식음화 규칙: 음절 첫머리의 무성 비지속음은 강세 모음 앞에서(사이에 자음이 하나 끼어도) 기식 자질을 얻는다.</span></p>
   <aside class="notes">
     자질 변경 규칙의 세 사례: 복수 어미의 유성성 동화, 부정 접두사 /ɪn/의 조음위치 동화(homorganic),
-    유기음화(자질 추가). 다음 두 슬라이드에서 동화·이화로 나눠 봅니다.
+    유기음화(자질 추가). 아래 규칙 문장은 교재 p.235의 진술을 풀어 쓴 것입니다: 대상은 무성 비지속음(/p t k tʃ/), 환경은 음절 첫머리 + 뒤 모음 강세.
+    inspect, compass의 /p/는 뒤 모음에 강세가 없어 기식이 없습니다. 기식 자질은 음소 자질 행렬에 없고 규칙이 더합니다. 다음 두 슬라이드에서 동화·이화로 나눠 봅니다.
   </aside>
 </section>
 
@@ -210,16 +222,17 @@
 <section data-kicker="CH.6 P.235" data-path="The Rules of Phonology › Feature-Changing Rules">
   <h2>Assimilation Rules</h2>
   <div class="cols">
-    <div class="def">A sound becomes <b>more like</b> its neighbor: articulatory economy at work. The most common rule type of all.
-      <span class="ko-supp" style="display:block; margin-top:8px;">동화(assimilation)는 소리가 이웃 소리를 닮아가는 것으로, 조음의 경제성에서 비롯되며 가장 흔한 규칙 유형이다.</span></div>
+    <div class="def">A sound becomes <b>more like</b> its neighbor. Most assimilation rules make articulation easier.
+      <span class="ko-supp" style="display:block; margin-top:8px;">동화(assimilation)는 소리가 이웃 소리를 닮아가는 것으로, 대부분 발음을 쉽게 하려는 조음 과정에서 비롯된다.</span></div>
     <div class="quote-stack">
       <p><b>Voicing assimilation</b>: plural and past endings agree in voicing with the stem ([kæts], [wɔkt]).</p>
       <p><b>Place assimilation</b>: Akan and English nasals turn [m] before /p/, [n] before /t/, [ŋ] before /k/.</p>
       <p><b>Vowel nasalization</b>: vowels nasalize before a nasal in the same syllable (<i>den</i> /dɛn/ → [dɛ̃n], but <i>deck</i> stays oral).</p>
+      <p><b>Sign languages</b> assimilate too: in the ASL compound <i>blood</i> (<i>red</i> + <i>flow</i>), <i>red</i> takes the open handshape of <i>flow</i>.</p>
     </div>
   </div>
   <aside class="notes">
-    동화가 가장 흔하며 대부분 조음 경제성에서 비롯됩니다. 유성성 동화(복수·과거), 조음위치 동화
+    동화 규칙은 영어와 여러 언어에 많고, 대부분 조음 경제성에서 비롯됩니다(모음을 내는 동안 미리 연구개를 내리는 편이 쉬움, p.235). 유성성 동화(복수·과거), 조음위치 동화
     (Akan·영어의 동기관 비음), 모음 비음화. 다음 슬라이드에서 비음화를 형식 표기로 적습니다.
     교재 p.237은 수어의 동화도 소개합니다: ASL의 blood는 red와 flow의 합성어인데, red의 손모양(검지를 세운 주먹)이
     뒤따르는 flow의 펼친 손모양으로 바뀌고 위치(턱)는 그대로입니다.
@@ -283,21 +296,25 @@
       <div class="small-label" style="margin-bottom:12px;">INSERTION (EPENTHESIS)</div>
       <hr class="hair" style="margin:0 0 14px;">
       <p class="lead" style="font-size:18px;">A whole segment is added: the schwa of <em>buses</em> [bʌsəz] and <em>mended</em> [mɛndəd].</p>
+      <div class="rule-mini">∅ <b>→</b> ə <b>/</b> [+sibilant] __ [+sibilant]</div>
+      <div class="rule-mini-gl">nothing (∅) becomes schwa between two sibilants</div>
     </div>
     <div>
       <div class="small-label" style="margin-bottom:12px;">DELETION</div>
       <hr class="hair" style="margin:0 0 14px;">
       <p class="lead" style="font-size:18px;">A segment is dropped: casual <em>mystery</em> → "mystry", <em>memory</em> → "memry".</p>
+      <p class="lead" style="font-size:16px; margin-top:10px;">Deletion rules are far more common than insertion rules.</p>
     </div>
   </div>
-  <hr class="hair" style="margin-top:30px;">
-  <p class="lead" style="font-size:17px;">The silent <em>g</em> is a deletion rule too: <em>sign</em> [saɪn] · <em>design</em>, but the [g] returns in <em>signature</em>, <em>designation</em>.
-    <button class="say-btn mini" data-say="sign, signature" data-lang="en-US">listen</button>
-    <span class="ko-supp" style="display:block;">묵음 g도 삭제 규칙의 결과다: sign, design에서 사라진 [g]가 signature, designation에서는 다시 나타난다.</span></p>
+  <hr class="hair" style="margin-top:22px;">
+  <p class="lead" style="font-size:17px;">The silent <em>g</em> is a deletion rule too: delete /g/ before a nasal when the /g/ begins a word (<em>gnostic</em>, but <em>agnostic</em>) or the nasal ends a syllable (<em>sign</em> [saɪn], but <em>signature</em>).
+    <button class="say-btn mini" data-say="sign, signature. gnostic, agnostic" data-lang="en-US">listen</button>
+    <span class="ko-supp" style="display:block;">묵음 g도 삭제 규칙의 결과다: /g/가 낱말 첫머리에 있거나 뒤의 비음이 음절을 끝낼 때, 비음 앞의 /g/가 삭제된다.</span></p>
   <aside class="notes">
     삽입(schwa epenthesis)과 삭제(비강세 모음 탈락, g 삭제)를 대비합니다. 교재는 슈와 삽입의 이유로 squeeze를 듭니다:
     [z]만 붙이면 [skwizː]가 되는데, 영어는 장단 자음을 대립시키지 않아 [skwiz]와 구별하기 어렵습니다. sign/signature,
-    gnostic/agnostic의 규칙적 교체가 '침묵하는 g'의 정체입니다. 철자가 아니라 규칙의 문제입니다. 교재에 따르면 삭제 규칙이 삽입 규칙보다 훨씬 흔하며, g 삭제는 비음 앞에서 규칙적으로 일어납니다.
+    gnostic/agnostic의 규칙적 교체가 '침묵하는 g'의 정체입니다. 철자가 아니라 규칙의 문제입니다. 13주차 첫머리의 sign/signal 질문에 대한 답이 이 규칙입니다.
+    삽입 규칙의 형식 표기(∅ = null)와 g 삭제 규칙 진술은 교재 pp.239–240. 특정 비음이 아니라 '비음 자음'이라는 부류로 적었기 때문에 /m/ 앞(paradigm, phlegm)과 /n/ 앞(sign, design) 모두에서 /g/가 삭제됩니다. 교재에 따르면 삭제 규칙이 삽입 규칙보다 훨씬 흔합니다.
   </aside>
 </section>
 
@@ -333,6 +350,7 @@
         <li><span class="no">/e/</span><span>maintain [e] · maintenance [ə]<button class="say-btn mini" data-say="maintain, maintenance" data-lang="en-US">♪</button></span></li>
         <li><span class="no">/o/</span><span>phone [o] · phonetic [ə]<button class="say-btn mini" data-say="phone, phonetic" data-lang="en-US">♪</button></span></li>
       </ul>
+      <p class="lead" style="font-size:16px; margin:8px 0 0;"><b>Schwa rule</b>: a vowel becomes [ə] when it is unstressed, so [ə] is an allophone of every English vowel phoneme.</p>
       <hr class="hair">
       <p class="lead" style="font-size:16px;">German devoices final obstruents: <em>Bund</em> /bʊnd/ and <em>bunt</em> /bʊnt/ are both [bʊnt]; [t] serves /d/ <b>and</b> /t/.</p>
     </div>
