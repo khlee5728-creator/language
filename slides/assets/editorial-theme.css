@@ -97,8 +97,13 @@ html, body, .reveal, .reveal-viewport { background: var(--ed-paper) !important; 
 
 /* 대역(gloss) 세트 */
 .gloss-set .langlab { font: 600 11px 'Space Grotesk'; letter-spacing: 0.26em; color: var(--ed-muted); margin-bottom: 12px; }
-.gloss-set .sent { font: italic 400 28px/1.35 'Lora'; color: var(--ed-ink); }
+.gloss-set .sent { font: italic 400 24px/1.35 'Lora'; color: var(--ed-ink); }   /* v17: 예문 줄은 24px 하나로(덱마다 22–28px로 달리 적던 것 통일) */
 .gloss-set .sent b { font-weight: 700; color: var(--ed-accent); }
+/* v17 낱말·형태 예시(.sent.pair): 인용된 형태만 <i>, 발음 표기 [ ]·뜻풀이 " "·화살표·설명은 정체. 문장 예문(.sent)은 통째로 이탤릭 */
+.gloss-set .sent.pair { font-style: normal; }
+.gloss-set .sent.pair i { font-style: italic; }
+/* v17 뜻풀이가 딸린 낱말 쌍 여러 줄(.pairs2): 두 열로 맞춰 같은 크기로. 첫 쌍만 크게 하지 않는다 */
+.gloss-set .pairs2 { display: grid; grid-template-columns: max-content max-content; gap: 2px 30px; font: 400 18px/1.35 'Lora'; color: var(--ed-ink); }
 .gloss-set .gls { margin-top: 8px; font: 400 14px 'Space Grotesk'; letter-spacing: 0.05em; color: var(--ed-muted); }
 .gloss-set .tr { margin-top: 12px; font: 400 18px 'Lora', 'Noto Serif KR'; color: var(--ed-body); }
 
