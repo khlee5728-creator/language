@@ -51,6 +51,13 @@
     .reveal table.ed-table.deriv td.na { color: var(--ed-muted); }
     .reveal table.ed-table.deriv tr:nth-last-child(2) td { border-bottom-color: var(--ed-ink); }
     .reveal table.ed-table.deriv tr:last-child td { color: var(--ed-ink); font-weight: 700; }
+    /* 20번: 자질 행렬. 음소 기호는 소문자 그대로(머리글의 대문자 변환 해제), 값이 갈리는 칸(.chg)만 악센트 */
+    .reveal table.ed-table.fmat { max-width: none; table-layout: fixed; }
+    .reveal table.ed-table.fmat th.c { font: 400 22px 'Lora'; letter-spacing: 0; text-transform: none; color: var(--ed-ink); padding-bottom: 8px; }
+    .reveal table.ed-table.fmat th:first-child, .reveal table.ed-table.fmat td:first-child { width: 31%; }
+    .reveal table.ed-table.fmat td { font-size: 19px; color: var(--ed-ink); padding: 9px 0; }
+    .reveal table.ed-table.fmat td.c { font-size: 25px; line-height: 1.1; color: var(--ed-muted); }
+    .reveal table.ed-table.fmat td.chg { color: var(--ed-accent); font-weight: 700; }
     /* 15번: b_t 열두 단어(모음 음소 찾기) */
     .bt { display: grid; grid-template-columns: repeat(6, 1fr); gap: 0 14px; margin: 6px 0 4px; }
     .bt span { border-top: 1px solid var(--ed-line); padding: 6px 0 8px; font: italic 400 17px 'Lora'; color: var(--ed-ink); }
@@ -544,20 +551,25 @@
     <div class="def">Each feature carries a value: <b>plus</b> for presence, <b>minus</b> for absence. A phoneme is a <b>bundle of feature values</b>.
       <span class="ko-supp" style="display:block; margin-top:8px;">자질은 있으면 플러스, 없으면 마이너스 값을 지니며, 음소는 이런 자질 값의 묶음(bundle of feature values)이다.</span></div>
     <div>
-      <table class="ed-table" style="max-width:420px;">
+      <table class="ed-table fmat">
         <tr><th></th><th class="c">/p/</th><th class="c">/b/</th><th class="c">/m/</th></tr>
-        <tr><td>consonantal</td><td class="c">+</td><td class="c">+</td><td class="c">+</td></tr>
-        <tr><td><b>voiced</b></td><td class="c">−</td><td class="c">+</td><td class="c">+</td></tr>
-        <tr><td><b>nasal</b></td><td class="c">−</td><td class="c">−</td><td class="c">+</td></tr>
         <tr><td>labial</td><td class="c">+</td><td class="c">+</td><td class="c">+</td></tr>
+        <tr><td>voiced</td><td class="c chg">−</td><td class="c chg">+</td><td class="c">+</td></tr>
+        <tr><td>nasal</td><td class="c">−</td><td class="c chg">−</td><td class="c chg">+</td></tr>
       </table>
-      <p class="lead" style="font-size:16px; margin-top:14px;">[±voiced] splits /p/ from /b/; [±nasal] splits /b/ from /m/. Vowels too: [±back] in <em>look/lick</em>, [±tense] in <em>beat/bit</em>.
-    <span class="ko-supp" style="display:block;">[±voiced]는 /p/와 /b/를, [±nasal]은 /b/와 /m/을 가르며, 모음에서는 [±back]과 [±tense]가 그렇다.</span></p>
+      <div class="quote-stack compact" style="margin-top:18px;">
+        <p><b>[±voiced]</b> separates /p/ from /b/.</p>
+        <p><b>[±nasal]</b> separates /b/ from /m/.</p>
+        <p>Vowels work the same way: [±back] in <i>look/lick</i>, [±tense] in <i>beat/bit</i>.</p>
+      </div>
     </div>
   </div>
+  <p class="lead" style="font-size:17px; margin-top:22px;">Every phoneme differs from every other phoneme in <b>at least one feature value</b>.
+    <span class="ko-supp" style="display:block;">모든 음소는 적어도 하나의 자질 값에서 다른 모든 음소와 다르다.</span></p>
   <aside class="notes">
-    자질 행렬로 음소들을 비교합니다. [voiced], [nasal]처럼 값을 바꾸면 다른 음소가 되는 자질이
-    변별적입니다. 모음의 [±back](look/lick), [±tense](beat/bit)도 영어의 변별 자질입니다. 모든 음소는 적어도 하나의 변별 자질 값에서 서로 다르다는 문장도 짚으세요.
+    자질 행렬(교재 p.228의 Labial·Voiced·Nasal 세 행)로 음소들을 비교합니다. 색으로 표시한 칸이 값이 갈리는 곳입니다: voiced 행에서 /p/와 /b/가, nasal 행에서 /b/와 /m/이 갈립니다.
+    [voiced], [nasal]처럼 값을 바꾸면 다른 음소가 되는 자질이 변별적입니다. 모음의 [±back](look/lick), [±tense](beat/bit)도 영어의 변별 자질입니다.
+    맨 아래 문장(모든 음소는 적어도 하나의 자질 값에서 서로 다르다)이 이 슬라이드의 결론입니다.
   </aside>
 </section>
 
