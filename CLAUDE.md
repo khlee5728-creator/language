@@ -39,7 +39,7 @@
 - **챕터 악센트**: W1 `#2b3a67` · Ch.1 `#7a2e2e` · Ch.2 `#2e5941` · Ch.3 `#4a2e5c` · Ch.4 `#8a5a20` · Ch.5 `#24513f` · Ch.6 `#6e1f28`.
 - 이모지·색 상자·그라데이션 금지. 헤어라인과 타이포그래피로만 위계 표현.
 - **서체 역할**: Playfair Display=제목 · Lora=영문 본문/예문(예문·인용은 이탤릭) · Space Grotesk=킥커/라벨/번호 · Noto Serif KR=국문.
-  국문 혼용 블록(.lead/.def/.tr/.mcq-opt/.mcq-explain/.recap)은 `'Lora','Noto Serif KR'` 순으로 지정해 영문은 항상 Lora로 찍히게 한다(굵기 400 통일). 영문에 Noto Serif KR을 직접 지정하지 않는다.
+  국문 혼용 블록(.lead/.def/.tr/.mcq-opt/.mcq-explain/.recap)은 `'Lora','Noto Serif KR'` 순으로 지정해 영문은 항상 Lora로 찍히게 한다(굵기 400 통일). 영문에 Noto Serif KR을 직접 지정하지 않는다. 필기체 그림 전용: Playwrite US Trad(W13 17번 — 교재 p.226 손글씨 그림은 복제하지 않고 같은 낱말 쌍을 글꼴로 새로 조판).
 - **요점 목록(.quote-stack) 규칙(v11)**: 재구성한 요점은 **정체** + 줄 사이 헤어라인(불릿 기호 없음). 줄 안에서 언급되는 예문·단어(use–mention)는 `<i>`, 강조어는 `<b>`. 예문 자체를 나열하는 블록(This is the house that Jack built…, 최소대립쌍 등)만 `quote-stack ex`로 표시해 이탤릭 유지. 요점 문장을 이탤릭으로 쓰지 않는다(이탤릭=예문·인용 전용).
 - **작은 회색 주석 규칙(v16)**: 작은 회색 **이탤릭**은 (1) 출처 표기 `(cf. textbook Ch.n, p.x)`·표나 그림의 원전 표시, (2) 그림 캡션(`.tree-cap`)과 읽는 법 범례(`? = odd`, `Rows = manner…`)에만 쓴다.
   언어에 관한 **내용이 있는 주석은 작은 회색 정체**로 쓰고(`.fnote`·`.fn`·`.ex-note`·`.etym`은 정체), 그 안의 예문·언급된 낱말만 `<i>`, 뒤에 붙는 출처만 `<i>(cf. …)</i>`.

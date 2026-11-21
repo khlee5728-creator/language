@@ -7,6 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,400;1,700&family=Lora:ital@0;1&family=Space+Grotesk:wght@400;600;700&family=Noto+Serif+KR:wght@300;500&family=Noto+Sans+KR:wght@300;400;700&family=Jua&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playwrite+US+Trad&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css" />
   <link rel="stylesheet" href="assets/linguistics-theme.css" />
@@ -54,6 +55,19 @@
     .bt { display: grid; grid-template-columns: repeat(6, 1fr); gap: 0 14px; margin: 6px 0 4px; }
     .bt span { border-top: 1px solid var(--ed-line); padding: 6px 0 8px; font: italic 400 17px 'Lora'; color: var(--ed-ink); }
     .bt span small { display: block; font: 400 15px 'Lora'; font-style: normal; color: var(--ed-body); }
+    /* 17번: 필기체 이서체(allograph) 그림. 쌍을 위아래로 놓아 같은 글자의 두 모양을 세로로 견준다.
+       실선 두 줄 = 올림 높이와 바닥, 점선 = 가운데 줄. 줄 위치(0.365·0.865em)는 Playwrite US Trad 실측값
+       (줄 높이 1.8em 기준 바닥선 1.365em, x-높이 0.5em, 올림 높이 1em, 내림 0.52em) */
+    .cursive-fig { margin: 4px 0 0; padding-bottom: 0.1em; font: 400 35px/1.8 'Playwrite US Trad', cursive; color: var(--ed-ink); white-space: nowrap; }
+    .cursive-fig .cl { position: relative; display: grid; grid-template-columns: repeat(4, 1fr); height: 1.8em; }
+    .cursive-fig .cl::before { content: ""; position: absolute; left: 0; right: 0; top: 0.365em; height: 1em;
+      border-top: 1px solid var(--ed-line); border-bottom: 1px solid var(--ed-line); }
+    .cursive-fig .cl::after { content: ""; position: absolute; left: 0; right: 0; top: 0.865em; border-top: 1px dashed var(--ed-line); }
+    .cursive-fig .cl > span { position: relative; padding-left: 0.9em; }
+    .cursive-fig .v { color: var(--ed-accent); }
+    .cursive-cap { font: italic 400 14px 'Lora'; color: var(--ed-muted); margin: 6px 0 0; }
+    /* 22번: 태국어 최소대립쌍 세 쌍(무기음 | 유기음)을 같은 크기로 나란히 */
+    .gloss-set .pairs2 { display: grid; grid-template-columns: max-content max-content; gap: 2px 30px; font: 400 18px/1.35 'Lora'; color: var(--ed-ink); }
     /* 10번 등: 규칙 문장(영문) */
     .gloss-set .rl { font: 400 15.5px/1.45 'Lora'; color: var(--ed-body); margin: 4px 0 2px; }
     .reveal ol.recap.toc2 { columns: 2; column-gap: 44px; max-width: none; }
@@ -462,12 +476,19 @@
     <div class="quote-stack">
       <p>Oral vowels appear before <b>oral</b> consonants and word-finally; nasal vowels appear before <b>nasal</b> consonants.</p>
       <p>The choice is <b>rule-governed</b> and predictable, so it can never distinguish words.</p>
-      <p>Writing works the same way: capital and lowercase letters (<b>allographs</b>) appear in complementary contexts, and cursive <i>l</i> starts low after <i>g</i> but mid-line after <i>b</i>.</p>
+      <p>Writing works the same way: capital and lowercase letters (<b>allographs</b>) appear in complementary contexts.</p>
     </div>
   </div>
+  <div class="cursive-fig" role="img" aria-label="Cursive word pairs: glue over blue, sat over vat, mill over will, rack over rock">
+    <div class="cl"><span>g<span class="v">l</span>ue</span><span>s<span class="v">a</span>t</span><span>m<span class="v">i</span>ll</span><span>ra<span class="v">c</span>k</span></div>
+    <div class="cl"><span>b<span class="v">l</span>ue</span><span>v<span class="v">a</span>t</span><span>w<span class="v">i</span>ll</span><span>ro<span class="v">c</span>k</span></div>
+  </div>
+  <p class="cursive-cap">Cursive too: the preceding letter decides where l, a, i and c begin. (cf. textbook Ch.6, p.226)</p>
   <aside class="notes">
     교재 pp.225–227. 상보적 분포는 이음 판별의 핵심 기준입니다(Table 6.3: 구강 모음은 어말과 구강 자음 앞, 비음 모음은 비자음 앞).
     교재는 인쇄 문자의 대문자/소문자(allograph), 필기체 l의 두 변이형, Superman과 Clark Kent 비유로 설명합니다. 같은 자리에 결코 함께 나타나지 않는 두 변이형입니다.
+    아래 그림은 교재 p.226 그림의 낱말 쌍을 필기체 글꼴로 새로 조판한 것입니다(교재 그림 복제 아님). 쌍을 위아래로 놓았으니 색으로 표시한 글자를 세로로 견주게 하세요: glue의 l은 g가 바닥에서 끝나므로 바닥에서,
+    blue의 l은 b가 가운데 줄에서 끝나므로 가운데 줄(점선)에서 시작합니다. sat/vat의 a, mill/will의 i, rack/rock의 c도 같습니다. 어디서 시작하든 같은 글자이고, 어느 변이형이 나올지는 바로 앞 글자가 정합니다.
     [교재 밖 보충] 자유 변이(같은 환경에서 교체 가능하나 뜻이 바뀌지 않음, 예: cat 끝 /t/의 개방 [tʰ]·비개방 [t̚])와 대조해 말로 덧붙일 수 있습니다.
   </aside>
 </section>
@@ -570,8 +591,11 @@
     <div>
       <div class="gloss-set">
         <div class="langlab">THAI · ASPIRATION IS CONTRASTIVE</div>
-        <div class="sent" style="font-size:21px; font-style:normal;">[paa] "forest" · [pʰaa] "to split"</div>
-        <p class="rl">[tam] "to pound" · [tʰam] "to do" &nbsp;|&nbsp; [kat] "to bite" · [kʰat] "to interrupt"</p>
+        <div class="pairs2">
+          <span>[paa] "forest"</span><span>[pʰaa] "to split"</span>
+          <span>[tam] "to pound"</span><span>[tʰam] "to do"</span>
+          <span>[kat] "to bite"</span><span>[kʰat] "to interrupt"</span>
+        </div>
         <div class="tr ko-supp" style="font-size:15.5px; margin-top:6px;">태국어에서는 기식 유무만 다른 최소대립쌍이 있어 기식이 변별 자질이다.</div>
       </div>
       <hr class="hair">
