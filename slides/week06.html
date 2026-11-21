@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="assets/slides-quiz.css?v=3" />
   <link rel="stylesheet" href="assets/slides-ko.css" />
   <link rel="stylesheet" href="assets/slides-media.css?v=7" />
-  <link rel="stylesheet" href="assets/editorial-theme.css?v=15" />
+  <link rel="stylesheet" href="assets/editorial-theme.css?v=16" />
   <style>
     :root { --slide-accent: #4a2e5c; }
 
@@ -53,7 +53,7 @@
     .eg-line { display: flex; flex-wrap: wrap; gap: 0 22px; margin-top: 4px; }
     .eg-line > span { white-space: nowrap; }
     .rel-line { display: block; margin-top: 4px; }
-    .fn { display: block; font: italic 400 13.5px/1.35 'Lora'; color: var(--ed-muted); margin-top: 2px; }
+    .fn { display: block; font: 400 13.5px/1.35 'Lora'; color: var(--ed-muted); margin-top: 2px; }   /* 내용 주석은 정체, 예문만 <i> */
     .fn i { color: var(--ed-body); }
     .reveal table.horder { width: 100%; border-collapse: collapse; margin: 14px 0 0; }
     .reveal table.horder th { white-space: nowrap; font: 600 11px 'Space Grotesk'; letter-spacing: 0.14em; color: var(--ed-muted); text-align: left; padding: 0 12px 8px 0; border-bottom: 1px solid var(--ed-ink); background: none; vertical-align: bottom; }
@@ -163,7 +163,7 @@
       <li><span class="no">4</span><span>I mean what I say. &nbsp;≠&nbsp; I say what I mean.</span></li>
     </ul>
   </div>
-  <p style="font: italic 400 14px 'Lora'; color: var(--ed-muted); margin-top:14px;">Example 4 is the Mad Hatter's point: same words, different order, different meaning. (Lewis Carroll, <i>Alice</i>)</p>
+  <p style="font: 400 14px 'Lora'; color: var(--ed-muted); margin-top:14px;">Example 4 is the Mad Hatter's point: same words, different order, different meaning. (Lewis Carroll, <i>Alice</i>)</p>
   <aside class="notes">
     통사 규칙이 하는 일: 어순 결정, 문법 관계 표시, 적형성 판단. 3–4는 같은 단어라도 어순이 의미를
     바꿈을 보여줍니다. 이 규칙이 화자의 무의식적 지식(competence)의 일부임을 상기시키세요. 영어가 SVO 언어라는 점은 예문 1·3에서 확인.
@@ -207,7 +207,8 @@
       </div>
     </div>
   </div>
-  <p class="lead" style="font-size:17px; margin-top:22px;">A constituent is a node on the tree together with <em>all</em> the words beneath it.</p>
+  <p class="lead" style="font-size:17px; margin-top:22px;">A constituent is a node on the tree together with <em>all</em> the words beneath it.
+    <span class="ko-supp" style="display:block;">구성성분(constituent)은 나무의 한 마디와 그 아래의 모든 단어를 합친 것이다.</span></p>
   <aside class="notes">
     교재 p.79: 언어학자의 기준은 화자의 언어 지식에 맞는 기술이며, 두 경쟁 가설(competing hypotheses)을 같은 문장에 적용해 비교합니다.
     우단은 교재처럼 같은 예문을 평면 구조와 위계 구조로 나란히 보여 줍니다. 교재가 나머지 구성성분 the child를 찾게 하듯
@@ -304,7 +305,7 @@
 <!-- ══ 10 · Ambiguity trees (figure) ══ -->
 <section data-kicker="CH.3 P.83 · SENTENCE STRUCTURE · FIGURE">
   <h2 style="margin-bottom:10px;">Structural Ambiguity</h2>
-  <div class="cols-even" style="gap:36px;">
+  <div class="cols-even" style="--cols-gap:36px;">
     <div>
       <svg viewBox="0 0 380 240" style="width:100%;">
         <!-- lines -->
@@ -504,7 +505,8 @@
 <!-- ══ 13 · Phrase Structure Trees (figure) ══ -->
 <section data-kicker="CH.3 P.88" data-path="Sentence Structure">
   <h2 style="margin-bottom:8px;">Phrase Structure Trees</h2>
-  <p class="lead" style="font-size:17px; margin-bottom:2px;">Now each constituent wears its category label.</p>
+  <p class="lead" style="font-size:17px; margin-bottom:2px;">Now each constituent wears its category label.
+    <span class="ko-supp" style="display:block;">이제 각 구성성분에 범주 이름표가 붙는다.</span></p>
   <div style="text-align:center;">
     <svg viewBox="0 0 620 320" style="width:74%; max-width:600px; margin:0 auto;">
       <!-- lines -->
@@ -587,7 +589,8 @@
         <div><span class="no">7</span><span class="nt">PP</span><span class="arr">→</span>P&nbsp;NP</div>
         <div><span class="no">8</span><span class="nt">CP</span><span class="arr">→</span>C&nbsp;S<span class="cm">C = that, if, whether</span></div>
       </div>
-      <p class="lead" style="font-size:16px; margin-top:14px;">Rules 3–6 share one pattern: a VP always contains a V, which may be followed by an NP, a PP, or a CP.</p>
+      <p class="lead" style="font-size:16px; margin-top:14px;">Rules 3–6 share one pattern: a VP always contains a V, which may be followed by an NP, a PP, or a CP.
+    <span class="ko-supp" style="display:block;">규칙 3–6은 한 틀을 공유한다: VP에는 항상 V가 있고, 그 뒤에 NP·PP·CP가 올 수 있다.</span></p>
     </div>
   </div>
   <aside class="notes">
@@ -698,7 +701,8 @@
       </div>
       <hr class="hair">
       <p class="lead" style="font-size:16.5px;">PPs loop too: <em>the person behind the person immediately to the left of …</em></p>
-      <p class="lead" style="font-size:16.5px; margin-top:8px;">Competence has no limit. Only <b>performance</b> (memory, breath) does.</p>
+      <p class="lead" style="font-size:16.5px; margin-top:8px;">Competence has no limit. Only <b>performance</b> (memory, breath) does.
+    <span class="ko-supp" style="display:block;">언어 능력에는 한계가 없고, 한계는 기억·호흡 같은 수행에만 있다.</span></p>
     </div>
   </div>
   <aside class="notes">
@@ -886,7 +890,7 @@
 <!-- ══ 21 · The Three Levels of Phrases ══ -->
 <section data-kicker="CH.3 P.98" data-path="The Internal Structure of Phrases">
   <h2 style="margin-bottom:10px;">The Three Levels of Phrases</h2>
-  <div class="cols-even" style="gap:40px;">
+  <div class="cols-even" style="--cols-gap:40px;">
     <div>
       <p class="lead" style="font-size:16.5px; margin-bottom:6px;">A phrase may also open with a <b>specifier</b>: first, at most one, and possibly empty (<i>dogs with bones</i>).</p>
       <div class="spec-grid">
@@ -966,7 +970,7 @@
 <!-- ══ 23 · What Heads the Sentence ══ -->
 <section data-kicker="CH.3 P.101" data-path="The Internal Structure of Phrases">
   <h2 style="margin-bottom:10px;">What Heads the Sentence</h2>
-  <div class="cols-even" style="gap:40px;">
+  <div class="cols-even" style="--cols-gap:40px;">
     <div>
       <p class="lead" style="font-size:17.5px;">Every sentence is <b>tensed</b>, and modals are inherently tensed.
         <span class="eg-line" style="font-size:16.5px;"><span><em>John dances / danced</em></span><span><em>John may win the race tomorrow</em> / <span class="gram-star">*yesterday</span></span></span>
@@ -1107,7 +1111,7 @@
   <h2 style="font-size:40px;">The Infinity of Language Revisited</h2>
   <p class="lead" style="font-size:17px; margin:0 0 4px;">Back to <i>Sue saw the man with the telescope</i>: same words, different attachment, different meaning.
     <span class="ko-supp" style="display:block;">같은 단어라도 PP가 붙는 자리가 다르면 의미가 달라진다.</span></p>
-  <div class="cols-even" style="gap:24px; align-items:end;">
+  <div class="cols-even" style="--cols-gap:24px; align-items:end;">
     <div><svg viewBox="0 0 313 199" style="width:100%;">
 <text class="node" x="29" y="55" text-anchor="middle" style="fill:#1c1a17">NP</text>
 <path d="M29,60 L16,70 L42,70 Z" fill="none" stroke="#1c1a17" stroke-width="1.1"/>

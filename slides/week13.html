@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="assets/slides-quiz.css?v=3" />
   <link rel="stylesheet" href="assets/slides-ko.css" />
   <link rel="stylesheet" href="assets/slides-media.css?v=7" />
-  <link rel="stylesheet" href="assets/editorial-theme.css?v=15" />
+  <link rel="stylesheet" href="assets/editorial-theme.css?v=16" />
   <style>
     :root { --slide-accent: #6e1f28; }
 
@@ -36,7 +36,7 @@
     .reveal table.ed-table td.form { font: italic 700 20px 'Lora'; color: var(--ed-accent); white-space: nowrap; }
     .reveal table.ed-table td.c, .reveal table.ed-table th.c { text-align: center; padding-right: 0; }
     /* 7번: 순서 있는 두 규칙(라벨 + 문장) + 전체 폭 도출표 */
-    .rules2 { margin-top: 14px; grid-template-columns: auto minmax(0, 1fr); gap: 36px; }
+    .rules2 { margin-top: 14px; grid-template-columns: auto minmax(0, 1fr); --cols-gap: 36px; }
     .rules2 p { margin: 0; border-top: 1px solid var(--ed-line); padding-top: 10px; font: 400 17px/1.5 'Lora'; color: var(--ed-ink); }
     .rules2 p b { color: var(--ed-accent); font-weight: 700; }
     .rules2 .rn { display: block; font: 600 11px 'Space Grotesk'; letter-spacing: 0.2em; color: var(--ed-muted); margin-bottom: 3px; }
@@ -56,7 +56,6 @@
     .bt span small { display: block; font: 400 15px 'Lora'; font-style: normal; color: var(--ed-body); }
     /* 9번 등: 규칙 문장(영문) */
     .gloss-set .rl { font: 400 15.5px/1.45 'Lora'; color: var(--ed-body); margin: 4px 0 2px; }
-    .fnote { font: italic 400 14px/1.45 'Lora'; color: var(--ed-muted); margin: 8px 0 0; }
     .reveal ol.recap.toc2 { columns: 2; column-gap: 44px; max-width: none; }
     .reveal ol.recap.toc2 li { break-inside: avoid; padding-top: 5px; padding-bottom: 5px; }
     /* 규칙 표시: 헤어라인 프레임 세리프 라인 */
@@ -198,7 +197,8 @@
 <!-- ══ 6 · The Pronunciation of Plurals ══ -->
 <section data-kicker="CH.6 P.217" data-path="The Pronunciation of Morphemes">
   <h2>The Pronunciation of Plurals</h2>
-  <p class="lead" style="font-size:18px; max-width:660px;">One plural morpheme: three regular pronunciations, or <b>allomorphs</b>, chosen by the final sound of the noun.</p>
+  <p class="lead" style="font-size:18px; max-width:660px;">One plural morpheme: three regular pronunciations, or <b>allomorphs</b>, chosen by the final sound of the noun.
+    <span class="ko-supp" style="display:block;">복수 형태소는 하나인데 규칙적인 발음, 곧 이형태(allomorph)는 셋이며, 명사의 마지막 소리가 그중 하나를 고른다.</span></p>
   <table class="ed-table" style="margin-top:14px;">
     <tr><th>Allomorph</th><th>Environment</th><th>Example</th></tr>
     <tr><td class="form">[z]</td><td>after voiced nonsibilant segments</td><td><i>dogs, cabs, boys</i> <button class="say-btn mini" data-say="dogs, cabs, boys" data-lang="en-US">listen</button></td></tr>
@@ -242,7 +242,8 @@
 <!-- ══ 8 · Additional Examples of Allomorphs ══ -->
 <section data-kicker="CH.6 P.220" data-path="The Pronunciation of Morphemes">
   <h2 style="font-size:40px;">Additional Examples of Allomorphs</h2>
-  <p class="lead" style="font-size:18px; max-width:660px;">The regular past tense runs on the same track: basic form /d/, three surface allomorphs.</p>
+  <p class="lead" style="font-size:18px; max-width:660px;">The regular past tense runs on the same track: basic form /d/, three surface allomorphs.
+    <span class="ko-supp" style="display:block;">규칙 과거시제도 같은 방식이다: 기저형은 /d/, 표면 이형태는 셋이다.</span></p>
   <table class="ed-table" style="margin-top:14px; max-width:none;">
     <tr><th>Allomorph</th><th>Environment</th><th>Example</th></tr>
     <tr><td class="form">[d]</td><td>after voiced segments (other than [d])</td><td style="white-space:nowrap;"><i>begged</i> [bɛgd] · <i>played</i> [pled] <button class="say-btn mini" data-say="begged, played" data-lang="en-US">listen</button></td></tr>
@@ -290,7 +291,8 @@
       <p>Slashes mark phonemes, /p/; brackets mark allophones, [pʰ] in <i>pit</i> and [p] in <i>spit</i>.</p>
     </div>
   </div>
-  <p class="lead" style="font-size:16px; margin-top:18px;">Phonological rules operate on phonemes to make explicit which allophone is pronounced where.</p>
+  <p class="lead" style="font-size:16px; margin-top:18px;">Phonological rules operate on phonemes to make explicit which allophone is pronounced where.
+    <span class="ko-supp" style="display:block;">음운 규칙은 음소에 작용해, 어느 이음이 어디에서 발음되는지를 밝힌다.</span></p>
   <aside class="notes">
     음소는 '뜻을 가르는 심리적 범주', 이음은 그 물리적 실현입니다. /슬래시/와 [대괄호]의
     표기 관례를 분명히 하세요. Sapir의 표현대로 화자가 '느끼는' 것은 음소입니다.
@@ -309,14 +311,14 @@
         <div class="sent" style="font-size:24px;">bead [bid] · bean [bĩn]
           <button class="say-btn mini" data-say="bead, bean" data-lang="en-US">listen</button></div>
         <p class="rl">Vowels are nasalized before a nasal consonant in the same syllable. A nasal [bĩd] would sound odd, but still mean <i>bead</i>.</p>
-        <div class="tr">같은 음절의 비자음 앞에서 모음이 비음화되며, 비음화는 뜻을 바꾸지 못한다.</div>
+        <div class="tr ko-supp" style="font-size:15.5px; margin-top:6px;">같은 음절의 비자음 앞에서 모음이 비음화되며, 비음화는 뜻을 바꾸지 못한다.</div>
       </div>
       <div class="gloss-set">
         <div class="langlab">ASPIRATION · SAME PHONEME /p/</div>
         <div class="sent" style="font-size:24px;">pit [pʰɪt] · spit [spɪt]
           <button class="say-btn mini" data-say="pit, spit" data-lang="en-US">listen</button></div>
         <p class="rl">Voiceless stops are aspirated when they occur initially in a stressed syllable.</p>
-        <div class="tr">무성 파열음은 강세 음절 첫머리에서 기식음이 된다.</div>
+        <div class="tr ko-supp" style="font-size:15.5px; margin-top:6px;">무성 파열음은 강세 음절 첫머리에서 기식음이 된다.</div>
       </div>
     </div>
   </div>
@@ -362,7 +364,8 @@
 <!-- ══ 13 · Illustration of Allophones · the flap ══ -->
 <section data-kicker="CH.6 P.224" data-path="Phonemes: The Phonological Units of Language">
   <h2>Illustration of Allophones</h2>
-  <p class="lead" style="font-size:18px; max-width:660px;">The classic English case: one phoneme /t/, three allophones in complementary distribution.</p>
+  <p class="lead" style="font-size:18px; max-width:660px;">The classic English case: one phoneme /t/, three allophones in complementary distribution.
+    <span class="ko-supp" style="display:block;">영어의 대표 사례: 음소 /t/ 하나에, 상보적 분포를 이루는 이음이 셋이다.</span></p>
   <table class="ed-table" style="margin-top:14px; max-width:none;">
     <tr><th>Allophone</th><th>Environment</th><th>Example</th></tr>
     <tr><td class="form">[tʰ]</td><td>initially in a stressed syllable</td><td style="white-space:nowrap;"><i>tick</i> [tʰɪk] <button class="say-btn mini" data-say="tick" data-lang="en-US">listen</button></td></tr>
@@ -385,8 +388,10 @@
     <span class="ko-supp" style="display:block; margin-top:4px;">음소는 직접 관찰할 수 없으므로, 소리 하나를 바꿔 뜻이 달라지면 두 소리가 서로 다른 음소라고 판단한다.</span></p>
   <div class="bt"><span>beat<small>[bit]</small></span><span>bit<small>[bɪt]</small></span><span>bait<small>[bet]</small></span><span>bet<small>[bɛt]</small></span><span>bat<small>[bæt]</small></span><span>bite<small>[baɪt]</small></span><span>boot<small>[but]</small></span><span>but<small>[bʌt]</small></span><span>boat<small>[bot]</small></span><span>bought<small>[bɔt]</small></span><span>bout<small>[baʊt]</small></span><span>bot<small>[bɑt]</small></span></div>
   <p class="lead" style="font-size:16px; margin:6px 0 0;">Any two of these <i>b_t</i> words form a <b>minimal pair</b>: at least 12 vowel phonemes. Add <i>book/beak</i> [ʊ] and <i>boy/buy</i> [ɔɪ]: 11 monophthongs and 3 diphthongs.
-    <button class="say-btn mini" data-say="beat, bit, bait, bet, bat, bite, boot, but, boat, bought, bout, bot" data-lang="en-US">listen</button></p>
-  <p class="fnote">Each pronunciation of a phoneme is a <b>phone</b>; the phones of one phoneme are its allophones. Phonemic /bon/ is pronounced [bõn].</p>
+    <button class="say-btn mini" data-say="beat, bit, bait, bet, bat, bite, boot, but, boat, bought, bout, bot" data-lang="en-US">listen</button>
+    <span class="ko-supp" style="display:block;">b_t 단어는 어느 둘이든 최소대립쌍(minimal pair)이므로 모음 음소는 적어도 12개이고, 둘을 더하면 단모음 11개와 이중모음 3개다.</span></p>
+  <p class="lead" style="font-size:16px; margin:8px 0 0;">Each pronunciation of a phoneme is a <b>phone</b>; the phones of one phoneme are its <b>allophones</b>. Phonemic /bon/ is pronounced [bõn].
+    <span class="ko-supp" style="display:block;">음소의 발음 하나하나가 음(phone)이고, 한 음소의 음들이 그 음소의 이음(allophone)이다.</span></p>
   <aside class="notes">
     교재 pp.224–225의 방법 그대로입니다. 모음만 다른 b_t 열두 단어 중 어느 둘이든 최소대립쌍이므로 영어에는 적어도 12개의 모음 음소가 있고,
     book/beak로 [ʊ], boy/buy로 [ɔɪ]를 더해 단모음 11개와 이중모음 3개가 됩니다(이중모음은 한 소리로 셈). 영어 변이형에 따라 조금 다를 수 있습니다.
@@ -466,10 +471,11 @@
         <div class="sent" style="font-size:26px;">seal [sil] · zeal [zil]
           <button class="say-btn mini" data-say="seal, zeal" data-lang="en-US">listen</button></div>
         <p class="rl">Voicing also separates <i>feel/veal</i> and <i>cap/cab</i>.</p>
-        <div class="tr">유성성(voicing)은 seal/zeal, feel/veal, cap/cab을 가르는 변별 자질이다.</div>
+        <div class="tr ko-supp" style="font-size:15.5px; margin-top:6px;">유성성(voicing)은 seal/zeal, feel/veal, cap/cab을 가르는 변별 자질이다.</div>
       </div>
       <hr class="hair">
-      <p class="lead" style="font-size:17px;">A minimal pair means the two sounds are <b>not</b> in complementary distribution: they contrast.</p>
+      <p class="lead" style="font-size:17px;">A minimal pair means the two sounds are <b>not</b> in complementary distribution: they contrast.
+    <span class="ko-supp" style="display:block;">최소대립쌍이 있다는 것은 두 소리가 상보적 분포가 아니라 서로 대립한다는 뜻이다.</span></p>
     </div>
   </div>
   <aside class="notes">
@@ -492,7 +498,8 @@
         <tr><td><b>nasal</b></td><td class="c">−</td><td class="c">−</td><td class="c">+</td></tr>
         <tr><td>labial</td><td class="c">+</td><td class="c">+</td><td class="c">+</td></tr>
       </table>
-      <p class="lead" style="font-size:16px; margin-top:14px;">[±voiced] splits /p/ from /b/; [±nasal] splits /b/ from /m/. Vowels too: [±back] in <em>look/lick</em>, [±tense] in <em>beat/bit</em>.</p>
+      <p class="lead" style="font-size:16px; margin-top:14px;">[±voiced] splits /p/ from /b/; [±nasal] splits /b/ from /m/. Vowels too: [±back] in <em>look/lick</em>, [±tense] in <em>beat/bit</em>.
+    <span class="ko-supp" style="display:block;">[±voiced]는 /p/와 /b/를, [±nasal]은 /b/와 /m/을 가르며, 모음에서는 [±back]과 [±tense]가 그렇다.</span></p>
     </div>
   </div>
   <aside class="notes">
@@ -513,7 +520,8 @@
       <p>Vowel nasality is <b>distinctive</b> in Portuguese and Akan: Akan [pam] "sew" vs. [pãm] "confederate".</p>
     </div>
   </div>
-  <p class="lead" style="font-size:16px; margin-top:8px;">The same feature can be distinctive for one class of sounds and predictable for another.</p>
+  <p class="lead" style="font-size:16px; margin-top:8px;">The same feature can be distinctive for one class of sounds and predictable for another.
+    <span class="ko-supp" style="display:block;">같은 자질이 어떤 소리 부류에서는 변별적이고, 다른 부류에서는 예측 가능할 수 있다.</span></p>
   <aside class="notes">
     예측 가능한 자질은 규칙으로 채워지므로 어휘부에 저장되지 않습니다(단어를 익힐 때 따로 배울 필요가 없음, p.230). 비음성은 영어 자음에는
     변별적(met/net), 모음에는 예측 가능합니다. Akan과 포르투갈어에서는 모음 비음성이 변별적이라(같은 음성, 다른 음소 체계, p.229)
@@ -530,13 +538,14 @@
     <div>
       <div class="gloss-set">
         <div class="langlab">THAI · ASPIRATION IS CONTRASTIVE</div>
-        <div class="sent" style="font-size:21px;">[paa] "forest" · [pʰaa] "to split"</div>
+        <div class="sent" style="font-size:21px; font-style:normal;">[paa] "forest" · [pʰaa] "to split"</div>
         <p class="rl">[tam] "to pound" · [tʰam] "to do" &nbsp;|&nbsp; [kat] "to bite" · [kʰat] "to interrupt"</p>
-        <div class="tr">태국어에서는 기식 유무만 다른 최소대립쌍이 있어 기식이 변별 자질이다.</div>
+        <div class="tr ko-supp" style="font-size:15.5px; margin-top:6px;">태국어에서는 기식 유무만 다른 최소대립쌍이 있어 기식이 변별 자질이다.</div>
       </div>
       <hr class="hair">
       <p class="lead" style="font-size:16px;">Consonant <b>length</b> is phonemic in Italian (<em>nonno/nono</em>) and Luganda; ASL signs contrast minimally in handshape, movement, or location.</p>
-      <p class="fnote">Phonetic representation shows how sounds are pronounced; phonemic representation shows how they pattern.</p>
+      <p class="lead" style="font-size:16px; margin-top:8px;"><b>Phonetic representation</b> shows how sounds are pronounced; <b>phonemic representation</b> shows how they pattern.
+    <span class="ko-supp" style="display:block;">음성 표상(phonetic representation)은 발음을, 음소 표상(phonemic representation)은 소리의 패턴을 보여 준다.</span></p>
     </div>
   </div>
   <aside class="notes">

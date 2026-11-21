@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="assets/slides-quiz.css?v=3" />
   <link rel="stylesheet" href="assets/slides-ko.css" />
   <link rel="stylesheet" href="assets/slides-media.css?v=7" />
-  <link rel="stylesheet" href="assets/editorial-theme.css?v=15" />
+  <link rel="stylesheet" href="assets/editorial-theme.css?v=16" />
   <style>
     :root { --slide-accent: #8a5a20; }
 
@@ -164,7 +164,7 @@
     <div class="def">Knowing the meaning tells you how to determine the truth value: <i>you need not know whether it is actually true</i>.
       <span class="ko-supp" style="display:block; margin-top:8px;">의미를 알면 진리값을 가리는 방법을 알 뿐, 그 문장이 실제로 참인지까지 알 필요는 없다.</span></div>
     <div>
-      <div class="cols-even" style="gap:44px;">
+      <div class="cols-even" style="--cols-gap:44px;">
         <div>
           <div class="small-label" style="margin-bottom:10px;">TAUTOLOGY (ANALYTIC) · ALWAYS TRUE</div>
           <hr class="hair" style="margin:0 0 12px;">
@@ -177,7 +177,8 @@
         </div>
       </div>
       <hr class="hair">
-      <p class="lead" style="font-size:17px;">Most sentences are neither: they are true or false <em>in a given situation</em>.</p>
+      <p class="lead" style="font-size:17px;">Most sentences are neither: they are true or false <em>in a given situation</em>.
+    <span class="ko-supp" style="display:block;">대부분의 문장은 어느 쪽도 아니며, 주어진 상황에 따라 참이거나 거짓이다.</span></p>
     </div>
   </div>
   <aside class="notes">
@@ -240,7 +241,8 @@
         <div class="sent" style="font-size:23px;">Jack → the individual Jack</div>
         <div class="sent" style="font-size:23px; margin-top:10px;">swim → the set of individuals that swim</div>
         <div class="sent" style="font-size:23px; margin-top:10px;">kiss → the set of pairs of individuals X and Y such that X kissed Y</div>
-        <div class="tr">고유명은 개체를, 술어는 집합을 지시한다. 이 재료를 규칙이 합성한다.</div>
+        <div class="tr">Proper names denote individuals; predicates denote sets. The rules combine these ingredients.</div>
+        <div class="tr ko-supp" style="font-size:16px; margin-top:4px;">고유명은 개체를, 술어는 집합을 지시하며, 이 재료를 규칙이 합성한다.</div>
       </div>
     </div>
   </div>
@@ -258,13 +260,13 @@
       <div class="small-label" style="margin-bottom:12px;">SEMANTIC RULE I · P.139</div>
       <hr class="hair" style="margin:0 0 14px;">
       <p class="lead" style="font-size:18px;">[NP VP] is <b>true</b> if the meaning of NP, an individual, is a <em>member</em> of the meaning of VP, a set.</p>
-      <p style="font: italic 400 17px 'Lora'; color: var(--ed-muted); margin-top:10px;">Jack swims: true if Jack is a member of the set of swimmers.</p>
+      <p style="font: 400 17px 'Lora'; color: var(--ed-muted); margin-top:10px;"><i>Jack swims</i>: true if Jack is a member of the set of swimmers.</p>
     </div>
     <div>
       <div class="small-label" style="margin-bottom:12px;">SEMANTIC RULE II · P.140</div>
       <hr class="hair" style="margin:0 0 14px;">
       <p class="lead" style="font-size:18px;">[V NP] is the set of individuals X such that X is the <em>first member</em> of a pair in the meaning of V whose second member is the meaning of NP.</p>
-      <p style="font: italic 400 17px 'Lora'; color: var(--ed-muted); margin-top:10px;">kissed Laura = {all who kissed Laura}; then Rule I applies.</p>
+      <p style="font: 400 17px 'Lora'; color: var(--ed-muted); margin-top:10px;"><i>kissed Laura</i> = {all who kissed Laura}; then Rule I applies.</p>
     </div>
   </div>
   <hr class="hair" style="margin-top:28px;">
@@ -483,7 +485,8 @@
         <tr><td>girl</td><td>+</td><td>−</td><td>−</td></tr>
       </table>
       <hr class="hair">
-      <p class="lead" style="font-size:17px;"><em>man</em> and <em>boy</em> share [+human, +male], differing only in [±adult]: features make relations systematic.</p>
+      <p class="lead" style="font-size:17px;"><em>man</em> and <em>boy</em> share [+human, +male], differing only in [±adult]: features make relations systematic.
+    <span class="ko-supp" style="display:block;">man과 boy는 [+human, +male]을 공유하고 [±adult]만 다르다: 자질이 단어 사이의 관계를 체계적으로 보여 준다.</span></p>
     </div>
   </div>
   <aside class="notes">
@@ -496,7 +499,8 @@
 <section data-kicker="CH.4 P.152" data-path="Lexical Semantics (Word Meanings) › Semantic Features">
   <h2>Evidence for Semantic Features</h2>
   <p class="lead" style="max-width:680px; margin-bottom:18px;">Features are not directly observable, but <em>slips of the tongue</em> betray them.
-    <span class="small-label" style="margin-left:14px;">INTENDED → ERROR</span></p>
+    <span class="small-label" style="margin-left:14px;">INTENDED → ERROR</span>
+    <span class="ko-supp" style="display:block;">의미 자질은 직접 관찰할 수 없지만, 말실수가 그것을 드러낸다.</span></p>
   <div style="max-width:680px;">
     <div class="slip-row"><span class="s">bridge of the nose</span><span class="ar">→</span><span class="e">bridge of the neck</span></div>
     <div class="slip-row"><span class="s">Mary was young</span><span class="ar">→</span><span class="e">Mary was early</span></div>
@@ -529,7 +533,8 @@
       <p class="lead" style="font-size:16.5px;">Count vs. mass is not grounded in perception:
         <span class="rel-line">Italian counts <em>spaghetti, mobili, capelli</em>.</span>
         <span class="eg-line"><span><i>Ivano ha mangiato molti spaghetti</i></span><span>"many spaghettis"</span></span>
-        <span class="rel-line">English pairs both ways: <em>shoes</em> (count) / <em>footwear</em> (mass).</span></p>
+        <span class="rel-line">English pairs both ways: <em>shoes</em> (count) / <em>footwear</em> (mass).</span>
+    <span class="ko-supp" style="display:block;">가산·물질 구분은 지각에 바탕을 둔 것이 아니다: 이탈리아어는 spaghetti를 세고, 영어는 shoes(가산)와 footwear(물질)를 함께 쓴다.</span></p>
     </div>
   </div>
   <aside class="notes">
@@ -601,7 +606,8 @@
 <!-- ══ 23 · Argument Structure and Thematic Roles ══ -->
 <section data-kicker="CH.4 P.156" data-path="Lexical Semantics (Word Meanings)">
   <h2 style="font-size:40px;">Argument Structure and Thematic Roles</h2>
-  <p class="lead" style="font-size:17px; margin-bottom:16px;">A verb's <b>argument structure</b> says how many NPs it takes; its <b>thematic (theta) roles</b> say what part each plays.</p>
+  <p class="lead" style="font-size:17px; margin-bottom:16px;">A verb's <b>argument structure</b> says how many NPs it takes; its <b>thematic (theta) roles</b> say what part each plays.
+    <span class="ko-supp" style="display:block;">논항 구조(argument structure)는 NP의 수, 의미역(thematic role)은 각 NP의 역할이다.</span></p>
   <div class="role-grid">
     <div class="tc"><b>Agent</b>the doer: <i>The boy</i> rolled a red ball.</div>
     <div class="tc"><b>Theme</b>the undergoer: the boy rolled <i>a red ball</i>.</div>
@@ -611,11 +617,10 @@
     <div class="tc"><b>Instrument</b>the means used to accomplish the action</div>
   </div>
   <p class="lead role-sent" style="font-size:17px; margin-top:12px; text-align:center;"><em><ruby><u>Professor Snape</u><rt>SOURCE</rt></ruby> awakened <ruby><u>Harry Potter</u><rt>EXPERIENCER</rt></ruby> <ruby><u>with his wand</u><rt>INSTRUMENT</rt></ruby>.</em></p>
-  <hr class="hair" style="margin-top:22px;">
+  <hr class="hair" style="margin:10px 0 10px;">
   <p class="lead" style="font-size:16.5px;">Roles stay constant across structures:
     <span class="eg-line"><span><em>The boy opened the door with the key.</em></span><span><em>The key opened the door.</em></span><span><em>The door opened.</em></span></span>
-    <span class="rel-line"><b>The door</b> is the theme in all three.</span>
-    <span class="ko-supp" style="display:block;">의미역은 구조가 바뀌어도 그대로여서, 세 문장 모두에서 the door는 대상(theme)이다.</span></p>
+    <span class="rel-line"><b>The door</b> is the theme in all three.</span></p>
   <aside class="notes">
     자동사 1항, 타동사 2항, 수여동사 3항 — 논항구조는 어휘 항목의 일부. 의미역은 통사 위치가 아니라
     해석상의 역할: The door opened의 door는 주어지만 theme. buy/sell이 관계반의어인 것도 "go" 자질을

@@ -64,10 +64,18 @@ html, body, .reveal, .reveal-viewport { background: var(--ed-paper) !important; 
 .hair-b { border-bottom: 1px solid var(--ed-line); }
 
 /* ── 레이아웃 아키타입 ── */
-.cols { display: grid; grid-template-columns: 290px minmax(0, 1fr); gap: 56px; align-items: start; }
+.cols { display: grid; grid-template-columns: 290px minmax(0, 1fr); gap: var(--cols-gap, 56px); align-items: start; }
 .cols .def { border-top: 1px solid var(--ed-line); padding-top: 16px; font: 400 18px/1.75 'Lora', 'Noto Serif KR'; color: var(--ed-body); }
 .cols .def i { font: italic 400 18px 'Lora'; }
-.cols-even { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 56px; align-items: start; }
+.cols-even { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--cols-gap, 56px); align-items: start; }
+/* 2단 구분선(v16): 세로줄은 2단 배치의 것이다. 오른쪽 단에 무엇이 오든 단 사이 한가운데에, 두 단 중 긴 쪽 높이로 긋는다.
+   간격을 바꿀 때는 gap이 아니라 --cols-gap을 쓴다(줄이 간격 한가운데에 오도록). 요점 목록(.quote-stack)에는 줄이 없다. */
+.cols > :nth-child(1), .cols-even > :nth-child(1) { grid-column: 1; grid-row: 1; }
+.cols > :nth-child(2), .cols-even > :nth-child(2) { grid-column: 2; grid-row: 1; }
+.cols::before, .cols-even::before {
+  content: ''; grid-column: 2; grid-row: 1; justify-self: start; align-self: stretch;
+  width: 0; margin-left: calc(var(--cols-gap, 56px) / -2); border-left: 1px solid var(--ed-line); pointer-events: none;
+}
 
 /* 단어 진열(hero 하단) */
 .word-row { display: flex; gap: 54px; border-top: 1px solid var(--ed-line); padding-top: 20px; margin-top: 34px; }
@@ -96,7 +104,7 @@ html, body, .reveal, .reveal-viewport { background: var(--ed-paper) !important; 
 
 /* 인용/재귀 스택 */
 /* 요점 목록(v11): 정체 + 줄 사이 헤어라인. 이탤릭은 줄 안의 예문·인용(<i>)과 예문 전용 블록(.ex)에만 */
-.quote-stack { border-left: 1px solid var(--ed-line); padding-left: 28px; }
+.quote-stack { }   /* v16: 왼쪽 세로줄은 2단 배치(.cols/.cols-even)가 긋는다 */
 .quote-stack p {
   font: 400 19px/1.6 'Lora'; margin: 0; color: var(--ed-ink);
   padding: 8px 0; border-bottom: 1px solid var(--ed-line);
@@ -110,7 +118,7 @@ html, body, .reveal, .reveal-viewport { background: var(--ed-paper) !important; 
 .quote-stack.compact p { font-size: 17px; line-height: 1.5; padding: 6px 0; }
 
 /* ── 한국어 부연: 세리프 정제 ── */
-.ko-supp { font-family: 'Noto Serif KR', serif !important; font-weight: 300 !important; color: var(--ed-muted) !important; }
+.ko-supp { font-family: 'Noto Serif KR', serif !important; font-weight: 300 !important; font-style: normal !important; color: var(--ed-muted) !important; }   /* 국문은 이탤릭 없음(v16) */
 
 /* ── 버튼류: 이모지 없는 레터스페이스 라벨 ── */
 .say-btn, .media-btn, .home-btn, .pdf-btn, .ko-toggle-btn {

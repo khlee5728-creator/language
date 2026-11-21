@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="assets/slides-quiz.css?v=3" />
   <link rel="stylesheet" href="assets/slides-ko.css" />
   <link rel="stylesheet" href="assets/slides-media.css?v=7" />
-  <link rel="stylesheet" href="assets/editorial-theme.css?v=15" />
+  <link rel="stylesheet" href="assets/editorial-theme.css?v=16" />
   <style>
     :root { --slide-accent: #2e5941; }
     /* s7 가독성: 정의 한 줄 + 예시 줄 분리(예시 쌍은 줄 안에서 끊기지 않음) */
@@ -53,7 +53,7 @@
     .reveal table.malap tr:last-child td { border-bottom: 0; }
     .reveal table.malap td.w { font: italic 400 19px 'Lora'; color: var(--ed-ink); white-space: nowrap; }
     .reveal table.malap td.real b { color: var(--ed-accent); font-weight: 700; }
-    .reveal table.malap .etym { display: block; font: italic 400 13px 'Lora'; color: var(--ed-muted); margin-top: 2px; }
+    .reveal table.malap .etym { display: block; font: 400 13px 'Lora'; color: var(--ed-muted); margin-top: 2px; }   /* 내용 주석은 정체, 언급된 형태만 <i> */
     .reveal table.malap .ko-supp { display: block; font-size: 13px; margin-top: 1px; }
     .mparse { display: flex; gap: 0; margin-top: 8px; border-top: 1px solid var(--ed-line); border-bottom: 1px solid var(--ed-line); }
     .mparse > div { flex: 1; text-align: center; padding: 4px 4px; border-right: 1px solid var(--ed-line); font: italic 400 19px/1.2 'Lora'; }
@@ -114,7 +114,8 @@
 <!-- ══ 3 · Figure 2.1 recap ══ -->
 <section data-kicker="CH.2 P.49 · MORPHOLOGY · FIGURE">
   <div style="text-align:center;">
-    <p class="lead" style="font-size:18px; margin-bottom:8px;">Where we are: last week's map of English morphemes.</p>
+    <p class="lead" style="font-size:18px; margin-bottom:8px;">Where we are: last week's map of English morphemes.
+    <span class="ko-supp" style="display:block;">지난주에 본 영어 형태소 분류 지도에서 다시 출발한다.</span></p>
     <svg viewBox="-50 0 770 300" style="width:94%; max-width:820px; margin:0 auto;">
       <g stroke="#1c1a17" stroke-width="1.2" fill="none">
         <line x1="360" y1="42" x2="180" y2="90"/>
@@ -200,7 +201,8 @@
 <!-- ══ 5 · Figure: two trees for unlockable ══ -->
 <section data-kicker="CH.2 P.51 · THE HIERARCHICAL STRUCTURE OF WORDS · FIGURE">
   <div style="text-align:center;">
-    <p class="lead" style="font-size:18px; margin-bottom:6px;">Same string, two structures, two meanings: <em>structural ambiguity</em>.</p>
+    <p class="lead" style="font-size:18px; margin-bottom:6px;">Same string, two structures, two meanings: <em>structural ambiguity</em>.
+    <span class="ko-supp" style="display:block;">같은 글자열이 두 구조로 분석되어 두 뜻을 갖는다: 구조적 중의성(structural ambiguity)이다.</span></p>
     <svg viewBox="0 0 720 250" style="width:94%; max-width:820px; margin:0 auto;">
       <!-- Reading 1: [[un+lock]+able] = able to be unlocked -->
       <g stroke="#1c1a17" stroke-width="1.4" fill="none">
@@ -241,9 +243,9 @@
       <text x="560" y="203" text-anchor="middle" font-family="Space Grotesk" font-size="13" letter-spacing="1" fill="#2e5941">[un+[lock+able]]</text>
       <text x="560" y="227" text-anchor="middle" font-family="Lora" font-style="italic" font-size="15" fill="#2e5941">"not able to be locked"</text>
     </svg>
-    <p style="font: italic 400 14px 'Lora'; color: var(--ed-muted); margin-top:10px;">
-      A whole class works this way: <em>unbuttonable, unzippable, unlatchable</em>. (cf. textbook Ch.2, pp.51–52)
-      <span class="ko-supp" style="display:block;">같은 글자열이 두 구조로 분석되어 두 뜻을 갖는 구조적 중의성(structural ambiguity)이며, unbuttonable 같은 단어 부류 전체가 그렇다.</span></p>
+    <p style="font: 400 14px 'Lora'; color: var(--ed-muted); margin-top:10px;">
+      A whole class works this way: <em>unbuttonable, unzippable, unlatchable</em>. <i>(cf. textbook Ch.2, pp.51–52)</i>
+      <span class="ko-supp" style="display:block;">unbuttonable 같은 단어 부류 전체가 이렇게 두 뜻을 갖는다.</span></p>
   </div>
   <aside class="notes">
     unlockable의 두 트리를 나란히 보여주는 슬라이드입니다. 왼쪽은 [[un+lock]+able] "열 수 있는", 오른쪽은
@@ -515,7 +517,7 @@
     <div class="w"><b>tocadiscos</b><span>SPANISH · "RECORD PLAYER"</span></div>
     <div class="w"><b>mɛ:w fâw bâan</b><span>THAI · "WATCH CAT"</span></div>
   </div>
-  <p style="font: italic 400 15px 'Lora'; color: var(--ed-muted); margin-top:18px;">Thai literally says "cat-watch-house": a feline watchdog. (cf. textbook Ch.2, p.58)</p>
+  <p style="font: 400 15px 'Lora'; color: var(--ed-muted); margin-top:18px;">Thai literally says "cat-watch-house": a feline watchdog. <i>(cf. textbook Ch.2, p.58)</i></p>
   <aside class="notes">
     합성의 보편성: 프랑스어 cure-dent, 독일어 Panzerkraftwagen, 스페인어 tocadiscos, 토호노 오오담어
     hanchu doakam "animal life", 태국어 "catwatchhouse". 언어마다 어순은 달라도 합성이라는 기제는 공통.
@@ -660,7 +662,7 @@
         <li class="fragment"><i>singer, writer, teacher</i>: this <b>-er</b> turns a verb into "one who does it", a different morpheme with the same sound.</li>
         <li class="fragment"><i>number, somber, member</i>: here -er means nothing (no one <i>sombs</i>), so each word is <b>one morpheme</b>.</li>
       </ol>
-      <div class="morph-result fragment"><span class="no">ROOTS</span>ugly · pretty · tall<br><span class="no">BOUND</span>-er "comparative" · -est "superlative"</div>
+      <div class="morph-result fragment"><span class="no">ROOTS</span>ugly · pretty · tall<br><span class="no">BOUND</span>-er "comparative" · -est "superlative"<span class="ko-supp" style="display:block; font-size:15px;">어근은 ugly·pretty·tall이고, 의존형태소는 비교급 -er과 최상급 -est다.</span></div>
     </div>
   </div>
   <aside class="notes">
@@ -674,7 +676,7 @@
 <!-- ══ 17b0 · Case Study 2 · Paku ══ -->
 <section data-kicker="CH.2 P.61" data-path="Morphological Analysis: Identifying Morphemes">
   <h2>Case Study 2</h2>
-  <div class="cols">
+  <div class="cols" style="grid-template-columns: max-content minmax(0, 1fr);">
     <div>
       <div class="gloss-set"><div class="langlab">PAKU · A LANGUAGE MADE FOR TV</div></div>
       <div class="azdata four">
@@ -696,7 +698,7 @@
         <li class="fragment">The rest of each word stays the same: <i>abu</i> / <i>abu-ni</i>, <i>me</i> / <i>me-ni</i>.</li>
         <li class="fragment">So <b>-ni</b> is a separate morpheme meaning "plural", attached as a suffix.</li>
       </ol>
-      <div class="morph-result fragment"><span class="no">SUFFIX</span>-ni "plural"</div>
+      <div class="morph-result fragment"><span class="no">SUFFIX</span>-ni "plural"<span class="ko-supp" style="display:block; font-size:15px;">-ni는 '복수'를 뜻하는 접미사다.</span></div>
     </div>
   </div>
   <aside class="notes">
@@ -734,7 +736,7 @@
         <li class="fragment"><i>ikali</i> "his house": <b>i-</b> = "his", which leaves <b>kwahmili</b> = "cornfield".</li>
         <li class="fragment"><i>nokalimes</i>, <i>mopelomes</i>: what remains is <b>&#8209;mes</b> = plural.</li>
       </ol>
-      <div class="morph-result fragment"><span class="no">ROOTS</span>kali · pelo · kwahmili<br><span class="no">AFFIXES</span>no- · mo- · i- · -mes</div>
+      <div class="morph-result fragment"><span class="no">ROOTS</span>kali · pelo · kwahmili<br><span class="no">AFFIXES</span>no- · mo- · i- · -mes<span class="ko-supp" style="display:block; font-size:15px;">어근은 kali·pelo·kwahmili이고, 접사는 no-·mo-·i-·-mes다.</span></div>
     </div>
   </div>
   <aside class="notes">
@@ -765,7 +767,7 @@
     <p class="lead" style="font-size:16.5px; margin:0;"><span class="small-label" style="display:block; margin-bottom:2px;">PREDICT</span>
       <i>darujem</i> = "I gift". "To gift" = <span class="fragment"><b><i>darovati</i></b></span></p>
   </div>
-  <p style="font: italic 400 14px 'Lora'; color: var(--ed-muted); margin-top:10px;">Ch.6 shows why such variation is rule-governed. (cf. textbook Ch.2, pp.62–63)</p>
+  <p style="font: 400 14px 'Lora'; color: var(--ed-muted); margin-top:10px;">Ch.6 shows why such variation is rule-governed. <i>(cf. textbook Ch.2, pp.62–63)</i></p>
   <aside class="notes">
     교재 p.62–63 사례 4(교재는 동사 7개 × 4형태, 여기서는 4개만 발췌). 먼저 뒤섞인 자료를 표로 재배열하는
     기법 자체가 요점입니다. dir-/gled-는 -ati·-am·-aju·-anje로 깔끔하지만, -ov 어간(kupov-, stanov-)은 "I"와
