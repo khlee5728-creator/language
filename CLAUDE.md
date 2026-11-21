@@ -27,8 +27,9 @@
 
 - **헤더/타이틀은 교재 섹션 제목 그대로(verbatim).** 임의 요약·의역 금지. 히어로 워드(개념어 초대형 타이포) 금지 — 교재 정합성이 우선.
   한 섹션이 여러 장에 걸치면 **같은 섹션 제목을 반복**한다(서술형 제목·"제목 · 부연" 금지, 2026-09-28 전 덱 통일). 요약 슬라이드 제목은 `Summary`.
-  h2가 섹션 X이면 X의 상위 섹션 경로(장 제목 제외, 교재 제목 그대로)를 `<section data-path="Grammatical Dependencies › Question Formation Rules">`로 단다(최상위 섹션은 생략).
+  h2가 섹션 X이면 X의 상위 섹션 경로(장 제목 제외, 교재 제목 그대로)를 `<section data-path="Phonemes: The Phonological Units of Language › Complementary Distribution">`로 단다(최상위 섹션은 생략).
   slides-editorial.js(v5+)가 킥커 같은 줄에 이탤릭으로 붙이며, 길어서 두 줄이 되면 맨 위부터 `…`로 접는다. 교재에 없는 번호는 쓰지 않는다. 예외: 영상·ENRICHMENT·NEXT WEEK 슬라이드.
+  위계는 추측하지 않고 교재 차례(책 앞부분 Contents의 들여쓰기)와 본문 제목 서체(밑줄 있는 큰 제목 = 2단계, 밑줄 없는 작은 굵은 제목 = 3단계)로 확인한다. 내용상 하위로 보여도 교재가 같은 단계로 찍었으면 같은 단계다(W13 Feature Values, W7 Wh Questions, W11 Voiced and Voiceless Sounds 전례, 2026-11-21 전 덱 대조). 목차 슬라이드의 들여쓰기도 같은 위계를 따른다.
 - **제목 크기 규칙(v15)**: 제목 글자 수로만 정한다. ≤30자 기본 46px(인라인 지정 없음) · 31–42자 `font-size:40px` · 43자 이상 `font-size:36px`.
   두 줄이 되면 테마의 `text-wrap: balance`가 고르게 나눈다. 본문 공간이 부족하다고 제목을 임의로 줄이지 말고 본문을 조정한다.
 - **섹션 완전성**: 주차 범위의 교재 섹션은 하나도 건너뛰지 않는다. 덱 신설·개편 시 챕터 헤딩 목록을 추출해 체크리스트로 대조.

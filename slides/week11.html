@@ -61,9 +61,6 @@
     .ipa-grid { display: grid; gap: 0 18px; }
     .ipa-grid.c3 { grid-template-columns: repeat(3, 1fr); }
     .ipa-grid.c2 { grid-template-columns: repeat(2, 1fr); }
-    /* 목차 4단계 들여쓰기(slides-editorial.js는 lv3까지) */
-    .reveal .recap.outline li.lv4 { padding-left: 90px; font-size: 16px; }
-    .reveal .recap.outline li.lv4 b { font-weight: 400; }
     .ipa-grid > span { display: flex; align-items: baseline; gap: 10px; border-bottom: 1px solid var(--ed-line); padding: 1px 0; }
     .ipa-grid .sy { font: 400 18px/1.3 'Lora'; color: var(--ed-ink); min-width: 26px; }
     .ipa-grid i b { font-weight: 700; color: var(--ed-accent); }
@@ -200,9 +197,10 @@
   ─ Consonants ........................ p.189 → slide 12
   ─ Place of Articulation ............. p.189 → slide 13
   ─ Manner of Articulation ............ p.191 → slide 14
-      · Voiced and Voiceless Sounds ... p.192 → slides 15–17 (+ timing figure after Figure 5.2, slide 18)
-      · Nasal and Oral Sounds ......... p.193 → slides 19, 21 (+ figure after Figure 5.3, slide 20; cartoon, slide 22)
-      · Stops … Glides (run-in heads) . p.195–197 → slides 23–24 (trills, flaps, clicks on 24)
+  ─ Voiced and Voiceless Sounds ....... p.192 → slides 15–17 (+ timing figure after Figure 5.2, slide 18)
+  ─ Nasal and Oral Sounds ............. p.193 → slides 19, 21 (+ figure after Figure 5.3, slide 20; cartoon, slide 22)
+      · Stops … Glides (run-in heads) . p.195–197 → slides 23–24, titled Manner of Articulation (trills, flaps, clicks on 24)
+  (Place … Phonetic Symbols are sibling sections under Consonants in the textbook: contents indentation and heading typography)
   ─ Phonetic Symbols for American English Consonants p.197 → slide 25 (chart)
 -->
 <div class="reveal">
@@ -233,8 +231,8 @@
     <li class="lv2"><b>Consonants</b><span class="pg">P.189</span></li>
     <li class="lv3"><b>Place of Articulation</b><span class="pg">P.189</span></li>
     <li class="lv3"><b>Manner of Articulation</b><span class="pg">P.191</span></li>
-    <li class="lv4"><b>Voiced and Voiceless Sounds</b><span class="pg">P.192</span></li>
-    <li class="lv4"><b>Nasal and Oral Sounds</b><span class="pg">P.193</span></li>
+    <li class="lv3"><b>Voiced and Voiceless Sounds</b><span class="pg">P.192</span></li>
+    <li class="lv3"><b>Nasal and Oral Sounds</b><span class="pg">P.193</span></li>
     <li class="lv3"><b>Phonetic Symbols for American English Consonants</b><span class="pg">P.197</span></li>
   </ol>
   <aside class="notes">
@@ -615,7 +613,7 @@
 </section>
 
 <!-- ══ 15 · Voiced and Voiceless Sounds: cords apart vs. vibrating ══ -->
-<section data-kicker="CH.5 P.192" data-path="Articulatory Phonetics › Consonants › Manner of Articulation">
+<section data-kicker="CH.5 P.192" data-path="Articulatory Phonetics › Consonants">
   <h2>Voiced and Voiceless Sounds</h2>
   <div class="cols-even">
     <div>
@@ -644,7 +642,7 @@
 </section>
 
 <!-- ══ 16 · Voiced and Voiceless Sounds: minimal pairs ══ -->
-<section data-kicker="CH.5 P.192" data-path="Articulatory Phonetics › Consonants › Manner of Articulation">
+<section data-kicker="CH.5 P.192" data-path="Articulatory Phonetics › Consonants">
   <h2>Voiced and Voiceless Sounds</h2>
   <p class="lead" style="font-size:17px; margin:0 0 12px;">The voiced/voiceless distinction is very important in English: in each pair, <b>voicing alone</b> differs; the lips and tongue are in the same position.
     <span class="ko-supp" style="display:block; margin-top:4px;">유성/무성의 구별은 영어에서 매우 중요하며, 아래 각 쌍은 유성성(voicing) 하나만 다르다.</span></p>
@@ -677,7 +675,7 @@
 </section>
 
 <!-- ══ 17 · Voiced and Voiceless Sounds: aspiration ══ -->
-<section data-kicker="CH.5 P.193" data-path="Articulatory Phonetics › Consonants › Manner of Articulation">
+<section data-kicker="CH.5 P.193" data-path="Articulatory Phonetics › Consonants">
   <h2>Voiced and Voiceless Sounds</h2>
   <p class="lead" style="font-size:17px; margin:0 0 14px;">Voiceless stops fall into <b>two classes</b>, depending on when the vocal cords close after the release: <i>pit</i> and <i>spit</i> differ phonetically.
     <span class="ko-supp" style="display:block; margin-top:4px;">무성 파열음은 개방 뒤 성대가 닫히는 시점에 따라 두 부류로 나뉘며, pit과 spit의 [p]는 음성적으로 다르다.</span></p>
@@ -772,7 +770,7 @@
 </section>
 
 <!-- ══ 19 · Nasal and Oral Sounds: the velum ══ -->
-<section data-kicker="CH.5 P.193" data-path="Articulatory Phonetics › Consonants › Manner of Articulation">
+<section data-kicker="CH.5 P.193" data-path="Articulatory Phonetics › Consonants">
   <h2>Nasal and Oral Sounds</h2>
   <p class="lead" style="font-size:17px; margin:0 0 14px;">[b] and [m] are both voiced bilabials. What tells them apart? The <b>velum</b>, the soft palate at the back of the roof of the mouth.
     <span class="ko-supp" style="display:block; margin-top:4px;">[b]와 [m]은 둘 다 유성 양순음인데, 둘을 가르는 것은 입천장 뒤쪽의 연구개(velum)다.</span></p>
@@ -824,7 +822,7 @@
 </section>
 
 <!-- ══ 21 · Nasal and Oral Sounds: pairs, four classes ══ -->
-<section data-kicker="CH.5 P.194" data-path="Articulatory Phonetics › Consonants › Manner of Articulation">
+<section data-kicker="CH.5 P.194" data-path="Articulatory Phonetics › Consonants">
   <h2>Nasal and Oral Sounds</h2>
   <div class="cols-even" style="--cols-gap:44px;">
     <div>
@@ -862,7 +860,7 @@
 </section>
 
 <!-- ══ 22 · Cartoon: nasal sounds video (v2, 2026-09-27) ══ -->
-<section data-kicker="CH.5 P.193 · MANNER OF ARTICULATION · CARTOON">
+<section data-kicker="CH.5 P.193 · NASAL AND ORAL SOUNDS · CARTOON">
   <div class="video-scene" style="text-align:center;">
     <div class="video-stage">
       <video src="assets/media/w11_toon_nasal.mp4" preload="metadata" playsinline></video>

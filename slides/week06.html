@@ -43,10 +43,9 @@
     svg .leaf { font: italic 400 15px 'Lora'; fill: #1c1a17; }
     svg .sub  { font: 600 10px 'Space Grotesk'; letter-spacing: 0.18em; fill: #8d8574; }
 
-    /* 목차 축약(항목 15개) */
-    .recap.xs li { font-size: 15px; padding-top: 5px; padding-bottom: 5px; padding-left: 48px; padding-right: 58px; }
-    .recap.xs li::before { top: 7px; }
-    .recap.xs .pg { float: none; position: absolute; right: 0; top: 8px; margin-top: 0; }
+    /* 목차 2단(항목 16개, 위계는 lv2 들여쓰기) */
+    .reveal ol.recap.toc2 { columns: 2; column-gap: 44px; max-width: none; }
+    .reveal ol.recap.toc2 li { break-inside: avoid; padding-top: 5px; padding-bottom: 5px; }
 
     .mcq .key { color: var(--ed-accent); }
     /* 요점 + 예시 줄 (W5와 같은 패턴) */
@@ -100,19 +99,20 @@
 <!-- ══ 2 · Contents ══ -->
 <section data-kicker="WEEK 6 · CONTENTS · CH.3 PP.75–106">
   <h2>Today</h2>
-  <ol class="recap tight xs" style="max-width:720px;">
+  <ol class="recap tight outline toc2">
     <li><b>What the Syntax Rules Do</b><span class="pg">P.77</span></li>
     <li><b>Sentence Structure</b><span class="pg">P.79</span></li>
     <li class="lv2"><b>Constituents and Constituency Tests</b><span class="pg">P.81</span></li>
     <li class="lv2"><b>Structural Ambiguity</b><span class="pg">P.82</span></li>
     <li class="lv2"><b>Syntactic Categories</b><span class="pg">P.84</span></li>
-    <li class="lv3"><b>Lexical and Functional Categories</b><span class="pg">P.86</span></li>
+    <li class="lv2"><b>Lexical and Functional Categories</b><span class="pg">P.86</span></li>
     <li class="lv2"><b>Phrase Structure Trees</b><span class="pg">P.88</span></li>
     <li class="lv2"><b>Phrase Structure Rules</b><span class="pg">P.90</span></li>
     <li class="lv2"><b>Building Phrase Structure Trees</b><span class="pg">P.93</span></li>
     <li class="lv2"><b>The Infinity of Language: Recursive Rules</b><span class="pg">P.94</span></li>
-    <li><b>The Internal Structure of Phrases</b><span class="pg">P.96</span></li>
+    <li style="break-before: column;"><b>The Internal Structure of Phrases</b><span class="pg">P.96</span></li>
     <li class="lv2"><b>Heads, Complements, and Selection</b><span class="pg">P.96</span></li>
+    <li class="lv2"><b>Selection</b><span class="pg">P.96</span></li>
     <li class="lv2"><b>The Three Levels of Phrases</b><span class="pg">P.98</span></li>
     <li class="lv2"><b>What Heads the Sentence</b><span class="pg">P.101</span></li>
     <li class="lv2"><b>The Infinity of Language Revisited</b><span class="pg">P.103</span></li>
@@ -397,7 +397,7 @@
 </section>
 
 <!-- ══ 12 · Lexical and Functional Categories ══ -->
-<section data-kicker="CH.3 P.86" data-path="Sentence Structure › Syntactic Categories">
+<section data-kicker="CH.3 P.86" data-path="Sentence Structure">
   <h2 style="font-size:40px;">Lexical and Functional Categories</h2>
   <div class="cols-even">
     <div>
@@ -434,7 +434,7 @@
 </section>
 
 <!-- ══ 11c · Lexical and Functional Categories · defined by distribution (p.87) ══ -->
-<section data-kicker="CH.3 P.87" data-path="Sentence Structure › Syntactic Categories">
+<section data-kicker="CH.3 P.87" data-path="Sentence Structure">
   <h2 style="font-size:40px;">Lexical and Functional Categories</h2>
   <div class="cols-even">
     <div>
@@ -832,7 +832,7 @@
 </section>
 
 <!-- ══ 20 · Selection (C-selection) ══ -->
-<section data-kicker="CH.3 P.96" data-path="The Internal Structure of Phrases › Heads, Complements, and Selection">
+<section data-kicker="CH.3 P.96" data-path="The Internal Structure of Phrases">
   <h2>Selection</h2>
   <p class="lead" style="font-size:17px; margin-bottom:10px;">Complements are optional; only the head is obligatory, and the head decides which complements it takes.
     <span class="ko-supp" style="display:block;">보충어는 수의적이고 핵어만 필수이며, 어떤 보충어를 취할지는 핵어가 정한다.</span></p>
@@ -857,7 +857,7 @@
 </section>
 
 <!-- ══ 20b · Selection (S-selection) ══ -->
-<section data-kicker="CH.3 P.97" data-path="The Internal Structure of Phrases › Heads, Complements, and Selection">
+<section data-kicker="CH.3 P.97" data-path="The Internal Structure of Phrases">
   <h2>Selection</h2>
   <div class="cols">
     <div class="def"><b>S-selection</b>: the semantic demands a head makes on its subject and complements.
